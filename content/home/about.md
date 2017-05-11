@@ -36,7 +36,7 @@ weight = 1
  
 +++
 
-# Biography
+# About me
 
-Alison Presmanes Hill is a professor of pediatrics at the Stanford AI Lab. Her current research lays in the intersection of computational behavioral science and developmental disabilities, with a focus on quantitative... Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a professor of pediatrics at Oregon Health & Science University (OHSU) in Portland, Oregon. My work lays at the intersection of computational behavioral science and child development, with a focus on developing more sensitive tools to capture subtle yet meaningful clinical changes in children's language and social functioning. My current research aims to develop such tools in order to address a real shortcoming in the field of autism and neurodevelopmental disorders, which is the lack of good outcome measures to evaluate the impact of new treatments and interventions. In addition to my research, I teach graduate-level courses at OHSU on statistics, data science, and data visualization using R. I also have developed and led several R workshops, and love to train new "useRs".
 
