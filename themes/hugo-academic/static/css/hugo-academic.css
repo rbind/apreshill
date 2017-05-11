@@ -96,7 +96,7 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #86ced0; 
+  color: #74c7c8; 
   text-decoration: none;
   transition: color 0.6s ease;
 }
@@ -444,7 +444,7 @@ article {
 }
 
 .article-metadata a:hover {
-  color: #86ced0;
+  color: #74c7c8;
 }
 
 .article-list-item {
@@ -750,8 +750,8 @@ footer a#back_to_top i {
  **************************************************/
 
 .btn-primary {
-  border-color: #86ced0;
-  background: #86ced0;
+  border-color: #74c7c8;
+  background: #74c7c8;
 }
 
 .btn-primary:hover,
@@ -759,7 +759,7 @@ footer a#back_to_top i {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  background: #86ced0;
+  background: #74c7c8;
 }
 
 /*************************************************
@@ -801,8 +801,8 @@ footer a#back_to_top i {
 }
 
 .btn-primary.btn-outline {
-  color: #86ced0;
-  border-color: #86ced0;
+  color: #74c7c8;
+  border-color: #74c7c8;
 }
 
 .btn-success.btn-outline {
@@ -859,7 +859,7 @@ nav#navbar-main li {
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-  color: #86ced0;
+  color: #74c7c8;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
@@ -887,7 +887,7 @@ nav#navbar-main li {
 .dropdown-menu > .active > a:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #86ced0;
+  background-color: #74c7c8;
   outline: 0;
 }
 
@@ -984,7 +984,7 @@ nav#navbar-main li {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
-    color: #86ced0;
+    color: #74c7c8;
     background-color: transparent;
   }
 
