@@ -20,12 +20,12 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Alison Presmanes Hill"
-  role = "Associate Professor of Artificial Intelligence"
+  role = "Associate Professor of Pediatrics"
   organization = "Oregon Health & Science University"
   organization_url = "http://www.ohsu.edu/xd/"
   avatar = "portrait.jpg"
-  email = "test@example.org"
-  address = "Building 1 Room 1, Portland, Oregon, 97034, USA"
+  email = "hillali@ohsu.edu"
+  address = "Gaines Hall 21, Portland, Oregon, 97034, USA"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "503 346 3756"
   skype = "apreshill"
@@ -141,6 +141,16 @@ defaultContentLanguageInSubdir = false
     icon = "github"
     icon_pack = "fa"
     link = "//github.com/apreshill"
+    
+  [[params.social]]
+    icon = "impactstory"
+    icon_pack = "ai"
+    link = "https://impactstory.org/u/0000-0002-8082-1890"
+    
+  [[params.social]]
+    icon = "orcid"
+    icon_pack = "ai"
+    link = "http://orcid.org/0000-0002-8082-1890"
 
 
 # Navigation Links
