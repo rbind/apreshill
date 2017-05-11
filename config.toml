@@ -1,5 +1,5 @@
 baseurl = "https://apreshill.rbind.io"
-title = "Academic"
+title = "Alison Presmanes Hill"
 copyright = "&copy; 2017 Alison Presmanes Hill"
 theme = "hugo-academic"
 enableEmoji = true
@@ -23,7 +23,7 @@ defaultContentLanguageInSubdir = false
   role = "Associate Professor of Pediatrics"
   organization = "Oregon Health & Science University"
   organization_url = "http://www.ohsu.edu/xd/"
-  avatar = "portrait.jpg"
+  avatar = "static/img/portrait.jpg"
   email = "hillali@ohsu.edu"
   address = "Gaines Hall 21, Portland, Oregon, 97034, USA"
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
