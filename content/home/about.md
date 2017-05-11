@@ -13,8 +13,9 @@ weight = 1
 [interests]
   interests = [
     "Autism Spectrum Disorders",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Language Development",
+    "Computational Behavioral Science",
+    "Eye Tracking"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -37,6 +38,5 @@ weight = 1
 
 # Biography
 
-Alison Presmanes Hill is a professor of pediatrics at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Alison Presmanes Hill is a professor of pediatrics at the Stanford AI Lab. Her current research lays in the intersection of computational behavioral science and developmental disabilities, with a focus on quantitative... Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 

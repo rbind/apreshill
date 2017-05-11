@@ -1,4 +1,4 @@
-baseurl = "https://example.com"
+baseurl = "https://apreshill.rbind.io"
 title = "Academic"
 copyright = "&copy; 2017 Alison Presmanes Hill"
 theme = "hugo-academic"
