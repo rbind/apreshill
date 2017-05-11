@@ -1,0 +1,41 @@
+{{ $is_list := .is_list }}
+{{ $ := .content }}
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="{{ $.Date }}" itemprop="datePublished">
+      {{ $.Date.Format $.Site.Params.date_format }}
+    </time>
+  </span>
+
+  {{ if isset $.Params "categories" }}
+  {{ $categoriesLen := len $.Params.categories }}
+  {{ if gt $categoriesLen 0 }}
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    {{ range $k, $v := $.Params.categories }}
+    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize | lower }}">{{ . }}</a
+    >{{ if lt $k (sub $categoriesLen 1) }}, {{ end }}
+    {{ end }}
+  </span>
+  {{ end }}
+  {{ end }}
+
+  {{ if isset $.Params "tags" }}
+  {{ $tagsLen := len $.Params.tags }}
+  {{ if gt $tagsLen 0 }}
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    {{ range $k, $v := $.Params.tags }}
+    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower }}">{{ . }}</a
+    >{{ if lt $k (sub $tagsLen 1) }}, {{ end }}
+    {{ end }}
+  </span>
+  {{ end }}
+  {{ end }}
+
+  {{ if ne $is_list 1 }}
+  {{ partial "share.html" $ }}
+  {{ end }}
+
+</div>
