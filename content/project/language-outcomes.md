@@ -9,7 +9,7 @@ title = "Automated Measurement of Language Outcomes for Neurodevelopmental Disor
 summary = "This project builds upon progress in the parent project, “Computational Characterization of Language Use in Autism Spectrum Disorder” (R01DC012033), in which we developed natural language processing (NLP) algorithms that extract automated discourse measures (ADMs), capturing a broad range of features such as impaired conversational reciprocity, perseverative speech, idiosyncratic/stereotyped word use, and other features often associated with – but not necessarily unique to – Autism Spectrum Disorders (ASDs). ADMs are distinct from, and complement, measures that are generally the domain of conventional language instruments and that focus on aspects of linguistic competence, such as verbal productivity, grammaticality, or vocabulary. We propose to optimize and evaluate the psychometric properties of our set of NLP ADMs for use in large-scale, multi-site clinical trials as meaningful outcome measures for individuals with a range of intellectual abilities and diagnoses."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "bubbles.jpg"
+image_preview = "boy-tunnel.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
