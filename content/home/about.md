@@ -38,5 +38,7 @@ weight = 1
 
 # About me
 
-I am a professor of pediatrics at Oregon Health & Science University (OHSU) in Portland, Oregon. My work lays at the intersection of computational behavioral science and child development, with a focus on developing more sensitive tools to capture subtle yet meaningful clinical changes in children's language and social functioning. My current research aims to develop such tools in order to address a real shortcoming in the field of autism and neurodevelopmental disorders, which is the lack of good outcome measures to evaluate the impact of new treatments and interventions. In addition to my research, I teach graduate-level courses at OHSU on statistics, data science, and data visualization using R. I also have developed and led several R workshops, and love to train new "useRs".
+I am a professor of pediatrics in the <a href = "https://www.ohsu.edu/xd/research/centers-institutes/center-for-spoken-language-understanding/" target = "_blank">Center for Spoken Language Understanding</a> at Oregon Health & Science University (OHSU) in Portland, Oregon. I focus on developing more sensitive tools to capture subtle yet meaningful clinical changes in children's language and social functioning. For example, my current research aims to address a real shortcoming in the field of autism and neurodevelopmental disorders - the lack of good outcome measures to evaluate the impact of new treatments and interventions - by creating new ways. 
+
+In addition to research, I teach graduate-level courses at OHSU on statistics, data science, and data visualization using R. I also have developed and led several R workshops, and love to train new "useRs".
 
