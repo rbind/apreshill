@@ -8,17 +8,18 @@
 a,
 a:visited,
 h3.article-title a:hover {
-    color: #6999cd;
+    color: #7f8cb4;
 }
 
-a:hover {
-    color: #343c56;
+a:hover,
+a:focus {
+  color: #343c56;
 }
 
 .navbar-default .navbar-nav li a:hover,
 .btn-primary,
 .btn-primary.btn-outline {
-    color: #6999cd;
+    color: #7f8cb4;
 }
 
 /* Articles */
@@ -32,20 +33,28 @@ a:hover {
 }
 
 .article-metadata a:hover {
-    color: #6999cd;
+    color: #7f8cb4;
 }
 
 /* Standard buttons */
 
-.btn-primary,
-.btn-primary.btn-outline {
-    border-color: #6999cd;
+.btn-primary {
+  border-color: #7f8cb4;
+  background: #7f8cb4;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background: #7f8cb4;
 }
 
 /* Hover buttons */
 
 .btn-primary.btn-outline:hover {
-    border-color: #6999cd;
+    border-color: #7f8cb4;
 }
 
 .btn-primary:hover,
@@ -54,13 +63,13 @@ a:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .btn-primary.btn-outline:active {
-    background-color: #6999cd;
+    background-color: #7f8cb4;
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-  color: #6999cd;
+  color: #7f8cb4;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
@@ -69,7 +78,7 @@ a:hover {
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
-  background-color: rgba(132, 214, 211, 0.6);
+  background-color: rgba(127, 140, 180, 0.6);
 }
 
 .btn-toolbar .btn.btn-primary:active,
@@ -82,5 +91,5 @@ a:hover {
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
-  background-color: #6999cd;
+  background-color: #7f8cb4;
 }
