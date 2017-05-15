@@ -11,8 +11,7 @@ h3.article-title a:hover {
     color: #7f8cb4;
 }
 
-a:hover,
-a:focus {
+a:hover {
   color: #343c56;
 }
 
