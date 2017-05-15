@@ -5,59 +5,64 @@
  *  https://github.com/gcushen/hugo-academic
  **************************************************/
 
+
+/*************************************************
+ *  Core
+ **************************************************/
+
+
+/* Headings */
+
 a,
-a:visited,
 h3.article-title a:hover {
-    color: #7f8cb4;
+  color: #7f8cb4; 
 }
 
-a:hover {
+
+a:hover,
+a:focus {
   color: #343c56;
 }
 
-.navbar-default .navbar-nav li a:hover,
-.btn-primary,
-.btn-primary.btn-outline {
-    color: #7f8cb4;
-}
-
-/* Articles */
-
-.article-title a {
-    color: #151515;
-}
-
-.article-metadata a {
-    color: #888;
-}
+/*************************************************
+ *  Blog Articles
+ **************************************************/
 
 .article-metadata a:hover {
-    color: #7f8cb4;
+  color: #7f8cb4;
 }
 
-/* Standard buttons */
+/*************************************************
+ *  Button Primary: Color Override
+ **************************************************/
 
-.btn-primary,
-.btn-primary.btn-outline {
+.btn-primary {
   border-color: #7f8cb4;
-}
-
-
-/* Hover buttons */
-
-.btn-primary.btn-outline:hover {
-    border-color: #7f8cb4;
+  /*background: #7f8cb4;*/
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.btn-primary:visited,
-.btn-primary.btn-outline:active,
 .open > .dropdown-toggle.btn-primary {
-    background-color: #7f8cb4;
+  background: #7f8cb4;
 }
+
+
+/*************************************************
+ *  Button Outlines
+ **************************************************/
+
+
+.btn-primary.btn-outline {
+  color: #7f8cb4;
+  border-color: #7f8cb4;
+}
+
+/*************************************************
+ *  Navigation Bar
+ **************************************************/
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
@@ -67,7 +72,34 @@ a:hover {
   background-color: transparent !important; /* Override Bootstrap. */
 }
 
-/* Toolbar buttons */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #7f8cb4;
+  outline: 0;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
+    color: #7f8cb4;
+    background-color: transparent;
+  }
+
+}
+
+/*************************************************
+ *  Toolbar Buttons
+ **************************************************/
+ 
+
+.btn-toolbar .btn.btn-primary {
+  background: #7f8cb4;
+}
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
@@ -79,10 +111,4 @@ a:hover {
   background-color: rgba(52, 60, 86, 1);
 }
 
-/* Dropdown menu */
-
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:focus,
-.dropdown-menu > .active > a:hover {
-  background-color: #7f8cb4;
-}
+  
