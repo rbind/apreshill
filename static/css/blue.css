@@ -54,7 +54,8 @@ a:hover {
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary:visited,
-.btn-primary.btn-outline:active {
+.btn-primary.btn-outline:active,
+.open > .dropdown-toggle.btn-primary {
     background-color: #7f8cb4;
 }
 
