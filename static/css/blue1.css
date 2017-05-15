@@ -96,6 +96,11 @@ a:focus {
  *  Toolbar Buttons
  **************************************************/
  
+
+.btn-toolbar .btn.btn-primary {
+  background: #7f8cb4;
+}
+
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
   background-color: rgba(127, 140, 180, 0.6);
