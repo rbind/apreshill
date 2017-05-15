@@ -8,17 +8,17 @@
 a,
 a:visited,
 h3.article-title a:hover {
-    color: #98c0b8;
+    color: #1a9a9d;
 }
 
 a:hover {
-    color: #519199;
+    color: #126180;
 }
 
 .navbar-default .navbar-nav li a:hover,
 .btn-primary,
 .btn-primary.btn-outline {
-    color: #98c0b8;
+    color: #1a9a9d;
 }
 
 /* Articles */
@@ -32,20 +32,20 @@ a:hover {
 }
 
 .article-metadata a:hover {
-    color: #98c0b8;
+    color: #1a9a9d;
 }
 
 /* Standard buttons */
 
 .btn-primary,
 .btn-primary.btn-outline {
-    border-color: #98c0b8;
+    border-color: #1a9a9d;
 }
 
 /* Hover buttons */
 
 .btn-primary.btn-outline:hover {
-    border-color: #98c0b8;
+    border-color: #1a9a9d;
 }
 
 .btn-primary:hover,
@@ -54,13 +54,13 @@ a:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .btn-primary.btn-outline:active {
-    background-color: #98c0b8;
+    background-color: #1a9a9d;
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-  color: #98c0b8;
+  color: #1a9a9d;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
