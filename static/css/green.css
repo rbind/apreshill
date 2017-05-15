@@ -57,6 +57,16 @@ a:hover {
     background-color: rgb(76,175,80);
 }
 
+/* Navbar buttons */
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  color: rgb(76,175,80);
+  font-weight: 700;
+  background-color: transparent !important; /* Override Bootstrap. */
+}
+
 /* Toolbar buttons */
 
 .btn-toolbar .btn.btn-primary {
