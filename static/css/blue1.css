@@ -38,7 +38,7 @@ a:focus {
 
 .btn-primary {
   border-color: #7f8cb4;
-  background: #7f8cb4;
+  /*background: #7f8cb4;*/
 }
 
 .btn-primary:hover,
