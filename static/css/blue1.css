@@ -1,0 +1,119 @@
+/*************************************************
+ *  A custom theme for Hugo Academic
+ *  Set `custom_css = ["blue.css"] in `config.toml`.
+ *  Then save this file as `/static/css/blue.css` relative to your website root (i.e. not in `themes/academic` directory).
+ *  https://github.com/gcushen/hugo-academic
+ **************************************************/
+
+/* from green to blue */
+/*  change all rgb(76,175,80) --> to rgb(127,140,180) */
+/*  change all rgb(0,230,118) --> to rgb(52,60,86) */
+/*  change all rgba(0,230,118,0.6) --> rgba(127,140,180,0.6) */
+/*  change all rgba(0,230,118,1) --> rgba(52,60,86,1) */
+
+/*************************************************
+ *  Core
+ **************************************************/
+
+
+/* Headings */
+
+a,
+h3.article-title a:hover {
+  color: #7f8cb4; 
+}
+
+
+a:hover,
+a:focus {
+  color: #343c56;
+}
+
+/*************************************************
+ *  Blog Articles
+ **************************************************/
+
+.article-metadata a:hover {
+  color: #7f8cb4;
+}
+
+/*************************************************
+ *  Button Primary: Color Override
+ **************************************************/
+
+.btn-primary {
+  border-color: #7f8cb4;
+  /*background: #7f8cb4;*/
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background: #7f8cb4;
+}
+
+
+/*************************************************
+ *  Button Outlines
+ **************************************************/
+
+
+.btn-primary.btn-outline {
+  color: #7f8cb4;
+  border-color: #7f8cb4;
+}
+
+/*************************************************
+ *  Navigation Bar
+ **************************************************/
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  color: #7f8cb4;
+  font-weight: 700;
+  background-color: transparent !important; /* Override Bootstrap. */
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #7f8cb4;
+  outline: 0;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
+    color: #7f8cb4;
+    background-color: transparent;
+  }
+
+}
+
+/*************************************************
+ *  Toolbar Buttons
+ **************************************************/
+ 
+
+.btn-toolbar .btn.btn-primary {
+  background: #7f8cb4;
+}
+
+.btn-toolbar .btn.btn-primary:hover,
+.btn-toolbar .btn.btn-primary:focus {
+  background-color: rgba(127, 140, 180, 0.6);
+}
+
+.btn-toolbar .btn.btn-primary:active,
+.btn-toolbar .btn.btn-primary.active {
+  background-color: rgba(52, 60, 86, 1);
+}
+
+  
