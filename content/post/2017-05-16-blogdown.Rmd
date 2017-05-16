@@ -1,6 +1,6 @@
 ---
 title: "Up and running with `blogdown`"
-author: "Frida Gomam"
+author: "Alison Presmanes Hill"
 date: '2017-05-16'
 tags: blogdown
 categories: R
