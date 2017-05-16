@@ -152,7 +152,6 @@ defaultContentLanguageInSubdir = false
     icon_pack = "ai"
     link = "http://orcid.org/0000-0002-8082-1890"
 
-
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
 #     desired widget in your `content/home/` folder.
@@ -165,7 +164,7 @@ defaultContentLanguageInSubdir = false
 
 [[menu.main]]
   name = "Publications"
-  url = "#publications_selected"
+  url = "#publications"
   weight = 2
 
 [[menu.main]]
@@ -187,6 +186,11 @@ defaultContentLanguageInSubdir = false
   name = "Contact"
   url = "#contact"
   weight = 6
+  
+[[menu.main]]
+  name = "CV"
+  url = "/cv/aph-cv-17-05-16.pdf"
+  weight = 7
 
 # Taxonomies.
 [taxonomies]
