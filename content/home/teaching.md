@@ -14,7 +14,7 @@ weight = 60
 
 +++
 
-I am a teaching instructor for the following courses in OHSU's <a href = "https://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/basic-science-departments/csee/" target="_blank">Computer Science and Electrical Engineering (CSEE)</a> graduate education program:
+I teach the following courses in OHSU's <a href = "https://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/basic-science-departments/csee/" target="_blank">Computer Science and Electrical Engineering (CSEE)</a> graduate education program:
 
 - MATH530/630: Probability and Statistics for Scientists & Engineers
 - CS627: <a href = "http://cslu.ohsu.edu/~kain/CS627/" target="_blank">Data Science Programming</a> (with Professors Alexander Kain & Steven Bedrick)
