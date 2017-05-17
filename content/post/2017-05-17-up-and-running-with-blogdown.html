@@ -1,16 +1,161 @@
 ---
-title: Up and running with blogdown
-author: Alison Presmanes Hill
+title: "Up and running with blogdown"
+author: "Alison Presmanes Hill"
 date: '2017-05-17'
 slug: up-and-running-with-blogdown
-categories:
-  - R
-tags: []
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
+tags: blogdown
+categories: R
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 
+<div id="TOC">
+<ul>
+<li><a href="#read-up-on-blogdown">Read up on blogdown</a></li>
+<li><a href="#rstudio-git-and-terminal">RStudio, Git, and Terminal</a></li>
+<li><a href="#in-rstudio-console">In RStudio console</a></li>
+<li><a href="#in-github">In Github</a></li>
+<li><a href="#in-terminal">In terminal</a></li>
+<li><a href="#back-in-rstudio">Back in RStudio</a></li>
+<li><a href="#in-rstudio">In RStudio</a><ul>
+<li><a href="#edit-your-configurations">Edit your configurations</a></li>
+<li><a href="#posting">Posting</a></li>
+</ul></li>
+</ul>
+</div>
 
-<p>testing R code</p>
-<pre class="r"><code>1+1</code></pre>
-<pre><code>## [1] 2</code></pre>
+<div id="read-up-on-blogdown" class="section level2">
+<h2>Read up on blogdown</h2>
+<p>Before you start, I recommend reading the following:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/blogdown/">“blogdown: Creating Websites with R Markdown” by Yihui Xie and Amber Thomas</a></li>
+<li><a href="https://proquestionasker.github.io/blog/Making_Site/">“Making a Website Using Blogdown, Hugo, and GitHub pages” by Amber Thomas</a></li>
+<li><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">“Getting Started with Blogdown” by M. Edward (Ed) Borasky</a></li>
+</ul>
+<p>I also found a comment by Eric Nantz, the creator <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on Github</a> to be helpful:</p>
+<ul>
+<li><a href="https://github.com/rbind/support/issues/12" class="uri">https://github.com/rbind/support/issues/12</a></li>
+</ul>
+<p>Even with all these great resources, getting myself up and running took a few tries, so in this post I’m passing along what ended up working for me. Everyone’s mileage may vary, though, depending on your operating system and your approach.</p>
+</div>
+<div id="rstudio-git-and-terminal" class="section level2">
+<h2>RStudio, Git, and Terminal</h2>
+<p>I use R, RStudio, git (usually via gitlab, occasionally via github), and terminal regularly, so I’m assuming familiarity here with all of these. If you are not comfortable with these, go back and thoroughly read Amber’s post on <a href="https://proquestionasker.github.io/blog/Making_Site/">“Making a Website Using Blogdown, Hugo, and GitHub pages”</a>.</p>
+</div>
+<div id="in-rstudio-console" class="section level2">
+<h2>In RStudio console</h2>
+<ol style="list-style-type: decimal">
+<li>First, I installed <code>blogdown</code> in my RStudio console. Your working directory doesn’t matter here. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
+</ol>
+<pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Still in the RStudio console, load the <code>blogdown</code> package to run the <code>install_hugo</code> function (again, your working directory doesn’t matter here):</li>
+</ol>
+<pre class="r"><code>blogdown::install_hugo()
+# or
+# library(blogdown)
+# install_hugo()</code></pre>
+</div>
+<div id="in-github" class="section level2">
+<h2>In Github</h2>
+<ol style="list-style-type: decimal">
+<li>Go online to your <a href="https://github.com">Github</a> account and create a new repository. A few things you need to know now:</li>
+</ol>
+<ul>
+<li>If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything you want! You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>.</li>
+<li>If you want to host your site as a Github Page, you should name your repository <code>yourgithubusername.github.io</code></li>
+</ul>
+</div>
+<div id="in-terminal" class="section level2">
+<h2>In terminal</h2>
+<p>Or your alternative command line tool for a Windows machine.</p>
+<ul>
+<li>Use <code>cd</code> to navigate into the directory where you want your repo to be, and then type: <code>git clone https://github.com/apreshill/apreshill.git</code></li>
+</ul>
+<p>This is what subsequently printed in my terminal window:</p>
+<pre class="r"><code>ORPA473:r-projects hillali$ git clone https://github.com/apreshill/apreshill.git
+Cloning into &#39;apreshill&#39;...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+ORPA473:r-projects hillali$ </code></pre>
+</div>
+<div id="back-in-rstudio" class="section level2">
+<h2>Back in RStudio</h2>
+<ul>
+<li><p>Use your menu buttons on top to select File –&gt; New Project –&gt; Existing directory, then I pointed RStudio to [insert image here]</p></li>
+<li><p>Now, if you are using git for version control, edit your <code>*gitignore</code> file. I opened mine from RStudio but you can use any text editor to open and edit this file. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but you need to add the <code>public/</code> line (<a href="https://bookdown.org/yihui/blogdown/version-control.html">read about here</a>.)</p></li>
+</ul>
+<pre class="r"><code>.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+blogdown
+.DS_Store
+public/ # if using Netlify</code></pre>
+<ul>
+<li><p>Finally you can start to build your site using the <code>blogdown::new_site()</code> function. But first you should know…</p>
+<ul>
+<li>If you want a theme other than the default, which is the lithium theme, you can do this now!</li>
+</ul></li>
+</ul>
+<pre class="r"><code># for example, create a new site with the academic theme
+blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;)</code></pre>
+<pre><code>- If instead you want to add the theme (like I did, because I didn&#39;t see the above example until it was too late!), use this function:</code></pre>
+<pre class="r"><code>install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
+</div>
+<div id="in-rstudio" class="section level2">
+<h2>In RStudio</h2>
+<div id="edit-your-configurations" class="section level3">
+<h3>Edit your configurations</h3>
+<ol style="list-style-type: decimal">
+<li>Edit the <code>baseURL:</code> in your <code>config.toml</code> file</li>
+</ol>
+<ul>
+<li><a href="https://bookdown.org/yihui/blogdown/configuration.html#toml-syntax">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></li>
+<li><a href="https://proquestionasker.github.io/blog/Making_Site/#site-configuration">Amber’s instructions for site configuration</a></li>
+</ul>
+</div>
+<div id="posting" class="section level3">
+<h3>Posting</h3>
+<p>This surprisingly was harder than you would think. Note: in the academic theme, these are called posts. Here are some relevant links:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/output-format.html">Also from Yihui &amp; Amber’s <code>blogdown</code> book, on .md versus .Rmd posts:</a></li>
+<li><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Amber’s instructions for adding a blog post</a></li>
+</ul>
+<div id="new-markdown-posts" class="section level4">
+<h4>New markdown posts</h4>
+<ul>
+<li>To author a new plain <code>.md</code> post, either use this function in your console:</li>
+</ul>
+<pre class="r"><code>blogdown::new_post()
+blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
+<p>Here are the arguments according to <code>?new_post</code>:</p>
+<pre class="r"><code>new_post(title, kind = &quot;default&quot;, open = interactive(), 
+    author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
+    tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
+    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), rmd = getOption(&quot;blogdown.rmd&quot;, 
+        FALSE))</code></pre>
+<p>Title needs to be in quotes.</p>
+<p>Or alternatively, you can use the handy Addins dropdown menu in the</p>
+</div>
+<div id="new-rmarkdown-posts" class="section level4">
+<h4>New RMarkdown posts</h4>
+<ul>
+<li>To author a new <code>.Rmd</code> post where you can use R chunks and have them rendered, either use this function in your console:</li>
+</ul>
+<pre class="r"><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
+<p>Or again, you can use the handy Addins dropdown menu in the</p>
+<ul>
+<li>Importantly, to have the <code>.Rmd</code> file include rendered R chunks, you must either run <code>blogdown::serve_site()</code> or knit your file to html first, then commit/push to Github, then you will see the full post.</li>
+</ul>
+</div>
+</div>
+</div>
