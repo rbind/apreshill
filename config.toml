@@ -29,8 +29,7 @@ defaultContentLanguageInSubdir = false
   office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "503 346 3756"
   skype = "apreshill"
-  telegram = ""
-  CV = "/cv/aph-cv-17-05-16.pdf"
+  telegram = "hillali@ohsu.edu"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
