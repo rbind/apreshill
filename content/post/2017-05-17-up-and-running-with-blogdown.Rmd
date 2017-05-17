@@ -5,14 +5,103 @@ date: '2017-05-17'
 slug: up-and-running-with-blogdown
 categories:
   - R
-tags: []
+tags: [blogdown]
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
 ---
 
+```{r include = FALSE}
+knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA, tidy = FALSE)
+```
 
-testing R code 
+
+# Read up on blogdown
+
+Before you start, I recommend reading the following:
+
+* ["blogdown: Creating Websites with R Markdown" by Yihui Xie and Amber Thomas](https://bookdown.org/yihui/blogdown/)
+* ["Making a Website Using Blogdown, Hugo, and GitHub pages" by Amber Thomas](https://proquestionasker.github.io/blog/Making_Site/)
+* ["Getting Started with Blogdown" by M. Edward (Ed) Borasky](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/)
+
+I also found a comment by Eric Nantz, the creator [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on Github](https://github.com/rbind/support) to be helpful:
+
+* [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
+
+# Start in R/RStudio console
+
+1. First, I installed `blogdown` in my RStudio console (your working directory doesn't matter here). If you already have `devtools` installed like I did, you can just use the second line below:
 
 ```{r}
-1+1
+if (!requireNamespace("devtools")) install.packages("devtools")
+devtools::install_github("rstudio/blogdown")
 ```
+
+1. Still in my RStudio console, I used the `blogdown` package to run the `install_hugo` function (again, your working directory doesn't matter here): 
+
+```{r}
+blogdown::install_hugo()
+# or
+# library(blogdown)
+# install_hugo()
+```
+
+# Go to Github
+
+1. Go online to [Github](https://github.com) and create a new repository. A few things you need to know now:
+
+* If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything!
+* If you want to host your site as a Github Page, you should name your repository `yourgithubusername.github.io`
+    
+# Open up your terminal
+
+Or your alternative command line tool for a Windows machine.
+    
+* Then open up terminal, and use `cd` to navigate into the directory where you want your repo to be, and then type:
+`git clone https://github.com/apreshill/apreshill.git`
+
+This is what subsequently printed in my terminal window:
+
+```{r eval = FALSE}
+ORPA473:r-projects hillali$ git clone https://github.com/apreshill/apreshill.git
+Cloning into 'apreshill'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+ORPA473:r-projects hillali$ 
+```
+
+# Back to RStudio!
+
+* Go to File --> New Project --> Existing directory, then I pointed RStudio to [insert image here]
+
+* Now, edit your `*gitignore` file. I opened mine from RStudio but you can use any text editor to open and edit this file. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but you need to add the `public/` line.
+
+```{r eval = FALSE}
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+public/
+```
+
+
+* Finally you can start to build your site using the `blogdown::new_site()` function. But first you should know...
+
+    - If you want a theme other than the default, which is the lithium theme, you can do this now!
+    
+```{r}
+# for example, create a new site with the academic theme
+blogdown::new_site(theme = "gcushen/hugo-academic")
+```
+
+    
+    - If instead you want to add the theme (like I did, because I didn't see the above example until it was too late!), use this function:
+    
+```{r}
+install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRUE)
+```
+
+
+
 
