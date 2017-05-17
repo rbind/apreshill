@@ -6,26 +6,9 @@ slug: up-and-running-with-blogdown
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
 tags: blogdown
 categories: R
-output:
-  blogdown::html_page:
-    toc: true
 ---
 
 
-<div id="TOC">
-<ul>
-<li><a href="#read-up-on-blogdown">Read up on blogdown</a></li>
-<li><a href="#rstudio-git-and-terminal">RStudio, Git, and Terminal</a></li>
-<li><a href="#in-rstudio-console">In RStudio console</a></li>
-<li><a href="#in-github">In Github</a></li>
-<li><a href="#in-terminal">In terminal</a></li>
-<li><a href="#back-in-rstudio">Back in RStudio</a></li>
-<li><a href="#in-rstudio">In RStudio</a><ul>
-<li><a href="#edit-your-configurations">Edit your configurations</a></li>
-<li><a href="#posting">Posting</a></li>
-</ul></li>
-</ul>
-</div>
 
 <div id="read-up-on-blogdown" class="section level2">
 <h2>Read up on blogdown</h2>
@@ -154,7 +137,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <pre class="r"><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
 <p>Or again, you can use the handy Addins dropdown menu in the</p>
 <ul>
-<li>Importantly, to have the <code>.Rmd</code> file include rendered R chunks, you must either run <code>blogdown::serve_site()</code> or knit your file to html first, then commit/push to Github, then you will see the full post.</li>
+<li>Importantly, to have the <code>.Rmd</code> file include rendered R chunks, you must either run <code>blogdown::serve_site()</code> or knit your file to html first. Either way you do it, you can check that there is an <code>.html</code> file in the right directory, in addition to your <code>.Rmd</code> file.</li>
 </ul>
 </div>
 </div>

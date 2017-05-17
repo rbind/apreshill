@@ -6,9 +6,6 @@ slug: up-and-running-with-blogdown
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
 tags: blogdown
 categories: R
-output:
-  blogdown::html_page:
-    toc: true
 ---
 
 ```{r include = FALSE}
@@ -165,4 +162,4 @@ blogdown::new_post(rmd = TRUE) # false is the default!
 
 Or again, you can use the handy Addins dropdown menu in the 
 
-* Importantly, to have the `.Rmd` file include rendered R chunks, you must either run `blogdown::serve_site()` or knit your file to html first, then commit/push to Github, then you will see the full post.
+* Importantly, to have the `.Rmd` file include rendered R chunks, you must either run `blogdown::serve_site()` or knit your file to html first. Either way you do it, you can check that there is an `.html` file in the right directory, in addition to your `.Rmd` file.
