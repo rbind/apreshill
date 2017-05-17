@@ -30,7 +30,7 @@ defaultContentLanguageInSubdir = false
   phone = "503 346 3756"
   skype = "apreshill"
   telegram = ""
-  cv = "/cv/aph-cv-17-05-16.pdf"
+  cv = "Curriculum Vitae"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
