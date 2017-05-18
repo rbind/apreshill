@@ -9,6 +9,10 @@ tags:
   - blogdown
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
 draft: TRUE
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
 ---
 
 ```{r include = FALSE}
@@ -16,36 +20,35 @@ knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA, tidy = FALSE)
 ```
 
 
-## Read up on blogdown
+# Read up on blogdown
 
 Before you start, I recommend reading the following:
 
-* _["blogdown: Creating Websites with R Markdown"](https://bookdown.org/yihui/blogdown/)_ by Yihui Xie and Amber Thomas
-* _["Making a Website Using Blogdown, Hugo, and GitHub pages"](https://proquestionasker.github.io/blog/Making_Site/)_ by Amber Thomas
-* _["Getting Started with Blogdown"](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/)_ by M. Edward (Ed) Borasky
+* _["`blogdown`: Creating Websites with R Markdown"](https://bookdown.org/yihui/blogdown/)_ by Yihui Xie and Amber Thomas
+* _["Making a Website Using `blogdown`, Hugo, and GitHub pages"](https://proquestionasker.github.io/blog/Making_Site/)_ by Amber Thomas
+* _["Getting Started with `blogdown`"](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/)_ by M. Edward (Ed) Borasky
 
-I also found a comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on Github](https://github.com/rbind/support) to be helpful:
+I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on Github](https://github.com/rbind/support) to be helpful:
 
 * [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
 
 Even with all these great resources, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach.
 
-## RStudio, Git, and Terminal
+# Disclaimer
 
 I use R, RStudio, git (usually via gitlab, occasionally via github), and terminal regularly, so I'm assuming familiarity here with all of these. If you are not comfortable with these, go back and thoroughly read Amber's post on ["Making a Website Using Blogdown, Hugo, and GitHub pages."](https://proquestionasker.github.io/blog/Making_Site/)
 
-## In RStudio console
+# In RStudio console
 
 
-
-1. First, I installed `blogdown` in my RStudio console. Your working directory doesn't matter here. If you already have `devtools` installed like I did, you can just use the second line below:
+* Install `blogdown` from your RStudio console. Your working directory doesn't matter here. If you already have `devtools` installed like I did, you can just use the second line below:
 
 ```{r}
 if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("rstudio/blogdown")
 ```
 
-1. Still in the RStudio console, load the `blogdown` package to run the `install_hugo` function (again, your working directory doesn't matter here): 
+* Still in the RStudio console, load the `blogdown` package to run the `install_hugo` function (again, your working directory doesn't matter here): 
 
 ```{r}
 blogdown::install_hugo()
@@ -54,18 +57,17 @@ blogdown::install_hugo()
 # install_hugo()
 ```
 
-## In Github
+# In Github
 
-1. Go online to your [Github](https://github.com) account and create a new repository. 
+* Go online to your [Github](https://github.com) account and create a new repository. A few things you need to know now:
+    - If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories).
+    - If you want to host your site as a Github Page, you should name your repository `yourgithubusername.github.io`
 
 ![Figure: Creating a new repository in Github](/img/github-new-repo.png)
 
-A few things you need to know now:
 
-* If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories).
-* If you want to host your site as a Github Page, you should name your repository `yourgithubusername.github.io`
     
-## In terminal
+# In terminal
 
 Or your alternative command line tool for a Windows machine.
     
@@ -85,9 +87,9 @@ Checking connectivity... done.
 ORPA473:r-projects hillali$ 
 ```
 
-## Back in RStudio
+# Back in RStudio
 
-_NB_: this is where my instructions differ from Ed's- he states that `blogdown` won't create a website in your root folder because the `README.md` file is already there. I didn't find that to be the case- I tested this with a new site as well, so again your experience may vary.
+_NB_: this is where my instructions differ from Ed's- he states that `blogdown` won't create a website in your root folder because the `README.md` file is already there. I didn't find that to be the case- I tested this with a new site as well. If one way doesn't work for you, try the other!
 
 * Use your menu buttons on top to select File --> New Project --> Existing directory, then I pointed RStudio to 
 
@@ -101,7 +103,7 @@ _NB_: this is where my instructions differ from Ed's- he states that `blogdown` 
 .RData
 .Ruserdata
 blogdown
-.DS_Store
+.DS_Store # if a windows user, Thumbs.db instead
 public/ # if using Netlify
 ```
 
@@ -122,9 +124,9 @@ blogdown::new_site(theme = "gcushen/hugo-academic", sample = TRUE)
 install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRUE)
 ```
 
-## In RStudio
+# In RStudio
 
-### Edit your configurations
+## Edit your configurations
 
 1. Edit the `baseURL:` in your `config.toml` file
 
@@ -132,15 +134,22 @@ install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRU
 * [Amber's instructions for site configuration](https://proquestionasker.github.io/blog/Making_Site/#site-configuration)
 
 
-### Posting
+## Posting
 
 This surprisingly was harder than you would think. Note: in the academic theme, these are called posts. Here are some relevant links:
 
-* [From Yihui & Amber's `blogdown` book:](https://bookdown.org/yihui/blogdown/rstudio-ide.html)
-* [Also from Yihui & Amber's `blogdown` book, on .md versus .Rmd posts:](https://bookdown.org/yihui/blogdown/output-format.html)
-* [Amber's instructions for adding a blog post](https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece)
+* _[From Yihui & Amber's `blogdown` book:](https://bookdown.org/yihui/blogdown/rstudio-ide.html)_
+* _[Also from Yihui & Amber's `blogdown` book](https://bookdown.org/yihui/blogdown/output-format.html):_ on .md versus .Rmd posts
+* _[Amber's instructions](https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece)_ for adding a blog post
 
-#### New markdown posts
+### Draft posts
+
+Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you either remove the `draft` option or set it to false (since the default is true).
+
+* _[From Yihui & Amber's `blogdown` book:](https://bookdown.org/yihui/blogdown/local-preview.html)_ Building a website for local preview
+
+
+### New markdown posts
 
 * To author a new plain `.md` post, either use this function in your console:
 
@@ -163,7 +172,7 @@ Title needs to be in quotes.
 
 Or alternatively, you can use the handy Addins dropdown menu in the 
 
-#### New RMarkdown posts
+### New RMarkdown posts
 
 * To author a new `.Rmd` post where you can use R chunks and have them rendered, either use this function in your console:
 

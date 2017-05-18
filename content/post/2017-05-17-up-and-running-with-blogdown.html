@@ -9,60 +9,82 @@ tags:
   - blogdown
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
 draft: TRUE
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
 ---
 
 
+<div id="TOC">
+<ul>
+<li><a href="#read-up-on-blogdown"><span class="toc-section-number">1</span> Read up on blogdown</a></li>
+<li><a href="#disclaimer"><span class="toc-section-number">2</span> Disclaimer</a></li>
+<li><a href="#in-rstudio-console"><span class="toc-section-number">3</span> In RStudio console</a></li>
+<li><a href="#in-github"><span class="toc-section-number">4</span> In Github</a></li>
+<li><a href="#in-terminal"><span class="toc-section-number">5</span> In terminal</a></li>
+<li><a href="#back-in-rstudio"><span class="toc-section-number">6</span> Back in RStudio</a></li>
+<li><a href="#in-rstudio"><span class="toc-section-number">7</span> In RStudio</a><ul>
+<li><a href="#edit-your-configurations"><span class="toc-section-number">7.1</span> Edit your configurations</a></li>
+<li><a href="#posting"><span class="toc-section-number">7.2</span> Posting</a><ul>
+<li><a href="#draft-posts"><span class="toc-section-number">7.2.1</span> Draft posts</a></li>
+<li><a href="#new-markdown-posts"><span class="toc-section-number">7.2.2</span> New markdown posts</a></li>
+<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">7.2.3</span> New RMarkdown posts</a></li>
+<li><a href="#adding-images-to-a-post"><span class="toc-section-number">7.2.4</span> Adding images to a post</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
 
-<div id="read-up-on-blogdown" class="section level2">
-<h2>Read up on blogdown</h2>
+<div id="read-up-on-blogdown" class="section level1">
+<h1><span class="header-section-number">1</span> Read up on blogdown</h1>
 <p>Before you start, I recommend reading the following:</p>
 <ul>
-<li><em><a href="https://bookdown.org/yihui/blogdown/">“blogdown: Creating Websites with R Markdown”</a></em> by Yihui Xie and Amber Thomas</li>
-<li><em><a href="https://proquestionasker.github.io/blog/Making_Site/">“Making a Website Using Blogdown, Hugo, and GitHub pages”</a></em> by Amber Thomas</li>
-<li><em><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">“Getting Started with Blogdown”</a></em> by M. Edward (Ed) Borasky</li>
+<li><em><a href="https://bookdown.org/yihui/blogdown/">“<code>blogdown</code>: Creating Websites with R Markdown”</a></em> by Yihui Xie and Amber Thomas</li>
+<li><em><a href="https://proquestionasker.github.io/blog/Making_Site/">“Making a Website Using <code>blogdown</code>, Hugo, and GitHub pages”</a></em> by Amber Thomas</li>
+<li><em><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">“Getting Started with <code>blogdown</code>”</a></em> by M. Edward (Ed) Borasky</li>
 </ul>
-<p>I also found a comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on Github</a> to be helpful:</p>
+<p>I also found this comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on Github</a> to be helpful:</p>
 <ul>
 <li><a href="https://github.com/rbind/support/issues/12" class="uri">https://github.com/rbind/support/issues/12</a></li>
 </ul>
 <p>Even with all these great resources, getting myself up and running took a few tries, so in this post I’m passing along what ended up working for me. Everyone’s mileage may vary, though, depending on your operating system and your approach.</p>
 </div>
-<div id="rstudio-git-and-terminal" class="section level2">
-<h2>RStudio, Git, and Terminal</h2>
+<div id="disclaimer" class="section level1">
+<h1><span class="header-section-number">2</span> Disclaimer</h1>
 <p>I use R, RStudio, git (usually via gitlab, occasionally via github), and terminal regularly, so I’m assuming familiarity here with all of these. If you are not comfortable with these, go back and thoroughly read Amber’s post on <a href="https://proquestionasker.github.io/blog/Making_Site/">“Making a Website Using Blogdown, Hugo, and GitHub pages.”</a></p>
 </div>
-<div id="in-rstudio-console" class="section level2">
-<h2>In RStudio console</h2>
-<ol style="list-style-type: decimal">
-<li>First, I installed <code>blogdown</code> in my RStudio console. Your working directory doesn’t matter here. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
-</ol>
+<div id="in-rstudio-console" class="section level1">
+<h1><span class="header-section-number">3</span> In RStudio console</h1>
+<ul>
+<li>Install <code>blogdown</code> from your RStudio console. Your working directory doesn’t matter here. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
+</ul>
 <pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
 devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
-<ol style="list-style-type: decimal">
+<ul>
 <li>Still in the RStudio console, load the <code>blogdown</code> package to run the <code>install_hugo</code> function (again, your working directory doesn’t matter here):</li>
-</ol>
+</ul>
 <pre class="r"><code>blogdown::install_hugo()
 # or
 # library(blogdown)
 # install_hugo()</code></pre>
 </div>
-<div id="in-github" class="section level2">
-<h2>In Github</h2>
-<ol style="list-style-type: decimal">
-<li>Go online to your <a href="https://github.com">Github</a> account and create a new repository.</li>
-</ol>
+<div id="in-github" class="section level1">
+<h1><span class="header-section-number">4</span> In Github</h1>
+<ul>
+<li>Go online to your <a href="https://github.com">Github</a> account and create a new repository. A few things you need to know now:
+<ul>
+<li>If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything you want! You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>.</li>
+<li>If you want to host your site as a Github Page, you should name your repository <code>yourgithubusername.github.io</code></li>
+</ul></li>
+</ul>
 <div class="figure">
 <img src="/img/github-new-repo.png" alt="Figure: Creating a new repository in Github" />
 <p class="caption">Figure: Creating a new repository in Github</p>
 </div>
-<p>A few things you need to know now:</p>
-<ul>
-<li>If you are going to use Netlify to host the site, rather than Github Pages, you can name this repository anything you want! You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>.</li>
-<li>If you want to host your site as a Github Page, you should name your repository <code>yourgithubusername.github.io</code></li>
-</ul>
 </div>
-<div id="in-terminal" class="section level2">
-<h2>In terminal</h2>
+<div id="in-terminal" class="section level1">
+<h1><span class="header-section-number">5</span> In terminal</h1>
 <p>Or your alternative command line tool for a Windows machine.</p>
 <ul>
 <li>Use <code>cd</code> to navigate into the directory where you want your repo to be, and then type: <code>git clone https://github.com/apreshill/apreshill.git</code></li>
@@ -77,9 +99,9 @@ Unpacking objects: 100% (3/3), done.
 Checking connectivity... done.
 ORPA473:r-projects hillali$ </code></pre>
 </div>
-<div id="back-in-rstudio" class="section level2">
-<h2>Back in RStudio</h2>
-<p><em>NB</em>: this is where my instructions differ from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well, so again your experience may vary.</p>
+<div id="back-in-rstudio" class="section level1">
+<h1><span class="header-section-number">6</span> Back in RStudio</h1>
+<p><em>NB</em>: this is where my instructions differ from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other!</p>
 <ul>
 <li>Use your menu buttons on top to select File –&gt; New Project –&gt; Existing directory, then I pointed RStudio to</li>
 </ul>
@@ -95,7 +117,7 @@ ORPA473:r-projects hillali$ </code></pre>
 .RData
 .Ruserdata
 blogdown
-.DS_Store
+.DS_Store # if a windows user, Thumbs.db instead
 public/ # if using Netlify</code></pre>
 <ul>
 <li><p>Finally you can start to build your site using the <code>blogdown::new_site()</code> function. But first you should know…</p>
@@ -108,10 +130,10 @@ blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, sample = TRUE)</co
 <pre><code>- If instead you want to add the theme (like I did, because I didn&#39;t see the above example until it was too late!), use this function:</code></pre>
 <pre class="r"><code>install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
 </div>
-<div id="in-rstudio" class="section level2">
-<h2>In RStudio</h2>
-<div id="edit-your-configurations" class="section level3">
-<h3>Edit your configurations</h3>
+<div id="in-rstudio" class="section level1">
+<h1><span class="header-section-number">7</span> In RStudio</h1>
+<div id="edit-your-configurations" class="section level2">
+<h2><span class="header-section-number">7.1</span> Edit your configurations</h2>
 <ol style="list-style-type: decimal">
 <li>Edit the <code>baseURL:</code> in your <code>config.toml</code> file</li>
 </ol>
@@ -120,16 +142,23 @@ blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, sample = TRUE)</co
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/#site-configuration">Amber’s instructions for site configuration</a></li>
 </ul>
 </div>
-<div id="posting" class="section level3">
-<h3>Posting</h3>
+<div id="posting" class="section level2">
+<h2><span class="header-section-number">7.2</span> Posting</h2>
 <p>This surprisingly was harder than you would think. Note: in the academic theme, these are called posts. Here are some relevant links:</p>
 <ul>
-<li><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></li>
-<li><a href="https://bookdown.org/yihui/blogdown/output-format.html">Also from Yihui &amp; Amber’s <code>blogdown</code> book, on .md versus .Rmd posts:</a></li>
-<li><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Amber’s instructions for adding a blog post</a></li>
+<li><em><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></em></li>
+<li><em><a href="https://bookdown.org/yihui/blogdown/output-format.html">Also from Yihui &amp; Amber’s <code>blogdown</code> book</a>:</em> on .md versus .Rmd posts</li>
+<li><em><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Amber’s instructions</a></em> for adding a blog post</li>
 </ul>
-<div id="new-markdown-posts" class="section level4">
-<h4>New markdown posts</h4>
+<div id="draft-posts" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Draft posts</h3>
+<p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you either remove the <code>draft</code> option or set it to false (since the default is true).</p>
+<ul>
+<li><em><a href="https://bookdown.org/yihui/blogdown/local-preview.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></em> Building a website for local preview</li>
+</ul>
+</div>
+<div id="new-markdown-posts" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> New markdown posts</h3>
 <ul>
 <li>To author a new plain <code>.md</code> post, either use this function in your console:</li>
 </ul>
@@ -144,8 +173,8 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <p>Title needs to be in quotes.</p>
 <p>Or alternatively, you can use the handy Addins dropdown menu in the</p>
 </div>
-<div id="new-rmarkdown-posts" class="section level4">
-<h4>New RMarkdown posts</h4>
+<div id="new-rmarkdown-posts" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> New RMarkdown posts</h3>
 <ul>
 <li>To author a new <code>.Rmd</code> post where you can use R chunks and have them rendered, either use this function in your console:</li>
 </ul>
@@ -156,10 +185,10 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <li><em><strong>Warning:</strong></em> at least using the academic theme, I get deployment errors if I (by pure habit at this point!) instead knit to html rather than using <code>blogdown::serve_site()</code>.</li>
 </ul>
 </div>
-</div>
 <div id="adding-images-to-a-post" class="section level3">
-<h3>Adding images to a post</h3>
+<h3><span class="header-section-number">7.2.4</span> Adding images to a post</h3>
 <p>If you want to include an image that is not a figure created from an R chunk, the <a href="https://github.com/rstudio/blogdown/issues/45">recommended method</a> is to (a) add the image to your <code>/static/img/</code> folder, then (b) reference the image using the relative file path as follows:</p>
 <pre class="r"><code>![my-image](/img/my-image.png)</code></pre>
+</div>
 </div>
 </div>
