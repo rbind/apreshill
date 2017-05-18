@@ -3,10 +3,10 @@
 date = "2017-04-11"
 
 # Project title.
-title = "Automated Measurement of Language Outcomes for Neurodevelopmental Disorders"
+title = "Automated Measurement of Language Outcomes for Neurodevelopmental Disorders - NIDCD R01"
 
 # Project summary to display on homepage.
-summary = "The goal of this project is to evaluate whether Natural Language Processing Methods can be translated into meaningful outcome measure for individuals with a range of neurodevelopmental disorders."
+summary = "Improving conversational use of spoken language is an important goal for many new interventions and treatments for children with neurodevelopmental disorders. However, progress in testing these treatments is limited by the lack of informative outcome measures to indicate whether or not an intervention or treatment is having the desired effect on a child's conversational use of language (i.e., discourse skills). The goal of this project is to evaluate whether Natural Language Processing methods can be translated into meaningful outcome measure for individuals with a range of neurodevelopmental disorders. This project was recently funded by the National Institute of Deafness and Other Communication Disorders."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = ""
@@ -16,7 +16,7 @@ image_preview = ""
 tags = ["natural-language-processing", "autism", "neurodevelopmental-disorders"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://projectreporter.nih.gov/project_info_description.cfm?aid=9307257&icde=34382094&ddparam=&ddvalue=&ddsub=&cr=1&csb=default&cs=ASC&pball="
+external_link = ""
 
 # Does the project detail page use math formatting?
 math = false
