@@ -116,4 +116,14 @@ a:focus {
   background-color: rgba(52, 60, 86, 1);
 }
 
+/*************************************************
+ *  Fonts (note: update link @ themes/hugo-academic/layouts/partials)
+ **************************************************/
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.65;
+}
   
