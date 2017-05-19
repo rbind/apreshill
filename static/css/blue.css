@@ -117,6 +117,22 @@ a:focus {
 }
 
 /*************************************************
+ *  Publications
+ **************************************************/
+
+.pub-icon {
+  color: rgb(52,60,86);
+  font-size: 0.81em;
+  padding-top: 6px;
+}
+
+.pub-list-item .pub-publication {
+  color: #ee5863;
+  font-size: 1rem;
+}
+
+
+/*************************************************
  *  Fonts (note: update link @ themes/hugo-academic/layouts/partials)
  **************************************************/
 
