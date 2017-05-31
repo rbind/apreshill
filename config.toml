@@ -24,7 +24,7 @@ defaultContentLanguageInSubdir = false
   organization = "Oregon Health & Science University (OHSU)"
   organization_url = "http://www.ohsu.edu/xd/"
   avatar = "aph-faculty-photo.jpg"
-  email = ""
+  email = "hillali@ohsu.edu"
   address = "Portland, Oregon, USA"
   office_hours = ""
   phone = ""
@@ -121,6 +121,11 @@ defaultContentLanguageInSubdir = false
   #   google-scholar, arxiv, orcid, researchgate, mendeley
   #
   #   Full list: https://jpswalsh.github.io/academicons/
+  
+  [[params.social]]
+    icon = "envelope"
+    icon_pack = "fa"
+    link = "mailto:hillali@ohsu.edu"
 
   [[params.social]]
     icon = "twitter"

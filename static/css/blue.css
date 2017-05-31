@@ -127,7 +127,7 @@ a:focus {
 }
 
 .pub-list-item .pub-publication {
-  color: #ee5863;
+  color: rgb(238, 88, 99);
   font-size: 1rem;
 }
 
@@ -137,9 +137,27 @@ a:focus {
  **************************************************/
 
 html {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
   color: rgba(0,0,0,0.8);
   line-height: 1.65;
+}
+
+/*************************************************
+ *  Alerts
+ **************************************************/
+
+
+.alert-note {
+  color: #fff;
+  background-color: rgb(127,140,180); 
+  border-color: #bce8f1;
+}
+
+.alert-warning {
+  color: #fff;
+  background-color: rgb(238, 88, 99); 
+  border-color: #ebccd1;
 }
   

@@ -96,7 +96,7 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #0095eb; 
+  color: #0095eb;
   text-decoration: none;
   transition: color 0.6s ease;
 }

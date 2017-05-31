@@ -26,12 +26,12 @@ view = 1
   tag = "*"
   
 [[filter]]
-  name = "Deep Learning"
-  tag = ".deep-learning"
+  name = "Natural Language Processing"
+  tag = ".natural-language-processing"
 
 [[filter]]
-  name = "Other"
-  tag = ".demo"
+  name = "Autism"
+  tag = ".autism"
 
 +++
 
