@@ -27,7 +27,7 @@ url = "http://pediatrics.aappublications.org/content/pediatrics/suppl/2015/10/28
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "pediatrics.png"
+image = ""
 caption = ""
 
 +++

@@ -23,7 +23,7 @@ url = "http://www.cepip.org/content/epidemiology-autism-spectrum-disorder"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "cepip-asd.jpg"
+image = ""
 caption = ""
 
 +++

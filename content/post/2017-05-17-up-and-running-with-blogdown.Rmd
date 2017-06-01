@@ -35,9 +35,9 @@ I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r
 
 # Caveats, disclaimers, etc.
 
-Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach.
+Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach. 
 
-I am a macOS user, and I use R, RStudio, Git (usually via [Gitlab](https://about.gitlab.com), occasionally via [Github](https://github.com)), and terminal regularly, so I'm assuming familiarity here with all of these. If that is not you, here are some places to get started:
+*My operating system and approach:* I am a macOS user, and I use R, RStudio, Git (usually via [GitLab](https://about.gitlab.com), occasionally via [GitHub](https://github.com)), and terminal regularly, so I'm assuming familiarity here with all of these. If that is not you, here are some places to get started:
 
 * For Git: [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al.
 * For RStudio: [DataCamp's Working with the RStudio IDE (free)](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1) by Garrett Grolemund
@@ -47,32 +47,16 @@ I also have [Xcode](https://developer.apple.com/xcode/) and [Homebrew](https://b
 
 * [How to install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X ](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
-Finally, wherever offered, I followed Yihui and Amber's recommendations. For example, they stated: ["Considering the cost and friendliness to beginners, we currently recommend Netlify."](https://bookdown.org/yihui/blogdown/deployment.html) Sold. They also stated: ["If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain `*.rbind.io` offered by RStudio, Inc."](https://bookdown.org/yihui/blogdown/netlify.html). Done. I did not want to learn more about a lot of things. I have a new baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious.
+Wherever offered, I followed Yihui and Amber's recommendations. For example:
 
-# In RStudio 
+* ["Considering the cost and friendliness to beginners, we currently recommend Netlify."](https://bookdown.org/yihui/blogdown/deployment.html) Sold. 
+* ["If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain `*.rbind.io` offered by RStudio, Inc."](https://bookdown.org/yihui/blogdown/netlify.html). Done. 
 
-
-* Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
-
-```{r}
-if (!requireNamespace("devtools")) install.packages("devtools")
-devtools::install_github("rstudio/blogdown")
-```
-
-* Still in the RStudio console, load the `blogdown` package to run the `install_hugo` function:
-
-```{r}
-blogdown::install_hugo()
-# or
-library(blogdown)
-install_hugo()
-```
-
-{{% alert note %}}
-Your working directory does not matter for either of these steps, so don't worry about where R thinks you are.
-{{% /alert %}}
+I did not want to learn more about a lot of things. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious!
 
 # In Github
+
+![](/img/blogdown-signpost-1.png)
 
 * Go online to your [Github](https://github.com) account and create a new repository. A few things you need to know now:
     - If you are going to use [Netlify](https://www.netlify.com) to host the site, rather than [Github Pages](https://pages.github.com), you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories).
@@ -83,6 +67,8 @@ Your working directory does not matter for either of these steps, so don't worry
 
     
 # In terminal
+
+![](/img/blogdown-signpost-2.png)
 
 Or your alternative command line tool for a Windows machine.
     
@@ -102,7 +88,32 @@ Checking connectivity... done.
 ORPA473:r-projects hillali$ 
 ```
 
-# Back in RStudio
+# In RStudio 
+
+![](/img/blogdown-signpost-3.png)
+
+
+* Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
+
+```{r}
+if (!requireNamespace("devtools")) install.packages("devtools")
+devtools::install_github("rstudio/blogdown")
+```
+
+* Still in the RStudio console, load the `blogdown` package to run the `install_hugo` function:
+
+```{r}
+blogdown::install_hugo()
+# or
+library(blogdown)
+install_hugo()
+```
+
+{{% alert note %}}
+Your working directory does not matter for either of the above steps, so don't worry about where R thinks you are.
+{{% /alert %}}
+
+
 
 _NB_: this is where my instructions differ from Ed's- he states that `blogdown` won't create a website in your root folder because the `README.md` file is already there. I didn't find that to be the case- I tested this with a new site as well. If one way doesn't work for you, try the other!
 
@@ -125,6 +136,8 @@ public/ # if using Netlify
 
 
 # Doing the fun stuff in RStudio
+
+![](/img/blogdown-signpost-4.png)
 
 ## Build your site
 
@@ -247,11 +260,16 @@ If you want to include an image that is not a figure created from an R chunk, th
 
 # Deploy in Netlify
 
-Push to github, then go to Netlify. I opted to log in using my Github account. Select new site from Git, then choose "Continuous Deployment: Github". From there, Netlify will show you all of your Github repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves
+![](/img/blogdown-signpost-5.png)
+
+* When you are ready to deploy, push to GitHub, then go to [Netlify](https://www.netlify.com). 
+* Click on the Sign Up button; I opted to sign up using my existing GitHub account. 
+* Log in, and select: New site from Git >> Continuous Deployment: GitHub.
+* From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves
 
 From [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives):
 
-"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice." 
+*"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."*
 
 I opted for the former, and specified `hugo_0.19`. However, you can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, which means that I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
 
@@ -260,3 +278,6 @@ $ hugo version
 Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00
 ```
 
+Here is a screenshot of my final step:
+
+![](/img/netlify-build-settings.png)

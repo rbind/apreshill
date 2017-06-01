@@ -20,22 +20,21 @@ output:
 <ul>
 <li><a href="#read-up-on-blogdown"><span class="toc-section-number">1</span> Read up on blogdown</a></li>
 <li><a href="#caveats-disclaimers-etc."><span class="toc-section-number">2</span> Caveats, disclaimers, etc.</a></li>
-<li><a href="#in-rstudio"><span class="toc-section-number">3</span> In RStudio</a></li>
-<li><a href="#in-github"><span class="toc-section-number">4</span> In Github</a></li>
-<li><a href="#in-terminal"><span class="toc-section-number">5</span> In terminal</a></li>
-<li><a href="#back-in-rstudio"><span class="toc-section-number">6</span> Back in RStudio</a></li>
-<li><a href="#doing-the-fun-stuff-in-rstudio"><span class="toc-section-number">7</span> Doing the fun stuff in RStudio</a><ul>
-<li><a href="#build-your-site"><span class="toc-section-number">7.1</span> Build your site</a></li>
-<li><a href="#add-ins"><span class="toc-section-number">7.2</span> Add-ins</a></li>
-<li><a href="#edit-your-configurations"><span class="toc-section-number">7.3</span> Edit your configurations</a></li>
-<li><a href="#posting"><span class="toc-section-number">7.4</span> Posting</a><ul>
-<li><a href="#draft-posts"><span class="toc-section-number">7.4.1</span> Draft posts</a></li>
-<li><a href="#new-markdown-posts"><span class="toc-section-number">7.4.2</span> New markdown posts</a></li>
-<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">7.4.3</span> New RMarkdown posts</a></li>
-<li><a href="#adding-images-to-a-post"><span class="toc-section-number">7.4.4</span> Adding images to a post</a></li>
+<li><a href="#in-github"><span class="toc-section-number">3</span> In Github</a></li>
+<li><a href="#in-terminal"><span class="toc-section-number">4</span> In terminal</a></li>
+<li><a href="#in-rstudio"><span class="toc-section-number">5</span> In RStudio</a></li>
+<li><a href="#doing-the-fun-stuff-in-rstudio"><span class="toc-section-number">6</span> Doing the fun stuff in RStudio</a><ul>
+<li><a href="#build-your-site"><span class="toc-section-number">6.1</span> Build your site</a></li>
+<li><a href="#add-ins"><span class="toc-section-number">6.2</span> Add-ins</a></li>
+<li><a href="#edit-your-configurations"><span class="toc-section-number">6.3</span> Edit your configurations</a></li>
+<li><a href="#posting"><span class="toc-section-number">6.4</span> Posting</a><ul>
+<li><a href="#draft-posts"><span class="toc-section-number">6.4.1</span> Draft posts</a></li>
+<li><a href="#new-markdown-posts"><span class="toc-section-number">6.4.2</span> New markdown posts</a></li>
+<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">6.4.3</span> New RMarkdown posts</a></li>
+<li><a href="#adding-images-to-a-post"><span class="toc-section-number">6.4.4</span> Adding images to a post</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#deploy-in-netlify"><span class="toc-section-number">8</span> Deploy in Netlify</a></li>
+<li><a href="#deploy-in-netlify"><span class="toc-section-number">7</span> Deploy in Netlify</a></li>
 </ul>
 </div>
 
@@ -55,7 +54,7 @@ output:
 <div id="caveats-disclaimers-etc." class="section level1">
 <h1><span class="header-section-number">2</span> Caveats, disclaimers, etc.</h1>
 <p>Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I’m passing along what ended up working for me. Everyone’s mileage may vary, though, depending on your operating system and your approach.</p>
-<p>I am a macOS user, and I use R, RStudio, Git (usually via <a href="https://about.gitlab.com">Gitlab</a>, occasionally via <a href="https://github.com">Github</a>), and terminal regularly, so I’m assuming familiarity here with all of these. If that is not you, here are some places to get started:</p>
+<p><em>My operating system and approach:</em> I am a macOS user, and I use R, RStudio, Git (usually via <a href="https://about.gitlab.com">GitLab</a>, occasionally via <a href="https://github.com">GitHub</a>), and terminal regularly, so I’m assuming familiarity here with all of these. If that is not you, here are some places to get started:</p>
 <ul>
 <li>For Git: <a href="http://happygitwithr.com">Happy Git with R</a> by Jenny Bryan et al.</li>
 <li>For RStudio: <a href="https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1">DataCamp’s Working with the RStudio IDE (free)</a> by Garrett Grolemund</li>
@@ -65,26 +64,19 @@ output:
 <ul>
 <li><a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">How to install Xcode, Homebrew, Git, RVM, Ruby &amp; Rails on Mac OS X</a></li>
 </ul>
-<p>Finally, wherever offered, I followed Yihui and Amber’s recommendations. For example, they stated: <a href="https://bookdown.org/yihui/blogdown/deployment.html">“Considering the cost and friendliness to beginners, we currently recommend Netlify.”</a> Sold. They also stated: <a href="https://bookdown.org/yihui/blogdown/netlify.html">“If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain <code>*.rbind.io</code> offered by RStudio, Inc.”</a>. Done. I did not want to learn more about a lot of things. I have a new baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious.</p>
-</div>
-<div id="in-rstudio" class="section level1">
-<h1><span class="header-section-number">3</span> In RStudio</h1>
+<p>Wherever offered, I followed Yihui and Amber’s recommendations. For example:</p>
 <ul>
-<li>Install <code>blogdown</code> from your RStudio console. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
+<li><a href="https://bookdown.org/yihui/blogdown/deployment.html">“Considering the cost and friendliness to beginners, we currently recommend Netlify.”</a> Sold.</li>
+<li><a href="https://bookdown.org/yihui/blogdown/netlify.html">“If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain <code>*.rbind.io</code> offered by RStudio, Inc.”</a>. Done.</li>
 </ul>
-<pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
-devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
-<ul>
-<li>Still in the RStudio console, load the <code>blogdown</code> package to run the <code>install_hugo</code> function:</li>
-</ul>
-<pre class="r"><code>blogdown::install_hugo()
-# or
-library(blogdown)
-install_hugo()</code></pre>
-<p>{{% alert note %}} Your working directory does not matter for either of these steps, so don’t worry about where R thinks you are. {{% /alert %}}</p>
+<p>I did not want to learn more about a lot of things. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious!</p>
 </div>
 <div id="in-github" class="section level1">
-<h1><span class="header-section-number">4</span> In Github</h1>
+<h1><span class="header-section-number">3</span> In Github</h1>
+<div class="figure">
+<img src="/img/blogdown-signpost-1.png" />
+
+</div>
 <ul>
 <li>Go online to your <a href="https://github.com">Github</a> account and create a new repository. A few things you need to know now:
 <ul>
@@ -98,7 +90,11 @@ install_hugo()</code></pre>
 </div>
 </div>
 <div id="in-terminal" class="section level1">
-<h1><span class="header-section-number">5</span> In terminal</h1>
+<h1><span class="header-section-number">4</span> In terminal</h1>
+<div class="figure">
+<img src="/img/blogdown-signpost-2.png" />
+
+</div>
 <p>Or your alternative command line tool for a Windows machine.</p>
 <ul>
 <li>Use <code>cd</code> to navigate into the directory where you want your repo to be, and then type: <code>git clone https://github.com/apreshill/apreshill.git</code></li>
@@ -113,8 +109,25 @@ Unpacking objects: 100% (3/3), done.
 Checking connectivity... done.
 ORPA473:r-projects hillali$ </code></pre>
 </div>
-<div id="back-in-rstudio" class="section level1">
-<h1><span class="header-section-number">6</span> Back in RStudio</h1>
+<div id="in-rstudio" class="section level1">
+<h1><span class="header-section-number">5</span> In RStudio</h1>
+<div class="figure">
+<img src="/img/blogdown-signpost-3.png" />
+
+</div>
+<ul>
+<li>Install <code>blogdown</code> from your RStudio console. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
+</ul>
+<pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
+<ul>
+<li>Still in the RStudio console, load the <code>blogdown</code> package to run the <code>install_hugo</code> function:</li>
+</ul>
+<pre class="r"><code>blogdown::install_hugo()
+# or
+library(blogdown)
+install_hugo()</code></pre>
+<p>{{% alert note %}} Your working directory does not matter for either of the above steps, so don’t worry about where R thinks you are. {{% /alert %}}</p>
 <p><em>NB</em>: this is where my instructions differ from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other!</p>
 <ul>
 <li>Use your menu buttons on top to select File –&gt; New Project –&gt; Existing directory, then I pointed RStudio to</li>
@@ -135,9 +148,13 @@ blogdown
 public/ # if using Netlify</code></pre>
 </div>
 <div id="doing-the-fun-stuff-in-rstudio" class="section level1">
-<h1><span class="header-section-number">7</span> Doing the fun stuff in RStudio</h1>
+<h1><span class="header-section-number">6</span> Doing the fun stuff in RStudio</h1>
+<div class="figure">
+<img src="/img/blogdown-signpost-4.png" />
+
+</div>
 <div id="build-your-site" class="section level2">
-<h2><span class="header-section-number">7.1</span> Build your site</h2>
+<h2><span class="header-section-number">6.1</span> Build your site</h2>
 <ul>
 <li>Now you can finally build your site using the <code>blogdown::new_site()</code> function. But first you should think about themes, and do one of 2 things…</li>
 </ul>
@@ -155,11 +172,11 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <p>I recommend setting <code>theme_example = TRUE</code>- some themes won’t provide an example site, but the academic theme did and I found it helpful to see. The default for <code>update_config</code> is <code>TRUE</code>.</p>
 </div>
 <div id="add-ins" class="section level2">
-<h2><span class="header-section-number">7.2</span> Add-ins</h2>
+<h2><span class="header-section-number">6.2</span> Add-ins</h2>
 <p><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html" class="uri">https://bookdown.org/yihui/blogdown/rstudio-ide.html</a></p>
 </div>
 <div id="edit-your-configurations" class="section level2">
-<h2><span class="header-section-number">7.3</span> Edit your configurations</h2>
+<h2><span class="header-section-number">6.3</span> Edit your configurations</h2>
 <p>Relevant reading:</p>
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/configuration.html"><code>blogdown</code> book chapter on configuration</a></li>
@@ -171,7 +188,7 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <p>{{% alert warning %}} Make sure that the <code>baseurl =</code> listed has a <code>/</code> at the end! {{% /alert %}}</p>
 </div>
 <div id="posting" class="section level2">
-<h2><span class="header-section-number">7.4</span> Posting</h2>
+<h2><span class="header-section-number">6.4</span> Posting</h2>
 <p>This surprisingly was harder than you would think. Note: in the academic theme, these are called posts. Here are some relevant links:</p>
 <ul>
 <li><em><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html"><code>blogdown</code> book chapter on RStudio IDE</a></em></li>
@@ -179,14 +196,14 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <li><em><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Additional detail from Amber</a></em> on adding a blog post</li>
 </ul>
 <div id="draft-posts" class="section level3">
-<h3><span class="header-section-number">7.4.1</span> Draft posts</h3>
+<h3><span class="header-section-number">6.4.1</span> Draft posts</h3>
 <p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you either remove the <code>draft</code> option or set it to false (since the default is true).</p>
 <ul>
 <li><em><a href="https://bookdown.org/yihui/blogdown/local-preview.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></em> Building a website for local preview</li>
 </ul>
 </div>
 <div id="new-markdown-posts" class="section level3">
-<h3><span class="header-section-number">7.4.2</span> New markdown posts</h3>
+<h3><span class="header-section-number">6.4.2</span> New markdown posts</h3>
 <ul>
 <li>To author a new plain <code>.md</code> post, either use this function in your console:</li>
 </ul>
@@ -202,7 +219,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <p>Or alternatively, you can use the handy Addins dropdown menu in the</p>
 </div>
 <div id="new-rmarkdown-posts" class="section level3">
-<h3><span class="header-section-number">7.4.3</span> New RMarkdown posts</h3>
+<h3><span class="header-section-number">6.4.3</span> New RMarkdown posts</h3>
 <p>{{% alert warning %}} The most important thing to remember is to <strong>not</strong> knit your .Rmd posts. Use <code>blogdown::serve_site</code> first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html. {{% /alert %}}</p>
 <ul>
 <li>To author a new <code>.Rmd</code> post where you can use R chunks and have them rendered, either use this function in your console:</li>
@@ -214,7 +231,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 </ul>
 </div>
 <div id="adding-images-to-a-post" class="section level3">
-<h3><span class="header-section-number">7.4.4</span> Adding images to a post</h3>
+<h3><span class="header-section-number">6.4.4</span> Adding images to a post</h3>
 <p>If you want to include an image that is not a figure created from an R chunk, the <a href="https://github.com/rstudio/blogdown/issues/45">recommended method</a> is to:</p>
 <ol style="list-style-type: decimal">
 <li>Add the image to your <code>/static/img/</code> folder, then</li>
@@ -225,11 +242,25 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 </div>
 </div>
 <div id="deploy-in-netlify" class="section level1">
-<h1><span class="header-section-number">8</span> Deploy in Netlify</h1>
-<p>Push to github, then go to Netlify. I opted to log in using my Github account. Select new site from Git, then choose “Continuous Deployment: Github”. From there, Netlify will show you all of your Github repositories. You’ll pick the repo you’ve been working from with <code>blogdown</code>, then you’ll configure your build. This involves</p>
+<h1><span class="header-section-number">7</span> Deploy in Netlify</h1>
+<div class="figure">
+<img src="/img/blogdown-signpost-5.png" />
+
+</div>
+<ul>
+<li>When you are ready to deploy, push to GitHub, then go to <a href="https://www.netlify.com">Netlify</a>.</li>
+<li>Click on the Sign Up button; I opted to sign up using my existing GitHub account.</li>
+<li>Log in, and select: New site from Git &gt;&gt; Continuous Deployment: GitHub.</li>
+<li>From there, Netlify will allow you to select from your existing GitHub repositories. You’ll pick the repo you’ve been working from with <code>blogdown</code>, then you’ll configure your build. This involves</li>
+</ul>
 <p>From <a href="https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives">Netlify</a>:</p>
-<p>“For Hugo hosting, <code>hugo</code> will build and deploy with the version 0.17 of <code>hugo</code>. You can specify a specific <code>hugo</code> release like this: <code>hugo_0.15</code>. Currently <code>0.13</code>, <code>0.14</code>, <code>0.15</code>, <code>0.16</code>, <code>0.17</code>, <code>0.18</code> and <code>0.19</code> are supported. For version <code>0.20</code> and above, you’ll need to create a Build environment variable called <code>HUGO_VERSION</code> and set it to the version of your choice.”</p>
+<p><em>“For Hugo hosting, <code>hugo</code> will build and deploy with the version 0.17 of <code>hugo</code>. You can specify a specific <code>hugo</code> release like this: <code>hugo_0.15</code>. Currently <code>0.13</code>, <code>0.14</code>, <code>0.15</code>, <code>0.16</code>, <code>0.17</code>, <code>0.18</code> and <code>0.19</code> are supported. For version <code>0.20</code> and above, you’ll need to create a Build environment variable called <code>HUGO_VERSION</code> and set it to the version of your choice.”</em></p>
 <p>I opted for the former, and specified <code>hugo_0.19</code>. However, you can check your <code>hugo</code> version in terminal using the command <a href="https://gohugo.io/overview/quickstart/"><code>hugo version</code></a>. This is what my output looked like, which means that I could run version <code>0.20</code> if I wanted to through Netlify, but I went with <code>0.19</code> and it works just fine.</p>
 <pre class="r"><code>$ hugo version
 Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00</code></pre>
+<p>Here is a screenshot of my final step:</p>
+<div class="figure">
+<img src="/img/netlify-build-settings.png" />
+
+</div>
 </div>

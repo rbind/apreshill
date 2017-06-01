@@ -23,7 +23,7 @@ url = "http://onlinelibrary.wiley.com/doi/10.1002/aur.1578/abstract"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "autism-research.jpg"
+image = ""
 caption = ""
 
 +++
