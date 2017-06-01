@@ -56,19 +56,19 @@ I did not want to learn more about a lot of things. I have a 4-month-old baby so
 
 # In Github
 
-![](/img/blogdown-signpost-1.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-1.png)
 
 * Go online to your [Github](https://github.com) account and create a new repository. A few things you need to know now:
     - If you are going to use [Netlify](https://www.netlify.com) to host the site, rather than [Github Pages](https://pages.github.com), you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories).
     - If you want to host your site as a [Github Page](https://pages.github.com), you should name your repository `yourgithubusername.github.io`
 
-![Figure: Creating a new repository in Github](/img/github-new-repo.png)
+![Figure: Creating a new repository in Github](/img/posts/2017-05-17-up-and-running-with-blogdown/github-new-repo.png)
 
 
     
 # In terminal
 
-![](/img/blogdown-signpost-2.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-2.png)
 
 Or your alternative command line tool for a Windows machine.
     
@@ -90,7 +90,7 @@ ORPA473:r-projects hillali$
 
 # In RStudio 
 
-![](/img/blogdown-signpost-3.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-3.png)
 
 
 * Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
@@ -119,7 +119,7 @@ _NB_: this is where my instructions differ from Ed's- he states that `blogdown` 
 
 * Use your menu buttons on top to select File --> New Project --> Existing directory, then I pointed RStudio to 
 
-![Figure: Creating a new project in an existing directory in RStudio](/img/r-project-existing-directory.png)
+![Figure: Creating a new project in an existing directory in RStudio](/img/posts/2017-05-17-up-and-running-with-blogdown/r-project-existing-directory.png)
 
 * Now, if you are using git for version control, edit your `*gitignore` file. I opened mine from RStudio but you can use any text editor to open and edit this file. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public/` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
 
@@ -137,7 +137,7 @@ public/ # if using Netlify
 
 # Doing the fun stuff in RStudio
 
-![](/img/blogdown-signpost-4.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-4.png)
 
 ## Build your site
 
@@ -260,7 +260,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 
 # Deploy in Netlify
 
-![](/img/blogdown-signpost-5.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-5.png)
 
 * When you are ready to deploy, push to GitHub, then go to [Netlify](https://www.netlify.com). 
 * Click on the Sign Up button; I opted to sign up using my existing GitHub account. 
@@ -280,4 +280,4 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 
 Here is a screenshot of my final step:
 
-![](/img/netlify-build-settings.png)
+![](/img/posts/2017-05-17-up-and-running-with-blogdown/netlify-build-settings.png)
