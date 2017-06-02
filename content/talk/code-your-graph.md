@@ -14,8 +14,11 @@ url_pdf = ""
 url_slides = ""
 url_video = ""
 [[url_custom]]
-    name = "Link"
-    url = "link/jamboree_heart_ggplot.html"
+    name = "html"
+    url = "html/jamboree_heart_ggplot.html"
+[[url_custom]]
+    name = "Rmd"
+    url = "https://github.com/apreshill/data-vis-jamboree-ggplot/blob/master/jamboree_heart_ggplot.Rmd"
 [[url_custom]]
     name = "GitHub"
     url = "https://github.com/apreshill/data-vis-jamboree-ggplot"
