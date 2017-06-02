@@ -1,14 +1,13 @@
 ---
 title: Up and running with blogdown
 author: Alison Presmanes Hill
-date: '2017-05-17'
+date: '2017-06-01'
 slug: up-and-running-with-blogdown
 categories:
   - R
 tags:
   - blogdown
 summary: A quick guide to getting up and running with blogdown, Github, and Netlify
-draft: TRUE
 output:
   blogdown::html_page:
     toc: true
@@ -20,21 +19,24 @@ output:
 <ul>
 <li><a href="#read-up-on-blogdown"><span class="toc-section-number">1</span> Read up on blogdown</a></li>
 <li><a href="#caveats-disclaimers-etc."><span class="toc-section-number">2</span> Caveats, disclaimers, etc.</a></li>
-<li><a href="#in-github"><span class="toc-section-number">3</span> In Github</a></li>
+<li><a href="#in-github"><span class="toc-section-number">3</span> In GitHub</a></li>
 <li><a href="#in-terminal"><span class="toc-section-number">4</span> In terminal</a></li>
 <li><a href="#in-rstudio"><span class="toc-section-number">5</span> In RStudio</a></li>
-<li><a href="#doing-the-fun-stuff-in-rstudio"><span class="toc-section-number">6</span> Doing the fun stuff in RStudio</a><ul>
-<li><a href="#build-your-site"><span class="toc-section-number">6.1</span> Build your site</a></li>
-<li><a href="#add-ins"><span class="toc-section-number">6.2</span> Add-ins</a></li>
+<li><a href="#build-your-site-in-rstudio"><span class="toc-section-number">6</span> Build your site in RStudio</a><ul>
+<li><a href="#picking-a-theme"><span class="toc-section-number">6.1</span> Picking a theme</a></li>
+<li><a href="#update-project-options"><span class="toc-section-number">6.2</span> Update project options</a></li>
 <li><a href="#edit-your-configurations"><span class="toc-section-number">6.3</span> Edit your configurations</a></li>
-<li><a href="#posting"><span class="toc-section-number">6.4</span> Posting</a><ul>
-<li><a href="#draft-posts"><span class="toc-section-number">6.4.1</span> Draft posts</a></li>
-<li><a href="#new-markdown-posts"><span class="toc-section-number">6.4.2</span> New markdown posts</a></li>
-<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">6.4.3</span> New RMarkdown posts</a></li>
-<li><a href="#adding-images-to-a-post"><span class="toc-section-number">6.4.4</span> Adding images to a post</a></li>
+<li><a href="#addins-workflow"><span class="toc-section-number">6.4</span> Addins &amp; workflow</a></li>
+<li><a href="#posting"><span class="toc-section-number">6.5</span> Posting</a><ul>
+<li><a href="#draft-posts"><span class="toc-section-number">6.5.1</span> Draft posts</a></li>
+<li><a href="#new-markdown-posts"><span class="toc-section-number">6.5.2</span> New markdown posts</a></li>
+<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">6.5.3</span> New RMarkdown posts</a></li>
+<li><a href="#adding-images-to-a-post"><span class="toc-section-number">6.5.4</span> Adding images to a post</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#deploy-in-netlify"><span class="toc-section-number">7</span> Deploy in Netlify</a></li>
+<li><a href="#custom-css"><span class="toc-section-number">8</span> Custom CSS</a></li>
+<li><a href="#domain-names"><span class="toc-section-number">9</span> Domain names</a></li>
 </ul>
 </div>
 
@@ -42,9 +44,9 @@ output:
 <h1><span class="header-section-number">1</span> Read up on blogdown</h1>
 <p>Before you start, I recommend reading the following:</p>
 <ul>
-<li><em><a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code>: Creating Websites with R Markdown</a></em> by Yihui Xie and Amber Thomas</li>
-<li><em><a href="https://proquestionasker.github.io/blog/Making_Site/">Making a Website Using <code>blogdown</code>, Hugo, and GitHub pages</a></em> by Amber Thomas</li>
-<li><em><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">Getting Started with <code>blogdown</code></a></em> by M. Edward (Ed) Borasky</li>
+<li><a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code>: Creating Websites with R Markdown</a> by Yihui Xie and Amber Thomas</li>
+<li><a href="https://proquestionasker.github.io/blog/Making_Site/">Making a Website Using <code>blogdown</code>, Hugo, and GitHub pages</a> also by Amber Thomas</li>
+<li><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">Getting Started with <code>blogdown</code></a> by M. Edward (Ed) Borasky</li>
 </ul>
 <p>I also found this comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on Github</a> to be helpful:</p>
 <ul>
@@ -53,8 +55,7 @@ output:
 </div>
 <div id="caveats-disclaimers-etc." class="section level1">
 <h1><span class="header-section-number">2</span> Caveats, disclaimers, etc.</h1>
-<p>Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I’m passing along what ended up working for me. Everyone’s mileage may vary, though, depending on your operating system and your approach.</p>
-<p><em>My operating system and approach:</em> I am a macOS user, and I use R, RStudio, Git (usually via <a href="https://about.gitlab.com">GitLab</a>, occasionally via <a href="https://github.com">GitHub</a>), and terminal regularly, so I’m assuming familiarity here with all of these. If that is not you, here are some places to get started:</p>
+<p>Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I’m passing along what ended up working for me. Everyone’s mileage may vary, though, depending on your operating system and your approach. About me: I am a macOS user, and I use R, RStudio, Git (usually via <a href="https://about.gitlab.com">GitLab</a>, occasionally via <a href="https://github.com">GitHub</a>), and terminal regularly, so I’m assuming familiarity here with all of these. If that is not you, here are some places to get started:</p>
 <ul>
 <li>For Git: <a href="http://happygitwithr.com">Happy Git with R</a> by Jenny Bryan et al.</li>
 <li>For RStudio: <a href="https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1">DataCamp’s Working with the RStudio IDE (free)</a> by Garrett Grolemund</li>
@@ -64,30 +65,33 @@ output:
 <ul>
 <li><a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">How to install Xcode, Homebrew, Git, RVM, Ruby &amp; Rails on Mac OS X</a></li>
 </ul>
-<p>Wherever offered, I followed Yihui and Amber’s recommendations. For example:</p>
+<p>Finally, I did not want to learn more about a lot of things. For instance, the nitty gritty of static site generators. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:</p>
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/deployment.html">“Considering the cost and friendliness to beginners, we currently recommend Netlify.”</a> Sold.</li>
 <li><a href="https://bookdown.org/yihui/blogdown/netlify.html">“If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain <code>*.rbind.io</code> offered by RStudio, Inc.”</a>. Done.</li>
 </ul>
-<p>I did not want to learn more about a lot of things. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious!</p>
 </div>
 <div id="in-github" class="section level1">
-<h1><span class="header-section-number">3</span> In Github</h1>
+<h1><span class="header-section-number">3</span> In GitHub</h1>
 <div class="figure">
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-1.png" />
 
 </div>
+<ol style="list-style-type: decimal">
+<li><p>Go online to your <a href="https://github.com">GitHub</a> account, and create a new repository (check to initialize with a README but don’t add a gitignore- this will be taken care of later). For naming your repo, consider your future deployment plan:</p>
 <ul>
-<li>Go online to your <a href="https://github.com">Github</a> account and create a new repository. A few things you need to know now:
-<ul>
-<li>If you are going to use <a href="https://www.netlify.com">Netlify</a> to host the site, rather than <a href="https://pages.github.com">Github Pages</a>, you can name this repository anything you want! You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>.</li>
-<li>If you want to host your site as a <a href="https://pages.github.com">Github Page</a>, you should name your repository <code>yourgithubusername.github.io</code></li>
+<li>If you are going to use <a href="https://www.netlify.com">Netlify</a> to host the site, rather than <a href="https://pages.github.com">GitHub Pages</a>, you can name this repository anything you want! You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>. I called mine <code>apreshill</code> since that is also by <a href="https://github.com/apreshill">GitHub username</a> and my <a href="https://twitter.com/apreshill">twitter handle</a>.</li>
+<li>If you want to host your site as a <a href="https://pages.github.com">GitHub Page</a>, you should name your repository <code>yourgithubusername.github.io</code> (so mine would have been <code>apreshill.github.io</code>). If you are going this route, I suggest you follow <a href="https://proquestionasker.github.io/blog/Making_Site/">Amber’s instructions</a> instead of mine!</li>
 </ul></li>
-</ul>
+</ol>
 <div class="figure">
-<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/github-new-repo.png" alt="Figure: Creating a new repository in Github" />
-<p class="caption">Figure: Creating a new repository in Github</p>
+<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/github-new-repo.png" alt="Screenshot above: Creating a new repository in GitHub" />
+<p class="caption">Screenshot above: Creating a new repository in GitHub</p>
 </div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Go to the main page of your new repository, and under the repository name, click the green <strong>Clone or download</strong> button.</p></li>
+<li><p>In the <strong>Clone with HTTPs</strong> section, click on the clipboard icon to copy the clone URL for your new repository. You’ll paste this text into terminal in the next section.</p></li>
+</ol>
 </div>
 <div id="in-terminal" class="section level1">
 <h1><span class="header-section-number">4</span> In terminal</h1>
@@ -95,19 +99,23 @@ output:
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-2.png" />
 
 </div>
-<p>Or your alternative command line tool for a Windows machine.</p>
-<ul>
-<li>Use <code>cd</code> to navigate into the directory where you want your repo to be, and then type: <code>git clone https://github.com/apreshill/apreshill.git</code></li>
-</ul>
-<p>This is what subsequently printed in my terminal window:</p>
-<pre class="r"><code>ORPA473:r-projects hillali$ git clone https://github.com/apreshill/apreshill.git
-Cloning into &#39;apreshill&#39;...
+<p>Now you will <a href="https://help.github.com/articles/cloning-a-repository/">clone your remote repository</a> and create a local copy on your computer so you can sync between the two locations (using terminal or your alternative command line tool for a Windows machine).</p>
+<ol style="list-style-type: decimal">
+<li><p>Use <code>cd</code> to navigate into the directory where you want your repo to be</p></li>
+<li><p>Once there, type: <code>git clone [paste]</code>. So my command looked like this:</p></li>
+</ol>
+<pre class="r"><code>git clone https://github.com/apreshill/apreshill.git</code></pre>
+<p>And this is what printed to my terminal window:</p>
+<pre class="r"><code>Cloning into &#39;apreshill&#39;...
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 Checking connectivity... done.
 ORPA473:r-projects hillali$ </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Close terminal, you are done in there.</li>
+</ol>
 </div>
 <div id="in-rstudio" class="section level1">
 <h1><span class="header-section-number">5</span> In RStudio</h1>
@@ -115,30 +123,31 @@ ORPA473:r-projects hillali$ </code></pre>
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-3.png" />
 
 </div>
-<ul>
+<p>Now you need to download Hugo, and you should use <code>blogdown</code>’s helper function to install it via R, so you’ll first install the <code>blogdown</code> package.</p>
+<p>{{% alert note %}} These installations are just like installing packages in R - your working directory does not matter for either of these two steps, so don’t worry about where R thinks you are. {{% /alert %}}</p>
+<ol style="list-style-type: decimal">
 <li>Install <code>blogdown</code> from your RStudio console. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
-</ul>
+</ol>
 <pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
 devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
-<ul>
+<ol start="2" style="list-style-type: decimal">
 <li>Still in the RStudio console, load the <code>blogdown</code> package to run the <code>install_hugo</code> function:</li>
-</ul>
+</ol>
 <pre class="r"><code>blogdown::install_hugo()
 # or
 library(blogdown)
 install_hugo()</code></pre>
-<p>{{% alert note %}} Your working directory does not matter for either of the above steps, so don’t worry about where R thinks you are. {{% /alert %}}</p>
-<p><em>NB</em>: this is where my instructions differ from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other!</p>
-<ul>
-<li>Use your menu buttons on top to select File –&gt; New Project –&gt; Existing directory, then I pointed RStudio to</li>
-</ul>
+<p>{{% alert note %}} This is where my instructions diverge from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other! {{% /alert %}}</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Use the top menu buttons in RStudio to select <code>File -&gt; New Project -&gt; Existing Directory</code>, then browse to the directory on your computer where your GitHub repo is and click on the <strong>Create Project</strong> button.</li>
+</ol>
 <div class="figure">
-<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/r-project-existing-directory.png" alt="Figure: Creating a new project in an existing directory in RStudio" />
-<p class="caption">Figure: Creating a new project in an existing directory in RStudio</p>
+<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/r-project-existing-directory.png" alt="Screenshot above: Creating a new project in an existing directory in RStudio" />
+<p class="caption">Screenshot above: Creating a new project in an existing directory in RStudio</p>
 </div>
-<ul>
-<li>Now, if you are using git for version control, edit your <code>*gitignore</code> file. I opened mine from RStudio but you can use any text editor to open and edit this file. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the <code>public/</code> line (<a href="https://bookdown.org/yihui/blogdown/version-control.html">read about here</a>.)</li>
-</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Now, if you are using git for version control, edit your <code>*gitignore</code> file. Make sure you are in your project in RStudio. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the <code>public/</code> line (<a href="https://bookdown.org/yihui/blogdown/version-control.html">read about here</a>.)</li>
+</ol>
 <pre class="r"><code>.Rproj.user
 .Rhistory
 .RData
@@ -147,33 +156,39 @@ blogdown
 .DS_Store # if a windows user, Thumbs.db instead
 public/ # if using Netlify</code></pre>
 </div>
-<div id="doing-the-fun-stuff-in-rstudio" class="section level1">
-<h1><span class="header-section-number">6</span> Doing the fun stuff in RStudio</h1>
+<div id="build-your-site-in-rstudio" class="section level1">
+<h1><span class="header-section-number">6</span> Build your site in RStudio</h1>
 <div class="figure">
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-4.png" />
 
 </div>
-<div id="build-your-site" class="section level2">
-<h2><span class="header-section-number">6.1</span> Build your site</h2>
-<ul>
-<li>Now you can finally build your site using the <code>blogdown::new_site()</code> function. But first you should think about themes, and do one of 2 things…</li>
-</ul>
+<p>Now you can finally build your site using the <code>blogdown::new_site()</code> function. But <strong>first</strong> you should at least think about themes…</p>
+<div id="picking-a-theme" class="section level2">
+<h2><span class="header-section-number">6.1</span> Picking a theme</h2>
+<p>Listen to Yihui and Amber- they offer <a href="https://bookdown.org/yihui/blogdown/other-themes.html">“to save you some time, we list a few themes below that match our taste…”</a>. I went with <a href="https://github.com/gcushen/hugo-academic">hugo-academic</a>. Whatever theme you choose, you’ll need to pick one of 3 ways to make your new site:</p>
 <ol style="list-style-type: decimal">
-<li>If you want a theme other than the default, which is the lithium theme, you can do this now!</li>
+<li>If you are happy with the default theme, which is the lithium theme, you can use:</li>
+</ol>
+<pre class="r"><code>blogdown::new_site() # default theme is lithium</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>If you want a theme other than the default, you can specify the theme at the same time as you call the <code>new_site</code> function:</li>
 </ol>
 <pre class="r"><code># for example, create a new site with the academic theme
-blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, sample = TRUE, theme_example = TRUE)</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>If instead you want to add the theme later (like I did, because I didn’t see the above example until it was too late!), use this function:</li>
+blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, theme_example = TRUE)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>If instead you want to add the theme later (like I did, because I didn’t see the above example until it was too late!), you can do this:</li>
 </ol>
-<pre class="r"><code>blogdown::new_site() # default theme is lithium
-# need to stop serving so can use console
+<pre class="r"><code>library(blogdown)
+blogdown::new_site() # default theme is lithium
+# need to stop serving so can use the console again
 install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
-<p>I recommend setting <code>theme_example = TRUE</code>- some themes won’t provide an example site, but the academic theme did and I found it helpful to see. The default for <code>update_config</code> is <code>TRUE</code>.</p>
+<p>{{% alert note %}} Now is a good time to re-read about <code>blogdown::serve_site()</code> and <a href="https://bookdown.org/yihui/blogdown/a-quick-example.html">how <em>LiveReload</em> works</a> (and how it blocks your R console by default) {{% /alert %}}</p>
+<p>I recommend setting <code>theme_example = TRUE</code>- some themes won’t provide an example site, but the academic theme did and I found it helpful to see. You can always delete the example content.</p>
+<p>{{% alert warning %}} If your example site is not loading correctly in your RStudio viewer pane, I have found that several themes replace the baseurl with something like “<a href="https://example.com" class="uri">https://example.com</a>”, without the trailing <code>/</code>. This is an infuriating but quick fix- see below section on editing configurations. {{% /alert %}}</p>
 </div>
-<div id="add-ins" class="section level2">
-<h2><span class="header-section-number">6.2</span> Add-ins</h2>
-<p><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html" class="uri">https://bookdown.org/yihui/blogdown/rstudio-ide.html</a></p>
+<div id="update-project-options" class="section level2">
+<h2><span class="header-section-number">6.2</span> Update project options</h2>
+<p>In your project in RStudio, go to the top menu bar of RStudio and select <code>Tools -&gt; Project Options</code> and update following <a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html#fig:project-options">Yihui and Amber’s instructions</a>.</p>
 </div>
 <div id="edit-your-configurations" class="section level2">
 <h2><span class="header-section-number">6.3</span> Edit your configurations</h2>
@@ -181,29 +196,48 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/configuration.html"><code>blogdown</code> book chapter on configuration</a></li>
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/#site-configuration">Additional detail from Amber</a></li>
+<li>View <a href="https://github.com/apreshill/apreshill/blob/master/config.toml">my <code>config.toml</code> file</a></li>
 </ul>
-<p>Edit the <code>baseURL</code> in your <code>config.toml</code> file</p>
+<ol style="list-style-type: decimal">
+<li>Edit the <code>baseurl</code> in your <code>config.toml</code> file. The URL <em>should always</em> end with a <code>/</code> trailing slash. At this point, you probably haven’t deployed your site yet, so to view it locally you can use the Addin “Serve Site”, or run the <code>blogdown::serve_site</code> function.</li>
+</ol>
 <p>If you just want to use <code>serve_site</code> and view locally, be sure that this is it: baseurl = “<a href="https://example.com/" class="uri">https://example.com/</a>”</p>
 <pre class="r"><code>baseurl = &quot;/&quot;</code></pre>
 <p>{{% alert warning %}} Make sure that the <code>baseurl =</code> listed has a <code>/</code> at the end! {{% /alert %}}</p>
 </div>
-<div id="posting" class="section level2">
-<h2><span class="header-section-number">6.4</span> Posting</h2>
-<p>This surprisingly was harder than you would think. Note: in the academic theme, these are called posts. Here are some relevant links:</p>
+<div id="addins-workflow" class="section level2">
+<h2><span class="header-section-number">6.4</span> Addins &amp; workflow</h2>
+<p>Addins: use them. Note that you don’t need the <code>blogdown</code> package loaded if you use the Addins.</p>
+<p>Relevant reading:</p>
 <ul>
-<li><em><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html"><code>blogdown</code> book chapter on RStudio IDE</a></em></li>
-<li><em><a href="https://bookdown.org/yihui/blogdown/output-format.html"><code>blogdown</code> book chapter on output formats</a>:</em> on .md versus .Rmd posts</li>
-<li><em><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Additional detail from Amber</a></em> on adding a blog post</li>
+<li><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html"><code>blogdown</code> book chapter on the RStudio IDE</a></li>
+</ul>
+<p>My workflow in RStudio at this point works best like this:</p>
+<ol style="list-style-type: decimal">
+<li>Open the RStudio project for my website</li>
+<li>Use the add-in to serve the site (you only need to do this once due to LiveReload), which if all goes well appears in the RStudio viewer pane. I show it in a new brower window and just leave it open there.</li>
+<li>Select existing files to work on through the file pane in RStudio, or use add-ins to create new files (see below).</li>
+<li>After making changes, click the save button- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.</li>
+<li>When happy with changes, commit/push changes to GitHub.</li>
+</ol>
+</div>
+<div id="posting" class="section level2">
+<h2><span class="header-section-number">6.5</span> Posting</h2>
+<p>This was surprisingly confusing to me at first. Here are some relevant links:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/blogdown/rstudio-ide.html"><code>blogdown</code> book chapter on RStudio IDE</a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/output-format.html"><code>blogdown</code> book chapter on output formats</a>: on .md versus .Rmd posts</li>
+<li><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Additional detail from Amber</a> on adding a blog post</li>
 </ul>
 <div id="draft-posts" class="section level3">
-<h3><span class="header-section-number">6.4.1</span> Draft posts</h3>
+<h3><span class="header-section-number">6.5.1</span> Draft posts</h3>
 <p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you either remove the <code>draft</code> option or set it to false (since the default is true).</p>
 <ul>
 <li><em><a href="https://bookdown.org/yihui/blogdown/local-preview.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></em> Building a website for local preview</li>
 </ul>
 </div>
 <div id="new-markdown-posts" class="section level3">
-<h3><span class="header-section-number">6.4.2</span> New markdown posts</h3>
+<h3><span class="header-section-number">6.5.2</span> New markdown posts</h3>
 <ul>
 <li>To author a new plain <code>.md</code> post, either use this function in your console:</li>
 </ul>
@@ -219,7 +253,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <p>Or alternatively, you can use the handy Addins dropdown menu in the</p>
 </div>
 <div id="new-rmarkdown-posts" class="section level3">
-<h3><span class="header-section-number">6.4.3</span> New RMarkdown posts</h3>
+<h3><span class="header-section-number">6.5.3</span> New RMarkdown posts</h3>
 <p>{{% alert warning %}} The most important thing to remember is to <strong>not</strong> knit your .Rmd posts. Use <code>blogdown::serve_site</code> first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html. {{% /alert %}}</p>
 <ul>
 <li>To author a new <code>.Rmd</code> post where you can use R chunks and have them rendered, either use this function in your console:</li>
@@ -231,7 +265,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 </ul>
 </div>
 <div id="adding-images-to-a-post" class="section level3">
-<h3><span class="header-section-number">6.4.4</span> Adding images to a post</h3>
+<h3><span class="header-section-number">6.5.4</span> Adding images to a post</h3>
 <p>If you want to include an image that is not a figure created from an R chunk, the <a href="https://github.com/rstudio/blogdown/issues/45">recommended method</a> is to:</p>
 <ol style="list-style-type: decimal">
 <li>Add the image to your <code>/static/img/</code> folder, then</li>
@@ -247,20 +281,37 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-5.png" />
 
 </div>
+<p>Deploying in Netlify was surprisingly painless. Yihui and Amber give some <a href="https://bookdown.org/yihui/blogdown/deployment.html">beginner instructions</a>, but Netlify is so easy I recommend that you skip dragging your <code>public</code> folder in and instead <a href="https://bookdown.org/yihui/blogdown/netlify.html#netlify">automate the process through GitHub</a>.</p>
+<ol style="list-style-type: decimal">
+<li>When you are ready to deploy, commit your changes and push to GitHub, then go online to <a href="https://www.netlify.com">Netlify</a>.</li>
+<li>Click on the <strong>Sign Up</strong> button and sign up using your existing GitHub account.</li>
+<li>Log in, and select: <code>New site from Git -&gt; Continuous Deployment: GitHub</code>.</li>
+<li><p>From there, Netlify will allow you to select from your existing GitHub repositories. You’ll pick the repo you’ve been working from with <code>blogdown</code>, then you’ll configure your build. This involves specifying two important things: the build command and the publish directory (this should be <code>public</code>).</p>
 <ul>
-<li>When you are ready to deploy, push to GitHub, then go to <a href="https://www.netlify.com">Netlify</a>.</li>
-<li>Click on the Sign Up button; I opted to sign up using my existing GitHub account.</li>
-<li>Log in, and select: New site from Git &gt;&gt; Continuous Deployment: GitHub.</li>
-<li>From there, Netlify will allow you to select from your existing GitHub repositories. You’ll pick the repo you’ve been working from with <code>blogdown</code>, then you’ll configure your build. This involves</li>
-</ul>
-<p>From <a href="https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives">Netlify</a>:</p>
-<p><em>“For Hugo hosting, <code>hugo</code> will build and deploy with the version 0.17 of <code>hugo</code>. You can specify a specific <code>hugo</code> release like this: <code>hugo_0.15</code>. Currently <code>0.13</code>, <code>0.14</code>, <code>0.15</code>, <code>0.16</code>, <code>0.17</code>, <code>0.18</code> and <code>0.19</code> are supported. For version <code>0.20</code> and above, you’ll need to create a Build environment variable called <code>HUGO_VERSION</code> and set it to the version of your choice.”</em></p>
-<p>I opted for the former, and specified <code>hugo_0.19</code>. However, you can check your <code>hugo</code> version in terminal using the command <a href="https://gohugo.io/overview/quickstart/"><code>hugo version</code></a>. This is what my output looked like, which means that I could run version <code>0.20</code> if I wanted to through Netlify, but I went with <code>0.19</code> and it works just fine.</p>
+<li>On the build command from <a href="https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives">Netlify</a>: <em>“For Hugo hosting, <code>hugo</code> will build and deploy with the version 0.17 of <code>hugo</code>. You can specify a specific <code>hugo</code> release like this: <code>hugo_0.15</code>. Currently <code>0.13</code>, <code>0.14</code>, <code>0.15</code>, <code>0.16</code>, <code>0.17</code>, <code>0.18</code> and <code>0.19</code> are supported. For version <code>0.20</code> and above, you’ll need to create a Build environment variable called <code>HUGO_VERSION</code> and set it to the version of your choice.”</em> I opted for the former, and specified <code>hugo_0.19</code>. However, you can check your <code>hugo</code> version in terminal using the command <a href="https://gohugo.io/overview/quickstart/"><code>hugo version</code></a>. This is what my output looked like, which means that I could run version <code>0.20</code> if I wanted to through Netlify, but I went with <code>0.19</code> and it works just fine.</li>
+</ul></li>
+</ol>
 <pre class="r"><code>$ hugo version
 Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00</code></pre>
-<p>Here is a screenshot of my final step:</p>
 <div class="figure">
-<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/netlify-build-settings.png" />
+<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/netlify-build-settings.png" alt="Screenshot above: Basic build settings in Netlify" />
+<p class="caption">Screenshot above: Basic build settings in Netlify</p>
+</div>
+<p>Netlify will deploy your site and assign you a random subdomain name of the form <code>random-word-12345.netlify.com</code>. Mine was particularly unfortunate, with the random word <code>garbage-collector-janice</code>. You should know that you can change this; I changed mine to <code>apreshill.netlify.com</code>. Note that anytime you change your subdomain name, you need to update the <code>baseurl</code> in your <code>config.toml</code> file (so I changed mine to <code>baseurl = &quot;https://apreshill.netlify.com/&quot;</code>).</p>
+<p>At this point, you should be up and running with <code>blogdown</code>, GitHub, and Netlify, but here are some final things to play with…</p>
+</div>
+<div id="custom-css" class="section level1">
+<h1><span class="header-section-number">8</span> Custom CSS</h1>
+<p>I like to tinker with theme settings like colors, fonts, etc. Every Hugo theme is structured a little differently, but if you are interested, you can check out <a href="https://github.com/apreshill/apreshill/blob/master/static/css/blue.css">my custom css</a> to see how I tinkered with the academic theme, which provides this option in the <code>config.toml</code> file:</p>
+<pre class="r"><code>  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  custom_css = [&quot;blue.css&quot;]</code></pre>
+</div>
+<div id="domain-names" class="section level1">
+<h1><span class="header-section-number">9</span> Domain names</h1>
+<p>You may want a different <a href="https://bookdown.org/yihui/blogdown/domain-name.html">domain name</a> than the one provided by Netlify. I opted for a free subdomain <code>*.rbind.io</code> offered by RStudio. To do the same, head over to the <a href="https://github.com/rbind/support/issues">rbind/support GitHub page</a> and open a new issue. All you need to do is let them know what your Netlify subdomain name is (<code>*.netlify.com</code>), and what you want your subdomain name to be (<code>*.rbind.io</code>). The <a href="https://support.rbind.io">awesome <code>rbind</code> support team</a> will help you take it from there! Note that again, you will need to update the <code>baseurl</code> in your <code>config.toml</code> file to reflect your new rbind subdomain name (so mine is <code>baseurl = &quot;https://apreshill.rbind.io/&quot;</code>).</p>
+<div class="figure">
+<img src="/img/posts/2017-05-17-up-and-running-with-blogdown/rbind.png" />
 
 </div>
 </div>

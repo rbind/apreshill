@@ -1,24 +1,31 @@
 +++
-date = "2017-01-01T00:00:00"
-title = "Example Talk"
-abstract = ""
+date = "2016-06-24T00:00:00"
+title = "Code Your Graph"
+abstract = "A workshop on visualizing your data with ggplot and matplotlib"
 abstract_short = ""
-event = "Hugo Academic Theme Conference"
-event_url = "https://example.org"
-location = "London, United Kingdom"
+event = "Hands-on Data Jamboree"
+event_url = "/link/jamboree_heart_ggplot.html"
+location = "Oregon Health & Science University, Portland, Oregon"
 
-selected = false
+selected = true
 math = true
 
 url_pdf = ""
 url_slides = ""
 url_video = ""
+[[url_custom]]
+    name = "Link"
+    url = "link/jamboree_heart_ggplot.html"
+[[url_custom]]
+    name = "GitHub"
+    url = "https://github.com/apreshill/data-vis-jamboree-ggplot"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "headers/bubbles-wide.jpg"
-caption = "My caption :smile:"
+image = ""
+caption = ""
 
 +++
 
-Embed your slides or video here using [shortcodes](https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/). Further details can easily be added using *Markdown* and $\rm \LaTeX$ math code. 
+{{< figure src="/img/code-your-graph.jpg" >}}
+
