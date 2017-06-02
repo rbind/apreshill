@@ -1,6 +1,6 @@
 +++
 date = "2016-06-24T00:00:00"
-title = "Code Your Graph"
+title = "Code Your Graph Workshop"
 abstract = "A workshop on visualizing your data with ggplot and matplotlib"
 abstract_short = ""
 event = "Hands-on Data Jamboree"

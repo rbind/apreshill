@@ -55,6 +55,7 @@ Finally, I did not want to learn more about a lot of things. For instance, the n
 
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-1.png)
 
+
 1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a README but don't add a gitignore- this will be taken care of later). For naming your repo, consider your future deployment plan:
 
     * If you are going to use [Netlify](https://www.netlify.com) to host the site, rather than [GitHub Pages](https://pages.github.com), you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories). I called mine `apreshill` since that is also by [GitHub username](https://github.com/apreshill) and my [twitter handle](https://twitter.com/apreshill).
