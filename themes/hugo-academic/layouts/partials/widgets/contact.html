@@ -15,7 +15,7 @@
 
       {{ with $.Site.Params.email }}
       <li>
-        <i class="fa-li fa fa-envelope fa-2x" aria-hidden="true"></i>
+        <i class="fa-li fa fa-paper-plane fa-2x" aria-hidden="true"></i>
         <span id="person-email" itemprop="email">
         {{- if $autolink }}<a href="mailto:{{ . }}">{{ . }}</a>{{ else }}{{ . }}{{ end -}}
         </span>
