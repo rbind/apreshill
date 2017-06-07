@@ -20,16 +20,18 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Alison Presmanes Hill"
-  role = "Associate Professor"
+  role = "Assistant Professor"
   organization = "Oregon Health & Science University (OHSU)"
   organization_url = "http://www.ohsu.edu/xd/"
   avatar = "aph-faculty-photo.jpg"
-  email = "hillali@ohsu.edu"
-  address = "Portland, Oregon, USA"
+  email = "apresstats@gmail.com"
+  address = ""
   office_hours = ""
   phone = ""
   skype = ""
   telegram = ""
+  twitter = "apreshill"
+  github = "apreshill"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -125,7 +127,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "paper-plane"
     icon_pack = "fa"
-    link = "mailto:hillali@ohsu.edu"
+    link = "mailto:apresstats@gmail.com"
 
   [[params.social]]
     icon = "twitter"

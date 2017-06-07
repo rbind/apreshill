@@ -34,7 +34,7 @@ I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r
 
 # Caveats, disclaimers, etc.
 
-Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach. About me: I am a macOS user, and I use R, RStudio, Git (usually via [GitLab](https://about.gitlab.com), occasionally via [GitHub](https://github.com)), and terminal regularly, so I'm assuming familiarity here with all of these. If that is not you, here are some places to get started:
+Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach. About me: I am a macOS user, and I use R, RStudio, Git (usually via [GitLab](https://about.gitlab.com), sometimes via [GitHub](https://github.com)), and terminal regularly, so I'm assuming familiarity here with all of these. If that is not you, here are some places to get started:
 
 * For Git: [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al.
 * For RStudio: [DataCamp's Working with the RStudio IDE (free)](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1) by Garrett Grolemund
@@ -44,7 +44,7 @@ I also have [Xcode](https://developer.apple.com/xcode/) and [Homebrew](https://b
 
 * [How to install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X ](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
-Finally, I did not want to learn more about a lot of things. For instance, the nitty gritty of static site generators. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:
+Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:
 
 * ["Considering the cost and friendliness to beginners, we currently recommend Netlify."](https://bookdown.org/yihui/blogdown/deployment.html) Sold. 
 * ["If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain `*.rbind.io` offered by RStudio, Inc."](https://bookdown.org/yihui/blogdown/netlify.html). Done. 
@@ -101,9 +101,6 @@ ORPA473:r-projects hillali$
 
 Now you need to download Hugo, and you should use `blogdown`'s helper function to install it via R, so you'll first install the `blogdown` package.
 
-{{% alert note %}}
-These installations are just like installing packages in R - your working directory does not matter for either of these two steps, so don't worry about where R thinks you are.
-{{% /alert %}}
 
 1. Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
 

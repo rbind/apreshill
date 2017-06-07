@@ -32,6 +32,10 @@ view = 1
 [[filter]]
   name = "Autism"
   tag = ".autism"
+  
+[[filter]]
+  name = "Eye-tracking"
+  tag = ".eye-tracking"
 
 +++
 

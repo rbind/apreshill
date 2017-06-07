@@ -9,7 +9,7 @@ title = "Computational Characterization of Language Use in Females and Males wit
 summary = "The objective of this project is to further understanding of sex differences in the fundamental patterns of behavioral and social functioning relevant to the clinical presentation of ASD. Guided by our previous research, we applied Natural Language Processing based methods to transcripts of natural language samples in order to quantify features of atypical language use in females with ASD."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "girl-aquarium.png"
+image_preview = ""
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`

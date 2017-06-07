@@ -4,7 +4,7 @@ title = "Code Your Graph Workshop"
 abstract = "A workshop on visualizing your data with ggplot and matplotlib"
 abstract_short = ""
 event = "Hands-on Data Jamboree"
-event_url = "/link/jamboree_heart_ggplot.html"
+event_url = "/html/jamboree_heart_ggplot.html"
 location = "Oregon Health & Science University, Portland, Oregon"
 
 selected = true
