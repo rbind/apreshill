@@ -34,5 +34,7 @@ caption = ""
 
 METHODS: Participants were 5053 children with confirmed diagnosis of ASD in the Autism Speaks Autism Treatment Network. Measured values for weight and height were used to calculate BMI percentiles; Centers for Disease Control and Prevention criteria for BMI for gender and age were used to define overweight and obesity (85th and 95th percentiles, respectively). 
 
+
 RESULTS: In children age 2 to 17 years, 33.6% were overweight and 18% were obese. Compared with a general US population sample, rates of unhealthy weight were significantly higher among children with ASDs ages 2 to 5 years and among those of non-Hispanic white origin. Multivariate analyses revealed that older age, Hispanic or Latino ethnicity, lower parent education levels, and sleep and affective problems were all significant predictors of obesity. 
+
 CONCLUSIONS: Our results indicate that the prevalence of unhealthy weight is significantly greater among children with ASD compared with the general population, with differences present as early as ages 2 to 5 years. Because obesity is more prevalent among older children in the general population, these findings raise the question of whether there are different trajectories of weight gain among children with ASDs, possibly beginning in early childhood.
