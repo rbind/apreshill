@@ -175,7 +175,7 @@ defaultContentLanguageInSubdir = false
   weight = 3
 
 [[menu.main]]
-  name = "Talks"
+  name = "Talks & Workshops"
   url = "#talks"
   weight = 4
 
