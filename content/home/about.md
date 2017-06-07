@@ -13,7 +13,7 @@ weight = 1
 [interests]
   interests = [
     "Autism Spectrum Disorders",
-    "Language Development",
+    "Natural Language Processing",
     "Computational Behavioral Science",
     "Eye Tracking"
   ]
