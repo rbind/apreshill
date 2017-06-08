@@ -56,7 +56,7 @@ Finally, I did not want to learn more about a lot of things! For instance, the n
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-1.png)
 
 
-1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a README but don't add a gitignore- this will be taken care of later). For naming your repo, consider your future deployment plan:
+1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
 
     * If you are going to use [Netlify](https://www.netlify.com) to host the site, rather than [GitHub Pages](https://pages.github.com), you can name this repository anything you want! You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories). I called mine `apreshill` since that is also by [GitHub username](https://github.com/apreshill) and my [twitter handle](https://twitter.com/apreshill).
     * If you want to host your site as a [GitHub Page](https://pages.github.com), you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). If you are going this route, I suggest you follow [Amber's instructions](https://proquestionasker.github.io/blog/Making_Site/) instead of mine!
@@ -90,7 +90,6 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 Checking connectivity... done.
-ORPA473:r-projects hillali$ 
 ```
 
 3. Close terminal, you are done in there.
@@ -130,7 +129,7 @@ This is where my instructions diverge from Ed's- he states that `blogdown` won't
 
 ![Screenshot above: Creating a new project in an existing directory in RStudio](/img/posts/2017-05-17-up-and-running-with-blogdown/r-project-existing-directory.png)
 
-4. Now, if you are using git for version control, edit your `*gitignore` file. Make sure you are in your project in RStudio. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public/` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
+4. Now you should be "in" your project in RStudio. If you are using git for version control, edit your `*gitignore` file. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public/` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
 
 ```{r}
 .Rproj.user
@@ -152,7 +151,7 @@ Now you can finally build your site using the `blogdown::new_site()` function. B
 
 ## Picking a theme
 
-Listen to Yihui and Amber- they offer ["to save you some time, we list a few themes below that match our taste..."](https://bookdown.org/yihui/blogdown/other-themes.html). I went with [hugo-academic](https://github.com/gcushen/hugo-academic). Whatever theme you choose, you'll need to pick one of 3 ways to make your new site:
+I looked at so many [Hugo themes](https://themes.gohugo.io) my eyes were crossing. So I went back to the `blogdown` book. Thankfully, Yihui and Amber offer ["to save you some time, we list a few themes below that match our taste..."](https://bookdown.org/yihui/blogdown/other-themes.html). Huzzah- I went with [hugo-academic](https://github.com/gcushen/hugo-academic)! Whatever theme you choose, you'll need to pick one of 3 ways to make your new site:
 
 1. If you are happy with the default theme, which is the lithium theme, you can use: 
 
@@ -171,7 +170,7 @@ blogdown::new_site(theme = "gcushen/hugo-academic", theme_example = TRUE)
     
 ```{r}
 library(blogdown)
-blogdown::new_site() # default theme is lithium
+new_site() # default theme is lithium
 # need to stop serving so can use the console again
 install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRUE)
 ```
@@ -183,7 +182,7 @@ Now is a good time to re-read about `blogdown::serve_site()` and [how _LiveReloa
 I recommend setting `theme_example = TRUE`- some themes won't provide an example site, but the academic theme did and I found it helpful to see. You can always delete the example content.
 
 {{% alert warning %}}
-If your example site is not loading correctly in your RStudio viewer pane, I have found that several themes replace the baseurl with something like "https://example.com", without the trailing `/`. This is an infuriating but quick fix- see below section on editing configurations.
+If your example site is not loading correctly in your RStudio viewer pane, I have found that several themes replace the `baseurl` in the `config.toml` file with something like "https://example.com", without the trailing `/`. This is an infuriating but quick fix- see below section on editing configurations.
 {{% /alert %}}
 
 
@@ -199,59 +198,69 @@ Relevant reading:
 
 * [`blogdown` book chapter on configuration](https://bookdown.org/yihui/blogdown/configuration.html)
 * [Additional detail from Amber](https://proquestionasker.github.io/blog/Making_Site/#site-configuration)
-* View [my `config.toml` file](https://github.com/apreshill/apreshill/blob/master/config.toml)
+* You can also view [my `config.toml` file](https://github.com/apreshill/apreshill/blob/master/config.toml)
 
-1. Edit the `baseurl` in your `config.toml` file. The URL *should always* end with a `/` trailing slash. At this point, you probably haven't deployed your site yet, so to view it locally you can use the Addin "Serve Site", or run the `blogdown::serve_site` function.
+Now, edit the `baseurl` in your `config.toml` file. The URL *should always* end with a `/` trailing slash. At this point, you probably haven't deployed your site yet, so to view it locally you can use the Addin "Serve Site", or run the `blogdown::serve_site` function. Both of these `baseurl`s worked for me when viewing locally:
 
-If you just want to use `serve_site` and view locally, be sure that this is it:
-baseurl = "https://example.com/"
 ```{r}
+baseurl = "https://example.com/"
 baseurl = "/"
 ```
 
 {{% alert warning %}}
-Make sure that the `baseurl = ` listed has a `/` at the end!
+It is worth saying again- make sure that the `baseurl = ` listed has a `/` at the end!
 {{% /alert %}}
 
-## Addins & workflow
+Go ahead and edit that `config.toml` file now as you please- this is how you personalize your site!
 
-Addins: use them. Note that you don't need the `blogdown` package loaded if you use the Addins.
+## Addins & workflow
 
 Relevant reading:
 
 * [`blogdown` book chapter on the RStudio IDE](https://bookdown.org/yihui/blogdown/rstudio-ide.html)
 
-My workflow in RStudio at this point works best like this:
 
-1. Open the RStudio project for my website
-2. Use the add-in to serve the site (you only need to do this once due to LiveReload), which if all goes well appears in the RStudio viewer pane. I show it in a new brower window and just leave it open there.
-3. Select existing files to work on through the file pane in RStudio, or use add-ins to create new files (see below).
-4. After making changes, click the save button- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
+Addins: use them. Note that you don't need the `blogdown` package loaded in the console if you use the Addins. My workflow in RStudio at this point (again, just viewing locally because we haven't deployed yet) works best like this:
+
+1. Open the RStudio project for the site
+2. Use the add-in to serve the site (only once due to the magic of LiveReload).
+3. View site in the RStudio viewer pane, but I also show it in a new browser window and leave it open there while I work.
+3. Select existing files to edit using the file pane in RStudio.
+4. After making changes, click the save button (don't `knit`!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
 5. When happy with changes, commit/push changes to GitHub.
+
+Note that the above workflow is only for editing files, but not for **creating new posts**. For that, read on...
 
 
 
 
 ## Posting
 
-This was surprisingly confusing to me at first. Here are some relevant links:
+This was surprisingly difficult at first!
+
+Relevant reading:
 
 * [`blogdown` book chapter on RStudio IDE](https://bookdown.org/yihui/blogdown/rstudio-ide.html)
 * [`blogdown` book chapter on output formats](https://bookdown.org/yihui/blogdown/output-format.html): on .md versus .Rmd posts
 * [Additional detail from Amber](https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece) on adding a blog post
 
+Bottom line:
 
+Use the Addin for `New Post`. But, you need to stop first before doing so. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to not be blocked for it to run. You also need to be "in" your RStudio project, otherwise it won't work.
 
 ### Draft posts
 
-Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you either remove the `draft` option or set it to false (since the default is true).
+Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you set it to false. Obviously, this is a function built into Hugo and all posts (draft or not) will still end up in your GitHub repo, so don't put top secret blog posts in there as enterprising individuals can still find and read them!
 
 * _[From Yihui & Amber's `blogdown` book:](https://bookdown.org/yihui/blogdown/local-preview.html)_ Building a website for local preview
 
 
 ### New markdown posts
 
-* To author a new plain `.md` post, either use this function in your console:
+Pick one of 2 methods:
+
+1. Use the Addin and use the radio button at the bottom to select **Format: Markdown** (recommended)
+2. If you want to use the console to author a new plain `.md` post, use the `blogdown::new_post()` function:
 
 ```{r}
 blogdown::new_post()
@@ -268,25 +277,23 @@ new_post(title, kind = "default", open = interactive(),
         FALSE))
 ```
 
-Title needs to be in quotes.
 
-Or alternatively, you can use the handy Addins dropdown menu in the 
 
 ### New RMarkdown posts
 
-{{% alert warning %}}
-The most important thing to remember is to **not** knit your .Rmd posts. Use `blogdown::serve_site` first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html.
-{{% /alert %}}
+Again, pick one of 2 methods:
 
-* To author a new `.Rmd` post where you can use R chunks and have them rendered, either use this function in your console:
+1. Use the Addin and use the radio button at the bottom to select **Format: RMarkdown** (recommended)
+2. If you want to use the console to author a new `.Rmd` post, use the `blogdown::new_post()` function:
 
 ```{r}
 blogdown::new_post(rmd = TRUE) # false is the default!
 ```
 
-Or again, you can use the handy Addins dropdown menu in the 
 
-* _**Importantly**_, to have the `.Rmd` file include rendered R chunks, you must run `blogdown::serve_site()` first before pushing to your Github repo. You can check that there is an `.html` file in the right directory, in addition to your `.Rmd` file. 
+{{% alert warning %}}
+The most important thing to remember is to **not** knit your `.Rmd` posts. Use `blogdown::serve_site` first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html.
+{{% /alert %}}
 
 
 
@@ -308,11 +315,11 @@ If you want to include an image that is not a figure created from an R chunk, th
 Deploying in Netlify was surprisingly painless. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
 
 1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
-2. Click on the **Sign Up** button and sign up using your existing GitHub account. 
+2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
 3. Log in, and select: `New site from Git -> Continuous Deployment: GitHub`.
 4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves specifying two important things: the build command and the publish directory (this should be `public`).
 
-    * On the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. However, you can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, which means that I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
+    * More about the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. However, you can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, which means that I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
 
 ```{r}
 $ hugo version
@@ -328,11 +335,13 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Note that anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to `baseurl = "https://apreshill.netlify.com/"`).
 
 
-At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some final things to play with...
+At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
 
-# Custom CSS
+# Going further
 
-I like to tinker with theme settings like colors, fonts, etc. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I tinkered with the academic theme, which provides this option in the `config.toml` file:
+## Custom CSS
+
+I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I changed with the academic theme, which provides this option in the `config.toml` file:
 
 ```{r}
   # Link custom CSS and JS assets
@@ -340,7 +349,27 @@ I like to tinker with theme settings like colors, fonts, etc. Every Hugo theme i
   custom_css = ["blue.css"]
 ```
 
-# Domain names
+## Formspree
+
+I used [Formspree](https://formspree.io) to make a contact form, which is an online service that allows you to add an HTML form to your static site. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
+
+```{r}
+<form action="https://formspree.io/" method="POST">
+  <label for="name">Your name: </label>
+  <input type="text" name="name" required="required" placeholder="here">
+  <label for="email">Your email: </label>
+  <input type="email" name="_replyto" required="required" placeholder="here"><br>
+  <label for="message">Your message:</label><br>
+  <textarea rows="4" name="message" id="message" required="required" class="form-control" placeholder="I can't wait to read this!"></textarea>
+  <input type="hidden" name="_next" value="/html/thanks.html" />
+  <input type="submit" value="Send" name="submit" class="btn btn-primary btn-outline">
+  <input type="hidden" name="_subject" value="Website message" />
+  <input type="text" name="_gotcha" style="display:none" />
+</form>
+```
+
+
+## `*.rbind.io` domain names
 
 You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! Note that again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is `baseurl = "https://apreshill.rbind.io/"`).
 
