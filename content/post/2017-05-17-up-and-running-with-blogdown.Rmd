@@ -254,7 +254,7 @@ Whether you do a markdown or R Markdown post (see below), you should know that i
 
 Relevant reading:
 
-* _[`blogdown` book chapter on building a website for local preview](https://bookdown.org/yihui/blogdown/local-preview.html)
+* [`blogdown` book chapter on building a website for local preview](https://bookdown.org/yihui/blogdown/local-preview.html)
 
 
 ### New markdown posts
