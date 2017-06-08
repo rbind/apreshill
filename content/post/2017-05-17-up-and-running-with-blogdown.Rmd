@@ -370,6 +370,8 @@ I used [Formspree](https://formspree.io) to make a contact form, which is an onl
 </form>
 ```
 
+I also made a totally silly [thank you page](https://apreshill.rbind.io/html/thanks.html), so use my [formspree](https://apreshill.rbind.io/#contact) to enjoy!
+
 
 ## `*.rbind.io` domain names
 
