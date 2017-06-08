@@ -283,7 +283,7 @@ new_post(title, kind = "default", open = interactive(),
 
 ### New RMarkdown posts
 
-Again, pick one of 2 methods:
+Again, you have your choice of one of 2 methods:
 
 1. Use the Addin and use the radio button at the bottom to select **Format: RMarkdown** (recommended)
 2. If you want to use the console to author a new `.Rmd` post, use the `blogdown::new_post()` function:
@@ -291,6 +291,8 @@ Again, pick one of 2 methods:
 ```{r}
 blogdown::new_post(rmd = TRUE) # false is the default!
 ```
+
+Either way, this may seem obvious, but when you want to edit your `.Rmd` posts, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file is generated.
 
 
 {{% alert warning %}}

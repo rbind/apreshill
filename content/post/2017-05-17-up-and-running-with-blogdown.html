@@ -39,6 +39,7 @@ output:
 <li><a href="#custom-css"><span class="toc-section-number">8.1</span> Custom CSS</a></li>
 <li><a href="#formspree"><span class="toc-section-number">8.2</span> Formspree</a></li>
 <li><a href="#rbind.io-domain-names"><span class="toc-section-number">8.3</span> <code>*.rbind.io</code> domain names</a></li>
+<li><a href="#have-fun"><span class="toc-section-number">8.4</span> Have fun!</a></li>
 </ul></li>
 </ul>
 </div>
@@ -68,7 +69,7 @@ output:
 <ul>
 <li><a href="https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">How to install Xcode, Homebrew, Git, RVM, Ruby &amp; Rails on Mac OS X</a></li>
 </ul>
-<p>Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:</p>
+<p>Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators and how domain names work. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:</p>
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/deployment.html">“Considering the cost and friendliness to beginners, we currently recommend Netlify.”</a> Sold.</li>
 <li><a href="https://bookdown.org/yihui/blogdown/netlify.html">“If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain <code>*.rbind.io</code> offered by RStudio, Inc.”</a>. Done.</li>
@@ -220,7 +221,7 @@ baseurl = &quot;/&quot;</code></pre>
 <li>After making changes, click the save button (don’t <code>knit</code>!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.</li>
 <li>When happy with changes, commit/push changes to GitHub.</li>
 </ol>
-<p>Note that the above workflow is only for editing files, but not for <strong>creating new posts</strong>. For that, read on…</p>
+<p>Note that the above workflow is only for editing existing files or posts, but not for <strong>creating new posts</strong>. For that, read on…</p>
 </div>
 <div id="posting" class="section level2">
 <h2><span class="header-section-number">6.5</span> Posting</h2>
@@ -236,8 +237,9 @@ baseurl = &quot;/&quot;</code></pre>
 <div id="draft-posts" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Draft posts</h3>
 <p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you set it to false. Obviously, this is a function built into Hugo and all posts (draft or not) will still end up in your GitHub repo, so don’t put top secret blog posts in there as enterprising individuals can still find and read them!</p>
+<p>Relevant reading:</p>
 <ul>
-<li><em><a href="https://bookdown.org/yihui/blogdown/local-preview.html">From Yihui &amp; Amber’s <code>blogdown</code> book:</a></em> Building a website for local preview</li>
+<li><a href="https://bookdown.org/yihui/blogdown/local-preview.html"><code>blogdown</code> book chapter on building a website for local preview</a></li>
 </ul>
 </div>
 <div id="new-markdown-posts" class="section level3">
@@ -306,17 +308,17 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 <h1><span class="header-section-number">8</span> Going further</h1>
 <div id="custom-css" class="section level2">
 <h2><span class="header-section-number">8.1</span> Custom CSS</h2>
-<p>I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out <a href="https://github.com/apreshill/apreshill/blob/master/static/css/blue.css">my custom css</a> to see how I changed with the academic theme, which provides this option in the <code>config.toml</code> file:</p>
+<p>I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out <a href="https://github.com/apreshill/apreshill/blob/master/static/css/blue.css">my custom css</a> to see how I customized the academic theme, which provides a way to link to a custom CSS file in the <code>config.toml</code> file:</p>
 <pre class="r"><code>  # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   custom_css = [&quot;blue.css&quot;]</code></pre>
 </div>
 <div id="formspree" class="section level2">
 <h2><span class="header-section-number">8.2</span> Formspree</h2>
-<p>I used <a href="https://formspree.io">Formspree</a> to make a contact form, which is an online service that allows you to add an HTML form to your static site. I added the following code into <a href="https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html">my contact widget</a>:</p>
-<pre class="r"><code>&lt;form action=&quot;https://formspree.io/&quot; method=&quot;POST&quot;&gt;
+<p>I used <a href="https://formspree.io">Formspree</a> to make a contact form, which is an online service (managed on <a href="https://github.com/formspree/formspree">GitHub</a>) that allows you to add an HTML form to your static site. It is <strong>really</strong> easy- no registration, just use the form and confirm your email address once. I added the following code into <a href="https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html">my contact widget</a>:</p>
+<pre class="r"><code>&lt;form action=&quot;https://formspree.io/your@email.com&quot; method=&quot;POST&quot;&gt;
   &lt;label for=&quot;name&quot;&gt;Your name: &lt;/label&gt;
-  &lt;input type=&quot;text&quot; name=&quot;name&quot; required=&quot;required&quot; placeholder=&quot;here&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; required=&quot;required&quot; placeholder=&quot;here&quot;&gt;&lt;br&gt;
   &lt;label for=&quot;email&quot;&gt;Your email: &lt;/label&gt;
   &lt;input type=&quot;email&quot; name=&quot;_replyto&quot; required=&quot;required&quot; placeholder=&quot;here&quot;&gt;&lt;br&gt;
   &lt;label for=&quot;message&quot;&gt;Your message:&lt;/label&gt;&lt;br&gt;
@@ -326,6 +328,7 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
   &lt;input type=&quot;hidden&quot; name=&quot;_subject&quot; value=&quot;Website message&quot; /&gt;
   &lt;input type=&quot;text&quot; name=&quot;_gotcha&quot; style=&quot;display:none&quot; /&gt;
 &lt;/form&gt;</code></pre>
+<p>I also made a totally silly <a href="https://apreshill.rbind.io/html/thanks.html">thank you page</a>, so use my <a href="https://apreshill.rbind.io/#contact">formspree</a> to enjoy!</p>
 </div>
 <div id="rbind.io-domain-names" class="section level2">
 <h2><span class="header-section-number">8.3</span> <code>*.rbind.io</code> domain names</h2>
@@ -334,5 +337,9 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 <img src="/img/posts/2017-05-17-up-and-running-with-blogdown/rbind.png" />
 
 </div>
+</div>
+<div id="have-fun" class="section level2">
+<h2><span class="header-section-number">8.4</span> Have fun!</h2>
+<p>Lastly, have fun playing around. Happy <code>blogdown</code>ing!</p>
 </div>
 </div>
