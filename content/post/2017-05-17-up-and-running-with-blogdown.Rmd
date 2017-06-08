@@ -229,6 +229,14 @@ Addins: use them. Note that you don't need the `blogdown` package loaded in the 
 4. After making changes, click the save button (don't `knit`!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
 5. When happy with changes, commit/push changes to GitHub.
 
+Having `blogdown::serve_site` running locally with LiveReload is especially useful as you can immediately see if you have totally screwed up. For example, in adding to my `about.md` file, I saw this error pop up in my console after making a change and I was able to fix the error right away:
+```{r}
+Started building sites ...
+ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 6): missing comma
+Error: Error building site: Errors reading pages: Error: failed to parse page metadata for home/about.md: (18, 6): missing comma for about.md
+```
+
+
 Note that the above workflow is only for editing existing files or posts, but not for **creating new posts**. For that, read on...
 
 
@@ -246,7 +254,7 @@ Relevant reading:
 
 Bottom line:
 
-Use the Addin for `New Post`. But, you need to stop first before doing so. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to not be blocked for it to run. You also need to be "in" your RStudio project, otherwise it won't work.
+Use the Addin for `New Post`. But, you need the console to do this, so you have to stop `blogdown::serve_site`. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to be unblocked for it to run. You also need to be "in" your RStudio project or it won't work.
 
 ### Draft posts
 

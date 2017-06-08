@@ -15,7 +15,8 @@ weight = 1
     "Autism Spectrum Disorders",
     "Natural Language Processing",
     "Computational Behavioral Science",
-    "Eye Tracking"
+    "Eye Tracking",
+    "Outcomes"
   ]
 
 # List your qualifications (such as academic degrees).

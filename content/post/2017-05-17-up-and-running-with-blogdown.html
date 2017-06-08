@@ -221,6 +221,10 @@ baseurl = &quot;/&quot;</code></pre>
 <li>After making changes, click the save button (don’t <code>knit</code>!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.</li>
 <li>When happy with changes, commit/push changes to GitHub.</li>
 </ol>
+<p>Having <code>blogdown::serve_site</code> running locally with LiveReload is especially useful as you can immediately see if you have totally screwed up. For example, in adding to my <code>about.md</code> file, I saw this error pop up in my console after making a change and I was able to fix the error right away:</p>
+<pre class="r"><code>Started building sites ...
+ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 6): missing comma
+Error: Error building site: Errors reading pages: Error: failed to parse page metadata for home/about.md: (18, 6): missing comma for about.md</code></pre>
 <p>Note that the above workflow is only for editing existing files or posts, but not for <strong>creating new posts</strong>. For that, read on…</p>
 </div>
 <div id="posting" class="section level2">
@@ -233,7 +237,7 @@ baseurl = &quot;/&quot;</code></pre>
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Additional detail from Amber</a> on adding a blog post</li>
 </ul>
 <p>Bottom line:</p>
-<p>Use the Addin for <code>New Post</code>. But, you need to stop first before doing so. The Addin is a Shiny interface that runs this code in your console: <code>blogdown:::new_post_addin()</code>. So, your console needs to not be blocked for it to run. You also need to be “in” your RStudio project, otherwise it won’t work.</p>
+<p>Use the Addin for <code>New Post</code>. But, you need the console to do this, so you have to stop <code>blogdown::serve_site</code>. The Addin is a Shiny interface that runs this code in your console: <code>blogdown:::new_post_addin()</code>. So, your console needs to be unblocked for it to run. You also need to be “in” your RStudio project or it won’t work.</p>
 <div id="draft-posts" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Draft posts</h3>
 <p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you set it to false. Obviously, this is a function built into Hugo and all posts (draft or not) will still end up in your GitHub repo, so don’t put top secret blog posts in there as enterprising individuals can still find and read them!</p>
@@ -260,12 +264,13 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 </div>
 <div id="new-rmarkdown-posts" class="section level3">
 <h3><span class="header-section-number">6.5.3</span> New RMarkdown posts</h3>
-<p>Again, pick one of 2 methods:</p>
+<p>Again, you have your choice of one of 2 methods:</p>
 <ol style="list-style-type: decimal">
 <li>Use the Addin and use the radio button at the bottom to select <strong>Format: RMarkdown</strong> (recommended)</li>
 <li>If you want to use the console to author a new <code>.Rmd</code> post, use the <code>blogdown::new_post()</code> function:</li>
 </ol>
 <pre class="r"><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
+<p>Either way, this may seem obvious, but when you want to edit your <code>.Rmd</code> posts, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file is generated.</p>
 <p>{{% alert warning %}} The most important thing to remember is to <strong>not</strong> knit your <code>.Rmd</code> posts. Use <code>blogdown::serve_site</code> first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html. {{% /alert %}}</p>
 </div>
 <div id="adding-images-to-a-post" class="section level3">

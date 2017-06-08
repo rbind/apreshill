@@ -13,7 +13,7 @@ image_preview = "maps-poster.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["autism", "eye-tracking"]
+tags = ["autism", "eye-tracking", "outcomes"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""

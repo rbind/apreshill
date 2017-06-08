@@ -36,6 +36,10 @@ view = 1
 [[filter]]
   name = "Eye-tracking"
   tag = ".eye-tracking"
+  
+[[filter]]
+  name = "Outcomes"
+  tag = ".outcomes"
 
 +++
 
