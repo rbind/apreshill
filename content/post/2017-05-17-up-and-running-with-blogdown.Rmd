@@ -44,7 +44,7 @@ I also have [Xcode](https://developer.apple.com/xcode/) and [Homebrew](https://b
 
 * [How to install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X ](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
-Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:
+Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators and how domain names work. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:
 
 * ["Considering the cost and friendliness to beginners, we currently recommend Netlify."](https://bookdown.org/yihui/blogdown/deployment.html) Sold. 
 * ["If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain `*.rbind.io` offered by RStudio, Inc."](https://bookdown.org/yihui/blogdown/netlify.html). Done. 
@@ -229,7 +229,7 @@ Addins: use them. Note that you don't need the `blogdown` package loaded in the 
 4. After making changes, click the save button (don't `knit`!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
 5. When happy with changes, commit/push changes to GitHub.
 
-Note that the above workflow is only for editing files, but not for **creating new posts**. For that, read on...
+Note that the above workflow is only for editing existing files or posts, but not for **creating new posts**. For that, read on...
 
 
 
@@ -252,7 +252,9 @@ Use the Addin for `New Post`. But, you need to stop first before doing so. The A
 
 Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you set it to false. Obviously, this is a function built into Hugo and all posts (draft or not) will still end up in your GitHub repo, so don't put top secret blog posts in there as enterprising individuals can still find and read them!
 
-* _[From Yihui & Amber's `blogdown` book:](https://bookdown.org/yihui/blogdown/local-preview.html)_ Building a website for local preview
+Relevant reading:
+
+* _[`blogdown` book chapter on building a website for local preview](https://bookdown.org/yihui/blogdown/local-preview.html)
 
 
 ### New markdown posts
@@ -341,7 +343,7 @@ At this point, you should be up and running with `blogdown`, GitHub, and Netlify
 
 ## Custom CSS
 
-I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I changed with the academic theme, which provides this option in the `config.toml` file:
+I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I customized the academic theme, which provides a way to link to a custom CSS file in the `config.toml` file:
 
 ```{r}
   # Link custom CSS and JS assets
@@ -351,12 +353,12 @@ I like to tinker with default theme settings like colors and fonts. Every Hugo t
 
 ## Formspree
 
-I used [Formspree](https://formspree.io) to make a contact form, which is an online service that allows you to add an HTML form to your static site. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
+I used [Formspree](https://formspree.io) to make a contact form, which is an online service (managed on [GitHub](https://github.com/formspree/formspree)) that allows you to add an HTML form to your static site. It is **really** easy- no registration, just use the form and confirm your email address once. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
 
 ```{r}
-<form action="https://formspree.io/" method="POST">
+<form action="https://formspree.io/your@email.com" method="POST">
   <label for="name">Your name: </label>
-  <input type="text" name="name" required="required" placeholder="here">
+  <input type="text" name="name" required="required" placeholder="here"><br>
   <label for="email">Your email: </label>
   <input type="email" name="_replyto" required="required" placeholder="here"><br>
   <label for="message">Your message:</label><br>
@@ -375,3 +377,7 @@ You may want a different [domain name](https://bookdown.org/yihui/blogdown/domai
 
 
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/rbind.png)
+
+## Have fun!
+
+Lastly, have fun playing around. Happy `blogdown`ing!
