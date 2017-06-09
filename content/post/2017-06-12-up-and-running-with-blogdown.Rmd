@@ -417,6 +417,6 @@ You may want a different [domain name](https://bookdown.org/yihui/blogdown/domai
 
 ## Have fun!
 
-Lastly, have fun playing around. Happy `blogdown`ing!
+Lastly, don't forget to just have fun with it. Happy `blogdown`ing!
 
-<iframe src="https://giphy.com/embed/CL3XvCSPnAVYA" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mrw-rhighqualitygifs-CL3XvCSPnAVYA">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/13Y6LAZJqRspI4" width="480" height="357" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dancing-seinfeld-elaine-benes-13Y6LAZJqRspI4">via GIPHY</a></p>
