@@ -44,7 +44,7 @@ I also have [Xcode](https://developer.apple.com/xcode/) and [Homebrew](https://b
 
 * [How to install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X ](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
-Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators and how domain names work. I have a 4-month-old baby so it seemed safest to wait to learn more things until I am getting REM sleep again, so maybe in 2 or 3 years I will be more ambitious! Just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, if Yihui and Amber gave some advice, I took it and moved on. For example:
+Finally, I did not want to learn more about a lot of things! For instance, the nitty gritty of static site generators and how domain names work. I am a new mom, and just in the process of writing all this up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. So, where offered, I followed the advice of Yihui and Amber. For example:
 
 * ["Considering the cost and friendliness to beginners, we currently recommend Netlify."](https://bookdown.org/yihui/blogdown/deployment.html) Sold. 
 * ["If you are not familiar with domain names or do not want to learn more about them, an option for your consideration is a free subdomain `*.rbind.io` offered by RStudio, Inc."](https://bookdown.org/yihui/blogdown/netlify.html). Done. 
@@ -98,7 +98,6 @@ Checking connectivity... done.
 
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-3.png)
 
-Now you need to download Hugo, and you should use `blogdown`'s helper function to install it via R, so you'll first install the `blogdown` package.
 
 
 1. Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
@@ -108,7 +107,7 @@ if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("rstudio/blogdown")
 ```
 
-2. Still in the RStudio console, load the `blogdown` package to run the `install_hugo` function:
+2. Still in the RStudio console, load the `blogdown` package to run the `install_hugo` helper function:
 
 ```{r}
 blogdown::install_hugo()
@@ -302,9 +301,17 @@ blogdown::new_post(rmd = TRUE) # false is the default!
 
 Either way, this may seem obvious, but when you want to edit your `.Rmd` posts, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file is generated.
 
+```{r}
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+```
+
+
 
 {{% alert warning %}}
-The most important thing to remember is to **not** knit your `.Rmd` posts. Use `blogdown::serve_site` first before pushing to Github. The only Netlify deployment failures I ever experienced were because I knitted to html.
+The most important thing to remember is to **not** knit your `.Rmd` posts. Use `blogdown::serve_site` instead. The only Netlify deployment failures I ever experienced were because I knitted to html.
 {{% /alert %}}
 
 
@@ -324,14 +331,16 @@ If you want to include an image that is not a figure created from an R chunk, th
 
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/blogdown-signpost-5.png)
 
-Deploying in Netlify was surprisingly painless. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
+Deploying in Netlify through GitHub is smooth. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
 
 1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
 2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
 3. Log in, and select: `New site from Git -> Continuous Deployment: GitHub`.
 4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves specifying two important things: the build command and the publish directory (this should be `public`).
 
-    * More about the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. However, you can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, which means that I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
+    * More about the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. 
+    
+You can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, so I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
 
 ```{r}
 $ hugo version
@@ -344,7 +353,9 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 
 ![Screenshot above: Basic build settings in Netlify](/img/posts/2017-05-17-up-and-running-with-blogdown/netlify-build-settings.png)
 
-Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Note that anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to `baseurl = "https://apreshill.netlify.com/"`).
+Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. 
+
+**Note that anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to `baseurl = "https://apreshill.netlify.com/"`).**
 
 
 At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
@@ -363,7 +374,7 @@ I like to tinker with default theme settings like colors and fonts. Every Hugo t
 
 ## Formspree
 
-I used [Formspree](https://formspree.io) to make a contact form, which is an online service (managed on [GitHub](https://github.com/formspree/formspree)) that allows you to add an HTML form to your static site. It is **really** easy- no registration, just use the form and confirm your email address once. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
+I used [Formspree](https://formspree.io) to make a contact form, which is an online service (managed on [GitHub](https://github.com/formspree/formspree)) that allows you to add an HTML form to your static site. No registration, just use the form and confirm your email address once. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
 
 ```{r}
 <form action="https://formspree.io/your@email.com" method="POST">
@@ -385,7 +396,9 @@ I also made a totally silly [thank you page](https://apreshill.rbind.io/html/tha
 
 ## `*.rbind.io` domain names
 
-You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! Note that again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is `baseurl = "https://apreshill.rbind.io/"`).
+You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! 
+
+**Note that again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is `baseurl = "https://apreshill.rbind.io/"`).**
 
 
 ![](/img/posts/2017-05-17-up-and-running-with-blogdown/rbind.png)
@@ -393,3 +406,5 @@ You may want a different [domain name](https://bookdown.org/yihui/blogdown/domai
 ## Have fun!
 
 Lastly, have fun playing around. Happy `blogdown`ing!
+
+<iframe src="https://giphy.com/embed/wORkexswPznJC" width="480" height="353" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fun-shrek-donkey-wORkexswPznJC">via GIPHY</a></p>

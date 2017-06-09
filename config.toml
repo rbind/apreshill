@@ -153,6 +153,16 @@ defaultContentLanguageInSubdir = false
     icon = "orcid"
     icon_pack = "ai"
     link = "http://orcid.org/0000-0002-8082-1890"
+    
+  [[params.social]]
+    icon = "researchgate"
+    icon_pack = "ai"
+    link = "https://www.researchgate.net/profile/Alison_Hill4"
+    
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "https://www.linkedin.com/in/alisonpresmaneshill/"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
