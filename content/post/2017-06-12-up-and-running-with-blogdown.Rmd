@@ -155,7 +155,7 @@ Now you can finally build your site using the `blogdown::new_site()` function. B
 
 ## Picking a theme
 
-I looked at so many [Hugo themes](https://themes.gohugo.io) my eyes were crossing. So I went back to the `blogdown` book. Thankfully, Yihui and Amber offer ["to save you some time, we list a few themes below that match our taste..."](https://bookdown.org/yihui/blogdown/other-themes.html). Huzzah- I went with [hugo-academic](https://github.com/gcushen/hugo-academic)! Whatever theme you choose, you'll need to pick one of 3 ways to make your new site:
+There are over 90 [Hugo themes](https://themes.gohugo.io). So I went back to the `blogdown` book. Thankfully, Yihui and Amber offer ["to save you some time, we list a few themes below that match our taste..."](https://bookdown.org/yihui/blogdown/other-themes.html). Huzzah- I went with [hugo-academic](https://github.com/gcushen/hugo-academic)! Whatever theme you choose, you'll need to pick one of 3 ways to make your new site:
 
 1. If you are happy with the default theme, which is the lithium theme, you can use: 
 
@@ -185,9 +185,7 @@ Now is a good time to re-read about `blogdown::serve_site()` and [how _LiveReloa
 
 I recommend setting `theme_example = TRUE`- some themes won't provide an example site, but the academic theme did and I found it helpful to see. You can always delete the example content.
 
-{{% alert warning %}}
-If your example site is not loading correctly in your RStudio viewer pane, I have found that several themes replace the `baseurl` in the `config.toml` file with something like "https://example.com", without the trailing `/`. This is an infuriating but quick fix- see below section on editing configurations.
-{{% /alert %}}
+
 
 
 
@@ -212,10 +210,10 @@ baseurl = "/"
 ```
 
 {{% alert warning %}}
-It is worth saying again- make sure that the `baseurl = ` listed has a `/` at the end!
+Make sure that the `baseurl = ` listed ends with a trailing slash `/`!
 {{% /alert %}}
 
-Go ahead and edit that `config.toml` file now as you please- this is how you personalize your site!
+Go ahead and edit all the other elements in the `config.toml` file now as you please- this is how you personalize your site!
 
 ## Addins & workflow
 
@@ -224,16 +222,17 @@ Relevant reading:
 * [`blogdown` book chapter on the RStudio IDE](https://bookdown.org/yihui/blogdown/rstudio-ide.html)
 
 
-Addins: use them. Note that you don't need the `blogdown` package loaded in the console if you use the Addins. My workflow in RStudio at this point (again, just viewing locally because we haven't deployed yet) works best like this:
+Addins: use them- you won't need the `blogdown` library loaded in the console if you use the Addins. My workflow in RStudio at this point (again, just viewing locally because we haven't deployed yet) works best like this:
 
 1. Open the RStudio project for the site
 2. Use the **Serve Site** add-in (only once due to the magic of LiveReload).
-3. View site in the RStudio viewer pane, but I also show it in a new browser window and leave it open there while I work.
+3. View site in the RStudio viewer pane, and open in a new browser window while I work.
 3. Select existing files to edit using the file pane in RStudio.
-4. After making changes, click the save button (don't `knit`!!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
-5. When happy with changes, commit/push changes to GitHub.
+4. After making changes, click the save button (don't `knit`!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
+5. When happy with changes, add/commit/push changes to GitHub.
 
-Having `blogdown::serve_site` running locally with LiveReload is especially useful as you can immediately see if you have totally screwed up. For example, in adding to my `about.md` file, I saw this error pop up in my console after making a change and I was able to fix the error right away:
+Having `blogdown::serve_site` running locally with *LiveReload* is especially useful as you can immediately see if you have totally screwed up. For example, in editing my `about.md` file, this error popped up in my console after making a change and I was able to fix the error right away:
+
 ```{r}
 Started building sites ...
 ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 6): missing comma
@@ -241,7 +240,7 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 ```
 
 
-Note that the above workflow is only for editing existing files or posts, but not for **creating new posts**. For that, read on...
+The above workflow is only for editing existing files or posts, but not for **creating new posts**. For that, read on...
 
 
 
@@ -281,14 +280,13 @@ blogdown::new_post()
 blogdown::new_post(rmd = FALSE) # false is the default!
 ```
 
-Here are the arguments according to `?new_post`:
+Here are the `?new_post` arguments:
 
 ```{r}
 new_post(title, kind = "default", open = interactive(), 
     author = getOption("blogdown.author"), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption("blogdown.subdir", "post"), rmd = getOption("blogdown.rmd", 
-        FALSE))
+    subdir = getOption("blogdown.subdir", "post"), rmd = getOption("blogdown.rmd", FALSE))
 ```
 
 
@@ -304,20 +302,30 @@ Again, you have your choice of one of 2 methods:
 blogdown::new_post(rmd = TRUE) # false is the default!
 ```
 
-Either way, this may seem obvious, but when you edit your `.Rmd` posts, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file is generated. Ultimately, your YAML content has this as the output, which you can also use to include a Table of Contents and numbered sections:
-
-```{r}
-output:
-  blogdown::html_page:
-    toc: true
-    number_sections: true
-```
-
-
+This may seem obvious, but when you edit your `.Rmd` posts, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file is generated.
 
 {{% alert warning %}}
 Do **not** knit your `.Rmd` posts. Use `blogdown::serve_site` instead. The only Netlify deployment failures I ever experienced were because I knitted to html.
 {{% /alert %}}
+
+Ultimately, your [YAML metadata looks like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format):
+
+```{r}
+---
+title: "My Awesome Post"
+author: "John Doe"
+date: "2017-02-14"
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+    fig_width: 6
+---
+```
+
+So, although `blogdown::html_page` inherits from `bookdown::html_document2` which inherits from `rmarkdown::html_document`, you cannot knit an `.Rmd` file into an `.html`.  
+
+
 
 
 
@@ -336,7 +344,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 
 ![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-5.png)
 
-Deploying in Netlify through GitHub is smooth. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
+Deploying in Netlify through GitHub is smooth. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy, I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
 
 1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
 2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
@@ -396,7 +404,6 @@ I used [Formspree](https://formspree.io) to make a contact form, which is an onl
 </form>
 ```
 
-I also made a totally silly [thank you page](https://apreshill.rbind.io/html/thanks.html), so use my [formspree](https://apreshill.rbind.io/#contact) to enjoy!
 
 
 ## `*.rbind.io` domain names
