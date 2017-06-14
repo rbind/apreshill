@@ -12,6 +12,7 @@ output:
   blogdown::html_page:
     toc: true
     number_sections: true
+    toc_depth: 1
 ---
 
 ```{r include = FALSE}
@@ -202,7 +203,7 @@ Relevant reading:
 * [Additional detail from Amber](https://proquestionasker.github.io/blog/Making_Site/#site-configuration)
 * You can also view [my `config.toml` file](https://github.com/apreshill/apreshill/blob/master/config.toml)
 
-Now, edit the `baseurl` in your `config.toml` file. The URL *should always* end with a `/` trailing slash. At this point, you probably haven't deployed your site yet, so to view it locally you can use the Addin "Serve Site", or run the `blogdown::serve_site` function. Both of these `baseurl`s worked for me when viewing locally:
+Now, edit the `baseurl` in your `config.toml` file. The URL *should always* end with a `/` trailing slash. At this point, you probably haven't deployed your site yet, so to view it locally you can use the **Serve Site** add-in, or run the `blogdown::serve_site` function. Both of these baseurls worked for me when viewing locally:
 
 ```{r}
 baseurl = "https://example.com/"
@@ -225,11 +226,11 @@ Relevant reading:
 Addins: use them- you won't need the `blogdown` library loaded in the console if you use the Addins. My workflow in RStudio at this point (again, just viewing locally because we haven't deployed yet) works best like this:
 
 1. Open the RStudio project for the site
-2. Use the **Serve Site** add-in (only once due to the magic of LiveReload).
-3. View site in the RStudio viewer pane, and open in a new browser window while I work.
-3. Select existing files to edit using the file pane in RStudio.
-4. After making changes, click the save button (don't `knit`!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
-5. When happy with changes, add/commit/push changes to GitHub.
+2. Use the **Serve Site** add-in (only once due to the magic of *LiveReload*)
+3. View site in the RStudio viewer pane, and open in a new browser window while I work
+3. Select existing files to edit using the file pane in RStudio
+4. After making changes, click the save button (don't `knit`!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated
+5. When happy with changes, add/commit/push changes to GitHub
 
 Having `blogdown::serve_site` running locally with *LiveReload* is especially useful as you can immediately see if you have totally screwed up. For example, in editing my `about.md` file, this error popped up in my console after making a change and I was able to fix the error right away:
 
@@ -255,7 +256,7 @@ Relevant reading:
 
 Bottom line:
 
-Use the **New Post** addin. But, you need the console to do this, so you have to stop `blogdown::serve_site`. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to be unblocked for it to run. You also need to be "in" your RStudio project or it won't work.
+Use the **New Post** addin. But, you need the console to do this, so you have to stop `blogdown::serve_site` by clicking on the red **Stop** button first. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to be unblocked for it to run. You also need to be "in" your RStudio project or it won't work.
 
 ### Draft posts
 
@@ -263,7 +264,7 @@ Relevant reading:
 
 * [`blogdown` book chapter on building a website for local preview](https://bookdown.org/yihui/blogdown/local-preview.html)
 
-Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you set it to false. Because this is a function built into Hugo, all posts (draft or not) will still end up in your GitHub repo, so don't put top secret blog posts in there as enterprising individuals can still find and read them!
+Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you set it to false. Because this is a function built into Hugo, all posts (draft or not) will still end up in your GitHub repo though.
 
 
 
@@ -289,11 +290,11 @@ new_post(title, kind = "default", open = interactive(),
     subdir = getOption("blogdown.subdir", "post"), rmd = getOption("blogdown.rmd", FALSE))
 ```
 
-
+Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
 
 ### New RMarkdown posts
 
-Again, you have your choice of one of 2 methods:
+ Again, you have your choice of one of 2 methods:
 
 1. Use the **New Post** addin and with the radio button at the bottom select **Format: RMarkdown** (recommended)
 2. Use the console to author a new `.Rmd` post:
@@ -302,13 +303,13 @@ Again, you have your choice of one of 2 methods:
 blogdown::new_post(rmd = TRUE) # false is the default!
 ```
 
-This may seem obvious, but when you edit your `.Rmd` posts, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file is generated.
+After you edit your `.Rmd` post, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file needs to be generated.   
 
 {{% alert warning %}}
-Do **not** knit your `.Rmd` posts. Use `blogdown::serve_site` instead. The only Netlify deployment failures I ever experienced were because I knitted to html.
+Do *not* knit your `.Rmd` posts- use `blogdown::serve_site` instead. If you happen to hit the knit button, just **Serve Site** again to rewrite the `.html` file.
 {{% /alert %}}
 
-Ultimately, your [YAML metadata looks like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format):
+Ultimately, your [YAML front matter looks like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format):
 
 ```{r}
 ---
@@ -318,16 +319,19 @@ date: "2017-02-14"
 output:
   blogdown::html_page:
     toc: true
+    toc_depth: 1
     number_sections: true
     fig_width: 6
 ---
 ```
 
-So, although `blogdown::html_page` inherits from `bookdown::html_document2` which inherits from `rmarkdown::html_document`, you cannot knit an `.Rmd` file into an `.html`.  
 
 
+{{% alert note %}}
+Some but not all features of `rmarkdown::html_document` [are supported in `blogdown`](https://bookdown.org/yihui/blogdown/output-format.html#fn15)
+{{% /alert %}}
 
-
+Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
 
 ### Adding images to a post
 

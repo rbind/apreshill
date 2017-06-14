@@ -12,6 +12,7 @@ output:
   blogdown::html_page:
     toc: true
     number_sections: true
+    toc_depth: 1
 ---
 
 
@@ -22,25 +23,9 @@ output:
 <li><a href="#in-github"><span class="toc-section-number">3</span> In GitHub</a></li>
 <li><a href="#in-terminal"><span class="toc-section-number">4</span> In terminal</a></li>
 <li><a href="#in-rstudio"><span class="toc-section-number">5</span> In RStudio</a></li>
-<li><a href="#build-your-site-in-rstudio"><span class="toc-section-number">6</span> Build your site in RStudio</a><ul>
-<li><a href="#picking-a-theme"><span class="toc-section-number">6.1</span> Picking a theme</a></li>
-<li><a href="#update-project-options"><span class="toc-section-number">6.2</span> Update project options</a></li>
-<li><a href="#edit-your-configurations"><span class="toc-section-number">6.3</span> Edit your configurations</a></li>
-<li><a href="#addins-workflow"><span class="toc-section-number">6.4</span> Addins &amp; workflow</a></li>
-<li><a href="#posting"><span class="toc-section-number">6.5</span> Posting</a><ul>
-<li><a href="#draft-posts"><span class="toc-section-number">6.5.1</span> Draft posts</a></li>
-<li><a href="#new-markdown-posts"><span class="toc-section-number">6.5.2</span> New markdown posts</a></li>
-<li><a href="#new-rmarkdown-posts"><span class="toc-section-number">6.5.3</span> New RMarkdown posts</a></li>
-<li><a href="#adding-images-to-a-post"><span class="toc-section-number">6.5.4</span> Adding images to a post</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#build-your-site-in-rstudio"><span class="toc-section-number">6</span> Build your site in RStudio</a></li>
 <li><a href="#deploy-in-netlify"><span class="toc-section-number">7</span> Deploy in Netlify</a></li>
-<li><a href="#going-further"><span class="toc-section-number">8</span> Going further</a><ul>
-<li><a href="#custom-css"><span class="toc-section-number">8.1</span> Custom CSS</a></li>
-<li><a href="#formspree"><span class="toc-section-number">8.2</span> Formspree</a></li>
-<li><a href="#rbind.io-domain-names"><span class="toc-section-number">8.3</span> <code>*.rbind.io</code> domain names</a></li>
-<li><a href="#have-fun"><span class="toc-section-number">8.4</span> Have fun!</a></li>
-</ul></li>
+<li><a href="#going-further"><span class="toc-section-number">8</span> Going further</a></li>
 </ul>
 </div>
 
@@ -198,7 +183,7 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/#site-configuration">Additional detail from Amber</a></li>
 <li>You can also view <a href="https://github.com/apreshill/apreshill/blob/master/config.toml">my <code>config.toml</code> file</a></li>
 </ul>
-<p>Now, edit the <code>baseurl</code> in your <code>config.toml</code> file. The URL <em>should always</em> end with a <code>/</code> trailing slash. At this point, you probably haven’t deployed your site yet, so to view it locally you can use the Addin “Serve Site”, or run the <code>blogdown::serve_site</code> function. Both of these <code>baseurl</code>s worked for me when viewing locally:</p>
+<p>Now, edit the <code>baseurl</code> in your <code>config.toml</code> file. The URL <em>should always</em> end with a <code>/</code> trailing slash. At this point, you probably haven’t deployed your site yet, so to view it locally you can use the <strong>Serve Site</strong> add-in, or run the <code>blogdown::serve_site</code> function. Both of these baseurls worked for me when viewing locally:</p>
 <pre class="r"><code>baseurl = &quot;https://example.com/&quot;
 baseurl = &quot;/&quot;</code></pre>
 <p>{{% alert warning %}} Make sure that the <code>baseurl =</code> listed ends with a trailing slash <code>/</code>! {{% /alert %}}</p>
@@ -213,11 +198,11 @@ baseurl = &quot;/&quot;</code></pre>
 <p>Addins: use them- you won’t need the <code>blogdown</code> library loaded in the console if you use the Addins. My workflow in RStudio at this point (again, just viewing locally because we haven’t deployed yet) works best like this:</p>
 <ol style="list-style-type: decimal">
 <li>Open the RStudio project for the site</li>
-<li>Use the <strong>Serve Site</strong> add-in (only once due to the magic of LiveReload).</li>
-<li>View site in the RStudio viewer pane, and open in a new browser window while I work.</li>
-<li>Select existing files to edit using the file pane in RStudio.</li>
-<li>After making changes, click the save button (don’t <code>knit</code>!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.</li>
-<li>When happy with changes, add/commit/push changes to GitHub.</li>
+<li>Use the <strong>Serve Site</strong> add-in (only once due to the magic of <em>LiveReload</em>)</li>
+<li>View site in the RStudio viewer pane, and open in a new browser window while I work</li>
+<li>Select existing files to edit using the file pane in RStudio</li>
+<li>After making changes, click the save button (don’t <code>knit</code>!)- the console will reload, the viewer pane will update, and if you hit refresh in the browser your local view will also be updated</li>
+<li>When happy with changes, add/commit/push changes to GitHub</li>
 </ol>
 <p>Having <code>blogdown::serve_site</code> running locally with <em>LiveReload</em> is especially useful as you can immediately see if you have totally screwed up. For example, in editing my <code>about.md</code> file, this error popped up in my console after making a change and I was able to fix the error right away:</p>
 <pre class="r"><code>Started building sites ...
@@ -234,14 +219,14 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece">Additional detail from Amber</a> on adding a blog post</li>
 </ul>
 <p>Bottom line:</p>
-<p>Use the <strong>New Post</strong> addin. But, you need the console to do this, so you have to stop <code>blogdown::serve_site</code>. The Addin is a Shiny interface that runs this code in your console: <code>blogdown:::new_post_addin()</code>. So, your console needs to be unblocked for it to run. You also need to be “in” your RStudio project or it won’t work.</p>
+<p>Use the <strong>New Post</strong> addin. But, you need the console to do this, so you have to stop <code>blogdown::serve_site</code> by clicking on the red <strong>Stop</strong> button first. The Addin is a Shiny interface that runs this code in your console: <code>blogdown:::new_post_addin()</code>. So, your console needs to be unblocked for it to run. You also need to be “in” your RStudio project or it won’t work.</p>
 <div id="draft-posts" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Draft posts</h3>
 <p>Relevant reading:</p>
 <ul>
 <li><a href="https://bookdown.org/yihui/blogdown/local-preview.html"><code>blogdown</code> book chapter on building a website for local preview</a></li>
 </ul>
-<p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you set it to false. Because this is a function built into Hugo, all posts (draft or not) will still end up in your GitHub repo, so don’t put top secret blog posts in there as enterprising individuals can still find and read them!</p>
+<p>Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add <code>draft: TRUE</code> and you will be able to preview your post using <code>blogdown::serve_site()</code>, but conveniently your post will not show up on your deployed site until you set it to false. Because this is a function built into Hugo, all posts (draft or not) will still end up in your GitHub repo though.</p>
 </div>
 <div id="new-markdown-posts" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> New markdown posts</h3>
@@ -257,6 +242,7 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
     author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
     subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), rmd = getOption(&quot;blogdown.rmd&quot;, FALSE))</code></pre>
+<p>Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>.</p>
 </div>
 <div id="new-rmarkdown-posts" class="section level3">
 <h3><span class="header-section-number">6.5.3</span> New RMarkdown posts</h3>
@@ -266,9 +252,9 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <li>Use the console to author a new <code>.Rmd</code> post:</li>
 </ol>
 <pre class="r"><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
-<p>This may seem obvious, but when you edit your <code>.Rmd</code> posts, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file is generated.</p>
-<p>{{% alert warning %}} Do <strong>not</strong> knit your <code>.Rmd</code> posts. Use <code>blogdown::serve_site</code> instead. The only Netlify deployment failures I ever experienced were because I knitted to html. {{% /alert %}}</p>
-<p>Ultimately, your <a href="https://bookdown.org/yihui/blogdown/output-format.html#output-format">YAML metadata looks like this</a>:</p>
+<p>After you edit your <code>.Rmd</code> post, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file needs to be generated.</p>
+<p>{{% alert warning %}} Do <em>not</em> knit your <code>.Rmd</code> posts- use <code>blogdown::serve_site</code> instead. If you happen to hit the knit button, just <strong>Serve Site</strong> again to rewrite the <code>.html</code> file. {{% /alert %}}</p>
+<p>Ultimately, your <a href="https://bookdown.org/yihui/blogdown/output-format.html#output-format">YAML front matter looks like this</a>:</p>
 <pre class="r"><code>---
 title: &quot;My Awesome Post&quot;
 author: &quot;John Doe&quot;
@@ -276,10 +262,12 @@ date: &quot;2017-02-14&quot;
 output:
   blogdown::html_page:
     toc: true
+    toc_depth: 1
     number_sections: true
     fig_width: 6
 ---</code></pre>
-<p>So, although <code>blogdown::html_page</code> inherits from <code>bookdown::html_document2</code> which inherits from <code>rmarkdown::html_document</code>, you cannot knit an <code>.Rmd</code> file into an <code>.html</code>.</p>
+<p>{{% alert note %}} Some but not all features of <code>rmarkdown::html_document</code> <a href="https://bookdown.org/yihui/blogdown/output-format.html#fn15">are supported in <code>blogdown</code></a> {{% /alert %}}</p>
+<p>Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>.</p>
 </div>
 <div id="adding-images-to-a-post" class="section level3">
 <h3><span class="header-section-number">6.5.4</span> Adding images to a post</h3>
