@@ -290,7 +290,9 @@ new_post(title, kind = "default", open = interactive(),
     subdir = getOption("blogdown.subdir", "post"), rmd = getOption("blogdown.rmd", FALSE))
 ```
 
+{{% alert note %}}
 Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
+{{% /alert %}}
 
 ### New RMarkdown posts
 
@@ -309,7 +311,7 @@ After you edit your `.Rmd` post, in addition to saving the changes in your `.Rmd
 Do *not* knit your `.Rmd` posts- use `blogdown::serve_site` instead. If you happen to hit the knit button, just **Serve Site** again to rewrite the `.html` file.
 {{% /alert %}}
 
-Ultimately, your [YAML front matter looks like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format):
+Ultimately, your [YAML front matter looks something like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format); note that some but not all features of `rmarkdown::html_document` [are supported in `blogdown`](https://bookdown.org/yihui/blogdown/output-format.html#fn15):
 
 ```{r}
 ---
@@ -328,10 +330,10 @@ output:
 
 
 {{% alert note %}}
-Some but not all features of `rmarkdown::html_document` [are supported in `blogdown`](https://bookdown.org/yihui/blogdown/output-format.html#fn15)
+Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload* and your `.html` file is properly output.
 {{% /alert %}}
 
-Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
+
 
 ### Adding images to a post
 
@@ -372,7 +374,10 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 
 Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. 
 
-*Note that anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to `baseurl = "https://apreshill.netlify.com/"`).*
+
+{{% alert note %}}
+Anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to `baseurl = "https://apreshill.netlify.com/"`).
+{{% /alert %}}
 
 
 At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
@@ -414,7 +419,9 @@ I used [Formspree](https://formspree.io) to make a contact form, which is an onl
 
 You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! 
 
-*Note that again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is `baseurl = "https://apreshill.rbind.io/"`).*
+{{% alert note %}}
+Again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is `baseurl = "https://apreshill.rbind.io/"`).
+{{% /alert %}}
 
 
 ![](/img/posts/2017-06-12-up-and-running-with-blogdown/rbind.png)
