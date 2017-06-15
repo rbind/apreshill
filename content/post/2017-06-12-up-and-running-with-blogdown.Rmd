@@ -296,7 +296,7 @@ Remember to use the **Serve Site** addin again so that you can immediately view 
 
 ### New RMarkdown posts
 
- Again, you have your choice of one of 2 methods:
+Again, you have your choice of one of 2 methods:
 
 1. Use the **New Post** addin and with the radio button at the bottom select **Format: RMarkdown** (recommended)
 2. Use the console to author a new `.Rmd` post:
@@ -345,6 +345,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 ```{r}
 ![my-image](/img/my-image.png)
 ```
+
 
 # Deploy in Netlify
 
