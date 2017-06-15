@@ -7,7 +7,7 @@ categories:
   - R
 tags:
   - blogdown
-summary: A quick guide to getting up and running with blogdown, Github, and Netlify
+summary: A guide to getting up and running with blogdown, GitHub, and Netlify
 output:
   blogdown::html_page:
     toc: true
@@ -28,7 +28,7 @@ Before you start, I recommend reading the following:
 * [Making a Website Using `blogdown`, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) also by Amber Thomas
 * [Getting Started with `blogdown`](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/) by M. Edward (Ed) Borasky
 
-I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on Github](https://github.com/rbind/support) to be helpful:
+I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on GitHub](https://github.com/rbind/support) to be helpful:
 
 * [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
 
@@ -83,13 +83,13 @@ Now you will [clone your remote repository](https://help.github.com/articles/clo
 
 2. Once there, type: `git clone [paste]`. So my command looked like this:
 
-```{r}
+```
 git clone https://github.com/apreshill/apreshill.git
 ```
 
 And this is what printed to my terminal window:
 
-```{r}
+```
 Cloning into 'apreshill'...
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -108,14 +108,14 @@ Checking connectivity... done.
 
 1. Install `blogdown` from your RStudio console. If you already have `devtools` installed like I did, you can just use the second line below:
 
-```{r}
+```
 if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("rstudio/blogdown")
 ```
 
 2. Install Hugo using the `blogdown` package helper function:
 
-```{r}
+```
 blogdown::install_hugo()
 # or
 library(blogdown)
@@ -136,7 +136,7 @@ This is where my instructions diverge from Ed's- he states that `blogdown` won't
 
 4. Now you should be "in" your project in RStudio. If you are using git for version control, edit your `*gitignore` file. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public/` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
 
-```{r}
+```
 .Rproj.user
 .Rhistory
 .RData
@@ -160,20 +160,20 @@ There are over 90 [Hugo themes](https://themes.gohugo.io). So I went back to the
 
 1. If you are happy with the default theme, which is the lithium theme, you can use: 
 
-```{r}
+```
 blogdown::new_site() # default theme is lithium
 ```
 
 2. If you want a theme other than the default, you can specify the theme at the same time as you call the `new_site` function:
 
-```{r}
+```
 # for example, create a new site with the academic theme
 blogdown::new_site(theme = "gcushen/hugo-academic", theme_example = TRUE)
 ```
 
 3. If instead you want to add the theme later (like I did, because I didn't see the above example until it was too late!), you can do this:
     
-```{r}
+```
 library(blogdown)
 new_site() # default theme is lithium
 # need to stop serving so can use the console again
@@ -205,7 +205,7 @@ Relevant reading:
 
 Now, edit the `baseurl` in your `config.toml` file. The URL *should always* end with a `/` trailing slash. At this point, you probably haven't deployed your site yet, so to view it locally you can use the **Serve Site** add-in, or run the `blogdown::serve_site` function. Both of these baseurls worked for me when viewing locally:
 
-```{r}
+```
 baseurl = "https://example.com/"
 baseurl = "/"
 ```
@@ -234,7 +234,7 @@ Addins: use them- you won't need the `blogdown` library loaded in the console if
 
 Having `blogdown::serve_site` running locally with *LiveReload* is especially useful as you can immediately see if you have totally screwed up. For example, in editing my `about.md` file, this error popped up in my console after making a change and I was able to fix the error right away:
 
-```{r}
+```
 Started building sites ...
 ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 6): missing comma
 Error: Error building site: Errors reading pages: Error: failed to parse page metadata for home/about.md: (18, 6): missing comma for about.md
@@ -276,18 +276,19 @@ Pick one of 2 methods:
 1. Use the **New Post** addin and with the radio button at the bottom select **Format: Markdown** (recommended)
 2. Use the console to author a new `.md` post:
 
-```{r}
+```
 blogdown::new_post()
 blogdown::new_post(rmd = FALSE) # false is the default!
 ```
 
 Here are the `?new_post` arguments:
 
-```{r}
+```
 new_post(title, kind = "default", open = interactive(), 
     author = getOption("blogdown.author"), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption("blogdown.subdir", "post"), rmd = getOption("blogdown.rmd", FALSE))
+    subdir = getOption("blogdown.subdir", "post"), 
+    rmd = getOption("blogdown.rmd", FALSE))
 ```
 
 {{% alert note %}}
@@ -301,9 +302,10 @@ Again, you have your choice of one of 2 methods:
 1. Use the **New Post** addin and with the radio button at the bottom select **Format: RMarkdown** (recommended)
 2. Use the console to author a new `.Rmd` post:
 
-```{r}
+```
 blogdown::new_post(rmd = TRUE) # false is the default!
 ```
+
 
 After you edit your `.Rmd` post, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file needs to be generated.   
 
@@ -313,7 +315,7 @@ Do *not* knit your `.Rmd` posts- use `blogdown::serve_site` instead. If you happ
 
 Ultimately, your [YAML front matter looks something like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format); note that some but not all features of `rmarkdown::html_document` [are supported in `blogdown`](https://bookdown.org/yihui/blogdown/output-format.html#fn15):
 
-```{r}
+```
 ---
 title: "My Awesome Post"
 author: "John Doe"
@@ -342,7 +344,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 1. Add the image to your `/static/img/` folder, then 
 2. Reference the image using the relative file path as follows:
 
-```{r}
+```
 ![my-image](/img/my-image.png)
 ```
 
@@ -362,7 +364,7 @@ Deploying in Netlify through GitHub is smooth. Yihui and Amber give some [beginn
     
 You can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, so I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
 
-```{r}
+```
 $ hugo version
 Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00
 ```
@@ -389,7 +391,7 @@ At this point, you should be up and running with `blogdown`, GitHub, and Netlify
 
 I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I customized the academic theme, which provides a way to link to a custom CSS file in the `config.toml` file:
 
-```{r}
+```
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   custom_css = ["blue.css"]
@@ -399,7 +401,7 @@ I like to tinker with default theme settings like colors and fonts. Every Hugo t
 
 I used [Formspree](https://formspree.io) to make a contact form, which is an online service (managed on [GitHub](https://github.com/formspree/formspree)) that allows you to add an HTML form to your static site. No registration, just use the form and confirm your email address once. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
 
-```{r}
+```
 <form action="https://formspree.io/your@email.com" method="POST">
   <label for="name">Your name: </label>
   <input type="text" name="name" required="required" placeholder="here"><br>

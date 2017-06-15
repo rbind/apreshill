@@ -7,7 +7,7 @@ categories:
   - R
 tags:
   - blogdown
-summary: A quick guide to getting up and running with blogdown, Github, and Netlify
+summary: A guide to getting up and running with blogdown, GitHub, and Netlify
 output:
   blogdown::html_page:
     toc: true
@@ -37,7 +37,7 @@ output:
 <li><a href="https://proquestionasker.github.io/blog/Making_Site/">Making a Website Using <code>blogdown</code>, Hugo, and GitHub pages</a> also by Amber Thomas</li>
 <li><a href="https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/">Getting Started with <code>blogdown</code></a> by M. Edward (Ed) Borasky</li>
 </ul>
-<p>I also found this comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on Github</a> to be helpful:</p>
+<p>I also found this comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on GitHub</a> to be helpful:</p>
 <ul>
 <li><a href="https://github.com/rbind/support/issues/12" class="uri">https://github.com/rbind/support/issues/12</a></li>
 </ul>
@@ -93,9 +93,9 @@ output:
 <li><p>Use <code>cd</code> to navigate into the directory where you want your repo to be</p></li>
 <li><p>Once there, type: <code>git clone [paste]</code>. So my command looked like this:</p></li>
 </ol>
-<pre class="r"><code>git clone https://github.com/apreshill/apreshill.git</code></pre>
+<pre><code>git clone https://github.com/apreshill/apreshill.git</code></pre>
 <p>And this is what printed to my terminal window:</p>
-<pre class="r"><code>Cloning into &#39;apreshill&#39;...
+<pre><code>Cloning into &#39;apreshill&#39;...
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
@@ -114,12 +114,12 @@ Checking connectivity... done.</code></pre>
 <ol style="list-style-type: decimal">
 <li>Install <code>blogdown</code> from your RStudio console. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
 </ol>
-<pre class="r"><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+<pre><code>if (!requireNamespace(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
 devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Install Hugo using the <code>blogdown</code> package helper function:</li>
 </ol>
-<pre class="r"><code>blogdown::install_hugo()
+<pre><code>blogdown::install_hugo()
 # or
 library(blogdown)
 install_hugo()</code></pre>
@@ -134,7 +134,7 @@ install_hugo()</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Now you should be “in” your project in RStudio. If you are using git for version control, edit your <code>*gitignore</code> file. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the <code>public/</code> line (<a href="https://bookdown.org/yihui/blogdown/version-control.html">read about here</a>.)</li>
 </ol>
-<pre class="r"><code>.Rproj.user
+<pre><code>.Rproj.user
 .Rhistory
 .RData
 .Ruserdata
@@ -155,16 +155,16 @@ public/ # if using Netlify</code></pre>
 <ol style="list-style-type: decimal">
 <li>If you are happy with the default theme, which is the lithium theme, you can use:</li>
 </ol>
-<pre class="r"><code>blogdown::new_site() # default theme is lithium</code></pre>
+<pre><code>blogdown::new_site() # default theme is lithium</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>If you want a theme other than the default, you can specify the theme at the same time as you call the <code>new_site</code> function:</li>
 </ol>
-<pre class="r"><code># for example, create a new site with the academic theme
+<pre><code># for example, create a new site with the academic theme
 blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, theme_example = TRUE)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>If instead you want to add the theme later (like I did, because I didn’t see the above example until it was too late!), you can do this:</li>
 </ol>
-<pre class="r"><code>library(blogdown)
+<pre><code>library(blogdown)
 new_site() # default theme is lithium
 # need to stop serving so can use the console again
 install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
@@ -184,7 +184,7 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <li>You can also view <a href="https://github.com/apreshill/apreshill/blob/master/config.toml">my <code>config.toml</code> file</a></li>
 </ul>
 <p>Now, edit the <code>baseurl</code> in your <code>config.toml</code> file. The URL <em>should always</em> end with a <code>/</code> trailing slash. At this point, you probably haven’t deployed your site yet, so to view it locally you can use the <strong>Serve Site</strong> add-in, or run the <code>blogdown::serve_site</code> function. Both of these baseurls worked for me when viewing locally:</p>
-<pre class="r"><code>baseurl = &quot;https://example.com/&quot;
+<pre><code>baseurl = &quot;https://example.com/&quot;
 baseurl = &quot;/&quot;</code></pre>
 <p>{{% alert warning %}} Make sure that the <code>baseurl =</code> listed ends with a trailing slash <code>/</code>! {{% /alert %}}</p>
 <p>Go ahead and edit all the other elements in the <code>config.toml</code> file now as you please- this is how you personalize your site!</p>
@@ -205,7 +205,7 @@ baseurl = &quot;/&quot;</code></pre>
 <li>When happy with changes, add/commit/push changes to GitHub</li>
 </ol>
 <p>Having <code>blogdown::serve_site</code> running locally with <em>LiveReload</em> is especially useful as you can immediately see if you have totally screwed up. For example, in editing my <code>about.md</code> file, this error popped up in my console after making a change and I was able to fix the error right away:</p>
-<pre class="r"><code>Started building sites ...
+<pre><code>Started building sites ...
 ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 6): missing comma
 Error: Error building site: Errors reading pages: Error: failed to parse page metadata for home/about.md: (18, 6): missing comma for about.md</code></pre>
 <p>The above workflow is only for editing existing files or posts, but not for <strong>creating new posts</strong>. For that, read on…</p>
@@ -235,13 +235,14 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 <li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: Markdown</strong> (recommended)</li>
 <li>Use the console to author a new <code>.md</code> post:</li>
 </ol>
-<pre class="r"><code>blogdown::new_post()
+<pre><code>blogdown::new_post()
 blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <p>Here are the <code>?new_post</code> arguments:</p>
-<pre class="r"><code>new_post(title, kind = &quot;default&quot;, open = interactive(), 
+<pre><code>new_post(title, kind = &quot;default&quot;, open = interactive(), 
     author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), rmd = getOption(&quot;blogdown.rmd&quot;, FALSE))</code></pre>
+    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), 
+    rmd = getOption(&quot;blogdown.rmd&quot;, FALSE))</code></pre>
 <p>{{% alert note %}} Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>. {{% /alert %}}</p>
 </div>
 <div id="new-rmarkdown-posts" class="section level3">
@@ -251,11 +252,11 @@ blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
 <li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: RMarkdown</strong> (recommended)</li>
 <li>Use the console to author a new <code>.Rmd</code> post:</li>
 </ol>
-<pre class="r"><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
+<pre><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
 <p>After you edit your <code>.Rmd</code> post, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file needs to be generated.</p>
 <p>{{% alert warning %}} Do <em>not</em> knit your <code>.Rmd</code> posts- use <code>blogdown::serve_site</code> instead. If you happen to hit the knit button, just <strong>Serve Site</strong> again to rewrite the <code>.html</code> file. {{% /alert %}}</p>
 <p>Ultimately, your <a href="https://bookdown.org/yihui/blogdown/output-format.html#output-format">YAML front matter looks something like this</a>; note that some but not all features of <code>rmarkdown::html_document</code> <a href="https://bookdown.org/yihui/blogdown/output-format.html#fn15">are supported in <code>blogdown</code></a>:</p>
-<pre class="r"><code>---
+<pre><code>---
 title: &quot;My Awesome Post&quot;
 author: &quot;John Doe&quot;
 date: &quot;2017-02-14&quot;
@@ -275,7 +276,7 @@ output:
 <li>Add the image to your <code>/static/img/</code> folder, then</li>
 <li>Reference the image using the relative file path as follows:</li>
 </ol>
-<pre class="r"><code>![my-image](/img/my-image.png)</code></pre>
+<pre><code>![my-image](/img/my-image.png)</code></pre>
 </div>
 </div>
 </div>
@@ -296,7 +297,7 @@ output:
 </ul></li>
 </ol>
 <p>You can check your <code>hugo</code> version in terminal using the command <a href="https://gohugo.io/overview/quickstart/"><code>hugo version</code></a>. This is what my output looked like, so I could run version <code>0.20</code> if I wanted to through Netlify, but I went with <code>0.19</code> and it works just fine.</p>
-<pre class="r"><code>$ hugo version
+<pre><code>$ hugo version
 Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00</code></pre>
 <div class="figure">
 <img src="/img/posts/2017-06-12-up-and-running-with-blogdown/netlify-build-settings.png" alt="Screenshot above: Basic build settings in Netlify" />
@@ -311,14 +312,14 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 <div id="custom-css" class="section level2">
 <h2><span class="header-section-number">8.1</span> Custom CSS</h2>
 <p>I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out <a href="https://github.com/apreshill/apreshill/blob/master/static/css/blue.css">my custom css</a> to see how I customized the academic theme, which provides a way to link to a custom CSS file in the <code>config.toml</code> file:</p>
-<pre class="r"><code>  # Link custom CSS and JS assets
+<pre><code>  # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
   custom_css = [&quot;blue.css&quot;]</code></pre>
 </div>
 <div id="formspree" class="section level2">
 <h2><span class="header-section-number">8.2</span> Formspree</h2>
 <p>I used <a href="https://formspree.io">Formspree</a> to make a contact form, which is an online service (managed on <a href="https://github.com/formspree/formspree">GitHub</a>) that allows you to add an HTML form to your static site. No registration, just use the form and confirm your email address once. I added the following code into <a href="https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html">my contact widget</a>:</p>
-<pre class="r"><code>&lt;form action=&quot;https://formspree.io/your@email.com&quot; method=&quot;POST&quot;&gt;
+<pre><code>&lt;form action=&quot;https://formspree.io/your@email.com&quot; method=&quot;POST&quot;&gt;
   &lt;label for=&quot;name&quot;&gt;Your name: &lt;/label&gt;
   &lt;input type=&quot;text&quot; name=&quot;name&quot; required=&quot;required&quot; placeholder=&quot;here&quot;&gt;&lt;br&gt;
   &lt;label for=&quot;email&quot;&gt;Your email: &lt;/label&gt;
