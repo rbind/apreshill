@@ -39,7 +39,7 @@ Even with all the great resources I listed above, getting myself up and running 
 
 * For Git: [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al.
 * For RStudio: [DataCamp's Working with the RStudio IDE (free)](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1) by Garrett Grolemund
-* For Terminal: [The Command Line Murder Mystery](https://github.com/veltman/clmystery) by Noah Veltman
+* For Terminal: [The Command Line Murder Mystery](https://github.com/veltman/clmystery) by Noah Veltman, and [The UNIX Workbench](http://seankross.com/the-unix-workbench/) by Sean Kross
 
 I also have [Xcode](https://developer.apple.com/xcode/) and [Homebrew](https://brew.sh) installed- [you will probably need these to download Hugo](https://bookdown.org/yihui/blogdown/installation.html). If you don't have either but are on a mac, this link may help:
 

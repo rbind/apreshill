@@ -1,0 +1,74 @@
+---
+title: "Up & running with blogdown"
+subtitle: "A workshop for the Portland R user group"
+author: "Alison Presmanes Hill"
+output:
+  html_document:
+    keep_md: FALSE
+    highlight: pygments
+    theme: flatly
+    smart: false
+    toc: true
+    number_sections: true
+    toc_float: true
+---
+
+<script src="https://use.fontawesome.com/5235085b15.js"></script>
+
+<a href="mailto:hillali@ohsu.edu"><i class="fa fa-paper-plane fa-fw"></i>hillali@ohsu.edu</a><br>
+<a href="https://apreshill.rbind.io"><i class="fa fa-link fa-fw"></i>apreshill.rbind.io</a><br>
+<a href="http://twitter.com/apreshill"><i class="fa fa-twitter fa-fw"></i>@apreshill</a><br>
+<a href="http://github.com/apreshill"><i class="fa fa-github fa-fw"></i>@apreshill</a><br>
+<a href="http://cslu.ohsu.edu"><i class="fa fa-map-marker fa-fw"></i>OHSU Center for Spoken Language Understanding</a>
+
+Join us for a workshop to get you up and running with your own personal website. If you’ve ever wanted to build your own site or blog, come learn how to do it for free using using R, RStudio, and the **blogdown** R package. 
+
+We will cover:
+
+- The **blogdown** R package
+- Hugo themes
+- Adding content to personalize your site
+- Posting 
+- Don't want to blog? / just want to knit?
+- Customizing themes
+- Troubleshooting common problems
+- Deployment options and recommendations
+- Domain options available through RStudio/rbind
+
+# Before the workshop
+## Installation
+
+1. You will need to install:
+
+    * [R](https://cran.cnr.berkeley.edu) 
+        * Help for Windows from Roger Peng: https://www.youtube.com/watch?v=LII6of-5Odw
+        * Help for a Mac from Roger Peng: https://www.youtube.com/watch?v=xokJUwn0mis
+        * General advice from Jenny Bryan: http://stat545.com/block000_r-rstudio-install.html
+    * [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/)
+        * Help for any platform: https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1
+    
+2. If you are on a Mac, you should also install:
+
+    * [Xcode](https://developer.apple.com/xcode/)
+    * [Homebrew](https://brew.sh)
+        * [Helpful advice for how to install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X ](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
+
+
+3. Finally, please follow these instructions for installing **blogdown**:
+
+    * https://bookdown.org/yihui/blogdown/installation.html
+
+
+## Other things you might need
+
+* A [GitHub](https://github.com) account
+* A digital photo of yourself to upload to your site
+
+## Additional resources
+
+If you have time before the workshop, you should try to skim these resources:
+
+* [**blogdown**: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, and Alison Presmanes Hill
+* [Up and running with **blogdown**](https://apreshill.rbind.io/post/up-and-running-with-blogdown/) by Alison Presmanes Hill
+* [Making a Website Using **blogdown**, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) by Amber Thomas
+* [rbind support](https://support.rbind.io)
