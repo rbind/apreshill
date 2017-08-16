@@ -1,5 +1,5 @@
 +++
-date = "2017-08-14T00:00:00"
+date = "2017-09-14T00:00:00"
 title = "Up & Running with blogdown"
 abstract = "Join me for a workshop to get you up and running with your own personal website. If you are looking to start your own site, come learn how to do it for free using using R, RStudio, and the blogdown R package."
 abstract_short = ""
