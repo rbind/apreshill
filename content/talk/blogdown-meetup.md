@@ -11,11 +11,18 @@ selected = true
 math = true
 
 url_pdf = ""
-url_slides = ""
+url_slides = "slides/blogdown-workshop-slides.html"
 url_video = ""
 [[url_custom]]
-    name = "html"
+    name = "Pre-work"
     url = "html/blogdown-workshop-pdxrmeetup.html"
+[[url_custom]]
+    name = "GitHub"
+    url = "https://github.com/apreshill/blogdown-workshop"
+[[url_custom]]
+    name = "R-Ladies PDX GitHub"
+    url = "https://github.com/apreshill/rladies-PDX"
+
 
 
 # Optional featured image (relative to `static/img/` folder).
