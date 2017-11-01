@@ -423,7 +423,7 @@ I used [Formspree](https://formspree.io) to make a contact form, which is an onl
 You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! 
 
 {{% alert note %}}
-Again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is baseurl = "https://apreshill.rbind.io/").
+Again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is baseurl = "https://alison.rbind.io/").
 {{% /alert %}}
 
 

@@ -16,7 +16,7 @@ output:
 <script src="https://use.fontawesome.com/5235085b15.js"></script>
 
 <a href="mailto:hillali@ohsu.edu"><i class="fa fa-paper-plane fa-fw"></i>hillali@ohsu.edu</a><br>
-<a href="https://apreshill.rbind.io"><i class="fa fa-link fa-fw"></i>apreshill.rbind.io</a><br>
+<a href="https://alison.rbind.io"><i class="fa fa-link fa-fw"></i>alison.rbind.io</a><br>
 <a href="http://twitter.com/apreshill"><i class="fa fa-twitter fa-fw"></i>@apreshill</a><br>
 <a href="http://github.com/apreshill"><i class="fa fa-github fa-fw"></i>@apreshill</a><br>
 <a href="http://cslu.ohsu.edu"><i class="fa fa-map-marker fa-fw"></i>OHSU Center for Spoken Language Understanding</a>
@@ -69,6 +69,6 @@ We will cover:
 If you have time before the workshop, you should try to skim these resources:
 
 * [**blogdown**: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, and Alison Presmanes Hill
-* [Up and running with **blogdown**](https://apreshill.rbind.io/post/up-and-running-with-blogdown/) by Alison Presmanes Hill
+* [Up and running with **blogdown**](https://alison.rbind.io/post/up-and-running-with-blogdown/) by Alison Presmanes Hill
 * [Making a Website Using **blogdown**, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) by Amber Thomas
 * [rbind support](https://support.rbind.io)

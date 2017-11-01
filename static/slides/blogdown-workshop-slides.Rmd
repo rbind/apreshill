@@ -25,7 +25,7 @@ class: inverse, center, middle
 # Keep in touch
 
 <a href="mailto:apresstats@gmail.com"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; apresstats@gmail.com</a><br>
-<a href="https://apreshill.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; apreshill.rbind.io</a><br>
+<a href="https://alison.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; alison.rbind.io</a><br>
 <a href="http://twitter.com/apreshill"><i class="fa fa-twitter fa-fw"></i>&nbsp; @apreshill</a><br>
 <a href="http://github.com/apreshill"><i class="fa fa-github fa-fw"></i>&nbsp; @apreshill</a><br>
 <a href="http://cslu.ohsu.edu"><i class="fa fa-map-marker fa-fw"></i>&nbsp; OHSU Center for Spoken Language Understanding</a>
@@ -1005,7 +1005,7 @@ class: inverse, middle, center
 
 # How to git from the start
 
-https://apreshill.rbind.io/post/up-and-running-with-blogdown/
+https://alison.rbind.io/post/up-and-running-with-blogdown/
 
 ![](images/animated-blogdown.gif)
 
@@ -1069,7 +1069,7 @@ View the actual demo site:
 https://rladies-pdx.netlify.com
 
 More on posting here:
-https://apreshill.rbind.io/post/up-and-running-with-blogdown/#build-your-site-in-rstudio
+https://alison.rbind.io/post/up-and-running-with-blogdown/#build-your-site-in-rstudio
 
 And here:
 https://bookdown.org/yihui/blogdown/output-format.html
