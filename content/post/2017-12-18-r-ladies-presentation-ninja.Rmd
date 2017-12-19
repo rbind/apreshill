@@ -2,7 +2,7 @@
 title: R-Ladies presentation ninja
 author: Alison Hill
 summary: A guide to using the R-Ladies xaringan slide theme
-date: '2017-12-01'
+date: '2017-12-18'
 slug: r-ladies-slides
 categories:
   - R
