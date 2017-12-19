@@ -1,0 +1,256 @@
+---
+title: "R-Ladies Presentation Ninja"
+subtitle: "⚔<br/>with xaringan"
+author: "Alison Presmanes Hill"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      in_header: header.html
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle
+
+# Keep in touch
+
+<a href="mailto:apresstats@gmail.com"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; apresstats@gmail.com</a><br>
+<a href="https://apreshill.rbind.io"><i class="fa fa-link fa-fw"></i>&nbsp; apreshill.rbind.io</a><br>
+<a href="http://twitter.com/apreshill"><i class="fa fa-twitter fa-fw"></i>&nbsp; @apreshill</a><br>
+<a href="http://github.com/apreshill"><i class="fa fa-github fa-fw"></i>&nbsp; @apreshill</a><br>
+<a href="http://cslu.ohsu.edu"><i class="fa fa-map-marker fa-fw"></i>&nbsp; OHSU Center for Spoken Language Understanding</a>
+
+---
+
+
+background-image: url("https://media.giphy.com/media/10ZkZlv7XYbNF6/giphy.gif")
+background-position: 50% 50%
+class: center, inverse
+
+# Get Started
+
+---
+
+# Get **xaringan**
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+devtools::install_github("yihui/xaringan")
+```
+
+--
+
+You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+
+- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;
+
+--
+
+- Click the `Knit` button to compile it;
+
+--
+
+- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>1</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+
+.footnote[
+[1] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+]
+
+
+---
+background-image: url("https://media.giphy.com/media/q1zsIXcp8N2ne/giphy.gif")
+background-position: 50% 50%
+class: center, inverse
+
+
+# Use a theme
+
+---
+
+# Themes
+
+You can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
+
+```{r}
+names(xaringan:::list_css())
+```
+
+To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
+
+```yaml
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+```
+
+If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.name/en/2017/10/xaringan-themes).
+
+
+---
+
+# The R-Ladies theme
+
+You can use it in the YAML metadata, e.g.:
+
+```yaml
+---
+title: "A Cool R-Ladies Presentation"
+output:
+  xaringan::moon_reader
+    css: ["default", "rladies", "rladies-fonts"]
+    nature:
+          highlightLines: true
+---
+```
+
+See the help page `?xaringan::moon_reader` for all possible options that you can use. 
+
+💜 Definitely use the `highlightLines: true` option- read on to see why! 
+
+---
+background-image: url("https://media.giphy.com/media/UqjSzv18agbgk/giphy.gif")
+background-position: 50% 50%
+class: center, inverse
+
+
+# Now we can really have fun!
+
+---
+
+# Side by side slides
+
+
+
+.pull-left[
+![](https://media.giphy.com/media/i1hiQy3uVZ0KQ/giphy.gif)
+]
+
+.pull-right[
+![](https://media.giphy.com/media/aptJIZbitjf2g/giphy.gif)
+]
+
+
+
+---
+
+# Math Expressions
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+Limitations:
+
+1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+
+1. There should not be spaces after the opening `$` or before the closing `$`.
+
+1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+
+---
+
+# R Code
+
+```{r comment='#'}
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+```
+
+---
+
+# R Plots
+
+```{r cars, fig.height=4, dev='svg'}
+library(ggplot2)
+ggplot(cars, aes(speed, dist)) + geom_point()
+```
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+
+# Highlight code
+
+- The option `highlightLines: true` of `nature` will highlight code lines that start with `*` or are wrapped in `{{ }}`;
+
+    ```yaml
+    output:
+      xaringan::moon_reader:
+        nature:
+          highlightLines: true
+    ```
+
+    See examples on the next page.
+
+---
+
+# Highlight code
+
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+    `r ''````{r tidy=FALSE}
+    if (TRUE) {
+    *{{ message("Very important!") }}
+    }
+    ```
+Output:
+```{r tidy=FALSE}
+if (TRUE) {
+{{ message("Very important!") }}
+}
+```
+
+It is valid R code so you can run it.
+]
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+

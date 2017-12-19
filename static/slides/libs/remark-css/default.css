@@ -1,15 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
-
-body { font-family: 'Lato', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
-h1, h2, h3 {
-  font-family: 'Yanone Kaffeesatz';
-  font-weight: normal;
-  color: #562457;
-}
 a, a > code {
-  color: #88398A;
+  color: rgb(249, 38, 114);
   text-decoration: none;
 }
 .footnote {
@@ -18,23 +8,16 @@ a, a > code {
   padding-right: 4em;
   font-size: 90%;
 }
-.remark-code, .remark-inline-code { font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace; color: #88398A}
-.remark-code-line-highlighted     { background-color: rgba(136, 57, 138, 0.3); }
+.remark-code-line-highlighted     { background-color: #ffff88; }
 
 .inverse {
-  background-color: #562457;
-  color: #FFFFFF;
+  background-color: #272822;
+  color: #d6d6d6;
   text-shadow: 0 0 20px #333;
 }
 .inverse h1, .inverse h2, .inverse h3 {
-  color: #FFFFFF;
-  line-height: 1.0em;
+  color: #f3f3f3;
 }
-.inverse a {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
 /* Two-column layout */
 .left-column {
   color: #777;
@@ -87,4 +70,3 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
     left: 0 !important;
   }
 }
-
