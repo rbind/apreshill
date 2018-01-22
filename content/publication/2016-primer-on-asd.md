@@ -12,14 +12,14 @@ selected = false
 title = "Epidemiology of autism spectrum disorders"
 url_code = ""
 url_dataset = ""
-url_pdf = "pdf/primer-chapter-text.pdf"
+url_pdf = "pdf/2016-primer-chapter-text.pdf"
 url_project = ""
 url_slides = ""
 url_video = ""
 
 [[url_custom]]
-name = ""
-url = ""
+name = "Buy on Amazon"
+url = "https://www.amazon.com/Autism-Spectrum-Disorder-Christopher-McDougle/dp/019934972X/ref=sr_1_1?ie=UTF8&qid=1516640986&sr=8-1&keywords=primer+on+autism"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
