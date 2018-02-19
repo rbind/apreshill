@@ -39,7 +39,13 @@ output:
 Make sure your version of **xaringan** is up-to-date.
 
 ![](/img/posts/rladies-slides/rladies-demo-slides.png)
-You can view a [demo slide deck](https://alison.rbind.io/slides/rladies-demo-slides.html#1) using the theme, and the [raw .Rmd](https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd).
+Below is a [demo slide deck](https://alison.rbind.io/slides/rladies-demo-slides.html#1) using the theme.
+
+```{r echo = FALSE}
+knitr::include_url('https://alison.rbind.io/slides/rladies-demo-slides.html#1')
+```
+
+(view the [source .Rmd on GitHub](https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd))
 
 # The longer story
 
@@ -83,11 +89,22 @@ output:
     css: ["default", "rladies", "rladies-fonts"]
 ```
 
-Some examples:
-
-* [demo slide deck](https://alison.rbind.io/slides/rladies-demo-slides.html#1); [.Rmd](https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd).
-* [**blogdown** workshop slide deck](https://alison.rbind.io/slides/blogdown-workshop-slides.html#1); [.Rmd](https://github.com/apreshill/blogdown-workshop).
 
 
 If you use the theme and you are on twitter, I'd love to see it- [please mention me on twitter!](https://twitter.com/intent/tweet?user_id=3199856542)
+
+Examples!
+
+* My blogdown workshop slides: ["Up and running with blogdown"](http://127.0.0.1:4321/talk/blogdown-meetup/) (view the [source .Rmd on GitHub](https://github.com/rbind/apreshill/blob/master/static/slides/blogdown-workshop-slides.Rmd))
+
+```{r echo = FALSE}
+knitr::include_url('https://alison.rbind.io/slides/blogdown-workshop-slides.html#1')
+```
+
+
+* [Jessica Minnier's](http://jessicaminnier.com) slides for ["Building Shiny Apps: With Great Power Comes Great Responsibility"](http://jminnier-talks.netlify.com/2018_02_shiny_csp/minnier_csp2018#1)
+
+```{r echo = FALSE}
+knitr::include_url('http://jminnier-talks.netlify.com/2018_02_shiny_csp/minnier_csp2018#1')
+```
 
