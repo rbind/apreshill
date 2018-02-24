@@ -1,0 +1,320 @@
+---
+title: Read data with multiple header rows into R
+author: Alison Hill
+summary: Using the readr package to sidestep a common problem
+draft: TRUE
+date: '2018-02-23'
+slug: read-multiple-header-rows
+categories:
+  - R
+tags:
+  - readr
+  - tidyverse
+header:
+  preview: FALSE
+---
+
+
+
+<p>Very useful resources:</p>
+<ul>
+<li>Great blog post from <a href="https://twitter.com/lisadebruine">Lisa DeBruine</a> using <code>readxl</code> to read in data with multiple header rows (including those with merged cells!): <a href="https://debruine.github.io/multirow_headers.html" class="uri">https://debruine.github.io/multirow_headers.html</a></li>
+<li>This GitHub issue with Hadley’s response that solved all my problems: <a href="https://github.com/tidyverse/readr/issues/179" class="uri">https://github.com/tidyverse/readr/issues/179</a></li>
+</ul>
+{{% tweet 904772340902379520 %}}
+<div id="the-data" class="section level1">
+<h1>The data</h1>
+<div class="figure">
+<img src="/img/posts/readr-headers/stickers-plos-one.png" />
+
+</div>
+<p><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928" class="uri">http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928</a></p>
+<pre class="r"><code># create variable to store url
+link &lt;- &quot;https://dataverse.harvard.edu/api/access/datafile/2712105&quot;</code></pre>
+<div class="figure">
+<img src="/img/posts/readr-headers/stickers-txt.png" />
+
+</div>
+<div class="figure">
+<img src="/img/posts/readr-headers/stickers-table.png" />
+
+</div>
+</div>
+<div id="read-1" class="section level1">
+<h1>Read #1</h1>
+<pre class="r"><code>#install.packages(&quot;readr&quot;)
+library(readr) # load the readr package
+stickers &lt;- read_tsv(link) 
+# spec()</code></pre>
+</div>
+<div id="high-level-overview-say-hlo" class="section level1">
+<h1>High Level Overview: say HLO</h1>
+<pre class="r"><code>stickers</code></pre>
+<pre><code># # A tibble: 402 x 18
+#    SubjectNumber Condition NumberStickers NumberEnvelopes Gender Agemonths
+#    &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;
+#  1 [Included Sa… 1=12:1; … 1=12; 2=30     1=1 recipient;… 1=fem…      NA  
+#  2 1             1         1              1               1           36.0
+#  3 2             1         1              1               2           36.0
+#  4 3             1         1              1               2           36.0
+#  5 4             1         1              1               1           36.0
+#  6 5             1         1              1               2           36.0
+#  7 6             1         1              1               2           36.0
+#  8 7             2         1              2               1           36.0
+#  9 8             2         1              2               2           36.0
+# 10 9             3         2              1               2           36.0
+# # ... with 392 more rows, and 12 more variables: Ageyears &lt;dbl&gt;,
+# #   Agegroups &lt;chr&gt;, `Subject&#39;sEnvelope` &lt;chr&gt;, LeftEnvelope &lt;chr&gt;,
+# #   RightEnvelope &lt;chr&gt;,
+# #   `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt;,
+# #   `PercentGiven(Outof100percent)` &lt;chr&gt;, Giveornot &lt;chr&gt;,
+# #   LargerEnvelopeabs &lt;chr&gt;, LargeEnvelopepercent &lt;chr&gt;,
+# #   SmallerEnvelopeabs &lt;chr&gt;, SmallEnvelopepercent &lt;chr&gt;</code></pre>
+<pre class="r"><code>library(dplyr)
+glimpse(stickers)</code></pre>
+<pre><code># Observations: 402
+# Variables: 18
+# $ SubjectNumber                                                                  &lt;chr&gt; ...
+# $ Condition                                                                      &lt;chr&gt; ...
+# $ NumberStickers                                                                 &lt;chr&gt; ...
+# $ NumberEnvelopes                                                                &lt;chr&gt; ...
+# $ Gender                                                                         &lt;chr&gt; ...
+# $ Agemonths                                                                      &lt;dbl&gt; ...
+# $ Ageyears                                                                       &lt;dbl&gt; ...
+# $ Agegroups                                                                      &lt;chr&gt; ...
+# $ `Subject&#39;sEnvelope`                                                            &lt;chr&gt; ...
+# $ LeftEnvelope                                                                   &lt;chr&gt; ...
+# $ RightEnvelope                                                                  &lt;chr&gt; ...
+# $ `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt; ...
+# $ `PercentGiven(Outof100percent)`                                                &lt;chr&gt; ...
+# $ Giveornot                                                                      &lt;chr&gt; ...
+# $ LargerEnvelopeabs                                                              &lt;chr&gt; ...
+# $ LargeEnvelopepercent                                                           &lt;chr&gt; ...
+# $ SmallerEnvelopeabs                                                             &lt;chr&gt; ...
+# $ SmallEnvelopepercent                                                           &lt;chr&gt; ...</code></pre>
+<pre class="r"><code>head(stickers)</code></pre>
+<pre><code># # A tibble: 6 x 18
+#   SubjectNumber  Condition NumberStickers NumberEnvelopes Gender Agemonths
+#   &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;
+# 1 [Included Sam… 1=12:1; … 1=12; 2=30     1=1 recipient;… 1=fem…      NA  
+# 2 1              1         1              1               1           36.0
+# 3 2              1         1              1               2           36.0
+# 4 3              1         1              1               2           36.0
+# 5 4              1         1              1               1           36.0
+# 6 5              1         1              1               2           36.0
+# # ... with 12 more variables: Ageyears &lt;dbl&gt;, Agegroups &lt;chr&gt;,
+# #   `Subject&#39;sEnvelope` &lt;chr&gt;, LeftEnvelope &lt;chr&gt;, RightEnvelope &lt;chr&gt;,
+# #   `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt;,
+# #   `PercentGiven(Outof100percent)` &lt;chr&gt;, Giveornot &lt;chr&gt;,
+# #   LargerEnvelopeabs &lt;chr&gt;, LargeEnvelopepercent &lt;chr&gt;,
+# #   SmallerEnvelopeabs &lt;chr&gt;, SmallEnvelopepercent &lt;chr&gt;</code></pre>
+<pre class="r"><code>tail(stickers)</code></pre>
+<pre><code># # A tibble: 6 x 18
+#   SubjectNumber Condition NumberStickers NumberEnvelopes Gender Agemonths
+#   &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;
+# 1 396           1         1              1               2            136
+# 2 397           4         2              2               1            136
+# 3 398           1         1              1               1            137
+# 4 399           1         1              1               2            137
+# 5 400           4         2              2               2            139
+# 6 401           3         2              1               1            143
+# # ... with 12 more variables: Ageyears &lt;dbl&gt;, Agegroups &lt;chr&gt;,
+# #   `Subject&#39;sEnvelope` &lt;chr&gt;, LeftEnvelope &lt;chr&gt;, RightEnvelope &lt;chr&gt;,
+# #   `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt;,
+# #   `PercentGiven(Outof100percent)` &lt;chr&gt;, Giveornot &lt;chr&gt;,
+# #   LargerEnvelopeabs &lt;chr&gt;, LargeEnvelopepercent &lt;chr&gt;,
+# #   SmallerEnvelopeabs &lt;chr&gt;, SmallEnvelopepercent &lt;chr&gt;</code></pre>
+<pre class="r"><code>names(stickers)</code></pre>
+<pre><code>#  [1] &quot;SubjectNumber&quot;                                                               
+#  [2] &quot;Condition&quot;                                                                   
+#  [3] &quot;NumberStickers&quot;                                                              
+#  [4] &quot;NumberEnvelopes&quot;                                                             
+#  [5] &quot;Gender&quot;                                                                      
+#  [6] &quot;Agemonths&quot;                                                                   
+#  [7] &quot;Ageyears&quot;                                                                    
+#  [8] &quot;Agegroups&quot;                                                                   
+#  [9] &quot;Subject&#39;sEnvelope&quot;                                                           
+# [10] &quot;LeftEnvelope&quot;                                                                
+# [11] &quot;RightEnvelope&quot;                                                               
+# [12] &quot;absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)&quot;
+# [13] &quot;PercentGiven(Outof100percent)&quot;                                               
+# [14] &quot;Giveornot&quot;                                                                   
+# [15] &quot;LargerEnvelopeabs&quot;                                                           
+# [16] &quot;LargeEnvelopepercent&quot;                                                        
+# [17] &quot;SmallerEnvelopeabs&quot;                                                          
+# [18] &quot;SmallEnvelopepercent&quot;</code></pre>
+<pre class="r"><code># View()</code></pre>
+</div>
+<div id="problem-and-solution" class="section level1">
+<h1>Problem and solution</h1>
+<p>Now we are ready to diagnose the problem!</p>
+<p><strong>Problem</strong>: the first row is not really data. It is metadata about the variables, and it is screwing up <strong>readr</strong>’s ability to predict our column types.</p>
+<p><strong>Solution</strong>: we’ll use <strong>readr</strong> and the <code>read_tsv()</code> function to read in the data twice. In Step 1, we’ll create a character vector of the column names only. In Step 2, we’ll read in the actual data and skip the multiple header rows at the top. When we do this, we lose the column names, so we use the character vector of column names we created in Step 1 instead.</p>
+</div>
+<div id="read-in-the-file-again" class="section level1">
+<h1>Read in the file (again)</h1>
+<div id="step-1" class="section level2">
+<h2>Step 1</h2>
+<p><strong>Goal</strong>: we want to read in the first row only and save it as a character vector called <code>sticker_names</code>. This row contains the correct column names that we’ll need in Step 2.</p>
+<pre class="r"><code>sticker_names &lt;- link %&gt;% 
+  read_tsv(n_max = 0) %&gt;% # default: col_names = TRUE
+  rename(stickersgiven = &#39;absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)&#39;) %&gt;% 
+  names()
+sticker_names</code></pre>
+<pre><code>#  [1] &quot;SubjectNumber&quot;                 &quot;Condition&quot;                    
+#  [3] &quot;NumberStickers&quot;                &quot;NumberEnvelopes&quot;              
+#  [5] &quot;Gender&quot;                        &quot;Agemonths&quot;                    
+#  [7] &quot;Ageyears&quot;                      &quot;Agegroups&quot;                    
+#  [9] &quot;Subject&#39;sEnvelope&quot;             &quot;LeftEnvelope&quot;                 
+# [11] &quot;RightEnvelope&quot;                 &quot;stickersgiven&quot;                
+# [13] &quot;PercentGiven(Outof100percent)&quot; &quot;Giveornot&quot;                    
+# [15] &quot;LargerEnvelopeabs&quot;             &quot;LargeEnvelopepercent&quot;         
+# [17] &quot;SmallerEnvelopeabs&quot;            &quot;SmallEnvelopepercent&quot;</code></pre>
+<pre class="r"><code>glimpse(sticker_names)</code></pre>
+<pre><code>#  chr [1:18] &quot;SubjectNumber&quot; &quot;Condition&quot; &quot;NumberStickers&quot; ...</code></pre>
+</div>
+<div id="step-2" class="section level2">
+<h2>Step 2</h2>
+<p><strong>Goal</strong>: we want to read in all the rows <em>except</em> for the first two rows, which contained the variable names and variable descriptions. We want to save this as <code>stickers</code>, and set the column names to the <code>sticker_names</code> object we created in Step 1.</p>
+<pre class="r"><code>stickers &lt;- link %&gt;% 
+  read_tsv(skip = 2, col_names = sticker_names)
+glimpse(stickers)</code></pre>
+<pre><code># Observations: 401
+# Variables: 18
+# $ SubjectNumber                   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,...
+# $ Condition                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, ...
+# $ NumberStickers                  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, ...
+# $ NumberEnvelopes                 &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, ...
+# $ Gender                          &lt;dbl&gt; 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, ...
+# $ Agemonths                       &lt;dbl&gt; 36, 36, 36, 36, 36, 36, 36, 36...
+# $ Ageyears                        &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+# $ Agegroups                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+# $ `Subject&#39;sEnvelope`             &lt;dbl&gt; 7, 12, 4, 7, 12, 8, 8, 11, 26,...
+# $ LeftEnvelope                    &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 2, 1, 4, 0, ...
+# $ RightEnvelope                   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
+# $ stickersgiven                   &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 4, 1, 4, 0, ...
+# $ `PercentGiven(Outof100percent)` &lt;dbl&gt; 0.42, 0.00, 0.67, 0.42, 0.00, ...
+# $ Giveornot                       &lt;dbl&gt; 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, ...
+# $ LargerEnvelopeabs               &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 1, ...
+# $ LargeEnvelopepercent            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...
+# $ SmallerEnvelopeabs              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
+# $ SmallEnvelopepercent            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...</code></pre>
+</div>
+</div>
+<div id="fin" class="section level1">
+<h1>Fin!</h1>
+<p>All together now: the final solution!</p>
+<pre class="r"><code># load packages
+library(readr)
+library(dplyr)
+
+# create variable to store url
+link &lt;- &quot;https://dataverse.harvard.edu/api/access/datafile/2712105&quot;
+
+# read in column names only
+sticker_names &lt;- link %&gt;% 
+  read_tsv(n_max = 0) %&gt;% # default: col_names = TRUE
+  rename(stickersgiven = &#39;absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)&#39;) %&gt;% 
+  names()
+
+# read in data, set column names
+stickers &lt;- link %&gt;% 
+  read_tsv(skip = 2, col_names = sticker_names)</code></pre>
+<p>And here is a &lt;10 minute video walk-through of all of the above. Warning!: I made a mistake when I said <code>readr</code> uses the first 100 rows of your data to predict column types- it uses the first 1000 rows.</p>
+<video width="960" height="720" id="readr-headers" src="/img/posts/readr_metadata/importing-data-tidyverse.mov" controls>
+</video>
+</div>
+<div id="addendum" class="section level1">
+<h1>Addendum</h1>
+<p>For good measure, I would add a final step to everything above and use <code>janitor::clean_names()</code> to put all the variable names into snake case. So my final final solution is here:</p>
+<pre class="r"><code># load packages
+library(readr)
+library(dplyr)
+library(janitor)
+
+# create variable to store url
+link &lt;- &quot;https://dataverse.harvard.edu/api/access/datafile/2712105&quot;
+
+# read in column names only
+sticker_names &lt;- link %&gt;% 
+  read_tsv(n_max = 0) %&gt;% # default: col_names = TRUE
+  rename(stickersgiven = &#39;absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)&#39;) %&gt;% 
+  names()
+
+# read in data, set column names
+stickers &lt;- link %&gt;% 
+  read_tsv(skip = 2, col_names = sticker_names) %&gt;% 
+  clean_names()</code></pre>
+<pre class="r"><code>stickers</code></pre>
+<pre><code># # A tibble: 401 x 18
+#    subject_number condition number_stickers number_envelopes gender
+#             &lt;dbl&gt;     &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt;  &lt;dbl&gt;
+#  1           1.00      1.00            1.00             1.00   1.00
+#  2           2.00      1.00            1.00             1.00   2.00
+#  3           3.00      1.00            1.00             1.00   2.00
+#  4           4.00      1.00            1.00             1.00   1.00
+#  5           5.00      1.00            1.00             1.00   2.00
+#  6           6.00      1.00            1.00             1.00   2.00
+#  7           7.00      2.00            1.00             2.00   1.00
+#  8           8.00      2.00            1.00             2.00   2.00
+#  9           9.00      3.00            2.00             1.00   2.00
+# 10          10.0       3.00            2.00             1.00   2.00
+# # ... with 391 more rows, and 13 more variables: agemonths &lt;dbl&gt;,
+# #   ageyears &lt;dbl&gt;, agegroups &lt;dbl&gt;, subjects_envelope &lt;dbl&gt;,
+# #   left_envelope &lt;dbl&gt;, right_envelope &lt;dbl&gt;, stickersgiven &lt;dbl&gt;,
+# #   percent_given_outof_100_percent &lt;dbl&gt;, giveornot &lt;dbl&gt;,
+# #   larger_envelopeabs &lt;dbl&gt;, large_envelopepercent &lt;dbl&gt;,
+# #   smaller_envelopeabs &lt;dbl&gt;, small_envelopepercent &lt;dbl&gt;</code></pre>
+<pre class="r"><code>glimpse(stickers)</code></pre>
+<pre><code># Observations: 401
+# Variables: 18
+# $ subject_number                  &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,...
+# $ condition                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, ...
+# $ number_stickers                 &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, ...
+# $ number_envelopes                &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, ...
+# $ gender                          &lt;dbl&gt; 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, ...
+# $ agemonths                       &lt;dbl&gt; 36, 36, 36, 36, 36, 36, 36, 36...
+# $ ageyears                        &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
+# $ agegroups                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+# $ subjects_envelope               &lt;dbl&gt; 7, 12, 4, 7, 12, 8, 8, 11, 26,...
+# $ left_envelope                   &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 2, 1, 4, 0, ...
+# $ right_envelope                  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
+# $ stickersgiven                   &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 4, 1, 4, 0, ...
+# $ percent_given_outof_100_percent &lt;dbl&gt; 0.42, 0.00, 0.67, 0.42, 0.00, ...
+# $ giveornot                       &lt;dbl&gt; 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, ...
+# $ larger_envelopeabs              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 1, ...
+# $ large_envelopepercent           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...
+# $ smaller_envelopeabs             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
+# $ small_envelopepercent           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...</code></pre>
+</div>
+<div id="bonus-data-dictionary" class="section level1">
+<h1>Bonus data dictionary</h1>
+<p>As an extra bonus, when you do have extra header rows, you can create a data dictionary using the <code>gather()</code> function from the <strong>tidyr</strong> package.</p>
+<pre class="r"><code>library(tidyr)
+stickers_dict &lt;- read_tsv(link, n_max = 1) %&gt;% 
+  rename(stickersgiven = &#39;absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)&#39;) %&gt;% 
+  clean_names() %&gt;% 
+  gather(variable_name, variable_description)
+stickers_dict</code></pre>
+<pre><code># # A tibble: 18 x 2
+#    variable_name                   variable_description                   
+#    &lt;chr&gt;                           &lt;chr&gt;                                  
+#  1 subject_number                  [Included Sample Only]                 
+#  2 condition                       1=12:1; 2=12:2, 3=30:1, 4=30:2         
+#  3 number_stickers                 1=12; 2=30                             
+#  4 number_envelopes                1=1 recipient; 2=2 recipients          
+#  5 gender                          1=female; 2=male                       
+#  6 agemonths                       &lt;NA&gt;                                   
+#  7 ageyears                        &lt;NA&gt;                                   
+#  8 agegroups                       1=3-4yrs; 2=5-6yrs; 3=7-8yrs; 4=9-11yrs
+#  9 subjects_envelope               How many stickers did the child keep f…
+# 10 left_envelope                   1 recipient conditions: How many stick…
+# 11 right_envelope                  1 recipient conditions: N/A; 2 recipie…
+# 12 stickersgiven                   Regardless of condition, the number of…
+# 13 percent_given_outof_100_percent Regardless of condition, the proportio…
+# 14 giveornot                       1=Donated 1 or more stickers to the re…
+# 15 larger_envelopeabs              Raw number of stickers (out of 30: Con…
+# 16 large_envelopepercent           Proportion of stickers (out of 100%; C…
+# 17 smaller_envelopeabs             Raw number of stickers (out of 30: Con…
+# 18 small_envelopepercent           Proportion of stickers (out of 100%; C…</code></pre>
+</div>

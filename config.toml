@@ -80,9 +80,9 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = []
-  # highlight_style = "github"
-  # highlight_version = "9.9.0"
+  highlight_languages = ["r", "yaml"]
+  highlight_style = "atom-one-light"
+  highlight_version = "9.9.0"
 
   # Enable native social sharing buttons?
   sharing = true
