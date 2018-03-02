@@ -53,6 +53,18 @@ stickers <- read_tsv(link)
 # spec()
 ```
 
+```{r}
+stickers2 <- read_tsv("../../static/data/PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv")
+stickers2
+# or
+library(here)
+stickers.tsv <- here("static/data/", "PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv")
+stickers3 <- read_tsv(stickers.tsv)
+stickers3
+kyle <- read_csv("https://gist.githubusercontent.com/kylebgorman/77ce12c9167554ade560af9d34565c11/raw/c5d653fb146821ecd96a9aa085263c3f17480dd5/McFarlaneEtAl_MazeData-Deidentified.csv")
+kyle
+```
+
 
 # High Level Overview: say HLO
 
