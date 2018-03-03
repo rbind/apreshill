@@ -46,6 +46,69 @@ link &lt;- &quot;https://dataverse.harvard.edu/api/access/datafile/2712105&quot;
 library(readr) # load the readr package
 stickers &lt;- read_tsv(link) 
 # spec()</code></pre>
+<pre class="r"><code>stickers2 &lt;- read_tsv(&quot;../../static/data/PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv&quot;)
+stickers2</code></pre>
+<pre><code># # A tibble: 402 x 18
+#    SubjectNumber Condition NumberStickers NumberEnvelopes Gender Agemonths
+#    &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;
+#  1 [Included Sa… 1=12:1; … 1=12; 2=30     1=1 recipient;… 1=fem…      NA  
+#  2 1             1         1              1               1           36.0
+#  3 2             1         1              1               2           36.0
+#  4 3             1         1              1               2           36.0
+#  5 4             1         1              1               1           36.0
+#  6 5             1         1              1               2           36.0
+#  7 6             1         1              1               2           36.0
+#  8 7             2         1              2               1           36.0
+#  9 8             2         1              2               2           36.0
+# 10 9             3         2              1               2           36.0
+# # ... with 392 more rows, and 12 more variables: Ageyears &lt;dbl&gt;,
+# #   Agegroups &lt;chr&gt;, `Subject&#39;sEnvelope` &lt;chr&gt;, LeftEnvelope &lt;chr&gt;,
+# #   RightEnvelope &lt;chr&gt;,
+# #   `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt;,
+# #   `PercentGiven(Outof100percent)` &lt;chr&gt;, Giveornot &lt;chr&gt;,
+# #   LargerEnvelopeabs &lt;chr&gt;, LargeEnvelopepercent &lt;chr&gt;,
+# #   SmallerEnvelopeabs &lt;chr&gt;, SmallEnvelopepercent &lt;chr&gt;</code></pre>
+<pre class="r"><code># or
+library(here)
+stickers.tsv &lt;- here(&quot;static/data/&quot;, &quot;PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv&quot;)
+stickers3 &lt;- read_tsv(stickers.tsv)
+stickers3</code></pre>
+<pre><code># # A tibble: 402 x 18
+#    SubjectNumber Condition NumberStickers NumberEnvelopes Gender Agemonths
+#    &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;      &lt;dbl&gt;
+#  1 [Included Sa… 1=12:1; … 1=12; 2=30     1=1 recipient;… 1=fem…      NA  
+#  2 1             1         1              1               1           36.0
+#  3 2             1         1              1               2           36.0
+#  4 3             1         1              1               2           36.0
+#  5 4             1         1              1               1           36.0
+#  6 5             1         1              1               2           36.0
+#  7 6             1         1              1               2           36.0
+#  8 7             2         1              2               1           36.0
+#  9 8             2         1              2               2           36.0
+# 10 9             3         2              1               2           36.0
+# # ... with 392 more rows, and 12 more variables: Ageyears &lt;dbl&gt;,
+# #   Agegroups &lt;chr&gt;, `Subject&#39;sEnvelope` &lt;chr&gt;, LeftEnvelope &lt;chr&gt;,
+# #   RightEnvelope &lt;chr&gt;,
+# #   `absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)` &lt;chr&gt;,
+# #   `PercentGiven(Outof100percent)` &lt;chr&gt;, Giveornot &lt;chr&gt;,
+# #   LargerEnvelopeabs &lt;chr&gt;, LargeEnvelopepercent &lt;chr&gt;,
+# #   SmallerEnvelopeabs &lt;chr&gt;, SmallEnvelopepercent &lt;chr&gt;</code></pre>
+<pre class="r"><code>kyle &lt;- read_csv(&quot;https://gist.githubusercontent.com/kylebgorman/77ce12c9167554ade560af9d34565c11/raw/c5d653fb146821ecd96a9aa085263c3f17480dd5/McFarlaneEtAl_MazeData-Deidentified.csv&quot;)
+kyle</code></pre>
+<pre><code># # A tibble: 381 x 12
+#    Study.ID    CA   VIQ DX    Activity    Content Filler   REP   REV    FS
+#    &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#  1 CSLU-001  5.67   124 TD    Conversati…   24.0   31.0   2.00  5.00 17.0 
+#  2 CSLU-001  5.67   124 TD    Picture De…    1.00   2.00  0     0     1.00
+#  3 CSLU-001  5.67   124 TD    Play          21.0    6.00  3.00  8.00 10.0 
+#  4 CSLU-001  5.67   124 TD    Wordless P…    8.00   2.00  0     4.00  4.00
+#  5 CSLU-002  6.50   124 TD    Conversati…    3.00  10.0   3.00  0     0   
+#  6 CSLU-002  6.50   124 TD    Picture De…    5.00   3.00  2.00  1.00  2.00
+#  7 CSLU-002  6.50   124 TD    Play           8.00   8.00  3.00  2.00  3.00
+#  8 CSLU-002  6.50   124 TD    Wordless P…    2.00   2.00  0     0     2.00
+#  9 CSLU-007  7.50   108 TD    Conversati…   25.0   21.0   4.00  4.00 17.0 
+# 10 CSLU-007  7.50   108 TD    Picture De…   10.0   13.0   0     2.00  8.00
+# # ... with 371 more rows, and 2 more variables: Cued &lt;dbl&gt;, Not.Cued &lt;dbl&gt;</code></pre>
 </div>
 <div id="high-level-overview-say-hlo" class="section level1">
 <h1>High Level Overview: say HLO</h1>
@@ -221,8 +284,7 @@ sticker_names &lt;- link %&gt;%
 stickers &lt;- link %&gt;% 
   read_tsv(skip = 2, col_names = sticker_names)</code></pre>
 <p>And here is a &lt;10 minute video walk-through of all of the above. Warning!: I made a mistake when I said <code>readr</code> uses the first 100 rows of your data to predict column types- it uses the first 1000 rows.</p>
-<video width="960" height="720" id="readr-headers" src="/img/posts/readr_metadata/importing-data-tidyverse.mov" controls>
-</video>
+{{% youtube Mayf_XhsQDE %}}
 </div>
 <div id="addendum" class="section level1">
 <h1>Addendum</h1>
@@ -262,30 +324,30 @@ stickers &lt;- link %&gt;%
 # # ... with 391 more rows, and 13 more variables: agemonths &lt;dbl&gt;,
 # #   ageyears &lt;dbl&gt;, agegroups &lt;dbl&gt;, subjects_envelope &lt;dbl&gt;,
 # #   left_envelope &lt;dbl&gt;, right_envelope &lt;dbl&gt;, stickersgiven &lt;dbl&gt;,
-# #   percent_given_outof_100_percent &lt;dbl&gt;, giveornot &lt;dbl&gt;,
+# #   percent_given_outof100percent &lt;dbl&gt;, giveornot &lt;dbl&gt;,
 # #   larger_envelopeabs &lt;dbl&gt;, large_envelopepercent &lt;dbl&gt;,
 # #   smaller_envelopeabs &lt;dbl&gt;, small_envelopepercent &lt;dbl&gt;</code></pre>
 <pre class="r"><code>glimpse(stickers)</code></pre>
 <pre><code># Observations: 401
 # Variables: 18
-# $ subject_number                  &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,...
-# $ condition                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, ...
-# $ number_stickers                 &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, ...
-# $ number_envelopes                &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, ...
-# $ gender                          &lt;dbl&gt; 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, ...
-# $ agemonths                       &lt;dbl&gt; 36, 36, 36, 36, 36, 36, 36, 36...
-# $ ageyears                        &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ...
-# $ agegroups                       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
-# $ subjects_envelope               &lt;dbl&gt; 7, 12, 4, 7, 12, 8, 8, 11, 26,...
-# $ left_envelope                   &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 2, 1, 4, 0, ...
-# $ right_envelope                  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
-# $ stickersgiven                   &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 4, 1, 4, 0, ...
-# $ percent_given_outof_100_percent &lt;dbl&gt; 0.42, 0.00, 0.67, 0.42, 0.00, ...
-# $ giveornot                       &lt;dbl&gt; 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, ...
-# $ larger_envelopeabs              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 1, ...
-# $ large_envelopepercent           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...
-# $ smaller_envelopeabs             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, ...
-# $ small_envelopepercent           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.5000...</code></pre>
+# $ subject_number                &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1...
+# $ condition                     &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 3,...
+# $ number_stickers               &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2,...
+# $ number_envelopes              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1,...
+# $ gender                        &lt;dbl&gt; 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2,...
+# $ agemonths                     &lt;dbl&gt; 36, 36, 36, 36, 36, 36, 36, 36, ...
+# $ ageyears                      &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,...
+# $ agegroups                     &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+# $ subjects_envelope             &lt;dbl&gt; 7, 12, 4, 7, 12, 8, 8, 11, 26, 3...
+# $ left_envelope                 &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 2, 1, 4, 0, 18...
+# $ right_envelope                &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, NA...
+# $ stickersgiven                 &lt;dbl&gt; 5, 0, 8, 5, 0, 4, 4, 1, 4, 0, 18...
+# $ percent_given_outof100percent &lt;dbl&gt; 0.42, 0.00, 0.67, 0.42, 0.00, 0....
+# $ giveornot                     &lt;dbl&gt; 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1,...
+# $ larger_envelopeabs            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 1, NA...
+# $ large_envelopepercent         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.500000...
+# $ smaller_envelopeabs           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 2, 0, NA...
+# $ small_envelopepercent         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, 0.500000...</code></pre>
 </div>
 <div id="bonus-data-dictionary" class="section level1">
 <h1>Bonus data dictionary</h1>
@@ -297,24 +359,24 @@ stickers_dict &lt;- read_tsv(link, n_max = 1) %&gt;%
   gather(variable_name, variable_description)
 stickers_dict</code></pre>
 <pre><code># # A tibble: 18 x 2
-#    variable_name                   variable_description                   
-#    &lt;chr&gt;                           &lt;chr&gt;                                  
-#  1 subject_number                  [Included Sample Only]                 
-#  2 condition                       1=12:1; 2=12:2, 3=30:1, 4=30:2         
-#  3 number_stickers                 1=12; 2=30                             
-#  4 number_envelopes                1=1 recipient; 2=2 recipients          
-#  5 gender                          1=female; 2=male                       
-#  6 agemonths                       &lt;NA&gt;                                   
-#  7 ageyears                        &lt;NA&gt;                                   
-#  8 agegroups                       1=3-4yrs; 2=5-6yrs; 3=7-8yrs; 4=9-11yrs
-#  9 subjects_envelope               How many stickers did the child keep f…
-# 10 left_envelope                   1 recipient conditions: How many stick…
-# 11 right_envelope                  1 recipient conditions: N/A; 2 recipie…
-# 12 stickersgiven                   Regardless of condition, the number of…
-# 13 percent_given_outof_100_percent Regardless of condition, the proportio…
-# 14 giveornot                       1=Donated 1 or more stickers to the re…
-# 15 larger_envelopeabs              Raw number of stickers (out of 30: Con…
-# 16 large_envelopepercent           Proportion of stickers (out of 100%; C…
-# 17 smaller_envelopeabs             Raw number of stickers (out of 30: Con…
-# 18 small_envelopepercent           Proportion of stickers (out of 100%; C…</code></pre>
+#    variable_name                 variable_description                     
+#    &lt;chr&gt;                         &lt;chr&gt;                                    
+#  1 subject_number                [Included Sample Only]                   
+#  2 condition                     1=12:1; 2=12:2, 3=30:1, 4=30:2           
+#  3 number_stickers               1=12; 2=30                               
+#  4 number_envelopes              1=1 recipient; 2=2 recipients            
+#  5 gender                        1=female; 2=male                         
+#  6 agemonths                     &lt;NA&gt;                                     
+#  7 ageyears                      &lt;NA&gt;                                     
+#  8 agegroups                     1=3-4yrs; 2=5-6yrs; 3=7-8yrs; 4=9-11yrs  
+#  9 subjects_envelope             How many stickers did the child keep for…
+# 10 left_envelope                 1 recipient conditions: How many sticker…
+# 11 right_envelope                1 recipient conditions: N/A; 2 recipient…
+# 12 stickersgiven                 Regardless of condition, the number of s…
+# 13 percent_given_outof100percent Regardless of condition, the proportion …
+# 14 giveornot                     1=Donated 1 or more stickers to the reci…
+# 15 larger_envelopeabs            Raw number of stickers (out of 30: Condi…
+# 16 large_envelopepercent         Proportion of stickers (out of 100%; Con…
+# 17 smaller_envelopeabs           Raw number of stickers (out of 30: Condi…
+# 18 small_envelopepercent         Proportion of stickers (out of 100%; Con…</code></pre>
 </div>

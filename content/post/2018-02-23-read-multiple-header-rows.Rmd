@@ -138,7 +138,10 @@ stickers <- link %>%
 
 And here is a <10 minute video walk-through of all of the above. Warning!: I made a mistake when I said `readr` uses the first 100 rows of your data to predict column types- it uses the first 1000 rows. 
 
-<video width="960" height="720" id="readr-headers" src="/img/posts/readr_metadata/importing-data-tidyverse.mov" controls></video>
+
+```{r echo = FALSE}
+blogdown::shortcode("youtube", "Mayf_XhsQDE")
+```
 
 # Addendum
 
