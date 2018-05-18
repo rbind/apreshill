@@ -1,0 +1,17 @@
+---
+title: Tame versus Tidy Data
+author: ''
+date: '2018-05-08'
+slug: tame-data
+draft: TRUE
+categories: []
+tags: []
+---
+
+Define tame data based on:
+1. Column types are cast
+1. Column names are sane
+1. Missing values are `NA`
+
+Tame data is a pre-requisite for tidy data. Tame before tidy.
+
