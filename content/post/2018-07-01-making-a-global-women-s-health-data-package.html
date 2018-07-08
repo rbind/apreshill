@@ -1,0 +1,49 @@
+---
+title: Making a data package for teaching
+author: ''
+date: '2018-07-01'
+slug: repro-health
+categories: []
+tags: []
+draft: TRUE
+---
+
+
+
+<p>First created a github repo, cloned locally into an R project.</p>
+<div id="create-the-package" class="section level2">
+<h2>Create the package</h2>
+<pre class="r"><code># Create a new package -------------------------------------------------
+library(usethis)
+library(here)
+
+create_package(here::here()) # could have also used getwd()</code></pre>
+<p>screenshot here</p>
+</div>
+<div id="add-dependencies" class="section level2">
+<h2>Add dependencies</h2>
+<pre class="r"><code>deps &lt;- c(&quot;dplyr&quot;, &quot;tidyr&quot;, &quot;readr&quot;, &quot;stringr&quot;, &quot;janitor&quot;, &quot;purrr&quot;, &quot;ggplot2&quot;, &quot;wbstats&quot;, &quot;gapminder&quot;)
+library(purrr)
+walk(deps, usethis::use_package, type = &quot;Suggests&quot;)</code></pre>
+</div>
+<div id="add-license" class="section level1">
+<h1>Add license</h1>
+<pre class="r"><code>use_mit_license(&quot;Alison Hill&quot;)</code></pre>
+</div>
+<div id="updated-description" class="section level1">
+<h1>Updated DESCRIPTION</h1>
+<p>basically copied from jenny’s <a href="https://github.com/jennybc/gapminder/blob/master/DESCRIPTION" class="uri">https://github.com/jennybc/gapminder/blob/master/DESCRIPTION</a></p>
+</div>
+<div id="make-and-edit-news-readme" class="section level1">
+<h1>Make and edit news + readme</h1>
+<pre class="r"><code>use_news_md()
+use_readme_rmd()</code></pre>
+</div>
+<div id="make-package-docs" class="section level1">
+<h1>Make package docs</h1>
+<pre class="r"><code>use_package_doc()</code></pre>
+<p>creates new R script in <code>R</code> folder, just help page for whole package like <code>?globalwomen</code></p>
+<p>this updated the description file</p>
+<pre class="r"><code>use_roxygen_md()</code></pre>
+<p>NOW TWO TO-DO ITEMS -vignettes -setting up documentation (everything in <code>R</code> folder is where <code>roxygen</code> will look for stuff to put automatically in <code>man</code> folder as .Rd files)</p>
+</div>

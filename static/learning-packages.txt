@@ -1,0 +1,138 @@
+R version 3.4.1 (2017-06-30) -- "Single Candle"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> use_package(c("rvest", "dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "lubridate", "ggplot2"))
+Error in use_package(c("rvest", "dplyr", "tidyr", "readr", "stringr",  : 
+  could not find function "use_package"
+> usethis::use_package(c("rvest", "dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "lubridate", "ggplot2"))
+Error: is_string(package) is not TRUE
+> pkg <- c("rvest", "dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "lubridate", "ggplot2")
+> library(purrr)
+Warning message:
+package ‘purrr’ was built under R version 3.4.4 
+> map(pkg, usethis::use_package)
+✔ Adding 'rvest' to Imports field in DESCRIPTION
+● Refer to functions with `rvest::fun()`
+✔ Adding 'dplyr' to Imports field in DESCRIPTION
+● Refer to functions with `dplyr::fun()`
+✔ Adding 'tidyr' to Imports field in DESCRIPTION
+● Refer to functions with `tidyr::fun()`
+✔ Adding 'readr' to Imports field in DESCRIPTION
+● Refer to functions with `readr::fun()`
+✔ Adding 'stringr' to Imports field in DESCRIPTION
+● Refer to functions with `stringr::fun()`
+✔ Adding 'janitor' to Imports field in DESCRIPTION
+● Refer to functions with `janitor::fun()`
+✔ Adding 'purrr' to Imports field in DESCRIPTION
+● Refer to functions with `purrr::fun()`
+✔ Adding 'lubridate' to Imports field in DESCRIPTION
+● Refer to functions with `lubridate::fun()`
+✔ Adding 'ggplot2' to Imports field in DESCRIPTION
+● Refer to functions with `ggplot2::fun()`
+[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+> use_mit_license()
+Error in use_mit_license() : could not find function "use_mit_license"
+> library(usethis)
+> use_mit_license()
+Error: `name` argument is missing.
+Set it globally with `options(usethis.full_name = "My name")`, probably in your '.Rprofile'
+> ?use_mit_license
+> use_mit_license(name = find_name())
+Error in find_name() : could not find function "find_name"
+> use_mit_license("Alison Hill")
+Error in read.dcf(con) : 
+  Line starting 'person("Chester", "I ...' is malformed!
+> use_mit_license("Alison Hill")
+Error in read.dcf(con) : 
+  Line starting 'person("Chester", "I ...' is malformed!
+> use_mit_license("Alison Hill")
+Error in read.dcf(con) : 
+  Line starting 'person("Chester", "I ...' is malformed!
+> use_mit_license("Alison Hill")
+✔ Setting License field in DESCRIPTION to 'MIT + file LICENSE'
+✔ Writing 'LICENSE.md'
+✔ Adding '^LICENSE\\.md$' to '.Rbuildignore'
+✔ Writing 'LICENSE'
+> use_vignette("bakeoffs-abroad")
+✔ Adding 'knitr' to Suggests field in DESCRIPTION
+✔ Setting VignetteBuilder field in DESCRIPTION to 'knitr'
+✔ Adding 'rmarkdown' to Suggests field in DESCRIPTION
+✔ Creating 'vignettes/'
+✔ Adding '*.html', '*.R' to 'vignettes/.gitignore'
+✔ Adding 'inst/doc' to './.gitignore'
+✔ Creating 'vignettes/bakeoffs-abroad.Rmd'
+● Modify 'bakeoffs-abroad.Rmd'
+> use_news_md()
+✔ Writing 'NEWS.md'
+● Modify 'NEWS.md'
+> use_readme_rmd()
+✔ Writing 'README.Rmd'
+✔ Adding '^README\\.Rmd$' to '.Rbuildignore'
+● Modify 'README.Rmd'
+✔ Writing '.git/hooks/pre-commit'
+> use_package_doc()
+✔ Writing 'R/bakeoff-package.R'
+> use_roxygen_md()
+✔ Setting Roxygen field in DESCRIPTION to 'list(markdown = TRUE)'
+✔ Setting RoxygenNote field in DESCRIPTION to '6.0.1'
+● Re-document
+> ?use_package
+> roxygen2::roxygenise()
+It is recommended to use ‘given’ instead of ‘middle’.
+It is recommended to use ‘given’ instead of ‘middle’.
+Error in vapply(unclass(authors), author_desc, character(1)) : 
+  values must be length 1,
+ but FUN(X[[1]]) result is length 2
+> ?roxygenise
+> roxygen2::roxygenise()
+Writing NAMESPACE
+Writing bakeoff-package.Rd
+Writing bakeoff.Rd
+
+Restarting R session...
+
+> library(bakeoff)
+Warning message:
+package ‘purrr’ was built under R version 3.4.4 
+> ?bakeoff

@@ -1,0 +1,68 @@
+---
+title: Making a data package for teaching
+author: ''
+date: '2018-07-01'
+slug: repro-health
+categories: []
+tags: []
+draft: TRUE
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA, tidy = FALSE)
+```
+
+First created a github repo, cloned locally into an R project.
+
+## Create the package
+
+```{r}
+# Create a new package -------------------------------------------------
+library(usethis)
+library(here)
+
+create_package(here::here()) # could have also used getwd()
+```
+
+screenshot here
+
+## Add dependencies
+
+```{r}
+deps <- c("dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "ggplot2", "wbstats", "gapminder")
+library(purrr)
+walk(deps, usethis::use_package, type = "Suggests")
+```
+
+# Add license
+
+```{r}
+use_mit_license("Alison Hill")
+```
+
+# Updated DESCRIPTION
+
+basically copied from jenny's 
+https://github.com/jennybc/gapminder/blob/master/DESCRIPTION
+
+# Make and edit news + readme
+```{r}
+use_news_md()
+use_readme_rmd()
+```
+
+# Make package docs
+```{r}
+use_package_doc()
+```
+
+creates new R script in `R` folder, just help page for whole package like `?globalwomen`
+
+this updated the description file
+```{r}
+use_roxygen_md()
+```
+
+NOW TWO TO-DO ITEMS
+-vignettes
+-setting up documentation (everything in `R` folder is where `roxygen` will look for stuff to put automatically in `man` folder as .Rd files)

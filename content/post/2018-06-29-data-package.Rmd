@@ -1,0 +1,190 @@
+---
+title: How to build a data package in R
+author: ''
+date: '2018-06-29'
+slug: data-package
+categories: []
+tags: []
+draft: TRUE
+---
+
+```{r global_options, include = FALSE}
+knitr::opts_chunk$set(eval = FALSE, comment = "#")
+```
+
+-Made the package
+-Dependencies
+-Edit description
+- add license
+- add vignette
+- add news
+- add readme
+
+## Create the package
+
+```{r}
+# Create a new package -------------------------------------------------
+library(usethis)
+library(here)
+
+create_package(here::here()) # could have also used getwd()
+```
+
+What did this step do?
+
+## Add dependencies
+
+```{r}
+use_package(c("rvest", "dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "lubridate", "ggplot2"), type = "Suggests")
+```
+
+```
+Error in use_package(c("rvest", "dplyr", "tidyr", "readr", "stringr",  : 
+  could not find function "use_package"
+```
+
+```{r}
+deps <- c("rvest", "dplyr", "tidyr", "readr", "stringr", "janitor", "purrr", "lubridate", "ggplot2")
+library(purrr)
+walk(deps, usethis::use_package, type = "Suggests")
+```
+
+add license
+after updating description with persons and SAVING
+```{r}
+use_mit_license("Alison Hill")
+use_vignette("bakeoffs-abroad")
+```
+
+note: very important! In authors there is a blank in the vector `, ,`. If you delete this you'll get a crazy error later on:
+```{r eval = FALSE}
+roxygen2::roxygenise()
+It is recommended to use ‘given’ instead of ‘middle’.
+It is recommended to use ‘given’ instead of ‘middle’.
+Error in vapply(unclass(authors), author_desc, character(1)) : 
+  values must be length 1,
+ but FUN(X[[1]]) result is length 2
+```
+
+I should have left the space in, or specified `email = ` for the third argument, becuase the function `person` assumed this was my middle name.
+
+make news + readme
+```{r}
+use_news_md()
+use_readme_rmd()
+```
+
+in read me
+```{r}
+# install.packages("remotes")
+remotes::install_github("apreshill/bakeoff")
+```
+
+package docs
+```{r}
+use_package_doc()
+```
+
+creates new R script in `R` folder, just help page for whole package like `?bakeoff`
+
+this updated the description file
+```{r}
+use_roxygen_md()
+```
+
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1
+
+TWO MAIN THINGS
+-vignettes
+-setting up documentation (everything in `R` folder is where `roxygen` will look for stuff to put automatically in `man` folder as .Rd files)
+
+may need: https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md
+
+I edited bakeoff-package.R using https://github.com/rudeboybert/fivethirtyeight/blob/master/R/fivethirtyeight.R
+
+Now `man` is empty though! Need to get stuff from `R` file into `man` using `roxygen`. Note that good stuff on roxygen in the R packages cheatsheet.
+
+Two ways- see screen shots OR
+```{r}
+roxygen2::roxygenise()
+```
+
+> roxygen2::roxygenise()
+It is recommended to use ‘given’ instead of ‘middle’.
+It is recommended to use ‘given’ instead of ‘middle’.
+Error in vapply(unclass(authors), author_desc, character(1)) : 
+  values must be length 1,
+ but FUN(X[[1]]) result is length 2
+> ?roxygenise
+> roxygen2::roxygenise()
+Writing NAMESPACE
+Writing bakeoff-package.Rd
+Writing bakeoff.Rd
+
+Now switching to `devtools`
+we are going to build this thing
+keyboard shortcut COMMAND SHIFT B
+then see if we type `?bakeoff` that we get the help page.
+see screenshot-successful build!
+
+it loaded the package for me
+```{r eval = FALSE}
+library(bakeoff)
+Warning message:
+package ‘purrr’ was built under R version 3.4.4 
+?bakeoff
+```
+see screenshot!!! success! chester: BAM!
+
+make a package down site, didn't need to have `pkg_down` installed for this to work...
+```{r eval = FALSE}
+> use_pkgdown()
+● Modify '_pkgdown.yml'
+✔ Adding '^_pkgdown\\.yml$' to '.Rbuildignore'
+✔ Creating 'docs/'
+✔ Adding '^docs$' to '.Rbuildignore'
+```
+
+(can edit `_pkgdown.yml`): https://github.com/andrewpbray/infer/blob/develop/_pkgdown.yml
+
+tehn you can build your damn site with pkgdown
+
+but now you need the actual package
+```{r}
+library(pkgdown)
+```
+
+```{r}
+pkgdown::build_site()
+```
+
+build_site every time, creates static site in `docs` folder.
+
+now push to github
+
+enable site see screenshot
+
+look on 538:
+
+https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw
+
+make a script to create `data/` from `data-raw/` automatically:
+
+use R script `process_data_sets.R` in `data-raw/`--> takes csv files as input, do some additional taming, outputs rda files (overwrite = TRUE) using `usethis::use_data()` to output `data/`
+
+
+i wanted to update description like njtierney to have my orcid there
+
+2 steps:
+- build package (command shift b) (`devtools::build()`)
+
+now: how to actually document a dataset
+1) workflow: keep roxygenized script open for each dataset like bakers as `bakers.R` in `R` folder
+2) also open a data-process.R in `data-raw/` and edit back and forth as tabs, so `bakers-process.R` this file MUST use `usethis::use_data`, can't just have .rda files in a `data/` folder for it to work.
+
+ok future stuff: enable docsearch (https://daattali.gitbooks.io/stat545-ubc-github-io/bit003_api-key-env-var.html) like nick tierney
+- `pkgdown::build_site()`
+---
+for dplyr edits: i edited the file in R folder, checked in man, so it was actually roxygenized. is it updated in docs/reference?
+

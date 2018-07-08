@@ -1,0 +1,92 @@
+---
+title: How to build a data package in R
+author: ''
+date: '2018-06-29'
+slug: data-package
+categories: []
+tags: []
+draft: TRUE
+---
+
+
+
+<p>-Made the package -Dependencies -Edit description - add license - add vignette - add news - add readme</p>
+<div id="create-the-package" class="section level2">
+<h2>Create the package</h2>
+<pre class="r"><code># Create a new package -------------------------------------------------
+library(usethis)
+library(here)
+
+create_package(here::here()) # could have also used getwd()</code></pre>
+<p>What did this step do?</p>
+</div>
+<div id="add-dependencies" class="section level2">
+<h2>Add dependencies</h2>
+<pre class="r"><code>use_package(c(&quot;rvest&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;readr&quot;, &quot;stringr&quot;, &quot;janitor&quot;, &quot;purrr&quot;, &quot;lubridate&quot;, &quot;ggplot2&quot;), type = &quot;Suggests&quot;)</code></pre>
+<pre><code>Error in use_package(c(&quot;rvest&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;readr&quot;, &quot;stringr&quot;,  : 
+  could not find function &quot;use_package&quot;</code></pre>
+<pre class="r"><code>deps &lt;- c(&quot;rvest&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;readr&quot;, &quot;stringr&quot;, &quot;janitor&quot;, &quot;purrr&quot;, &quot;lubridate&quot;, &quot;ggplot2&quot;)
+library(purrr)
+walk(deps, usethis::use_package, type = &quot;Suggests&quot;)</code></pre>
+<p>add license after updating description with persons and SAVING</p>
+<pre class="r"><code>use_mit_license(&quot;Alison Hill&quot;)
+use_vignette(&quot;bakeoffs-abroad&quot;)</code></pre>
+<p>note: very important! In authors there is a blank in the vector <code>, ,</code>. If you delete this you’ll get a crazy error later on:</p>
+<pre class="r"><code>roxygen2::roxygenise()
+It is recommended to use ‘given’ instead of ‘middle’.
+It is recommended to use ‘given’ instead of ‘middle’.
+Error in vapply(unclass(authors), author_desc, character(1)) : 
+  values must be length 1,
+ but FUN(X[[1]]) result is length 2</code></pre>
+<p>I should have left the space in, or specified <code>email =</code> for the third argument, becuase the function <code>person</code> assumed this was my middle name.</p>
+<p>make news + readme</p>
+<pre class="r"><code>use_news_md()
+use_readme_rmd()</code></pre>
+<p>in read me</p>
+<pre class="r"><code># install.packages(&quot;remotes&quot;)
+remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
+<p>package docs</p>
+<pre class="r"><code>use_package_doc()</code></pre>
+<p>creates new R script in <code>R</code> folder, just help page for whole package like <code>?bakeoff</code></p>
+<p>this updated the description file</p>
+<pre class="r"><code>use_roxygen_md()</code></pre>
+<p>Roxygen: list(markdown = TRUE) RoxygenNote: 6.0.1</p>
+<p>TWO MAIN THINGS -vignettes -setting up documentation (everything in <code>R</code> folder is where <code>roxygen</code> will look for stuff to put automatically in <code>man</code> folder as .Rd files)</p>
+<p>may need: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md" class="uri">https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md</a></p>
+<p>I edited bakeoff-package.R using <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/R/fivethirtyeight.R" class="uri">https://github.com/rudeboybert/fivethirtyeight/blob/master/R/fivethirtyeight.R</a></p>
+<p>Now <code>man</code> is empty though! Need to get stuff from <code>R</code> file into <code>man</code> using <code>roxygen</code>. Note that good stuff on roxygen in the R packages cheatsheet.</p>
+<p>Two ways- see screen shots OR</p>
+<pre class="r"><code>roxygen2::roxygenise()</code></pre>
+<blockquote>
+<p>roxygen2::roxygenise() It is recommended to use ‘given’ instead of ‘middle’. It is recommended to use ‘given’ instead of ‘middle’. Error in vapply(unclass(authors), author_desc, character(1)) : values must be length 1, but FUN(X[[1]]) result is length 2 ?roxygenise roxygen2::roxygenise() Writing NAMESPACE Writing bakeoff-package.Rd Writing bakeoff.Rd</p>
+</blockquote>
+<p>Now switching to <code>devtools</code> we are going to build this thing keyboard shortcut COMMAND SHIFT B then see if we type <code>?bakeoff</code> that we get the help page. see screenshot-successful build!</p>
+<p>it loaded the package for me</p>
+<pre class="r"><code>library(bakeoff)
+Warning message:
+package ‘purrr’ was built under R version 3.4.4 
+?bakeoff</code></pre>
+<p>see screenshot!!! success! chester: BAM!</p>
+<p>make a package down site, didn’t need to have <code>pkg_down</code> installed for this to work…</p>
+<pre class="r"><code>&gt; use_pkgdown()
+● Modify &#39;_pkgdown.yml&#39;
+✔ Adding &#39;^_pkgdown\\.yml$&#39; to &#39;.Rbuildignore&#39;
+✔ Creating &#39;docs/&#39;
+✔ Adding &#39;^docs$&#39; to &#39;.Rbuildignore&#39;</code></pre>
+<p>(can edit <code>_pkgdown.yml</code>): <a href="https://github.com/andrewpbray/infer/blob/develop/_pkgdown.yml" class="uri">https://github.com/andrewpbray/infer/blob/develop/_pkgdown.yml</a></p>
+<p>tehn you can build your damn site with pkgdown</p>
+<p>but now you need the actual package</p>
+<pre class="r"><code>library(pkgdown)</code></pre>
+<pre class="r"><code>pkgdown::build_site()</code></pre>
+<p>build_site every time, creates static site in <code>docs</code> folder.</p>
+<p>now push to github</p>
+<p>enable site see screenshot</p>
+<p>look on 538:</p>
+<p><a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw" class="uri">https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw</a></p>
+<p>make a script to create <code>data/</code> from <code>data-raw/</code> automatically:</p>
+<p>use R script <code>process_data_sets.R</code> in <code>data-raw/</code>–&gt; takes csv files as input, do some additional taming, outputs rda files (overwrite = TRUE) using <code>usethis::use_data()</code> to output <code>data/</code></p>
+<p>i wanted to update description like njtierney to have my orcid there</p>
+<p>2 steps: - build package (command shift b) (<code>devtools::build()</code>)</p>
+<p>now: how to actually document a dataset 1) workflow: keep roxygenized script open for each dataset like bakers as <code>bakers.R</code> in <code>R</code> folder 2) also open a data-process.R in <code>data-raw/</code> and edit back and forth as tabs, so <code>bakers-process.R</code> this file MUST use <code>usethis::use_data</code>, can’t just have .rda files in a <code>data/</code> folder for it to work.</p>
+<p>ok future stuff: enable docsearch (<a href="https://daattali.gitbooks.io/stat545-ubc-github-io/bit003_api-key-env-var.html" class="uri">https://daattali.gitbooks.io/stat545-ubc-github-io/bit003_api-key-env-var.html</a>) like nick tierney - <code>pkgdown::build_site()</code> — for dplyr edits: i edited the file in R folder, checked in man, so it was actually roxygenized. is it updated in docs/reference?</p>
+</div>
