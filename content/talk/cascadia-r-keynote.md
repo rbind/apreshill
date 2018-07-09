@@ -11,17 +11,14 @@ selected = true
 math = true
 
 url_pdf = ""
-url_slides = ""
+url_slides = "https://bit.ly/cascadiarconf-magic"
 url_video = ""
-[[url_custom]]
-    name = "GitHub"
-    url = ""
 
 
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = ""
+image = "bigmagic-intro-slide.png"
 caption = ""
 
 +++
