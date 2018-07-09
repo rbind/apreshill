@@ -81,8 +81,8 @@ defaultContentLanguageInSubdir = false
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
   highlight_languages = ["r", "yaml"]
-  highlight_style = "atom-one-light"
-  highlight_version = "9.9.0"
+  highlight_style = "atelier-cave-light"
+  highlight_version = "9.12.0"
 
   # Enable native social sharing buttons?
   sharing = true

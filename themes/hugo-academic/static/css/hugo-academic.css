@@ -141,6 +141,9 @@ figcaption h4 {
   margin: 0;
 }
 
+/*************to make grey go away*************/
+pre{padding:0}
+
 pre,
 code {
   font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
