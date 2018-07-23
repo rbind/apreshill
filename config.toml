@@ -177,8 +177,8 @@ defaultContentLanguageInSubdir = false
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
+  name = "CV"
+  url = "/pdf/cv_2018-07-22.pdf"
   weight = 2
 
 [[menu.main]]

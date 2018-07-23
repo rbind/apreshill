@@ -10,6 +10,7 @@ tags:
   - readr
   - tidyverse
 header:
+  image: "headers/hex-stickers.jpg"
   preview: FALSE
 ---
 
