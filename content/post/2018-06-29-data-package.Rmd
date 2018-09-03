@@ -5,7 +5,6 @@ date: '2018-06-29'
 slug: data-package
 categories: []
 tags: []
-draft: TRUE
 summary: A guide to getting up and running with usethis for developing a data package in R
 output:
   blogdown::html_page:
