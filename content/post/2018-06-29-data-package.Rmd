@@ -328,7 +328,7 @@ TWO MAIN THINGS
 may need: https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md
 
 
-Now `man` is empty though! Need to get stuff from `R` file into `man` using `roxygen`. Note that good stuff on roxygen in the R packages cheatsheet.
+Now `man` is empty though! Need to get stuff from `R` file into `man` using `roxygen`. There's good stuff about roxygen in the [R packages cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf) and within RStudio (Help --> Roxygen Quick Reference).
 
 Two ways- see screen shots 
 
