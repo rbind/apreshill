@@ -100,6 +100,8 @@ library(usethis)
 - add news
 - add readme
 
+_Note: the next release of `devtools` will automatically install `usethis` for you and load it whenever you run `library(devtools)` (see the [conscious uncoupling](https://github.com/r-lib/devtools#conscious-uncoupling) of the devtools package  for more details)._
+
 # Create the package
 
 The first step is to create and name your new package. You can do this several ways. If you are working in RStudio, you can do File -> New Project -> R Package. You could also use `usethis::create_package`, which if not already within an R Project, will create a new R Project for you.
