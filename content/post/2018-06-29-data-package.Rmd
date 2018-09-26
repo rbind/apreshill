@@ -18,6 +18,31 @@ output:
 knitr::opts_chunk$set(eval = FALSE, comment = "#")
 ```
 
+# Useful resources
+
+Official resources for creating R packages:
+
+- [R packages](http://r-pkgs.had.co.nz/) book by Hadley Wickham
+- [R packages cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf)
+- Official [writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages) guide
+
+Other great **blogposts**:
+
+- [Writing an R package from scratch](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) by Hilary Parker - classic R package blogpost that gets you up and running in no time!
+- [Writing an R package from scratch](https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/) by Tomas Westlake - update on Hilary Parker's blogpost with `usethis` goodies (featuring dogs!)
+- [usethis workflow for package development](https://www.hvitfeldt.me/2018/09/usethis-workflow-for-package-development/) by Emil Hvitfeldt - highlights many more `usethis` goodies
+- [How to develop good R packages (for open science)](https://masalmon.eu/2017/12/11/goodrpackages/) by Maëlle Salmon - full of excellent resources and best practices for package development
+
+Useful packages:
+
+- [usethis](https://github.com/r-lib/usethis)* to automate package set-up
+- [pkgdown](https://github.com/r-lib/pkgdown)* for creating a website for your package
+- [goodpractice](https://github.com/MangoTheCat/goodpractice) for advice about good practices
+- [styler](https://github.com/r-lib/styler) for auto-style checking
+- [lintr](https://github.com/jimhester/lintr) for style - use with Travis to auto-check your code!
+
+`*` _we use these in this blogpost!_
+
 # Who, what, when, where, why, and how
 
 A few ~~days~~ ~~weeks~~ months ago, I sat down with [Chester Ismay](http://chester.rbind.io) to make a package. I had been sitting for months already on a really fun bunch of datasets I scraped from Wikipedia on "The Great British Bake Off" for my [new DataCamp.com course](https://www.datacamp.com/courses/working-with-data-in-the-tidyverse). For years, I have been **so jealous** of all these awesome people who make awesome R data packages. Then Chester, co-author of the [{fivethirtyeight}](https://fivethirtyeight-R.netlify.com) and [{infer}](https://infer.netlify.com) and [{moderndive}](https://moderndive.com) packages, *offered* to help me make my data into a data package, and then things got really exciting. 
@@ -54,7 +79,7 @@ What is [`usethis`](http://usethis.r-lib.org)?
 blogdown::shortcode("tweet", "1027293165735358464")
 ```
 
-[`usethis`](http://usethis.r-lib.org) is a new-ish package by the folks at RStudio to automate workflow management. There are all kinds of workflow-related functions for non-package projects as well, alongside a comprehensive suite of functions specific to [package development](http://usethis.r-lib.org/reference/index.html#section-package-development) which we'll refer to this post. However, as with most package reference docs, they assume you know a proper package development workflow already. So this post will attempt to give you a play-by-play for when to use which `usethis` function, and why. 
+[`usethis`](http://usethis.r-lib.org) is a new-ish package by the folks at RStudio to automate workflow management. There are all kinds of workflow-related functions for non-package projects as well, alongside a comprehensive suite of functions specific to [package development](http://usethis.r-lib.org/reference/index.html#section-package-development) which we'll refer to in this post. However, as with most package reference docs, they assume you know a proper package development workflow already. So this post will attempt to give you a play-by-play for when to use which `usethis` function, and why. 
 
 Disclaimer: there are many package development workflows- this is just one offering.
 
@@ -75,6 +100,8 @@ library(usethis)
 - add news
 - add readme
 
+_Note: the next release of `devtools` will automatically install `usethis` for you and load it whenever you run `library(devtools)` (see the [conscious uncoupling](https://github.com/r-lib/devtools#conscious-uncoupling) of the devtools package  for more details)._
+
 # Create the package
 
 The first step is to create and name your new package. You can do this several ways. If you are working in RStudio, you can do File -> New Project -> R Package. You could also use `usethis::create_package`, which if not already within an R Project, will create a new R Project for you.
@@ -88,11 +115,13 @@ Once I had my `bakeoff` GitHub repo, I opened up RStudio and ran:
 create_from_github("apreshill/bakeoff") # owner/reponame
 ```
 
-This creates an R Project for you that is linked to your remote GitHub repository. With that project is open, we were finally ready to actually create the new package:
+This creates an R Project for you that is linked to your remote GitHub repository. Alternatively, you can try the `use_git()` and `use_github` workflow as [Tomas Westlake does in his blogpost](https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/). If you run into problems, [Jenny Bryan's Happy Git with R](http://happygitwithr.com/ssh-keys.html) or this [RStudio Community thread](https://community.rstudio.com/t/difficulty-using-usethis-use-github/5579/7) have helpful tips for troubleshooting SSH issues. 
+
+With the project open, we were finally ready to actually create the new package:
 
 ```{r}
 # Create a new package -------------------------------------------------
-create_package(here::here()) # could have also used getwd()
+create_package(here::here()) # could have also used getwd() or "."
 ```
 
 What did this step do? (edit this below)
@@ -164,12 +193,11 @@ after updating description with persons and SAVING
 
 note: very important! In authors there is a blank in the vector `, ,`. If you delete this you'll get a crazy error later on:
 ```{r}
-roxygen2::roxygenise()
+devtools::document()
 It is recommended to use ‘given’ instead of ‘middle’.
-It is recommended to use ‘given’ instead of ‘middle’.
-Error in vapply(unclass(authors), author_desc, character(1)) : 
-  values must be length 1,
- but FUN(X[[1]]) result is length 2
+Invalid DESCRIPTION:
+Authors@R field gives no person with maintainer role, valid email address and
+non-empty name.
 ```
 
 I should have left the space in, or specified `email = ` for the third argument, becuase the function `person` assumed this was my middle name.
@@ -300,7 +328,7 @@ TWO MAIN THINGS
 may need: https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md
 
 
-Now `man` is empty though! Need to get stuff from `R` file into `man` using `roxygen`. Note that good stuff on roxygen in the R packages cheatsheet.
+Now `man` is empty though! Need to get stuff from `R` file into `man` using `roxygen`. There's good stuff about roxygen in the [R packages cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf) and within RStudio (Help --> Roxygen Quick Reference).
 
 Two ways- see screen shots 
 
@@ -310,15 +338,18 @@ Two ways- see screen shots
 
 OR
 ```{r}
-roxygen2::roxygenise()
+devtools::document() 
 ```
 
-> roxygen2::roxygenise()
+> devtools::document()
+Updating bakeoff documentation
+Loading bakeoff
 It is recommended to use ‘given’ instead of ‘middle’.
-It is recommended to use ‘given’ instead of ‘middle’.
-Error in vapply(unclass(authors), author_desc, character(1)) : 
-  values must be length 1,
- but FUN(X[[1]]) result is length 2
+Invalid DESCRIPTION:
+Authors@R field gives no person with maintainer role, valid email address and
+non-empty name.
+
+See section 'The DESCRIPTION file' in the 'Writing R Extensions' manual.
 > ?roxygenise
 > roxygen2::roxygenise()
 Writing NAMESPACE
