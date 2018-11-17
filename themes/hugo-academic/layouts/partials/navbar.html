@@ -1,37 +1,44 @@
-<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
 
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target=".navbar-collapse" aria-expanded="false">
-        <span class="sr-only">{{ i18n "toggle_navigation" }}</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <a class="navbar-brand" href="{{ "/" | relLangURL }}">
+        {{- if .Site.Params.logo -}}
+        <img src="{{ printf "/img/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        {{- else -}}
+        {{- .Site.Title -}}
+        {{- end -}}
+      </a>
+      {{ if or .Site.Menus.main .IsTranslated }}
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="{{ i18n "toggle_navigation" }}">
+        <span><i class="fas fa-bars"></i></span>
       </button>
-      <a class="navbar-brand" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
-    </div>
+      {{ end }}
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbar">
 
       <!-- Left Nav Bar -->
-      <ul class="nav navbar-nav navbar-right">
+      {{ $align_right := .Site.Params.menus.align_right | default true }}
+      <ul class="navbar-nav {{ if $align_right }}ml-auto{{ else }}mr-auto{{ end }}">
         {{ range .Site.Menus.main }}
 
         {{ if .HasChildren }}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            {{ .Name }}
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            {{ .Pre }}
+            <span>{{ .Name | safeHTML }}</span>
+            {{ .Post }}
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             {{ range .Children }}
-            <li class="nav-item">
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
               <a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
                 {{ .Pre }}
-                <span>{{ .Name }}</span>
+                <span>{{ .Name | safeHTML }}</span>
+                {{ .Post }}
               </a>
             </li>
             {{ end }}
@@ -40,26 +47,60 @@
 
         {{ else }}
 
+        {{/* Set target for link. */}}
+        {{ $.Scratch.Set "target" "" }}
+        {{ if gt (len .URL) 4 }}
+          {{ if eq "http" (slicestr .URL 0 4) }}
+            {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
+        {{ end }}
+
         <li class="nav-item">
-          <a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+          <a class="nav-link" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}{{ ($.Scratch.Get "target") | safeHTMLAttr }}>
             {{ .Pre }}
-            <span>{{ .Name }}</span>
+            <span>{{ .Name | safeHTML }}</span>
+            {{ .Post }}
           </a>
         </li>
 
         {{ end }}
         {{ end }}
 
+      {{ if and (not $align_right) (or .IsTranslated .Site.Menus.main_right) }}
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      {{ end }}
+
+        {{ range .Site.Menus.main_right }}
+
+        {{/* Set target for link. */}}
+        {{ $.Scratch.Set "target" "" }}
+        {{ if gt (len .URL) 4 }}
+        {{ if eq "http" (slicestr .URL 0 4) }}
+        {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        {{ end }}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}{{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+          {{ .Pre }}
+          <span>{{ .Name | safeHTML }}</span>
+          {{ .Post }}
+          </a>
+        </li>
+
+        {{ end }}
+
         {{ if .IsTranslated }}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            <i class="fa fa-globe" aria-hidden="true"></i>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            <i class="fas fa-globe" aria-hidden="true"></i>
             <span>{{ index .Site.Data.i18n.languages .Lang }}</span>
           </a>
           <ul class="dropdown-menu">
             {{ range .Translations }}
-            <li class="nav-item">
-              <a href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
                 <span>{{ index .Site.Data.i18n.languages .Lang }}</span>
               </a>
             </li>

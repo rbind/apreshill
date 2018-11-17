@@ -91,8 +91,14 @@ names(xaringan:::list_css())
 ```
 
 ```
-## [1] "default-fonts"    "default"          "metropolis-fonts"
-## [4] "metropolis"       "rladies-fonts"    "rladies"
+##  [1] "default-fonts"    "default"          "duke-blue"       
+##  [4] "hygge-duke"       "hygge"            "kunoichi"        
+##  [7] "lucy-fonts"       "lucy"             "metropolis-fonts"
+## [10] "metropolis"       "middlebury-fonts" "middlebury"      
+## [13] "ninjutsu"         "rladies-fonts"    "rladies"         
+## [16] "robot-fonts"      "robot"            "rutgers-fonts"   
+## [19] "rutgers"          "shinobi"          "tamu-fonts"      
+## [22] "tamu"             "uo-fonts"         "uo"
 ```
 
 To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
@@ -353,19 +359,30 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   d.head.appendChild(s);
 })();</script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
