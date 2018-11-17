@@ -17,26 +17,52 @@ output:
 
 <div id="TOC">
 <ul>
-<li><a href="#who-what-when-where-why-and-how"><span class="toc-section-number">1</span> Who, what, when, where, why, and how</a></li>
-<li><a href="#use-this-now"><span class="toc-section-number">2</span> Use this now</a></li>
-<li><a href="#create-the-package"><span class="toc-section-number">3</span> Create the package</a></li>
-<li><a href="#add-dependencies"><span class="toc-section-number">4</span> Add dependencies</a></li>
-<li><a href="#update-the-description"><span class="toc-section-number">5</span> Update the description</a></li>
-<li><a href="#add-a-license"><span class="toc-section-number">6</span> Add a license</a></li>
-<li><a href="#make-news.md-readme.rmd"><span class="toc-section-number">7</span> Make news.md + readme.rmd</a></li>
-<li><a href="#write-package-level-docs"><span class="toc-section-number">8</span> Write package-level docs</a></li>
-<li><a href="#write-more-docs"><span class="toc-section-number">9</span> Write more docs</a></li>
-<li><a href="#create-package-data"><span class="toc-section-number">10</span> Create package data</a></li>
-<li><a href="#use-roxygen-move-this-to-earlier-after-description"><span class="toc-section-number">11</span> Use <code>roxygen</code> (move this to earlier after description)</a></li>
-<li><a href="#build-the-package"><span class="toc-section-number">12</span> Build the package</a></li>
-<li><a href="#make-a-package-website"><span class="toc-section-number">13</span> Make a package website</a></li>
-<li><a href="#edit-your-package-site"><span class="toc-section-number">14</span> Edit your package site</a></li>
-<li><a href="#push-to-github-deploy"><span class="toc-section-number">15</span> Push to GitHub &amp; deploy</a></li>
+<li><a href="#useful-resources"><span class="toc-section-number">1</span> Useful resources</a></li>
+<li><a href="#who-what-when-where-why-and-how"><span class="toc-section-number">2</span> Who, what, when, where, why, and how</a></li>
+<li><a href="#use-this-now"><span class="toc-section-number">3</span> Use this now</a></li>
+<li><a href="#create-the-package"><span class="toc-section-number">4</span> Create the package</a></li>
+<li><a href="#add-dependencies"><span class="toc-section-number">5</span> Add dependencies</a></li>
+<li><a href="#update-the-description"><span class="toc-section-number">6</span> Update the description</a></li>
+<li><a href="#add-a-license"><span class="toc-section-number">7</span> Add a license</a></li>
+<li><a href="#make-news.md-readme.rmd"><span class="toc-section-number">8</span> Make news.md + readme.rmd</a></li>
+<li><a href="#write-package-level-docs"><span class="toc-section-number">9</span> Write package-level docs</a></li>
+<li><a href="#write-more-docs"><span class="toc-section-number">10</span> Write more docs</a></li>
+<li><a href="#create-package-data"><span class="toc-section-number">11</span> Create package data</a></li>
+<li><a href="#use-roxygen-move-this-to-earlier-after-description"><span class="toc-section-number">12</span> Use <code>roxygen</code> (move this to earlier after description)</a></li>
+<li><a href="#build-the-package"><span class="toc-section-number">13</span> Build the package</a></li>
+<li><a href="#make-a-package-website"><span class="toc-section-number">14</span> Make a package website</a></li>
+<li><a href="#edit-your-package-site"><span class="toc-section-number">15</span> Edit your package site</a></li>
+<li><a href="#push-to-github-deploy"><span class="toc-section-number">16</span> Push to GitHub &amp; deploy</a></li>
 </ul>
 </div>
 
+<div id="useful-resources" class="section level1">
+<h1><span class="header-section-number">1</span> Useful resources</h1>
+<p>Official resources for creating R packages:</p>
+<ul>
+<li><a href="http://r-pkgs.had.co.nz/">R packages</a> book by Hadley Wickham</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf">R packages cheatsheet</a></li>
+<li>Official <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">writing R extensions</a> guide</li>
+</ul>
+<p>Other great <strong>blogposts</strong>:</p>
+<ul>
+<li><a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/">Writing an R package from scratch</a> by Hilary Parker - classic R package blogpost that gets you up and running in no time!</li>
+<li><a href="https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/">Writing an R package from scratch</a> by Tomas Westlake - update on Hilary Parker’s blogpost with <code>usethis</code> goodies (featuring dogs!)</li>
+<li><a href="https://www.hvitfeldt.me/2018/09/usethis-workflow-for-package-development/">usethis workflow for package development</a> by Emil Hvitfeldt - highlights many more <code>usethis</code> goodies</li>
+<li><a href="https://masalmon.eu/2017/12/11/goodrpackages/">How to develop good R packages (for open science)</a> by Maëlle Salmon - full of excellent resources and best practices for package development</li>
+</ul>
+<p>Useful packages:</p>
+<ul>
+<li><a href="https://github.com/r-lib/usethis">usethis</a>* to automate package set-up</li>
+<li><a href="https://github.com/r-lib/pkgdown">pkgdown</a>* for creating a website for your package</li>
+<li><a href="https://github.com/MangoTheCat/goodpractice">goodpractice</a> for advice about good practices</li>
+<li><a href="https://github.com/r-lib/styler">styler</a> for auto-style checking</li>
+<li><a href="https://github.com/jimhester/lintr">lintr</a> for style - use with Travis to auto-check your code!</li>
+</ul>
+<p><code>*</code> <em>we use these in this blogpost!</em></p>
+</div>
 <div id="who-what-when-where-why-and-how" class="section level1">
-<h1><span class="header-section-number">1</span> Who, what, when, where, why, and how</h1>
+<h1><span class="header-section-number">2</span> Who, what, when, where, why, and how</h1>
 <p>A few <del>days</del> <del>weeks</del> months ago, I sat down with <a href="http://chester.rbind.io">Chester Ismay</a> to make a package. I had been sitting for months already on a really fun bunch of datasets I scraped from Wikipedia on “The Great British Bake Off” for my <a href="https://www.datacamp.com/courses/working-with-data-in-the-tidyverse">new DataCamp.com course</a>. For years, I have been <strong>so jealous</strong> of all these awesome people who make awesome R data packages. Then Chester, co-author of the <a href="https://fivethirtyeight-R.netlify.com">{fivethirtyeight}</a> and <a href="https://infer.netlify.com">{infer}</a> and <a href="https://moderndive.com">{moderndive}</a> packages, <em>offered</em> to help me make my data into a data package, and then things got really exciting.</p>
 <div class="figure">
 <img src="https://media.giphy.com/media/3o6Zt6Glokp9L0OzWo/giphy.gif" />
@@ -58,27 +84,29 @@ output:
 </div>
 </div>
 <div id="use-this-now" class="section level1">
-<h1><span class="header-section-number">2</span> Use this now</h1>
+<h1><span class="header-section-number">3</span> Use this now</h1>
 <p>What is <a href="http://usethis.r-lib.org"><code>usethis</code></a>?</p>
 {{% tweet "1027293165735358464" %}}
-<p><a href="http://usethis.r-lib.org"><code>usethis</code></a> is a new-ish package by the folks at RStudio to automate workflow management. There are all kinds of workflow-related functions for non-package projects as well, alongside a comprehensive suite of functions specific to <a href="http://usethis.r-lib.org/reference/index.html#section-package-development">package development</a> which we’ll refer to this post. However, as with most package reference docs, they assume you know a proper package development workflow already. So this post will attempt to give you a play-by-play for when to use which <code>usethis</code> function, and why.</p>
+<p><a href="http://usethis.r-lib.org"><code>usethis</code></a> is a new-ish package by the folks at RStudio to automate workflow management. There are all kinds of workflow-related functions for non-package projects as well, alongside a comprehensive suite of functions specific to <a href="http://usethis.r-lib.org/reference/index.html#section-package-development">package development</a> which we’ll refer to in this post. However, as with most package reference docs, they assume you know a proper package development workflow already. So this post will attempt to give you a play-by-play for when to use which <code>usethis</code> function, and why.</p>
 <p>Disclaimer: there are many package development workflows- this is just one offering.</p>
 <p>Do this first:</p>
 <pre class="r"><code># Install and load the package
 install.packages(&quot;usethis&quot;)
 library(usethis)</code></pre>
 <p>-Made the package -Dependencies -Edit description - add license - add vignette - add news - add readme</p>
+<p><em>Note: the next release of <code>devtools</code> will automatically install <code>usethis</code> for you and load it whenever you run <code>library(devtools)</code> (see the <a href="https://github.com/r-lib/devtools#conscious-uncoupling">conscious uncoupling</a> of the devtools package for more details).</em></p>
 </div>
 <div id="create-the-package" class="section level1">
-<h1><span class="header-section-number">3</span> Create the package</h1>
+<h1><span class="header-section-number">4</span> Create the package</h1>
 <p>The first step is to create and name your new package. You can do this several ways. If you are working in RStudio, you can do File -&gt; New Project -&gt; R Package. You could also use <code>usethis::create_package</code>, which if not already within an R Project, will create a new R Project for you.</p>
 <p>But, we are guessing you’ll eventually want to use GitHub here (for lots of reasons), so I first set up a new GitHub repository without a README. At this point, you’ll want to consider your package name. Names must not have any special characters and can only contain letters, numbers, and dots. You are probably better off using all lower-case, like <code>gapminder</code>, <code>fivethirtyeight</code>, etc. We went with <code>bakeoff</code>.</p>
 <p>Once I had my <code>bakeoff</code> GitHub repo, I opened up RStudio and ran:</p>
 <pre class="r"><code># Clone the remote repo
 create_from_github(&quot;apreshill/bakeoff&quot;) # owner/reponame</code></pre>
-<p>This creates an R Project for you that is linked to your remote GitHub repository. With that project is open, we were finally ready to actually create the new package:</p>
+<p>This creates an R Project for you that is linked to your remote GitHub repository. Alternatively, you can try the <code>use_git()</code> and <code>use_github</code> workflow as <a href="https://r-mageddon.netlify.com/post/writing-an-r-package-from-scratch/">Tomas Westlake does in his blogpost</a>. If you run into problems, <a href="http://happygitwithr.com/ssh-keys.html">Jenny Bryan’s Happy Git with R</a> or this <a href="https://community.rstudio.com/t/difficulty-using-usethis-use-github/5579/7">RStudio Community thread</a> have helpful tips for troubleshooting SSH issues.</p>
+<p>With the project open, we were finally ready to actually create the new package:</p>
 <pre class="r"><code># Create a new package -------------------------------------------------
-create_package(here::here()) # could have also used getwd()</code></pre>
+create_package(here::here()) # could have also used getwd() or &quot;.&quot;</code></pre>
 <p>What did this step do? (edit this below)</p>
 <ul>
 <li><p><code>R/</code>: the R code</p></li>
@@ -88,7 +116,7 @@ create_package(here::here()) # could have also used getwd()</code></pre>
 </ul>
 </div>
 <div id="add-dependencies" class="section level1">
-<h1><span class="header-section-number">4</span> Add dependencies</h1>
+<h1><span class="header-section-number">5</span> Add dependencies</h1>
 <p>I wanted to have the ability to include vignettes with details about how this data was scraped and wrangled, a la Jenny Bryan’s <code>gapminder</code> package. So we needed to add dependencies. Chester told me <strong>NOT</strong> to add the <code>library(tidyverse)</code> as a dependency, or Mara might come after me. So we listed all these <code>tidyverse</code> out with <code>type = &quot;Suggests&quot;</code> since they are not necessary for actually <em>using</em> the data package. We tried this first, which did not work:</p>
 <pre class="r"><code># this won&#39;t work
 use_package(c(&quot;rvest&quot;, &quot;dplyr&quot;, &quot;tidyr&quot;, &quot;readr&quot;, &quot;stringr&quot;, 
@@ -124,15 +152,14 @@ walk(deps, usethis::use_package, type = &quot;Suggests&quot;)</code></pre>
 ● Refer to functions with `ggplot2::fun()`</code></pre>
 </div>
 <div id="update-the-description" class="section level1">
-<h1><span class="header-section-number">5</span> Update the description</h1>
+<h1><span class="header-section-number">6</span> Update the description</h1>
 <p>after updating description with persons and SAVING</p>
 <p>note: very important! In authors there is a blank in the vector <code>, ,</code>. If you delete this you’ll get a crazy error later on:</p>
-<pre class="r"><code>roxygen2::roxygenise()
+<pre class="r"><code>devtools::document()
 It is recommended to use ‘given’ instead of ‘middle’.
-It is recommended to use ‘given’ instead of ‘middle’.
-Error in vapply(unclass(authors), author_desc, character(1)) : 
-  values must be length 1,
- but FUN(X[[1]]) result is length 2</code></pre>
+Invalid DESCRIPTION:
+Authors@R field gives no person with maintainer role, valid email address and
+non-empty name.</code></pre>
 <p>I should have left the space in, or specified <code>email =</code> for the third argument, becuase the function <code>person</code> assumed this was my middle name.</p>
 <p>We also updated the version number. What on earth do those numbers mean?</p>
 <p>I also noticed that Nick Tierney links to his ORCID, and went hunting around in his GitHub to see how. You can specify this in the DESCRIPTION:</p>
@@ -144,7 +171,7 @@ Error in vapply(unclass(authors), author_desc, character(1)) :
   person(&quot;Chester&quot;, &quot;Ismay&quot;, email = &quot;chester.ismay@gmail.com&quot;, role = &quot;aut&quot;))</code></pre>
 </div>
 <div id="add-a-license" class="section level1">
-<h1><span class="header-section-number">6</span> Add a license</h1>
+<h1><span class="header-section-number">7</span> Add a license</h1>
 <pre class="r"><code>use_mit_license(&quot;Alison Hill&quot;)
 use_vignette(&quot;bakeoffs-abroad&quot;)</code></pre>
 <pre><code>✔ Setting License field in DESCRIPTION to &#39;MIT + file LICENSE&#39;
@@ -157,7 +184,7 @@ use_vignette(&quot;bakeoffs-abroad&quot;)</code></pre>
 </div>
 </div>
 <div id="make-news.md-readme.rmd" class="section level1">
-<h1><span class="header-section-number">7</span> Make news.md + readme.rmd</h1>
+<h1><span class="header-section-number">8</span> Make news.md + readme.rmd</h1>
 <pre class="r"><code>use_news_md()
 use_readme_rmd()</code></pre>
 <p>in read me</p>
@@ -165,13 +192,13 @@ use_readme_rmd()</code></pre>
 remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
 </div>
 <div id="write-package-level-docs" class="section level1">
-<h1><span class="header-section-number">8</span> Write package-level docs</h1>
+<h1><span class="header-section-number">9</span> Write package-level docs</h1>
 <pre class="r"><code>use_package_doc()</code></pre>
 <p>This creates a new file in the <code>R</code> folder called <code>bakeoff-package.R</code>. This script is actually just the help page for the whole package, so what you see if you type <code>?bakeoff</code> after loading the package.</p>
 <p>I edited <code>bakeoff-package.R</code> using <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/R/fivethirtyeight.R" class="uri">https://github.com/rudeboybert/fivethirtyeight/blob/master/R/fivethirtyeight.R</a></p>
 </div>
 <div id="write-more-docs" class="section level1">
-<h1><span class="header-section-number">9</span> Write more docs</h1>
+<h1><span class="header-section-number">10</span> Write more docs</h1>
 <p>Link to some examples on GitHub package site.</p>
 <ul>
 <li><code>Cmd/Ctrl</code> + <code>Opt/Alt</code> + <code>Shift</code> + <code>R</code> inserts roxygen skeleton</li>
@@ -179,7 +206,7 @@ remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
 <pre class="r"><code>use_r()</code></pre>
 </div>
 <div id="create-package-data" class="section level1">
-<h1><span class="header-section-number">10</span> Create package data</h1>
+<h1><span class="header-section-number">11</span> Create package data</h1>
 <p>Since we are making a data package here, now is a good time to add data. But, because all this work went mainly into the scripts for scraping and wrangling “The Great British Bake Off” data, I wanted to save those too.</p>
 <blockquote>
 <p>“<code>use_data()</code> makes it easy to save package data in the correct format. I recommend you save scripts that generate package data in data-raw: use <code>use_data_raw()</code> to set it up.”</p>
@@ -200,7 +227,7 @@ remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
 <pre class="r"><code>usethis::use_data(bakers, overwrite = TRUE)</code></pre>
 </div>
 <div id="use-roxygen-move-this-to-earlier-after-description" class="section level1">
-<h1><span class="header-section-number">11</span> Use <code>roxygen</code> (move this to earlier after description)</h1>
+<h1><span class="header-section-number">12</span> Use <code>roxygen</code> (move this to earlier after description)</h1>
 <p>Why? Two main things that should be roxygenized:</p>
 <ul>
 <li>Vignettes</li>
@@ -214,7 +241,7 @@ remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
 ● Re-document</code></pre>
 <p>TWO MAIN THINGS -vignettes -setting up documentation (everything in the <code>R/</code> folder is where <code>roxygen</code> will look for stuff to put automatically in <code>man/</code> folder as `<em>.Rd</em> files)</p>
 <p>may need: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md" class="uri">https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md</a></p>
-<p>Now <code>man</code> is empty though! Need to get stuff from <code>R</code> file into <code>man</code> using <code>roxygen</code>. Note that good stuff on roxygen in the R packages cheatsheet.</p>
+<p>Now <code>man</code> is empty though! Need to get stuff from <code>R</code> file into <code>man</code> using <code>roxygen</code>. There’s good stuff about roxygen in the <a href="https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf">R packages cheatsheet</a> and within RStudio (Help –&gt; Roxygen Quick Reference).</p>
 <p>Two ways- see screen shots</p>
 <div class="figure">
 <img src="/post/2018-06-29-data-package_files/configure-build-tools.png" />
@@ -225,16 +252,17 @@ remotes::install_github(&quot;apreshill/bakeoff&quot;)</code></pre>
 
 </div>
 <p>OR</p>
-<pre class="r"><code>roxygen2::roxygenise()</code></pre>
+<pre class="r"><code>devtools::document() </code></pre>
 <blockquote>
-<p>roxygen2::roxygenise() It is recommended to use ‘given’ instead of ‘middle’. It is recommended to use ‘given’ instead of ‘middle’. Error in vapply(unclass(authors), author_desc, character(1)) : values must be length 1, but FUN(X[[1]]) result is length 2 ?roxygenise roxygen2::roxygenise() Writing NAMESPACE Writing bakeoff-package.Rd Writing bakeoff.Rd</p>
+<p>devtools::document() Updating bakeoff documentation Loading bakeoff It is recommended to use ‘given’ instead of ‘middle’. Invalid DESCRIPTION: <a href="mailto:Authors@R">Authors@R</a> field gives no person with maintainer role, valid email address and non-empty name.</p>
 </blockquote>
+<p>See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’ manual. &gt; ?roxygenise &gt; roxygen2::roxygenise() Writing NAMESPACE Writing bakeoff-package.Rd Writing bakeoff.Rd</p>
 <ul>
 <li><code>Cmd/Ctrl</code> + <code>Shift</code> + <code>D</code> to generate <code>/man</code> files (<code>*.Rd</code>)</li>
 </ul>
 </div>
 <div id="build-the-package" class="section level1">
-<h1><span class="header-section-number">12</span> Build the package</h1>
+<h1><span class="header-section-number">13</span> Build the package</h1>
 <div class="figure">
 <img src="https://media.giphy.com/media/xT39DdoX1AwKgVW8j6/giphy.gif" />
 
@@ -266,7 +294,7 @@ package ‘purrr’ was built under R version 3.4.4 </code></pre>
 </div>
 </div>
 <div id="make-a-package-website" class="section level1">
-<h1><span class="header-section-number">13</span> Make a package website</h1>
+<h1><span class="header-section-number">14</span> Make a package website</h1>
 <p>Sometimes the things that seem the hardest at the outset are actually the most painless. Case in point: making a website for your shiny new package. It is actually easy (I really try to avoid using that word!) with the <code>pkgdown</code> package.</p>
 <div class="figure">
 <img src="https://media.giphy.com/media/3o6vY2Ef4cKfRf8loc/giphy.gif" />
@@ -287,7 +315,7 @@ library(pkgdown)</code></pre>
 <p>This function creates a static site in your <code>docs</code> folder. You can also use the RStudio Addin “Build pkgdown”.</p>
 </div>
 <div id="edit-your-package-site" class="section level1">
-<h1><span class="header-section-number">14</span> Edit your package site</h1>
+<h1><span class="header-section-number">15</span> Edit your package site</h1>
 <p>You can edit the newly created <code>_pkgdown.yml</code> file to customize your site. For example, you can insert links for the individual authors, and you can also use Bootswatch themes:</p>
 <pre><code>url: https://bakeoff.netlify.com
 
@@ -303,7 +331,7 @@ template:
 <p>Chester did a bunch more custom formatting because I managed to really screw up the rendering here. You can view our full <code>_pkgdown.yml</code> file on GitHub.</p>
 </div>
 <div id="push-to-github-deploy" class="section level1">
-<h1><span class="header-section-number">15</span> Push to GitHub &amp; deploy</h1>
+<h1><span class="header-section-number">16</span> Push to GitHub &amp; deploy</h1>
 <p>Once you are happy with your package and your package website, you are ready to push to GitHub. You can use GitHub Pages to deploy your site, but you need to remember that <code>pkgdown</code> created your static site in your <code>docs</code> folder of your master branch. So in your GitHub repo settings, you’ll need to</p>
 <div class="figure">
 <img src="/post/2018-06-29-data-package_files/pkgdown-gh-pages.png" />
