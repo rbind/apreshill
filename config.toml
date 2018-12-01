@@ -21,7 +21,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Alison Presmanes Hill"
-  description = "A site about R"
+  description = "A site"
   role = "Associate Professor, Assistant Director of the Center for Spoken Language Understanding"
   organization = "Oregon Health & Science University (OHSU)"
   organization_url = "http://www.ohsu.edu/xd/"
