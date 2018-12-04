@@ -14,8 +14,12 @@ header:
   preview: FALSE
 ---
 
+
+
+
 ```{r global_options, include = FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#")
+library(fontawesome)
 ```
 
 
@@ -38,7 +42,14 @@ The data I'll use to read into R is from an article published in PLOS ONE called
 
 The main research questions the authors explored were: do the number of available resources and/or the number of potential recipients alter the likelihood of a child donating and/or the amount they donate? But, in order to answer this question, we have to be able to read in the data! Luckily, these lovely developmental psychologists opted to share their data on the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LHAQ5W) as a tab-delimited file.
 
+`r fa("download", fill = "#ee5863")`
 
+```{r echo=FALSE}
+xfun::embed_files(here::here("static", "data", "PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv"), 
+                  name = "stickers.tsv")
+```
+
+<br>
 If you download the file, you can open it up in a plain text editor.
 ![](/img/posts/readr-headers/stickers-txt.png)
 
