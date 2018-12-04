@@ -101,11 +101,11 @@ enableGitInfo = false
 
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `dark`, `apogee`, `1950s`, `coffee`, `cupcake`.
-  color_theme = "alison"
+  color_theme = "default"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
-  font = "alison"
+  font = "default"
 
   # Description for social sharing and search engines. If undefined, author role is used in place.
   description = ""
