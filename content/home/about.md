@@ -1,22 +1,21 @@
 +++
 # About/Biography widget.
-
-date = "2016-04-20T00:00:00"
-draft = false
-
 widget = "about"
+active = true
+date = 2016-04-20T00:00:00
 
 # Order that this section will appear in.
-weight = 1
+weight = 5
 
 # List your academic interests.
 [interests]
   interests = [
-    "Education",
-    "R",
-    "Statistics",
-    "Natural Language Processing",
-    "Computational Behavioral Science"
+    "Data Science",
+    "Data Visualization",
+    "Data Analysis/Statistics",
+    "Education & Teaching",
+    "Open Source",
+    "[RLadies](https://rladies.org/)"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -37,9 +36,10 @@ weight = 1
  
 +++
 
-# About me
+# Background
 
-I am an Associate Professor of Pediatrics at <a href = "https://www.ohsu.edu">Oregon Health & Science University (OHSU)</a> in Portland, Oregon, and the Assistant Director of OHSU's <a href = "https://www.ohsu.edu/xd/research/centers-institutes/center-for-spoken-language-understanding/" target = "_blank">Center for Spoken Language Understanding</a>, home to the Computer Science graduate education program. I study health-related applications of Natural Language Processing-based methods, with a focus on pediatric populations with developmental disabilities like Autism Spectrum Disorders, which I've studied for the past 15 years.
+I am a Data Scientist & Professional Educator at [RStudio](https://rstudio.com). We develop free and open source tools to make it easier and more fun to do data science with the statistical programming language [<i class="fab fa-r-project"></i>](www.r-project.org). We also create software to help teams who use <i class="fab fa-r-project"></i> to share and publish their work.
 
-In addition to research, I teach graduate-level data science courses and lead workshops on statistics, data analysis, and data visualization using the statistical programming language R. I am also a co-author of the book [*blogdown: Creating Websites with R Markdown*](https://bookdown.org/yihui/blogdown/), and I am the author of the DataCamp.com course [*Working with Data in the Tidyverse*](https://www.datacamp.com/courses/working-with-data-in-the-tidyverse). 
+I studied psychology and quantitative methods, receiving my Ph.D. from Vanderbilt University (2008). For eight years, I was a professor and scientist at Oregon Health & Science University, where my research was funded by the National Institutes of Health, the Oregon Clinical and Translational Research Institute, and Autism Speaks. I have written numerous scientific journal articles and book chapters on autism and neurodevelopmental disorders. 
 
+I have developed and delivered workshops, graduate-level courses, and curricula based on teaching <i class="fab fa-r-project"></i>, the [tidyverse](https://www.tidyverse.org/), and [literate programming](https://bookdown.org/yihui/blogdown/). You can follow my current work for [RStudio Education on GitHub <i class="fab fa-github-alt"></i>](https://github.com/rstudio-education).
