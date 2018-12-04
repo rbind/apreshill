@@ -1,0 +1,15 @@
+# Font style metadata
+name = "alison"
+
+# Optional Google font URL
+google_fonts = "Cabin:400,500|Roboto+Mono|Cabin+Condensed:600"
+
+# Font families
+heading_font = "Cabin Condensed"
+body_font = "Cabin"
+nav_font = "Cabin"
+mono_font = "Roboto Mono"
+
+# Font size
+font_size = "20"
+font_size_small = "16"
