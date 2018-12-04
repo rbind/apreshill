@@ -1,17 +1,11 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-{{ if .Params.header.image }}
-<div class="article-header">
-  <img src="{{ "/img/" | relURL }}/{{ .Params.header.image }}" class="article-banner" itemprop="image">
-  {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
-</div>
-{{end}}
+{{ partial "page_header.html" . }}
 
-<div class="container">
+<div class="universal-wrapper">
   <div class="row">
-    <div class="col-md-12">
-      <h1>{{ .Title | default (i18n "talks") }}</h1>
+    <div class="col-lg-12">
 
       {{ with .Content }}
       <div class="article-style" itemprop="articleBody">{{ . }}</div>
@@ -19,22 +13,21 @@
 
       {{ range .Data.Pages.GroupByDate "2006" }}
       <div class="row" id="talk_list">
-        <div class="col-md-2">
+        <div class="col-lg-2">
           <h3>{{ .Key }}</h3>
         </div>
-        <div class="col-md-10">
-          <ul class="compact fa-ul">
+        <div class="col-lg-10">
 
-            {{ range .Pages.ByDate.Reverse }}
-            <li>
-              <i class="fa-li fa fa-comment-o" aria-hidden="true"
-                 style="color:#03396c;font-size:80%;padding-top:6px;"></i>
-              {{ .Title }}
-              <p>{{ partial "talk_links" (dict "content" . "is_list" 1) }}</p>
-            </li>
+          {{ range sort .Pages ".Params.time_start" "desc" }}
+            {{ if eq $.Params.list_format 1 }}
+              {{ partial "talk_li_detailed" . }}
+            {{ else if eq $.Params.list_format 2 }}
+              {{ partial "talk_li_stream" . }}
+            {{ else }}
+              {{ partial "talk_li_simple" . }}
             {{ end }}
+          {{ end }}
 
-          </ul>
         </div>
       </div>
       {{ end }}
