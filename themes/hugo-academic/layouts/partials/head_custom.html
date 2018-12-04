@@ -1,0 +1,30 @@
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Montserrat:300,400">
+  
+{{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta property="description" content="{{ .Site.Params.description }}">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xvrdm.github.io/images/{{ .Site.Params.logo.url }}" >
+{{ else }}
+<title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:type" content="article">
+
+  {{ if .Params.twitterImg }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://xvrdm.github.io/{{ .Params.twitterImg }}" >
+  {{ else }}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="http://xvrdm.github.io/images/{{ .Site.Params.logo.url }}" >
+  {{ end }}
+  
+{{ $defaultDescription := printf "Article posted by %s, on %s" .Params.author (.Date.Format "Monday, January 2nd, 2006") }}
+<meta property="description" content="{{ .Description | default $defaultDescription }}">
+<meta property="og:description" content="{{ .Description | default $defaultDescription }}">
+{{ end }}
+
+<meta name="twitter:creator" content="{{ .Params.twitterAuthor }}">
+<meta name="twitter:site" content="{{ .Params.twitterSite }}">

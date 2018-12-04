@@ -1,0 +1,37 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+{{ if .Params.header.image }}
+<div class="article-header">
+  <img src="{{ "/img/" | relURL }}/{{ .Params.header.image }}" class="article-banner" itemprop="image">
+  {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+</div>
+{{end}}
+
+<div class="universal-wrapper">
+
+  {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+
+  {{ with .Content }}
+  <div class="article-style" itemprop="articleBody">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+  <div>
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="article-style">
+      {{ if .Params.summary }}
+      {{ printf "%s" .Params.summary | markdownify }}
+      {{ else if .Truncated }}
+      {{ printf "%s" .Summary | markdownify }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{ partial "pagination" . }}
+
+</div>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
