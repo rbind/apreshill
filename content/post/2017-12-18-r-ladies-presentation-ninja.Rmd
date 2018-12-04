@@ -105,6 +105,6 @@ knitr::include_url('https://alison.rbind.io/slides/blogdown-workshop-slides.html
 * [Jessica Minnier's](http://jessicaminnier.com) slides for ["Building Shiny Apps: With Great Power Comes Great Responsibility"](http://jminnier-talks.netlify.com/2018_02_shiny_csp/minnier_csp2018#1)
 
 ```{r echo = FALSE}
-knitr::include_url('http://jminnier-talks.netlify.com/2018_02_shiny_csp/minnier_csp2018#1')
+knitr::include_url('https://jminnier-talks.netlify.com/2018_02_shiny_csp/minnier_csp2018#1')
 ```
 
