@@ -308,8 +308,8 @@ enableGitInfo = false
   weight = 1
 
 [[menu.main]]
-  name = "Resume"
-  url = "/resume/"
+  name = "Bio"
+  url = "/bio/"
   weight = 2
 
 [[menu.main]]
