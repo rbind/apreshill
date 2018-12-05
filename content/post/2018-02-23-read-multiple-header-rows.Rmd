@@ -14,8 +14,12 @@ header:
   preview: FALSE
 ---
 
+
+
+
 ```{r global_options, include = FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#")
+library(fontawesome)
 ```
 
 
@@ -27,17 +31,25 @@ In this post, I'll walk through a solution to this problem, using the `readr` pa
 blogdown::shortcode("youtube", "Mayf_XhsQDE")
 ```
 
-Warning!: I made a mistake when I said `readr` uses the first 100 rows of your data to predict column types- it uses the first 1000 rows. 
+Warning!: I made a mistake when I said `readr` uses the first 100 rows of your data to predict column types- it uses the first 1000 rows.
+
+---
+
+`r fa("download", fill = "#ee5863")` 
+```{r echo = FALSE} 
+xfun::embed_files(here::here("static", "data", "PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv"), 
+                  name = "stickers.csv")
+```
+
+---
 
 # Being sticker rich
 
-
-The data I'll use to read into R is from an article published in PLOS ONE called ["Being Sticker Rich: Numerical Context Influences Children’s Sharing Behavior"](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928). In this study, children (ages 3–11) received a small (12, “sticker poor”) or large (30, “sticker rich”) number of stickers, and were then given the opportunity to share their windfall with either one or multiple anonymous recipients. This type of experimental design is a version of the [Dictator Game](https://en.wikipedia.org/wiki/Dictator_game).
+This dataset is from an article published in PLOS ONE called ["Being Sticker Rich: Numerical Context Influences Children’s Sharing Behavior"](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928). In this study, children (ages 3–11) received a small (12, “sticker poor”) or large (30, “sticker rich”) number of stickers, and were then given the opportunity to share their windfall with either one or multiple anonymous recipients. This type of experimental design is a version of the [Dictator Game](https://en.wikipedia.org/wiki/Dictator_game).
 
 ![](/img/posts/readr-headers/stickers-plos-one.png)
 
 The main research questions the authors explored were: do the number of available resources and/or the number of potential recipients alter the likelihood of a child donating and/or the amount they donate? But, in order to answer this question, we have to be able to read in the data! Luckily, these lovely developmental psychologists opted to share their data on the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LHAQ5W) as a tab-delimited file.
-
 
 If you download the file, you can open it up in a plain text editor.
 ![](/img/posts/readr-headers/stickers-txt.png)
