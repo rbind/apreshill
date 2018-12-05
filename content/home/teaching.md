@@ -15,14 +15,15 @@ weight = 60
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
+I developed and taught the following graduate-level courses at [Oregon Health & Science University](https://www.ohsu.edu):
 
-I am a teaching instructor for the following courses at University X:
+- [Principles & Practice of Data Visualization](https://apreshill.github.io/data-vis-labs-2018/) (co-instructors: Drs. Steven Bedrick and Jackie Wirz)
+- [Probability & Statistics for Scientists and Engineers](https://ohsu-math630.netlify.com/) 
+- [Introduction to Data Wrangling, Analysis, & Communication](https://ohsu-conj620.netlify.com/)
+- [Data Science Programming](https://github.com/apreshill/ohsu-ds-programming) (co-instructor)
 
-- CS101: An intro to computer science
-- CS102: An intro to computer science
-- CS103: An intro to computer science
-- CS104: An intro to computer science
-- CS105: An intro to computer science
-- CS106: An intro to computer science
-- CS107: An intro to computer science
+I have also:
+
+- Created the DataCamp.com course [Working with Data in the Tidyverse](https://www.datacamp.com/courses/working-with-data-in-the-tidyverse); the second course in the ["Tidyverse Fundamentals" track](https://www.datacamp.com/tracks/tidyverse-fundamentals)
+
+- Consulted on the development of the [Data Science Specialization for the University of Oregon College of Education](https://github.com/uo-datasci-specialization).
