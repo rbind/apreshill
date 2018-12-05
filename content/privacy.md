@@ -2,7 +2,7 @@
 title = "Reuse license: CC-BY-SA"
 
 date = 2018-06-28T00:00:00
-draft = true
+draft = false
 
 # [header]
 # image = ""
