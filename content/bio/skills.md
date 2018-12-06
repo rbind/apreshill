@@ -43,7 +43,7 @@ weight = 1
   icon = "microphone-alt"
   icon_pack = "fas"
   name = "Speaker"
-  description = "I have presented original research at over 25 international conferences. I gave a keynote at the [2018 Cascadia R Conf in Portland, Oregon](https://cascadiarconf.com/), and have an upcoming keynote for the 2019 [Young Statisticians Conference in Canberra, Australia](http://ysc2019.netlify.com/)."
+  description = "I have presented original research at over 25 international conferences. Recently, I gave a keynote at the [2018 Cascadia R Conf in Portland, Oregon](../talk/cascadia-r-keynote/), and have an upcoming keynote for the 2019 [Young Statisticians Conference in Canberra, Australia](http://ysc2019.netlify.com/)."
   
 [[feature]]
   icon = "drafting-compass"
@@ -55,7 +55,7 @@ weight = 1
   icon = "flask"
   icon_pack = "fas"
   name = "Scientist"
-  description = "My scientific training is in developmental psychology. In [my research](https://profiles.impactstory.org/u/0000-0002-8082-1890), I studied health-related applications of Natural Language Processing-based methods, with a focus on pediatric populations with developmental disabilities like Autism Spectrum Disorders, which I studied for over 15 years."
+  description = "I studied developmental psychology and quantitative methods, finishing my PhD in 2008. [My research](https://profiles.impactstory.org/u/0000-0002-8082-1890) focused on health-related applications of Natural Language Processing-based methods, and has been funded by the National Institutes of Health, the Oregon Clinical and Translational Research Institute, and Autism Speaks."
 
 
 +++
