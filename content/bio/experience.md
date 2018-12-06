@@ -29,7 +29,7 @@ date_format = "January 2006"
   """
 
 [[experience]]
-  title = "Associate Professor"
+  title = "Associate Professor, Pediatrics"
   company = "Oregon Health & Science University"
   company_url = "https://www.ohsu.edu/"
   location = "Portland, Oregon"
@@ -47,7 +47,7 @@ date_format = "January 2006"
   description = """ """
 
 [[experience]]
-  title = "Assistant Professor"
+  title = "Assistant Professor, Pediatrics"
   company = "Oregon Health & Science University"
   company_url = "https://www.ohsu.edu/"
   location = "Portland, Oregon"
