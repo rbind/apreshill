@@ -85,8 +85,33 @@ div.alert-warning p:first-child::before {
   border-color: #ee5863;
 }
 
+/**************************************************
+ *  GH edit
+ **************************************************/
+
 .github-edit {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(0,0,0,.05);
+}
+
+.badge-github {
+  border: none;
+  color: rgba(52, 60, 86,.8);
+  background: rgba(132, 214, 211,.5);
+  font-weight: normal;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.badge-github[href]:focus,
+.badge-github[href]:hover {
+  background: rgba(132, 214, 211,.9);
+}
+
+a.badge-github:focus,
+a.badge-github:hover {
+  color: #fff;
 }
