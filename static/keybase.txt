@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/alisonhill
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://alison.rbind.io
+  * I am alisonhill (https://keybase.io/alisonhill) on keybase.
+  * I have a public key with fingerprint CFBB 4F07 AC3F 010D 584B  5D99 E256 4DA3 70CE 9406
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010143b61fe48666f6db7dd4f52e80f6165619ea138bd842c1de202d77e7ed9199480a",
+      "fingerprint": "cfbb4f07ac3f010d584b5d99e2564da370ce9406",
+      "host": "keybase.io",
+      "key_id": "e2564da370ce9406",
+      "kid": "010143b61fe48666f6db7dd4f52e80f6165619ea138bd842c1de202d77e7ed9199480a",
+      "uid": "0b7a8d39992aaede4eb4960ba350c519",
+      "username": "alisonhill"
+    },
+    "service": {
+      "hostname": "alison.rbind.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1544150581,
+  "expire_in": 157680000,
+  "prev": "2b33827a6d3fce59c04e3e8f0dba166fa5c4e73da7730de2979a6d6b077e3091",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.80
+Comment: https://keybase.io/crypto
+
+yMIhAnicrVJJaBRBFJ24xcSFHCKKW6QREYmharp6qTkpqGg0QVDEjYxVXb+Tdsbu
+sbtnjMScFDUXo+KCG4oXFxRDBGXUmMREFEVxQRHFLSJ6MAruIqLVLgfBo3Up6td7
+77//+N1D+saKCx63Das62vFma8HVzr3Z2NKiR1qDwj2xWkk0KCn4eUFaQBAmU45Q
+EgrCCBOV69gGYuq6buuCG0IQW4uDiWwd65qOKTCsmlyYJG5hAXEUF4YBBgiKKSUm
+Ykq5YjtuLfgZ33FDKWvZnBMbGcxSbdlCaCbhmqAU4ppOBFMNZAElSJfEOi+IGNIc
+ZwFUOJ6syUfyp71/4P+z7+wvOW4wU6iU0jhjIIAAJ1RHnKkasjRMI2AAvstWgESz
+tBN4bp2TTiuN5Yqs5xwLomijWf7CVPjcccWvoTK+F3qWl5afdWGYCRIROVydidCr
+gCd/6yQjhgxTMnLgB47nKgkskVboRMJYIwRrSDNxuQL1GceHpBMhNEM3kTxRH8hJ
+yThXVTNuMF2otgUatRABFUwbCc6wDIxpFgFDFcwwVCTDoQaVWJ0jGZGKKFaiyVa6
+npKg0iarlZKBU+uyMOuD0nihY2m/WEFxbED/PtGSxYqLSv6sXral8LsAf1Tv28Wt
+p9fPn3RtXcnXpoKHYU3u+qHK3hmLnmzX+9CPTnpU9Z7srdyRF1umrHlz4/TOqfuU
+TVdRtdfexMnrWduO1xsf7rQ2P2uc1nSzcOW9tXUn4VFZV+VG/LkynZ9T8/768uST
+/A2t6t3wcbXPBzYMqJlYevDVEvd72f3qU54Rlg5+OnqyMetuS3fVZDs/r2zQwg3T
+e9w8Pv4Y5rXvSm0rgbFtG4496Ok9m//49fZLNKJ95vO2vqOHkLM77me1mku3xgfN
+m698yzfv3nO+tPNTZ/fOJftmH9nfdfnAhAXz3w1urjg88NzF1tTMlmV6z53lc0eO
+GXrlzLWeL0VDUydaumj9D5EoSUk=
+=wJPg
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/alisonhill
+
+==================================================================
