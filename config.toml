@@ -50,7 +50,7 @@ enableGitInfo = false
 [params]
   # AUTHOR SETUP
   # add github edit https://bookdown.org/yihui/blogdown/templates.html
-  #GithubEdit = "https://github.com/rbind/apreshill/edit/theme-update/content/"
+  GithubEdit = "https://github.com/rbind/apreshill/edit/theme-update/content/"
   GithubSource = "https://github.com/rbind/apreshill/blob/master/content/"
 
   # Your details.

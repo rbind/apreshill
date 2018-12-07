@@ -84,3 +84,9 @@ div.alert-warning p:first-child::before {
   background-color: rgb(238,88,99, .1);
   border-color: #ee5863;
 }
+
+.github-edit {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,.05);
+}
