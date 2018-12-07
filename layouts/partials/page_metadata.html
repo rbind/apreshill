@@ -54,10 +54,10 @@
 {{ end }}
 
   <span class="middot-divider"></span>
-  {{ with $.Site.Params.GithubEdit }}  
+  {{ with $.Site.Params.GithubSource }}  
   <span class="article-date">
-    <i class="fas fa-pencil-alt"></i>
-    <a href="{{ . }}{{ $.Scratch.Get "FilePath" }}" target="_blank">Suggest an edit</a>&nbsp{{ else }}@{{ . }}
+    <i class="fab fa-github"></i>
+    <a href="{{ . }}{{ $.Scratch.Get "FilePath" }}" target="_blank">View source</a>&nbsp{{ else }}@{{ . }}
   </span>
   {{ end }}
 {{ end }}
