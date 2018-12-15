@@ -1,0 +1,46 @@
+---
+title: "Resources"
+
+date: 2018-09-09T00:00:00.000Z
+lastmod: 2018-09-09T00:00:00.000Z
+
+draft: false # Is this a draft? true/false
+toc: true # Show table of contents? true/false
+type: docs # Do not modify.
+
+# Add menu entry to sidebar.
+linktitle: "Resources"
+menu:
+  tutorial-blogdown:
+    parent: "01-Getting Started"
+    weight: 2
+---
+
+
+
+Before you start, I recommend at least opening the following tabs for reference as you work:
+
+* [blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, and Alison Presmanes Hill :tada:
+* [The blogdown demo site](https://blogdown-demo.rbind.io/)
+
+## Workshops/webinars {#workshops}
+
+* [Up & running with blogdown workshop](../../talk/blogdown-meetup/) by [yours truly again](/)
+* [Making websites with R Markdown webinar](https://www.rstudio.com/resources/webinars/introducing-blogdown/) by Yihui Xie
+* [Getting down and up with blogging in R workshop slides](https://rladies-melb-blogdown.netlify.com/#1) by [Emi Tanaka](https://twitter.com/statsgen)
+
+## Blog posts {#blogposts}
+
+There has also been a proliferation of awesome blog posts in the R community; here are just a few highlights:
+
+* [Keeping up with blogdown](https://maraaverick.rbind.io/2017/10/keeping-up-with-blogdown/) by [Mara Averick](https://twitter.com/dataandme)
+* [Making a Website Using blogdown, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) also by [Amber Thomas](https://twitter.com/ProQuesAsker)
+* [Blinging up your website built with hugo via blogdown R package](https://emitanaka.rbind.io/post/2018-05-blogdowntutorial/) by [Emi Tanaka](https://twitter.com/statsgen)
+* [Getting Started with blogdown](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/) by [M. Edward (Ed) Borasky](https://twitter.com/znmeb)
+* [Building a blog with blogdown and github](https://tclavelle.github.io/blog/blogdown_github/)
+* [Creating websites (including blogs)](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html#blogs) by [Emily Zabor](https://twitter.com/zabormetrics)
+
+I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [rbind/support issues section on GitHub](https://github.com/rbind/support) to be helpful:
+
+* [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
+
