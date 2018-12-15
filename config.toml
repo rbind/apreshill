@@ -48,11 +48,11 @@ enableGitInfo = false
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 [params]
-  # AUTHOR SETUP
   # add github edit https://bookdown.org/yihui/blogdown/templates.html
   GithubEdit = "https://github.com/rbind/apreshill/edit/theme-update/content/"
   GithubSource = "https://github.com/rbind/apreshill/blob/master/content/"
 
+  # AUTHOR SETUP
   # Your details.
   name = "Alison Presmanes Hill"
   role = "Data Scientist & Professional Educator"
