@@ -327,11 +327,24 @@ enableGitInfo = false
   name = "Teaching"
   url = "#teaching"
   weight = 4
+
+[[menu.main]]
+  name = "Tutorials"
+  url = "/tutorial/"
+  weight = 5
+  identifier = "tutorials"
+  
+[[menu.main]]
+  name = "Up & running with blogdown"
+  pre = "<i class=\"fas fa-rss\" style=\"color: #84d6d3;\"></i>"
+  url = "/tutorial-blogdown/"
+  weight = 6
+  parent = "tutorials"
   
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 7
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
