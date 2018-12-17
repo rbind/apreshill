@@ -16,6 +16,9 @@ header:
 
 
 
+<p>{{% alert note %}}
+A shorter version of this blog post now appears as an <a href="https://readxl.tidyverse.org/articles/articles/multiple-header-rows.html">article vignette</a> for the <code>readxl</code> package, thank you to Jenny Bryan for the invitation!
+{{% /alert %}}</p>
 <p>A problem I run up against a lot when working with other people’s data is having multiple header rows in the source data file. I like to use <code>readr</code> functions to read in rectangular data like <code>.csv</code> and <code>.tsv</code> files, but if you skip rows at import using the <code>skip</code> argument, you lose the header row as well, which usually has column names. The problem I often have is that the header row has column names that I want to keep, but I’d like to skip the second row (or more), which has some junk in it. Usually this row is some kind of data dictionary inserted between the row of column names and the actual data.</p>
 <p>In this post, I’ll walk through a solution to this problem, using the <code>readr</code> package. You can also watch along in the video.</p>
 {{% youtube "Mayf_XhsQDE" %}}
