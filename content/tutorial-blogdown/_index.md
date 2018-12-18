@@ -1,5 +1,5 @@
 +++
-title = "About 'Up & running with blogdown'"
+title = "Personal note + pep talk"
 
 date = 2018-09-09T00:00:00
 # lastmod = 2018-09-09T00:00:00
@@ -20,7 +20,7 @@ I published my [first blog post](../post/up-and-running-with-blogdown) on my [pe
 
 After finally getting my first site up and running, I was determined to share my notes in my first blog post. I made it my "pumping project", and polished it up over a few weeks. Finally, it was ready, and for the first time I published a blog post on my site. I remember holding my breath with that push to GitHub-- but onward! A lot of blood/sweat/tears/breast milk had gone into this. I linked to the post in the [rbind/support Gitter chat room](https://gitter.im/rbind/support), and minutes later the author of the blogdown package, [Yihui Xie](https://yihui.name/), responded:
 
-![](/img/yihui-gitter.png)
+![](/img/tutorials/yihui-gitter.png)
 
 After that, I joined [Yihui](https://yihui.name/) and [Amber Thomas](https://amber.rbind.io/) as a co-author on the [blogdown book](https://bookdown.org/yihui/blogdown/), which was published in December of that same year. 
 

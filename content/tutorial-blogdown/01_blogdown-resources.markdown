@@ -43,4 +43,3 @@ There has also been a proliferation of awesome blog posts in the R community; he
 I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [rbind/support issues section on GitHub](https://github.com/rbind/support) to be helpful:
 
 * [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
-

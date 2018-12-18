@@ -21,10 +21,10 @@ For blogdown, I suggest adopting [a new project, GitHub first workflow](http://h
 
 ## Make a repo on GitHub {#githubfirst}
 
-![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-1.png)
+![](/img/tutorials/blogdown-signpost-1.png)
 
 
-1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
+1. Go online to your [GitHub](https://github.com) account, and create a new repository (don't add a `README` or a `.gitignore`). For naming your repo, consider your future deployment plan:
 
   * If you are going to use [Netlify](https://www.netlify.com) to host the site, you can name this repository anything you want! 
   {{% alert note %}}
@@ -44,21 +44,27 @@ For blogdown, I suggest adopting [a new project, GitHub first workflow](http://h
 
 Now you will [clone your remote repository](https://help.github.com/articles/cloning-a-repository/) and create a local copy on your computer so you can sync between the two locations. You have two options here: choose either to do this in [RStudio](#rstudioclone) (recommended), or in the [terminal/RStudio](#terminalclone).
 
-![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-2.png)
+![](/img/tutorials/blogdown-signpost-2.png)
 
 ### Option 1: in RStudio {#rstudioclone}
 
 We'll follow [Jenny's instructions](http://happygitwithr.com/new-github-first.html#new-rstudio-project-via-git-clone).
 
 1. _File > New Project > Version Control > Git_. 
-1. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this https://github.com/rbind/apreshill.git.
+1. In the "repository URL" paste the URL of your new GitHub repository. It will be something like either:
+    - https://github.com/apreshill/apreshill.git ([HTTPS version](http://happygitwithr.com/credential-caching.html))
+    - git@github.com:apreshill/apreshill.git ([SSH](http://happygitwithr.com/ssh-keys.html))
 1. Press the _tab_ key to automatically fill in the project name.
 1. Check **Open in new session**
 1. Click on the **Create Project** button
 
-![](/img/new-proj-github.png)
+![](/img/tutorials/rstudio-clone.png)
+
+
 
 ### Option 2: in terminal/RStudio {#terminalclone}
+
+![](/img/tutorials/blogdown-signpost-2-alt.png)
 
 1. Use `cd` to navigate into the directory where you want your repo to be
 
@@ -91,7 +97,7 @@ Either way, you should now be "in" your project in RStudio. Are you there?
 
 ## Update .gitignore file {#gitignore}
 
-If you are using git for version control, edit your `.gitignore` file. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public/` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
+If you are using git for version control, edit your `.gitignore` file. This file should be viewable in your file viewer pane in RStudio. Below is what it should look like: the first four lines will automatically be in this file if you have set up your RStudio Project, but if you plan to use Netlify to deploy, you need to add the `public` line ([read about here](https://bookdown.org/yihui/blogdown/version-control.html).)
 
 ```
 .Rproj.user

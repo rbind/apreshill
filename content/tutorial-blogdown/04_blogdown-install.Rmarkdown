@@ -18,7 +18,7 @@ menu:
 
 
 
-![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-3.png)
+![](/img/tutorials/blogdown-signpost-3.png)
 
 
 ## Install blogdown {#blogdown}

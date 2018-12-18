@@ -18,7 +18,7 @@ menu:
 
 
 
-![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-4.png)
+![](/img/tutorials/blogdown-signpost-4.png)
 
 Now you can finally build your site using the `blogdown::new_site()` function. But **first** you should at least think about themes...
 
