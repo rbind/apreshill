@@ -22,6 +22,10 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#")
 library(fontawesome)
 ```
 
+{{% alert note %}}
+A shorter version of this blog post now appears as an [article vignette](https://readxl.tidyverse.org/articles/articles/multiple-header-rows.html) for the `readxl` package, thank you to [Jenny Bryan](https://jennybryan.org/) for the [invitation](https://twitter.com/JennyBryan/status/1016442080636235776)!
+{{% /alert %}}
+
 
 A problem I run up against a lot when working with other people's data is having multiple header rows in the source data file. I like to use `readr` functions to read in rectangular data like `.csv` and `.tsv` files, but if you skip rows at import using the `skip` argument, you lose the header row as well, which usually has column names. The problem I often have is that the header row has column names that I want to keep, but I'd like to skip the second row (or more), which has some junk in it. Usually this row is some kind of data dictionary inserted between the row of column names and the actual data. 
 
