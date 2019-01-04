@@ -23,6 +23,12 @@ Before you start, I recommend at least opening the following tabs for reference 
 * [blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie, Amber Thomas, and Alison Presmanes Hill :tada:
 * [The blogdown demo site](https://blogdown-demo.rbind.io/)
 
+I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [rbind/support issues section on GitHub](https://github.com/rbind/support) to be helpful:
+
+* [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
+
+There have been so many wonderful workshops and blog posts written up about using blogdown, so these are just some highlights that you may also find useful.
+
 ## Workshops/webinars {#workshops}
 
 * [Up & running with blogdown workshop](../../talk/blogdown-meetup/) by [yours truly again](/)
@@ -31,15 +37,9 @@ Before you start, I recommend at least opening the following tabs for reference 
 
 ## Blog posts {#blogposts}
 
-There has also been a proliferation of awesome blog posts in the R community; here are just a few highlights:
-
 * [Keeping up with blogdown](https://maraaverick.rbind.io/2017/10/keeping-up-with-blogdown/) by [Mara Averick](https://twitter.com/dataandme)
 * [Making a Website Using blogdown, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) also by [Amber Thomas](https://twitter.com/ProQuesAsker)
 * [Blinging up your website built with hugo via blogdown R package](https://emitanaka.rbind.io/post/2018-05-blogdowntutorial/) by [Emi Tanaka](https://twitter.com/statsgen)
 * [Getting Started with blogdown](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/) by [M. Edward (Ed) Borasky](https://twitter.com/znmeb)
 * [Building a blog with blogdown and github](https://tclavelle.github.io/blog/blogdown_github/)
 * [Creating websites (including blogs)](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html#blogs) by [Emily Zabor](https://twitter.com/zabormetrics)
-
-I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [rbind/support issues section on GitHub](https://github.com/rbind/support) to be helpful:
-
-* [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)

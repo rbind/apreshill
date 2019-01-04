@@ -36,8 +36,15 @@ Whatever theme you choose, you'll need to pick one of 3 ways to make your new si
 If you are happy with the default theme, which is the [lithium theme](https://themes.gohugo.io/theme/hugo-lithium-theme/), you can use: 
 
 ```
-blogdown::new_site() # default theme is lithium
+blogdown::new_site(theme_example = TRUE, 
+                   sample = TRUE) # default theme is lithium
 ```
+
+I always highly recommend these two arguments:
+
++ `theme_example` essentially copies the theme's `exampleSite` folder (if it exists) into your project root directory so you can render the full site. You can always delete the example content later, but I like to leave it to make sure the site renders "out of the box".
+    
++ `sample` adds a sample R Markdown (`.Rmd`) blog post. Depending on a theme's file structure, this post may end up in a weird place within the `content/` folder.
 
 ## Different theme {#different}
 
@@ -65,8 +72,6 @@ install_theme("gcushen/hugo-academic",
               update_config = TRUE)
 ```
 
-
-I recommend setting `theme_example = TRUE`- some themes won't provide an example site, but the academic theme did and I found it helpful to see. You can always delete the example content.
 
 ## Serve your site {#servesite}
 

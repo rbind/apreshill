@@ -19,21 +19,27 @@ menu:
 
 ![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-5.png)
 
-Deploying in Netlify through GitHub is smooth. 
+There are two main ways to deploy via Netlify, and I'll guide you through both:
 
+1. [Drag & Drop Deployment]
+1. [Continuous Deployment]
 
-```r
-knitr::include_graphics(c("/img/netlify-landing.png",
-                        "/img/netlify-sign-up.png"))
-```
-
-<img src="/img/netlify-landing.png" width="10%" /><img src="/img/netlify-sign-up.png" width="10%" />
-
+For both, you'll need a Netlify account:
 
 1. Go online to [Netlify](https://www.netlify.com). 
-2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
-3. Log in, and select: `New site from Git -> Continuous Deployment: GitHub`.
-4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves specifying two important things: the build command and the publish directory (this should be `public`).
+
+1. Click on the **Sign Up** button and 
+    ![](/img/netlify-landing.png)
+    
+1. I recommend selecting to sign up using your existing GitHub account (no need to create another account); click to "Authorize Netlify"
+    ![](/img/netlify-sign-up.png)
+
+
+## Way 1: The Drag-and-Drop Deploy {#drop}
+
+1. Log in, and select: `New site from Git -> Continuous Deployment: GitHub`.
+
+1. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves specifying two important things: the build command and the publish directory (this should be `public`).
 
     * More about the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. 
     

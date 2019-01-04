@@ -20,23 +20,33 @@ menu:
 
 ![](/img/tutorials/blogdown.gif)
 
-If you are pretty comfortable working with R, RStudio, R projects (`.Rproj`) and GitHub (via RStudio), these steps may be detailed enough for you to get started:
+If you are pretty comfortable working with R, RStudio, R projects (`.Rproj`), and GitHub (via RStudio), these steps may be detailed enough for you to get started:
 
 1. Create a GitHub repo (no `README`, no `.gitignore`)
+
 1. Create a new RStudio project by cloning the repo to a local directory
+
 1. Install the `blogdown` R package via `install.packages("blogdown")`
+
 1. Install Hugo via the `blogdown::install_hugo()` function
-1. Create a site using a Hugo theme hosted on GitHub via `blogdown::new_site(theme = "user/repo", theme_example = TRUE)`
+
+1. Create a site using a Hugo theme hosted on GitHub via `blogdown::new_site(theme = "user/repo", theme_example = TRUE, sample = TRUE)`
+
+    + `theme_example` essentially copies the theme's `exampleSite` folder (if it exists) into your project root directory so you can render the full site. You can always delete the example content later, but I like to leave it to make sure the site renders "out of the box".
+    
+    + `sample` adds a sample R Markdown (`.Rmd`) blog post. Depending on a theme's file structure, this post may end up in a weird place within the `content/` folder.
+    
 1. If it doesn't automatically start, use the RStudio Addin to serve your site (renders first in the RStudio Viewer pane, i.e., where your R plots generally render; be sure to click on the teeny-tiny viewer pane and "Show in new window" to view in your local browser)
 
-All together now, once you are "in" your RStudio project that is linked to a remote GitHub repo:
+
+All together now, once you are "in" your RStudio project that is linked to a remote GitHub repo, and using the [Hugo academic theme](https://sourcethemes.com/academic/) as an example:
 
 
 ```r
 install.packages("blogdown")
 library(blogdown)
 install_hugo()
-new_site()
+new_site(theme = "gcushen/hugo-academic", theme_example = TRUE, sample = TRUE)
 ```
 
 
