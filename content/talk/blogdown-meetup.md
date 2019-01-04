@@ -11,7 +11,7 @@ selected = true
 math = true
 
 url_pdf = ""
-url_slides = "slides/blogdown-workshop-slides.html"
+url_slides = "../slides/blogdown-workshop-slides.html"
 url_video = ""
 [[url_custom]]
     name = "Pre-work"
