@@ -3,7 +3,6 @@ title: 'A Spoonful of Hugo: The netlify.toml File'
 summary: Why you should use a netlify.toml file in your blogdown site
 author: ''
 date: '2019-02-20'
-slug: hugo-netlify-toml
 categories: []
 tags: []
 image:

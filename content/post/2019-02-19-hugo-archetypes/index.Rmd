@@ -6,7 +6,6 @@ date: '2019-02-19'
 image:
   caption: ''
   focal_point: ''
-slug: hugo-archetypes
 ---
 
 > "Just a spoonful of Hugo helps the blog go down."
