@@ -14,9 +14,11 @@ image:
 > "Just a spoonful of Hugo helps the blog go down."
 - me, only somewhat kidding
 
-You can read the previous post about my "Spoonful of Hugo" series [here](/post/hugo-archetypes/). In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated).
+You can read the previous post about my "Spoonful of Hugo" series [here](/post/2019-02-19-hugo-archetypes/hugo-archetypes/). In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated).
 
 This is my second post in this series, and it is a relatively quick one. Just do this. This one is a no-brainer. 
+
+* Edited to update: thanks to [Mara Averick](https://twitter.com/dataandme) for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of [Hugo versions now](https://github.com/gohugoio/hugo/issues/5639). So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (as in 0.54 will not work) *
 
 # Use Netlify to Deploy
 
@@ -68,7 +70,7 @@ Adding this file means that team members can see for themselves what version of 
 - other people who use/learn from/contribute to your blog can *actually* reproduce your site with the same site configuration. 
 - __Bonus:__ you can set the Hugo versions for branch deploys too. 
 
-Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill/blob/master/netlify.toml) file:
+Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill/blob/master/netlify.toml) file^[the leading zero matters for Hugo versions, so 0.53 works but .53 will not. For versions >= 0.54.0, the trailing zero also matters, so 0.54.0 works but 0.54 will not.]:
 
 
 ```toml
@@ -77,12 +79,12 @@ Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill
   command = "hugo"
 
 [context.production.environment]
-  HUGO_VERSION = "0.53"
+  HUGO_VERSION = "0.54.0" # if older, use format: 0.53 (no trailing zero)
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
   
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.53"
+HUGO_VERSION = "0.54.0" # if older, use format: 0.53 (no trailing zero)
 ```
 
 You can leave off the last chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/), but I `r emo::ji("heart")` this Netlify feature and encourage you to try it out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch gets a link `r emo::ji("tada")`.
@@ -106,7 +108,7 @@ If you look in your site's Netlify deploy log, you should see entries like this:
 7:47:19 PM: Attempting ruby version 2.3.6, read from environment
 7:47:20 PM: Using ruby version 2.3.6
 7:47:20 PM: Using PHP version 5.6
-7:47:20 PM: Installing Hugo 0.53
+7:47:20 PM: Installing Hugo 0.54.0
 ```
 
 Success!
