@@ -1,6 +1,6 @@
 ---
 title: 'A Spoonful of Hugo: Archetypes'
-summary: Why you should use Hugo archetypes in your blogdown site.
+summary: Why you should use Hugo archetypes in your blogdown site
 author: ''
 date: '2019-02-19'
 image:
@@ -152,8 +152,11 @@ If you read the original tidyverse [`CONTRIBUTING.md`](https://github.com/tidyve
 
 1. A `package-release.md` which also should only be used with an R Markdown post and adds the `usethis::use_tidy_thanks()` code chunk (this is pseudo-code so the default chunk option is set to `eval = FALSE`).
 
-So I drafted a [pull request](https://github.com/tidyverse/tidyverse.org/pull/271) that adds [these three archetypes](https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143) to the [GitHub repository](https://github.com/tidyverse/tidyverse.org) for the [tidyverse.org](https://www.tidyverse.org/). 
+So I drafted a [pull request](https://github.com/tidyverse/tidyverse.org/pull/271) that adds [these three archetypes](https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143) to the [GitHub repository](https://github.com/tidyverse/tidyverse.org) for the [tidyverse.org](https://www.tidyverse.org/). Here is the "after" Addin view:
+
+![](archetypes-after.png)
+
 
 Here's hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your `themes/<THEME-NAME>/archetypes/` folder, then in your project root `archetypes/` folder next. [DO](https://twitter.com/apreshill/status/1083791211222073344) [NOT](https://twitter.com/apreshill/status/1078494406301212672) [TOUCH](http://arm.rbind.io/slides/blogdown.html#35) any files in your `themes/` directory.^[Trust me on this one- if you ever want to update your site this will make that process way harder.]
 
-You may want to set up archetypes for your blogdown site if you have a "signature" R setup chunk that loads your preferred `knitr` chunk options, common libraries you always load at setup like `tidyverse`, `ggplot2` themes you prefer (`theme_minimal()` FTW), etc.. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo's [blog post](http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/) on archetypes. You *can* also make [directory based archetypes](https://gohugo.io/content-management/archetypes/#directory-based-archetypes) if you use Hugo page bundles, which is a topic of a future post.
+You may want to set up archetypes for your blogdown site if you have a "signature" R setup chunk that loads your preferred `knitr` chunk options, common libraries you always load at setup like `tidyverse`, `ggplot2` themes you prefer (`theme_minimal()` FTW), etc. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo's [blog post](http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/) on archetypes. You *can* also make [directory based archetypes](https://gohugo.io/content-management/archetypes/#directory-based-archetypes) if you use Hugo page bundles, which is a topic of a future post.

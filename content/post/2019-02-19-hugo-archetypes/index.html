@@ -1,6 +1,6 @@
 ---
 title: 'A Spoonful of Hugo: Archetypes'
-summary: Why you should use Hugo archetypes in your blogdown site.
+summary: Why you should use Hugo archetypes in your blogdown site
 author: ''
 date: '2019-02-19'
 image:
@@ -133,9 +133,10 @@ categories = []
 <li><p>A <code>default-rmarkdown.md</code> which should only be used with an R Markdown post and provides only the setup chunk at the top.</p></li>
 <li><p>A <code>package-release.md</code> which also should only be used with an R Markdown post and adds the <code>usethis::use_tidy_thanks()</code> code chunk (this is pseudo-code so the default chunk option is set to <code>eval = FALSE</code>).</p></li>
 </ol>
-<p>So I drafted a <a href="https://github.com/tidyverse/tidyverse.org/pull/271">pull request</a> that adds <a href="https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143">these three archetypes</a> to the <a href="https://github.com/tidyverse/tidyverse.org">GitHub repository</a> for the <a href="https://www.tidyverse.org/">tidyverse.org</a>.</p>
+<p>So I drafted a <a href="https://github.com/tidyverse/tidyverse.org/pull/271">pull request</a> that adds <a href="https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143">these three archetypes</a> to the <a href="https://github.com/tidyverse/tidyverse.org">GitHub repository</a> for the <a href="https://www.tidyverse.org/">tidyverse.org</a>. Here is the “after” Addin view:</p>
+<p><img src="archetypes-after.png" /></p>
 <p>Here’s hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your <code>themes/&lt;THEME-NAME&gt;/archetypes/</code> folder, then in your project root <code>archetypes/</code> folder next. <a href="https://twitter.com/apreshill/status/1083791211222073344">DO</a> <a href="https://twitter.com/apreshill/status/1078494406301212672">NOT</a> <a href="http://arm.rbind.io/slides/blogdown.html#35">TOUCH</a> any files in your <code>themes/</code> directory.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
-<p>You may want to set up archetypes for your blogdown site if you have a “signature” R setup chunk that loads your preferred <code>knitr</code> chunk options, common libraries you always load at setup like <code>tidyverse</code>, <code>ggplot2</code> themes you prefer (<code>theme_minimal()</code> FTW), etc.. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo’s <a href="http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/">blog post</a> on archetypes. You <em>can</em> also make <a href="https://gohugo.io/content-management/archetypes/#directory-based-archetypes">directory based archetypes</a> if you use Hugo page bundles, which is a topic of a future post.</p>
+<p>You may want to set up archetypes for your blogdown site if you have a “signature” R setup chunk that loads your preferred <code>knitr</code> chunk options, common libraries you always load at setup like <code>tidyverse</code>, <code>ggplot2</code> themes you prefer (<code>theme_minimal()</code> FTW), etc. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo’s <a href="http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/">blog post</a> on archetypes. You <em>can</em> also make <a href="https://gohugo.io/content-management/archetypes/#directory-based-archetypes">directory based archetypes</a> if you use Hugo page bundles, which is a topic of a future post.</p>
 </div>
 <div class="footnotes">
 <hr />
