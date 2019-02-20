@@ -18,7 +18,7 @@ You can read the previous post about my "Spoonful of Hugo" series [here](/post/2
 
 This is my second post in this series, and it is a relatively quick one. Just do this. This one is a no-brainer. 
 
-* Edited to update: thanks to [Mara Averick](https://twitter.com/dataandme) for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of [Hugo versions now](https://github.com/gohugoio/hugo/issues/5639). So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (as in 0.54 will not work) *
+*Edited to update: thanks to [Mara Averick](https://twitter.com/dataandme) for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of [Hugo versions now](https://github.com/gohugoio/hugo/issues/5639). So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (0.54 will not work).*
 
 # Use Netlify to Deploy
 
@@ -84,7 +84,7 @@ Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill
   HUGO_ENABLEGITINFO = "true"
   
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.54.0" # if older, use format: 0.53 (no trailing zero)
+  HUGO_VERSION = "0.54.0" # if older, use format: 0.53 (no trailing zero)
 ```
 
 You can leave off the last chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/), but I `r emo::ji("heart")` this Netlify feature and encourage you to try it out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch gets a link `r emo::ji("tada")`.

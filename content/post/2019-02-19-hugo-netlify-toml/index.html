@@ -19,9 +19,7 @@ image:
 </blockquote>
 <p>You can read the previous post about my “Spoonful of Hugo” series <a href="/post/2019-02-19-hugo-archetypes/hugo-archetypes/">here</a>. In this series, I’m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site <em>UP</em> (and even better- more efficient, more streamlined, more automated).</p>
 <p>This is my second post in this series, and it is a relatively quick one. Just do this. This one is a no-brainer.</p>
-<ul>
-<li>Edited to update: thanks to <a href="https://twitter.com/dataandme">Mara Averick</a> for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of <a href="https://github.com/gohugoio/hugo/issues/5639">Hugo versions now</a>. So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (as in 0.54 will not work) *</li>
-</ul>
+<p><em>Edited to update: thanks to <a href="https://twitter.com/dataandme">Mara Averick</a> for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of <a href="https://github.com/gohugoio/hugo/issues/5639">Hugo versions now</a>. So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (0.54 will not work).</em></p>
 <div id="use-netlify-to-deploy" class="section level1">
 <h1>Use Netlify to Deploy</h1>
 <p>First, you’ll need to use Netlify! I am a very happy Netlify user and currently have approximately 33 sites deployed. To setup a new account, navigate to <a href="https://www.netlify.com/">Netlify</a> and click on the <em>Sign Up</em> link.</p>
@@ -70,7 +68,7 @@ image:
   HUGO_ENABLEGITINFO = &quot;true&quot;
   
 [context.branch-deploy.environment]
-HUGO_VERSION = &quot;0.54.0&quot; # if older, use format: 0.53 (no trailing zero)</code></pre>
+  HUGO_VERSION = &quot;0.54.0&quot; # if older, use format: 0.53 (no trailing zero)</code></pre>
 <p>You can leave off the last chunk if you don’t want to use <a href="https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/">branch deploys</a>, but I ❤️ this Netlify feature and encourage you to try it out. I’ve starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is <strong>lovely</strong>. Every branch gets a link 🎉.</p>
 <p>So add this file to your blogdown site repo and push to GitHub.</p>
 <p>Note that, according to the <a href="https://www.netlify.com/docs/netlify-toml-reference/">Netlify docs</a>:</p>
