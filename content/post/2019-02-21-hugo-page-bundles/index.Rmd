@@ -5,7 +5,7 @@ date: '2019-02-21'
 summary: Why (and how) you should use Hugo's new page bundles feature
 image:
   caption: ''
-  focal_point: ''
+  focal_point: 'center'
 ---
 
 > "Just a spoonful of Hugo helps the blog go down."
@@ -88,7 +88,7 @@ blogdown::hugo_version()
 
 Now, let's use the [**usethis** package](https://usethis.r-lib.org/). I'm going to demo here how to create a project-specific .Rprofile file.
 
-```{r}
+```{r eval = FALSE}
 # install.packages("usethis") # uncomment this to install
 usethis::edit_r_profile(scope = "project")
 ```

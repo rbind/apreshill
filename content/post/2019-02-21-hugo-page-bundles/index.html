@@ -5,7 +5,7 @@ date: '2019-02-21'
 summary: Why (and how) you should use Hugo's new page bundles feature
 image:
   caption: ''
-  focal_point: ''
+  focal_point: 'center'
 ---
 
 
@@ -63,9 +63,6 @@ blogdown::hugo_version()</code></pre>
 <p>Now, let’s use the <a href="https://usethis.r-lib.org/"><strong>usethis</strong> package</a>. I’m going to demo here how to create a project-specific .Rprofile file.</p>
 <pre class="r"><code># install.packages(&quot;usethis&quot;) # uncomment this to install
 usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
-<pre><code>## ● Restart R for changes to take effect
-## ✔ Setting active project to &#39;/Users/alison/rprojs/alison.rbind.io&#39;
-## ● Edit &#39;.Rprofile&#39;</code></pre>
 <p>These helpful messages <em>should</em> print to your console: please note the “restart” reminder…</p>
 <pre><code>&gt; usethis::edit_r_profile(scope = &quot;project&quot;)
 ● Restart R for changes to take effect
