@@ -157,7 +157,7 @@ If you include the slug, the link to your post will be:
 
 A small note: if you want to add relative links from a blog post to another post in your same blog. So `[this](/post/2019-02-19-hugo-archetypes/)` becomes [this](/post/2019-02-19-hugo-archetypes/). 
 
-Now, add images and data files to your `r emo::ji("heart")`'s content! But you may want to one more thing...
+Now, add images and data files to your `r emo::ji("heart")`'s content! But you may want to do one more thing...
 
 # Update Metadata
 
