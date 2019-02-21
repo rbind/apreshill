@@ -1,6 +1,6 @@
 options(
   blogdown.author = "Alison Hill",
-  blogdown.rmd = TRUE,
+  blogdown.ext = ".Rmd",
   blogdown.subdir = "post",
   blogdown.yaml.empty = TRUE,
   blogdown.new_bundle = TRUE,
