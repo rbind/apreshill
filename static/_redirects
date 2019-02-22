@@ -1,7 +1,0 @@
-https://apreshill.rbind.io/*  https://alison.rbind.io/:splat  301!
-http://apreshill.rbind.io/*   https://alison.rbind.io/:splat  301!
-http://alison.rbind.io/*      https://alison.rbind.io/:splat  301!
-
-# Fix annoying effect of slug on bundled pages
-/post/2019-02-19-hugo-archetypes/hugo-archetypes/         /post/2019-02-19-hugo-archetypes/
-/post/2019-02-19-hugo-netlify-toml/hugo-netlify-toml/     /post/2019-02-19-hugo-netlify-toml/
