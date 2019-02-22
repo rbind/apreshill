@@ -60,7 +60,10 @@ post/2015-07-24-bye-world/index.Rmd</code></pre>
 <p>First, read the previous post on setting up a <a href="post/2019-02-19-hugo-netlify-toml/">netlify.toml file</a>. Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:</p>
 <pre class="r"><code>blogdown::update_hugo()
 blogdown::hugo_version()</code></pre>
-<p>Now, let’s use the <a href="https://usethis.r-lib.org/"><strong>usethis</strong> package</a>. I’m going to demo here how to create a project-specific .Rprofile file.</p>
+<p>Now, let’s use the <a href="https://usethis.r-lib.org/"><strong>usethis</strong> package</a>.</p>
+<div id="project-specific-.rprofile" class="section level2">
+<h2>Project-specific .Rprofile</h2>
+<p>First, I’m going to demo here how to create a project-specific .Rprofile file- but know that you can do a user-level .Rprofile file too.</p>
 <pre class="r"><code># install.packages(&quot;usethis&quot;) # uncomment this to install
 usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 <p>These helpful messages <em>should</em> print to your console: please note the “restart” reminder…</p>
@@ -86,9 +89,16 @@ options(
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE
 )</code></pre>
+<hr />
 <p><em>Edited:</em></p>
-<p><em>The first section is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</em></p>
-<p>For the second section of options, any of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
+</div>
+<div id="user-specific-.rprofile" class="section level2">
+<h2>User-specific .Rprofile</h2>
+<p>The first section above is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
+<p>If you don’t want this, you could add the blogdown options to your user .Rprofile instead using:</p>
+<pre><code>usethis::edit_r_profile(scope = &quot;user&quot;)</code></pre>
+<hr />
+<p>For the blogdown-specific options, any of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
 <ul>
 <li><code>blogdown.author</code> = author of new posts</li>
 <li><code>blogdown.ext</code> = default extension of new posts (can also be “.md” or “.Rmarkdown”)</li>
@@ -97,10 +107,14 @@ options(
 <li><code>blogdown.new_bundle</code> = what this whole post is about!</li>
 <li><code>blogdown.title_case</code> = “nEed More coFFee” –&gt; “Need More Coffee” (it tidies all your post titles to title case)</li>
 </ul>
+</div>
+<div id="the-newline-thing" class="section level2">
+<h2>The Newline Thing</h2>
 <p>Here is a <strong>massive</strong> .Rprofile gotcha: this file <strong>must</strong> end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.</p>
 <p><img src="restart-r.png" /></p>
 <p>Want to make your general R life easier in the future? Follow Yihui’s <a href="https://yihui.name/en/2018/04/rprofile-trailing-newline/">advice</a> and do this in RStudio to ensure that all source files end with a newline:</p>
 <p><img src="https://db.yihui.name/images/rstudio-newline.png" /></p>
+</div>
 </div>
 <div id="use-bundles" class="section level1">
 <h1>Use Bundles</h1>

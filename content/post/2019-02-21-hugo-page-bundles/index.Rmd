@@ -86,7 +86,11 @@ blogdown::update_hugo()
 blogdown::hugo_version()
 ```
 
-Now, let's use the [**usethis** package](https://usethis.r-lib.org/). I'm going to demo here how to create a project-specific .Rprofile file.
+Now, let's use the [**usethis** package](https://usethis.r-lib.org/). 
+
+## Project-specific .Rprofile
+
+First, I'm going to demo here how to create a project-specific .Rprofile file- but know that you can do a user-level .Rprofile file too.
 
 ```{r eval = FALSE}
 # install.packages("usethis") # uncomment this to install
@@ -131,11 +135,23 @@ options(
 )
 ```
 
+---
+
 *Edited:*
 
-*The first section is from the [blogdown book](https://bookdown.org/yihui/blogdown/global-options.html#global-options), where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).*
+## User-specific .Rprofile
 
-For the second section of options, any of these prepopulate content in your "New Post" Addin (I told you to use this [here](/post/2019-02-19-hugo-archetypes/)). There is a handy [table](https://bookdown.org/yihui/blogdown/global-options.html) from the blogdown book, summarized here:
+The first section above is from the [blogdown book](https://bookdown.org/yihui/blogdown/global-options.html#global-options), where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).
+
+If you don't want this, you could add the blogdown options to your user .Rprofile instead using:
+
+```
+usethis::edit_r_profile(scope = "user")
+```
+
+---
+
+For the blogdown-specific options, any of these prepopulate content in your "New Post" Addin (I told you to use this [here](/post/2019-02-19-hugo-archetypes/)). There is a handy [table](https://bookdown.org/yihui/blogdown/global-options.html) from the blogdown book, summarized here:
 
 - `blogdown.author` = author of new posts
 - `blogdown.ext` = default extension of new posts (can also be ".md" or ".Rmarkdown")
@@ -144,7 +160,7 @@ For the second section of options, any of these prepopulate content in your "New
 - `blogdown.new_bundle` = what this whole post is about!
 - `blogdown.title_case` = "nEed More coFFee" --> "Need More Coffee" (it tidies all your post titles to title case)
 
-
+## The Newline Thing
 
 Here is a __massive__ .Rprofile gotcha: this file **must** end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.
 
