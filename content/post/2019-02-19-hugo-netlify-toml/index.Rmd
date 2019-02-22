@@ -1,6 +1,5 @@
 ---
 title: 'A Spoonful of Hugo: The netlify.toml File'
-slug: hugo-netlify-toml
 summary: Why you should use a netlify.toml file in your blogdown site
 author: ''
 date: '2019-02-20'
@@ -14,7 +13,7 @@ image:
 > "Just a spoonful of Hugo helps the blog go down."
 - me, only somewhat kidding
 
-You can read the previous post about my "Spoonful of Hugo" series [here](/post/2019/02/19/hugo-archetypes/). In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated).
+You can read the previous post about my "Spoonful of Hugo" series [here](/post/2019-02-19-hugo-archetypes/). In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated).
 
 This is my second post in this series, and it is a relatively quick one. Just do this. This one is a no-brainer. 
 
