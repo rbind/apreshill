@@ -110,10 +110,23 @@ These helpful messages *should* print to your console: please note the "restart"
 Now you could add this line to your file:
 
 ```
+# in .Rprofile of the website project
+if (file.exists("~/.Rprofile")) {
+  base::sys.source("~/.Rprofile", envir = environment())
+}
+# then set options(blogdown.author = 'Your Name') in
+# ~/.Rprofile
+
 options(blogdown.new_bundle = TRUE)
 ```
 
+The first code chunk above is from the [blogdown book](https://bookdown.org/yihui/blogdown/global-options.html#global-options), where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).
 
+If you don't want this, you could add the blogdown options to your user .Rprofile instead using:
+
+```
+usethis::edit_r_profile(scope = "user")
+```
 
 Heck, while you are at it, you could set a *bunch* of options to make your blogdown life easier:
 
@@ -135,21 +148,6 @@ options(
 )
 ```
 
----
-
-*Edited:*
-
-## User-specific .Rprofile
-
-The first section above is from the [blogdown book](https://bookdown.org/yihui/blogdown/global-options.html#global-options), where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).
-
-If you don't want this, you could add the blogdown options to your user .Rprofile instead using:
-
-```
-usethis::edit_r_profile(scope = "user")
-```
-
----
 
 For the blogdown-specific options, any of these prepopulate content in your "New Post" Addin (I told you to use this [here](/post/2019-02-19-hugo-archetypes/)). There is a handy [table](https://bookdown.org/yihui/blogdown/global-options.html) from the blogdown book, summarized here:
 

@@ -72,7 +72,17 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 ✔ Setting active project to &#39;/Users/alison/rprojs/alison.rbind.io&#39;
 ● Modify &#39;.Rprofile&#39;</code></pre>
 <p>Now you could add this line to your file:</p>
-<pre><code>options(blogdown.new_bundle = TRUE)</code></pre>
+<pre><code># in .Rprofile of the website project
+if (file.exists(&quot;~/.Rprofile&quot;)) {
+  base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
+}
+# then set options(blogdown.author = &#39;Your Name&#39;) in
+# ~/.Rprofile
+
+options(blogdown.new_bundle = TRUE)</code></pre>
+<p>The first code chunk above is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
+<p>If you don’t want this, you could add the blogdown options to your user .Rprofile instead using:</p>
+<pre><code>usethis::edit_r_profile(scope = &quot;user&quot;)</code></pre>
 <p>Heck, while you are at it, you could set a <em>bunch</em> of options to make your blogdown life easier:</p>
 <pre><code># in .Rprofile of the website project
 if (file.exists(&quot;~/.Rprofile&quot;)) {
@@ -89,15 +99,6 @@ options(
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE
 )</code></pre>
-<hr />
-<p><em>Edited:</em></p>
-</div>
-<div id="user-specific-.rprofile" class="section level2">
-<h2>User-specific .Rprofile</h2>
-<p>The first section above is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
-<p>If you don’t want this, you could add the blogdown options to your user .Rprofile instead using:</p>
-<pre><code>usethis::edit_r_profile(scope = &quot;user&quot;)</code></pre>
-<hr />
 <p>For the blogdown-specific options, any of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
 <ul>
 <li><code>blogdown.author</code> = author of new posts</li>
