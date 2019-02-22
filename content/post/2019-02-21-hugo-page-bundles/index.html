@@ -2,6 +2,7 @@
 title: 'A Spoonful of Hugo: Page Bundles'
 author: Alison Hill
 date: '2019-02-21'
+slug: hugo-page-bundles
 summary: Why (and how) you should use Hugo's new page bundles feature
 image:
   caption: ''
@@ -14,7 +15,7 @@ image:
 <p>“Just a spoonful of Hugo helps the blog go down.”
 - me, only somewhat kidding</p>
 </blockquote>
-<p>In this series, I’m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site <em>UP</em> (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my “Spoonful of Hugo” series <a href="/post/2019-02-19-hugo-archetypes/">about Hugo archetypes</a> and <a href="post/2019-02-19-hugo-netlify-toml/">Hugo versions</a>.</p>
+<p>In this series, I’m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site <em>UP</em> (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my “Spoonful of Hugo” series <a href="/post/2019/02/19/hugo-archetypes/">about Hugo archetypes</a> and <a href="/post/2019/02/20/hugo-netlify-toml/">Hugo versions</a>.</p>
 <p>This is my third post in this series and it is breaking news.</p>
 <p><img src="https://media.giphy.com/media/dZCdA82qa8d4xVIwm3/giphy.gif" /></p>
 <div id="hugo-page-bundles" class="section level1">
@@ -71,7 +72,14 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 <p>Now you could add this line to your file:</p>
 <pre><code>options(blogdown.new_bundle = TRUE)</code></pre>
 <p>Heck, while you are at it, you could set a <em>bunch</em> of options to make your blogdown life easier:</p>
-<pre><code>options(
+<pre><code># in .Rprofile of the website project
+if (file.exists(&quot;~/.Rprofile&quot;)) {
+  base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
+}
+# then set options(blogdown.author = &#39;Your Name&#39;) in
+# ~/.Rprofile
+
+options(
   blogdown.author = &quot;Alison Hill&quot;,
   blogdown.ext = &quot;.Rmd&quot;,
   blogdown.subdir = &quot;post&quot;,
@@ -79,7 +87,9 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE
 )</code></pre>
-<p>Many of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
+<p><em>Edited:</em></p>
+<p><em>The first section is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</em></p>
+<p>For the second section of options, any of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
 <ul>
 <li><code>blogdown.author</code> = author of new posts</li>
 <li><code>blogdown.ext</code> = default extension of new posts (can also be “.md” or “.Rmarkdown”)</li>
@@ -88,7 +98,6 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 <li><code>blogdown.new_bundle</code> = what this whole post is about!</li>
 <li><code>blogdown.title_case</code> = “nEed More coFFee” –&gt; “Need More Coffee” (it tidies all your post titles to title case)</li>
 </ul>
-<p>If you are working on a team blog like the tidyverse team, you may want to read <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">this section</a> in the blogdown book, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
 <p>Here is a <strong>massive</strong> .Rprofile gotcha: this file <strong>must</strong> end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.</p>
 <p><img src="restart-r.png" /></p>
 <p>Want to make your general R life easier in the future? Follow Yihui’s <a href="https://yihui.name/en/2018/04/rprofile-trailing-newline/">advice</a> and do this in RStudio to ensure that all source files end with a newline:</p>
@@ -101,12 +110,16 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 <p><code>http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/</code></p>
 <p>If you include the slug, the link to your post will be:</p>
 <p><code>http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/hugo-page-bundles</code></p>
+<p>Another option is to update your <code>config.toml</code> file with permalinks like <a href="https://bookdown.org/yihui/blogdown/configuration.html">Yihui suggests</a> (but beware: this will change all your past links as well, requiring some <a href="https://yihui.name/en/2017/11/301-redirect/">Netlify redirects</a>):</p>
+<pre><code>[permalinks]
+    post = &quot;/:year/:month/:day/:slug/&quot;</code></pre>
+<p>The default here from Hugo was <code>/post/:year-:month-:day-:slug/:slug/</code>.</p>
 <p>A small note: if you want to add relative links from a blog post to another post in your same blog. So <code>[this](/post/2019-02-19-hugo-archetypes/)</code> becomes <a href="/post/2019-02-19-hugo-archetypes/">this</a>.</p>
 <p>Now, add images and data files to your ❤️’s content! But you may want to do one more thing…</p>
 </div>
 <div id="update-metadata" class="section level1">
 <h1>Update Metadata</h1>
-<p>If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2019-02-21. The cool thing that was already built-in to blogdown is the “Update Metadata” Addin. With your blog post open (it should be called <code>index.Rmd</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, click on Addins and select “Update Metadata”. You should see a window like this:</p>
+<p>If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2019-02-22. The cool thing that was already built-in to blogdown is the “Update Metadata” Addin. With your blog post open (it should be called <code>index.Rmd</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, click on Addins and select “Update Metadata”. You should see a window like this:</p>
 <p><img src="update-metadata.png" /></p>
 <p>Check the box to rename the file if the date has changed. RStudio will tell you your file has been deleted- which is technically true since the folder was renamed, but don’t panic!</p>
 <p><img src="file-deleted-warning.png" /></p>

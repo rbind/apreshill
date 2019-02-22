@@ -2,6 +2,7 @@
 title: 'A Spoonful of Hugo: Page Bundles'
 author: Alison Hill
 date: '2019-02-21'
+slug: hugo-page-bundles
 summary: Why (and how) you should use Hugo's new page bundles feature
 image:
   caption: ''
@@ -11,7 +12,7 @@ image:
 > "Just a spoonful of Hugo helps the blog go down."
 - me, only somewhat kidding
 
-In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my "Spoonful of Hugo" series [about Hugo archetypes](/post/2019-02-19-hugo-archetypes/) and [Hugo versions](post/2019-02-19-hugo-netlify-toml/). 
+In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my "Spoonful of Hugo" series [about Hugo archetypes](/post/2019/02/19/hugo-archetypes/) and [Hugo versions](/post/2019/02/20/hugo-netlify-toml/).
 
 This is my third post in this series and it is breaking news.
 
@@ -114,6 +115,13 @@ options(blogdown.new_bundle = TRUE)
 Heck, while you are at it, you could set a *bunch* of options to make your blogdown life easier:
 
 ```
+# in .Rprofile of the website project
+if (file.exists("~/.Rprofile")) {
+  base::sys.source("~/.Rprofile", envir = environment())
+}
+# then set options(blogdown.author = 'Your Name') in
+# ~/.Rprofile
+
 options(
   blogdown.author = "Alison Hill",
   blogdown.ext = ".Rmd",
@@ -124,7 +132,11 @@ options(
 )
 ```
 
-Many of these prepopulate content in your "New Post" Addin (I told you to use this [here](/post/2019-02-19-hugo-archetypes/)). There is a handy [table](https://bookdown.org/yihui/blogdown/global-options.html) from the blogdown book, summarized here:
+*Edited:*
+
+*The first section is from the [blogdown book](https://bookdown.org/yihui/blogdown/global-options.html#global-options), where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).*
+
+For the second section of options, any of these prepopulate content in your "New Post" Addin (I told you to use this [here](/post/2019-02-19-hugo-archetypes/)). There is a handy [table](https://bookdown.org/yihui/blogdown/global-options.html) from the blogdown book, summarized here:
 
 - `blogdown.author` = author of new posts
 - `blogdown.ext` = default extension of new posts (can also be ".md" or ".Rmarkdown")
@@ -133,7 +145,7 @@ Many of these prepopulate content in your "New Post" Addin (I told you to use th
 - `blogdown.new_bundle` = what this whole post is about!
 - `blogdown.title_case` = "nEed More coFFee" --> "Need More Coffee" (it tidies all your post titles to title case)
 
-If you are working on a team blog like the tidyverse team, you may want to read [this section](https://bookdown.org/yihui/blogdown/global-options.html#global-options) in the blogdown book, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).
+
 
 Here is a __massive__ .Rprofile gotcha: this file **must** end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.
 
@@ -154,6 +166,15 @@ The reason is that you want the link to your post to be:
 If you include the slug, the link to your post will be:
 
 `http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/hugo-page-bundles`
+
+Another option is to update your `config.toml` file with permalinks like [Yihui suggests](https://bookdown.org/yihui/blogdown/configuration.html) (but beware: this will change all your past links as well, requiring some [Netlify redirects](https://yihui.name/en/2017/11/301-redirect/)):
+
+```
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+```
+
+The default here from Hugo was `/post/:year-:month-:day-:slug/:slug/`.
 
 A small note: if you want to add relative links from a blog post to another post in your same blog. So `[this](/post/2019-02-19-hugo-archetypes/)` becomes [this](/post/2019-02-19-hugo-archetypes/). 
 
