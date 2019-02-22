@@ -71,13 +71,11 @@ usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
 ● Restart R for changes to take effect
 ✔ Setting active project to &#39;/Users/alison/rprojs/alison.rbind.io&#39;
 ● Modify &#39;.Rprofile&#39;</code></pre>
-<p>Now you could add this line to your file:</p>
+<p>Now you could add this to your file:</p>
 <pre><code># in .Rprofile of the website project
 if (file.exists(&quot;~/.Rprofile&quot;)) {
   base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
 }
-# then set options(blogdown.author = &#39;Your Name&#39;) in
-# ~/.Rprofile
 
 options(blogdown.new_bundle = TRUE)</code></pre>
 <p>The first code chunk above is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
@@ -88,8 +86,6 @@ options(blogdown.new_bundle = TRUE)</code></pre>
 if (file.exists(&quot;~/.Rprofile&quot;)) {
   base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
 }
-# then set options(blogdown.author = &#39;Your Name&#39;) in
-# ~/.Rprofile
 
 options(
   blogdown.author = &quot;Alison Hill&quot;,

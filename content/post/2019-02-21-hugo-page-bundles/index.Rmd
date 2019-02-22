@@ -107,15 +107,13 @@ These helpful messages *should* print to your console: please note the "restart"
 ● Modify '.Rprofile'
 ```
 
-Now you could add this line to your file:
+Now you could add this to your file:
 
 ```
 # in .Rprofile of the website project
 if (file.exists("~/.Rprofile")) {
   base::sys.source("~/.Rprofile", envir = environment())
 }
-# then set options(blogdown.author = 'Your Name') in
-# ~/.Rprofile
 
 options(blogdown.new_bundle = TRUE)
 ```
@@ -135,8 +133,6 @@ Heck, while you are at it, you could set a *bunch* of options to make your blogd
 if (file.exists("~/.Rprofile")) {
   base::sys.source("~/.Rprofile", envir = environment())
 }
-# then set options(blogdown.author = 'Your Name') in
-# ~/.Rprofile
 
 options(
   blogdown.author = "Alison Hill",
