@@ -119,7 +119,7 @@ knitr::include_graphics("https://user-images.githubusercontent.com/18710907/2771
 
 [GitHub issue #131](https://github.com/rstudio/blogdown/issues/131)
 
-```{r echo = FALSE, fig.cap = "Hugo tranquil peak theme"}
+```{r echo = FALSE}
 knitr::include_graphics("https://cloud.githubusercontent.com/assets/4596214/26549134/7e3968fe-4445-11e7-90b1-87dd4ac2c1c0.png")
 ```
 
