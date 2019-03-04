@@ -91,12 +91,7 @@ Figure 4: Hugo universal theme
 </p>
 </div>
 <p><a href="https://github.com/rstudio/blogdown/issues/131">GitHub issue #131</a></p>
-<div class="figure"><span id="fig:unnamed-chunk-9"></span>
-<img src="https://cloud.githubusercontent.com/assets/4596214/26549134/7e3968fe-4445-11e7-90b1-87dd4ac2c1c0.png" alt="Hugo tranquil peak theme"  />
-<p class="caption">
-Figure 5: Hugo tranquil peak theme
-</p>
-</div>
+<p><img src="https://cloud.githubusercontent.com/assets/4596214/26549134/7e3968fe-4445-11e7-90b1-87dd4ac2c1c0.png" /><!-- --></p>
 <p><a href="https://github.com/rstudio/blogdown/issues/114">GitHub issue #114</a></p>
 <p>However, Hugo authors and theme developers have largely been moving towards using relative URLs instead of the baseurl to build paths. This was based on public advice voiced by the Hugo authors on the discourse forum. For example:</p>
 <blockquote>
@@ -114,7 +109,7 @@ Figure 5: Hugo tranquil peak theme
 <p>If you can render your site locally but your published site looks different, try the drag-and-drop method:</p>
 <p><img src="http://arm.rbind.io/slides/img/netlify-new-site.png" /></p>
 <p>Use the “Serve Site” Addin, then drag-and-drop the <code>public/</code> folder straight into Netlify. What does this do? You can now see your public site…that you built…with your local version of Hugo. Netlify is doing none of the site building here.</p>
-<p><img src="/post/2019-03-04-hugo-troubleshooting-tricks/index_files/figure-html/unnamed-chunk-10-1.gif" /><!-- --></p>
+<p><img src="/post/2019-03-04-hugo-troubleshooting/index_files/figure-html/unnamed-chunk-10-1.gif" /><!-- --></p>
 <p>One of the first benefits of this approach is that it ensures that you are able to actually <em>generate</em> a <code>public/</code> folder locally! I have seen folks struggle to deploy the wrong repo. This simple step can force you to make sure to use the “Serve Site” Addin to generate the <code>public/</code> folder, and that the repo you are trying to link to Netlify actually contains a Hugo site because you must physically move the <code>public/</code> folder. But this method can also help you diagnose other problems too.</p>
 <p>If your <code>public/</code> folder <strong>does not render</strong> on Netlify, you have work to do locally. I can’t tell you what it is as it can be a number of things, but you can be sure that your problem is not just the Netlify build- it is your local build too.</p>
 <p>If your <code>public/</code> folder <strong>does render</strong> perfectly on Netlify, but you are getting a Netlify build error, then you likely have a Hugo version problem. It might be that the version you are running locally is more recent than the version run by Netlify by default to actually build your site. The good news is there is a quick fix for this! The solution is to upgrade the Hugo version Netlify is using- see my advice <a href="/post/2019-02-19-hugo-netlify-toml/">here for how to do that</a>.</p>
@@ -128,7 +123,7 @@ Figure 5: Hugo tranquil peak theme
 <p>“you are strongly recommended to delete the <code>/public/</code> directory before you rebuild the site for publishing every time, because Hugo never deletes it”</p>
 </blockquote>
 <p>Also, this has a bonus of reinforcing for you exactly what the “Serve Site” Addin <em>does</em> - it regenerates the <code>public/</code> folder. This is also the folder that, if you are using <a href="post/2019-02-19-hugo-netlify-toml/">Netlify to build your site</a>, is in your <code>.gitignore</code> file because Netlify (+ Hugo) generates this file “fresh” with each push to your GitHub repository.</p>
-<p><img src="/post/2019-03-04-hugo-troubleshooting-tricks/index_files/figure-html/unnamed-chunk-11-1.gif" /><!-- --></p>
+<p><img src="/post/2019-03-04-hugo-troubleshooting/index_files/figure-html/unnamed-chunk-11-1.gif" /><!-- --></p>
 </div>
 <div id="peruse-public" class="section level1">
 <h1>#5: Peruse <code>public/</code></h1>
@@ -140,7 +135,7 @@ Figure 5: Hugo tranquil peak theme
 <div class="figure"><span id="fig:unnamed-chunk-12"></span>
 <img src="https://media.giphy.com/media/ek6obDm0IwjNm/giphy.gif" alt="Where are my posts?"  />
 <p class="caption">
-Figure 6: Where are my posts?
+Figure 5: Where are my posts?
 </p>
 </div>
 <p>If your site renders beautifully locally, and your drag-and-drop site from <code>public/</code> looks the same, but you are missing key content when you actually deploy to Netlify using a Hugo build, you may have inadvertently stumbled into a Hugo date time warp. This is a fairly <a href="https://community.rstudio.com/t/serve-site-working-but-posts-dont-show-up-on-github-io/11254/3">common gotcha</a>. Try using the drag-and-drop method again, this time first delete <code>public/</code>, then instead of using the “Serve Site” Addin, run this in your console:</p>
