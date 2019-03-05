@@ -150,8 +150,9 @@ Figure 5: Where are my posts?
 <blockquote>
 <p>“This is for you to preview draft and future posts locally.”</p>
 </blockquote>
+<p>Blogdown’s <code>build_site(local = FALSE)</code> differs from the “Serve Site” Addin in that it <em>will not</em> render draft, future, or expired content. So your <code>public/</code> folder from <code>build_site(local = FALSE)</code> shows you <strong>exactly</strong> what Netlify <strong>should</strong> publish. Seeing it can help you troubleshoot why some content was showing up locally but not when you publish.</p>
 <p>The defaults are pretty sensible and nice to have, as you can still put these kinds of content under version control, and hence collaborate with other team members on the content without having the content publish (or expire) until you <strong>say so</strong>.</p>
-<p>To fix this problem, you’ll want to edit some YAML fields in the individual offending content files. For example, in the YAML of an individual content file (like a blog post), if you want to un-draft it, add or change this key/value:</p>
+<p>To show content that Hugo was hiding, you’ll want to edit some YAML fields in the individual offending content files. For example, in the YAML of an individual content file (like a blog post), if you want to un-draft it, add or change this key/value:</p>
 <pre class="yaml"><code>title: &#39;A Spoonful of Hugo: Troubleshooting your Build&#39;
 author: &quot;Alison Hill&quot;
 date: &#39;2019-03-04&#39;

@@ -231,9 +231,11 @@ You can see that these are [defaults](https://gohugo.io/getting-started/configur
 
 > "This is for you to preview draft and future posts locally."
 
+Blogdown's `build_site(local = FALSE)` differs from the "Serve Site" Addin in that it *will not* render draft, future, or expired content. So your `public/` folder from `build_site(local = FALSE)` shows you __exactly__ what Netlify __should__ publish. Seeing it can help you troubleshoot why some content was showing up locally but not when you publish.
+
 The defaults are pretty sensible and nice to have, as you can still put these kinds of content under version control, and hence collaborate with other team members on the content without having the content publish (or expire) until you __say so__. 
 
-To fix this problem, you'll want to edit some YAML fields in the individual offending content files. For example, in the YAML of an individual content file (like a blog post), if you want to un-draft it, add or change this key/value:
+To show content that Hugo was hiding, you'll want to edit some YAML fields in the individual offending content files. For example, in the YAML of an individual content file (like a blog post), if you want to un-draft it, add or change this key/value:
 
 ```yaml
 title: 'A Spoonful of Hugo: Troubleshooting your Build'
