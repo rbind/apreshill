@@ -25,8 +25,7 @@ knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA, tidy = FALSE)
 Before you start, I recommend reading the following:
 
 * [`blogdown`: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/) by Yihui Xie and Amber Thomas
-* [Making a Website Using `blogdown`, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) also by Amber Thomas
-* [Getting Started with `blogdown`](https://www.znmeb.mobi/2017/05/12/getting-started-with-blogdown/) by M. Edward (Ed) Borasky
+* [Making a Website Using `blogdown`, Hugo, and GitHub pages](http://amber.rbind.io/blog/2016/12/19/creatingsite/) also by Amber Thomas
 
 I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r-podcast.org), in the [`rbind/support` issues section on GitHub](https://github.com/rbind/support) to be helpful:
 
