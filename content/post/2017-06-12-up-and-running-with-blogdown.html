@@ -39,7 +39,7 @@ output:
 </ul>
 <p>I also found this comment by Eric Nantz, the creator of <a href="http://r-podcast.org">the R-Podcast</a>, in the <a href="https://github.com/rbind/support"><code>rbind/support</code> issues section on GitHub</a> to be helpful:</p>
 <ul>
-<li><a href="https://github.com/rbind/support/issues/12" class="uri">https://github.com/rbind/support/issues/12</a></li>
+<li><a href="https://github.com/rbind/support/issues/12">https://github.com/rbind/support/issues/12</a></li>
 </ul>
 </div>
 <div id="caveats-disclaimers-etc." class="section level1">
@@ -62,14 +62,14 @@ output:
 </div>
 <div id="in-github" class="section level1">
 <h1><span class="header-section-number">3</span> In GitHub</h1>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-1.png" />
-
-</div>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-1.png" /></p>
 <ol style="list-style-type: decimal">
 <li><p>Go online to your <a href="https://github.com">GitHub</a> account, and create a new repository (check to initialize with a <code>README</code> but don’t add <code>.gitignore</code>- this will be taken care of later). For naming your repo, consider your future deployment plan:</p>
 <ul>
-<li>If you are going to use <a href="https://www.netlify.com">Netlify</a> to host the site, you can name this repository anything you want! {{% alert note %}} You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>. {{% /alert %}}</li>
+<li>If you are going to use <a href="https://www.netlify.com">Netlify</a> to host the site, you can name this repository anything you want!
+{{% alert note %}}
+You can see some of the repo names used by members of the <code>rbind</code> organization <a href="https://github.com/rbind/repositories">here</a>.
+{{% /alert %}}</li>
 <li>If you want to host your site as a <a href="https://pages.github.com">GitHub Page</a>, you should name your repository <code>yourgithubusername.github.io</code> (so mine would have been <code>apreshill.github.io</code>). If you are going this route, I suggest you follow <a href="https://proquestionasker.github.io/blog/Making_Site/">Amber’s instructions</a> instead of mine!</li>
 </ul></li>
 </ol>
@@ -84,10 +84,7 @@ output:
 </div>
 <div id="in-terminal" class="section level1">
 <h1><span class="header-section-number">4</span> In terminal</h1>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-2.png" />
-
-</div>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-2.png" /></p>
 <p>Now you will <a href="https://help.github.com/articles/cloning-a-repository/">clone your remote repository</a> and create a local copy on your computer so you can sync between the two locations (using terminal or your alternative command line tool for a Windows machine).</p>
 <ol style="list-style-type: decimal">
 <li><p>Use <code>cd</code> to navigate into the directory where you want your repo to be</p></li>
@@ -107,10 +104,7 @@ Checking connectivity... done.</code></pre>
 </div>
 <div id="in-rstudio" class="section level1">
 <h1><span class="header-section-number">5</span> In RStudio</h1>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-3.png" />
-
-</div>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-3.png" /></p>
 <ol style="list-style-type: decimal">
 <li>Install <code>blogdown</code> from your RStudio console. If you already have <code>devtools</code> installed like I did, you can just use the second line below:</li>
 </ol>
@@ -123,7 +117,9 @@ devtools::install_github(&quot;rstudio/blogdown&quot;)</code></pre>
 # or
 library(blogdown)
 install_hugo()</code></pre>
-<p>{{% alert note %}} This is where my instructions diverge from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other! {{% /alert %}}</p>
+<p>{{% alert note %}}
+This is where my instructions diverge from Ed’s- he states that <code>blogdown</code> won’t create a website in your root folder because the <code>README.md</code> file is already there. I didn’t find that to be the case- I tested this with a new site as well. If one way doesn’t work for you, try the other!
+{{% /alert %}}</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Use the top menu buttons in RStudio to select <code>File -&gt; New Project -&gt; Existing Directory</code>, then browse to the directory on your computer where your GitHub repo is and click on the <strong>Create Project</strong> button.</li>
 </ol>
@@ -144,10 +140,7 @@ public/ # if using Netlify</code></pre>
 </div>
 <div id="build-your-site-in-rstudio" class="section level1">
 <h1><span class="header-section-number">6</span> Build your site in RStudio</h1>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-4.png" />
-
-</div>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-4.png" /></p>
 <p>Now you can finally build your site using the <code>blogdown::new_site()</code> function. But <strong>first</strong> you should at least think about themes…</p>
 <div id="picking-a-theme" class="section level2">
 <h2><span class="header-section-number">6.1</span> Picking a theme</h2>
@@ -168,7 +161,9 @@ blogdown::new_site(theme = &quot;gcushen/hugo-academic&quot;, theme_example = TR
 new_site() # default theme is lithium
 # need to stop serving so can use the console again
 install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
-<p>{{% alert note %}} Now is a good time to re-read about <code>blogdown::serve_site()</code> and <a href="https://bookdown.org/yihui/blogdown/a-quick-example.html">how <em>LiveReload</em> works</a> (and how it blocks your R console by default) {{% /alert %}}</p>
+<p>{{% alert note %}}
+Now is a good time to re-read about <code>blogdown::serve_site()</code> and <a href="https://bookdown.org/yihui/blogdown/a-quick-example.html">how <em>LiveReload</em> works</a> (and how it blocks your R console by default)
+{{% /alert %}}</p>
 <p>I recommend setting <code>theme_example = TRUE</code>- some themes won’t provide an example site, but the academic theme did and I found it helpful to see. You can always delete the example content.</p>
 </div>
 <div id="update-project-options" class="section level2">
@@ -186,7 +181,9 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <p>Now, edit the <code>baseurl</code> in your <code>config.toml</code> file. The URL <em>should always</em> end with a <code>/</code> trailing slash. At this point, you probably haven’t deployed your site yet, so to view it locally you can use the <strong>Serve Site</strong> add-in, or run the <code>blogdown::serve_site</code> function. Both of these baseurls worked for me when viewing locally:</p>
 <pre><code>baseurl = &quot;https://example.com/&quot;
 baseurl = &quot;/&quot;</code></pre>
-<p>{{% alert warning %}} Make sure that the <code>baseurl =</code> listed ends with a trailing slash <code>/</code>! {{% /alert %}}</p>
+<p>{{% alert warning %}}
+Make sure that the <code>baseurl =</code> listed ends with a trailing slash <code>/</code>!
+{{% /alert %}}</p>
 <p>Go ahead and edit all the other elements in the <code>config.toml</code> file now as you please- this is how you personalize your site!</p>
 </div>
 <div id="addins-workflow" class="section level2">
@@ -236,25 +233,30 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 <li>Use the console to author a new <code>.md</code> post:</li>
 </ol>
 <pre><code>blogdown::new_post()
-blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
+blogdown::new_post(ext = &#39;.md&#39;) # md is the default!</code></pre>
 <p>Here are the <code>?new_post</code> arguments:</p>
-<pre><code>new_post(title, kind = &quot;default&quot;, open = interactive(), 
-    author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
-    tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), 
-    rmd = getOption(&quot;blogdown.rmd&quot;, FALSE))</code></pre>
-<p>{{% alert note %}} Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>. {{% /alert %}}</p>
+<pre class="r"><code>new_post(title, kind = &quot;&quot;, open = interactive(),
+    author = getOption(&quot;blogdown.author&quot;), categories = NULL, tags = NULL,
+    date = Sys.Date(), file = NULL, slug = NULL,
+    title_case = getOption(&quot;blogdown.title_case&quot;),
+    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;),
+    ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))</code></pre>
+<p>{{% alert note %}}
+Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>.
+{{% /alert %}}</p>
 </div>
-<div id="new-rmarkdown-posts" class="section level3">
-<h3><span class="header-section-number">6.5.3</span> New RMarkdown posts</h3>
+<div id="new-r-markdown-.rmd-posts" class="section level3">
+<h3><span class="header-section-number">6.5.3</span> New R Markdown (.Rmd) posts</h3>
 <p>Again, you have your choice of one of 2 methods:</p>
 <ol style="list-style-type: decimal">
-<li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: RMarkdown</strong> (recommended)</li>
+<li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: R Markdown (.Rmd)</strong> (recommended)</li>
 <li>Use the console to author a new <code>.Rmd</code> post:</li>
 </ol>
-<pre><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
+<pre><code>blogdown::new_post(ext = &#39;.Rmd&#39;) # md is the default!</code></pre>
 <p>After you edit your <code>.Rmd</code> post, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file needs to be generated.</p>
-<p>{{% alert warning %}} Do <em>not</em> knit your <code>.Rmd</code> posts- use <code>blogdown::serve_site</code> instead. If you happen to hit the knit button, just <strong>Serve Site</strong> again to rewrite the <code>.html</code> file. {{% /alert %}}</p>
+<p>{{% alert warning %}}
+Do <em>not</em> knit your <code>.Rmd</code> posts- use <code>blogdown::serve_site</code> instead. If you happen to hit the knit button, just <strong>Serve Site</strong> again to rewrite the <code>.html</code> file.
+{{% /alert %}}</p>
 <p>Ultimately, your <a href="https://bookdown.org/yihui/blogdown/output-format.html#output-format">YAML front matter looks something like this</a>; note that some but not all features of <code>rmarkdown::html_document</code> <a href="https://bookdown.org/yihui/blogdown/output-format.html#fn15">are supported in <code>blogdown</code></a>:</p>
 <pre><code>---
 title: &quot;My Awesome Post&quot;
@@ -267,7 +269,9 @@ output:
     number_sections: true
     fig_width: 6
 ---</code></pre>
-<p>{{% alert note %}} Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em> and your <code>.html</code> file is properly output. {{% /alert %}}</p>
+<p>{{% alert note %}}
+Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em> and your <code>.html</code> file is properly output.
+{{% /alert %}}</p>
 </div>
 <div id="adding-images-to-a-post" class="section level3">
 <h3><span class="header-section-number">6.5.4</span> Adding images to a post</h3>
@@ -282,10 +286,7 @@ output:
 </div>
 <div id="deploy-in-netlify" class="section level1">
 <h1><span class="header-section-number">7</span> Deploy in Netlify</h1>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-5.png" />
-
-</div>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-5.png" /></p>
 <p>Deploying in Netlify through GitHub is smooth. Yihui and Amber give some <a href="https://bookdown.org/yihui/blogdown/deployment.html">beginner instructions</a>, but Netlify is so easy, I recommend that you skip dragging your <code>public</code> folder in and instead <a href="https://bookdown.org/yihui/blogdown/netlify.html#netlify">automate the process through GitHub</a>.</p>
 <ol style="list-style-type: decimal">
 <li>When you are ready to deploy, commit your changes and push to GitHub, then go online to <a href="https://www.netlify.com">Netlify</a>.</li>
@@ -304,7 +305,9 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 <p class="caption">Screenshot above: Basic build settings in Netlify</p>
 </div>
 <p>Netlify will deploy your site and assign you a random subdomain name of the form <code>random-word-12345.netlify.com</code>. Mine was particularly unfortunate, with the random word <code>garbage-collector-janice</code>. You should know that you can change this; I changed mine to <code>apreshill.netlify.com</code>.</p>
-<p>{{% alert note %}} Anytime you change your subdomain name, you need to update the <code>baseurl</code> in your <code>config.toml</code> file (so I changed mine to baseurl = “<a href="https://apreshill.netlify.com/" class="uri">https://apreshill.netlify.com/</a>”). {{% /alert %}}</p>
+<p>{{% alert note %}}
+Anytime you change your subdomain name, you need to update the <code>baseurl</code> in your <code>config.toml</code> file (so I changed mine to baseurl = “<a href="https://apreshill.netlify.com/" class="uri">https://apreshill.netlify.com/</a>”).
+{{% /alert %}}</p>
 <p>At this point, you should be up and running with <code>blogdown</code>, GitHub, and Netlify, but here are some ideas if you want to go further…</p>
 </div>
 <div id="going-further" class="section level1">
@@ -335,11 +338,10 @@ Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-0
 <div id="rbind.io-domain-names" class="section level2">
 <h2><span class="header-section-number">8.3</span> <code>*.rbind.io</code> domain names</h2>
 <p>You may want a different <a href="https://bookdown.org/yihui/blogdown/domain-name.html">domain name</a> than the one provided by Netlify. I opted for a free subdomain <code>*.rbind.io</code> offered by RStudio. To do the same, head over to the <a href="https://github.com/rbind/support/issues">rbind/support GitHub page</a> and open a new issue. All you need to do is let them know what your Netlify subdomain name is (<code>*.netlify.com</code>), and what you want your subdomain name to be (<code>*.rbind.io</code>). The <a href="https://support.rbind.io">awesome <code>rbind</code> support team</a> will help you take it from there!</p>
-<p>{{% alert note %}} Again, you will need to update the <code>baseurl</code> in your <code>config.toml</code> file to reflect your new rbind subdomain name (so mine is baseurl = “<a href="https://alison.rbind.io/" class="uri">https://alison.rbind.io/</a>”). {{% /alert %}}</p>
-<div class="figure">
-<img src="/img/posts/2017-06-12-up-and-running-with-blogdown/rbind.png" />
-
-</div>
+<p>{{% alert note %}}
+Again, you will need to update the <code>baseurl</code> in your <code>config.toml</code> file to reflect your new rbind subdomain name (so mine is baseurl = “<a href="https://alison.rbind.io/" class="uri">https://alison.rbind.io/</a>”).
+{{% /alert %}}</p>
+<p><img src="/img/posts/2017-06-12-up-and-running-with-blogdown/rbind.png" /></p>
 </div>
 <div id="have-fun" class="section level2">
 <h2><span class="header-section-number">8.4</span> Have fun!</h2>
