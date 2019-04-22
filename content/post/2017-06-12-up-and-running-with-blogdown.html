@@ -232,25 +232,26 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 <li>Use the console to author a new <code>.md</code> post:</li>
 </ol>
 <pre><code>blogdown::new_post()
-blogdown::new_post(rmd = FALSE) # false is the default!</code></pre>
+blogdown::new_post(ext = &#39;.md&#39;) # md is the default!</code></pre>
 <p>Here are the <code>?new_post</code> arguments:</p>
-<pre><code>new_post(title, kind = &quot;default&quot;, open = interactive(), 
-    author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
-    tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;), 
-    rmd = getOption(&quot;blogdown.rmd&quot;, FALSE))</code></pre>
+<pre class="r"><code>new_post(title, kind = &quot;&quot;, open = interactive(),
+    author = getOption(&quot;blogdown.author&quot;), categories = NULL, tags = NULL,
+    date = Sys.Date(), file = NULL, slug = NULL,
+    title_case = getOption(&quot;blogdown.title_case&quot;),
+    subdir = getOption(&quot;blogdown.subdir&quot;, &quot;post&quot;),
+    ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))</code></pre>
 <p>{{% alert note %}}
 Remember to use the <strong>Serve Site</strong> addin again so that you can immediately view your changes with every save using <em>LiveReload</em>.
 {{% /alert %}}</p>
 </div>
-<div id="new-rmarkdown-posts" class="section level3">
-<h3><span class="header-section-number">6.5.3</span> New RMarkdown posts</h3>
+<div id="new-r-markdown-.rmd-posts" class="section level3">
+<h3><span class="header-section-number">6.5.3</span> New R Markdown (.Rmd) posts</h3>
 <p>Again, you have your choice of one of 2 methods:</p>
 <ol style="list-style-type: decimal">
-<li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: RMarkdown</strong> (recommended)</li>
+<li>Use the <strong>New Post</strong> addin and with the radio button at the bottom select <strong>Format: R Markdown (.Rmd)</strong> (recommended)</li>
 <li>Use the console to author a new <code>.Rmd</code> post:</li>
 </ol>
-<pre><code>blogdown::new_post(rmd = TRUE) # false is the default!</code></pre>
+<pre><code>blogdown::new_post(ext = &#39;.Rmd&#39;) # md is the default!</code></pre>
 <p>After you edit your <code>.Rmd</code> post, in addition to saving the changes in your <code>.Rmd</code> file, you <em>must</em> use <code>blogdown::serve_site</code>- this is how the output <code>html</code> file needs to be generated.</p>
 <p>{{% alert warning %}}
 Do <em>not</em> knit your <code>.Rmd</code> posts- use <code>blogdown::serve_site</code> instead. If you happen to hit the knit button, just <strong>Serve Site</strong> again to rewrite the <code>.html</code> file.

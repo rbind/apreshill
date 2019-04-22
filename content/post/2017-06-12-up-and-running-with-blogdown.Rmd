@@ -277,33 +277,30 @@ Pick one of 2 methods:
 
 ```
 blogdown::new_post()
-blogdown::new_post(rmd = FALSE) # false is the default!
+blogdown::new_post(ext = '.md') # md is the default!
 ```
 
 Here are the `?new_post` arguments:
 
-```
-new_post(title, kind = "default", open = interactive(), 
-    author = getOption("blogdown.author"), categories = NULL, 
-    tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
-    subdir = getOption("blogdown.subdir", "post"), 
-    rmd = getOption("blogdown.rmd", FALSE))
+```{r code=formatR::usage(blogdown::new_post, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
 ```
 
 {{% alert note %}}
 Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
 {{% /alert %}}
 
-### New RMarkdown posts
+### New R Markdown (.Rmd) posts
 
 Again, you have your choice of one of 2 methods:
 
-1. Use the **New Post** addin and with the radio button at the bottom select **Format: RMarkdown** (recommended)
+1. Use the **New Post** addin and with the radio button at the bottom select **Format: R Markdown (.Rmd)** (recommended)
 2. Use the console to author a new `.Rmd` post:
 
 ```
-blogdown::new_post(rmd = TRUE) # false is the default!
+blogdown::new_post(ext = '.Rmd') # md is the default!
 ```
+
+
 
 
 After you edit your `.Rmd` post, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file needs to be generated.   
