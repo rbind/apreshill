@@ -12,7 +12,7 @@ type: docs # Do not modify.
 linktitle: "Edit configurations"
 menu:
   tutorial-blogdown:
-    parent: "Step 5+: Customize site"
+    parent: "Activity prompts"
     weight: 6
 ---
 
@@ -26,9 +26,10 @@ fs::dir_ls(".")
 ```
 
 ```
-## R               apreshill.Rproj config.toml     content         
-## data            index.Rmd       layouts         netlify.toml    
-## public          resources       static          themes
+## R               _redirects      apreshill.Rproj config.toml     
+## content         data            index.Rmd       layouts         
+## netlify.toml    public          resources       static          
+## themes
 ```
 
 See it? Editing this file is the quickest way to personalize and customize your site. It is also completely dependent on your theme.
@@ -43,6 +44,13 @@ fs::dir_ls(".", recurse = TRUE, regexp = ".toml")
 
 ```
 ## config.toml
+## content/post/2019-02-19-hugo-netlify-toml
+## content/post/2019-02-19-hugo-netlify-toml/featured.png
+## content/post/2019-02-19-hugo-netlify-toml/index.Rmd
+## content/post/2019-02-19-hugo-netlify-toml/index.html
+## content/post/2019-02-19-hugo-netlify-toml/netlify-adv-build.png
+## content/post/2019-02-19-hugo-netlify-toml/netlify-deploy-settings.png
+## content/post/2019-02-19-hugo-netlify-toml/netlify-sign-up.png
 ## data/fonts/alison.toml
 ## data/themes/alison.toml
 ## netlify.toml
@@ -55,6 +63,10 @@ fs::dir_ls(".", recurse = TRUE, regexp = ".toml")
 ## public/post/2019-02-19-hugo-netlify-toml/netlify-adv-build.png
 ## public/post/2019-02-19-hugo-netlify-toml/netlify-deploy-settings.png
 ## public/post/2019-02-19-hugo-netlify-toml/netlify-sign-up.png
+## resources/_gen/images/post/2019-02-19-hugo-netlify-toml
+## resources/_gen/images/post/2019-02-19-hugo-netlify-toml/featured_hu15824f77946f0182c818ed6da31198c4_54408_150x0_resize_box_2.png
+## resources/_gen/images/post/2019-02-19-hugo-netlify-toml/featured_hu15824f77946f0182c818ed6da31198c4_54408_1600x400_fill_q90_box_smart1_2.png
+## resources/_gen/images/post/2019-02-19-hugo-netlify-toml/featured_hu15824f77946f0182c818ed6da31198c4_54408_680x500_fill_q90_box_smart1_2.png
 ## themes/hugo-academic/data/academic.toml
 ## themes/hugo-academic/data/assets.toml
 ## themes/hugo-academic/data/fonts/classic.toml

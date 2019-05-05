@@ -12,7 +12,7 @@ type: docs # Do not modify.
 linktitle: "Edit configurations"
 menu:
   tutorial-blogdown:
-    parent: "Step 5+: Customize site"
+    parent: "Activity prompts"
     weight: 6
 ---
 
