@@ -11,11 +11,11 @@ selected = true
 math = true
 
 url_pdf = ""
-url_slides = "slides/blogdown-workshop-slides.html"
+url_slides = "../slides/blogdown-workshop-slides.html"
 url_video = ""
 [[url_custom]]
     name = "Pre-work"
-    url = "html/blogdown-workshop-pdxrmeetup.html"
+    url = "../html/blogdown-workshop-pdxrmeetup.html"
 [[url_custom]]
     name = "GitHub"
     url = "https://github.com/apreshill/blogdown-workshop"

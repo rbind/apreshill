@@ -38,7 +38,7 @@ weight = 5
 
 # Background
 
-I am a Data Scientist & Professional Educator at [RStudio](https://rstudio.com). We develop free and open source tools to make it easier and more fun to do data science with the statistical programming language [<i class="fab fa-r-project"></i>](www.r-project.org). We also create software to help teams who use R to share and publish their work.
+I am a Data Scientist & Professional Educator at [RStudio](https://rstudio.com). We develop free and open source tools to make it easier and more fun to do data science with the statistical programming language [<i class="fab fa-r-project"></i>](https://www.r-project.org). We also create software to help teams who use R to share and publish their work.
 
 I studied psychology and quantitative methods, receiving my Ph.D. from Vanderbilt University (2008). For eight years, I was a professor and scientist at Oregon Health & Science University, where my research was funded by the National Institutes of Health, the Oregon Clinical and Translational Research Institute, and Autism Speaks. I have written numerous scientific journal articles and book chapters on autism and neurodevelopmental disorders. 
 
