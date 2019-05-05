@@ -1,5 +1,5 @@
 ---
-title: "Netlify: Continuous Deployment"
+title: "Deploy your site"
 
 date: 2018-09-09T00:00:00.000Z
 lastmod: 2018-09-09T00:00:00.000Z
@@ -9,32 +9,33 @@ toc: true # Show table of contents? true/false
 type: docs # Do not modify.
 
 # Add menu entry to sidebar.
-linktitle: "Netlify: Continuous Deployment"
+linktitle: "Step 4: Deploy your site"
 menu:
   tutorial-blogdown:
-    parent: "03-Deploy your site"
-    weight: 10
+    weight: 6
 ---
 
 
 ![](/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-5.png)
 
-Deploying in Netlify through GitHub is smooth. Yihui and Amber give some [beginner instructions](https://bookdown.org/yihui/blogdown/deployment.html), but Netlify is so easy, I recommend that you skip dragging your `public` folder in and instead [automate the process through GitHub](https://bookdown.org/yihui/blogdown/netlify.html#netlify).
+Deploying with Netlify through GitHub is smooth. I realize that at this point you are looking at a cookie cutter example website, but let's go ahead and get the pipeline to publishing working **now** and [automate both building and deploying using Netlify](https://bookdown.org/yihui/blogdown/netlify.html#netlify). This way, you'll be confident that all this work will result in an actually published and shareable site- and hopefully you'll be more motivated to work on customizing the content!
 
-1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
+1. Commit all changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
 2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
 3. Log in, and select: `New site from Git -> Continuous Deployment: GitHub`.
 4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`, then you'll configure your build. This involves specifying two important things: the build command and the publish directory (this should be `public`).
 
     * More about the build command from [Netlify](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives): *"For Hugo hosting, `hugo` will build and deploy with the version 0.17 of `hugo`. You can specify a specific `hugo` release like this: `hugo_0.15`. Currently `0.13`, `0.14`, `0.15`, `0.16`, `0.17`, `0.18` and `0.19` are supported. For version `0.20` and above, you’ll need to create a Build environment variable called `HUGO_VERSION` and set it to the version of your choice."* I opted for the former, and specified `hugo_0.19`. 
     
-You can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like, so I could run version `0.20` if I wanted to through Netlify, but I went with `0.19` and it works just fine.
+Using the blogdown R package, uou can check your `hugo` version and update if needed. You'll want to make sure that Netlify is using the same version of Hugo that you are running locally.
 
-```
-$ hugo version
-Hugo Static Site Generator v0.20.7 darwin/amd64 BuildDate: 2017-05-08T18:37:40-07:00
+```{r}
+blogdown::hugo_version() # to check your version
 ```
 
+```{r eval = FALSE}
+blogdown::update_hugo() # to force an update
+```
 
 
 
@@ -50,3 +51,12 @@ Anytime you change your subdomain name, you need to update the `baseurl` in your
 
 
 At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
+
+### Check Hugo version {#hugoversion}
+
+Many problems arise from having an outdated version of Hugo. 
+
+
+
+
+

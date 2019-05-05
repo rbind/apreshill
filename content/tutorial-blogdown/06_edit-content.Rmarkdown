@@ -12,10 +12,28 @@ type: docs # Do not modify.
 linktitle: "Edit content"
 menu:
   tutorial-blogdown:
-    parent: "02-Build your site"
+    parent: "Step 5+: Customize site"
     weight: 7
 ---
 
+```{r include = FALSE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+
+Now that you have customized your site configurations, it is a great time to focus your energy on content. 
+
+First, take about five minutes to explore the website you published on Netlify- look very carefully at the menu items you have, and then look very carefully at your local `content/` folder. 
+
+*I'll wait*
+
+I'm hoping that here is where you might have a lightbulb moment: your content folder holds all the content you see rendered on your site. Want to change a blog post? That is usually in a folder called `content/blog/` or `content/post`. Want to change an about page? Look for `content/about`. 
+
+These are called "sections" in Hugo lingo- in fact, each folder in `content/` is considered a section. Typically this boils down to folders with markdown files inside, if you are looking at the example site content. For 
+
+
+
+
+To make new content, you'll want to use the 
 
 ## Addins & workflow
 

@@ -12,13 +12,31 @@ type: docs # Do not modify.
 linktitle: "New posts"
 menu:
   tutorial-blogdown:
-    parent: "02-Build your site"
+    parent: "Step 5+: Customize site"
     weight: 8
 ---
 
-```{r global_options, include = FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#")
-library(tidyverse)
+
+
+
+## Archetypes
+
+When you start thinking about adding content, think "archetypes". These are Hugo's templates for each content section. You can see your theme's built-in archetypes in the themes folder:
+
+
+```r
+fs::dir_ls("themes/hugo-academic/archetypes")
+```
+
+```
+# themes/hugo-academic/archetypes/default.md
+# themes/hugo-academic/archetypes/docs.md
+# themes/hugo-academic/archetypes/home.md
+# themes/hugo-academic/archetypes/post
+# themes/hugo-academic/archetypes/project
+# themes/hugo-academic/archetypes/publication
+# themes/hugo-academic/archetypes/slides.md
+# themes/hugo-academic/archetypes/talk
 ```
 
 Relevant reading:
@@ -49,14 +67,16 @@ Pick one of 2 methods:
 1. Use the **New Post** addin and with the radio button at the bottom select **Format: Markdown** (recommended)
 2. Use the console to author a new `.md` post:
 
-```{r eval = FALSE}
+
+```r
 blogdown::new_post()
 blogdown::new_post(rmd = FALSE) # false is the default!
 ```
 
 Here are the `?new_post` arguments:
 
-```{r eval = FALSE}
+
+```r
 new_post(title, kind = "default", open = interactive(), 
     author = getOption("blogdown.author"), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 

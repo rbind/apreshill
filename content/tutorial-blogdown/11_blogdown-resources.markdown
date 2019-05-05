@@ -12,8 +12,7 @@ type: docs # Do not modify.
 linktitle: "Resources"
 menu:
   tutorial-blogdown:
-    parent: "01-Getting Started"
-    weight: 2
+    weight: 20
 ---
 
 

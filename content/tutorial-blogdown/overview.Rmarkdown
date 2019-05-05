@@ -1,8 +1,8 @@
 ---
 title: "Overview (tl;dr)"
 
-date: 2018-09-09T00:00:00.000Z
-lastmod: 2018-09-09T00:00:00.000Z
+date: 2019-05-01T00:00:00.000Z
+lastmod: 2019-05-01T00:00:00.000Z
 
 draft: false # Is this a draft? true/false
 toc: true # Show table of contents? true/false
@@ -40,9 +40,13 @@ blogdown_gif %>%
 
 ![](/img/tutorials/blogdown.gif)
 
-If you are pretty comfortable working with R, RStudio, R projects (`.Rproj`), and GitHub (via RStudio), these steps may be detailed enough for you to get started:
+If you are comfortable working with R, RStudio, R projects (`.Rproj`), and GitHub (via RStudio), the steps listed below may be detailed enough for you to get up and running:
 
-1. Create a GitHub repo (no `README`, no `.gitignore`)
+1. Create a GitHub repo
+
+    + No `README`
+    
+    + No `.gitignore`
 
 1. Create a new RStudio project by cloning the repo to a local directory
 
@@ -52,11 +56,11 @@ If you are pretty comfortable working with R, RStudio, R projects (`.Rproj`), an
 
 1. Create a site using a Hugo theme hosted on GitHub via `blogdown::new_site(theme = "user/repo", theme_example = TRUE, sample = TRUE)`
 
-    + `theme_example` essentially copies the theme's `exampleSite` folder (if it exists) into your project root directory so you can render the full site. You can always delete the example content later, but I like to leave it to make sure the site renders "out of the box".
+    + `theme_example` copies the theme's `exampleSite` folder (if it exists) into your project root directory so you can render the full example site. You can always delete the example content later, but I like to leave it to make sure the site renders "out of the box".
     
     + `sample` adds a sample R Markdown (`.Rmd`) blog post. Depending on a theme's file structure, this post may end up in a weird place within the `content/` folder.
     
-1. If it doesn't automatically start, use the RStudio Addin to serve your site (renders first in the RStudio Viewer pane, i.e., where your R plots generally render; be sure to click on the teeny-tiny viewer pane and "Show in new window" to view in your local browser)
+1. If it doesn't automatically start, use the RStudio Addin to serve your site (renders first in the RStudio Viewer pane, i.e., where your R plots generally render; be sure to click on the teeny-tiny viewer pane and __"Show in new window"__ to view in your local browser)
 
 
 All together now, once you are "in" your RStudio project that is linked to a remote GitHub repo, and using the [Hugo academic theme](https://sourcethemes.com/academic/) as an example:
@@ -69,4 +73,3 @@ new_site(theme = "gcushen/hugo-academic", theme_example = TRUE, sample = TRUE)
 ```
 
 
-Insert video walk through here

@@ -12,7 +12,7 @@ type: docs # Do not modify.
 linktitle: "Edit configurations"
 menu:
   tutorial-blogdown:
-    parent: "02-Build your site"
+    parent: "Step 5+: Customize site"
     weight: 6
 ---
 
@@ -31,9 +31,13 @@ See it? Editing this file is the quickest way to personalize and customize your 
 To edit, in the RStudio file pane viewer, mouse over to your project root directory and open this file.
 
 
-
+```{r}
+fs::dir_ls(".", recurse = TRUE, regexp = ".toml")
+```
 
 ## TOML versus YAML
+
+This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
 
 ## All configurations
 
@@ -54,11 +58,21 @@ Make sure that the `baseurl = ` listed ends with a trailing slash `/`!
 
 Go ahead and edit all the other elements in the `config.toml` file now as you please- this is how you personalize your site!
 
+Some themes have more lengthy `config.toml` files, and usually the one that has populated from the example site has helpful comments for how to make changes. 
 
-## Syntax highlighting
+Typical things you can edit from the `config.toml` file:
 
-`r emo::ji_glue(":crayon:")`
-Just do it. Life is better when things are colourful. Plus, it's really not hard— I didn't even have to do anything special with my blogdown theme to get it working. This is covered in the blogdown book[^blogdown] as both a [theme parameter](https://bookdown.org/yihui/blogdown/themes.html#the-default-theme) and a [custom template](https://bookdown.org/yihui/blogdown/templates.html#how-to).
++ Your site title and description
++ Syntax highlighter (look for a way to choose `highlight.js` options)
++ The site's navigation links (what appears in either the upper menu or a side navbar, for example; look for `[[menu.main]]` fields)
++ A profile picture
++ Links to your social media like twitter, github, etc. (often integrated with Font Awesome icons, or some other icon pack)
+
+Things that are nice if you can change, but don't get too down if your site doesn't have these:
+
++ A way to refer to an additional CSS file
++ Related to above: an easy way to change the fonts or main site color palettes
++ An image for a twitter card
 
 ## Relevant reading:
 
