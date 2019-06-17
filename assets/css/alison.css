@@ -84,6 +84,22 @@ h1 {
   padding: 25px 0 50px 0; 
 }
 
+/* this erases the margin-bottom for h1 */
+
+.home-section.wg-pages .section-heading h1 {
+  margin: 0 0 0 0;
+}
+
+/* this is the section subtitle */
+
+.home-section.wg-pages .section-heading p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+
 /* code */
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
 
@@ -182,6 +198,10 @@ div.alert.alert-warning {
   justify-content: center;
 }
 
+/* section headers */
+
 div.universal-wrapper.pt-3 h1 {
   text-align: center;
+  padding-bottom: 50px;
 }
+
