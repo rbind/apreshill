@@ -177,3 +177,7 @@ div.alert.alert-warning {
 .btn-toolbar .btn:last-child {
   border-radius: 0px;
 }
+
+.btn-toolbar {
+  justify-content: center;
+}
