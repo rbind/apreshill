@@ -62,7 +62,7 @@ h1 {
   font-size: 2rem;
 }
 
-/* about */
+/* home page */
 
 .portrait-title h2 {
   color: #333;
@@ -97,6 +97,12 @@ h1 {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: .08em;
+}
+
+/* make dark even/odd sections same color so less stripey */
+
+.dark .home-section:nth-of-type(n) {
+	background-color: #282a36;
 }
 
 
