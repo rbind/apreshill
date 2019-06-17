@@ -1,0 +1,437 @@
+---
+title: "Alison Presmanes Hill"
+subtitle: "Curriculum Vitae"
+author: Alison Presmanes Hill, PhD.
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+    css: ["aph-cv.css", "resume"]
+googlefonts: ["Arapey", "Raleway"]
+---
+
+Aside
+================================================================================
+
+
+![Alison Presmanes Hill](../authors/alison/avatar.jpg){width=80%}
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> alison@rstudio.com
+- <i class="fa fa-safari"></i> [alison.rbind.io](https://alison.rbind.io)
+- <i class="fa fa-github"></i> [github.com/apreshill](https://github.com/apreshill)
+- For more information, please contact me via email.
+
+
+Computing Skills {#skills}
+--------------------------------------------------------------------------------
+
+- **Expertise**: R/RStudio, Shiny, Markdown, Git/Github, Tableau, HTML/CSS, Latex
+
+- **Familiarity**: Python, SQL, Julia, C/C++, SAS, JAGS/WinBugs, Maple, Mathematica, Matlab
+
+
+Main
+================================================================================
+
+Samantha C. Tyner, PhD {#title}
+--------------------------------------------------------------------------------
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### Iowa State University
+
+Postdoctoral Research Associate, CSAFE
+
+Ames, Iowa
+
+Present - Dec. 2017
+
+PI: Alicia Carriquiry
+
+### Iowa State University
+
+Ph.D. in Statistics, M.S. in Statistics
+
+Ames, Iowa
+
+Dec. 2017 - Aug. 2012
+
+Dissertation: Graphical discovery in stochastic actor-oriented models for social network analysis
+
+### Augustana College 
+
+B.A. in Mathematics, Economics, & French, *summa cum laude*
+
+Rock Island, Illinois
+
+May 2012 - Aug. 2008
+
+Honors: Phi Beta Kappa, Pi Mu Epsilon, Omicron Delta Kappa, Dean's List all terms
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Postdoctoral Research Associate
+
+Center for Statistics & Applications in Forensic Evidence (CSAFE), Iowa State University
+
+Ames, Iowa 
+
+Present - Dec. 2017
+
+::: concise
+- Author educational materials for legal professionals on the use of statistics in forensic science 
+- Conduct research relating to human factors, statistical computing in forensic science
+- Mentor graduate students on their research projects
+- Coordinate the summer research experience for undergraduates (REU) from partner schoo
+:::
+
+### Graduate Research Assistant
+
+CSAFE, Iowa State University
+
+Ames, Iowa
+
+Dec. 2017 - Aug. 2015
+
+::: concise
+- Author educational materials for legal professionals on the use of statistics in forensic science
+- Conduct research relating to human factors, statistical computing in forensic science
+::: 
+
+### REU Graduate Student Advisor
+
+CSAFE, Iowa State University
+
+Ames, Iowa
+
+Aug. 2017 - May 2017
+
+::: concise
+- Instructed a group of ten students on R coding, statistics, and Github project management  
+- Supervised research projects on automated shoeprint matching and steganalysis
+:::
+
+### Graduate Student Fellow
+
+Social and Decision Analytics Laboratory, Biocomplexity Institute, Virginia Polytechnic Institute and State University 
+
+Arlington, Virginia
+
+Aug. 2016 - May 2016
+
+- Participated in the interdisciplinary Data Science for Public Good summer program
+- Led groups of undergraduate researchers on data-driven policy projects
+- Analyzed and combined data from a variety of administrative, census, and GIS sources
+- Consulted with county staff on projects to improve government services in Arlington, VA
+
+### Graduate Research Assistant 
+
+NORC at the University of Chicago
+
+Chicago, Illinois
+
+Apr. 2016 - Aug. 2015
+
+- Developed a dynamic reporting system to adapt to changes in Illinois’ healthcare marketplace 
+
+::: aside
+Continuation of my summer internship work part time as a consultant
+:::
+
+### Data Visualization Intern 
+
+NORC at the University of Chicago
+
+Chicago, Illinois
+
+Aug. 2015 - May 2015
+
+- Created data visualizations for a variety of projects in the Statistics & Methodology group 
+- Designed a multi-use dashboard of education data in Washington state
+- Developed a web app with public health, GIS data to uncover potential epidemic regions
+- Led four hour-long internal seminars on the theory and best practices of data visualization
+
+
+### Graduate Teaching Assistant
+
+Dept. of Statistics, Iowa State University
+
+Ames, Iowa
+
+May 2015 - Aug. 2014
+
+- Taught weekly lectures and labs
+- Wrote and graded exams
+
+::: aside 
+Instructor for STAT 104: Introduction to Statistics
+:::
+
+### Statistical Analyst Intern
+
+Kingland Systems Corporation
+
+Ames, Iowa
+
+Aug. 2014 - May 2014
+
+- Served as a member of the Process Management team
+- Performed data analysis on project and product data to refine internal processes and tools
+- Built predictive models used in planning and estimating time to complete sofware development 
+- Produced graphs and reports to support internal visibility of projects, products, and portfolios
+
+### Graduate Research Assistant
+
+Institute for Transportation, Iowa State University
+
+Ames, Iowa
+
+Aug. 2014 - Aug. 2013
+
+- Modeled curve navigation on rural highways using large USDOT data sets
+
+### Graduate Teaching Assistant
+
+Dept. of Statistics, Iowa State University 
+
+Ames, Iowa
+
+Jul. 2013 - Aug. 2012
+ 
+- Graded weekly homework assignments  
+- Supervised lab sections twice weekly
+
+::: aside 
+TA for STAT 104: Introduction to Statistics
+:::
+
+Publications {data-icon=file}
+--------------------------------------------------------------------------------
+
+### Network Visualization with ggplot2
+
+The R Journal. 9(1): 27-59. June 2017
+
+Ames, Iowa
+
+2017
+
+**Tyner, S.**, Briatte, F., and Hofmann, H
+
+### Using the R Package geomnet: Visualizing Trans-Atlantic Slave Trade of Africans, 1514-1866.
+
+CHANCE. Sep 2016. 29(3)
+
+Ames, Iowa
+
+2016 
+
+**Tyner, S**
+
+### The Joy of Clustering 
+
+[Significance Magazine Online](http://www.statslife.org.uk/culture/2553-the-joy-of-clustering). 11 Nov 2015
+
+Ames, Iowa
+
+2015
+
+**Tyner, S**
+
+### Evaluation of driving behavior on rural 2-lane curves using the SHRP 2 naturalistic driving study data
+
+Journal of Safety Research. 2015. 54, 17-27.
+
+Ames, Iowa
+
+2015
+
+Hallmark, S., **Tyner, S.**, Oneyear, N., Carney, C., and McGehee, D.
+
+### Non-Contiguous Pattern Avoidance in Binary Trees
+
+Electronic Journal of Combinatorics. 2012. 19(3). #P22.
+
+Valparaiso, Indiana 
+
+2012
+
+Dairyko, M., **Tyner, S.**, Pudwell, L., and Wynn, C.
+
+Workshops Taught {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### R for Epidemiology 
+
+Intensive workshop on the basics of R, data cleaning, and visualization using R and RStudio with application to epidemiological data. Presented at the USDA’s National Animal Disease Center.
+
+Ames, Iowa
+
+May 2018
+
+::: aside
+with Haley Jeppson
+:::
+
+### The Life-Changing Magic of Tidying Data 
+
+Workshop on tidying messy data sets with the R packages dplyr, tidyr, and others. Presented to the R-Ladies Ames group.
+
+Ames, Iowa
+
+Dec. 2017
+
+### The Week of R 
+
+Intensive workshop on the basics of R, as well as data cleaning, webscraping, data visualization, and Shiny in R and RStudio.
+
+Ames, Iowa
+
+Jun. 2017
+
+::: aside
+with Jo Papio, Haley Jeppson, and Heike Hofmann
+:::
+
+### Webscraping with tidyverse Packages
+
+Workshop on scraping data from the web using the R packages rvest, xml, and others. Presented to the R-Ladies Ames group.
+
+Ames, Iowa 
+
+Feb. 2017
+
+### Empowering Women with Self-defense Skills using R 
+
+Workshop on data cleaning, webscraping, and data visualization in R. Presented at the 2016 Women in Statistics and Data Science conference. (with Heike Hofmann)
+
+Charlotte, NC 
+
+Oct. 2016
+
+### The Week of R 
+
+Intensive workshop on the basics of R, as well as data cleaning, webscraping, data visualization, and Shiny in R and RStudio. Presented at Iowa State University.
+
+Ames, Iowa
+
+May 2016
+
+::: aside
+with Eric Hare, Andee Kaplan, and Heike Hofmann
+:::
+
+Leadership & Service {data-icon=hands-helping}
+--------------------------------------------------------------------------------
+
+### Founder and Co-organizer of the Uncoast Unconference 
+
+Hackathon-style event for R users and developers living in middle America.
+
+Des Moines, Iowa 
+
+Apr. 2019
+
+::: aside
+Please visit http://uuconf.rbind.io/ for more. 
+:::
+
+### Iowa State University Postdoctoral Association 
+
+Elected as the postdoctoral representative to the University Committee for the Advancement of Women and Gender Equity to voice the interests of women+-identifying postdocs on campus.
+
+Ames, Iowa 
+
+Present - Aug. 2018
+
+### Webmaster, Iowa Chapter of the ASA 
+
+Maintain the online presence of the Iowa chapter of the American Statistical Association, the country’s top professional association for statisticians.
+
+Ames, Iowa
+
+Present - Apr. 2018
+
+### Co-founder and co-organizer, R-Ladies Ames 
+
+Founded the Ames chapter of the global organization R-Ladies, which promotes gender parity among R users, R package authors, and members of the R foundation and board of directors.
+
+Ames, Iowa
+
+Present - Dec. 2016
+
+::: aside
+with Natalia daSilva
+:::
+
+### Statistics Departmental Committees 
+
+Served alongside faculty and staff as the student member of ISU statistics departmental committees: the Social Committee (2014-15) and the Honors and Awards Committee (2015-16, 2016-17).
+
+Ames, Iowa 
+
+May 2017 - Aug. 2014
+
+### The Iowa STAT-ers Club 
+
+Led this Statistics Department graduate student organization in multiple executive positions: Secretary (2013-14), Social Chair (2014-15), and President (2015-16).
+
+Ames, Iowa 
+
+May 2016 - Aug. 2013
+
+
+Honors & Awards {data-icon=trophy}
+--------------------------------------------------------------------------------
+
+### Winner, rOpenSci 2018 Fellowship 
+
+For proposal, "Open Forensic Science in R" 
+
+Ames, Iowa
+
+Feb. 2018 
+
+::: aside
+Please see [ropensci.org](https://ropensci.org/blog/2018/02/14/announcing-2018-ropensci-fellows/) for more
+:::
+
+### Winner, Student Paper Competition 
+
+From the Statistical Graphics Section of the ASA for "Using the geomnet Package" 
+
+Chicago, Illinois
+
+Jul. 2016
+
+::: aside 
+See Publications
+:::
+
+### Runner up, Young Statisticians Writing Competition
+
+From the Young Statisticians Section of the Royal Statistical Society for “The Joy of Clustering”
+
+Exeter, Devon, UK
+
+Sept. 2015
+
+::: aside 
+See Publications
+:::
+
+### Alumni Fellowship
+
+Dept. of Statistics, Iowa State University 
+
+Ames, Iowa
+
+Aug. 2012
