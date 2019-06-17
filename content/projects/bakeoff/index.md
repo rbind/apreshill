@@ -1,0 +1,12 @@
+---
+date: "2016-04-27T00:00:00Z"
+external_link: https://bakeoff.netlify.com/
+image:
+  caption: '[Photo by Calum Lewis on Unsplash](https://unsplash.com/photos/rkT_TG5NKF8)'
+  focal_point: Smart
+summary: An R data package to enable data wrangling, analysis, and visualizations using data from “The Great British Bake Off.”
+tags:
+- R
+- software
+title: Bakeoff
+---
