@@ -181,3 +181,7 @@ div.alert.alert-warning {
 .btn-toolbar {
   justify-content: center;
 }
+
+div.universal-wrapper.pt-3 h1 {
+  text-align: center;
+}
