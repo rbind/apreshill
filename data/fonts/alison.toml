@@ -12,4 +12,4 @@ mono_font = "Roboto Mono"
 
 # Font size
 font_size = "18"
-font_size_small = "15"
+font_size_small = "16"
