@@ -1,0 +1,154 @@
+/* links */
+
+a {
+  color: #E13D3D;
+  cursor: pointer;
+}
+
+a:active, 
+a:focus, 
+a:hover {
+  color: #d03b39;
+}
+
+/* nav */
+
+.navbar-light .navbar-nav>.nav-item>.nav-link,
+.navbar-light .navbar-nav>.nav-item>.nav-link:focus,
+.navbar-light .navbar-nav>.nav-item>.nav-link:hover,
+.navbar-light .navbar-nav>.nav-item>.nav-link:active {
+  font-weight: 400;
+}
+
+.navbar-light .navbar-nav > li.nav-item > a.active, 
+.navbar-light .navbar-nav > li.nav-item > a.active:focus, 
+.navbar-light .navbar-nav > li.nav-item > a.active:hover {
+  font-weight: 400;
+}
+
+.navbar-light {
+  box-shadow: none;
+  text-transform: lowercase;
+}
+
+.navbar-nav {
+  border-bottom: 2px solid #E13D3D;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.navbar-light .navbar-brand:focus, 
+.navbar-light .navbar-brand:hover {
+  color: #d03b39;
+}
+
+/* text */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-weight: 400;
+}
+
+body {
+  color: #333;
+  font-size: 0.85rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* about */
+
+.portrait-title h2 {
+  color: #333;
+}
+
+#about .col-12.col-lg-8 {
+  padding-top: 30px !important;
+}
+
+.network-icon li:hover {
+  transform: scale(1.05);
+}
+
+.home-section:first-of-type {
+  padding: 50px 0 50px 0;
+}
+
+.home-section:not(:first-of-type) {
+  padding: 25px 0 50px 0; 
+}
+
+/* code */
+/* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
+
+pre {
+  border: 1px solid #181914;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 0.25em;
+  background: #181914;
+  overflow-x: auto;
+  border-radius: 0px; /*undo rounded corners*/
+}
+
+pre code { 
+  background: none; 
+  font-size: 0.8rem;
+}
+
+code { 
+  color: #d03b39;
+  background: #fff;
+  font-size: 0.8rem;
+}
+
+
+/* alerts */
+
+div.alert-note > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #e13d3d;
+  content: "\f0a4";
+}
+
+div.alert-warning > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #e13d3d;
+  content: "\f1e2";
+}
+
+.alert-note {
+  color: #333;
+  background-color: #fff;
+  border-top: 2px solid #e13d3d;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+div.alert > div {
+  font-size: 0.85rem;
+}
+
+
+div.alert.alert-warning {
+  color: #d03b39;
+  background-color: #fdf4f4;
+  border-top: 2px solid #e13d3d;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+
