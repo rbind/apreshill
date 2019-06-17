@@ -1,0 +1,146 @@
+---
+title: 'A Spoonful of Hugo: Page Bundles'
+authors:
+- alison
+date: '2019-02-21'
+summary: Why (and how) you should use Hugo's new page bundles feature
+image:
+  caption: '[Photo by Joanna Kosinska on Unsplash](https://unsplash.com/photos/Prfs32wh-o4)'
+  focal_point: 'center'
+categories: [hugo, blogdown]
+tags: [blogdown]
+---
+
+
+
+<blockquote>
+<p>“Just a spoonful of Hugo helps the blog go down.”
+- me, only somewhat kidding</p>
+</blockquote>
+<p>In this series, I’m sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site <em>UP</em> (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my “Spoonful of Hugo” series <a href="/post/2019-02-19-hugo-archetypes/">about Hugo archetypes</a> and <a href="/post/2019-02-19-hugo-netlify-toml/">Hugo versions</a>.</p>
+<p>This is my third post in this series and it is breaking news.</p>
+<p><img src="https://media.giphy.com/media/dZCdA82qa8d4xVIwm3/giphy.gif" /></p>
+<div id="hugo-page-bundles" class="section level1">
+<h1>Hugo Page Bundles</h1>
+<p>Well, not really breaking news, but you still may not know about it! Hugo v0.32 <a href="https://gohugo.io/news/0.32-relnotes/">introduced</a> a new feature called Page Bundles, as a way to organize the content files. Blogdown users rejoice that <a href="https://twitter.com/dvaughan32">Davis Vaughn</a> posted an <a href="https://github.com/rstudio/blogdown/issues/351">issue</a> on the rstudio/blogdown repo to enable this option, which Yihui added shortly before rstudio::conf 2019 🎉. Here is the snippet from the <code>NEWS.md</code>:</p>
+<blockquote>
+<p>“One benefit of using a page bundle instead of a normal page is that you can put resource files associated with the post (such as images) under the same directory of the post itself. This means you no longer have to put them under the <code>static/</code> directory, which has been quite confusing to Hugo beginners.”</p>
+</blockquote>
+<p>What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from <a href="https://github.com/tidyverse/tidyverse.org/tree/master/content/articles">tidyverse.org</a> <em>(sorry tidyverse team- it’s not you, it’s the old Hugo).</em></p>
+<p>For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in <a href="https://github.com/tidyverse/tidyverse.org/tree/master/static/images"><code>static/</code></a> too, organized by post (which I have done on my own blog, though not well or consistently).</p>
+<p>What would it look like to use page bundles?</p>
+<pre class="r"><code>content/
+├── about
+│   ├── index.md
+├── posts
+│   ├── 2015-07-23-hi-world
+│   │   ├── bakers.csv
+│   │   ├── image1.jpg
+│   │   ├── image2.png
+│   │   └── index.Rmd
+│   └── 2015-07-24-bye-world
+│       └── index.Rmd</code></pre>
+<p>One could call this bundled file structure “tidier” 🍱.</p>
+<p>In the above, after serving site, <code>index.html</code> files also get added to the bundle. In Hugo’s terms, these are <a href="https://gohugo.io/content-management/page-bundles/">leaf bundles</a>. The resource files allowed in a bundle include page and non-page items like images, pdf, .csv files, etc.</p>
+<p>This is instead of:</p>
+<pre class="r"><code>content/
+├── about
+│   ├── index.md
+├── posts
+│   ├── 2015-07-23-hi-world.Rmd
+│   ├── bakers.csv
+│   ├── image1.jpg
+│   ├── image2.png
+│   └── 2015-07-24-bye-world.Rmd</code></pre>
+<p>When you create a new bundled post, the actual content of the post goes in the index file of a page bundle. So:</p>
+<pre><code># not bundled post
+post/2015-07-23-hi-world.Rmd
+# bundled post
+post/2015-07-24-bye-world/index.Rmd</code></pre>
+</div>
+<div id="bundle-me-blogdown" class="section level1">
+<h1>Bundle Me, blogdown!</h1>
+<p>First, read the previous post on setting up a <a href="post/2019-02-19-hugo-netlify-toml/">netlify.toml file</a>. Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:</p>
+<pre class="r"><code>blogdown::update_hugo()
+blogdown::hugo_version()</code></pre>
+<p>Now, let’s use the <a href="https://usethis.r-lib.org/"><strong>usethis</strong> package</a>.</p>
+<div id="project-specific-.rprofile" class="section level2">
+<h2>Project-specific .Rprofile</h2>
+<p>First, I’m going to demo here how to create a project-specific .Rprofile file- but know that you can do a user-level .Rprofile file too.</p>
+<pre class="r"><code># install.packages(&quot;usethis&quot;) # uncomment this to install
+usethis::edit_r_profile(scope = &quot;project&quot;)</code></pre>
+<p>These helpful messages <em>should</em> print to your console: please note the “restart” reminder…</p>
+<pre><code>&gt; usethis::edit_r_profile(scope = &quot;project&quot;)
+● Restart R for changes to take effect
+✔ Setting active project to &#39;/Users/alison/rprojs/alison.rbind.io&#39;
+● Modify &#39;.Rprofile&#39;</code></pre>
+<p>Now you could add this to your file:</p>
+<pre><code># in .Rprofile of the website project
+if (file.exists(&quot;~/.Rprofile&quot;)) {
+  base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
+}
+
+options(blogdown.new_bundle = TRUE)</code></pre>
+<p>The first code chunk above is from the <a href="https://bookdown.org/yihui/blogdown/global-options.html#global-options">blogdown book</a>, where we describe a workaround for loading both user and project .Rprofile files (since R technically only reads one startup profile file).</p>
+<p>If you don’t want this, you could add the blogdown options to your user .Rprofile instead using:</p>
+<pre><code>usethis::edit_r_profile(scope = &quot;user&quot;)</code></pre>
+<p>Heck, while you are at it, you could set a <em>bunch</em> of options to make your blogdown life easier:</p>
+<pre><code># in .Rprofile of the website project
+if (file.exists(&quot;~/.Rprofile&quot;)) {
+  base::sys.source(&quot;~/.Rprofile&quot;, envir = environment())
+}
+
+options(
+  blogdown.author = &quot;Alison Hill&quot;,
+  blogdown.ext = &quot;.Rmd&quot;,
+  blogdown.subdir = &quot;post&quot;,
+  blogdown.yaml.empty = TRUE,
+  blogdown.new_bundle = TRUE,
+  blogdown.title_case = TRUE
+)</code></pre>
+<p>For the blogdown-specific options, any of these prepopulate content in your “New Post” Addin (I told you to use this <a href="/post/2019-02-19-hugo-archetypes/">here</a>). There is a handy <a href="https://bookdown.org/yihui/blogdown/global-options.html">table</a> from the blogdown book, summarized here:</p>
+<ul>
+<li><code>blogdown.author</code> = author of new posts</li>
+<li><code>blogdown.ext</code> = default extension of new posts (can also be “.md” or “.Rmarkdown”)</li>
+<li><code>blogdown.subdir</code> = theme-specific, you need to know your theme and content folder here</li>
+<li><code>blogdown.yaml.empty</code> = I told you to do that <a href="/post/2019-02-19-hugo-archetypes/">here</a></li>
+<li><code>blogdown.new_bundle</code> = what this whole post is about!</li>
+<li><code>blogdown.title_case</code> = “nEed More coFFee” –&gt; “Need More Coffee” (it tidies all your post titles to title case)</li>
+</ul>
+</div>
+<div id="the-newline-thing" class="section level2">
+<h2>The Newline Thing</h2>
+<p>Here is a <strong>massive</strong> .Rprofile gotcha: this file <strong>must</strong> end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.</p>
+<p><img src="restart-r.png" /></p>
+<p>Want to make your general R life easier in the future? Follow Yihui’s <a href="https://yihui.name/en/2018/04/rprofile-trailing-newline/">advice</a> and do this in RStudio to ensure that all source files end with a newline:</p>
+<p><img src="https://db.yihui.name/images/rstudio-newline.png" /></p>
+</div>
+</div>
+<div id="use-bundles" class="section level1">
+<h1>Use Bundles</h1>
+<p>After restarting R, try using the “New Post” Addin, this time <em>with feeling</em>. There is <em>still</em> one more gotcha though. Use the Addin to create your new bundled post. The only catch is that once you are looking at your exciting new post, you should <strong>delete the slug</strong> in the YAML (I posted an issue about this <a href="https://github.com/rstudio/blogdown/issues/370">here</a>).</p>
+<p>The reason is that you want the link to your post to be:</p>
+<p><code>http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/</code></p>
+<p>If you include the slug, the link to your post will be:</p>
+<p><code>http://alison.rbind.io/post/2019-02-21-hugo-page-bundles/hugo-page-bundles</code></p>
+<p>Another option is to update your <code>config.toml</code> file with permalinks like <a href="https://bookdown.org/yihui/blogdown/configuration.html">Yihui suggests</a> (but beware: this will change all your past links as well, requiring some <a href="https://yihui.name/en/2017/11/301-redirect/">Netlify redirects</a>):</p>
+<pre><code>[permalinks]
+    post = &quot;/:year/:month/:day/:slug/&quot;</code></pre>
+<p>The default here from Hugo was <code>/post/:year-:month-:day-:slug/:slug/</code>.</p>
+<p>A small note: if you want to add relative links from a blog post to another post in your same blog. So <code>[this](/post/2019-02-19-hugo-archetypes/)</code> becomes <a href="/post/2019-02-19-hugo-archetypes/">this</a>.</p>
+<p>Now, add images and data files to your ❤️’s content! But you may want to do one more thing…</p>
+</div>
+<div id="update-metadata" class="section level1">
+<h1>Update Metadata</h1>
+<p>If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2019-06-16. The cool thing that was already built-in to blogdown is the “Update Metadata” Addin. With your blog post open (it should be called <code>index.Rmd</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, click on Addins and select “Update Metadata”. You should see a window like this:</p>
+<p><img src="update-metadata.png" /></p>
+<p>Check the box to rename the file if the date has changed. RStudio will tell you your file has been deleted- which is technically true since the folder was renamed, but don’t panic!</p>
+<p><img src="file-deleted-warning.png" /></p>
+<p>Click YES. The <code>index.Rmd</code> file that is now open should have an updated date field in the YAML. In your RStudio file viewer, you may want to click on “content” at this point then navigate back to view your post- then you will then see that the folder name now has an updated date too.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>If no post is open, you will get an error: <code>Warning message: The current document does not seem to contain YAML metadata</code><a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>

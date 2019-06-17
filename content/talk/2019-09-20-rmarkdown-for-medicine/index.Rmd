@@ -1,0 +1,23 @@
+---
+title: R Markdown for Medicine Workshop
+authors: [alison]
+event: 'R / Medicine'
+event_url: https://r-medicine.com/
+location: Boston, MA
+abstract:
+date: '2019-09-12'
+slug: rmd-for-medicine
+categories:
+  - workshop
+tags:
+  - rmarkdown
+subtitle: ''
+summary: ''
+lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+image:
+  caption: '[Photo by Anupam Mahapatra on Unsplash](https://unsplash.com/photos/Vz0RbclzG_w)'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
