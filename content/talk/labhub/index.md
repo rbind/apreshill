@@ -5,9 +5,9 @@ abstract_short: Dive into tools and methods for building lab efficiency and tran
 date: "2017-12-08"
 event: Labhub Workshop
 event_url: https://github.com/apreshill/labhub
-header:
-  caption: ""
-  image: ""
+image:
+  caption: '[Photo by Eleonora Patricola on Unsplash](https://unsplash.com/photos/CDtfEiyt0kg)'
+  focal_point: Smart
 location: Oregon Health & Science University, Portland, Oregon
 math: true
 selected: true

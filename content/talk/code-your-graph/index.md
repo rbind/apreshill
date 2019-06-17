@@ -4,9 +4,9 @@ abstract_short: ""
 date: 2016-06-24T00:00:00
 event: Hands-on Data Jamboree
 event_url: /html/jamboree_heart_ggplot.html
-header:
-  caption: ""
-  image: ""
+image:
+  caption: '[Photo by Isaac Smith on Unsplash](https://unsplash.com/photos/6EnTPvPPL6I)'
+  focal_point: Smart
 location: Oregon Health & Science University, Portland, Oregon
 math: true
 selected: true
