@@ -6,6 +6,7 @@ event_url: https://r-medicine.com/
 location: Boston, MA
 abstract:
 date: '2019-09-12'
+publishdate: '2019-01-01'
 slug: rmd-for-medicine
 categories:
   - workshop

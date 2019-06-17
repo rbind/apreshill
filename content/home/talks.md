@@ -7,7 +7,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 70  # Order that this section will appear.
 
-title = "Upcoming"
+title = "Recent & Upcoming"
 subtitle = "Talks / Workshops"
 
 [content]
@@ -29,7 +29,7 @@ subtitle = "Talks / Workshops"
     category = ""
     publication_type = ""
     exclude_featured = false
-    exclude_past = true
+    exclude_past = false
     exclude_future = false
     
 [design]
