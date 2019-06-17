@@ -167,4 +167,13 @@ div.alert.alert-warning {
   font-family: Arapey;
   text-transform: lowercase;
   font-style: italic;
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:first-child {
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:last-child {
+  border-radius: 0px;
 }
