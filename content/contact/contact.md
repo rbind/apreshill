@@ -3,9 +3,9 @@ active: true
 autolink: false
 email_form: 2
 headless: true
-subtitle: ""
+subtitle: "For R help, try asking on [community.rstudio.com](https://community.rstudio.com/)"
 title: Hi there!
-weight: 20
+weight: 40
 widget: contact
 ---
 
