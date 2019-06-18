@@ -19,7 +19,7 @@ links:
   icon_pack: fas
   name: Pre-work
   url: ../html/blogdown-workshop-pdxrmeetup.html
-- icon: door-open
+- icon: images
   icon_pack: fas
   name: slides
   url: ../slides/blogdown-workshop-slides.html

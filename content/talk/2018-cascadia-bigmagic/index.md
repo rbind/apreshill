@@ -30,7 +30,7 @@ tags:
   - keynote
   
 links:
-- icon: door-open
+- icon: images
   icon_pack: fas
   name: slides
   url: https://bit.ly/cascadiarconf-magic

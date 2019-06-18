@@ -22,7 +22,7 @@ tags:
   - data visualization
 
 links:
-- icon: door-open
+- icon: images
   icon_pack: fas
   name: slides
   url: https://apreshill.github.io/ohsu-biodatavis/slides.html#1
