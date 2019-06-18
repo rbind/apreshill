@@ -1,0 +1,44 @@
+---
+title: Meet flexdashboard
+subtitle: 'An rstudio::conf 2019 workshop'
+authors: [alison]
+event: 'rstudio::conf 2019'
+event_url:
+location: Austin, Texas
+abstract: ''
+summary: 'Making dashboards in R Markdown'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2019-01-15T11:00:00Z"
+date_end: "2019-01-16T12:30:00Z"
+all_day: false
+
+categories:
+  - workshop
+tags:
+  - flexdashboard
+  - rmarkdown
+
+lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+image:
+  caption: '[Photo by fer gomez on Unsplash](https://unsplash.com/photos/N-tl1WQzamk)'
+  focal_point: ''
+  preview_only: no
+projects: [advanced-r-markdown]
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://arm.rbind.io/slides/flexdashboard.html
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/rstudio-education/arm-workshop-rsc2019/blob/master/static/slides/flexdashboard.Rmd
+- icon: download
+  icon_pack: fas
+  name: download
+  url: https://arm.rbind.io/slides/flexdashboard.Rmd
+---
