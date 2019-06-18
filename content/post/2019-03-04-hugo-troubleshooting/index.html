@@ -110,7 +110,7 @@ Figure 4: Hugo universal theme
 <h1>#3: Netlify drag-and-drop</h1>
 <p><img src="https://media.giphy.com/media/DfbpTbQ9TvSX6/giphy.gif" /></p>
 <p>If you can render your site locally but your published site looks different, try the drag-and-drop method:</p>
-<p><img src="http://arm.rbind.io/slides/img/netlify-new-site.png" /></p>
+<p><img src="https://arm.rbind.io/slides/img/netlify-new-site.png" /></p>
 <p>Use the “Serve Site” Addin, then drag-and-drop the <code>public/</code> folder straight into Netlify. What does this do? You can now see your public site…that you built…with your local version of Hugo. Netlify is doing none of the site building here.</p>
 <p><img src="/post/2019-03-04-hugo-troubleshooting/index_files/figure-html/unnamed-chunk-10-1.gif" /><!-- --></p>
 <p>One of the first benefits of this approach is that it ensures that you are able to actually <em>generate</em> a <code>public/</code> folder locally! I have seen folks struggle to deploy the wrong repo. This simple step can force you to make sure to use the “Serve Site” Addin to generate the <code>public/</code> folder, and that the repo you are trying to link to Netlify actually contains a Hugo site because you must physically move the <code>public/</code> folder. But this method can also help you diagnose other problems too.</p>
