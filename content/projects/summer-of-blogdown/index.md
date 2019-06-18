@@ -1,6 +1,6 @@
 ---
 title: Summer of blogdown
-summary: A hands-on workshop to creating a personal website using blogdown and the Hugo Academic theme
+summary: A week of the blogdown R package for RStudio's summer 2019
 abstract: "A week of blogdown for RStudio's summer 2019 interns."
 date: "2016-04-27T00:00:00Z"
 external_link: ""
@@ -16,7 +16,11 @@ links:
   icon_pack: fab
   name: materials
   url: https://github.com/rstudio-education/summer-of-blogdown-19
-summary: A week of the blogdown R package for RStudio's summer 2019
+- icon: flask
+  icon_pack: fas
+  name: demo site
+  url: https://kellykapowski.netlify.com/
+
 tags:
 - R
 - blogdown
