@@ -54,7 +54,7 @@ tags: [blogdown]
 <li>Add custom archetypes as <code>.md</code> files to your project root directory (do <em>not</em> touch the <code>archetypes</code> folder in your <code>themes/archetypes</code> folder).
 <ul>
 <li>If you don’t have that as an empty folder in your project root, make one, then add your archetype files to it.</li>
-<li>If you are making a new blogdown site, I recommend using <a href="http://arm.rbind.io/slides/blogdown.html#start-here">these options</a> to <strong>keep your empty directories</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:</li>
+<li>If you are making a new blogdown site, I recommend using <a href="https://arm.rbind.io/slides/blogdown.html#start-here">these options</a> to <strong>keep your empty directories</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:</li>
 </ul>
 <pre class="r"><code>library(blogdown)
 new_site(theme = &quot;jpescador/hugo-future-imperfect&quot;, 
@@ -63,13 +63,13 @@ new_site(theme = &quot;jpescador/hugo-future-imperfect&quot;,
          empty_dirs = TRUE, # this!
          to_yaml = TRUE)</code></pre>
 <div class="figure"><span id="fig:proj-wizard"></span>
-<img src="http://arm.rbind.io/slides/img/blogdown-workflow-wizard.png" alt="Using the RStudio Project Wizard"  />
+<img src="https://arm.rbind.io/slides/img/blogdown-workflow-wizard.png" alt="Using the RStudio Project Wizard"  />
 <p class="caption">
 Figure 1: Using the RStudio Project Wizard
 </p>
 </div></li>
 <li><p>Use the “New Post” Addin in RStudio to create <strong>any and all</strong> new content for your site (not just <em>posts</em>!). Be sure to use the handy dropdown menu to select from all the possible archetypes. Also, careful about the subdirectory here- some themes use <em>blog</em>, others use <em>news</em>, <em>articles</em>, or <em>posts</em>.</p>
-<p><img src="http://arm.rbind.io/slides/img/blogdown-newpost-bundle.png" /><!-- --></p></li>
+<p><img src="https://arm.rbind.io/slides/img/blogdown-newpost-bundle.png" /><!-- --></p></li>
 <li>Your archetypes, while only markdown files, <em>can</em> include R code. When you use the Addin, be sure to choose <code>R Markdown (.Rmd)</code> as the format so that you can run the code.
 <ul>
 <li>Don’t miss this <a href="http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/">great blog post</a> by my friend and the great educator <a href="https://twitter.com/fellgernon">Leo Collado-Torres</a> on archetypes.</li>
@@ -137,7 +137,7 @@ categories = []
 </ol>
 <p>So I drafted a <a href="https://github.com/tidyverse/tidyverse.org/pull/271">pull request</a> that adds <a href="https://github.com/tidyverse/tidyverse.org/pull/271/commits/26a07ae881e57607e25ef0add77d0f5958a9c143">these three archetypes</a> to the <a href="https://github.com/tidyverse/tidyverse.org">GitHub repository</a> for the <a href="https://www.tidyverse.org/">tidyverse.org</a>. Here is the “after” Addin view:</p>
 <p><img src="archetypes-after.png" /></p>
-<p>Here’s hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your <code>themes/&lt;THEME-NAME&gt;/archetypes/</code> folder, then in your project root <code>archetypes/</code> folder next. <a href="https://twitter.com/apreshill/status/1083791211222073344">DO</a> <a href="https://twitter.com/apreshill/status/1078494406301212672">NOT</a> <a href="http://arm.rbind.io/slides/blogdown.html#35">TOUCH</a> any files in your <code>themes/</code> directory.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Here’s hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your <code>themes/&lt;THEME-NAME&gt;/archetypes/</code> folder, then in your project root <code>archetypes/</code> folder next. <a href="https://twitter.com/apreshill/status/1083791211222073344">DO</a> <a href="https://twitter.com/apreshill/status/1078494406301212672">NOT</a> <a href="https://arm.rbind.io/slides/blogdown.html#35">TOUCH</a> any files in your <code>themes/</code> directory.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>You may want to set up archetypes for your blogdown site if you have a “signature” R setup chunk that loads your preferred <code>knitr</code> chunk options, common libraries you always load at setup like <code>tidyverse</code>, <code>ggplot2</code> themes you prefer (<code>theme_minimal()</code> FTW), etc. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo’s <a href="http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/">blog post</a> on archetypes. You <em>can</em> also make <a href="https://gohugo.io/content-management/archetypes/#directory-based-archetypes">directory based archetypes</a> if you use Hugo page bundles, which is a topic of a future post.</p>
 </div>
 <div class="footnotes">

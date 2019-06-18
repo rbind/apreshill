@@ -56,7 +56,7 @@ blogdown::hugo_version()
 
 1. Add custom archetypes as `.md` files to your project root directory (do *not* touch the `archetypes` folder in your `themes/archetypes` folder). 
     - If you don't have that as an empty folder in your project root, make one, then add your archetype files to it.
-    - If you are making a new blogdown site, I recommend using [these options](http://arm.rbind.io/slides/blogdown.html#start-here) to __keep your empty directories__^[These setup options are newish to the blogdown package: https://github.com/rstudio-education/arm-workshop-rsc2019/issues/8]:
+    - If you are making a new blogdown site, I recommend using [these options](https://arm.rbind.io/slides/blogdown.html#start-here) to __keep your empty directories__^[These setup options are newish to the blogdown package: https://github.com/rstudio-education/arm-workshop-rsc2019/issues/8]:
 
     ```{r eval = FALSE}
     library(blogdown)
@@ -68,7 +68,7 @@ blogdown::hugo_version()
     ```
 
     ```{r proj-wizard, echo = FALSE, fig.cap="Using the RStudio Project Wizard"}
-    knitr::include_graphics("http://arm.rbind.io/slides/img/blogdown-workflow-wizard.png")
+    knitr::include_graphics("https://arm.rbind.io/slides/img/blogdown-workflow-wizard.png")
     ```
 
 
@@ -76,7 +76,7 @@ blogdown::hugo_version()
 1. Use the "New Post" Addin in RStudio to create __any and all__ new content for your site (not just *posts*!). Be sure to use the handy dropdown menu to select from all the possible archetypes. Also, careful about the subdirectory here- some themes use *blog*, others use *news*, *articles*, or *posts*.
 
     ```{r echo = FALSE}
-    knitr::include_graphics("http://arm.rbind.io/slides/img/blogdown-newpost-bundle.png")
+    knitr::include_graphics("https://arm.rbind.io/slides/img/blogdown-newpost-bundle.png")
     ```
 
 1. Your archetypes, while only markdown files, *can* include R code. When you use the Addin, be sure to choose `R Markdown (.Rmd)` as the format so that you can run the code.
@@ -159,6 +159,6 @@ So I drafted a [pull request](https://github.com/tidyverse/tidyverse.org/pull/27
 ![](archetypes-after.png)
 
 
-Here's hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your `themes/<THEME-NAME>/archetypes/` folder, then in your project root `archetypes/` folder next. [DO](https://twitter.com/apreshill/status/1083791211222073344) [NOT](https://twitter.com/apreshill/status/1078494406301212672) [TOUCH](http://arm.rbind.io/slides/blogdown.html#35) any files in your `themes/` directory.^[Trust me on this one- if you ever want to update your site this will make that process way harder.]
+Here's hoping Hugo archetypes make some things about adding new content to your site easier. There is no Hugo involved, other than realizing that Hugo will look first in your `themes/<THEME-NAME>/archetypes/` folder, then in your project root `archetypes/` folder next. [DO](https://twitter.com/apreshill/status/1083791211222073344) [NOT](https://twitter.com/apreshill/status/1078494406301212672) [TOUCH](https://arm.rbind.io/slides/blogdown.html#35) any files in your `themes/` directory.^[Trust me on this one- if you ever want to update your site this will make that process way harder.]
 
 You may want to set up archetypes for your blogdown site if you have a "signature" R setup chunk that loads your preferred `knitr` chunk options, common libraries you always load at setup like `tidyverse`, `ggplot2` themes you prefer (`theme_minimal()` FTW), etc. This may be especially helpful if you have multiple team members contributing to a single site and you want their posts to have a uniform setup. Then archetypes can be a real time- and sanity-saver. Get more ideas from Leo's [blog post](http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/) on archetypes. You *can* also make [directory based archetypes](https://gohugo.io/content-management/archetypes/#directory-based-archetypes) if you use Hugo page bundles, which is a topic of a future post.

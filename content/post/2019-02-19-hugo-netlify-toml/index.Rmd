@@ -26,7 +26,7 @@ Thanks to [Mara Averick](https://twitter.com/dataandme) for alerting me that wit
 
 First, you'll need to use Netlify! I am a very happy Netlify user and currently have approximately 33 sites deployed. To setup a new account, navigate to [Netlify](https://www.netlify.com/) and click on the *Sign Up* link. 
 
-![](http://arm.rbind.io/slides/img/netlify-landing.png)
+![](https://arm.rbind.io/slides/img/netlify-landing.png)
 
 Sign up with *GitHub* to connect your GitHub and Netlify accounts (as shown below). 
 
