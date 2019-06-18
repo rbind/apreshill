@@ -34,7 +34,7 @@ image:
 projects: []
 
 links:
-- icon: images
+- icon: door-open
   icon_pack: fas
   name: website
   url: https://arm.rbind.io/

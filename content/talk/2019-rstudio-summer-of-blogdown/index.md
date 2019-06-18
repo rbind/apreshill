@@ -25,7 +25,7 @@ image:
   focal_point: Right
 
 links:
-- icon: images
+- icon: door-open
   icon_pack: fas
   name: website
   url: https://summer-of-blogdown.netlify.com/
@@ -33,6 +33,10 @@ links:
   icon_pack: fab
   name: materials
   url: https://github.com/rstudio-education/summer-of-blogdown-19
+- icon: flask
+  icon_pack: fas
+  name: demo site
+  url: https://kellykapowski.netlify.com/
 
 url_code: ""
 url_pdf: ""
