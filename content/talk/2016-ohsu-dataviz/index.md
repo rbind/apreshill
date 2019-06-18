@@ -18,8 +18,10 @@ url_custom:
 - name: Rmd
   url: https://github.com/apreshill/data-vis-jamboree-ggplot/blob/master/jamboree_heart_ggplot.Rmd
   
+tags: [workshop, data visualization]
+  
 links:
-- icon: door-open
+- icon: images
   icon_pack: fas
   name: materials
   url: https://apreshill.github.io/data-vis-jamboree-ggplot/jamboree_heart_ggplot.html

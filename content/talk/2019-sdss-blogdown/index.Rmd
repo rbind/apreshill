@@ -27,7 +27,7 @@ image:
 projects: []
 
 links:
-- icon: door-open
+- icon: images
   icon_pack: fas
   name: slides
   url: https://rstd.io/blogdown-sdss
