@@ -17,18 +17,20 @@ a:hover {
 .navbar-light .navbar-nav>.nav-item>.nav-link:focus,
 .navbar-light .navbar-nav>.nav-item>.nav-link:hover,
 .navbar-light .navbar-nav>.nav-item>.nav-link:active {
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .navbar-light .navbar-nav > li.nav-item > a.active, 
 .navbar-light .navbar-nav > li.nav-item > a.active:focus, 
 .navbar-light .navbar-nav > li.nav-item > a.active:hover {
-  font-weight: 400;
+  font-weight: 700;
+  transition: color .2s ease;
 }
 
 .navbar-light {
   box-shadow: none;
   text-transform: lowercase;
+  letter-spacing: .08em;
 }
 
 .navbar-nav {
@@ -218,4 +220,11 @@ div.universal-wrapper.pt-3 h1 {
 	margin-right: 10rem;
 	padding-bottom: 68px;
   border-bottom: 1px solid #e13d3d;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #e13d3d;
+  background-image: none;
 }
