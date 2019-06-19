@@ -1,8 +1,8 @@
 ---
+aliases: [up-and-running-with-blogdown]
 title: Up and running with blogdown
 authors: [alison]
 date: '2017-06-12'
-slug: up-and-running-with-blogdown
 tags: [blogdown]
 categories:
   - blogdown
