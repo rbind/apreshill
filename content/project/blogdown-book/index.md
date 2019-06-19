@@ -17,10 +17,11 @@ links:
   icon_pack: fab
   name: Demo site
   url: https://blogdown-demo.rbind.io/
-summary: An example of using the in-built project page.
+summary: A practical guide for creating websites using the blogdown package in R
 tags:
 - book
+- blogdown
 - R
-title: Blogdown book
+title: "blogdown: Creating Websites with R Markdown"
 ---
 

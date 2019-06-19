@@ -1,7 +1,7 @@
 ---
 title: Principles & Practice of Data Visualization
 authors: [Steven Bedrick, Jackie Wirz, alison]
-summary: A 12-week introduction to data visualization developed and taught at Oregon Health & Science University
+summary: A 12-week introduction to data visualization with hands-on labs using R and ggplot2
 tags:
 - course
 - ggplot2
