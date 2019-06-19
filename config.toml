@@ -9,7 +9,7 @@ title = "Alison Hill"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "/"
+baseurl = "https://alison.rbind.io/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
@@ -20,6 +20,8 @@ googleAnalytics = ""
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
+
+
 
 ############################
 ## Advanced options below ##
@@ -64,3 +66,8 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
+
+# Permalinks
+[permalinks]
+  posts = "/post/:year-:month-:slug/"
+  talks = "/talk/:year-:slug/"
