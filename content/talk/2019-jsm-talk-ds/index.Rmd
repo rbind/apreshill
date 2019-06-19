@@ -1,0 +1,26 @@
+---
+title: Teaching Students to Talk about Data Science 
+authors: [alison]
+date: '2019-07-29T14:00:01-07:00'
+publishdate: '2019-06-15'
+event: 'Joint Statistical Meetings 2019'
+event_url: https://ww2.amstat.org/meetings/jsm/2019/onlineprogram/ActivityDetails.cfm?SessionID=218049
+location: Denver, CO
+abstract: ''
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+lastmod: '2019-06-18T22:43:01-07:00'
+featured: no
+image:
+  caption: '[Photo by Ilyass SEDDOUG on Unsplash](https://unsplash.com/photos/c4lXkCHuaXY)'
+  focal_point: 'center'
+  preview_only: no
+projects: []
+---
+
+ 	
+
+Data science educators have a unique opportunity to teach students the skills they need in their future careers. We know that practical skills matter, like being able to wrangle, explore, analyze, and visualize data (preferably using code), but what is easy to overlook is teaching students how to communicate about data science with other people. Being able to communicate about data, code, and insights gained are important skills we can strengthen in the classroom to make a real impact on students. I will talk about three ways to help strengthen data science communication skills that matter: self-reflection, iteration, and broadcasting. Self-reflection involves asking students to reflect on concepts and/or code that they struggled with to increase engagement with materials and independent problem-solving. Iteration involves revisiting old concepts/code, identifying areas for improvement, and making them better, either independently or in collaboration with peers or other experts/advanced users. Broadcasting involves practice (practice, practice, practice) "wrapping up" code with words into coherent narratives about what a data analysis or visualization means. 
