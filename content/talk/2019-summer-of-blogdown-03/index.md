@@ -63,8 +63,4 @@ A hands-on workshop to creating a personal website using blogdown and the Hugo A
 
 Four daily 1-hour sessions (see slides) plus 30-60 minutes of homework for 3 nights.
 
-+ [Day 01: Out-of-the-box](https://summer-of-blogdown.netlify.com/day-01/)
-+ [Day 02: Personalizing your site](https://summer-of-blogdown.netlify.com/day-02/)
-+ [Day 03: Keeping up with your content](https://summer-of-blogdown.netlify.com/day-03/)
-+ [Day 04: The finishing touches](https://summer-of-blogdown.netlify.com/day-04/)
-+ [Bonus: Good ideas](https://summer-of-blogdown.netlify.com/bonus/)
+See the project link for all the days of the summer of blogdown.
