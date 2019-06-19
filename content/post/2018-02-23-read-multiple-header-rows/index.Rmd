@@ -1,9 +1,9 @@
 ---
+aliases: [read-multiple-header-rows]
 title: Read data with multiple header rows into R
 authors: [alison]
 summary: Using the readr package to sidestep a common problem
 date: '2018-07-08'
-slug: read-multiple-header-rows
 categories:
   - readr
   - readxl
