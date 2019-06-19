@@ -260,3 +260,35 @@ img {
 iframe {
 	border: 0;
 }
+
+.page-link {
+	color: #e13d3d;
+	background-color: #fbf9f4;
+	border: 1px solid #e13d3d;
+  border-radius: 0px; /*undo rounded corners*/
+
+}
+
+.page-link:hover {
+	color: #fff;
+	background-color: #e13d3d;
+	border-color: #e13d3d;
+}
+
+.page-item:first-child .page-link {
+	border-top-left-radius: 0rem;
+	border-bottom-left-radius: 0rem;
+}
+
+.page-item:last-child .page-link {
+	border-top-right-radius: 0rem;
+	border-bottom-right-radius: 0rem;
+}
+
+.dark .pagination li > a, .pagination li > span {
+	border: 1px solid #e13d3d;
+}
+
+.dark .page-link:hover {
+	background-color: #e13d3d;
+}
