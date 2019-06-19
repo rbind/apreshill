@@ -25,9 +25,9 @@ selected: true
 
 categories:
   - talk
+  - keynote
 tags:
   - R
-  - keynote
   
 links:
 - icon: images
