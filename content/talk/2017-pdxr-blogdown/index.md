@@ -49,6 +49,6 @@ We will cover:
 
 If you are planning on attending this workshop, please click on the HTML link above for how to prepare before the workshop.
 
-{{< figure src="/img/blogdown-meetup.jpg" >}}
+{{< figure src="blogdown-meetup.jpg" >}}
 
 

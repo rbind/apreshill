@@ -8,7 +8,7 @@ date: 2018-04-06T00:00:00
 event: OHSU BioData Club
 event_url: https://biodata-club.github.io
 image:
-  caption: '[Photo by Clark Tibbs on Unsplash](https://unsplash.com/photos/oqStl2L5oxI)'
+  caption: '[Photo by Nick Fewings on Unsplash](https://unsplash.com/photos/p-1-VJjU-88)'
   focal_point: Smart
 location: Portland, OR
 math: true

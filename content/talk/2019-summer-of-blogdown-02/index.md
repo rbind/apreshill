@@ -1,5 +1,5 @@
 ---
-title: Summer of blogdown- Day 02
+title: "Summer of blogdown: Day 02"
 event: RStudio Summer Internship Program
 event_url: https://blog.rstudio.com/tags/internships
 location: Remote
@@ -22,7 +22,7 @@ featured: false
 
 image:
   caption: '[Photo by Katie McNabb on Unsplash](https://unsplash.com/photos/BJKa8PUb8gI)'
-  focal_point: Right
+  focal_point: "TopRight"
 
 links:
 - icon: images

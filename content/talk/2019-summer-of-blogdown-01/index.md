@@ -1,5 +1,5 @@
 ---
-title: Summer of blogdown- Day 01
+title: "Summer of blogdown: Day 01"
 event: RStudio Summer Internship Program
 event_url: https://blog.rstudio.com/tags/internships
 location: Remote

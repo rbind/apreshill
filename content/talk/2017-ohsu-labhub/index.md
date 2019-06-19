@@ -19,6 +19,7 @@ categories:
 tags:
   - science
   - research
+  - workshop
   
 links:
 - icon: github
