@@ -1,0 +1,43 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+
+      {{ with .Content }}
+      <div class="article-style" itemprop="articleBody">{{ . }}</div>
+      {{ end }}
+
+<!-- https://github.com/tychoish/hugo/commit/b542e9ae80573d99a5562c2297c42385b39de4ca#diff-89b043e57790d3d0f4c424f809ddb6c1R46 -->
+
+      {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups }}
+      <div class="row" id="talk_list">
+        <div class="col-lg-2">
+          <h3>{{ .Key }}</h3>
+        </div>
+        <div class="col-lg-10">
+
+          {{ range .Pages }}
+            {{ if eq $.Params.view 1 }}
+              {{ partial "li_list" . }}
+            {{ else if eq $.Params.view 3 }}
+              {{ partial "li_card" . }}
+            {{ else }}
+              {{ partial "li_compact" . }}
+            {{ end }}
+          {{ end }}
+
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+  
+  {{ partial "pagination" . }}
+
+</div>
+
+{{- end -}}
