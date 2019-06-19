@@ -217,6 +217,7 @@ div.universal-wrapper.pt-3 h1 {
   padding-bottom: 50px;
 }
 
+/* about-contact helpers */
 
 .mini {
 	text-align: left;
@@ -233,4 +234,16 @@ hr {
   background-image: none;
 }
 
-
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+.home-section.wg-experience .card-body {
+	padding: .5rem;
+}
+ 
+.home-section.wg-experience .card .card-text{
+  padding: 0;
+}
