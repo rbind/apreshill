@@ -29,7 +29,7 @@ a:hover {
 
 .navbar-light {
   box-shadow: none;
-  text-transform: lowercase;
+  text-transform: uppercase;
   letter-spacing: .08em;
 }
 
@@ -246,4 +246,17 @@ hr {
  
 .home-section.wg-experience .card .card-text{
   padding: 0;
+}
+
+/* images more like cards; iframes more seamless */
+
+img {
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+iframe {
+	border: 0;
 }
