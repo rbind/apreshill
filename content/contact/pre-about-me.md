@@ -29,15 +29,15 @@ subtitle = ""
   # gradient_end = "SkyBlue"
   
   # Background image.
-  image = ""  # Name of image in `static/img/`.
+  image = "Designlovefest_SANTANA_dress-your-tech_01_01.jpg"  # Name of image in `static/img/`.
   image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
-  text_color_light = false
+  text_color_light = true
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["20px", "0", "20px", "0"]
+  padding = ["20px", "0", "50px", "0"]
 
 [advanced]
  # Custom CSS. 
