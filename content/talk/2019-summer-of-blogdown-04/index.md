@@ -57,3 +57,9 @@ projects:
 # Enable math on this page?
 math: true
 ---
+
+A hands-on workshop to creating a personal website using blogdown and the Hugo Academic theme.
+
+Four daily 1-hour sessions (see slides) plus 30-60 minutes of homework for 3 nights.
+
+See the project link for all the days of the summer of blogdown.
