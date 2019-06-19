@@ -32,6 +32,10 @@ subtitle = ""
   [[content.filter_button]]
     name = "Software"
     tag = "software"
+
+  [[content.filter_button]]
+    name = "Workshop"
+    tag = "workshop"
   
   [[content.filter_button]]
     name = "Course"
@@ -49,7 +53,7 @@ subtitle = ""
   #   1 = List
   #   3 = Card
   #   5 = Showcase
-  view = 5
+  view = 3
 
   # For Showcase view, flip alternate rows?
   flip_alt_rows = true
