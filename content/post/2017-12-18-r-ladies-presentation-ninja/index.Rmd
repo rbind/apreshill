@@ -12,6 +12,12 @@ tags:
 image:
   caption: '[Photo by Sharon McCutcheon on Unsplash](https://unsplash.com/photos/H_FbsufW7yw)'
   focal_point: ''
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: [rladies-xaringan]
 ---
 
 
@@ -36,7 +42,6 @@ output:
 
 Make sure your version of **xaringan** is up-to-date.
 
-![](rladies-demo-slides.png)
 Below is a [demo slide deck](https://alison.rbind.io/slides/rladies-demo-slides.html#1) using the theme.
 
 ```{r echo = FALSE}
