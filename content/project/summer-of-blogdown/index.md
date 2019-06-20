@@ -6,7 +6,7 @@ date: "2016-04-27T00:00:00Z"
 external_link: ""
 image:
   caption: '[Photo by Anna Demianenko on Unsplash](https://unsplash.com/photos/X912jiy57JU)'
-  focal_point: Smart
+  focal_point: 'center'
 links:
 - icon: door-open
   icon_pack: fas

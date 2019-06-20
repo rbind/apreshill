@@ -23,7 +23,7 @@ featured: false
 
 image:
   caption: '[Photo by Edoardo Busti on Unsplash](https://unsplash.com/photos/gEdPXT6BKcc)'
-  focal_point: Right
+  focal_point: 'center'
 
 links:
 - icon: images

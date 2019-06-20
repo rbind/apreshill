@@ -23,7 +23,7 @@ featured: false
 
 image:
   caption: '[Photo by Katie McNabb on Unsplash](https://unsplash.com/photos/BJKa8PUb8gI)'
-  focal_point: "TopRight"
+  focal_point: 'topright'
 
 links:
 - icon: images

@@ -6,7 +6,7 @@ authors:
 date: '2019-02-19'
 image:
   caption: '[Photo by Joanna Kosinska on Unsplash](https://unsplash.com/photos/Prfs32wh-o4)'
-  focal_point: ''
+  focal_point: 'center'
 categories: [hugo, blogdown]
 tags: [blogdown]
 ---
