@@ -1,14 +1,14 @@
 <footer class="site-footer">
-  {{ with site.GetPage "privacy.md" }}
+  {{ with site.GetPage "license.md" }}
   <p class="powered-by">
-    {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ printf "<a href=\"%s\">%s <br> %s </a>" .RelPermalink .Title .LinkTitle  | safeHTML }}<br>
   </p>
   {{ end }}
 
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
 
-    Powered by the
+    Made with <i class="far fa-heart" style="color:#E13D3D"></i>, <a href="https://github.com/rbind/apreshill" target="_blank" rel="noopener"><i class="fas fa-code-branch" style="color:#E13D3D"></i></a>, the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package, and the 
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
