@@ -122,13 +122,13 @@ pre {
 
 pre code { 
   background: none; 
-  font-size: 0.8rem;
+  font-size: 0.9em;
 }
 
 code { 
   color: #d03b39;
   background: #fff;
-  font-size: 0.8rem;
+  font-size: 1em;
 }
 
 .hljs {
