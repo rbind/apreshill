@@ -13,7 +13,7 @@ baseurl = "https://alison.rbind.io/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = ""
+copyright = "&copy; Alison Hill, {year}"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
