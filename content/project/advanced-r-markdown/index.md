@@ -17,6 +17,8 @@ links:
   name: materials
   url: https://github.com/rstudio-education/rmarkdown-extensions-conf19
 
+categories:
+- workshop
 tags:
 - workshop
 - R

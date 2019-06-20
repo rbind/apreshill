@@ -15,7 +15,8 @@ all_day: false
 publishDate: "2017-01-01T00:00:00Z"
 
 authors: [alison]
-tags: []
+tags: [workshop, blogdown]
+categories: [blogdown]
 
 # Is this a featured talk? (true/false)
 featured: false

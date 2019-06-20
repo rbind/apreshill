@@ -2,6 +2,8 @@
 title: Probability & Statistics for Scientists and Engineers
 authors: [alison]
 summary: A 12-week introduction to fundamental concepts underlying statistical data display, analysis, inference, and statistical decision making
+categories:
+- course
 tags:
 - course
 - tidyverse

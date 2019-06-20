@@ -128,7 +128,7 @@ pre code {
 code { 
   color: #d03b39;
   background: #fff;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .hljs {
@@ -215,6 +215,7 @@ div.alert.alert-warning {
 div.universal-wrapper.pt-3 h1 {
   text-align: center;
   padding-bottom: 50px;
+  text-transform: capitalize;
 }
 
 /* about-contact helpers */

@@ -2,6 +2,8 @@
 title: Principles & Practice of Data Visualization
 authors: [Steven Bedrick, Jackie Wirz, alison]
 summary: A 12-week introduction to data visualization with hands-on labs using R and ggplot2
+categories:
+- course
 tags:
 - course
 - ggplot2

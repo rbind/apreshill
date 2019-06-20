@@ -1,6 +1,6 @@
 ---
 title: Summer of blogdown
-summary: A week of the blogdown R package for RStudio's summer 2019
+summary: A week of the blogdown R package for RStudio's summer 2019 interns
 abstract: "A week of blogdown for RStudio's summer 2019 interns."
 date: "2016-04-27T00:00:00Z"
 external_link: ""
@@ -21,6 +21,8 @@ links:
   name: demo site
   url: https://kellykapowski.netlify.com/
 
+categories:
+- workshop
 tags:
 - R
 - blogdown

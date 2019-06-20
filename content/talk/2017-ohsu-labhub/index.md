@@ -1,31 +1,25 @@
 ---
 aliases: [labhub]
+projects: [labhub]
+authors: [alison, Robin Champieux]
 abstract: An OHSU Open Science Workshop on tools and methods for building transparency
   within a lab
 abstract_short: Dive into tools and methods for building lab efficiency and transparency
-date: "2017-12-08"
+date: "2017-12-08T16:00:00Z"
 event: Labhub Workshop
 event_url: https://github.com/apreshill/labhub
 image:
   caption: '[Photo by Eleonora Patricola on Unsplash](https://unsplash.com/photos/CDtfEiyt0kg)'
   focal_point: Smart
-location: Oregon Health & Science University, Portland, Oregon
+location: Portland, OR
 math: true
 selected: true
 title: Labhub Workshop
 
-categories:
-  - workshop
 tags:
   - science
   - research
   - workshop
-  
-links:
-- icon: github
-  icon_pack: fab
-  name: code
-  url: https://github.com/apreshill/labhub
 ---
 
 {{< figure src="ohsu-os-panel.png" >}}

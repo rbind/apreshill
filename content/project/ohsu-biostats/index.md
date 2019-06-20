@@ -2,6 +2,8 @@
 title: Introduction to Data Wrangling, Analysis, & Communication
 authors: [alison]
 summary: A 12-week introductory course that teaches students how to gain and communicate insights from biomedical data
+categories:
+- course
 tags:
 - course
 - tidyverse

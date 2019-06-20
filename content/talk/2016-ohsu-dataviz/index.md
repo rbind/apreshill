@@ -1,5 +1,7 @@
 ---
 aliases: [code-your-graph]
+projects: [code-your-graph]
+authors: [alison, Julianne Myers]
 abstract: A workshop on visualizing your data with ggplot2 and matplotlib
 abstract_short: ""
 date: 2016-06-24T00:00:00
@@ -12,23 +14,8 @@ location: Portland, OR
 math: true
 selected: true
 title: Code Your Graph Workshop
-url_custom:
-- name: html
-  url: ../jamboree_heart_ggplot.html
-- name: Rmd
-  url: https://github.com/apreshill/data-vis-jamboree-ggplot/blob/master/jamboree_heart_ggplot.Rmd
   
-tags: [workshop, data visualization]
-  
-links:
-- icon: images
-  icon_pack: fas
-  name: materials
-  url: https://apreshill.github.io/data-vis-jamboree-ggplot/jamboree_heart_ggplot.html
-- icon: github
-  icon_pack: fab
-  name: code
-  url: https://github.com/apreshill/data-vis-jamboree-ggplot
+tags: [workshop, dataviz, ggplot2]
 ---
 
 {{< figure src="code-your-graph.jpg" >}}
