@@ -261,6 +261,8 @@ iframe {
 	border: 0;
 }
 
+/* pagination buttons */
+
 .page-link {
 	color: #e13d3d;
 	background-color: #fbf9f4;
@@ -285,10 +287,18 @@ iframe {
 	border-bottom-right-radius: 0rem;
 }
 
+/* dark fixes */
+
 .dark .pagination li > a, .pagination li > span {
 	border: 1px solid #e13d3d;
 }
 
 .dark .page-link:hover {
 	background-color: #e13d3d;
+}
+
+.dark a:active, 
+.dark a:focus, 
+.dark a:hover {
+	color: #fff;
 }
