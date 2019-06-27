@@ -1,0 +1,36 @@
+---
+title: Communicating with R Markdown Workshop
+draft: false
+authors: [alison]
+event: 'Young Statisticians Conference 2019'
+event_url: https://ysc2019.netlify.com/#workshop
+location: Canberra, Australia
+summary: "A workshop for R Markdown users who want to get more out of R Markdown (and friends)."
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2019-09-30T08:00:00Z"
+#date_end: "2019-10-02T12:00:00Z"
+all_day: true
+publishdate: "2019-06-15"
+
+links:
+- icon: github
+  icon_pack: fab
+  name: materials
+  url: https://github.com/rstudio-education/communicate-rmd-workshop
+
+categories:
+  - workshop
+tags:
+  - rmarkdown
+lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+image:
+  caption: "[Photo by Jessica To'oto'o on Unsplash](https://unsplash.com/photos/rewWRwPyass)"
+  focal_point: 'center'
+  preview_only: no
+projects: []
+---
+
+In this workshop, we will demystify how R Markdown works under the hood. You will learn practical tools and workflows to increase your efficiency and productivity using R Markdown (including RStudio IDE features and templates), while learning how to use some extension packages along the way. We assume that you have knit an R Markdown document before, but you don’t need to be an advanced R Markdown user to take this workshop.
