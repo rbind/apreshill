@@ -1,5 +1,5 @@
 ---
-title: A Feast for the Eyes
+title: Literate Projecting
 draft: true
 authors: [alison]
 event: 'Young Statisticians Conference 2019'
@@ -10,9 +10,9 @@ summary: ""
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2019-10-01T08:00:00Z"
-date_end: "2019-10-02T12:00:00Z"
-all_day: true
+date: "2019-10-02T09:00:00Z"
+date_end: "2019-10-02T09:45:00Z"
+all_day: false
 publishdate: "2019-06-15"
 
 categories:
@@ -24,7 +24,7 @@ tags:
 lastmod: '2019-06-16T02:20:01-07:00'
 featured: no
 image:
-  caption: '[Photo by Leonie Christine on Unsplash](https://unsplash.com/photos/JGJ51l7Uh_E)'
+  caption: '[Photo by Malvestida Magazine on Unsplash](https://unsplash.com/photos/H9jiKHTpOrU)'
   focal_point: 'center'
   preview_only: no
 projects: []
