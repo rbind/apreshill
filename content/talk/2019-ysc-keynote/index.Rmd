@@ -1,6 +1,6 @@
 ---
 title: Literate Projecting
-draft: true
+draft: false
 authors: [alison]
 event: 'Young Statisticians Conference 2019'
 event_url: https://ysc2019.netlify.com/
