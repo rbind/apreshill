@@ -2,15 +2,19 @@
 title: Take a Sad Plot & Make It Better
 abstract: How I took one sad plot and made it better, and what I learned from it.
 abstract_short: ""
-date: 2019-09-26T18:15:00
 event: R-Ladies Melbourne
 event_url: https://www.meetup.com/rladies-melbourne/events/264886404/
 image:
   caption: '[Photo by Allie Smith on Unsplash](https://unsplash.com/photos/35k9Iwl6SeY)'
   focal_point: Smart
 location: Nous House, Melbourne, Australia
-math: true
-selected: true
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2019-09-26T18:15:00Z"
+date_end: "2019-09-26T20:15:00Z"
+all_day: false
+publishdate: "2019-06-15"
 
 categories:
   - talk
