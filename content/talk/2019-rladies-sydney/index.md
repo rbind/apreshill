@@ -19,6 +19,7 @@ publishdate: "2019-06-15"
 categories:
   - talk
 tags:
+  - oz2019
   - xaringan
   - ggplot2
   - data visualization
