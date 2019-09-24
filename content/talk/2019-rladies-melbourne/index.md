@@ -28,11 +28,11 @@ links:
 - icon: images
   icon_pack: fas
   name: slides
-  url: ""
+  url: "https://alison.netlify.com/rlm-sad-plot-better/"
 - icon: github
   icon_pack: fab
   name: code
-  url: ""
+  url: "https://github.com/apreshill/talks/tree/master/rlm-sad-plot-better"
 ---
 
 In this talk, Alison will talk about one plot’s life cycle, from a sad Powerpoint slide to an Excel chart and finally to the finished product made with the ggplot2 package in R. Along the way, she will discuss why each version of the plot fails in different ways and how each iteration improved on the last one.
