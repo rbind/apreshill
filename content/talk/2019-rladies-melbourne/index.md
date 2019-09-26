@@ -5,8 +5,8 @@ abstract_short: ""
 event: R-Ladies Melbourne
 event_url: https://www.meetup.com/rladies-melbourne/events/264886404/
 image:
-  caption: '[Photo by Lennart Nacke on Unsplash](https://unsplash.com/photos/5r78PKkM3XU)'
-  focal_point: Smart
+  caption: ''
+  focal_point: Center
 location: Nous House, Melbourne, Australia
 
 # Talk start and end times.
