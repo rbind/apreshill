@@ -8,7 +8,7 @@ event_url: https://ww2.amstat.org/meetings/jsm/2019/onlineprogram/ActivityDetail
 location: Denver, CO
 abstract: 'Practical advice for educators to strengthen data science communication skills in the classroom'
 categories: [talk]
-tags: [talk]
+tags: [talk, oz2019]
 subtitle: ''
 summary: ''
 lastmod: '2019-06-18T22:43:01-07:00'
