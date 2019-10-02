@@ -1,5 +1,5 @@
 ---
-title: Literate Projecting
+title: The Art of Literate Projecting
 draft: false
 authors: [alison]
 event: 'Young Statisticians Conference 2019'
