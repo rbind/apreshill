@@ -29,11 +29,11 @@ links:
 - icon: images
   icon_pack: fas
   name: slides
-  url: ""
+  url: "https://alison.netlify.com/rls-plot-twist/"
 - icon: github
   icon_pack: fab
   name: code
-  url: ""
+  url: "https://github.com/apreshill/talks/tree/master/rls-plot-twist"
 ---
 
 Using data from 10 series of The Great British Bake Off, we will walk through eleven ways to visualize the same data using the `ggplot2` package. We'll talk a lot about geoms and variable mappings, but also about what it means to "tidy your data", plus the new pivot functions in the `tidyr` package.
