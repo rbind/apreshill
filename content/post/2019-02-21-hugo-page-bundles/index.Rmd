@@ -82,7 +82,7 @@ readr::write_csv(baker_results, rmarkdown::relative_to(mypostpath, "bakers.csv")
 
 # Bundle Me, blogdown!
 
-First, read the previous post on setting up a [netlify.toml file](post/2019-02-19-hugo-netlify-toml/). Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:
+First, read the previous post on setting up a [netlify.toml file](/post/2019-02-19-hugo-netlify-toml/). Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:
 
 ```{r eval = FALSE}
 blogdown::update_hugo()
