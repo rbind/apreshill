@@ -42,4 +42,4 @@ In this talk, Alison will talk about one plot’s life cycle, from a sad Powerpo
 
 # Latest event
 
-This talk was most recently given at the University of South Wales on 2019/10/04.
+[This talk](https://alison.netlify.com/rlm-sad-plot-better/unsw) was most recently given at the University of South Wales on 2019/10/04.
