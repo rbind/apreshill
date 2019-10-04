@@ -1,5 +1,6 @@
 ---
 title: Take a Sad Plot & Make It Better
+aliases: [2019-unsw]
 abstract: How I took one sad plot and made it better, and what I learned from it.
 abstract_short: ""
 event: R-Ladies Melbourne
@@ -38,3 +39,7 @@ links:
 In this talk, Alison will talk about one plot’s life cycle, from a sad Powerpoint slide to an Excel chart and finally to the finished product made with the ggplot2 package in R. Along the way, she will discuss why each version of the plot fails in different ways and how each iteration improved on the last one.
 
 ![](https://apreshill.github.io/ohsu-biodatavis/slides_files/figure-html/animated.gif)
+
+# Latest event
+
+This talk was most recently given at the University of South Wales on 2019/10/04.
