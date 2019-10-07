@@ -44,7 +44,7 @@ Thanks to <a href="https://twitter.com/dataandme">Mara Averick</a> for alerting 
 <p>Yes that is right- package version mismatches are the leading cause of build failure with Netlify. What does this look like for blogdown users? This means that you are running a version of Hugo locally that doesn’t match the version that Netlify is using to build your site. Most of the time, you are using a more recent version of Hugo than the one Netlify uses. This means that the files your theme relies on may be using newer Hugo functions that were introduced in later Hugo versions- functions that Netlify won’t be able to find working from an older Hugo version. You’ll get <em>all the build errors</em>.</p>
 <p>You can check your local Hugo version by running this code in your R console:</p>
 <pre class="r"><code>blogdown::hugo_version()</code></pre>
-<pre><code>## [1] &#39;0.55.6&#39;</code></pre>
+<pre><code>## [1] &#39;0.57.2&#39;</code></pre>
 <p>Now, we want Netlify to use this same version of Hugo when it builds your site. You can do this two ways:</p>
 <ol style="list-style-type: decimal">
 <li>Do this in your browser (👎)</li>
@@ -70,8 +70,11 @@ Thanks to <a href="https://twitter.com/dataandme">Mara Averick</a> for alerting 
   HUGO_ENABLEGITINFO = &quot;true&quot;
   
 [context.branch-deploy.environment]
-  HUGO_VERSION = &quot;0.54.0&quot; # if older, use format: 0.53 (no trailing zero)</code></pre>
-<p>You can leave off the last chunk if you don’t want to use <a href="https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/">branch deploys</a>, but I ❤️ this Netlify feature and encourage you to try it out. I’ve starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is <strong>lovely</strong>. Every branch gets a link 🎉.</p>
+  HUGO_VERSION = &quot;0.54.0&quot; # if older, use format: 0.53 (no trailing zero)
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = &quot;0.54.0&quot;</code></pre>
+<p>You can leave off the last two chunk if you don’t want to use <a href="https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/">branch deploys</a> or <a href="https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/">preview deploys</a>, but I ❤️ these two Netlify features and encourage you to try them out. I’ve starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is <strong>lovely</strong>. Every branch and pull request gets a link 🎉.</p>
 <p>So add this file to your blogdown site repo and push to GitHub.</p>
 <p>Note that, according to the <a href="https://www.netlify.com/docs/netlify-toml-reference/">Netlify docs</a>:</p>
 <blockquote>

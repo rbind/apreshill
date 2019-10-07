@@ -87,9 +87,12 @@ Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill
   
 [context.branch-deploy.environment]
   HUGO_VERSION = "0.54.0" # if older, use format: 0.53 (no trailing zero)
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.54.0"
 ```
 
-You can leave off the last chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/), but I `r emo::ji("heart")` this Netlify feature and encourage you to try it out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch gets a link `r emo::ji("tada")`.
+You can leave off the last two chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/) or [preview deploys](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/), but I `r emo::ji("heart")` these two Netlify features and encourage you to try them out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch and pull request gets a link `r emo::ji("tada")`.
 
 So add this file to your blogdown site repo and push to GitHub.
 
