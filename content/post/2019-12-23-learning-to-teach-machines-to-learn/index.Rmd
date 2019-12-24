@@ -30,7 +30,7 @@ It is always hard to develop an entirely new workshop, especially if you are doi
 
 1. [Machine Learning: A primer](https://www.nature.com/articles/nmeth.4526) by     Danilo Bzdok, Martin Krzywinski & Naomi Altman, from the [Nature Methods Points of Significance collection](https://www.nature.com/collections/qghhqm/pointsofsignificance)- this collection in general is always straight-forward with great visuals. Start with the primer, then skim these:
 
-    + [Statistics versus machine learning](Statistics versus machine learning)
+    + [Statistics versus machine learning](https://www.nature.com/articles/nmeth.4642)
     + [Machine learning: supervised methods](https://www.nature.com/articles/nmeth.4551)
     + [Classification and regression trees](https://www.nature.com/articles/nmeth.4370) (decision trees are the "base learner" for many ensemble methods - this is a good intro)
     + [Ensemble methods: bagging and random forests](https://www.nature.com/articles/nmeth.4438)
