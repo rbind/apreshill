@@ -24,14 +24,11 @@ projects: []
 <ol style="list-style-type: decimal">
 <li><p><strong><a href="https://vas3k.com/blog/machine_learning/">Machine Learning for Everyone.</a> In simple words. With real-world examples. Yes, again.</strong> In my experience, the biggest hurdle to getting started is sifting through both the hype and the math. This is a readable illustrated introduction to key concepts that will help you start building your own mental model of this space. For example, <em>“the only goal of machine learning is to predict results based on incoming data. That’s it.”</em> There you go! Start here.</p>
 <p><a href="https://vas3k.com/blog/machine_learning/" target="_blank"><img src="https://i.vas3k.ru/7w1.jpg" width="80%" /></a></p></li>
-<li><p><a href="https://www.nature.com/articles/nmeth.4526">Machine Learning: A primer</a> by Danilo Bzdok, Martin Krzywinski &amp; Naomi Altman, from the <a href="https://www.nature.com/collections/qghhqm/pointsofsignificance">Nature Methods Points of Significance collection</a>- this collection in general is always straight-forward with great visuals. Start with the primer, then skim these:</p>
+<li><p><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">A Visual Introduction to Machine Learning by r2d3</a>. This is a wonderful two-part series (that I wish would be extended!):</p>
 <ul>
-<li><a href="https://www.nature.com/articles/nmeth.4642">Statistics versus machine learning</a></li>
-<li><a href="https://www.nature.com/articles/nmeth.4551">Machine learning: supervised methods</a></li>
-<li><a href="https://www.nature.com/articles/nmeth.4370">Classification and regression trees</a> (decision trees are the “base learner” for many ensemble methods - this is a good intro)</li>
-<li><a href="https://www.nature.com/articles/nmeth.4438">Ensemble methods: bagging and random forests</a></li>
-</ul>
-<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnmeth.4438/MediaObjects/41592_2017_Article_BFnmeth4438_Fig1_HTML.jpg?as=webp" /><!-- --></p></li>
+<li><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">Part I: A Decision Tree</a></li>
+<li><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">Part II: Model Tuning and the Bias-Variance Tradeoff</a> <br><br></li>
+</ul></li>
 <li><p><a href="https://supervised-ml-course.netlify.com/">Supervised Machine Learning course by Julia Silge</a> Taught with R and the <code>caret</code> package (the precursor to the in-development <strong>tidymodels</strong> ecosystem), this is a great next step in your machine learning journey as you’ll start <em>doing ML</em> right away in your browser using an innovative course delivery platform. You’ll also get to play with data that is <em>not</em> <code>iris</code>, <code>titanic</code>, or <code>AmesHousing</code>. This will be sweet relief because you’ll find the rest of my recommended resources all basically build models to predict home prices in Ames, Iowa.</p>
 <p><a href="https://supervised-ml-course.netlify.com/" target="_blank"><img src="https://raw.githubusercontent.com/juliasilge/supervised-ML-case-studies-course/master/static/social.png" width="50%" /></a></p></li>
 <li><p><a href="https://bradleyboehmke.github.io/HOML/">Hands-on Machine Learning with R</a> by Bradley Boehmke &amp; Brandon Greenwell. Another great way to learn concepts plus code, although another one that focuses on the <code>caret</code> package (pre-tidymodels). Each chapter maps onto a new learning algorithm, and provides a code-through with real data from building to tuning. The authors also offer practical advice for each algorithm, and the “final thoughts” sections at the end of each chapter will help you tie it all together.</p>
@@ -51,6 +48,7 @@ projects: []
 <li><p>At this point, if you can read through the above resources and you are no longer feeling awash in new terminology, I think your vocabulary and mental model are in pretty good shape! That means you are ready for the next step, which is to read Max Kuhn and Kjell Johnson’s new book <a href="http://www.feat.engineering/">Feature Engineering and Selection: A Practical Approach for Predictive Models</a></p>
 <p><a href="http://www.feat.engineering/" target="_blank"><img src="https://images.tandf.co.uk/common/jackets/amazon/978113807/9781138079229.jpg" width="40%" /></a></p>
 <p>In my experience, the later chapters in this book filled in a lot of lingering questions I had about certain methods, like whether to use <a href="http://www.feat.engineering/categorical-trees.html">factor or dummy variables in tree-based models</a>. But also don’t miss the section on <a href="http://www.feat.engineering/important-concepts.html">“important concepts”</a> at the beginning- this <em>should</em> feel like a nice review if you’ve gotten this far!</p></li>
+<li><p><a href="https://web.stanford.edu/~hastie/ElemStatLearn/">Elements of Statistical Learning</a>. The entire PDF of the book is available online. A great resource for those with a strong statistics background, and for those looking for more math and formulas.</p></li>
 </ol>
 <div id="other-note-worthy-resources" class="section level2">
 <h2>Other note-worthy resources</h2>
@@ -71,6 +69,14 @@ projects: []
 <p>I love her <a href="https://shirinsplayground.netlify.com/categories/sketchnotes/">sketchnotes</a>.</p>
 <p><a href="https://www.shirin-glander.de/"><img src="https://shiring.github.io/netlify_images/lime_sketchnotes_guq6u5.jpg" /></a><!-- --></p></li>
 <li><p>I also found Rafael Irizarry’s <a href="https://rafalab.github.io/dsbook/introduction-to-machine-learning.html">“Introduction to Machine Learning”</a>, a chapter from his <a href="https://rafalab.github.io/dsbook/">Introduction to Data Science book</a>, to have some helpful discussion.</p></li>
+<li><p><a href="https://www.nature.com/articles/nmeth.4526">Machine Learning: A primer</a> by Danilo Bzdok, Martin Krzywinski &amp; Naomi Altman, from the <a href="https://www.nature.com/collections/qghhqm/pointsofsignificance">Nature Methods Points of Significance collection</a>- this collection in general is always straight-forward with great visuals. Start with the primer, then skim these:</p>
+<ul>
+<li><a href="https://www.nature.com/articles/nmeth.4642">Statistics versus machine learning</a></li>
+<li><a href="https://www.nature.com/articles/nmeth.4551">Machine learning: supervised methods</a></li>
+<li><a href="https://www.nature.com/articles/nmeth.4370">Classification and regression trees</a> (decision trees are the “base learner” for many ensemble methods - this is a good intro)</li>
+<li><a href="https://www.nature.com/articles/nmeth.4438">Ensemble methods: bagging and random forests</a></li>
+</ul>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnmeth.4438/MediaObjects/41592_2017_Article_BFnmeth4438_Fig1_HTML.jpg?as=webp" /><!-- --></p></li>
 </ul>
 <p>That’s all for now- if you are taking my workshop in January I look forward to meeting you in person! If not, rest assured that all code and materials will be shared openly after the workshop. Until then, happy learning 🤖</p>
 </div>
