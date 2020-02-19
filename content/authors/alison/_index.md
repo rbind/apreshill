@@ -15,7 +15,9 @@ education:
     year: 2002
 email: ""
 interests:
-- Data science / statistics
+- Data science
+- Statistics
+- Predictive modeling & machine learning
 - Data visualization
 - Literate programming
 - Education
@@ -53,6 +55,13 @@ social:
 superuser: true
 ---
 
-I am a Data Scientist & Professional Educator at [RStudio](https://rstudio.com), where I work to help people learn and use programming to do better work in less time, with less friction, and (perhaps) more joy. 
+I am a Data Scientist & Professional Educator at [RStudio PBC](https://rstudio.com/). I am an [international keynote speaker](talks/), and I regularly lead workshops and develops online learning materials on topics like [reproducible research](project/rmd4medicine/), [machine learning](https://conf20-intro-ml.netlify.com/), and data visualization. My teaching materials have been used by [NASA](https://open.nasa.gov/explore/datanauts/), [Pew Research Center](https://medium.com/pew-research-center-decoded/using-tidyverse-tools-with-pew-research-center-survey-data-in-r-bdfe61de0909), [University of Oregon](https://github.com/uo-datasci-specialization), and now [RStudio](https://www.rstudio.com/). I am also a co-author of the book [_blogdown: Creating Websites with R Markdown_](https://bookdown.org/yihui/blogdown/).
 
-I love working with data scientists across the spectrum- from beginners to advanced users- and particularly enjoy using software tools to create educational materials that enlighten and engage learners. Topics I teach range from literate programming to machine learning. My teaching materials have been used by [NASA](https://open.nasa.gov/explore/datanauts/), [Pew Research Center](https://medium.com/pew-research-center-decoded/using-tidyverse-tools-with-pew-research-center-survey-data-in-r-bdfe61de0909), [University of Oregon](https://github.com/uo-datasci-specialization), and now [RStudio](https://www.rstudio.com/).
+I received my PhD in psychology and quantitative methods from Vanderbilt University in 2008. Prior to joining RStudio, I was an Assistant Professor at Arizona State University, and an Associate Professor at Oregon Health & Science University (OHSU). While at OHSU, I was an NIH-funded Principal Investigator and the Assistant Director of the *Center for Spoken Language Understanding*. I was nominated for a distinguished faculty award for outstanding teaching, and was awarded an [excellence in graduate education award](https://www.ohsu.edu/school-of-medicine/honors-and-awards-ceremony-2018-school-medicine) from the OHSU School of Medicine. My
+[research](https://profiles.impactstory.org/u/0000-0002-8082-1890) has been
+published in
+[Pediatrics](publication/2015-obesity-in-asd-multisite/),
+[Autism Research](publication/2016-uh-and-um-asd-sli/),
+and [other peer-reviewed journals](publication/#2).
+
+
