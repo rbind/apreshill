@@ -1,0 +1,40 @@
+---
+title: Introduction to Machine Learning with the Tidyverse 
+draft: false
+event: 'Cascadia R Conf 2020'
+event_url: https://cascadiarconf.com/
+location: Eugene, OR
+summary: "Cascadia R Conf 2020: A 4-hour workshop to introduce the basics of machine learning in R using tidymodels."
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2020-05-31T10:15:00Z"
+date_end: "2020-05-31T16:15:00Z"
+all_day: false
+publishdate: "2020-02-01"
+
+links:
+- icon: door-open
+  icon_pack: fas
+  name: website
+  url: https://tidyml-cascadiarconf.netlify.com/
+- icon: github
+  icon_pack: fab
+  name: materials
+  url: https://github.com/rstudio-education/tidyml-cascadiarconf
+
+categories:
+  - workshop
+tags:
+  - tidymodels
+  - machine learning
+lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+image:
+  caption: '[Photo by David Kovalenko on Unsplash](https://unsplash.com/photos/s6nAmr5W7rI)'
+  focal_point: 'center'
+  preview_only: no
+projects: [tidyml]
+---
+
+This four-hour workshop will provide a gentle introduction to machine learning with R using the modern suite of predictive modeling packages called [tidymodels](https://github.com/tidymodels). We will build, evaluate, compare, and tune predictive models. Along the way, we’ll learn about key concepts in machine learning including overfitting, the holdout method, the bias-variance trade-off, ensembling, cross-validation, and feature engineering. Learners will gain knowledge about good predictive modeling practices, as well as hands-on experience using tidymodels packages like [parsnip](https://tidymodels.github.io/parsnip), [rsample](https://tidymodels.github.io/rsample), [recipes](https://tidymodels.github.io/recipes/), [yardstick](https://tidymodels.github.io/yardstick/), [tune](https://tidymodels.github.io/tune/), and [workflows](https://tidymodels.github.io/workflows/).
