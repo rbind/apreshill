@@ -162,7 +162,7 @@ lm_spec <-
 lm_spec
 ```
 
-Things that missing: data (we haven't touched it yet) and a formula (no data, do variables). This is an *abstract* model specification. See other possible parsnip models [here](https://tidymodels.github.io/parsnip/articles/articles/Models.html).
+Things that are missing: data (we haven't touched it yet) and a formula (no data, no variables, no twiddle `~`). This is an *abstract* model specification. See other possible parsnip models [here](https://tidymodels.github.io/parsnip/articles/articles/Models.html).
 
 ## Recipe: not happening here, folks
 
@@ -172,7 +172,7 @@ This is where you would normally insert some code for feature engineering using 
 
 ## Rsample: initial split
 
-We'll use the [rsample package](https://tidymodels.github.io/rsample/) split (*ayee! I promise no penguins were hurt in the writing of this blog post*) the penguins up into two datasets: training and testing. If you are unfamiliar with this practice, read up on [the holdout method](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part1.html#resubstitution-validation-and-the-holdout-method).
+We'll use the [rsample package](https://tidymodels.github.io/rsample/) to split (*ayee! I promise no penguins were hurt in the writing of this blog post*) the penguins up into two datasets: training and testing. If you are unfamiliar with this practice, read up on [the holdout method](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part1.html#resubstitution-validation-and-the-holdout-method).
 
 ```{r}
 penguin_split <- initial_split(penguins, strata = species)
