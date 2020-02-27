@@ -1,28 +1,27 @@
 ---
 title: 'Take a Sad Script & Make it Better: Tidymodels Edition'
 author: Alison Hill
-summary: 'Cross-validation with tidymodels used to be sad, now it is better.'
-date: '2020-02-20'
-slug: better-tidymodels-cv
+date: '2020-02-27'
 categories:
   - machine learning
   - tidymodels
 tags:
   - tidymodels
-subtitle: ''
-authors: []
+summary: Cross-validation with tidymodels used to be sad, now it is better.
+slug: better-tidymodels-cv
 lastmod: '2020-02-20T14:29:04-08:00'
 featured: no
 disable_jquery: no
 image:
-  caption: 'Image by [Rachel Martin](https://unsplash.com/photos/PnAc2UaeqII)'
+  caption: Image by [Rachel Martin](https://unsplash.com/photos/PnAc2UaeqII)
   focal_point: ''
   preview_only: no
-projects: [tidyml]
+projects:
+  - tidyml
 output:
   blogdown::html_page:
-    toc: true
-    number_sections: true
+    toc: yes
+    number_sections: yes
     toc_depth: 1
 ---
 
@@ -103,7 +102,7 @@ I downloaded and imported these three datasets using R, then did some very light
 ```{r}
 penguins <- 
   read_csv(
-    here::here("content/post/2020-02-20-better-tidymodels/data/penguins.csv")) %>% 
+    here::here("content/post/2020-02-27-better-tidymodels/data/penguins.csv")) %>% 
   mutate_if(is.character, as.factor)
 
 glimpse(penguins)
