@@ -8,7 +8,6 @@ categories:
 tags:
   - tidymodels
 summary: Cross-validation with tidymodels used to be sad, now it is better.
-slug: better-tidymodels-cv
 lastmod: '2020-02-20T14:29:04-08:00'
 featured: no
 disable_jquery: no
