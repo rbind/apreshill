@@ -7,8 +7,7 @@ categories:
   - tidymodels
 tags:
   - tidymodels
-summary: Cross-validation with tidymodels used to be sad, now it is better.
-lastmod: '2020-02-20T14:29:04-08:00'
+summary: Taking a sad script and making it better for model cross-validation.
 featured: no
 disable_jquery: no
 image:
