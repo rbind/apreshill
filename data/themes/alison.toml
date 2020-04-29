@@ -5,7 +5,7 @@ name = "alison"
 light = true
 
 # Primary
-primary = "#E13D3D"
+primary = "#d53135"
 
 # Menu
 menu_primary = "#fbf9f4"
