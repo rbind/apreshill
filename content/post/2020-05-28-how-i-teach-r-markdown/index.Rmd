@@ -7,29 +7,29 @@ categories: []
 tags:
   - rmarkdown
 subtitle: ''
-summary: ''
+summary: 'A handful of guiding principles for introducing beginners to the R Markdown family of packages.'
 authors: []
 lastmod: '2020-05-28T20:45:57-07:00'
 featured: no
 disable_jquery: no
 image:
-  caption: ''
+  caption: '[Photo by Timur Kozmenko on Unsplash](https://unsplash.com/photos/7gGvtQ8U4BU)'
   focal_point: ''
   preview_only: no
 projects: []
 ---
 
-Ah, R Markdown. I love teaching R Markdown. But this was not love at first sight. When I first started teaching with R at Oregon Health & Science University, my students used R Markdown for their homework assignments and in-class labs. This is a great way to start for beginners, to be honest- just use it! I found that most people are not very disoriented by a file that mixes text and code; a concern I had at first and one that I've heard voiced by other educators. It seems natural to use if it is your first exposure to *all the data science things*, especially if you've never used an R script.
+Ah, [R Markdown](https://rmarkdown.rstudio.com/). I love teaching R Markdown. But this was not a love at first sight scenario. When I first started teaching with R at Oregon Health & Science University many moons ago, my students used R Markdown for their homework assignments and in-class labs. This is a great way to start for beginners, to be honest- just use it! I found that most people are not very disoriented by a file that mixes text and code; a concern I had at first and one that I've heard voiced by other educators. It seems natural to use if it is your first exposure to *all the data science things*, especially if you've never used an R script.
 
-I did notice, though, that over the course of even just a few weeks, many of my students would reach unbearable levels of R Markdown curiosity. I would see signs of growing pains in their assignments, like how can I turn off these messages and warnings when I load packages? How do you make it have a table of contents? How can I change fonts and colors?
+I did notice, though, that over the course of even just a few weeks, many of my students would reach unbearable levels of R Markdown curiosity. I would see signs of growing pains in their assignments, like how can I turn off these messages and warnings when I load packages? This is so long- how can I make it easier to find things? How can I make it look *better*?
 
 For all learners, there comes an uncomfortable point where you simply cannot just continue to use this awesome tool without learning how to use it. And I realized when I was teaching that ultimately it was unfair of me to assume that they would just learn an entire ecosystem while I stood idly by, clutching the secrets of being an ["R Markdown Whisperer"](https://twitter.com/sharlagelfand/status/1114264529477799937?s=20) close to my chest.
 
-Like, **why can't you just find the piñata**? But more importantly, what happens when you can't? I think it is that they either don't like or don't appreciate a tool that I genuinely think would make their working lives better.
+Like, **why can't you just find the piñata, kid**? But more importantly, what happens when you can't? I think the risk is that learners either won't like or won't appreciate a tool that I genuinely think would make their working lives better. If I believed it was worth their time to use it, it was worth my time to teach it.
 
 ![](https://media.giphy.com/media/xFcFJAryrhO6s/giphy.gif)
 
-So like any good educator, I changed. I decided that the next year, I would teach R Markdown. And I did. I went from:
+So like any good educator, I evolved. I decided that the next year, I would teach R Markdown. And I did. I went from:
 
 > "Just use it"
 
@@ -47,17 +47,17 @@ Guess what happened? The next batch of assignment my TA team and I received were
 
 But I have to admit, the first time I taught it, I had a hard time teaching it! I realized that I lacked vocabulary around things I used everyday, but had never really talked about out loud with anyone *in words*.
 
-Now, in my role at RStudio, I've devoted a lot of time and energy trying to figure out how we can make these simple things about R Markdown more accessible- easier to discover, easier to debug, easier to use, and easier to talk about.
+Now, in my role at RStudio, I've devoted a lot of time and energy trying to figure out how we can make R Markdown easier- easier to discover, easier to debug, easier to use, and easier to talk about.
 
-So without further ado, here are some of my guiding philosophies when introducing R Markdown to beginners, for those who are ready to go beyond casual knitter:
+So without further ado, here are some of my guiding principles when introducing R Markdown to beginners, for those who are ready to go beyond casual knitter:
 
 1.  **Make it. Make it again.** Knit early. Knit often. That means starting with a pre-filled Rmd document usually that you know *will* knit. How do you motivate repeated knitting and make it satisfying? Teach the basics of output formats and options by editing mainly the YAML. Your goal is to show how small effort --\> high polish. For single docs, I love [`html_document()`](https://bookdown.org/yihui/rmarkdown/html-document.html) with a floating table of contents and a theme, switching quickly to [`bookdown::html_document2()`](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) and `distill::distill_article()`. The latter two also enable automated figure numbering, which for scientific audiences is quite nice!
 
-2.  **Make it pretty.** The starting Rmd should have a nice [ggplot2](https://ggplot2.tidyverse.org/) graphic in there, and maybe a pretty [gt](https://gt.rstudio.com/) table too. This is a motivational, aspirational document! I also try to use local data sets, so they can see how that actually works, as opposed to using a data package.
+2.  **Make it pretty.** The starting Rmd should have a nice [ggplot2](https://ggplot2.tidyverse.org/) graphic in there, and maybe a pretty [gt](https://gt.rstudio.com/) table too. This is a motivational, aspirational document! I also try to use local data sets, so they can see how that actually works, as opposed to using a data package. 
 
     `r htmltools::HTML("{{< tweet 1101978567842291712 >}}")`
 
-3.  **Make it snappy**. I aim to get to a shareable link in the first 20 minutes (at most!). I like to use [Netlify Drop](https://app.netlify.com/drop) for this. No account sign-up needed, and everyone knows how to drag-and-drop (see video below). It is very satisfying to get a link they can share with their mom/best friend/arch nemesis (kidding). I like to have everyone drop their links in a chat too, like a Slack, Google Doc, or a Gitter channel if doing a workshop.
+3.  **Make it snappy**. I aim to get to a shareable link in the first 20 minutes (at most!). I like to use [Netlify Drop](https://app.netlify.com/drop) for this. No account sign-up needed, and everyone knows how to drag-and-drop (see video below). It is very satisfying to get a link they can share with their mom/best friend/arch nemesis (kidding). I like to have everyone drop their links in a chat too, like a Slack, Google Doc, or a Gitter channel if doing a workshop. My favorite motto: *"if it knits, it ships"* `r emo::ji("ship")`
 
     ```{r echo=FALSE}
     knitr::include_url("https://rstudio-education.github.io/sharing-short-notice/images/single-doc-dnd.mp4")
@@ -67,7 +67,7 @@ So without further ado, here are some of my guiding philosophies when introducin
 
 5. **Make it easy.** People will only keep using R Markdown if they see it making their life easier. So show them how. For example, the RStudio IDE has some very nice built-in features that make it much easier to be an R Markdown user. I point out things having a [global setup chunk](https://apreshill.github.io/rmd4cdc/#112), and IDE features like:
 
-![](https://rmd4medicine.netlify.app/slides/images/rmd-nav.png)
+    ![](https://rmd4medicine.netlify.app/slides/images/rmd-nav.png)
 
 What do I save until later?
 
