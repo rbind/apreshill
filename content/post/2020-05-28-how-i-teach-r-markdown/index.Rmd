@@ -76,11 +76,11 @@ So without further ado, here are some of my guiding principles when introducing 
 
 What do I save until later?
 
-1.  Rendering from the command line. I think knitting in the RStudio IDE can get you very far- this I consider an intermediate to advanced concept that is confusing if introduced too early. I've never heard someone say "Well there is this simple button, but how can I do the same thing from the R Console?"
+1.  Rendering with `render()`. I think knitting in the RStudio IDE can get you very far- this I consider an intermediate to advanced concept that is confusing if introduced too early. I've never heard someone say *"Well there is this simple button, but how can I do the same thing from the command line?"*
 
-2.  Parameterized reports. I actually *do* use parameters though! I'll have at least one or two often in one of my Rmds, and mention them briefly in my wrap-up. I teach parameters explicitly with actual exercises when I have \> 1 hour.
+2.  [Parameterized reports](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html). I actually *do* use parameters though! I'll have at least one or two often in one of my Rmds, and mention them briefly in my wrap-up. I teach parameters explicitly with actual exercises when I have \> 1 hour.
 
-3.  Multiple Rmd output formats. I tend to start with single output formats first. If I have > 1.5 hours and it matches my learning objectives, then I happily oblige- I love teaching bookdown, blogdown, and distill websites. But to start, I stay single.
+3.  Multiple Rmd output formats. I tend to start with single output formats first. If I have > 1.5 hours and it matches my learning objectives, then I happily oblige- I love teaching [bookdown](https://bookdown.org/yihui/rmarkdown/books.html), [blogdown](https://bookdown.org/yihui/rmarkdown/websites.html), and [distill websites](https://rstudio.github.io/distill/website.html). But to start, I stay single.
 
 4.  Markdown. I skim markdown, and always provide a link to an interactive tutorial. This [one](https://commonmark.org/help/tutorial/) is my favorite. Teaching markdown can be...dry. I show some bits on the slides because I cannot count on everyone doing the interactive tutorial ahead of time, but I do not linger much.
 
