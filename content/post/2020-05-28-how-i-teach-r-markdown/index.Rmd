@@ -77,7 +77,7 @@ What do I save until later?
 
 3.  Multiple Rmd output formats. I tend to start with single output formats first. If I have > 1.5 hours and it matches my learning objectives, then I happily oblige- I love teaching bookdown, blogdown, and distill websites. But to start, I stay single.
 
-4.  All of markdown. I skim markdown, and always provide a link to an interactive tutorial. This [one](https://commonmark.org/help/tutorial/) is my favorite. Teaching markdown can be...dry. I show some bits on the slides because I cannot count on everyone doing the interactive tutorial ahead of time, but I do not linger much.
+4.  Markdown. I skim markdown, and always provide a link to an interactive tutorial. This [one](https://commonmark.org/help/tutorial/) is my favorite. Teaching markdown can be...dry. I show some bits on the slides because I cannot count on everyone doing the interactive tutorial ahead of time, but I do not linger much.
 
   ![](https://media.giphy.com/media/U7Uxq9Lyz02oStvUIE/giphy.gif)
 
