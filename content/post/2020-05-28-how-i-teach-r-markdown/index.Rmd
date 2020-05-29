@@ -24,7 +24,7 @@ I did notice, though, that over the course of even just a few weeks, many of my 
 
 For all learners, there comes an uncomfortable point where you simply cannot just continue to use this awesome tool without learning how to use it. And I realized when I was teaching that ultimately it was unfair of me to assume that they would just learn an entire ecosystem while I stood idly by, clutching the secrets of being an ["R Markdown Whisperer"](https://twitter.com/sharlagelfand/status/1114264529477799937?s=20) close to my chest.
 
-Like, **why can't you just find the piñata, kid**? But more importantly, what happens when you can't? I think the risk is that learners either won't like or won't appreciate a tool that I genuinely think would make their working lives better. If I believed it was worth their time to use it, it was worth my time to teach it.
+Like, **why can't you just find the piñata, kid**? But more importantly, what happens when you can't? I think the risk is that learners either won't like or won't appreciate a tool that I genuinely [think would make their working lives better](https://community.rstudio.com/t/convince-me-to-start-using-r-markdown/1636/7). If I believed it was worth their time to use it, it was worth my time to teach it.
 
 ![](https://media.giphy.com/media/xFcFJAryrhO6s/giphy.gif)
 
@@ -50,7 +50,13 @@ Now, in my role at RStudio, I've devoted a lot of time and energy trying to figu
 
 So without further ado, here are some of my guiding principles when introducing R Markdown to beginners, for those who are ready to go beyond casual knitter:
 
-1.  **Make it. Make it again.** Knit early. Knit often. That means starting with a pre-filled Rmd document usually that you know *will* knit. How do you motivate repeated knitting and make it satisfying? Teach the basics of output formats and options by editing mainly the YAML. Your goal is to show how small effort --\> high polish. For single docs, I love [`html_document()`](https://bookdown.org/yihui/rmarkdown/html-document.html) with a floating table of contents and a theme, switching quickly to [`bookdown::html_document2()`](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) and `distill::distill_article()`. The latter two also enable automated figure numbering, which for scientific audiences is quite nice!
+1.  **Make it. Make it again.** Knit early. Knit often. That means starting with a pre-filled Rmd document usually that you know *will* knit. How do you motivate repeated knitting and make it satisfying? Teach the basics of output formats and options by editing mainly the YAML. Your goal is to show how small effort --\> high polish. For single docs, I love [`html_document()`](https://bookdown.org/yihui/rmarkdown/html-document.html) with a floating table of contents and a theme (like [this](https://rstudio-education.github.io/sharing-short-notice/#24)), switching quickly to [`bookdown::html_document2()`](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) and `distill::distill_article()`. The latter two also enable automated figure numbering, which for scientific audiences is quite nice!
+
+    `r htmltools::HTML("{{< tweet 1101866080996212736 >}}")`
+    
+    Bonus when using a `theme` with `html_document()`: show off the `code_download` output option!
+
+     `r htmltools::HTML("{{< tweet 1108925218850893832 >}}")`   
 
 2.  **Make it pretty.** The starting Rmd should have a nice [ggplot2](https://ggplot2.tidyverse.org/) graphic in there, and maybe a pretty [gt](https://gt.rstudio.com/) table too. This is a motivational, aspirational document! I also try to use local data sets, so they can see how that actually works, as opposed to using a data package. 
 
