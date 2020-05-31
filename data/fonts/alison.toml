@@ -2,10 +2,10 @@
 name = "alison"
 
 # Optional Google font URL
-google_fonts = "Arapey:400,400i|Karla:400,400i,700,700i|Roboto+Mono"
+google_fonts = "Caladea:400,400i|Karla:400,400i,700,700i|Roboto+Mono"
 
 # Font families
-heading_font = "Arapey"
+heading_font = "Caladea"
 body_font = "Karla"
 nav_font = "Karla"
 mono_font = "Roboto Mono"

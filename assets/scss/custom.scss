@@ -1,14 +1,14 @@
 /* links */
 
-a {
+/*a {
   color: #d53135;
   cursor: pointer;
-}
+}*/
 
 a:active, 
 a:focus, 
 a:hover {
-  color: #d03b39;
+  color: #09BC8A;
 }
 
 /* nav */
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .navbar-nav {
-  border-bottom: 2px solid #d53135;
+  border-bottom: 2px solid #004346;
 }
 
 .navbar-brand {
@@ -45,23 +45,7 @@ a:hover {
 
 .navbar-light .navbar-brand:focus, 
 .navbar-light .navbar-brand:hover {
-  color: #d03b39;
-}
-
-/* text */
-
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  font-weight: 400;
-}
-
-body {
-  color: #333;
-  font-size: 0.9rem;
-}
-
-h1 {
-  font-size: 2rem;
+  color: #09BC8A;
 }
 
 /* home page */
@@ -141,21 +125,21 @@ code {
 div.alert-note > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #d53135;
+  color: #004346;
   content: "\f0a4";
 }
 
 div.alert-warning > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #d53135;
+  color: #004346;
   content: "\f1e2";
 }
 
 .alert-note {
   color: #333;
   background-color: #fff;
-  border-top: 2px solid #d53135;
+  border-top: 2px solid #004346;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -171,7 +155,7 @@ div.alert > div {
 div.alert.alert-warning {
   color: #d03b39;
   background-color: #fdf4f4;
-  border-top: 2px solid #d53135;
+  border-top: 2px solid #004346;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -222,13 +206,13 @@ div.universal-wrapper.pt-3 h1 {
 
 .mini {
 	text-align: left;
-  border-bottom: 1px solid #d53135;
+  border-bottom: 1px solid #004346;
 }
 
 hr {
   border: 0;
   height: 1px;
-  background: #d53135;
+  background: #004346;
   background-image: none;
 }
 
@@ -262,17 +246,17 @@ iframe {
 /* pagination buttons */
 
 .page-link {
-	color: #d53135;
-	background-color: #fbf9f4;
-	border: 1px solid #d53135;
+	color: #004346;
+	background-color: #F0F7FA;
+	border: 1px solid #004346;
   border-radius: 0px; /*undo rounded corners*/
 
 }
 
 .page-link:hover {
 	color: #fff;
-	background-color: #d53135;
-	border-color: #d53135;
+	background-color: #004346;
+	border-color: #004346;
 }
 
 .page-item:first-child .page-link {
@@ -285,23 +269,11 @@ iframe {
 	border-bottom-right-radius: 0rem;
 }
 
-/* dark fixes */
-
-.dark .pagination li > a, .pagination li > span {
-	border: 1px solid #d53135;
-}
-
-.dark .page-link:hover {
-	background-color: #d53135;
-}
-
-.dark a:active, 
-.dark a:focus, 
-.dark a:hover {
-	color: #fff;
-}
-
 /* https://github.com/gcushen/hugo-academic/issues/147 */
 .container {
     max-width: 1000px;
+}
+
+.carousel-indicators li {
+	background-color: #09BC8A80;
 }

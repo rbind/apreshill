@@ -3,7 +3,7 @@
 widget = "experience"  # Do not modify this line!
 headless = true  # This file represents a page section.
 active = true # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
 title = "Experience"
 subtitle = ""
@@ -21,7 +21,7 @@ date_format = "January 2006"
   title = "Data Scientist & Professional Educator"
   company = "RStudio"
   company_url = "https://www.rstudio.com/"
-  location = "Oregon"
+  location = "Remote"
   date_start = "2018-10-22"
   date_end = ""
   description = """
