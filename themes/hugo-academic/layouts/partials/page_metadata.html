@@ -1,9 +1,5 @@
 {{ $is_list := .is_list }}
-{{ $share := .share | default false }}
 {{ $page := .page }}
-
-<meta content="{{ $page.Params.Date }}" itemprop="datePublished">
-<meta content="{{ $page.Params.LastMod }}" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -27,7 +23,7 @@
           {{ i18n "last_updated" }}
       {{ end }}
     {{ end }}
-    <time>{{ $date }}</time>
+    {{ $date }}
   </span>
   {{ end }}
 
@@ -49,26 +45,23 @@
   </span>
   {{ end }}
 
-  {{ $comments_enabled := and site.DisqusShortname (not (or site.Params.disable_comments (eq $page.Params.comments false))) }}
-  {{ if and $comments_enabled (site.Params.comment_count | default true) }}
+  {{/* Show Disqus comment count if enabled. */}}
+  {{ $disqus_enabled := eq site.Params.comments.engine 1 | and (index site.Params.comments.commentable $page.Type) | and (ne $page.Params.commentable false) | or $page.Params.commentable }}
+  {{ if and $disqus_enabled (site.Params.comments.disqus.show_count | default true) }}
   <span class="middot-divider"></span>
   <a href="{{ $page.RelPermalink }}#disqus_thread"><!-- Count will be inserted here --></a>
   {{ end}}
 
   {{ $taxonomy := "categories" }}
-  {{ with $page.Param $taxonomy }}
+  {{ if $page.Param $taxonomy }}
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder"></i>
-    {{ range $index, $value := . -}}
+    <i class="fas fa-folder mr-1"></i>
+    {{- range $index, $value := ($page.GetTerms $taxonomy) -}}
       {{- if gt $index 0 }}, {{ end -}}
-      <a href="{{ (site.GetPage (printf "/%s/%s" $taxonomy (. | urlize))).RelPermalink }}">{{ . }}</a>
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{- end -}}
   </span>
-  {{ end }}
-
-  {{ if $share }}
-    {{ partial "share.html" $page }}
   {{ end }}
 
 </div>

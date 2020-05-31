@@ -27,9 +27,6 @@ organizations:
   url: https://www.rstudio.com/
 role: Data Scientist & Professional Educator
 social:
-- icon: paper-plane
-  icon_pack: fas
-  link: /contact
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/apreshill

@@ -14,7 +14,7 @@
   url = "https://www.facebook.com/sharer.php?u={url}&t={title}"
   title = "Facebook"
   icon_pack = "fab"
-  icon = "facebook-f"
+  icon = "facebook"
   enable = true
 
 [[buttons]]
@@ -35,7 +35,7 @@
 
 [[buttons]]
   id = "whatsapp"
-  url = "https://web.whatsapp.com/send?text={title}%20{url}"
+  url = "whatsapp://send?text={title}%20{url}"
   title = "WhatsApp"
   icon_pack = "fab"
   icon = "whatsapp"
@@ -55,4 +55,28 @@
   title = "Reddit"
   icon_pack = "fab"
   icon = "reddit-alien"
+  enable = false
+
+[[buttons]]
+  id = "pinterest"
+  url = "https://pinterest.com/pin/create/link/?url={url}&description={title}"
+  title = "Pinterest"
+  icon_pack = "fab"
+  icon = "pinterest"
+  enable = false
+
+[[buttons]]
+  id = "xing"
+  url = "https://www.xing.com/spi/shares/new?url={url}&title={title}"
+  title = "Xing"
+  icon_pack = "fab"
+  icon = "xing"
+  enable = false
+
+[[buttons]]
+  id = "tumblr"
+  url = "https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&title={title}"
+  title = "Tumblr"
+  icon_pack = "fab"
+  icon = "tumblr"
   enable = false

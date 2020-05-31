@@ -1,0 +1,307 @@
+/* links */
+
+a {
+  color: #d53135;
+  cursor: pointer;
+}
+
+a:active, 
+a:focus, 
+a:hover {
+  color: #d03b39;
+}
+
+/* nav */
+
+.navbar-light .navbar-nav>.nav-item>.nav-link,
+.navbar-light .navbar-nav>.nav-item>.nav-link:focus,
+.navbar-light .navbar-nav>.nav-item>.nav-link:hover,
+.navbar-light .navbar-nav>.nav-item>.nav-link:active {
+  font-weight: 700;
+}
+
+.navbar-light .navbar-nav > li.nav-item > a.active, 
+.navbar-light .navbar-nav > li.nav-item > a.active:focus, 
+.navbar-light .navbar-nav > li.nav-item > a.active:hover {
+  font-weight: 700;
+  transition: color .2s ease;
+}
+
+.navbar-light {
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.navbar-nav {
+  border-bottom: 2px solid #d53135;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.navbar-light .navbar-brand:focus, 
+.navbar-light .navbar-brand:hover {
+  color: #d03b39;
+}
+
+/* text */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-weight: 400;
+}
+
+body {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/* home page */
+
+.portrait-title h2 {
+  color: #333;
+}
+
+#about .col-12.col-lg-8 {
+  padding-top: 30px !important;
+}
+
+.network-icon li:hover {
+  transform: scale(1.05);
+}
+
+.home-section:first-of-type {
+  padding: 50px 0 50px 0;
+}
+
+.home-section:not(:first-of-type) {
+  padding: 25px 0 50px 0; 
+}
+
+/* this erases the margin-bottom for h1 */
+
+.home-section.wg-pages .section-heading h1 {
+  margin: 0 0 0 0;
+}
+
+/* this is the section subtitle */
+
+.home-section.wg-pages .section-heading p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* make dark even/odd sections same color so less stripey */
+
+.dark .home-section:nth-of-type(n) {
+	background-color: #282a36;
+}
+
+
+/* code */
+/* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
+
+pre {
+  border: 1px solid #fff;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 0.25em;
+  background: #fff;
+  overflow-x: auto;
+  border-radius: 0px; /*undo rounded corners*/
+}
+
+pre code { 
+  background: none; 
+  font-size: 0.8rem;
+}
+
+code { 
+  color: #d03b39;
+  background: #fff;
+  font-size: 0.9em;
+}
+
+.hljs {
+	background: #fff;
+}
+
+
+/* alerts */
+
+div.alert-note > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #d53135;
+  content: "\f0a4";
+}
+
+div.alert-warning > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #d53135;
+  content: "\f1e2";
+}
+
+.alert-note {
+  color: #333;
+  background-color: #fff;
+  border-top: 2px solid #d53135;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+div.alert > div {
+  font-size: 0.85rem;
+}
+
+
+div.alert.alert-warning {
+  color: #d03b39;
+  background-color: #fdf4f4;
+  border-top: 2px solid #d53135;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+/* buttons */
+
+.btn.btn-sm, .btn-group-sm > .btn {
+  border-radius: 0rem; /*undo rounded corners*/
+  font-size: 0.8rem;
+}
+
+.btn.btn-outline-primary.my-1.mr-1 {
+  border-radius: 0px; /*undo rounded corners*/
+  font-size: 0.8rem;
+}
+
+.btn {
+  font-family: Arapey;
+  text-transform: lowercase;
+  font-style: italic;
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:first-child {
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:last-child {
+  border-radius: 0px;
+}
+
+.btn-toolbar {
+  justify-content: center;
+}
+
+/* section headers */
+
+div.universal-wrapper.pt-3 h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  text-transform: capitalize;
+}
+
+/* about-contact helpers */
+
+.mini {
+	text-align: left;
+  border-bottom: 1px solid #d53135;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #d53135;
+  background-image: none;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+.home-section.wg-experience .card-body {
+	padding: .5rem;
+}
+ 
+.home-section.wg-experience .card .card-text{
+  padding: 0;
+}
+
+/* images more like cards; iframes more seamless */
+
+img {
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+iframe {
+	border: 0;
+}
+
+/* pagination buttons */
+
+.page-link {
+	color: #d53135;
+	background-color: #fbf9f4;
+	border: 1px solid #d53135;
+  border-radius: 0px; /*undo rounded corners*/
+
+}
+
+.page-link:hover {
+	color: #fff;
+	background-color: #d53135;
+	border-color: #d53135;
+}
+
+.page-item:first-child .page-link {
+	border-top-left-radius: 0rem;
+	border-bottom-left-radius: 0rem;
+}
+
+.page-item:last-child .page-link {
+	border-top-right-radius: 0rem;
+	border-bottom-right-radius: 0rem;
+}
+
+/* dark fixes */
+
+.dark .pagination li > a, .pagination li > span {
+	border: 1px solid #d53135;
+}
+
+.dark .page-link:hover {
+	background-color: #d53135;
+}
+
+.dark a:active, 
+.dark a:focus, 
+.dark a:hover {
+	color: #fff;
+}
+
+/* https://github.com/gcushen/hugo-academic/issues/147 */
+.container {
+    max-width: 1000px;
+}
