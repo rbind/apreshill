@@ -1,51 +1,77 @@
-/* links */
+/* Whole document: */
 
-/*a {
-  color: #d53135;
-  cursor: pointer;
-}*/
+body {
+  margin-top: 100px !important;
+  color: #172A3A;
+}
+
+.navbar {
+  min-height: 100px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* links */
 
 a:active, 
 a:focus, 
 a:hover {
-  color: #09BC8A;
+  color: #004346;
 }
 
 /* nav */
 
-.navbar-light .navbar-nav>.nav-item>.nav-link,
-.navbar-light .navbar-nav>.nav-item>.nav-link:focus,
-.navbar-light .navbar-nav>.nav-item>.nav-link:hover,
-.navbar-light .navbar-nav>.nav-item>.nav-link:active {
-  font-weight: 700;
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+	color: #06805E;
 }
 
-.navbar-light .navbar-nav > li.nav-item > a.active, 
-.navbar-light .navbar-nav > li.nav-item > a.active:focus, 
-.navbar-light .navbar-nav > li.nav-item > a.active:hover {
-  font-weight: 700;
-  transition: color .2s ease;
-}
-
-.navbar-light {
+.navbar {
   box-shadow: none;
   text-transform: uppercase;
-  letter-spacing: .08em;
-}
-
-.navbar-nav {
-  border-bottom: 2px solid #004346;
+	letter-spacing: .1em;
 }
 
 .navbar-brand {
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: .08em;
+	letter-spacing: .1em;
 }
 
-.navbar-light .navbar-brand:focus, 
-.navbar-light .navbar-brand:hover {
-  color: #09BC8A;
+
+/*----NAV LINK HOVER ANIMATION -----*/
+/* from Desiree: https://github.com/dcossyleon/blogdown_desiree/blob/master/assets/scss/custom.scss */
+
+/* stroke */
+
+a.nav-link,
+a.nav-link:after,
+a.nav-link:before {
+  transition: all .5s;
+}
+
+a.nav-link {
+  position: relative;
+}
+
+a.nav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.'; /* make invisible, dot beneath links */
+  color: transparent;
+  background: #06805E;
+  height: 2px;
+}
+
+a.nav-link:hover:after {
+  width: 80%;
 }
 
 /* home page */
@@ -85,15 +111,14 @@ a:hover {
   letter-spacing: .08em;
 }
 
-/* make dark even/odd sections same color so less stripey */
-
-.dark .home-section:nth-of-type(n) {
-	background-color: #282a36;
-}
-
 
 /* code */
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
+
+pre, code {
+	color: #508991;
+	background-color: #fff;
+}
 
 pre {
   border: 1px solid #fff;
@@ -108,17 +133,6 @@ pre code {
   background: none; 
   font-size: 0.8rem;
 }
-
-code { 
-  color: #d03b39;
-  background: #fff;
-  font-size: 0.9em;
-}
-
-.hljs {
-	background: #fff;
-}
-
 
 /* alerts */
 
@@ -176,7 +190,7 @@ div.alert.alert-warning {
 }
 
 .btn {
-  font-family: Arapey;
+  font-family: Lora;
   text-transform: lowercase;
   font-style: italic;
   border-radius: 0px;
@@ -271,9 +285,13 @@ iframe {
 
 /* https://github.com/gcushen/hugo-academic/issues/147 */
 .container {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 .carousel-indicators li {
-	background-color: #09BC8A80;
+	background-color: #06805E80;
+}
+
+.section-heading p {
+	color: #004346;
 }

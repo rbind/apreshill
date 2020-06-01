@@ -5,13 +5,13 @@ name = "alison"
 light = true
 
 # Primary
-primary = "#004346"
+primary = "#06805E"
 
 # Menu
 menu_primary = "#F0F7FA"
-menu_text = "#333"
-menu_text_active = "#09BC8A"
-menu_title = "#333"
+menu_text = "#172A3A"
+menu_text_active = "#06805E"
+menu_title = "#172A3A"
 
 # Backgrounds
 background = "#F0F7FA"
