@@ -3,7 +3,7 @@ title: Sharing on Short Notice
 draft: false
 authors: 
   - alison
-  - Desiree De Leon
+  - Desirée De Leon
 event: 'RStudio Webinar'
 event_url: https://resources.rstudio.com/webinars/sharing-on-short-notice-how-to-get-your-materials-online-with-r-markdown
 location: Online webinar

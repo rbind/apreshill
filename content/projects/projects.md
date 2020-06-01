@@ -24,7 +24,11 @@ subtitle = ""
   [[content.filter_button]]
     name = "All"
     tag = "*"
-  
+
+  [[content.filter_button]]
+    name = "website"
+    tag = "website"
+    
   [[content.filter_button]]
     name = "R"
     tag = "R"
