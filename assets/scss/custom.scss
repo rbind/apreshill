@@ -1,0 +1,292 @@
+/* Whole document: */
+
+body {
+  margin-top: 100px !important;
+  color: #172A3A;
+}
+
+.navbar {
+  min-height: 100px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* links */
+
+a:active, 
+a:focus, 
+a:hover {
+  color: #004346;
+}
+
+/* nav */
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+	color: #06805E;
+}
+
+.navbar {
+  box-shadow: none;
+  text-transform: uppercase;
+	letter-spacing: .1em;
+	font-size: .9em;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 700;
+	letter-spacing: .1em;
+}
+
+/*----NAV LINK HOVER ANIMATION -----*/
+/* from Desiree: https://github.com/dcossyleon/blogdown_desiree/blob/master/assets/scss/custom.scss */
+
+/* stroke */
+
+a.nav-link,
+a.nav-link:after,
+a.nav-link:before {
+  transition: all .5s;
+}
+
+a.nav-link {
+  position: relative;
+}
+
+a.nav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.'; /* make invisible, dot beneath links */
+  color: transparent;
+  background: #06805E;
+  height: 2px;
+}
+
+a.nav-link:hover:after {
+  width: 80%;
+}
+
+/* home page */
+
+.portrait-title h2 {
+  color: #333;
+}
+
+#about .col-12.col-lg-8 {
+  padding-top: 30px !important;
+}
+
+.network-icon li:hover {
+  transform: scale(1.05);
+}
+
+.home-section:first-of-type {
+  padding: 50px 0 50px 0;
+}
+
+.home-section:not(:first-of-type) {
+  padding: 25px 0 50px 0; 
+}
+
+/* this erases the margin-bottom for h1 */
+
+.home-section.wg-pages .section-heading h1 {
+  margin: 0 0 0 0;
+}
+
+/* this is the section subtitle */
+
+.home-section.wg-pages .section-heading p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+
+/* code */
+/* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
+
+pre, code {
+	color: #508991;
+	background-color: #fff;
+}
+
+pre {
+  border: 1px solid #fff;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 0.25em;
+  background: #fff;
+  overflow-x: auto;
+  border-radius: 0px; /*undo rounded corners*/
+}
+
+pre code { 
+  background: none; 
+  font-size: 0.8rem;
+}
+
+/* alerts */
+
+div.alert-note > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #004346;
+  content: "\f0a4";
+}
+
+div.alert-warning > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #004346;
+  content: "\f1e2";
+}
+
+.alert-note {
+  color: #333;
+  background-color: #fff;
+  border-top: 2px solid #004346;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+div.alert > div {
+  font-size: 0.85rem;
+}
+
+
+div.alert.alert-warning {
+  color: #d03b39;
+  background-color: #fdf4f4;
+  border-top: 2px solid #004346;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+/* buttons */
+
+.btn.btn-sm, .btn-group-sm > .btn {
+  border-radius: 0rem; /*undo rounded corners*/
+  font-size: 0.8rem;
+}
+
+.btn.btn-outline-primary.my-1.mr-1 {
+  border-radius: 0px; /*undo rounded corners*/
+  font-size: 0.8rem;
+}
+
+.btn {
+  font-family: Lora;
+  text-transform: lowercase;
+  font-style: italic;
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:first-child {
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:last-child {
+  border-radius: 0px;
+}
+
+.btn-toolbar {
+  justify-content: center;
+}
+
+/* section headers */
+
+div.universal-wrapper.pt-3 h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  text-transform: capitalize;
+}
+
+/* about-contact helpers */
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #004346;
+  background-image: none;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+.home-section.wg-experience .card-body {
+	padding: .5rem;
+}
+ 
+.home-section.wg-experience .card .card-text{
+  padding: 0;
+}
+
+/* images more like cards; iframes more seamless */
+
+img {
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+iframe {
+	border: 0;
+}
+
+/* pagination buttons */
+
+.page-link {
+	color: #004346;
+	background-color: #F0F7FA;
+	border: 1px solid #004346;
+  border-radius: 0px; /*undo rounded corners*/
+
+}
+
+.page-link:hover {
+	color: #fff;
+	background-color: #004346;
+	border-color: #004346;
+}
+
+.page-item:first-child .page-link {
+	border-top-left-radius: 0rem;
+	border-bottom-left-radius: 0rem;
+}
+
+.page-item:last-child .page-link {
+	border-top-right-radius: 0rem;
+	border-bottom-right-radius: 0rem;
+}
+
+/* https://github.com/gcushen/hugo-academic/issues/147 */
+.container {
+  max-width: 1000px;
+}
+
+.carousel-indicators li {
+	background-color: #06805E80;
+}
+
+.section-heading p {
+	color: #004346;
+}

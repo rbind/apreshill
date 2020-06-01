@@ -1,18 +1,18 @@
-{{/* List of all authors. */}}
-
 {{- define "main" -}}
+
+{{/* List of all authors. */}}
 
 {{ partial "page_header.html" . }}
 
 <div class="universal-wrapper">
   {{ with .Content }}
-  <div class="article-style" itemprop="articleBody">{{ . }}</div>
+  <div class="article-style">{{ . }}</div>
   {{ end }}
 
   <ul>
     {{ $paginator := .Paginate .Data.Pages }}
     {{ range $k, $v := $paginator.Pages }}
-      {{ $name := $v.Params.name | default ($v.Title|plainify) }}
+      {{ $name := $v.Title }}
       <li><a href="{{$v.Permalink}}">{{$name}}</a></li>
     {{ end }}
   </ul>
