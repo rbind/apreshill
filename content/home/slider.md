@@ -16,7 +16,7 @@ height = "325px"
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison was knowledgeable but at the same time very approachable. She had a sense of humor and very engaging style that gave me confidence that I can do this.\""
   align = "center"  # Choose `center`, `left`, or `right`.
 
@@ -29,27 +29,27 @@ height = "325px"
   # Call to action button (optional).
   #   Activate the button by specifying a URL and button label below.
   #   Deactivate by commenting out parameters, prefixing lines with `#`.
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
 
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison is a phenomenal teacher, and her enthusiasm for the subject matter is palpable.\""
   align = "left"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy-blue.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
   
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
 
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison is an incredible instructor! Also the content and exercises were very well thought-out and cultivated. Everything ran smoothly.\""
   align = "right"
 
@@ -57,13 +57,13 @@ height = "325px"
   overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"I really liked the content + Alison's teaching style.\""
   align = "center"
 
@@ -71,13 +71,13 @@ height = "325px"
   overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison was great - very knowledgeable, accessible and good sense of humor.\""
   align = "left"
 
@@ -85,13 +85,13 @@ height = "325px"
   overlay_img = "headers/daisy-pink.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison Hill was a patient instructor who listened to questions and carefully answered them. Clearly, the content had a LOT of thought put into it. Even the timing of the workshop was pretty perfect.\""
   align = "right"
 
@@ -99,27 +99,27 @@ height = "325px"
   overlay_img = "headers/daisy.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"It [was] so well-organized and Alison is so awesome as an instructor.\""
   align = "center"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy-blue.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison is excellent!\""
   align = "left"
 
@@ -127,13 +127,13 @@ height = "325px"
   overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison is an absolutely amazing presenter! Really really enjoyed the workshop. Thank you!\""
   align = "right"
 
@@ -141,13 +141,13 @@ height = "325px"
   overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison was a good presenter, trying to make difficult topics understandable and having good energy and enthusiasm for the subject matter.\""
   align = "center"
 
@@ -155,13 +155,13 @@ height = "325px"
   overlay_img = "headers/daisy-pink.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"This was an inspiring workshop! I look forward to trying out what I learned in real life!\""
   align = "left"
 
@@ -169,27 +169,27 @@ height = "325px"
   overlay_img = "headers/daisy.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"I enjoyed your workshop and learned a lot. Thanks for your enthusiastic way of teaching.\""
   align = "right"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy-blue.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"Alison is fantastic, did her best to explain not so easy to understand concepts.\""
   align = "center"
 
@@ -197,13 +197,13 @@ height = "325px"
   overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
   
 [[item]]
-  title = "Workshop Feedback"
+  title = ""
   content = "\"I appreciated the thoughtfulness of the workshop. I liked that things were broken down and we were building up an understanding and code.\""
   align = "left"
 
@@ -211,8 +211,8 @@ height = "325px"
   overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
-  cta_label = "see my workshops"
-  cta_url = "categories/workshop/"
+  cta_label = "see my projects"
+  cta_url = "/projects"
   cta_icon_pack = "fas"
-  cta_icon = "binoculars"
+  cta_icon = "spa"
 +++
