@@ -18,7 +18,7 @@ interests:
 - Data analysis
 - Data visualization
 - Machine learning
-- Reproducible research
+- Literate programming
 name: Alison Hill
 organizations:
 - name: RStudio
@@ -49,6 +49,6 @@ social:
 superuser: true
 ---
 
-I am a data scientist and professional educator. I’m an international keynote speaker, award-winning educator, and co-author of the book [*blogdown: Creating Websites with R Markdown*](https://bookdown.org/yihui/blogdown/). I love creating online experiences that help people share knowledge and insights with data. I am known for being a compassionate leader and enthusiastic collaborator, and for making user-facing experiences that delight and educate.
+I am a data scientist and professional educator, currently at RStudio. I am an international keynote speaker, award-winning educator, and co-author of the book [*blogdown: Creating Websites with R Markdown*](https://bookdown.org/yihui/blogdown/). I love creating unique platforms for sharing knowledge and data-driven insights, from websites to workshops and everything in between. I am known for being a compassionate leader and enthusiastic collaborator, and for making user-facing experiences that engage and delight.
 
 
