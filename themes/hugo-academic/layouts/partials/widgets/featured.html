@@ -9,18 +9,23 @@
 
 {{/* Query */}}
 {{ $query := where (where site.RegularPages "Type" $items_type) "Params.featured" true }}
+{{ $archive_page := site.GetPage "Section" $items_type }}
 
 {{/* Filters */}}
 {{ if $st.Params.content.filters.tag }}
-  {{ $archive_page := site.GetPage (printf "tags/%s" $st.Params.content.filters.tag) }}
+  {{ $archive_page := site.GetPage (printf "tags/%s" (urlize $st.Params.content.filters.tag)) }}
   {{ $query = $query | intersect $archive_page.Pages }}
 {{ end }}
 {{ if $st.Params.content.filters.category }}
-  {{ $archive_page := site.GetPage (printf "categories/%s" $st.Params.content.filters.category) }}
+  {{ $archive_page := site.GetPage (printf "categories/%s" (urlize $st.Params.content.filters.category)) }}
   {{ $query = $query | intersect $archive_page.Pages }}
 {{ end }}
 {{ if $st.Params.content.filters.publication_type }}
   {{ $archive_page := site.GetPage (printf "publication_types/%s" $st.Params.content.filters.publication_type) }}
+  {{ $query = $query | intersect $archive_page.Pages }}
+{{ end }}
+{{ if $st.Params.content.filters.author }}
+  {{ $archive_page = site.GetPage (printf "authors/%s" (urlize $st.Params.content.filters.author)) }}
   {{ $query = $query | intersect $archive_page.Pages }}
 {{ end }}
 
@@ -31,6 +36,18 @@
 {{/* Limit */}}
 {{ $query = first $items_count $query }}
 
+{{/* Localisation */}}
+{{ $i18n := "" }}
+{{ if eq $items_type "post" }}
+  {{ $i18n = "more_posts" }}
+{{ else if eq $items_type "talk" }}
+  {{ $i18n = "more_talks" }}
+{{ else if eq $items_type "publication" }}
+  {{ $i18n = "more_publications" }}
+{{ else }}
+  {{ $i18n = "more_pages" }}
+{{ end }}
+
 <div class="row">
   <div class="col-12 col-lg-4 section-heading">
     <h1>{{ with $st.Title }}{{ . | markdownify | emojify }}{{ end }}</h1>
@@ -38,7 +55,7 @@
   </div>
   <div class="col-12 col-lg-8">
 
-    {{ with $st.Content }}<p>{{ . }}</p>{{ end }}
+    {{ with $st.Content }}{{ . }}{{ end }}
 
     {{ range $post := $query }}
       {{ if eq $st.Params.design.view 1 }}
@@ -51,6 +68,15 @@
         {{ partial "li_compact" . }}
       {{ end }}
     {{end}}
+
+  {{ if $st.Params.content.link_to_archive }}
+    <div class="see-all">
+      <a href="{{ $archive_page.RelPermalink }}">
+        {{ i18n $i18n | default "See all" }}
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+  {{ end }}
 
   </div>
 </div>

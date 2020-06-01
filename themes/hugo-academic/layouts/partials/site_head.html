@@ -12,11 +12,11 @@
   {{ $superuser_username := "" }}
   {{ $superuser_role := "" }}
   {{ range first 1 (where (where site.Pages "Section" "authors") "Params.superuser" true) }}
-    {{ $superuser_name = .Params.name }}
+    {{ $superuser_name = .Title }}
     {{ $superuser_username = path.Base (path.Split .Path).Dir }}
     {{ $superuser_role = .Params.role }}
   {{ end }}
-  {{ $scr.Set "superuser_username" $superuser_username }}{{/* For access from page_author.html. */}}
+  {{ $scr.Set "superuser_username" $superuser_username }}{{/* Set superuser globally for page_author.html. */}}
 
   {{ with $superuser_name }}<meta name="author" content="{{ . }}">{{ end }}
 
@@ -45,6 +45,12 @@
   {{ $js := site.Data.assets.js }}
   {{ if ne ($scr.Get "primary") "#fff" }}
   <meta name="theme-color" content="{{ $scr.Get "primary" }}">
+  {{ end }}
+
+  {{/* Config LaTeX math rendering. */}}
+  {{ if or .Params.math site.Params.math }}
+  {{ $mathjax_config := resources.Get "js/mathjax-config.js" }}
+  <script src="{{ $mathjax_config.RelPermalink }}"></script>
   {{ end }}
 
   {{/* Attempt to load local vendor CSS, otherwise load from CDN. */}}
@@ -83,7 +89,7 @@
       {{ end }}
     {{ end }}
 
-    {{ if or (eq site.Params.map 2) (eq site.Params.map 3) }}
+    {{ if or (eq site.Params.map.engine 2) (eq site.Params.map.engine 3) }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.leaflet.url $css.leaflet.version) $css.leaflet.sri | safeHTML }}
     {{ end }}
 
@@ -92,75 +98,83 @@
       {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.instantsearchTheme.url $css.instantsearchTheme.version) $css.instantsearchTheme.sri | safeHTML }}
     {{ end }}
 
+    {{/* Load async scripts. */}}
+    {{ range $k, $v := site.Data.assets.js }}{{/* TODO: investigate why `where ... "async" true` does not work. */}}
+      {{ $load := $v.async }}
+
+      {{/* Only load MathJax if required. */}}
+      {{ if (eq $k "mathJax") | and (not (or $.Params.math site.Params.math)) }}
+        {{ $load = false }}
+      {{end}}
+
+      {{ if $load }}
+        {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" async></script>" (printf $v.url $v.version) $v.sri | safeHTML }}
+      {{end}}
+    {{end}}
+
   {{ end }}
 
   {{/* We cannot use SRI with Google Fonts because the CSS is dynamically generated according to the user agent. */}}
+  {{/* Hugo's htmlEscape cannot escape "|" in Google Font URIs so we implement our own escape functionality. */}}
   {{ with ($scr.Get "google_fonts") }}
-  <link rel="stylesheet" {{ printf "href=\"//fonts.googleapis.com/css?family=%s\"" . | safeHTMLAttr }}>
+  <link rel="stylesheet" {{ printf "href=\"https://fonts.googleapis.com/css?family=%s&display=swap\"" . | replaceRE "\\|" "%7C" | safeHTMLAttr }}>
   {{ end }}
 
-  {{ $css_options := (dict "targetPath" "css/academic.css" "outputStyle" "compressed") }}
-  {{ $sass_template := resources.Get "sass/main.scss" }}
-  {{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options | minify | fingerprint "md5" }}
+  {{ $css_comment := printf "/*!* Source Themes Academic v%s (https://sourcethemes.com/academic/) */\n" site.Data.academic.version }}
+  {{ $css_bundle_head := $css_comment | resources.FromString "css/bundle-head.css" }}
+  {{ $css_options := dict "targetPath" "css/academic.css" }}
+  {{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") -}}
+    {{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
+  {{- end -}}
+  {{ $sass_template := resources.Get "scss/main.scss" }}
+  {{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options }}
+  {{ $style := slice $css_bundle_head $style | resources.Concat "css/academic.css" }}
+  {{- if (eq (getenv "HUGO_ENV") "production") -}}
+    {{- $style = $style | minify | fingerprint "md5" -}}
+  {{- end -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-  {{ if site.Params.plugins_css }}
-    {{ $css_comment := printf "/* Source Themes Academic v%s | https://sourcethemes.com/academic/ */\n" site.Data.academic.version }}
-    {{ $css_bundle_head := $css_comment | resources.FromString "css/bundle-head.css" }}
-    {{ $css_bundle := slice }}
-    {{ range site.Params.plugins_css }}
-      {{ $css_bundle = $css_bundle | append (resources.Get (printf "css/%s.css" .)) }}
-    {{ end }}
-    {{ $css_bundle := $css_bundle | resources.Concat "css/academic-bundle-pre.css" | minify }}
-    {{ $css_bundle := slice $css_bundle_head $css_bundle | resources.Concat "css/academic.css" | fingerprint "md5" }}
-    <link rel="stylesheet" href="{{ $css_bundle.RelPermalink }}">
-  {{ end }}
+  {{ partial "marketing/google_analytics" . }}
+  {{ partial "marketing/google_tag_manager" . }}
 
-  {{ if not site.IsServer }}
-  {{ if site.GoogleAnalytics }}
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '{{ site.GoogleAnalytics }}', 'auto');
-      {{ if site.Params.privacy_pack }}ga('set', 'anonymizeIp', true);{{ end }}
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    {{ if ($scr.Get "use_cdn") }}
-    {{ printf "<script async src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.autotrack.url $js.autotrack.version) $js.autotrack.sri | safeHTML }}
-    {{ end }}
-  {{ end }}
+  {{/* Netlify Identity integration. */}}
+  {{ if .IsHome | and (site.Params.cms.netlify_cms | default true) }}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {{ end }}
 
   {{ with .OutputFormats.Get "RSS" }}
-  <link rel="alternate" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ site.Title }}">
-  <link rel="feed" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ site.Title }}">
+  <link rel="alternate" href="{{.RelPermalink}}" type="application/rss+xml" title="{{site.Title}}">
   {{ end }}
 
-  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
-  <link rel="icon" type="image/png" href="{{ "/img/icon.png" | relURL }}">
-  <link rel="apple-touch-icon" type="image/png" href="{{ "/img/icon-192.png" | relURL }}">
+  <link rel="manifest" href="{{ "index.webmanifest" | relLangURL }}">
+  <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
+  <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
 
   <link rel="canonical" href="{{ .Permalink }}">
 
+  {{/* Get page image for sharing. */}}
   {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
+  {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
+  {{ $has_logo := fileExists "assets/images/logo.png" | or (fileExists "assets/images/logo.svg") }}
   {{ $og_image := "" }}
   {{ $twitter_card := "summary_large_image" }}
-  {{ if $featured_image }}
+  {{ if (and (eq .Kind "taxonomy") $avatar_image) }}
+    {{ $og_image = ($avatar_image.Fill "270x270 Center").Permalink }}{{/* Match image proc in About widget. */}}
+    {{ $twitter_card = "summary" }}
+  {{ else if $featured_image }}
     {{ $og_image = $featured_image.Permalink }}
   {{ else if .Params.header.image }}
     {{ $og_image = printf "img/%s" .Params.header.image | absURL }}
   {{ else if site.Params.sharing_image }}
     {{ $og_image = printf "img/%s" site.Params.sharing_image | absURL }}
-  {{ else if site.Params.avatar }}
-    {{ $og_image = (printf "img/%s" site.Params.avatar) | absURL }}
+  {{ else if $has_logo }}
+    {{ $og_image = (partial "functions/get_logo" (dict "constraint" "fit" "size" 300)).Permalink }}
     {{ $twitter_card = "summary" }}
   {{ else }}
-    {{ $og_image = "img/icon-192.png" | absURL }}
+    {{ $og_image = (partial "functions/get_icon" 512).Permalink }}
     {{ $twitter_card = "summary" }}
   {{ end }}
+  {{ $scr.Set "og_image" $og_image }}{{/* Set `og_image` globally for `rss.xml`. */}}
   <meta property="twitter:card" content="{{ $twitter_card }}">
   {{ with site.Params.twitter }}
   <meta property="twitter:site" content="@{{ . }}">
@@ -170,15 +184,23 @@
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}">
   <meta property="og:description" content="{{ $desc }}">
-  {{- with $og_image }}<meta property="og:image" content="{{ . }}">{{end}}
+  {{- with $og_image -}}
+  <meta property="og:image" content="{{.}}">
+  <meta property="twitter:image" content="{{.}}">
+  {{- end -}}
   <meta property="og:locale" content="{{ site.LanguageCode | default "en-us" }}">
   {{ if .IsPage }}
-  {{ if not .PublishDate.IsZero }}<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
-  {{ else if not .Date.IsZero }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
-  {{ if not .Lastmod.IsZero }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+    {{ if not .PublishDate.IsZero }}
+      <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
+    {{ else if not .Date.IsZero }}
+      <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
+    {{ end }}
+    {{ if not .Lastmod.IsZero }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
   {{ else }}
-  {{ if not .Date.IsZero }}<meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+    {{ if not .Date.IsZero }}<meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
   {{ end }}
+
+  {{ partial "jsonld/main" (dict "page" . "summary" $desc) }}
 
   {{ partial "cookie_consent" . }}
 
