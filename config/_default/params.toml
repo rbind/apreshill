@@ -105,9 +105,9 @@ appointment_url = ""
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 contact_links = [
-  {icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/apreshill"},
+  # {icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/apreshill"},
   # {icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
-  {icon = "comments", icon_pack = "fas", name = "Discuss on RStudio Community", link = "https://community.rstudio.com/"},
+  {icon = "comments", icon_pack = "fas", name = "Ask for help on RStudio Community", link = "https://community.rstudio.com/"},
   # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
   ]
 
