@@ -11,7 +11,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 /* links */
@@ -33,7 +33,7 @@ a:hover {
   box-shadow: none;
   text-transform: uppercase;
 	letter-spacing: .1em;
-	font-size: 1em;
+	font-size: .9em;
 }
 
 .navbar-brand {
@@ -217,11 +217,6 @@ div.universal-wrapper.pt-3 h1 {
 }
 
 /* about-contact helpers */
-
-.mini {
-	text-align: left;
-  border-bottom: 1px solid #004346;
-}
 
 hr {
   border: 0;
