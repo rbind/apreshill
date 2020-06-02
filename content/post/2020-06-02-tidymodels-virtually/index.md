@@ -25,13 +25,21 @@ A few weeks ago, I wrapped up teaching [tidymodels](https://www.tidymodels.org) 
 
 Why teach tidymodels virtually? I've already taught it as a [2-day workshop](/project/tidyml) at rstudio::conf(2020). I had already agreed to teach intro to machine learning with tidymodels as a full-day workshop for the Cascadia R Conf (which unfortunately was cancelled due to COVID), and the [R / Medicine conference](/talk/2020-rmedicine-tidyml/) (still on, and 100% virtual!).
 
-I had two main goals. First, given current events, I saw an opportunity to document a good system (tooling + pedagogy + logistics) around virtual workshops. I don't see them going away anytime soon. My colleague, [Greg Wilson](https://third-bit.com/), had also been giving our [RStudio certified instructor](https://education.rstudio.com/trainers/) [workshops virtually](https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY) for over a year. And my partner-in-crime for this particular workshop, [Dr. Stephan Kadauke](https://education.rstudio.com/trainers/people/kadauke+stephan/), wanted to join me for some reconnaissance work. He is one of the organizers for the R / Medicine conference and wanted to test out the tooling and the pedagogy too. So we thought, three birds, one stone: I get to pilot a much shorter version of my conf workshop materials, we get to test doing it virtually, and the R / Medicine conference organizers learn how this could all work in August.  
+I had three main goals: 
+
++ First, I wanted to do a good job for the R / Medicine conference workshop in August. This seemed like an interesting teaching challenge. One of the best compliments I've ever gotten from a colleague is that I "teach with heart" &mdash; so the challenge was, can a virtual workshop have a :heart:?
+
+![](https://media.giphy.com/media/RAAEmgtmiR3Fe/giphy.gif)
+
++ Second, given current events, I saw an opportunity to document a good system (tooling + pedagogy + logistics) around virtual workshops. I don't see them going away anytime soon. My colleague, [Greg Wilson](https://third-bit.com/), had also been giving our [RStudio certified instructor](https://education.rstudio.com/trainers/) [workshops virtually](https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY) for over a year, so I trusted that he could help me navigate.
+
++ Third, help out the R / Medicine conference organizers. My partner-in-crime for this particular workshop, [Dr. Stephan Kadauke](https://education.rstudio.com/trainers/people/kadauke+stephan/), wanted to join me for some reconnaissance work. He is one of the conference organizers and will be leading his own workshop there, so he wanted to test out the tooling and the pedagogy too. 
+
+So we thought, three birds, one stone: I get to pilot a much shorter version of my conf workshop materials, we get to test doing it virtually, and the R / Medicine conference organizers learn how this could all work in August.  
 
 ![](https://media.giphy.com/media/oVP8LBbOv57S8/giphy.gif)
 
-Second, for myself, this seemed like an interesting teaching challenge. One of the best compliments I've ever gotten from a colleague is that I "teach with heart" &mdash; so the challenge was, can a virtual workshop have a :heart:?
 
-![](https://media.giphy.com/media/RAAEmgtmiR3Fe/giphy.gif)
 
 ## How we planned it
 
