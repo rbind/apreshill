@@ -14,12 +14,8 @@ links:
   url: https://conf20-intro-ml.netlify.com/
 - icon: door-open
   icon_pack: fas
-  name: Cascadia R Conf 2020 website
-  url: https://tidyml-cascadiarconf.netlify.com/
-- icon: door-open
-  icon_pack: fas
   name: R / Medicine 2020 website
-  url: ""
+  url: https://events.linuxfoundation.org/r-medicine/
 
 
 categories:
