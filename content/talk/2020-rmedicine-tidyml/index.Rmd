@@ -2,7 +2,7 @@
 title: Introduction to Machine Learning with the Tidyverse 
 draft: false
 event: 'R / Medicine 2020'
-event_url: https://cascadiarconf.com/
+event_url: https://events.linuxfoundation.org/r-medicine/
 location: Philadelphia, PA
 summary: "R / Medicine 2020: A 4-hour workshop to introduce the basics of machine learning in R using tidymodels."
 
