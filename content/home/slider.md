@@ -23,7 +23,7 @@ height = "325px"
   # Overlay a color or image (optional).
   #   Deactivate an option by commenting out the line, prefixing it with `#`.
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   # Call to action button (optional).
@@ -40,8 +40,8 @@ height = "325px"
   align = "left"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/daisy.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
   
   cta_label = "see my projects"
   cta_url = "/projects"
@@ -54,7 +54,7 @@ height = "325px"
   align = "right"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -68,7 +68,7 @@ height = "325px"
   align = "center"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/bees.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -83,7 +83,7 @@ height = "325px"
 
   overlay_color = "#404040"  # An HTML color value.
   overlay_img = "headers/daisy-pink.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
   cta_url = "/projects"
@@ -96,7 +96,7 @@ height = "325px"
   align = "right"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/bats.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -110,8 +110,8 @@ height = "325px"
   align = "center"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/daisy-gray.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
   cta_url = "/projects"
@@ -124,7 +124,7 @@ height = "325px"
   align = "left"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/pheasants.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -138,7 +138,7 @@ height = "325px"
   align = "right"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -152,7 +152,7 @@ height = "325px"
   align = "center"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/daisy-pink.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/birds.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.5  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -180,8 +180,8 @@ height = "325px"
   align = "right"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate2.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.6  # Darken the image. Value in range 0-1.
+  overlay_img = "headers/bats.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
   cta_url = "/projects"
@@ -194,7 +194,7 @@ height = "325px"
   align = "center"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/pomegranate.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/bees.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
@@ -208,7 +208,7 @@ height = "325px"
   align = "left"
 
   overlay_color = "#404040"  # An HTML color value.
-  overlay_img = "headers/tulip.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/birds.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.4  # Darken the image. Value in range 0-1.
 
   cta_label = "see my projects"
