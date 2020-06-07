@@ -48,17 +48,17 @@ a:hover {
 
 /* stroke */
 
-a.nav-link,
-a.nav-link:after,
-a.nav-link:before {
+.navbar-nav a.nav-link,
+.navbar-nav a.nav-link:after,
+.navbar-nav a.nav-link:before {
   transition: all .5s;
 }
 
-a.nav-link {
+.navbar-nav a.nav-link {
   position: relative;
 }
 
-a.nav-link:after {
+.navbar-nav a.nav-link:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -71,7 +71,7 @@ a.nav-link:after {
   height: 2px;
 }
 
-a.nav-link:hover:after {
+.navbar-nav a.nav-link:hover:after {
   width: 80%;
 }
 
@@ -290,4 +290,23 @@ iframe {
 
 .section-heading p {
 	color: #004346;
+}
+
+/* For 2-column article layout */
+.article-container {
+	max-width: 1000px;
+}
+
+.col-lg-2ish {
+  flex:0 0 20%;
+  max-width:20%
+ }
+ 
+.col-lg-10ish {
+  flex:0 0 80%;
+  max-width:80%
+ }
+ 
+#TableOfContents li a, .toc-top li a {
+	padding: .125rem .5rem;
 }
