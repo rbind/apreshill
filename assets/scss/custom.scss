@@ -292,21 +292,37 @@ iframe {
 	color: #004346;
 }
 
-/* For 2-column article layout */
+/* For 2-column article layout with TOC on right */
 .article-container {
 	max-width: 1000px;
 }
 
 .col-lg-2ish {
   flex:0 0 20%;
-  max-width:20%
+  max-width:20%;
+  padding-right: 0px !important;
  }
  
 .col-lg-10ish {
   flex:0 0 80%;
-  max-width:80%
+  max-width:80%;
  }
  
 #TableOfContents li a, .toc-top li a {
 	padding: .125rem .5rem;
+	font-size: .8rem;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* --------Blog posts--------- */
+/* Headers within blogs */
+
+.article-style h1:not(:first-child),
+.article-style h2:not(:first-child),
+.article-style h3:not(:first-child) {
+  padding-top: 2em;
+  padding-bottom: 1em;
 }
