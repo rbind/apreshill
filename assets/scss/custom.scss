@@ -317,6 +317,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+html, body {
+  scroll-padding-top: 80px;
+}
+
+
 /* --------Blog posts--------- */
 /* Headers within blogs */
 
@@ -325,4 +330,21 @@ html {
 .article-style h3:not(:first-child) {
   padding-top: 2em;
   padding-bottom: 1em;
+}
+
+/*---fix code scrolling-- */
+pre {
+  white-space: pre-wrap;
+}
+
+/*---anchor headings-- */
+.anchor { 
+  /*visibility: hidden; */
+  opacity: 0.6;
+}
+
+h2:hover a { 
+  /*visibility: visible;*/
+  text-decoration: none;
+  opacity: 0.9;
 }
