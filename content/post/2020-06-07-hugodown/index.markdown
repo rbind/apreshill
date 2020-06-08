@@ -244,6 +244,8 @@ While on the subject of widgets, the entire home page is filled with widgets! Th
 
 Deactivating the widgets you don't need and only activating the ones you want will help you avoid having your home page feel like the "scroll of death," as my friend [Jackie Wirz](https://twitter.com/jackiewirz) called it. I like to think of the home page as [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head). The home page is the potato, and the widgets are all the pieces you could use. 
 
+![](https://media.giphy.com/media/tjGVkrPMjngt2/giphy.gif)
+
 Each widget is a `*.md` file in the `content/home/` folder. The metadata at the top helps you configure each widget; namely whether it is `active` (true or false) and the widgets `weight` (ordering, actual numbers doesn't matter- only relative to the other weights).
 
 For example, to turn off the hero widget, use this code in your console and set `active = false`:
