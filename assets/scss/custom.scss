@@ -140,21 +140,21 @@ pre code {
 div.alert-note > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #004346;
+  color: #09bc8a;
   content: "\f0a4";
 }
 
 div.alert-warning > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #004346;
+  color: #ff003f;
   content: "\f1e2";
 }
 
 .alert-note {
-  color: #333;
+  color: #004346;
   background-color: #fff;
-  border-top: 2px solid #004346;
+  border-top: 4pt solid #09bc8a;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -168,9 +168,9 @@ div.alert > div {
 
 
 div.alert.alert-warning {
-  color: #d03b39;
-  background-color: #fdf4f4;
-  border-top: 2px solid #004346;
+  color: #004346;
+  background-color: #FFE7ED;
+  border-top: 4pt solid #ff003f;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -335,6 +335,11 @@ html, body {
 /*---fix code scrolling-- */
 pre {
   white-space: pre-wrap;
+}
+
+/*---add code spacing-- */
+pre, code {
+	letter-spacing: .1em;
 }
 
 /*---anchor headings-- */

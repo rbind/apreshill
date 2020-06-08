@@ -17,27 +17,42 @@ image:
 
 
 
-## Overview
+## Welcome
 
 Hi! Hello! Welcome. Bienvenidos.
 
-Almost 3 years ago, I wrote my first blog post and published it on my own website. Since then, that single post has been viewed over 22,668 times. That may not seem like a lot over 3 years, but for me it is. I had been thinking I was long overdue to update my original post. But, although I have learned a lot more about Hugo (and even developed my own theme) since then, this practical guide was still a good "how-to".
+Almost 3 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my own website. Since then, that single post has been viewed over 22,668 times. That may not seem like a lot over 3 years, but it is to me. Even more meaningful, though, is seeing so many people's personal websites get launched.
 
-There is a new experimental Hugo website building package in town, named hugodown. Soon after the package was "announced" when Hadley Wickham made the repository public, you could tell that some of the pain experienced by some blogdown users had been designed away. Here are some great posts, if you are curious:
+![](https://media.giphy.com/media/L2jHJeRY4twe4/giphy.gif)
+
+
+Everyone deserves to have a voice online, if they want to use it. Everyone deserves for their voice to be shared under their own terms. That is what having your own website gives you. Icing on the cake is that if you know R Markdown and like using RStudio (or are open to learning both!), then you can be your own producer *and* director. 
+
+But, making and maintaining Hugo websites using blogdown was not totally pain-free. 
+
+![](https://media.giphy.com/media/HQyLIG132Y836/giphy.gif)
+
+Here are some great posts that document pretty common user experiences and frustrations:
 
 + [Maëlle Salmon's post: *What to know before you adopt Hugo/blogdown*](https://masalmon.eu/2020/02/29/hugo-maintenance/)
 
 + [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/changing-you-blogdown-workflow/)
 
-Because hugodown is actively under development, and may never be available on CRAN, tread here with caution. It is an experimental package. However, I thought it would be fun to take my original blogdown post, and see how well I could trace the same process if you want to be on the bleeding edge and give hugodown a spin. Caveat emptor!
+The tidyverse team was an early blogdown adopter, and certainly felt their fair share of frustrations too. In an effort to design some of those away, there is a new experimental Hugo website building package in town, named [hugodown](https://hugodown.r-lib.org/). Because hugodown is actively under development, and may never be available on CRAN,  	:rotating_light: tread here with caution :rotating_light:. 
+
+Nevertheless, I thought it would be fun to take my original blogdown post, and see if I could trace the same process of building a Hugo website using hugodown. I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
+
+So if you are feeling fearless and want to live on the bleeding edge, read on to give hugodown a spin along with me.
+
+![](https://media.giphy.com/media/l0G19cFS7nkpGaOLC/giphy.gif)
 
 ## Pre-requisites
 
 For any website-builder, getting up and running with all the moving parts (RStudio, GitHub, Hugo, Netlify) can take a few tries. In this post, I'm passing along what works for me, and the workflow that I use when I teach Hugo website development. Everyone's mileage may vary, though, depending on your operating system and your approach. 
 
-For this blog post, I'm assuming you have basic familiarity with R, RStudio, & GitHub. If that is not you, here are some places to get started, you can start with [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al.
+For this blog post, I'm assuming you have basic familiarity with R, RStudio, & GitHub. If that is not you, you may want to work through [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al. first, then coming back here when you are ready.
 
-In my original 2017 post, I mentioned that at that time, I was a new mom, and just in the process of writing all that up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. This time around isn't too different! It is 2020, there is a global pandemic and I've been under stay-at-home orders with a toddler at home for months. So buckle up :cowboy:
+In my original 2017 post, I mentioned that at that time, I was a new mom, and just in the process of writing all that up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. This time around isn't too different! Fast forward 3 years: it is 2020, there is a global pandemic, I've been under stay-at-home orders with a toddler at home for months. So buckle up :cowboy:
 
 ![](https://media.giphy.com/media/uELDhoOZdSnUk/giphy.gif)
 
@@ -46,7 +61,7 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 {{% /alert %}}
 
 
-## In GitHub
+## Start in GitHub
 
 ![](blogdown-signpost-1.png)
 
@@ -57,7 +72,7 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 
       + [**Netlify**](https://www.netlify.com). I recommend using Netlify to host the site. In this case, you can name the repository anything you want! 
       
-      + [**GitHub Pages**](https://pages.github.com). If you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). If you are going this route, I suggest you follow [Amber's instructions](https://proquestionasker.github.io/blog/Making_Site/) instead of mine!
+      + [**GitHub Pages**](https://pages.github.com). If you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). This post won't be able to help you with publishing.
 
 {{% alert note %}}
 You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories). 
@@ -68,7 +83,7 @@ You can see some of the repo names used by members of the `rbind` organization [
 
 3. Choose either SSH or HTTPS (if you don't know which, choose HTTPS). Choose by clicking on the clipboard icon to copy the remote URL for your new repository. You'll paste this text into RStudio in the next section.
     
-## In RStudio
+## Move to RStudio
 
 ![](blogdown-signpost-2.png)
 
@@ -82,7 +97,7 @@ We just created the remote repository on GitHub. To make a local copy on our com
 
 1. Click **Create Project**.
 
-##  Still in RStudio 
+##  Stay in RStudio 
 
 ![](blogdown-signpost-3.png)
 
@@ -93,6 +108,8 @@ We just created the remote repository on GitHub. To make a local copy on our com
     ```
     > if (!requireNamespace("remotes")) install.packages("remotes")
     > remotes::install_github("r-lib/hugodown")
+    Using github PAT from envvar GITHUB_PAT
+    Downloading GitHub repo r-lib/hugodown@master
     ```
 
 2. Let's use our first hugodown function to create a website with the Hugo Academic theme:
@@ -161,6 +178,8 @@ We just created the remote repository on GitHub. To make a local copy on our com
 ![](blogdown-signpost-4.png)
 
 Following the `README`, we start by previewing the example site using `hugodown::hugo_start()`.
+
+![](hugo_start.png)
 
 ## Hugodown
 
@@ -314,28 +333,111 @@ Error: Error building site: Errors reading pages: Error: failed to parse page me
 
 The above workflow is only for editing existing files or posts, but not for **creating new posts**. For that, read on...
 
-## Add new posts
+## Add a new post
 
-Relevant reading:
-
-* [`blogdown` book chapter on RStudio IDE](https://bookdown.org/yihui/blogdown/rstudio-ide.html)
-* [`blogdown` book chapter on output formats](https://bookdown.org/yihui/blogdown/output-format.html): on .md versus .Rmd posts
-* [Additional detail from Amber](https://proquestionasker.github.io/blog/Making_Site/#adding-a-blog-post-or-portfolio-piece) on adding a blog post
-
-Bottom line:
-
-Use the **New Post** addin. But, you need the console to do this, so you have to stop `blogdown::serve_site` by clicking on the red **Stop** button first. The Addin is a Shiny interface that runs this code in your console: `blogdown:::new_post_addin()`. So, your console needs to be unblocked for it to run. You also need to be "in" your RStudio project or it won't work.
-
-### Draft posts
-
-Relevant reading:
-
-* [`blogdown` book chapter on building a website for local preview](https://bookdown.org/yihui/blogdown/local-preview.html)
-
-Whether you do a markdown or R Markdown post (see below), you should know that in the YAML front matter of your new file, you can add `draft: TRUE` and you will be able to preview your post using `blogdown::serve_site()`, but conveniently your post will not show up on your deployed site until you set it to false. Because this is a function built into Hugo, all posts (draft or not) will still end up in your GitHub repo though.
+If you are reading this still, then you probably care very much about being able to include R code and output in your blog posts. That is where R Markdown enters the picture :tada: Hugodown allows you to create new .Rmd posts that are knittable (to `.md` files), then previewable in your Hugo site.
 
 
+#### New .Rmd posts
 
+Use the console to author a new `.Rmd` post; I'll name my post "hi-hugo":
+
+```
+> hugodown::use_post(path = "post/hi-hugo")
+● Modify '/Users/alison/rscratch/test-hugodown/content/post/hi-hugo/index.Rmd'
+```
+
+Nicely, this takes the path to where you want your post to live, relative to the `content/` folder (so that piece of the path is assumed, rightly so!). In the Academic theme, the example site organizes blog posts into the `content/post/` folder (singular!). 
+
+You'll also notice that it creates a folder with the name of my post (`"hi-hugo"`), then the actual R Markdown file that I will edit is named `index.Rmd`. This is a Hugo [page bundle](/post/2019-02-21-hugo-page-bundles/). Your post is considered a single page. All your static images, static data files like `.csv` files, etc. should go in this folder, so you have a nice tidy post bundle :bento:
+
+
+Let's look at the `index.Rmd`. You should notice the output format here is `hugodown::md_document()`. This means that we'll knit our `.Rmd` to a `.md` file.
+
+{{% alert warning %}}
+Many R Markdown output options for HTML documents are not going to be possible here, like tabbed sections, floating table of contents, the `code_download` button, etc.
+{{% /alert %}}
+
+Go ahead and add a title (like: `title: "hello hugo!"`) to the YAML, and then below the YAML add some text and an R code chunk like:
+
+````
+```{r}
+summary(Orange)
+```
+````
+
+After you edit your `.Rmd` post, save then knit. You can knit freely here in hugodown! To knit an `.Rmd` post, you can either:
+
+1. Use the Knit button to knit to the correct output format, or
+
+1. Use the keyboard shortcut `Cmd+Shift+K` (Mac) or `Ctrl+Shift+K` (Windows/Linux).
+
+With hugodown, knitting an individual post and building the site are two separate processes. You can use `hugo_start()` before adding/editing content, or after.
+
+If you start the server then add or edit your posts, you can knit the post and the knitted output will be previewable automatically. If you do further edits, you'll always need to manually knit before the preview site is updated.
+
+If you add or edit posts first without starting the server, you can knit the post then run `hugo_start()` to preview the full site. Works the same as above. 
+
+{{% alert note %}}
+The most important thing here is to realize that the act of knitting creates an `index.md` file in the same post bundle as `index.Rmd`. The `index.md` version is what then feeds into the Hugo static site generator.
+{{% /alert %}}
+
+Try it out! Add another R code chunk like:
+
+````
+```{r echo=FALSE}
+library(ggplot2)
+oplot <- ggplot(Orange, aes(x = age, 
+                   y = circumference, 
+                   colour = Tree)) +
+  geom_point() +
+  geom_line() +
+  guides(colour = FALSE) +
+  theme_bw()
+oplot
+```
+````
+
+You should see something like:
+
+![](post-plot.png)
+
+And now for my final trick, let's attempt an HTML widget:
+
+````
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library("highcharter")
+hchart(Orange, "line", hcaes(x = age, y = circumference, group = Tree))
+```
+````
+
+Save and knit with the server running, and you should see...no widget :sob:
+
+But, hope is not lost! Open up `index.md`, and you should see a new key added to the YAML called `html_dependencies:` with a long list of scripts. These are the HTML dependencies needed for this widget to work. But, there is still a problem. We need to edit one of our theme's layout files to add a flag for disabling the jquery library:
+
+
+```r
+fs::file_copy(path = "themes/academic/layouts/partials/site_js.html", 
+              new_path = "layouts/partials/")
+```
+
+
+```r
+rstudioapi::navigateToFile("layouts/partials/site_js.html", line = 8)
+```
+
+You are going to add a conditional here (`{{ if not .Params.disable_jquery }}<snip/snip>{{ end }}) around the loading of the jquery js library:
+
+```html
+{{ if not .Params.disable_jquery }}{{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.jQuery.url $js.jQuery.version) $js.jQuery.sri | safeHTML }}{{ end }}
+```
+
+
+Then, inside your `index.Rmd`, add this key/value to your YAML:
+
+```yaml
+disable_jquery: true
+```
 
 #### New markdown posts
 
@@ -361,42 +463,6 @@ new_post(title, kind = "", open = interactive(),
 {{% alert note %}}
 Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload*.
 {{% /alert %}}
-
-#### New .Rmd posts
-
-Use the console to author a new `.Rmd` post:
-
-```
-hugodown::use_post()
-```
-
-
-
-
-After you edit your `.Rmd` post, in addition to saving the changes in your `.Rmd` file, you *must* use `blogdown::serve_site`- this is how the output `html` file needs to be generated.   
-
-{{% alert warning %}}
-Do *not* knit your `.Rmd` posts- use `blogdown::serve_site` instead. If you happen to hit the knit button, just **Serve Site** again to rewrite the `.html` file.
-{{% /alert %}}
-
-Ultimately, your [YAML front matter looks something like this](https://bookdown.org/yihui/blogdown/output-format.html#output-format); note that some but not all features of `rmarkdown::html_document` [are supported in `blogdown`](https://bookdown.org/yihui/blogdown/output-format.html#fn15):
-
-```
----
-title: "My Awesome Post"
-author: "Alison Hill"
-date: "2020-06-12"
-output: hugodown::md_document()
----
-```
-
-
-
-{{% alert note %}}
-Remember to use the **Serve Site** addin again so that you can immediately view your changes with every save using *LiveReload* and your `.html` file is properly output.
-{{% /alert %}}
-
-
 
 #### Adding images to a post
 
@@ -467,8 +533,8 @@ Again, you will need to update the `baseurl` in your `config.toml` file to refle
 At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
 
 
-## Have fun!
+## We made it!
 
-Lastly, don't forget to just have fun with it. Happy `blogdown`ing!
+So, we hit a few bumps in the road, but I'm interested to watch how this package matures, and hopefully I'll be able to help improve quality of life for users (and selfishly for me!). Happy hugodown-ing!
 
-<iframe src="https://giphy.com/embed/13Y6LAZJqRspI4" width="480" height="357" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dancing-seinfeld-elaine-benes-13Y6LAZJqRspI4">via GIPHY</a></p>
+![](https://media.giphy.com/media/l2Je4FGrsRuYskcda/giphy.gif)
