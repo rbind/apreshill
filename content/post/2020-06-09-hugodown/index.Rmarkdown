@@ -1,14 +1,19 @@
 ---
-aliases: [up-and-running-with-hugodown]
 title: Up & Running with hugodown
-authors: [alison]
-date: '2020-06-07'
-tags: [hugo]
+author: Alison Hill
+date: '2020-06-09'
 categories:
-  - hugodown
   - hugo
+  - hugodown
   - netlify
-summary: A guide to getting up and running with hugodown, the Hugo Academic theme, GitHub, and Netlify
+tags:
+  - hugo
+aliases:
+  - up-and-running-with-hugodown
+authors:
+  - alison
+summary: A guide to getting up and running with hugodown, the Hugo Academic theme,
+  GitHub, and Netlify
 image:
   caption: '[Photo by Ivan Botha on Unsplash](https://unsplash.com/photos/biz5Kfa-JMQ)'
   focal_point: ''
@@ -336,7 +341,7 @@ The above workflow is only for editing existing files or posts, but not for **cr
 
 ## Add a new post
 
-If you are reading this still, then you probably care very much about being able to include R code and output in your blog posts. That is where R Markdown enters the picture :tada: Hugodown allows you to create new .Rmd posts that are knittable (to `.md` files), then previewable in your Hugo site.
+If you are reading this still, then you probably care very much about being able to include R code and output in your blog posts. That is where R Markdown enters the picture :tada: Hugodown allows you to create new `.Rmd` posts that are knittable (to `.md` files), then previewable in your Hugo site.
 
 
 #### New .Rmd posts
@@ -348,10 +353,9 @@ Use the console to author a new `.Rmd` post; I'll name my post "hi-hugo":
 ● Modify '/Users/alison/rscratch/test-hugodown/content/post/hi-hugo/index.Rmd'
 ```
 
-Nicely, this takes the path to where you want your post to live, relative to the `content/` folder (so that piece of the path is assumed, rightly so!). In the Academic theme, the example site organizes blog posts into the `content/post/` folder (singular!). 
+This takes the path to where you want your post to live, relative to the `content/` folder (so that piece of the path is assumed, rightly so!). In the Academic theme, the example site organizes blog posts into the `content/post/` folder (singular!), but the name of this folder varies across Hugo themes. 
 
-You'll also notice that it creates a folder with the name of my post (`"hi-hugo"`), then the actual R Markdown file that I will edit is named `index.Rmd`. This is a Hugo [page bundle](/post/2019-02-21-hugo-page-bundles/). Your post is considered a single page. All your static images, static data files like `.csv` files, etc. should go in this folder, so you have a nice tidy post bundle :bento:
-
+You'll also notice that it creates a folder with the name of my post (`"hi-hugo"`), then the actual R Markdown file that I will edit is named `index.Rmd`. This is a Hugo [page bundle](/post/2019-02-21-hugo-page-bundles/). Each post is considered a single page. All your static images, static data files like `.csv` files, etc. should go in this folder, so you have a nice tidy post bundle :bento:
 
 Let's look at the `index.Rmd`. You should notice the output format here is `hugodown::md_document()`. This means that we'll knit our `.Rmd` to a `.md` file.
 
