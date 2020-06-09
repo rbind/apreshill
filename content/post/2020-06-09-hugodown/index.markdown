@@ -55,7 +55,9 @@ So if you are feeling fearless and want to live on the bleeding edge, read on to
 
 For any website-builder, getting up and running with all the moving parts (RStudio, GitHub, Hugo, Netlify) can take a few tries. In this post, I'm passing along what works for me, and the workflow that I use when I teach Hugo website development. Everyone's mileage may vary, though, depending on your operating system and your approach. 
 
-For this blog post, I'm assuming you have basic familiarity with R, RStudio, & GitHub. If that is not you, you may want to work through [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al. first, then coming back here when you are ready.
+For this blog post, I'm assuming you have basic familiarity with R, RStudio, & GitHub. If that is not you, you will need to work through [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al. first, then come back here when you are ready. 
+
+Since hugodown is currently only available on GitHub, you'll need to also setup a [GitHub Personal Access Token](https://happygitwithr.com/github-pat.html) to install it. 
 
 In my original 2017 post, I mentioned that at that time, I was a new mom, and just in the process of writing all that up, I filled up my tea mug twice with ice cold water, and filled my water bottle with scalding hot water. This time around isn't too different! Fast forward 3 years: it is 2020, there is a global pandemic, I've been under stay-at-home orders with a toddler at home for months. So buckle up :cowboy:
 
@@ -68,7 +70,7 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 
 ## Start in GitHub
 
-![](blogdown-signpost-1.png)
+![](01-hugodown.png)
 
 
 1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
@@ -90,7 +92,7 @@ You can see some of the repo names used by members of the `rbind` organization [
     
 ## Move to RStudio
 
-![](blogdown-signpost-2.png)
+![](02-hugodown.png)
 
 We just created the remote repository on GitHub. To make a local copy on our computer that we can actually work in, we'll clone that repository into a new RStudio project. This will allow us to sync between the two locations: your remote (the one you see on github.com) and your local desktop.
     
@@ -104,7 +106,7 @@ We just created the remote repository on GitHub. To make a local copy on our com
 
 ##  Stay in RStudio 
 
-![](blogdown-signpost-3.png)
+![](03-hugodown.png)
 
 
 
@@ -180,7 +182,7 @@ We just created the remote repository on GitHub. To make a local copy on our com
 
 ## Preview the site
 
-![](blogdown-signpost-4.png)
+![](04-hugodown.png)
 
 Following the `README`, we start by previewing the example site using `hugodown::hugo_start()`.
 
@@ -484,7 +486,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 
 ## Deploy in Netlify
 
-![](blogdown-signpost-5.png)
+![](05-hugodown.png)
 
 > netlify.toml file
 

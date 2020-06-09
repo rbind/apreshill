@@ -311,6 +311,11 @@ iframe {
 #TableOfContents li a, .toc-top li a {
 	padding: .125rem .5rem;
 	font-size: .8rem;
+	color: #1a162d99;
+}
+
+#TableOfContents {
+	border-left: 1px solid #09bc8a3d;
 }
 
 html {
@@ -318,7 +323,7 @@ html {
 }
 
 html, body {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
 }
 
 
@@ -337,20 +342,16 @@ pre {
   white-space: pre-wrap;
 }
 
-/*---add code spacing-- */
-code {
-  letter-spacing: .08em;
-}
-
-
 /*---anchor headings-- */
-.anchor { 
-  /*visibility: hidden; */
-  opacity: 0.6;
+
+a > svg.anchor-symbol {
+  color: transparent;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+  fill: #1a162d99;
 }
 
-h2:hover a { 
-  /*visibility: visible;*/
-  text-decoration: none;
-  opacity: 0.9;
+a > svg.anchor-symbol:hover {
+  fill: #06805E;
+  transition: fill 0.6s ease;
 }
