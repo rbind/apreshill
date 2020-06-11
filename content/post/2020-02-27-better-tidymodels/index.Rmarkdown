@@ -59,7 +59,7 @@ My objective here is **not** to provide an introduction to using tidymodels, cro
 **Bottom line:** If you are stumbling upon this blog post in the year 2020 or beyond, know that there is a better way!
 {{% /alert %}}
 
-# A sad script symphony `r emo::ji("violin")` `r emo::ji("saxophone")` `r emo::ji("musical_keyboard")`
+## A sad script symphony `r emo::ji("violin")` `r emo::ji("saxophone")` `r emo::ji("musical_keyboard")`
 
 I'm not the first person to write sad tidymodels scripts- there are many out in the wild. Here were the blog posts that I found most helpful when trying to solve this particular coding conundrum:
 
@@ -69,7 +69,7 @@ I'm not the first person to write sad tidymodels scripts- there are many out in 
 
 1. [Modeling with parsnip and tidymodels](https://www.benjaminsorensen.me/post/modeling-with-parsnip-and-tidymodels/) by Benjamin Sorensen
 
-# Packages
+## Packages
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -79,39 +79,56 @@ library(ranger) # for random forest
 ```
 
 
-# Data
+
+## Data
 
 I'm going to use data that Allison Horst helped me source on penguins from the [Palmer Station](https://en.wikipedia.org/wiki/Palmer_Station) (Antarctica) [Long Term Ecological Research Network](https://lternet.edu/).
 
 > "sooo now I'm just looking at penguin pictures"
 > - [Allison Horst](https://twitter.com/allison_horst?lang=en) after slacking me this penguin data
 
-Here are the three dataset sources:
 
-- Adelie penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.219.3
-- Chinstrap penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.220.3
-- Gentoo penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.221.2
 
-I downloaded and imported these three datasets using R, then did some very light data wrangling and merged them into one called [`penguins`](data/penguins.csv), which I'll use now:
+{{% alert note %}}
+**Update!** We have bundled the Palmer Station penguins data into an R data package named palmerpenguins. Enjoy :penguin: Here is the package website: https://allisonhorst.github.io/palmerpenguins/
+{{% /alert %}}
 
-```{r}
-penguins <- 
-  read_csv(
-    here::here("content/post/2020-02-27-better-tidymodels/data/penguins.csv")) %>% 
-  mutate_if(is.character, as.factor)
-
-glimpse(penguins)
+```{r eval=FALSE}
+install.packages("remotes") # to install from github
+remotes::install_github("allisonhorst/palmerpenguins")
 ```
 
-# Penguins
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png)
+
+
+After you've installed the package, load it and read about the variables with `?penguins`. We'll modify this dataset lightly by:
+
++ casting all characters as factors,
++ dropping any observations with missing data, and 
++ dropping the `island` variable.
+
+```{r}
+library(palmerpenguins)
+
+tidypenguins <- penguins %>% 
+  mutate_if(is.character, as.factor) %>% 
+  select(-island) %>% 
+  drop_na()
+
+glimpse(tidypenguins)
+```
+
+## Penguins
+
+```{r echo=FALSE, out.width="50%", fig.cap="Artwork by @allisonhorst"}
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/man/figures/lter_penguins.png")
+```
+
 
 This data included structural size measurements of penguins like their bill length, flipper length, and body mass. It also included each penguin's species and sex. I'm going to use this data to try to predict penguin body mass. Sadly, we only have data for three distinct penguin species:
 
 ```{r}
-penguins %>% 
+tidypenguins %>% 
   count(species)
 ```
 
@@ -128,7 +145,7 @@ Looks like we have data for 3 of the smaller penguin species (of those pictured 
 First, let's build a simple linear regression model to predict body mass from flipper length.
 
 ```{r warning = FALSE, message = FALSE}
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+ggplot(tidypenguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(color = "salmon", size = 3, alpha = .9) +
   geom_smooth(method = "lm") +
   theme_penguin()
@@ -137,7 +154,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 Not bad! Looks promising. To actually fit a linear regression model, you might be used to something like this in R:
 
 ```{r}
-penguin_mod <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
+penguin_mod <- lm(body_mass_g ~ flipper_length_mm, data = tidypenguins)
 summary(penguin_mod)
 ```
 
@@ -145,11 +162,11 @@ But we aren't going to stick with this. We are going to use tidymodels, with the
 
 ![](https://media.giphy.com/media/C0EYVrLCgnYdy/giphy.gif)
 
-# tidymodels 101
+## tidymodels 101
 
 The code provided in the section below is *not* particularly sad `r emo::ji("penguin")`. If you are embarking on learning tidymodels, you'll need to use this same kind of code as the building blocks for any predictive modeling pipeline.
 
-## Parsnip: build the model
+### Parsnip: build the model
 
 This step is really three, using only the [parsnip package](https://tidymodels.github.io/parsnip/):
 
@@ -164,23 +181,23 @@ lm_spec
 
 Things that are missing: data (we haven't touched it yet) and a formula (no data, no variables, no twiddle `~`). This is an *abstract* model specification. See other possible parsnip models [here](https://tidymodels.github.io/parsnip/articles/articles/Models.html).
 
-## Recipe: not happening here, folks
+### Recipe: not happening here, folks
 
 This is where you would normally insert some code for feature engineering using the [recipes package](https://tidymodels.github.io/recipes/). But previously this required functions named `prep()`, `bake()`, `juice()`- so I'm willfully ignoring that for now. There will be no recipes involving penguins.
 
 ![](https://media.giphy.com/media/H4uE6w9G1uK4M/giphy.gif)
 
-## Rsample: initial split
+### Rsample: initial split
 
 We'll use the [rsample package](https://tidymodels.github.io/rsample/) to split (*ayee! I promise no penguins were hurt in the writing of this blog post*) the penguins up into two datasets: training and testing. If you are unfamiliar with this practice, read up on [the holdout method](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part1.html#resubstitution-validation-and-the-holdout-method).
 
 ```{r}
-penguin_split <- initial_split(penguins, strata = species)
+penguin_split <- initial_split(tidypenguins, strata = species)
 penguin_train <- training(penguin_split)
 penguin_test  <- testing(penguin_split)
 ```
 
-## Fitting the model once
+### Fitting the model once
 
 Fitting a single model once is...not *exactly* the hardest part. 
 
@@ -205,7 +222,7 @@ lm_spec %>%
 ```
 
 
-## Fitting the model with a function
+### Fitting the model with a function
 
 If you squint, you might see that I could make this into a function like below:
 
@@ -306,7 +323,7 @@ But, unfortunately, I shouldn't be predicting with the test set over and over ag
 
 ![](https://media.giphy.com/media/uwlDAujt3w9mU/giphy.gif)
 
-# Hey Jude, don't make it sad `r emo::ji("notes")`
+## Hey Jude, don't make it sad `r emo::ji("notes")`
 
 Now, for the `r emo::ji("sob")` part- let's add cross-validation! To do this, we'll use a function called [`rsample::vfold_cv()`](https://tidymodels.github.io/rsample/reference/vfold_cv.html).
 
@@ -321,7 +338,7 @@ penguin_folds
 
 The process of training, testing, and computing metrics gets a lot harder when you need to do this across 10 folds, each with a different data split. I eventually worked out three approaches, which I show below. All require some level of comfort with iteration using the [purrr package](https://purrr.tidyverse.org/).
 
-## Function with minimal purrr-ing
+### Function with minimal purrr-ing
 
 This approach is essentially a mega-function, that we then use purrr to map across each fold.
 
@@ -394,7 +411,7 @@ So, this works. But, can you imagine doing it again? Without errors? Can you ima
 ![](https://media.giphy.com/media/bmGmHZ5khMjN6/giphy.gif)
 
 
-## Purrr-to-the-max
+### Purrr-to-the-max
 
 This approach is `purrr::map()` (and friends) on steriods. We use vanilla `map()`, `map2()`, *and* `map2_dbl()` here. We also use [anonymous functions as a formula](https://jennybc.github.io/purrr-tutorial/ls03_map-function-syntax.html#anonymous_function,_formula), *and* the pipe operator within those anonymous functions.
 
@@ -431,11 +448,11 @@ penguin_res %>%
 
 
 
-## The purrr mash-up
+### The purrr mash-up
 
 Another way I worked out was largely after reviewing Max's slides from previous workshops. This is basically a mash-up of my previous two approaches, where we write laser-focused functions that each do one thing, then use purrr to apply those functions across the folds. This way is nice(r) for showing in slides as you can incrementally build up the results table. Let's see this sad script in action...
 
-### Round 1
+#### Round 1
 
 ```{r}
 set.seed(0) # for reproducibility
@@ -454,7 +471,7 @@ penguin_purrr <- penguin_folds %>%
 penguin_purrr
 ```
 
-### Round 2
+#### Round 2
 
 ```{r}
 # test: get predictions for a split
@@ -474,7 +491,7 @@ penguin_purrr
 ```
 
 
-### aaaand Round 3
+#### aaaand Round 3
 
 ```{r}
 # compare: compute metric for a split
@@ -520,7 +537,7 @@ penguin_folds %>%
 When you put it like *that*, it doesn't look like so much work! But, this way hides how much work it takes to write those 3 custom functions: `get_fits()`, `get_preds()`, and `get_rmse()`. And we still had to use vanilla `map()`, `map2()`, *and* `map2_dbl()`.
 
 
-# Make it better
+## Make it better
 
 I kept a learning log while working through the all the above code, and I wrote down these notes to myself:
 
@@ -535,8 +552,8 @@ If you have made it this far, I'm pretty sure I don't need to convince you that 
 ```{r}
 penguin_party <-
   tune::fit_resamples(
+    rt_spec,
     body_mass_g ~ .,
-    model = rt_spec,
     resamples = penguin_folds
 )
 ```
@@ -560,8 +577,8 @@ To see the predictions, we need to add use [`control_resamples()`](https://tidym
 ```{r}
 penguin_party <-
   tune::fit_resamples(
+    rt_spec,
     body_mass_g ~ .,
-    model = rt_spec,
     resamples = penguin_folds,
     control = control_resamples(save_pred = TRUE) # add this line
 )
