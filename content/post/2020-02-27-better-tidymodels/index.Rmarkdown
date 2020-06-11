@@ -88,7 +88,6 @@ I'm going to use data that Allison Horst helped me source on penguins from the [
 > - [Allison Horst](https://twitter.com/allison_horst?lang=en) after slacking me this penguin data
 
 
-
 {{% alert note %}}
 **Update!** We have bundled the Palmer Station penguins data into an R data package named palmerpenguins. Enjoy :penguin: Here is the package website: https://allisonhorst.github.io/palmerpenguins/
 {{% /alert %}}
@@ -111,7 +110,6 @@ After you've installed the package, load it and read about the variables with `?
 library(palmerpenguins)
 
 tidypenguins <- penguins %>% 
-  mutate_if(is.character, as.factor) %>% 
   select(-island) %>% 
   drop_na()
 

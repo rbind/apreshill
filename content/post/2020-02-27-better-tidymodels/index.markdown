@@ -75,7 +75,6 @@ I'm going to use data that Allison Horst helped me source on penguins from the [
 > - [Allison Horst](https://twitter.com/allison_horst?lang=en) after slacking me this penguin data
 
 
-
 {{% alert note %}}
 **Update!** We have bundled the Palmer Station penguins data into an R data package named palmerpenguins. Enjoy :penguin: Here is the package website: https://allisonhorst.github.io/palmerpenguins/
 {{% /alert %}}
@@ -100,7 +99,6 @@ After you've installed the package, load it and read about the variables with `?
 library(palmerpenguins)
 
 tidypenguins <- penguins %>% 
-  mutate_if(is.character, as.factor) %>% 
   select(-island) %>% 
   drop_na()
 
@@ -110,8 +108,8 @@ glimpse(tidypenguins)
 #> $ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
 #> $ culmen_length_mm  <dbl> 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.…
 #> $ culmen_depth_mm   <dbl> 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.…
-#> $ flipper_length_mm <dbl> 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 1…
-#> $ body_mass_g       <dbl> 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 380…
+#> $ flipper_length_mm <int> 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 1…
+#> $ body_mass_g       <int> 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 380…
 #> $ sex               <fct> MALE, FEMALE, FEMALE, FEMALE, MALE, FEMALE, MALE, F…
 ```
 
@@ -253,7 +251,7 @@ lm_spec %>%
 #> # A tibble: 1 x 3
 #>   .metric .estimator .estimate
 #>   <chr>   <chr>          <dbl>
-#> 1 rmse    standard        277.
+#> 1 rmse    standard        292.
 ```
 
 
@@ -289,7 +287,7 @@ get_rmse(model_spec = lm_spec, split = penguin_split)
 #> # A tibble: 1 x 3
 #>   .metric .estimator .estimate
 #>   <chr>   <chr>          <dbl>
-#> 1 rmse    standard        277.
+#> 1 rmse    standard        292.
 ```
 
 I could also build up a tibble that includes the results, if I wanted to save the predicted values, for example:
@@ -337,7 +335,7 @@ penguin_preds %>%
 #> # A tibble: 1 x 3
 #>   .metric .estimator .estimate
 #>   <chr>   <chr>          <dbl>
-#> 1 rmse    standard        277.
+#> 1 rmse    standard        292.
 ```
 
 
@@ -359,7 +357,7 @@ get_preds(model_spec = rt_spec,
 #> # A tibble: 1 x 3
 #>   .metric .estimator .estimate
 #>   <chr>   <chr>          <dbl>
-#> 1 rmse    standard        289.
+#> 1 rmse    standard        301.
 ```
 
 Or a random forest:
@@ -379,7 +377,7 @@ get_preds(model_spec = rf_spec,
 #> # A tibble: 1 x 3
 #>   .metric .estimator .estimate
 #>   <chr>   <chr>          <dbl>
-#> 1 rmse    standard        267.
+#> 1 rmse    standard        294.
 ```
 
 But, unfortunately, I shouldn't be predicting with the test set over and over again like this. It isn't good practice to predict with the test set > 1 time. What is a good predictive modeler to do? I should be saving (holding out) the test set and use it to generate predictions exactly once, at the very end &mdash; after I've compared different models, selected my features, and tuned my hyperparameters. How do you do this? You do [cross-validation](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part3.html) with the training set, and you leave the testing set for [*the very last fit you do*](https://tidymodels.github.io/tune/reference/last_fit.html).
@@ -469,7 +467,7 @@ get_fold_results(
 #> # A tibble: 1 x 3
 #>    rmse id     preds            
 #>   <dbl> <chr>  <list>           
-#> 1  394. Fold01 <tibble [26 × 7]>
+#> 1  349. Fold01 <tibble [26 × 7]>
 ```
 
 Next, I used purrr- but just once. The function `get_fold_results` is doing **most** of the work for us, but I needed purrr to map it across each fold.
@@ -485,16 +483,16 @@ kfold_results
 #> # A tibble: 10 x 3
 #>     rmse id     preds            
 #>    <dbl> <chr>  <list>           
-#>  1  394. Fold01 <tibble [26 × 7]>
-#>  2  315. Fold02 <tibble [25 × 7]>
-#>  3  385. Fold03 <tibble [25 × 7]>
-#>  4  302. Fold04 <tibble [25 × 7]>
-#>  5  372. Fold05 <tibble [25 × 7]>
-#>  6  289. Fold06 <tibble [25 × 7]>
-#>  7  274. Fold07 <tibble [25 × 7]>
-#>  8  287. Fold08 <tibble [25 × 7]>
-#>  9  266. Fold09 <tibble [25 × 7]>
-#> 10  339. Fold10 <tibble [25 × 7]>
+#>  1  349. Fold01 <tibble [26 × 7]>
+#>  2  304. Fold02 <tibble [25 × 7]>
+#>  3  290. Fold03 <tibble [25 × 7]>
+#>  4  313. Fold04 <tibble [25 × 7]>
+#>  5  403. Fold05 <tibble [25 × 7]>
+#>  6  383. Fold06 <tibble [25 × 7]>
+#>  7  330. Fold07 <tibble [25 × 7]>
+#>  8  374. Fold08 <tibble [25 × 7]>
+#>  9  319. Fold09 <tibble [25 × 7]>
+#> 10  298. Fold10 <tibble [25 × 7]>
 ```
 
 Here we are still left with 10 RMSE values- one for each of the 10 folds. We don't care too much about by fold- the power is in the aggregate. Specifically, we mainly care about the central tendency and spread of these RMSE values. Let's finish by combining (or aggregating) these metrics.
@@ -506,7 +504,7 @@ kfold_results %>%
 #> # A tibble: 1 x 2
 #>   mean_rmse sd_rmse
 #>       <dbl>   <dbl>
-#> 1      322.    47.2
+#> 1      336.    39.0
 ```
 
 So, this works. But, can you imagine doing it again? Without errors? Can you imagine teaching it?
@@ -549,23 +547,23 @@ penguin_res
 #> # A tibble: 10 x 7
 #>    splits      id     train_set      fit_models  test_set     estimates     rmse
 #>  * <named lis> <chr>  <named list>   <named lis> <named list> <named list> <dbl>
-#>  1 <split [22… Fold01 <tibble [225 … <fit[+]>    <tibble [26… <tibble [26…  394.
-#>  2 <split [22… Fold02 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  315.
-#>  3 <split [22… Fold03 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  385.
-#>  4 <split [22… Fold04 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  302.
-#>  5 <split [22… Fold05 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  372.
-#>  6 <split [22… Fold06 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  289.
-#>  7 <split [22… Fold07 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  274.
-#>  8 <split [22… Fold08 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  287.
-#>  9 <split [22… Fold09 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  266.
-#> 10 <split [22… Fold10 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  339.
+#>  1 <split [22… Fold01 <tibble [225 … <fit[+]>    <tibble [26… <tibble [26…  349.
+#>  2 <split [22… Fold02 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  304.
+#>  3 <split [22… Fold03 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  290.
+#>  4 <split [22… Fold04 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  313.
+#>  5 <split [22… Fold05 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  403.
+#>  6 <split [22… Fold06 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  383.
+#>  7 <split [22… Fold07 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  330.
+#>  8 <split [22… Fold08 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  374.
+#>  9 <split [22… Fold09 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  319.
+#> 10 <split [22… Fold10 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  298.
 
 penguin_res %>% 
   summarise(mean_rmse = mean(rmse), sd_rmse = sd(rmse))
 #> # A tibble: 1 x 2
 #>   mean_rmse sd_rmse
 #>       <dbl>   <dbl>
-#> 1      322.    47.2
+#> 1      336.    39.0
 ```
 
 
@@ -666,16 +664,16 @@ penguin_purrr
 #> # A tibble: 10 x 5
 #>    splits           id     rt_fits      rt_preds          rt_rmse
 #>  * <named list>     <chr>  <named list> <named list>        <dbl>
-#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    394.
-#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    315.
-#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    385.
-#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    302.
-#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    372.
-#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    289.
-#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    274.
-#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    287.
-#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    266.
-#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    339.
+#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    349.
+#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    304.
+#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    290.
+#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    313.
+#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    403.
+#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    383.
+#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    330.
+#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    374.
+#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    319.
+#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    298.
 ```
 
 Finally, summarizing as I did before:
@@ -687,7 +685,7 @@ penguin_purrr %>%
 #> # A tibble: 1 x 2
 #>   mean_rmse sd_rmse
 #>       <dbl>   <dbl>
-#> 1      322.    47.2
+#> 1      336.    39.0
 ```
 
 In practice, if you did all these at once instead of incrementally, it would look like:
@@ -709,16 +707,16 @@ penguin_folds %>%
 #> # A tibble: 10 x 5
 #>    splits           id     rt_fits      rt_preds          rt_rmse
 #>  * <named list>     <chr>  <named list> <named list>        <dbl>
-#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    394.
-#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    315.
-#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    385.
-#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    302.
-#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    372.
-#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    289.
-#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    274.
-#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    287.
-#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    266.
-#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    339.
+#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    349.
+#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    304.
+#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    290.
+#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    313.
+#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    403.
+#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    383.
+#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    330.
+#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    374.
+#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    319.
+#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    298.
 ```
 
 When you put it like *that*, it doesn't look like so much work! But, this way hides how much work it takes to write those 3 custom functions: `get_fits()`, `get_preds()`, and `get_rmse()`. And we still had to use vanilla `map()`, `map2()`, *and* `map2_dbl()`.
@@ -777,8 +775,8 @@ penguin_party %>%
 #> # A tibble: 2 x 5
 #>   .metric .estimator    mean     n std_err
 #>   <chr>   <chr>        <dbl> <int>   <dbl>
-#> 1 rmse    standard   322.       10 14.9   
-#> 2 rsq     standard     0.847    10  0.0132
+#> 1 rmse    standard   336.       10 12.3   
+#> 2 rsq     standard     0.829    10  0.0159
 ```
 
 To see the predictions, we need to add use [`control_resamples()`](https://tidymodels.github.io/tune/reference/control_grid.html):
@@ -802,17 +800,17 @@ penguin_party %>%
   collect_predictions()
 #> # A tibble: 251 x 4
 #>    id     .pred  .row body_mass_g
-#>    <chr>  <dbl> <int>       <dbl>
-#>  1 Fold01 3399.     4        3450
-#>  2 Fold01 4035.    11        3600
-#>  3 Fold01 4035.    14        3800
-#>  4 Fold01 3399.    41        2850
-#>  5 Fold01 3399.    54        3200
-#>  6 Fold01 4035.    65        4450
-#>  7 Fold01 3399.    70        3725
-#>  8 Fold01 4035.    71        4725
-#>  9 Fold01 3399.    76        3175
-#> 10 Fold01 4035.    85        3325
+#>    <chr>  <dbl> <int>       <int>
+#>  1 Fold01 3417      4        3625
+#>  2 Fold01 3417     11        3325
+#>  3 Fold01 3971.    14        3950
+#>  4 Fold01 3971.    41        3800
+#>  5 Fold01 3417     54        3700
+#>  6 Fold01 3971.    65        4300
+#>  7 Fold01 3971.    70        4100
+#>  8 Fold01 3971.    71        4725
+#>  9 Fold01 3971.    76        3900
+#> 10 Fold01 3417     85        3350
 #> # … with 241 more rows
 ```
 
