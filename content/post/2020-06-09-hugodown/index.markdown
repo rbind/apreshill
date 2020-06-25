@@ -26,14 +26,14 @@ image:
 
 Hi! Hello! Welcome. Bienvenidos.
 
-Almost 3 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my own website. Since then, that single post has been viewed over 22,874 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
+Almost 3 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my own website. Since then, that single post has been viewed over 22,934 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
 
 ![](https://media.giphy.com/media/L2jHJeRY4twe4/giphy.gif)
 
 
 But, making and maintaining Hugo websites using blogdown was not totally pain-free. 
 
-![](https://media.giphy.com/media/HQyLIG132Y836/giphy.gif)
+![](https://media.giphy.com/media/xT0xeK2LxlMVXiAOuk/giphy.gif)
 
 Here are some great posts that document pretty common user experiences and frustrations:
 
@@ -66,10 +66,21 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 {{% /alert %}}
 
 
-## Start in GitHub
+## New RStudio project
 
 ![](01-hugodown.png)
 
+Open up RStudio to create a new project where your website's files will live.
+    
+1. Click `File > New Project > New Directory > New Project` (yes, choose *New Project* twice, this is not a typo!).
+
+1. Be intentional about *where* you tell RStudio to create this new project, and *what* you name your project.
+
+1. Check the *Create a git repository* box.
+
+1. Click **Create Project**.
+
+![Screenshot above: Creating a new repository in GitHub](new-rproj.png)
 
 1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
 
