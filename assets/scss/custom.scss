@@ -153,6 +153,13 @@ div.alert-warning > div:first-child::before {
   content: "\f1e2";
 }
 
+div.alert-todo > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #D7ADD0;
+  content: "\f0ae";
+}
+
 .alert-note {
   color: #004346;
   background-color: #fff;
@@ -173,6 +180,17 @@ div.alert.alert-warning {
   color: #004346;
   background-color: #FFE7ED;
   border-top: 4pt solid #ff003f;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+div.alert.alert-todo {
+  color: #004346;
+  background-color: #fff;
+  border-top: 4pt solid #D7ADD0;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
