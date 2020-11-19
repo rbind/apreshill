@@ -23,19 +23,7 @@ output:
     toc_depth: 1
 ---
 
-```{r include=FALSE}
-library(tidyverse)
-library(tidymodels)
 
-knitr::opts_chunk$set(comment = "#>",
-                      fig.path = "figs/",
-                      collapse = TRUE)
-
-theme_penguin <- function(base_family="Karla") {
-
-  ret <- ggplot2::theme_minimal(base_family=base_family)
-}
-```
 
 
 A few years ago, I did a talk called ["Take a Sad Plot & Make it Better,"](/talk/2018-ohsu-sad-plot-better/) where I showed how I took a single sad plot and tried to make it better. The process of making that plot better taught me a lot about data visualization, and about the [ggplot2 package](https://ggplot2.tidyverse.org/). 
@@ -48,9 +36,7 @@ Fast-forward to 2019 when I started learning [tidymodels](https://github.com/tid
 
 Let's start with some [cute penguin art](http://www.greenhumour.com/2018/04/penguins-of-world.html) by Rohan Chakravarty...
 
-```{r echo=FALSE, fig.align='center', fig.link='http://www.greenhumour.com/2018/04/penguins-of-world.html'}
-knitr::include_graphics("penguins-of-the-world.JPG")
-```
+<a href="http://www.greenhumour.com/2018/04/penguins-of-world.html" target="_blank"><img src="penguins-of-the-world.JPG" width="270" style="display: block; margin: auto;" /></a>
 
 
 My objective here is **not** to provide an introduction to using tidymodels, cross-validation, or to machine learning. If that is what you came for, check out the project button at the top of this post for my workshop materials for learners, and my [associated blog post](https://education.rstudio.com/blog/2020/02/conf20-intro-ml/) on the RStudio education site.
@@ -59,7 +45,7 @@ My objective here is **not** to provide an introduction to using tidymodels, cro
 **Bottom line:** If you are stumbling upon this blog post in the year 2020 or beyond, know that there is a better way!
 {{% /alert %}}
 
-# A sad script symphony `r emo::ji("violin")` `r emo::ji("saxophone")` `r emo::ji("musical_keyboard")`
+## A sad script symphony 🎻 🎷 🎹
 
 I'm not the first person to write sad tidymodels scripts- there are many out in the wild. Here were the blog posts that I found most helpful when trying to solve this particular coding conundrum:
 
@@ -69,9 +55,10 @@ I'm not the first person to write sad tidymodels scripts- there are many out in 
 
 1. [Modeling with parsnip and tidymodels](https://www.benjaminsorensen.me/post/modeling-with-parsnip-and-tidymodels/) by Benjamin Sorensen
 
-# Packages
+## Packages
 
-```{r message=FALSE, warning=FALSE}
+
+```r
 library(tidyverse)
 library(tidymodels)
 library(rpart)  # for decision tree
@@ -79,47 +66,78 @@ library(ranger) # for random forest
 ```
 
 
-# Data
+
+## Data
 
 I'm going to use data that Allison Horst helped me source on penguins from the [Palmer Station](https://en.wikipedia.org/wiki/Palmer_Station) (Antarctica) [Long Term Ecological Research Network](https://lternet.edu/).
 
 > "sooo now I'm just looking at penguin pictures"
 > - [Allison Horst](https://twitter.com/allison_horst?lang=en) after slacking me this penguin data
 
-Here are the three dataset sources:
 
-- Adelie penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.219.3
-- Chinstrap penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.220.3
-- Gentoo penguins:
-https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-pal.221.2
+{{% alert note %}}
+**Update!** We have bundled the Palmer Station penguins data into an R data package named palmerpenguins. Enjoy :penguin: Here is the package website: https://allisonhorst.github.io/palmerpenguins/
+{{% /alert %}}
 
-I downloaded and imported these three datasets using R, then did some very light data wrangling and merged them into one called [`penguins`](data/penguins.csv), which I'll use now:
 
-```{r}
-penguins <- 
-  read_csv(
-    here::here("content/post/2020-02-27-better-tidymodels/data/penguins.csv")) %>% 
-  mutate_if(is.character, as.factor)
-
-glimpse(penguins)
+```r
+install.packages("remotes") # to install from github
+remotes::install_github("allisonhorst/palmerpenguins")
 ```
 
-# Penguins
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png)
+
+
+After you've installed the package, load it and read about the variables with `?penguins`. We'll modify this dataset lightly by:
+
++ casting all characters as factors,
++ dropping any observations with missing data, and 
++ dropping the `island` variable.
+
+
+```r
+library(palmerpenguins)
+
+tidypenguins <- penguins %>% 
+  select(-island) %>% 
+  drop_na()
+
+glimpse(tidypenguins)
+#> Rows: 333
+#> Columns: 6
+#> $ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+#> $ culmen_length_mm  <dbl> 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.…
+#> $ culmen_depth_mm   <dbl> 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.…
+#> $ flipper_length_mm <int> 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 1…
+#> $ body_mass_g       <int> 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 380…
+#> $ sex               <fct> MALE, FEMALE, FEMALE, FEMALE, MALE, FEMALE, MALE, F…
+```
+
+## Penguins
+
+<div class="figure">
+<img src="https://allisonhorst.github.io/palmerpenguins/man/figures/lter_penguins.png" alt="Artwork by @allisonhorst" width="50%" />
+<p class="caption">Figure 1: Artwork by @allisonhorst</p>
+</div>
+
 
 This data included structural size measurements of penguins like their bill length, flipper length, and body mass. It also included each penguin's species and sex. I'm going to use this data to try to predict penguin body mass. Sadly, we only have data for three distinct penguin species:
 
-```{r}
-penguins %>% 
+
+```r
+tidypenguins %>% 
   count(species)
+#> # A tibble: 3 x 2
+#>   species       n
+#>   <fct>     <int>
+#> 1 Adelie      146
+#> 2 Chinstrap    68
+#> 3 Gentoo      119
 ```
 
 Here is a lineup:
 
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics("https://www.bas.ac.uk/wp-content/uploads/2015/04/Penguin-heights.jpg")
-```
+<img src="https://www.bas.ac.uk/wp-content/uploads/2015/04/Penguin-heights.jpg" style="display: block; margin: auto;" />
 
 From: https://www.bas.ac.uk/about/antarctica/wildlife/penguins/
 
@@ -127,60 +145,87 @@ Looks like we have data for 3 of the smaller penguin species (of those pictured 
 
 First, let's build a simple linear regression model to predict body mass from flipper length.
 
-```{r warning = FALSE, message = FALSE}
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+
+```r
+ggplot(tidypenguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(color = "salmon", size = 3, alpha = .9) +
   geom_smooth(method = "lm") +
   theme_penguin()
 ```
 
+<img src="figs/unnamed-chunk-9-1.png" width="672" />
+
 Not bad! Looks promising. To actually fit a linear regression model, you might be used to something like this in R:
 
-```{r}
-penguin_mod <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
+
+```r
+penguin_mod <- lm(body_mass_g ~ flipper_length_mm, data = tidypenguins)
 summary(penguin_mod)
+#> 
+#> Call:
+#> lm(formula = body_mass_g ~ flipper_length_mm, data = tidypenguins)
+#> 
+#> Residuals:
+#>      Min       1Q   Median       3Q      Max 
+#> -1057.33  -259.79   -12.24   242.97  1293.89 
+#> 
+#> Coefficients:
+#>                   Estimate Std. Error t value Pr(>|t|)    
+#> (Intercept)       -5872.09     310.29  -18.93   <2e-16 ***
+#> flipper_length_mm    50.15       1.54   32.56   <2e-16 ***
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#> 
+#> Residual standard error: 393.3 on 331 degrees of freedom
+#> Multiple R-squared:  0.7621,	Adjusted R-squared:  0.7614 
+#> F-statistic:  1060 on 1 and 331 DF,  p-value: < 2.2e-16
 ```
 
 But we aren't going to stick with this. We are going to use tidymodels, with the goal of generating accurate predictions for future, yet-to-be-seen penguins.
 
 ![](https://media.giphy.com/media/C0EYVrLCgnYdy/giphy.gif)
 
-# tidymodels 101
+## tidymodels 101
 
-The code provided in the section below is *not* particularly sad `r emo::ji("penguin")`. If you are embarking on learning tidymodels, you'll need to use this same kind of code as the building blocks for any predictive modeling pipeline.
+The code provided in the section below is *not* particularly sad 🐧. If you are embarking on learning tidymodels, you'll need to use this same kind of code as the building blocks for any predictive modeling pipeline.
 
-## Parsnip: build the model
+### Parsnip: build the model
 
 This step is really three, using only the [parsnip package](https://tidymodels.github.io/parsnip/):
 
-```{r}
+
+```r
 lm_spec <- 
   linear_reg() %>%       # pick model
   set_engine("lm") %>%   # set engine
   set_mode("regression") # set mode
 
 lm_spec
+#> Linear Regression Model Specification (regression)
+#> 
+#> Computational engine: lm
 ```
 
 Things that are missing: data (we haven't touched it yet) and a formula (no data, no variables, no twiddle `~`). This is an *abstract* model specification. See other possible parsnip models [here](https://tidymodels.github.io/parsnip/articles/articles/Models.html).
 
-## Recipe: not happening here, folks
+### Recipe: not happening here, folks
 
 This is where you would normally insert some code for feature engineering using the [recipes package](https://tidymodels.github.io/recipes/). But previously this required functions named `prep()`, `bake()`, `juice()`- so I'm willfully ignoring that for now. There will be no recipes involving penguins.
 
 ![](https://media.giphy.com/media/H4uE6w9G1uK4M/giphy.gif)
 
-## Rsample: initial split
+### Rsample: initial split
 
 We'll use the [rsample package](https://tidymodels.github.io/rsample/) to split (*ayee! I promise no penguins were hurt in the writing of this blog post*) the penguins up into two datasets: training and testing. If you are unfamiliar with this practice, read up on [the holdout method](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part1.html#resubstitution-validation-and-the-holdout-method).
 
-```{r}
-penguin_split <- initial_split(penguins, strata = species)
+
+```r
+penguin_split <- initial_split(tidypenguins, strata = species)
 penguin_train <- training(penguin_split)
 penguin_test  <- testing(penguin_split)
 ```
 
-## Fitting the model once
+### Fitting the model once
 
 Fitting a single model once is...not *exactly* the hardest part. 
 
@@ -188,7 +233,8 @@ Fitting a single model once is...not *exactly* the hardest part.
 
 This is essentially the workflow from this [early blog post](https://rviews.rstudio.com/2019/06/19/a-gentle-intro-to-tidymodels/).
 
-```{r}
+
+```r
 set.seed(0)
 
 lm_spec %>% 
@@ -202,14 +248,19 @@ lm_spec %>%
   # compare: get metrics
   bind_cols(penguin_test) %>% 
   rmse(truth = body_mass_g, estimate = .pred)
+#> # A tibble: 1 x 3
+#>   .metric .estimator .estimate
+#>   <chr>   <chr>          <dbl>
+#> 1 rmse    standard        292.
 ```
 
 
-## Fitting the model with a function
+### Fitting the model with a function
 
 If you squint, you might see that I could make this into a function like below:
 
-```{r}
+
+```r
 get_rmse <- function(model_spec, split) {
   
   model_spec %>% 
@@ -229,14 +280,20 @@ get_rmse <- function(model_spec, split) {
 
 And I could use it to fit a linear regression model:
 
-```{r}
+
+```r
 set.seed(0)
 get_rmse(model_spec = lm_spec, split = penguin_split)
+#> # A tibble: 1 x 3
+#>   .metric .estimator .estimate
+#>   <chr>   <chr>          <dbl>
+#> 1 rmse    standard        292.
 ```
 
 I could also build up a tibble that includes the results, if I wanted to save the predicted values, for example:
 
-```{r}
+
+```r
 get_preds <- function(model_spec, split){
   
   # train: get fitted model
@@ -257,23 +314,35 @@ penguin_preds <- get_preds(model_spec = lm_spec, split = penguin_split)
 
 Then I can work with the predicted values, like plotting the fitted body mass estimates against the residuals.
 
-```{r}
+
+```r
 ggplot(penguin_preds, aes(x = .pred, y = (.pred - body_mass_g))) +
   geom_point(aes(colour = species), size = 3, alpha = .8) +
   geom_smooth(method = "lm") +
   theme_penguin() +
   scico::scale_colour_scico_d(end = .8) +
   ggtitle("Residuals vs Fitted")
+#> `geom_smooth()` using formula 'y ~ x'
+```
+
+<img src="figs/unnamed-chunk-17-1.png" width="672" />
+
+```r
 
 # compare: get metrics
 penguin_preds %>% 
   rmse(truth = body_mass_g, estimate = .pred)
+#> # A tibble: 1 x 3
+#>   .metric .estimator .estimate
+#>   <chr>   <chr>          <dbl>
+#> 1 rmse    standard        292.
 ```
 
 
 Or I could fit a regression tree model with a new model spec:
 
-```{r}
+
+```r
 # regression tree model spec
 rt_spec <-
   decision_tree() %>% 
@@ -285,10 +354,15 @@ set.seed(0)
 get_preds(model_spec = rt_spec, 
           split = penguin_split) %>% 
   rmse(truth = body_mass_g, estimate = .pred)
+#> # A tibble: 1 x 3
+#>   .metric .estimator .estimate
+#>   <chr>   <chr>          <dbl>
+#> 1 rmse    standard        301.
 ```
 
 Or a random forest:
-```{r}
+
+```r
 # random forest model spec
 rf_spec <-
   rand_forest() %>% 
@@ -300,28 +374,47 @@ set.seed(0)
 get_preds(model_spec = rf_spec, 
           split = penguin_split) %>% 
   rmse(truth = body_mass_g, estimate = .pred)
+#> # A tibble: 1 x 3
+#>   .metric .estimator .estimate
+#>   <chr>   <chr>          <dbl>
+#> 1 rmse    standard        294.
 ```
 
 But, unfortunately, I shouldn't be predicting with the test set over and over again like this. It isn't good practice to predict with the test set > 1 time. What is a good predictive modeler to do? I should be saving (holding out) the test set and use it to generate predictions exactly once, at the very end &mdash; after I've compared different models, selected my features, and tuned my hyperparameters. How do you do this? You do [cross-validation](https://sebastianraschka.com/blog/2016/model-evaluation-selection-part3.html) with the training set, and you leave the testing set for [*the very last fit you do*](https://tidymodels.github.io/tune/reference/last_fit.html).
 
 ![](https://media.giphy.com/media/uwlDAujt3w9mU/giphy.gif)
 
-# Hey Jude, don't make it sad `r emo::ji("notes")`
+## Hey Jude, don't make it sad 🎶
 
-Now, for the `r emo::ji("sob")` part- let's add cross-validation! To do this, we'll use a function called [`rsample::vfold_cv()`](https://tidymodels.github.io/rsample/reference/vfold_cv.html).
+Now, for the 😭 part- let's add cross-validation! To do this, we'll use a function called [`rsample::vfold_cv()`](https://tidymodels.github.io/rsample/reference/vfold_cv.html).
 
-```{r}
+
+```r
 # add the cv step here
 set.seed(0)
 penguin_folds <- vfold_cv(data = penguin_train, strata = "species")
 
 penguin_folds
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 2
+#>    splits           id    
+#>    <named list>     <chr> 
+#>  1 <split [225/26]> Fold01
+#>  2 <split [226/25]> Fold02
+#>  3 <split [226/25]> Fold03
+#>  4 <split [226/25]> Fold04
+#>  5 <split [226/25]> Fold05
+#>  6 <split [226/25]> Fold06
+#>  7 <split [226/25]> Fold07
+#>  8 <split [226/25]> Fold08
+#>  9 <split [226/25]> Fold09
+#> 10 <split [226/25]> Fold10
 ```
 
 
 The process of training, testing, and computing metrics gets a lot harder when you need to do this across 10 folds, each with a different data split. I eventually worked out three approaches, which I show below. All require some level of comfort with iteration using the [purrr package](https://purrr.tidyverse.org/).
 
-## Function with minimal purrr-ing
+### Function with minimal purrr-ing
 
 This approach is essentially a mega-function, that we then use purrr to map across each fold.
 
@@ -334,7 +427,8 @@ I'm going to change a few things from my previous `get_preds()` function:
 
 To build up this function, my strategy was to figure out how to work with one fold, then I knew I'd be able to use `purrr::map_df()` to apply it across multiple folds.
 
-```{r}
+
+```r
 # Figure it out for one fold
 get_fold_results <- function(model_spec, split){
   
@@ -363,30 +457,54 @@ get_fold_results <- function(model_spec, split){
 
 I tried this function with a single fold first:
 
-```{r}
+
+```r
 set.seed(0)
 get_fold_results(
     split      = penguin_folds$splits[[1]], 
     model_spec = rt_spec
   )
+#> # A tibble: 1 x 3
+#>    rmse id     preds            
+#>   <dbl> <chr>  <list>           
+#> 1  349. Fold01 <tibble [26 × 7]>
 ```
 
 Next, I used purrr- but just once. The function `get_fold_results` is doing **most** of the work for us, but I needed purrr to map it across each fold.
 
-```{r}
+
+```r
 set.seed(0)
 kfold_results <- 
   map_df(
     penguin_folds$splits, 
     ~get_fold_results(.x, model = rt_spec))
 kfold_results
+#> # A tibble: 10 x 3
+#>     rmse id     preds            
+#>    <dbl> <chr>  <list>           
+#>  1  349. Fold01 <tibble [26 × 7]>
+#>  2  304. Fold02 <tibble [25 × 7]>
+#>  3  290. Fold03 <tibble [25 × 7]>
+#>  4  313. Fold04 <tibble [25 × 7]>
+#>  5  403. Fold05 <tibble [25 × 7]>
+#>  6  383. Fold06 <tibble [25 × 7]>
+#>  7  330. Fold07 <tibble [25 × 7]>
+#>  8  374. Fold08 <tibble [25 × 7]>
+#>  9  319. Fold09 <tibble [25 × 7]>
+#> 10  298. Fold10 <tibble [25 × 7]>
 ```
 
 Here we are still left with 10 RMSE values- one for each of the 10 folds. We don't care too much about by fold- the power is in the aggregate. Specifically, we mainly care about the central tendency and spread of these RMSE values. Let's finish by combining (or aggregating) these metrics.
 
-```{r}
+
+```r
 kfold_results %>% 
   summarize(mean_rmse = mean(rmse), sd_rmse = sd(rmse))
+#> # A tibble: 1 x 2
+#>   mean_rmse sd_rmse
+#>       <dbl>   <dbl>
+#> 1      336.    39.0
 ```
 
 So, this works. But, can you imagine doing it again? Without errors? Can you imagine teaching it?
@@ -394,11 +512,12 @@ So, this works. But, can you imagine doing it again? Without errors? Can you ima
 ![](https://media.giphy.com/media/bmGmHZ5khMjN6/giphy.gif)
 
 
-## Purrr-to-the-max
+### Purrr-to-the-max
 
 This approach is `purrr::map()` (and friends) on steriods. We use vanilla `map()`, `map2()`, *and* `map2_dbl()` here. We also use [anonymous functions as a formula](https://jennybc.github.io/purrr-tutorial/ls03_map-function-syntax.html#anonymous_function,_formula), *and* the pipe operator within those anonymous functions.
 
-```{r}
+
+```r
 set.seed(0)
 penguin_res <- penguin_folds %>% 
   mutate(
@@ -424,20 +543,39 @@ penguin_res <- penguin_folds %>%
   )
 
 penguin_res
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 7
+#>    splits      id     train_set      fit_models  test_set     estimates     rmse
+#>  * <named lis> <chr>  <named list>   <named lis> <named list> <named list> <dbl>
+#>  1 <split [22… Fold01 <tibble [225 … <fit[+]>    <tibble [26… <tibble [26…  349.
+#>  2 <split [22… Fold02 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  304.
+#>  3 <split [22… Fold03 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  290.
+#>  4 <split [22… Fold04 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  313.
+#>  5 <split [22… Fold05 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  403.
+#>  6 <split [22… Fold06 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  383.
+#>  7 <split [22… Fold07 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  330.
+#>  8 <split [22… Fold08 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  374.
+#>  9 <split [22… Fold09 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  319.
+#> 10 <split [22… Fold10 <tibble [226 … <fit[+]>    <tibble [25… <tibble [25…  298.
 
 penguin_res %>% 
   summarise(mean_rmse = mean(rmse), sd_rmse = sd(rmse))
+#> # A tibble: 1 x 2
+#>   mean_rmse sd_rmse
+#>       <dbl>   <dbl>
+#> 1      336.    39.0
 ```
 
 
 
-## The purrr mash-up
+### The purrr mash-up
 
 Another way I worked out was largely after reviewing Max's slides from previous workshops. This is basically a mash-up of my previous two approaches, where we write laser-focused functions that each do one thing, then use purrr to apply those functions across the folds. This way is nice(r) for showing in slides as you can incrementally build up the results table. Let's see this sad script in action...
 
-### Round 1
+#### Round 1
 
-```{r}
+
+```r
 set.seed(0) # for reproducibility
 
 # train: get fitted model for a split
@@ -452,11 +590,26 @@ penguin_purrr <- penguin_folds %>%
   mutate(rt_fits = map(splits, get_fits, rt_spec))
 
 penguin_purrr
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 3
+#>    splits           id     rt_fits     
+#>  * <named list>     <chr>  <named list>
+#>  1 <split [225/26]> Fold01 <fit[+]>    
+#>  2 <split [226/25]> Fold02 <fit[+]>    
+#>  3 <split [226/25]> Fold03 <fit[+]>    
+#>  4 <split [226/25]> Fold04 <fit[+]>    
+#>  5 <split [226/25]> Fold05 <fit[+]>    
+#>  6 <split [226/25]> Fold06 <fit[+]>    
+#>  7 <split [226/25]> Fold07 <fit[+]>    
+#>  8 <split [226/25]> Fold08 <fit[+]>    
+#>  9 <split [226/25]> Fold09 <fit[+]>    
+#> 10 <split [226/25]> Fold10 <fit[+]>
 ```
 
-### Round 2
+#### Round 2
 
-```{r}
+
+```r
 # test: get predictions for a split
 get_preds <- function(split, fit_df) {
   
@@ -471,12 +624,27 @@ penguin_purrr <- penguin_purrr %>%
   mutate(rt_preds = map2(splits, rt_fits, get_preds))
 
 penguin_purrr
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 4
+#>    splits           id     rt_fits      rt_preds         
+#>  * <named list>     <chr>  <named list> <named list>     
+#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>
+#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>
+#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>
+#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>
+#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>
+#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>
+#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>
+#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>
+#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>
+#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>
 ```
 
 
-### aaaand Round 3
+#### aaaand Round 3
 
-```{r}
+
+```r
 # compare: compute metric for a split
 get_rmse <- function(pred_df) {
   
@@ -492,18 +660,38 @@ penguin_purrr <- penguin_purrr %>%
   mutate(rt_rmse = map_dbl(rt_preds, get_rmse))
 
 penguin_purrr
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 5
+#>    splits           id     rt_fits      rt_preds          rt_rmse
+#>  * <named list>     <chr>  <named list> <named list>        <dbl>
+#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    349.
+#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    304.
+#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    290.
+#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    313.
+#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    403.
+#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    383.
+#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    330.
+#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    374.
+#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    319.
+#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    298.
 ```
 
 Finally, summarizing as I did before:
 
-```{r}
+
+```r
 penguin_purrr %>% 
   summarize(mean_rmse = mean(rt_rmse), sd_rmse = sd(rt_rmse))
+#> # A tibble: 1 x 2
+#>   mean_rmse sd_rmse
+#>       <dbl>   <dbl>
+#> 1      336.    39.0
 ```
 
 In practice, if you did all these at once instead of incrementally, it would look like:
 
-```{r}
+
+```r
 set.seed(0)
 penguin_folds %>% 
   
@@ -515,12 +703,26 @@ penguin_folds %>%
   
   # compare: compute metric for each fold
   mutate(rt_rmse = map_dbl(rt_preds, get_rmse))
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 5
+#>    splits           id     rt_fits      rt_preds          rt_rmse
+#>  * <named list>     <chr>  <named list> <named list>        <dbl>
+#>  1 <split [225/26]> Fold01 <fit[+]>     <tibble [26 × 7]>    349.
+#>  2 <split [226/25]> Fold02 <fit[+]>     <tibble [25 × 7]>    304.
+#>  3 <split [226/25]> Fold03 <fit[+]>     <tibble [25 × 7]>    290.
+#>  4 <split [226/25]> Fold04 <fit[+]>     <tibble [25 × 7]>    313.
+#>  5 <split [226/25]> Fold05 <fit[+]>     <tibble [25 × 7]>    403.
+#>  6 <split [226/25]> Fold06 <fit[+]>     <tibble [25 × 7]>    383.
+#>  7 <split [226/25]> Fold07 <fit[+]>     <tibble [25 × 7]>    330.
+#>  8 <split [226/25]> Fold08 <fit[+]>     <tibble [25 × 7]>    374.
+#>  9 <split [226/25]> Fold09 <fit[+]>     <tibble [25 × 7]>    319.
+#> 10 <split [226/25]> Fold10 <fit[+]>     <tibble [25 × 7]>    298.
 ```
 
 When you put it like *that*, it doesn't look like so much work! But, this way hides how much work it takes to write those 3 custom functions: `get_fits()`, `get_preds()`, and `get_rmse()`. And we still had to use vanilla `map()`, `map2()`, *and* `map2_dbl()`.
 
 
-# Make it better
+## Make it better
 
 I kept a learning log while working through the all the above code, and I wrote down these notes to myself:
 
@@ -532,36 +734,59 @@ I kept a learning log while working through the all the above code, and I wrote 
 
 If you have made it this far, I'm pretty sure I don't need to convince you that a better way to do cross-validation using tidymodels would be more pleasant to do more than once. It would also be less prone to error due to me copying-and-pasting repeatedly, and making stupid mistakes that would be difficult to spot with so much cluttered code. Luckily, [`tune::fit_resamples()`](https://tidymodels.github.io/tune/reference/fit_resamples.html) came along to take a sad script and make it better:
 
-```{r}
+
+```r
 penguin_party <-
   tune::fit_resamples(
+    rt_spec,
     body_mass_g ~ .,
-    model = rt_spec,
     resamples = penguin_folds
 )
 ```
 
 Here is the beautiful output from that function:
 
-```{r}
+
+```r
 penguin_party
+#> #  10-fold cross-validation using stratification 
+#> # A tibble: 10 x 4
+#>    splits           id     .metrics         .notes          
+#>    <named list>     <chr>  <list>           <list>          
+#>  1 <split [225/26]> Fold01 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  2 <split [226/25]> Fold02 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  3 <split [226/25]> Fold03 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  4 <split [226/25]> Fold04 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  5 <split [226/25]> Fold05 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  6 <split [226/25]> Fold06 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  7 <split [226/25]> Fold07 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  8 <split [226/25]> Fold08 <tibble [2 × 3]> <tibble [0 × 1]>
+#>  9 <split [226/25]> Fold09 <tibble [2 × 3]> <tibble [0 × 1]>
+#> 10 <split [226/25]> Fold10 <tibble [2 × 3]> <tibble [0 × 1]>
 ```
 
 
 Now, to see all the stuff inside this `penguin_party`, we can use tune's `collect_*` functions.
 
-```{r}
+
+```r
 penguin_party %>% 
   collect_metrics()
+#> # A tibble: 2 x 5
+#>   .metric .estimator    mean     n std_err
+#>   <chr>   <chr>        <dbl> <int>   <dbl>
+#> 1 rmse    standard   336.       10 12.3   
+#> 2 rsq     standard     0.829    10  0.0159
 ```
 
 To see the predictions, we need to add use [`control_resamples()`](https://tidymodels.github.io/tune/reference/control_grid.html):
 
-```{r}
+
+```r
 penguin_party <-
   tune::fit_resamples(
+    rt_spec,
     body_mass_g ~ .,
-    model = rt_spec,
     resamples = penguin_folds,
     control = control_resamples(save_pred = TRUE) # add this line
 )
@@ -569,14 +794,27 @@ penguin_party <-
 
 Then we collect the predictions.
 
-```{r}
+
+```r
 penguin_party %>% 
   collect_predictions()
+#> # A tibble: 251 x 4
+#>    id     .pred  .row body_mass_g
+#>    <chr>  <dbl> <int>       <int>
+#>  1 Fold01 3417      4        3625
+#>  2 Fold01 3417     11        3325
+#>  3 Fold01 3971.    14        3950
+#>  4 Fold01 3971.    41        3800
+#>  5 Fold01 3417     54        3700
+#>  6 Fold01 3971.    65        4300
+#>  7 Fold01 3971.    70        4100
+#>  8 Fold01 3971.    71        4725
+#>  9 Fold01 3971.    76        3900
+#> 10 Fold01 3417     85        3350
+#> # … with 241 more rows
 ```
 
 Now, isn't that better?
 
-```{r echo=FALSE}
-knitr::include_graphics("https://media.giphy.com/media/daeKl3P4SissU/giphy.gif")
-```
+![](https://media.giphy.com/media/daeKl3P4SissU/giphy.gif)<!-- -->
 
