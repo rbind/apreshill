@@ -14,6 +14,7 @@ summary: "Recent updates in the R Markdown family"
 date: "2020-12-08T09:00:00Z"
 date_end: "2020-12-08T09:45:00Z"
 all_day: false
+publishdate: "2020-02-01"
 
 categories:
   - talk
