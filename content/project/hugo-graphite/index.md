@@ -10,10 +10,6 @@ tags:
 - software
 title: Hugo Graphite
 links:
-- icon: door-open
-  icon_pack: fas
-  name: demo website
-  url: https://hugo-graphite.netlify.app
 - icon: github
   icon_pack: fab
   name: code
