@@ -1,5 +1,5 @@
 ---
-date: "2020-06-11T00:00:00Z"
+date: "2020-11-01T00:00:00Z"
 external_link: https://rstudio.github.io/distill/
 image:
   caption: '[Hex by Julie Jung](https://www.jungjulie.com/)'
