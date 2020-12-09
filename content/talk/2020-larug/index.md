@@ -26,6 +26,19 @@ image:
   focal_point: 'center'
   preview_only: no
 projects: []
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: https://alison.netlify.app/larug-download/#1
+- icon: github
+  icon_pack: fab
+  name: code
+  url: https://github.com/apreshill/talks/tree/master/larug-download
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: https://youtu.be/ZLvtGhn9f5s
 ---
 
 The R Markdown family of packages has grown a lot over the past few years! While each new package is truly a bundle of joy, the past few months we have worked hard to make our family of existing packages more consistent, supportive, and intuitive. In this talk, I’ll share some of what we are up to lately and what to expect, with highlights from the distill, blogdown, bookdown, and xaringan packages.
