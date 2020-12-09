@@ -11,8 +11,8 @@ summary: "Recent updates in the R Markdown family"
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2020-12-08T09:00:00Z"
-date_end: "2020-12-08T09:45:00Z"
+date: "2020-12-08T20:30:00Z"
+date_end: "2020-12-08T22:00:00Z"
 all_day: false
 publishdate: "2020-02-01"
 
