@@ -26,9 +26,9 @@ Well, not really breaking news, but you still may not know about it! Hugo v0.32 
 
 > "One benefit of using a page bundle instead of a normal page is that you can put resource files associated with the post (such as images) under the same directory of the post itself. This means you no longer have to put them under the `static/` directory, which has been quite confusing to Hugo beginners."
 
-What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from [tidyverse.org](https://github.com/tidyverse/tidyverse.org/tree/master/content/articles) *(sorry tidyverse team- it's not you, it's the old Hugo).* 
+What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from [tidyverse.org](https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/content/articles) *(sorry tidyverse team- it's not you, it's the old Hugo).* 
 
-For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in [`static/`](https://github.com/tidyverse/tidyverse.org/tree/master/static/images) too, organized by post (which I have done on my own blog, though not well or consistently). 
+For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in [`static/`](https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/static/images) too, organized by post (which I have done on my own blog, though not well or consistently). 
 
 What would it look like to use page bundles?
 
