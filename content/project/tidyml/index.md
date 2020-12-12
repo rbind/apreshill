@@ -15,7 +15,7 @@ links:
 - icon: door-open
   icon_pack: fas
   name: R / Medicine 2020 website
-  url: https://events.linuxfoundation.org/r-medicine/
+  url: https://tmv.netlify.app/site/
 
 
 categories:
