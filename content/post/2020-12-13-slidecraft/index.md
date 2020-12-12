@@ -1,7 +1,7 @@
 ---
 title: Slidecraft
 author: Alison Hill
-date: '2020-06-07'
+date: '2020-12-13'
 categories: []
 tags:
   - rmarkdown
@@ -11,7 +11,7 @@ authors: []
 featured: no
 disable_jquery: no
 image:
-  caption: '[Photo by Wilfried Santer on Unsplash](https://unsplash.com/photos/QaNxDO4xtM4)'
+  caption: '[Photo by Jaime Spaniol on Unsplash](https://unsplash.com/photos/l4JygnDCbMg)'
   focal_point: ''
   preview_only: no
 ---
@@ -103,6 +103,9 @@ Other resources:
 
 Favorite free image resources
 
-Unsplash
-Raw Pixel public domain
-[Illustrations of the Natural Orders of Plants](https://www.c82.net/twining/)
++ [Artvee](https://artvee.com/): public domain artworks
+    + Don't miss [book illustrations](https://artvee.com/book-illustrations/)
++ [Unsplash](https://unsplash.com/): photos
++ [Raw Pixel public domain](https://www.rawpixel.com/category/53/public-domain): mainly graphics
+    + Don't miss the [patterns collections](https://www.rawpixel.com/category/53/public-domain?sort=trending&filter=patterns&page=1)- I love using these to create color palettes or for slide backgrounds.
++ [Illustrations of the Natural Orders of Plants](https://www.c82.net/twining/): botanical drawings
