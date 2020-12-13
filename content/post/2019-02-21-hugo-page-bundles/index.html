@@ -11,6 +11,9 @@ categories: [hugo, blogdown]
 tags: [blogdown]
 ---
 
+<script src="{{< relref "post/2019-02-21-hugo-page-bundles/index.html" >}}index_files/header-attrs/header-attrs.js"></script>
+<link href="{{< relref "post/2019-02-21-hugo-page-bundles/index.html" >}}index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="{{< relref "post/2019-02-21-hugo-page-bundles/index.html" >}}index_files/anchor-sections/anchor-sections.js"></script>
 
 
 <blockquote>
@@ -26,8 +29,8 @@ tags: [blogdown]
 <blockquote>
 <p>“One benefit of using a page bundle instead of a normal page is that you can put resource files associated with the post (such as images) under the same directory of the post itself. This means you no longer have to put them under the <code>static/</code> directory, which has been quite confusing to Hugo beginners.”</p>
 </blockquote>
-<p>What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from <a href="https://github.com/tidyverse/tidyverse.org/tree/master/content/articles">tidyverse.org</a> <em>(sorry tidyverse team- it’s not you, it’s the old Hugo).</em></p>
-<p>For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in <a href="https://github.com/tidyverse/tidyverse.org/tree/master/static/images"><code>static/</code></a> too, organized by post (which I have done on my own blog, though not well or consistently).</p>
+<p>What does a blogdown/Hugo site begin to look like without page bundles? I think here is a representative example from <a href="https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/content/articles">tidyverse.org</a> <em>(sorry tidyverse team- it’s not you, it’s the old Hugo).</em></p>
+<p>For this team, they need an image for every post, which gets out of control pretty fast. Also, some ended up in <a href="https://github.com/tidyverse/tidyverse.org/tree/c0eb070017cab794029b8ed3ac518f6e1a245a2b/static/images"><code>static/</code></a> too, organized by post (which I have done on my own blog, though not well or consistently).</p>
 <p>What would it look like to use page bundles?</p>
 <pre class="r"><code>content/
 ├── about
@@ -132,7 +135,7 @@ options(
 </div>
 <div id="update-metadata" class="section level1">
 <h1>Update Metadata</h1>
-<p>If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2019-10-03. The cool thing that was already built-in to blogdown is the “Update Metadata” Addin. With your blog post open (it should be called <code>index.Rmd</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, click on Addins and select “Update Metadata”. You should see a window like this:</p>
+<p>If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2020-12-13. The cool thing that was already built-in to blogdown is the “Update Metadata” Addin. With your blog post open (it should be called <code>index.Rmd</code>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, click on Addins and select “Update Metadata”. You should see a window like this:</p>
 <p><img src="update-metadata.png" /></p>
 <p>Check the box to rename the file if the date has changed. RStudio will tell you your file has been deleted- which is technically true since the folder was renamed, but don’t panic!</p>
 <p><img src="file-deleted-warning.png" /></p>
