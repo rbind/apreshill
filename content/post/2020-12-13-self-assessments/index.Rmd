@@ -26,7 +26,7 @@ If you just want to skip to my actual slides, they are [here](../../talk/2019-js
 
 ## Teaching students to talk about data science
 
-One of the things I spent a lot of time thinking about in my 12 years as a professor was how to teach students how to *communicate about data science with other human beings*. It is sometimes all too easy to focus on "just" the practical skills like being able to wrangle, explore, analyze, and visualize data (preferably using code). But, teaching students to be able to describe, document, plan, collaborate, and communicate effectively about data science? That is *way harder* than it sounds. 
+One of the things I spent a lot of time thinking about in my 12 years as a professor was how to teach students how to *communicate about data science with other human beings*. It is sometimes all too easy to focus on "just" the practical skills like being able to wrangle, explore, analyze, and visualize data (preferably using code). But, teaching students to be able to describe, document, plan, collaborate, question, and communicate effectively about data science? That is *way harder* than it sounds. 
 
 For example, you may know learners like this:
 
