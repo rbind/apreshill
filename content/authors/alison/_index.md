@@ -1,4 +1,6 @@
 ---
+# Display name
+title: Alison Hill
 authors:
 - alison
 bio: I'm a developmental psychologist, former NIH Principal Investigator, and autism researcher who loves programming.
