@@ -81,7 +81,7 @@ I won't bore with *all the edu literature*, but if you want to know more you mig
 + https://www.apa.org/science/about/psa/2016/06/learning-memory
 {{% /alert %}}
 
-I had also had this little bee in my bonnet for awhile, and that was that I spent an inordinate amount of time crafting the most beautiful homework answer keys for my students..that no one seemed to read. No one used my answer keys for learning. It bothered me because I knew there was value in reviewing these answer keys, but I hadn't made them into an actual learning tool. When I saw Hal's slide, it dawned on me: the solution to my problem was to give my answer keys away, and make them into a usable learning tool.^[I later found out that my palmerpenguins co-author Dr. Allison Horst does this too! <https://www.allisonhorst.com/post/share-keys/>]
+I had also had this little bee in my bonnet for awhile, and that was that I spent an inordinate amount of time crafting the most beautiful homework answer keys for my students...that no one seemed to read. No one used my answer keys for learning. It bothered me because I knew there was value in reviewing these answer keys, but I hadn't made them into an actual learning tool. When I saw Hal's slide, it dawned on me: the solution to my problem was to give my answer keys away, and make them into a usable learning tool.^[I later found out that my palmerpenguins co-author Dr. Allison Horst does this too! <https://www.allisonhorst.com/post/share-keys/>]
 
 The truth is, providing the answer keys or feedback at the end is not actually
 helpful for learners. Students have high motivation and set aside time for what matters for their grade, not necessarily their learning. So it's no surprise that motivation was low and time was limited for students
