@@ -19,7 +19,10 @@ Last summer (`r emo::ji("grimace")`), I was invited to give a talk at the Joint 
 knitr::include_graphics("jsm2019.jpg")
 ```
 
+
+{{% alert note %}}
 If you just want to skip to my actual slides, they are [here](../../talk/2019-jsm-talk-ds/). 
+{{% /alert %}}
 
 ## Teaching students to talk about data science
 
