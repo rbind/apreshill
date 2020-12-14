@@ -95,7 +95,9 @@ I decided to find out. The next time I taught my statistics course, I began requ
 knitr::include_graphics("key.png")
 ```
 
-If you look carefully there, you'll see that there are in fact two ways to succeed while really trying in my class, and I was *very* proud of this. At the beginning of class, I would tell students that some over-achievers might find this annoying at first, but that for me, my ultimate goal was *that every single person learned*. I didn't care whether you got it right off the bat, or whether you needed more time and resources to get it right. Either way, my grades mapped onto actual learning.
+If you look carefully there, you'll see that there are in fact two ways to succeed while really trying in my class, and I was *very* proud of this. At the beginning of class, I would tell students that some over-achievers might find this annoying at first, but that for me, my ultimate goal was *that every single person learned*. I didn't care whether you got it right off the bat, or whether you needed more time and resources to get it right. Either way, my grades mapped onto actual learning. 
+
+Also note that the 0/1/2 points for the initial submission had nothing to do with accuracy of their initial solutions. And the accuracy for the self-assessment had only to do with the accuracy of their self-assessment! So really, we washed away the grading effect of getting it right in 1 week alone or in 2 weeks with the key. The students who got it right on the initial submission bought themselves every other week free and clear from assignments, though.
 
 ## How to succeed while really trying
 
