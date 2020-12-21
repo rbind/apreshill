@@ -1,27 +1,25 @@
 ---
-title: Up & Running with hugodown
+title: Up & running with blogdown in 2021
 author: Alison Hill
-date: '2020-07-12'
+date: '2020-12-20'
 categories:
   - hugo
-  - hugodown
+  - blogdown
   - netlify
 tags:
   - hugo
 aliases:
-  - up-and-running-with-hugodown
+  - modern-blogdown
 authors:
   - alison
-summary: A guide to getting up and running with hugodown, the Hugo Academic theme,
+summary: A guide to getting up and running with blogdown, the Hugo Wowchemy theme,
   GitHub, and Netlify
 image:
   caption: '[Photo by Ivan Botha on Unsplash](https://unsplash.com/photos/biz5Kfa-JMQ)'
   focal_point: ''
 ---
 
-```{r include = FALSE}
-knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA)
-```
+
 
 
 ## Welcome
@@ -43,11 +41,11 @@ Here are some great posts that document pretty common user experiences and frust
 
 + [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/changing-you-blogdown-workflow/)
 
-The tidyverse team was an early blogdown adopter, and certainly felt their fair share of frustrations too. In an effort to design some of those away, there is a new experimental Hugo website building package in town, named [hugodown](https://hugodown.r-lib.org/). Because hugodown is actively under development, and may never be available on CRAN,  	:rotating_light: tread here with caution :rotating_light:. 
+:rotating_light: tread here with caution :rotating_light:. 
 
-Nevertheless, I thought it would be fun to take my original blogdown post, and see if I could trace the same process of building a Hugo website using hugodown. I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
+Nevertheless, I thought it would be fun to take my original blogdown post, and see if I could trace the same process of building a Hugo website using modern-day blogdown for 2021. I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
 
-So if you are feeling fearless and want to live on the bleeding edge, read on to give hugodown a spin along with me.
+So if you are feeling fearless and want to live on the bleeding edge, read on to give the development version of blogdown a spin along with me.
 
 ![](https://media.giphy.com/media/l0G19cFS7nkpGaOLC/giphy.gif)
 
@@ -55,8 +53,9 @@ So if you are feeling fearless and want to live on the bleeding edge, read on to
 
 If you already know what you are doing, this entire post can be condensed into just a few lines of code:
 
-```{r eval=FALSE}
-remotes::install_github("r-lib/hugodown")
+
+```r
+remotes::install_github("rstudio/blogdown")
 usethis::create_project()
 hugodown::create_site_academic()
 hugodown::hugo_start()
@@ -301,7 +300,7 @@ content/
 Go ahead and add an R code chunk like:
 
 ````
-```{r}`r ''`
+```{r}
 summary(Orange)
 ```
 ````
@@ -315,7 +314,7 @@ The most important thing here is to realize that the act of knitting creates an 
 Try it again! Add another R code chunk like:
 
 ````
-```{r echo=FALSE}`r ''`
+```{r echo=FALSE}
 library(ggplot2)
 oplot <- ggplot(Orange, aes(x = age, 
                    y = circumference, 
@@ -377,7 +376,8 @@ Let's start with the last thing you typically do to your home- decorate.
 Open up the file `config/_default/params.toml`. Play with any of these configurations, but especially fonts/themes. You can see the ones designed by Desirée De Leon in the data/ folder.
 
 
-```{r eval=FALSE}
+
+```r
 rstudioapi::navigateToFile("config/_default/params.toml")
 ```
 
@@ -399,7 +399,8 @@ Let's say goodbye to [Nelson Bighetti](https://themes.gohugo.io/theme/academic/#
 
 Find and open the file `content/authors/admin/_index.md`:
 
-```{r eval=FALSE}
+
+```r
 rstudioapi::navigateToFile("content/authors/admin/_index.md")
 ```
 
@@ -430,7 +431,8 @@ Each widget is a `*.md` file in the `content/home/` folder. The metadata at the 
 
 For example, to turn off the hero widget, use this code in your console and set `active = false`:
 
-```{r eval=FALSE}
+
+```r
 rstudioapi::navigateToFile("content/home/hero.md", line = 5, column = 10)
 ```
 
@@ -523,7 +525,8 @@ Anytime you change your subdomain name, you need to update the `baseurl` in your
 
 Change the baseurl here:
 
-```{r eval=FALSE}
+
+```r
 rstudioapi::navigateToFile("config.toml", line = 12)
 ```
 
