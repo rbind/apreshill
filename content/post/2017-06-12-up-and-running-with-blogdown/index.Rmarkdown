@@ -25,7 +25,7 @@ knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA, tidy = FALSE)
 ```
 
 
-# Read up on blogdown
+## Read up on blogdown
 
 Before you start, I recommend reading the following:
 
@@ -37,7 +37,7 @@ I also found this comment by Eric Nantz, the creator of [the R-Podcast](http://r
 * [https://github.com/rbind/support/issues/12](https://github.com/rbind/support/issues/12)
 
 
-# Caveats, disclaimers, etc.
+## Caveats, disclaimers, etc.
 
 Even with all the great resources I listed above, getting myself up and running took a few tries, so in this post I'm passing along what ended up working for me. Everyone's mileage may vary, though, depending on your operating system and your approach. About me: I am a macOS user, and I use R, RStudio, Git (usually via [GitLab](https://about.gitlab.com), sometimes via [GitHub](https://github.com)), and terminal regularly, so I'm assuming familiarity here with all of these. If that is not you, here are some places to get started:
 
@@ -56,7 +56,7 @@ Finally, I did not want to learn more about a lot of things! For instance, the n
 
 
 
-# In GitHub
+## In GitHub
 
 ![](blogdown-signpost-1.png)
 
@@ -77,7 +77,7 @@ You can see some of the repo names used by members of the `rbind` organization [
 
 3. In the **Clone with HTTPs** section, click on the clipboard icon to copy the clone URL for your new repository. You'll paste this text into terminal in the next section.
     
-# In terminal
+## In terminal
 
 ![](blogdown-signpost-2.png)
 
@@ -104,7 +104,7 @@ Checking connectivity... done.
 
 3. Close terminal, you are done in there.
 
-# In RStudio 
+## In RStudio 
 
 ![](blogdown-signpost-3.png)
 
@@ -152,13 +152,13 @@ public/ # if using Netlify
 
 
 
-# Build your site in RStudio
+## Build your site in RStudio
 
 ![](blogdown-signpost-4.png)
 
 Now you can finally build your site using the `blogdown::new_site()` function. But **first** you should at least think about themes...
 
-## Picking a theme
+### Picking a theme
 
 There are over 90 [Hugo themes](https://themes.gohugo.io). So I went back to the `blogdown` book. Thankfully, Yihui and Amber offer ["to save you some time, we list a few themes below that match our taste..."](https://bookdown.org/yihui/blogdown/other-themes.html). Huzzah- I went with [hugo-academic](https://github.com/gcushen/hugo-academic)! Whatever theme you choose, you'll need to pick one of 3 ways to make your new site:
 
@@ -194,12 +194,12 @@ I recommend setting `theme_example = TRUE`- some themes won't provide an example
 
 
 
-## Update project options
+### Update project options
 
 In your project in RStudio, go to the top menu bar of RStudio and select `Tools -> Project Options` and update following [Yihui and Amber's instructions](https://bookdown.org/yihui/blogdown/rstudio-ide.html#fig:project-options).
 
 
-## Edit your configurations
+### Edit your configurations
 
 Relevant reading:
 
@@ -220,7 +220,7 @@ Make sure that the `baseurl = ` listed ends with a trailing slash `/`!
 
 Go ahead and edit all the other elements in the `config.toml` file now as you please- this is how you personalize your site!
 
-## Addins & workflow
+### Addins & workflow
 
 Relevant reading:
 
@@ -250,7 +250,7 @@ The above workflow is only for editing existing files or posts, but not for **cr
 
 
 
-## Posting
+### Posting
 
 Relevant reading:
 
@@ -350,7 +350,7 @@ If you want to include an image that is not a figure created from an R chunk, th
 ```
 
 
-# Deploy in Netlify
+## Deploy in Netlify
 
 ![](blogdown-signpost-5.png)
 
@@ -386,9 +386,9 @@ Anytime you change your subdomain name, you need to update the `baseurl` in your
 
 At this point, you should be up and running with `blogdown`, GitHub, and Netlify, but here are some ideas if you want to go further...
 
-# Going further
+## Going further
 
-## Custom CSS
+### Custom CSS
 
 I like to tinker with default theme settings like colors and fonts. Every Hugo theme is structured a little differently, but if you are interested, you can check out [my custom css](https://github.com/apreshill/apreshill/blob/master/static/css/blue.css) to see how I customized the academic theme, which provides a way to link to a custom CSS file in the `config.toml` file:
 
@@ -398,7 +398,7 @@ I like to tinker with default theme settings like colors and fonts. Every Hugo t
   custom_css = ["blue.css"]
 ```
 
-## Formspree
+### Formspree
 
 I used [Formspree](https://formspree.io) to make a contact form, which is an online service (managed on [GitHub](https://github.com/formspree/formspree)) that allows you to add an HTML form to your static site. No registration, just use the form and confirm your email address once. I added the following code into [my contact widget](https://github.com/apreshill/apreshill/blob/master/themes/hugo-academic/layouts/partials/widgets/contact.html):
 
@@ -419,7 +419,7 @@ I used [Formspree](https://formspree.io) to make a contact form, which is an onl
 
 
 
-## `*.rbind.io` domain names
+### `*.rbind.io` domain names
 
 You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! 
 

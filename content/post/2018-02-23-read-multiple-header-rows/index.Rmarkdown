@@ -45,7 +45,7 @@ xfun::embed_files("PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv", name =
 
 ---
 
-# Being sticker rich
+## Being sticker rich
 
 This dataset is from an article published in PLOS ONE called ["Being Sticker Rich: Numerical Context Influences Children’s Sharing Behavior"](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928). In this study, children (ages 3–11) received a small (12, “sticker poor”) or large (30, “sticker rich”) number of stickers, and were then given the opportunity to share their windfall with either one or multiple anonymous recipients. This type of experimental design is a version of the [Dictator Game](https://en.wikipedia.org/wiki/Dictator_game).
 
@@ -59,7 +59,7 @@ If you download the file, you can open it up in a plain text editor.
 You can also open it with Microsoft Excel.
 ![](stickers-table.png)
 
-# Read in the file
+## Read in the file
 
 Let's start by creating a variable called `link` to store the link to the data file.
 
@@ -106,9 +106,9 @@ Now we are ready to diagnose the problem!
 
 **Solution**: we'll use **readr** and the `read_tsv()` function to read in the data twice. In Step 1, we'll create a character vector of the column names only. In Step 2, we'll read in the actual data and skip the multiple header rows at the top. When we do this, we lose the column names, so we use the character vector of column names we created in Step 1 instead. 
 
-# Read in the file (again)
+## Read in the file (again)
 
-## Step 1
+### Step 1
 
 **Goal**: we want to read in the first row only and save it as a character vector called `sticker_names`. This row contains the correct column names that we'll need in Step 2.
 
@@ -122,7 +122,7 @@ glimpse(sticker_names)
 ```
 
 
-## Step 2
+### Step 2
 
 **Goal**: we want to read in all the rows *except* for the first two rows, which contained the variable names and variable descriptions. We want to save this as `stickers`, and set the column names to the `sticker_names` object we created in Step 1.
 
@@ -132,7 +132,7 @@ stickers <- link %>%
 glimpse(stickers)
 ```
 
-# Fin!
+## Fin!
 
 All together now: the final solution!
 
@@ -157,7 +157,7 @@ stickers <- link %>%
 
 
 
-# Addendum
+## Addendum
 
 For good measure, I would add a final step to everything above and use `janitor::clean_names()` to put all the variable names into snake case. So my final final solution is here:
 
@@ -187,7 +187,7 @@ stickers
 glimpse(stickers)
 ```
 
-# Bonus data dictionary
+## Bonus data dictionary
 
 As an extra bonus, when you do have extra header rows, you can create a data dictionary using the `gather()` function from the **tidyr** package.
 
@@ -200,7 +200,7 @@ stickers_dict <- read_tsv(link, n_max = 1) %>%
 stickers_dict
 ```
 
-# Useful resources
+## Useful resources
 
 - Great blog post from [Lisa DeBruine](https://twitter.com/lisadebruine) using `readxl` to read in data with multiple header rows (including those with merged cells!): https://debruine.github.io/multirow_headers.html
 - This GitHub issue with Hadley's response that solved all my problems:

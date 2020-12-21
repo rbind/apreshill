@@ -20,7 +20,7 @@ This is my third post in this series and it is breaking news.
 
 ![](https://media.giphy.com/media/dZCdA82qa8d4xVIwm3/giphy.gif)
 
-# Hugo Page Bundles
+## Hugo Page Bundles
 
 Well, not really breaking news, but you still may not know about it! Hugo v0.32 [introduced](https://gohugo.io/news/0.32-relnotes/) a new feature called Page Bundles, as a way to organize the content files. Blogdown users rejoice that [Davis Vaughn](https://twitter.com/dvaughan32) posted an [issue](https://github.com/rstudio/blogdown/issues/351) on the rstudio/blogdown repo to enable this option, which Yihui added shortly before rstudio::conf 2019 `r emo::ji("tada")`. Here is the snippet from the `NEWS.md`:
 
@@ -80,7 +80,7 @@ readr::write_csv(baker_results, rmarkdown::relative_to(mypostpath, "bakers.csv")
 
 
 
-# Bundle Me, blogdown!
+## Bundle Me, blogdown!
 
 First, read the previous post on setting up a [netlify.toml file](/post/2019-02-19-hugo-netlify-toml/). Since using Hugo page bundles depends on Hugo v0.32 or higher, you should go ahead and update hugo then update your netlify.toml with your updated version:
 
@@ -91,7 +91,7 @@ blogdown::hugo_version()
 
 Now, let's use the [**usethis** package](https://usethis.r-lib.org/). 
 
-## Project-specific .Rprofile
+### Project-specific .Rprofile
 
 First, I'm going to demo here how to create a project-specific .Rprofile file- but know that you can do a user-level .Rprofile file too.
 
@@ -157,7 +157,7 @@ For the blogdown-specific options, any of these prepopulate content in your "New
 - `blogdown.new_bundle` = what this whole post is about!
 - `blogdown.title_case` = "nEed More coFFee" --> "Need More Coffee" (it tidies all your post titles to title case)
 
-## The Newline Thing
+### The Newline Thing
 
 Here is a __massive__ .Rprofile gotcha: this file **must** end with a blank line. So make sure you add an empty line at the end of the file, then save it, and restart your R session.
 
@@ -167,7 +167,7 @@ Want to make your general R life easier in the future? Follow Yihui's [advice](h
 
 ![](https://db.yihui.name/images/rstudio-newline.png)
 
-# Use Bundles
+## Use Bundles
 
 After restarting R, try using the "New Post" Addin, this time *with feeling*. There is *still* one more gotcha though. Use the Addin to create your new bundled post. The only catch is that once you are looking at your exciting new post, you should **delete the slug** in the YAML (I posted an issue about this [here](https://github.com/rstudio/blogdown/issues/370)). 
 
@@ -192,7 +192,7 @@ A small note: if you want to add relative links from a blog post to another post
 
 Now, add images and data files to your `r emo::ji("heart")`'s content! But you may want to do one more thing...
 
-# Update Metadata
+## Update Metadata
 
 If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, `r lubridate::today()`. The cool thing that was already built-in to blogdown is the "Update Metadata" Addin. With your blog post open (it should be called `index.Rmd`)^[If no post is open, you will get an error: `Warning message: The current document does not seem to contain YAML metadata`], click on Addins and select "Update Metadata". You should see a window like this:
 

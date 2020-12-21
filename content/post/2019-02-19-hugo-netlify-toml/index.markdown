@@ -22,7 +22,7 @@ This is my second post in this series, and it is a relatively quick one. Just do
 Thanks to [Mara Averick](https://twitter.com/dataandme) for alerting me that with Hugo version 0.54.0 and onward, there is a trailing zero at the end of [Hugo versions now](https://github.com/gohugoio/hugo/issues/5639). So for versions before 0.54.0, use the format: 0.53; for later versions use 0.54.0 (0.54 will not work).
 {{% /alert %}}
 
-# Use Netlify to Deploy
+## Use Netlify to Deploy
 
 First, you'll need to use Netlify! I am a very happy Netlify user and currently have approximately 33 sites deployed. To setup a new account, navigate to [Netlify](https://www.netlify.com/) and click on the *Sign Up* link. 
 
@@ -45,7 +45,7 @@ The next part is the advanced build settings:
 
 See that __pro tip__ about the netlify.toml? Let's do that! You can leave these fields as is.
 
-# Why netlify.toml?
+## Why netlify.toml?
 
 In their [__Build Gotchas__](https://www.netlify.com/docs/build-gotchas/):
 
@@ -55,16 +55,21 @@ Yes that is right- package version mismatches are the leading cause of build fai
 
 You can check your local Hugo version by running this code in your R console:
 
-```{r}
+
+```r
 blogdown::hugo_version()
+```
+
+```
+## [1] '0.79.0'
 ```
 
 Now, we want Netlify to use this same version of Hugo when it builds your site. You can do this two ways:
 
-1. Do this in your browser (`r emo::ji("thumbsdown")`)
-1. Do this in your project root directory in a netlify.toml file (`r emo::ji("thumbsup")`)
+1. Do this in your browser (👎)
+1. Do this in your project root directory in a netlify.toml file (👍)
 
-# Add the netlify.toml File
+## Add the netlify.toml File
 
 Adding this file means that team members can see for themselves what version of Hugo you are running- if it is buried in the Netlify UI, you can't see that information unless you sift through the public build logs (no thanks). Making the file as plain text in the root of your blogdown project directory means that:
 
@@ -92,7 +97,7 @@ Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill
   HUGO_VERSION = "0.54.0"
 ```
 
-You can leave off the last two chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/) or [preview deploys](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/), but I `r emo::ji("heart")` these two Netlify features and encourage you to try them out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch and pull request gets a link `r emo::ji("tada")`.
+You can leave off the last two chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/) or [preview deploys](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/), but I ❤️ these two Netlify features and encourage you to try them out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch and pull request gets a link 🎉.
 
 So add this file to your blogdown site repo and push to GitHub.
 
