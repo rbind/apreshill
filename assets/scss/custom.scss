@@ -48,17 +48,17 @@ a:hover {
 
 /* stroke */
 
-a.nav-link,
-a.nav-link:after,
-a.nav-link:before {
+.navbar-nav a.nav-link,
+.navbar-nav a.nav-link:after,
+.navbar-nav a.nav-link:before {
   transition: all .5s;
 }
 
-a.nav-link {
+.navbar-nav a.nav-link {
   position: relative;
 }
 
-a.nav-link:after {
+.navbar-nav a.nav-link:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -71,7 +71,7 @@ a.nav-link:after {
   height: 2px;
 }
 
-a.nav-link:hover:after {
+.navbar-nav a.nav-link:hover:after {
   width: 80%;
 }
 
@@ -117,8 +117,10 @@ a.nav-link:hover:after {
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
 
 pre, code {
-	color: #508991;
+	color: #4A7E86;
 	background-color: #fff;
+	padding-left: .5em;
+	padding-right: .5em;
 }
 
 pre {
@@ -140,21 +142,28 @@ pre code {
 div.alert-note > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #004346;
+  color: #09bc8a;
   content: "\f0a4";
 }
 
 div.alert-warning > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #004346;
+  color: #ff003f;
   content: "\f1e2";
 }
 
+div.alert-todo > div:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #D7ADD0;
+  content: "\f0ae";
+}
+
 .alert-note {
-  color: #333;
+  color: #004346;
   background-color: #fff;
-  border-top: 2px solid #004346;
+  border-top: 4pt solid #09bc8a;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -168,9 +177,20 @@ div.alert > div {
 
 
 div.alert.alert-warning {
-  color: #d03b39;
-  background-color: #fdf4f4;
-  border-top: 2px solid #004346;
+  color: #004346;
+  background-color: #FFE7ED;
+  border-top: 4pt solid #ff003f;
+  border-radius: 0px; /*undo rounded corners*/
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  padding: 23px 10px 21px 10px;
+}
+
+div.alert.alert-todo {
+  color: #004346;
+  background-color: #fff;
+  border-top: 4pt solid #D7ADD0;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -290,4 +310,68 @@ iframe {
 
 .section-heading p {
 	color: #004346;
+}
+
+/* For 2-column article layout with TOC on right */
+.article-container {
+	max-width: 1000px;
+}
+
+.col-lg-2ish {
+  flex:0 0 20%;
+  max-width:20%;
+  padding-right: 0px !important;
+ }
+ 
+.col-lg-10ish {
+  flex:0 0 80%;
+  max-width:80%;
+ }
+ 
+#TableOfContents li a, .toc-top li a {
+	padding: .125rem .5rem;
+	font-size: .8rem;
+	color: #1a162d99;
+}
+
+#TableOfContents {
+	border-left: 1px solid #09bc8a3d;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html, body {
+  scroll-padding-top: 100px;
+}
+
+
+/* --------Blog posts--------- */
+/* Headers within blogs */
+
+.article-style h1:not(:first-child),
+.article-style h2:not(:first-child),
+.article-style h3:not(:first-child) {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+/*---fix code scrolling-- */
+pre {
+  white-space: pre-wrap;
+}
+
+/*---anchor headings-- */
+
+a > svg.anchor-symbol {
+  color: transparent;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+  fill: #1a162d99;
+}
+
+a > svg.anchor-symbol:hover {
+  fill: #06805E;
+  transition: fill 0.6s ease;
 }
