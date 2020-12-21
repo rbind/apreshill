@@ -3,6 +3,7 @@
 name: Alison Hill
 
 # Username (this should match the folder name)
+title: Alison Hill
 authors:
 - alison
 
