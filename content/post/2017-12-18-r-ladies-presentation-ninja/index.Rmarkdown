@@ -34,7 +34,7 @@ links:
 So, you are doing an [R-Ladies](https://rladies.org) presentation...that's awesome!
 
 
-# The short version
+## The short version
 
 I made an [R-Ladies](https://rladies.org) theme for [**xaringan** slides](https://github.com/yihui/xaringan). My original tweet about it:
 
@@ -60,7 +60,7 @@ knitr::include_url('https://alison.rbind.io/slides/rladies-demo-slides.html#1')
 
 (view the [source .Rmd on GitHub](https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd))
 
-# The longer story
+## The longer story
 
 I recommend [Yihui's](https://yihui.name) [**xaringan** package](https://github.com/yihui/xaringan) for slides. This is an R package, available through GitHub, for creating slideshows with [remark.js](https://remarkjs.com/) through R Markdown. This means that you can:
 

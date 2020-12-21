@@ -43,7 +43,7 @@ But what can you do with **blogdown** before learning Hugo? When and how do you 
 
 Inspired by Jenny Bryan's talk on [lazy evaluation](https://resources.rstudio.com/rstudio-conf-2019/lazy-evaluation), I'm framing these learning decision points based on *what you want to get done*. 
 
-# You want to: make a website with blogdown
+## You want to: make a website with blogdown
 
 > **You need to know this much Hugo:** Hugo takes a collection of files (called content) and generates a collection of static HTML files as a single, cohesive, navigable website (plopped in your `public/` folder). How it looks depends on which Hugo theme you pick `r emo::ji("paint")`
 
@@ -56,7 +56,7 @@ You'll need to:
 
 But you probably want to do more...
 
-# You want to: customize your site
+## You want to: customize your site
 
 > **You need to know this much more Hugo:** Hugo themes typically use one or more metadata files (TOML or YAML) to set up global variables to use to build your site. This is usually the way to add a site url, a site name, link social accounts for personal websites, basically take any of the default content you see and customize it for you.
 
@@ -102,7 +102,7 @@ If your theme uses only a single `config.toml` file, you can infer these subsect
 
 You still don't need to learn Hugo...yet. 
 
-# You want to: add content to your site
+## You want to: add content to your site
 
 > **You need to know this much more Hugo:** Remember how the input to Hugo is a "collection of files"? The input is more specifically a collection of markdown files. Hugo themes use content written in markdown files (for blogdown users, R Markdown files work too) to generate your site's content; with one very important rule &mdash; the same structure that works to organize your site content is used to organize the rendered site.
 
@@ -153,7 +153,7 @@ An `_index.md` file, on the other hand, signals that this folder has a *listing 
 So if you have `content/blog/gorillas/index.md`, you get not one but two pages. Let's pretend my baseurl is `alison.rbind.io`. You get a **list** page that will render at `alison.rbind.io/blog/`, and indexes all the `index.md` files inside that content folder. You also get a **single** page that will render at `alison.rbind.io/blog/gorillas/`, which shows you the full content of the `index.md` file.
 
 
-# You want to: customize colors and fonts on your site
+## You want to: customize colors and fonts on your site
 
 > **You need to know this much more Hugo:** It depends on your theme :) You may need to learn CSS, and you may need to learn to *read* Hugo now.
 
@@ -184,7 +184,7 @@ If your theme doesn't provide this level of support, then you may need to learn 
     ```
 
 
-# You want to: renovate the layout of content on your site
+## You want to: renovate the layout of content on your site
 
 > **You need to know this much more Hugo:** You need to learn to use Hugo variables.
 
@@ -232,7 +232,7 @@ Important: I learned this the hard way, but you [cannot](https://gohugo.io/templ
 {{% /alert %}}
 
 
-# You want to: create your own Hugo theme
+## You want to: create your own Hugo theme
 
 > **You need to know this much more Hugo:** Welcome to the wizarding world of Hugo! `r emo::ji("wizard")` You now need to learn to write Hugo templates.
 

@@ -22,46 +22,53 @@ In this series, I'm sharing small spoonfuls of Hugo that I have learned that hop
 
 The following are a few steps that I always start with to troubleshoot any blogdown/Hugo/Netlify problems. These steps would solve what I would anecdotally estimate as ~50% of blogdown problems that I see posted in the [GitHub repository](https://github.com/rstudio/blogdown/issues) and on the [community site](https://community.rstudio.com/tags/blogdown). 
 
-# #1: Update Hugo
+## #1: Update Hugo
 
-```{r echo = FALSE, fig.cap="Don't be like this"}
-knitr::include_graphics("https://media.giphy.com/media/syCa5ird7wp0c/giphy.gif")
-```
+<div class="figure">
+<img src="https://media.giphy.com/media/syCa5ird7wp0c/giphy.gif" alt="Don't be like this"  />
+<p class="caption">Figure 1: Don't be like this</p>
+</div>
 
 
 If things have gone south and you are getting Hugo errors when you use the "Serve Site" Addin locally, it is possible that you need to update your version of Hugo. From R, you can check your Hugo version with blogdown:
 
-```{r eval = FALSE}
+
+```r
 blogdown::hugo_version()
 ```
 
 Then you can reference your [Hugo theme](https://themes.gohugo.io/) to find the minimum version of Hugo required by your theme:
 
-```{r echo = FALSE, fig.cap = "Check your theme's minimum Hugo version"}
-knitr::include_graphics("hugo-min-version.png")
-```
+<div class="figure">
+<img src="hugo-min-version.png" alt="Check your theme's minimum Hugo version" width="1073" />
+<p class="caption">Figure 2: Check your theme's minimum Hugo version</p>
+</div>
 
 You can go higher than the minimum version though, so it's good practice to update your Hugo, again from within R:
 
-```{r eval = FALSE}
+
+```r
 blogdown:: update_hugo()
 ```
 
 Check your version again post-update:
 
-```{r}
+
+```r
 blogdown::hugo_version()
+```
+
+```
+## [1] '0.79.0'
 ```
 
 
 If you are using Netlify to build your site using Hugo, you'll want this version to match that- the best way to do that is with a [netlify.toml file](/post/2019-02-19-hugo-netlify-toml/).
 
 
-# #2: Change the baseurl
+## #2: Change the baseurl
 
-```{r echo = FALSE}
-knitr::include_graphics("https://media.giphy.com/media/zG6MKhlBxIloc/giphy.gif")
-```
+![](https://media.giphy.com/media/zG6MKhlBxIloc/giphy.gif)<!-- -->
 
 
 Open up your `config.toml` file and look for the `baseurl` field, usually pretty close to the top. Here is mine^[Yes that's right, I don't have a trailing slash- read on for why I can get away with this.]:
@@ -83,7 +90,7 @@ But be careful here- you shouldn't leave it as "/"- once you do have your domain
 
 
 
-## Care to know more?
+### Care to know more?
 
 Here is a quote from the person who writes the Hugo docs:
 
@@ -109,22 +116,22 @@ But, at build, the link in the html file would turn into:
 
 Which creates sites that look like this:
 
-```{r echo = FALSE, fig.cap = "Hugo tranquil peak theme"}
-knitr::include_graphics("https://user-images.githubusercontent.com/47527626/52856178-f37a3680-3123-11e9-9b26-6500efac7404.png")
-```
+<div class="figure">
+<img src="https://user-images.githubusercontent.com/47527626/52856178-f37a3680-3123-11e9-9b26-6500efac7404.png" alt="Hugo tranquil peak theme"  />
+<p class="caption">Figure 3: Hugo tranquil peak theme</p>
+</div>
 
 [GitHub issue #369](https://github.com/rstudio/blogdown/issues/369)
 
 
-```{r echo = FALSE, fig.cap = "Hugo universal theme"}
-knitr::include_graphics("https://user-images.githubusercontent.com/18710907/27711864-820dc59a-5cf2-11e7-99c8-b9b7e7f46ab3.png")
-```
+<div class="figure">
+<img src="https://user-images.githubusercontent.com/18710907/27711864-820dc59a-5cf2-11e7-99c8-b9b7e7f46ab3.png" alt="Hugo universal theme"  />
+<p class="caption">Figure 4: Hugo universal theme</p>
+</div>
 
 [GitHub issue #131](https://github.com/rstudio/blogdown/issues/131)
 
-```{r echo = FALSE}
-knitr::include_graphics("https://cloud.githubusercontent.com/assets/4596214/26549134/7e3968fe-4445-11e7-90b1-87dd4ac2c1c0.png")
-```
+![](https://cloud.githubusercontent.com/assets/4596214/26549134/7e3968fe-4445-11e7-90b1-87dd4ac2c1c0.png)<!-- -->
 
 [GitHub issue #114](https://github.com/rstudio/blogdown/issues/114)
 
@@ -144,7 +151,7 @@ Bottom line? If your theme uses `relURL` or `absURL` to link to site resources l
 And here is some tough love about your theme: if the most recent version *does* still require the trailing slash in the `baseurl` to "work" out of the box, I would seriously consider switching themes. This is a pretty good "canary in the coal mine" test regarding how up-to-date the theme author is, and how well the theme you have chosen adheres to Hugo templating best practices. If you are having pain with this now, it is likely not the only thing that will be painful about working with your theme.
 
 
-# #3: Netlify drag-and-drop
+## #3: Netlify drag-and-drop
 
 ![](https://media.giphy.com/media/DfbpTbQ9TvSX6/giphy.gif)
 
@@ -155,21 +162,7 @@ If you can render your site locally but your published site looks different, try
 Use the "Serve Site" Addin, then drag-and-drop the `public/` folder straight into Netlify. What does this do? You can now see your public site...that you built...with your local version of Hugo. Netlify is doing none of the site building here. 
 
 
-```{r echo = FALSE, warning = FALSE, message = FALSE}
-library(tidyverse)
-library(magick)
-list_png <- c("blogdown-lifecycle-01.png",
-              "blogdown-lifecycle-02.png",
-              "blogdown-lifecycle-03.png",
-              "blogdown-lifecycle-04.png",
-              "blogdown-lifecycle-05.png",
-              "blogdown-lifecycle-06.png")
-list_png %>% 
-  map(image_read) %>% # reads each path file
-  image_join() %>% # joins image
-  image_scale("1500") %>% 
-  image_animate(fps = .5)  # animates, can opt for number of loops
-```
+![](index_files/figure-html/unnamed-chunk-10-1.gif)<!-- -->
 
 
 One of the first benefits of this approach is that it ensures that you are able to actually *generate* a `public/` folder locally! I have seen folks struggle to deploy the wrong repo. This simple step can force you to make sure to use the "Serve Site" Addin to generate the `public/` folder, and that the repo you are trying to link to Netlify actually contains a Hugo site because you must physically move the `public/` folder. But this method can also help you diagnose other problems too.
@@ -180,7 +173,7 @@ If your `public/` folder __does render__ perfectly on Netlify, but you are getti
 
 If you are happy with how your site looks but you are missing content and/or seeing old deleted content, then you may need the next few strategies to troubleshoot.
 
-# #4: Torch `public/`
+## #4: Torch `public/`
 
 ![](https://media.giphy.com/media/YA6dmVW0gfIw8/giphy.gif)
 
@@ -190,35 +183,26 @@ When you are seeing very weird things locally, try deleting your local `public/`
 
 Also, this has a bonus of reinforcing for you exactly what the "Serve Site" Addin *does* - it regenerates the `public/` folder. This is also the folder that, if you are using [Netlify to build your site](post/2019-02-19-hugo-netlify-toml/), is in your `.gitignore` file because Netlify (+ Hugo) generates this file "fresh" with each push to your GitHub repository.
 
-```{r echo = FALSE, warning = FALSE, message = FALSE}
-list_png <- c("blogdown-lifecycle-07.png",
-              "blogdown-lifecycle-08.png",
-              "blogdown-lifecycle-09.png",
-              "blogdown-lifecycle-10.png")
-
-list_png %>% 
-  map(image_read) %>% # reads each path file
-  image_join() %>% # joins image
-  image_scale("1500") %>% 
-  image_animate(fps = .5)  # animates, can opt for number of loops
-```
+![](index_files/figure-html/unnamed-chunk-11-1.gif)<!-- -->
 
 
-# #5: Peruse `public/`
+## #5: Peruse `public/`
 
 ![](https://media.giphy.com/media/NS7gPxeumewkWDOIxi/giphy.gif)
 
 When you notice weird things, try actually looking inside `public/`- don't be afraid to spelunk around in there! If you are seeing something wrong with your site, try to figure out how blogdown/Hugo is processing and rendering your content. This folder can tell you a lot! Keep in mind that your local `public/` folder will still contain [future/draft/expired content](#dates) if you used the "Serve Site" Addin.
 
-# #6: Back to the future {#dates}
+## #6: Back to the future {#dates}
 
-```{r echo = FALSE, fig.cap="Where are my posts?"}
-knitr::include_graphics("https://media.giphy.com/media/ek6obDm0IwjNm/giphy.gif")
-```
+<div class="figure">
+<img src="https://media.giphy.com/media/ek6obDm0IwjNm/giphy.gif" alt="Where are my posts?"  />
+<p class="caption">Figure 5: Where are my posts?</p>
+</div>
 
 If your site renders beautifully locally, and your drag-and-drop site from `public/` looks the same, but you are missing key content when you actually deploy to Netlify using a Hugo build, you may have inadvertently stumbled into a Hugo date time warp. This is a fairly [common gotcha](https://community.rstudio.com/t/serve-site-working-but-posts-dont-show-up-on-github-io/11254/3). Try using the drag-and-drop method again, this time first delete `public/`, then instead of using the "Serve Site" Addin, run this in your console:
 
-```{r eval = FALSE}
+
+```r
 blogdown::build_site(local = FALSE)
 ```
 

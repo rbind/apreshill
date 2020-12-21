@@ -50,31 +50,39 @@ Now, in my role at RStudio, I've devoted a lot of time and energy trying to figu
 
 So without further ado, here are some of my guiding principles when introducing R Markdown to beginners, for those who are ready to go beyond casual knitter:
 
-1.  **Make it. Make it again.** Knit early. Knit often. That means starting with a pre-filled Rmd document usually that you know *will* knit. How do you motivate repeated knitting and make it satisfying? Teach the basics of output formats and options by editing mainly the YAML. Your goal is to show how small effort --\> high polish. For single docs, I love [`html_document()`](https://bookdown.org/yihui/rmarkdown/html-document.html) with a floating table of contents and a theme (like [this](https://rstudio-education.github.io/sharing-short-notice/#24)), switching quickly to [`bookdown::html_document2()`](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) and `distill::distill_article()`. The latter two also enable automated figure numbering, which for scientific audiences is quite nice!
+##  #1. Make it. Make it again. 
 
-    `r htmltools::HTML("{{< tweet 1101866080996212736 >}}")`
+Knit early. Knit often. That means starting with a pre-filled Rmd document usually that you know *will* knit. How do you motivate repeated knitting and make it satisfying? Teach the basics of output formats and options by editing mainly the YAML. Your goal is to show how small effort --\> high polish. For single docs, I love [`html_document()`](https://bookdown.org/yihui/rmarkdown/html-document.html) with a floating table of contents and a theme (like [this](https://rstudio-education.github.io/sharing-short-notice/#24)), switching quickly to [`bookdown::html_document2()`](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) and `distill::distill_article()`. The latter two also enable automated figure numbering, which for scientific audiences is quite nice!
+
+{{< tweet 1101866080996212736 >}}
     
-    Bonus when using a `theme` with `html_document()`: show off the `code_download` output option!
+Bonus when using a `theme` with `html_document()`: show off the `code_download` output option!
 
-     `r htmltools::HTML("{{< tweet 1108925218850893832 >}}")`   
+{{< tweet 1108925218850893832 >}}   
 
-2.  **Make it pretty.** The starting Rmd should have a nice [ggplot2](https://ggplot2.tidyverse.org/) graphic in there, and maybe a pretty [gt](https://gt.rstudio.com/) table too. This is a motivational, aspirational document! I also try to use local data sets, so they can see how that actually works, as opposed to using a data package. 
+## #2. Make it pretty. 
 
-    `r htmltools::HTML("{{< tweet 1101978567842291712 >}}")`
+The starting Rmd should have a nice [ggplot2](https://ggplot2.tidyverse.org/) graphic in there, and maybe a pretty [gt](https://gt.rstudio.com/) table too. This is a motivational, aspirational document! I also try to use local data sets, so they can see how that actually works, as opposed to using a data package. 
 
-3.  **Make it snappy**. I aim to get to a shareable link in the first 20 minutes (at most!). I like to use [Netlify Drop](https://app.netlify.com/drop) for this. No account sign-up needed, and everyone knows how to drag-and-drop (see video below). It is very satisfying to get a link they can share with their mom/best friend/arch nemesis (kidding). I like to have everyone drop their links in a chat too, like a Slack, Google Doc, or a Gitter channel if doing a workshop. My favorite motto: *"if it knits, it ships"* `r emo::ji("ship")`
+{{< tweet 1101978567842291712 >}}
 
-    ```{r echo=FALSE}
-    knitr::include_url("https://rstudio-education.github.io/sharing-short-notice/images/single-doc-dnd.mp4")
-    ```
+## #3. Make it snappy. 
 
-4.  **Make it real.** Teach folks what they need to know to actually use the tool productively in real life. If you are an avid R Markdown user, this means that you *know* without a doubt that file paths will eventually be painful, for example. At the end of an intro, I go back and highlight things I just used to make sure they notice them like R Projects and the here package for data importing. I also love a good ["Your Turn"](https://rmd4medicine.netlify.app/slides/01-rmd-anatomy.html#77) exercise where you get a fresh data dump and all they have to do is re-knit. As in, "Surprise! Now instead of 3 sites, you have data from all 6 sites- what do you do?"
+I aim to get to a shareable link in the first 20 minutes (at most!). I like to use [Netlify Drop](https://app.netlify.com/drop) for this. No account sign-up needed, and everyone knows how to drag-and-drop (see video below). It is very satisfying to get a link they can share with their mom/best friend/arch nemesis (kidding). I like to have everyone drop their links in a chat too, like a Slack, Google Doc, or a Gitter channel if doing a workshop. My favorite motto: *"if it knits, it ships"* 🚢
 
-5. **Make it easy.** People will only keep using R Markdown if they see it making their life easier. So show them how. For example, the RStudio IDE has some very nice built-in features that make it much easier to be an R Markdown user. I point out things having a [global setup chunk](https://apreshill.github.io/rmd4cdc/#112), and IDE features like:
+<iframe src="https://rstudio-education.github.io/sharing-short-notice/images/single-doc-dnd.mp4" width="672" height="400px"></iframe>
 
-    ![](https://rmd4medicine.netlify.app/slides/images/rmd-nav.png)
+## #4. Make it real.
 
-What do I save until later?
+Teach folks what they need to know to actually use the tool productively in real life. If you are an avid R Markdown user, this means that you *know* without a doubt that file paths will eventually be painful, for example. At the end of an intro, I go back and highlight things I just used to make sure they notice them like R Projects and the here package for data importing. I also love a good ["Your Turn"](https://rmd4medicine.netlify.app/slides/01-rmd-anatomy.html#77) exercise where you get a fresh data dump and all they have to do is re-knit. As in, "Surprise! Now instead of 3 sites, you have data from all 6 sites- what do you do?"
+
+## #5. Make it easy. 
+
+People will only keep using R Markdown if they see it making their life easier. So show them how. For example, the RStudio IDE has some very nice built-in features that make it much easier to be an R Markdown user. I point out things having a [global setup chunk](https://apreshill.github.io/rmd4cdc/#112), and IDE features like:
+
+![](https://rmd4medicine.netlify.app/slides/images/rmd-nav.png)
+
+## What do I save until later?
 
 1.  Rendering with `render()`. I think knitting in the RStudio IDE can get you very far- this I consider an intermediate to advanced concept that is confusing if introduced too early. I've never heard someone say *"Well there is this simple button, but how can I do the same thing from the command line?"*
 
@@ -86,7 +94,7 @@ What do I save until later?
 
   ![](https://media.giphy.com/media/U7Uxq9Lyz02oStvUIE/giphy.gif)
 
-If you are curious to see some of the materials I've used to teach R Markdown, click on the `rmarkdown` button just below this post! `r emo::ji("rocket")` 
+If you are curious to see some of the materials I've used to teach R Markdown, click on the `rmarkdown` button just below this post! 🚀 
 
 But remember: there is no one way to learn R Markdown, and no one way to teach it either. I love seeing the creativity of the community when introducing the R Markdown family- so keep them coming!
 
