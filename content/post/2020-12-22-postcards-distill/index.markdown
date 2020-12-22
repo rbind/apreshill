@@ -126,6 +126,8 @@ For fun, let's go ahead and add a custom distill theme while we're at it.
 create_theme("postcards")
 ```
 
+{{% alert note %}} You can see copy my theme file from here: <https://github.com/apreshill/mfeo/blob/master/postcards.css>. {{% /alert %}}
+
 This should print to your R console:
 
     v Created CSS file at postcards.css 
