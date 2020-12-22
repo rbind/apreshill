@@ -1,7 +1,8 @@
 ---
 title: 'M-F-E-O: postcards + distill'
 author: Alison Hill
-date: '2020-12-21'
+date: '2020-12-22'
+aliases: "/post/2020-12-21-postcards-distill/"
 tags:
   - rmarkdown
 summary: The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards page to a distill website.
