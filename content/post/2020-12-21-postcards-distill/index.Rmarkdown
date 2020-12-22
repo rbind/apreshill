@@ -46,13 +46,9 @@ You can see `postcards::trestles` in action here: <http://jtleek.com/>
 >
 > --- *Sleepless in Seattle*, script from <https://plantyourstory.com/mfeo-its-like-a-little-clue/>
 
-Consider this post like a little clue (I'm using it as a sandbox before updating our distill documentation for this new feature). Here is our existing signpost in the [distill docs](https://rstudio.github.io/distill/website.html#alternate-formats). With the development versions (currently) of three packages now, you can embed a postcards page within your distill site. This means the page will come with all your distill goodies like site navigation, theme, and google-analytics support. 
+Consider this post like a little clue (I'm using it as a sandbox before updating our distill documentation for this new feature). Here is our existing signpost in the [distill docs](https://rstudio.github.io/distill/website.html#alternate-formats). With the development versions (currently) of three packages now, you can embed a postcards page within your distill site. This means the page will come with all your distill goodies like site navigation, theme, and google-analytics support.
 
-{{% alert note %}}
-You can see the demo site I made alongside this post here:
-<https://apreshill.github.io/mfeo/> (source: <https://github.com/apreshill/mfeo>). 
-{{% /alert %}}
-
+{{% alert note %}} You can see the demo site I made alongside this post here: <https://apreshill.github.io/mfeo/> (source: <https://github.com/apreshill/mfeo>). {{% /alert %}}
 
 ## Pre-requisites
 
@@ -236,5 +232,20 @@ navbar:
 Now, admire your final polished product!
 
 <video width="320" height="240" controls>
-  <source src="final-site.mov" type="video/mp4">
-</video>
+
+<source src="final-site.mov" type="video/mp4"> </video>
+
+## Publishing
+
+I won't be able to cover all the publishing options here, but you can read up on the options for [publishing distill websites here](https://rstudio.github.io/distill/publish_website.html). If you want to take a site like mine that you built, I recommend GitHub Pages. You can use the `usethis` package to run:
+
+```{r}
+usethis::use_git()
+usethis::use_github()
+```
+
+Then in the GitHub project, navigate over to "Settings" and *scroooooooll down* to choose:
+
+![GitHub Pages settings for distill websites](gh-pages.png "GitHub Pages settings for distill websites")
+
+For this to work, make sure your site is building to `docs/` locally, and that you are committing and pushing the `docs/` directory to GitHub.
