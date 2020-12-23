@@ -7,7 +7,7 @@ tags:
   - rmarkdown
   - distill
   - postcards
-summary: The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards page to a distill website.
+summary: The new postcards package and distill are M-F-E-O (made for each other). Here is a brief walk-through to add a postcards personal profile page to your distill website or blog, using only R Markdown.
 featured: no
 disable_jquery: no
 image:
@@ -34,6 +34,10 @@ Postcards includes four templates:
 -   [Onofre](https://seankross.com/postcards-templates/onofre/).
 
 You can see `postcards::trestles` in action here: <http://jtleek.com/>
+
+And here (this is where we are headed!):
+
+![](final-site.png)
 
 [Distill](https://rstudio.github.io/distill/) is a package that *also* helps you make simple, beautiful websites and blogs using only R Markdown. They are M-F-E-O ('made for each other': this is a "Sleepless in Seattle" reference with sadly, a complete lack of video to support). But if you've seen the movie this scene may sound familiar:
 
@@ -238,7 +242,9 @@ Now, admire your final polished product!
 
 <video width="320" height="240" controls>
 
-<source src="final-site.mov" type="video/mp4"> </video>
+<source src="final-site.mov" type="video/mp4">
+
+</video>
 
 ## Publishing
 
