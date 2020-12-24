@@ -35,7 +35,7 @@ You can see `postcards::trestles` in action here: <http://jtleek.com/>
 
 And here (this is where we are headed!):
 
-![](final-site.png)
+![](final-trestles.png)
 
 [Distill](https://rstudio.github.io/distill/) is a package that *also* helps you make simple, beautiful websites and blogs using only R Markdown. They are M-F-E-O ('made for each other': this is a "Sleepless in Seattle" reference with sadly, a complete lack of video to support). But if you've seen the movie this scene may sound familiar:
 
@@ -195,6 +195,7 @@ Here is my "after":
 
 ![Jolla as themed homepage](alison-home.png "Jolla as themed homepage")
 
+
 ## Add a blog
 
 Back in your console, we can add a blog, using distill:
@@ -248,6 +249,31 @@ Now, admire your final polished product!
 <source src="final-site.mov" type="video/mp4">
 
 </video>
+
+## Switch your postcard
+
+Let's say you decide you want to switch it up and use the `trestles` theme, instead of `jolla`. Easy. Open up your `index.Rmd` and find these lines in the YAML:
+
+``` {.yaml}
+---
+output:
+  postcards::jolla
+---
+```
+
+And change to:
+
+``` {.yaml}
+---
+output:
+  postcards::trestles
+---
+```
+
+Re-build your site!
+
+![](final-trestles.png)
+
 
 ## Publishing
 
