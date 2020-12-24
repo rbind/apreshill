@@ -1,5 +1,5 @@
 ---
-title: Own your voice online
+title: Introduce yourself online
 draft: false
 event: 'rstudio::global(2021)'
 event_url: https://blog.rstudio.com/2020/11/30/diversity-scholarships/
