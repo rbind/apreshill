@@ -65,7 +65,7 @@ I'm really happy with the end result, and I hope users are as well. I not-so-sec
 
 ## Check your site's configuration
 
-Your Hugo site's main configuration file is located in the project root of your website, called `config.toml` or `config.yml`. This file is your most direct line of communication with Hugo itself, and settings in this file are usually the first I check when trying to help users troubleshoot their build. 
+Your Hugo site's main configuration file is located in the project root of your website, called `config.toml` or `config.yaml`. This file is your most direct line of communication with Hugo itself, and settings in this file are usually the first I check when trying to help users troubleshoot their build. 
 
 
 ```r
@@ -155,7 +155,7 @@ Note that the new blogdown Hugo versioning system now relies on a `.Rprofile` fi
 
 ## Check your Hugo content
 
-Your Hugo site's content predictably lives inside the `content/` folder of your project. But there are lots of unpredictable things Hugo can do (or not do) with your content. For example, I think every blogdown user at some point has stumbled into the `draft: TRUE` minefield, or the future dated content abyss. As well, many users accidentally end up with duplicate rendered output files (Hugo will prefer the `.html` if present). This function checks these things for you:
+Your Hugo site's content predictably lives inside the `content/` folder of your project. But there are lots of unpredictable things Hugo can do (or not do) with your content. For example, I think [every blogdown user](/post/2019-03-04-hugo-troubleshooting/#dates) at some point has stumbled into the `draft: TRUE` minefield, or the future dated content abyss. As well, many users accidentally end up with duplicate rendered output files (Hugo will prefer the `.html` if present). This function checks these things for you:
 
 
 ```r
