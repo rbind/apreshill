@@ -218,6 +218,8 @@ No `[TODO]`s! Now let's bork things up:
 
 Whoops! You can see that a mismatch was found: I'm using a newer version of Hugo on Netlify than I am using to build locally. You want these to match, so that you can be reasonably sure that what you see on your public site will not be a surprise 😱
 
+![](https://media.giphy.com/media/k2gBKDCrkh72g/giphy.gif)
+
 ## Check your site
 
 If you don't want to go file-by-file and step-by-step, and you're into more of a "kitchen sink" approach, give `check_site()` a try. It will wrap all these checks up for you in a single function call. 
