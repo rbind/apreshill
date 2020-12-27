@@ -176,6 +176,8 @@ blogdown::check_hugo()
 ― Check complete: Content
 ```
 
+Note that this also checks that all R Markdown files have some kind of knitted rendered output present. This is `r emo::ji("new")`, and we believe is a better default. Think: save-on-knit. You now only need to knit R Markdown files (the previous behavior was knit-on-save, which sometimes led to an error-filled render vortex if your code did not run).
+
 
 ## Check your Netlify setup
 
@@ -222,3 +224,5 @@ If you don't want to go file-by-file and step-by-step, and you're into more of a
 Please give the development version of the blogdown package a try, and help us make it better by filing [issues](https://github.com/rstudio/blogdown/issues/new/choose) on GitHub. And I hope these new functions help you have more fun actually working with your site!
 
 ![](https://media.giphy.com/media/SpVJOOBAWggAE/giphy.gif)
+
+You can watch my recent talk at the LA R User Group meetup on YouTube to see learn more about the new features you can look forward to with this latest blogdown release [here](/talk/2020-larug/).
