@@ -1,7 +1,7 @@
 ---
-title: Up & running with blogdown in 2021
+title: Up & running with modern blogdown in 2021
 author: Alison Hill
-date: '2020-12-20'
+date: '2020-12-24'
 categories:
   - hugo
   - blogdown
@@ -26,12 +26,12 @@ image:
 
 Hi! Hello! Welcome. Bienvenidos.
 
-Almost 3 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my own website. Since then, that single post has been viewed over 23,823 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
+About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my first website. Since then, that single post has been viewed over 27,390 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
 
 ![](https://media.giphy.com/media/L2jHJeRY4twe4/giphy.gif)
 
 
-But, making, deploying, and maintaining a Hugo website using blogdown was not always pain-free. 
+But, the process of creating and maintaining a Hugo website using blogdown was not always pain-free. Sometimes we have Hugo "improvements" to thank, other times your Hugo theme is to blame, and some pain was caused by blogdown itself. Regardless of where the pain originates from, it was clear that there was work to be done to support our community of users.
 
 ![](https://media.giphy.com/media/xT0xeK2LxlMVXiAOuk/giphy.gif)
 
@@ -41,9 +41,15 @@ Here are some great posts that document pretty common user experiences and frust
 
 + [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/changing-you-blogdown-workflow/)
 
++ [Claus Wilke's post: *Writing a blogdown post for the ages*](https://clauswilke.com/blog/2020/09/08/a-blogdown-post-for-the-ages/)
+
+
+All of this lead me to...my giant blogdown wishlist. After teaching and using blogdown for more than 3.5 years, I had a lot of ideas to help beginners get started, but just as important, to improve the quality of life for existing users. You can see my mega-wishlist that Yihui Xie (the blogdown conceptor and author) asked me to share with him: https://github.com/rstudio/blogdown/issues/476
+
+I'm very happy to report that our team has been working very hard to make using blogdown easier to learn and use. 
 :rotating_light: tread here with caution :rotating_light:. 
 
-Nevertheless, I thought it would be fun to take my original blogdown post, and see if I could trace the same process of building a Hugo website using modern-day blogdown for 2021. I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
+In time for the holiday break when I know a lot of quarantined folks are holed up at home without friends or family near, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" for 2021 (and hopefully beyond!). I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
 
 So if you are feeling fearless and want to live on the bleeding edge, read on to give the development version of blogdown a spin along with me.
 

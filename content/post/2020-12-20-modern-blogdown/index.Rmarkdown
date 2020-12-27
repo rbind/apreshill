@@ -1,7 +1,7 @@
 ---
-title: Up & running with blogdown in 2021
+title: Up & running with modern blogdown in 2021
 author: Alison Hill
-date: '2020-12-20'
+date: '2020-12-24'
 categories:
   - hugo
   - blogdown
@@ -12,8 +12,8 @@ aliases:
   - modern-blogdown
 authors:
   - alison
-summary: A guide to getting up and running with blogdown, the Hugo Wowchemy theme,
-  GitHub, and Netlify
+summary: A guide to getting up and running with blogdown, the Hugo Wowchemy academic-starter theme,
+  GitHub, and Netlify (phew!)
 image:
   caption: '[Photo by Ivan Botha on Unsplash](https://unsplash.com/photos/biz5Kfa-JMQ)'
   focal_point: ''
@@ -28,12 +28,12 @@ knitr::opts_chunk$set(eval = FALSE, collapse = TRUE, comment = NA)
 
 Hi! Hello! Welcome. Bienvenidos.
 
-Almost 3 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my own website. Since then, that single post has been viewed over 23,823 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
+About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my first website. Since then, that single post has been viewed over 27,390 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
 
 ![](https://media.giphy.com/media/L2jHJeRY4twe4/giphy.gif)
 
 
-But, making, deploying, and maintaining a Hugo website using blogdown was not always pain-free. 
+But, the process of creating and maintaining a Hugo website using blogdown was not always pain-free. Sometimes we have Hugo "improvements" to thank, other times your Hugo theme is to blame, and some pain was caused by blogdown itself. Regardless of where the pain originates from, it was clear that there was work to be done to support our community of users.
 
 ![](https://media.giphy.com/media/xT0xeK2LxlMVXiAOuk/giphy.gif)
 
@@ -43,9 +43,15 @@ Here are some great posts that document pretty common user experiences and frust
 
 + [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/changing-you-blogdown-workflow/)
 
++ [Claus Wilke's post: *Writing a blogdown post for the ages*](https://clauswilke.com/blog/2020/09/08/a-blogdown-post-for-the-ages/)
+
+
+All of this, combined with my own experiences teaching and using blogdown for over 3.5 years led me to...my giant blogdown wishlist. I had a lot of ideas to help beginners get started, but just as important, to improve the quality of life for existing users. You can see my mega-wishlist that Yihui Xie (the blogdown conceptor and author) asked me to share with him: https://github.com/rstudio/blogdown/issues/476
+
+I'm very happy to report that our team has been working very hard to address these issues, and many others raised by users, to make using blogdown easier to learn and use. 
 :rotating_light: tread here with caution :rotating_light:. 
 
-Nevertheless, I thought it would be fun to take my original blogdown post, and see if I could trace the same process of building a Hugo website using modern-day blogdown for 2021. I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
+In time for the holiday break when I know a lot of quarantined folks are holed up at home without friends or family nearby, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" for 2021 (and hopefully beyond!). I also wanted to add details about using the Hugo Academic theme (now named "Wowchemy"), based on questions I get during workshops and that I see on the RStudio Community forums.
 
 So if you are feeling fearless and want to live on the bleeding edge, read on to give the development version of blogdown a spin along with me.
 
@@ -58,9 +64,8 @@ If you already know what you are doing, this entire post can be condensed into j
 ```{r eval=FALSE}
 remotes::install_github("rstudio/blogdown")
 usethis::create_project()
-hugodown::create_site_academic()
-hugodown::hugo_start()
-usethis::use_github()
+blogdown::new_site("gcushen/hugo-academic")
+blogdown::serve_site()
 ```
 
 ## Pre-requisites
@@ -137,55 +142,63 @@ Write down the widgets you want to see on your homepage. It can be one, or many.
 
 Keep these notes handy! 
 
-
-## Step 1: Create project
+## Step 1: Create repo
 
 ![](01-hugodown.png)
 
-Open up RStudio to create a new project where your website's files will live.
-    
-1. Click `File > New Project > New Directory > New Project` (yes, choose *New Project* twice, this is not a typo!).
 
-1. Be intentional about *where* you tell RStudio to create this new project, and *what* you name your project.
+1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
 
-1. Check the *Create a git repository* box.
+      ![Screenshot above: Creating a new repository in GitHub](github-new-repo.png)
 
-1. Click **Create Project**.
-
-    ![Screenshot above: Creating a new project in RStudio](new-rproj.png)
-
-    For naming your project, consider your future deployment plan:
-
-    + [**Netlify**](https://www.netlify.com). I recommend using Netlify to host the site. In this case, you can name the repository anything you want! 
+      + [**Netlify**](https://www.netlify.com). I recommend using Netlify to host the site. In this case, you can name the repository anything you want! 
       
-    + [**GitHub Pages**](https://pages.github.com). If you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). This post won't be able to help you with publishing.
+      + [**GitHub Pages**](https://pages.github.com). If you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). This post won't be able to help you with publishing.
 
 {{% alert note %}}
 You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories). 
 {{% /alert %}}
 
+
+2. Go to the main page of your new repository, and under the repository name, click the green **Clone or download** button.
+
+3. Choose either SSH or HTTPS (if you don't know which, choose HTTPS). Choose by clicking on the clipboard icon to copy the remote URL for your new repository. You'll paste this text into RStudio in the next section.
     
-## Step 2: Create site
+## Step 2: Create project
 
 ![](02-hugodown.png)
 
-1. hugodown isn't available from CRAN yet (and might never be), but you can install the development version from GitHub with:
+We just created the remote repository on GitHub. To make a local copy on our computer that we can actually work in, we'll clone that repository into a new RStudio project. This will allow us to sync between the two locations: your remote (the one you see on github.com) and your local desktop.
+
+Open up RStudio to create a new project where your website's files will live.
+    
+1. Click `File > New Project > Version Control > Git`.
+
+1. Paste the copied URL from the previous step.
+
+1. Be intentional about where you tell RStudio to create this new Project.
+
+1. Click **Create Project**.
+
+    
+## Step 3: Create site
+
+![](02-hugodown.png)
+
+1. The latest version of blogdown will not be available on CRAN until January 2021, but you can install the development version from GitHub with:
 
     ```
     > if (!requireNamespace("remotes")) install.packages("remotes")
-    > remotes::install_github("r-lib/hugodown")
+    > remotes::install_github("rstudio/blogdown")
     Using github PAT from envvar GITHUB_PAT
-    Downloading GitHub repo r-lib/hugodown@master
+    Downloading GitHub repo rstudio/blogdown@master
     ```
 
-1. Let's use our first hugodown function to create a website with the Hugo Academic theme:
+1. Let's use our first blogdown function to create a website with the Hugo Wowchemy "academic starter" theme:
 
     ```
-    > library(hugodown)
-    > create_site_academic()
-    Error: hugo 0.66.0 not installed
-    ℹ Do you need to call `hugo_install('0.66.0')`?
-    Run `rlang::last_error()` to see where the error occurred.
+    > library(blogdown)
+    > new_site("gcushen/hugo-academic")
     ```
 
     If you get this message like I did, let's do as we're told:
