@@ -63,6 +63,12 @@ I'm really happy with the end result, and I hope users are as well. I not-so-sec
 | Let's check out your blogdown site!
 ```
 
+To do this on your own, you'll want to use the remotes package to install the development version of blogdown:
+
+```
+remotes::install_github("rstudio/blogdown")
+```
+
 ## Check your site's configuration
 
 Your Hugo site's main configuration file is located in the project root of your website, called `config.toml` or `config.yaml`. This file is your most direct line of communication with Hugo itself, and settings in this file are usually the first I check when trying to help users troubleshoot their build. 
