@@ -285,6 +285,10 @@ usethis::use_git()
 usethis::use_github()
 ```
 
+{{% alert note %}} 
+I also just learned about the new [`usethis::use_github_pages()`](https://usethis.r-lib.org/reference/use_github_pages.html) to turn on and/or (re)configure GitHub Pages!
+{{% /alert %}}
+
 Then in the GitHub project, navigate over to "Settings" and *scroooooooll down* to choose:
 
 ![GitHub Pages settings for distill websites](gh-pages.png "GitHub Pages settings for distill websites")
