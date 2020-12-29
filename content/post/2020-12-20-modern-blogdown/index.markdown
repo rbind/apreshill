@@ -12,10 +12,10 @@ aliases:
   - modern-blogdown
 authors:
   - alison
-summary: A guide to getting up and running with blogdown, the Hugo Wowchemy theme,
-  GitHub, and Netlify
+summary: A guide to getting up and running with blogdown, the Hugo Wowchemy academic-starter theme,
+  GitHub, and Netlify (phew!)
 image:
-  caption: '[Photo by Ivan Botha on Unsplash](https://unsplash.com/photos/biz5Kfa-JMQ)'
+  caption: '[Photo by Ben Wilkins on Unsplash](https://unsplash.com/photos/8Yxkb0SvNEM)'
   focal_point: ''
 ---
 
@@ -28,12 +28,12 @@ Hi! Hello! Welcome. Bienvenidos.
 
 About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my first website. Since then, that single post has been viewed over 27,390 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
 
-![](https://media.giphy.com/media/L2jHJeRY4twe4/giphy.gif)
+![](https://media.giphy.com/media/BU5j1oVls8rXG/giphy.gif)
 
 
 But, the process of creating and maintaining a Hugo website using blogdown was not always pain-free. Sometimes we have Hugo "improvements" to thank, other times your Hugo theme is to blame, and some pain was caused by blogdown itself. Regardless of where the pain originates from, it was clear that there was work to be done to support our community of users.
 
-![](https://media.giphy.com/media/xT0xeK2LxlMVXiAOuk/giphy.gif)
+![](https://media.giphy.com/media/KTyJ3VPxkbDKU/giphy.gif)
 
 Here are some great posts that document pretty common user experiences and frustrations:
 
@@ -44,12 +44,12 @@ Here are some great posts that document pretty common user experiences and frust
 + [Claus Wilke's post: *Writing a blogdown post for the ages*](https://clauswilke.com/blog/2020/09/08/a-blogdown-post-for-the-ages/)
 
 
-All of this lead me to...my giant blogdown wishlist. After teaching and using blogdown for more than 3.5 years, I had a lot of ideas to help beginners get started, but just as important, to improve the quality of life for existing users. You can see my mega-wishlist that Yihui Xie (the blogdown conceptor and author) asked me to share with him: https://github.com/rstudio/blogdown/issues/476
+All of this, combined with my own experiences teaching and using blogdown for over 3.5 years led me to...my giant blogdown wishlist. I had a lot of ideas to help beginners get started, but just as important, to improve the quality of life for existing users. You can see my mega-wishlist that Yihui Xie (the blogdown conceptor and author) asked me to share with him: https://github.com/rstudio/blogdown/issues/476
 
-I'm very happy to report that our team has been working very hard to make using blogdown easier to learn and use. 
+I'm very happy to report that our team has been working very hard to address these issues, and many others raised by users, to make using blogdown easier to learn and use. 
 :rotating_light: tread here with caution :rotating_light:. 
 
-In time for the holiday break when I know a lot of quarantined folks are holed up at home without friends or family near, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" for 2021 (and hopefully beyond!). I also wanted to add details about using the Hugo Academic theme, based on questions I get during workshops and that I see on the RStudio Community forums.
+In time for the holiday break when I know a lot of quarantined folks are holed up at home without friends or family nearby, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" for 2021 (and hopefully beyond!). I also wanted to add details about using the Hugo Academic theme (now named "Wowchemy"), based on questions I get during workshops and that I see on the RStudio Community forums.
 
 So if you are feeling fearless and want to live on the bleeding edge, read on to give the development version of blogdown a spin along with me.
 
@@ -63,16 +63,21 @@ If you already know what you are doing, this entire post can be condensed into j
 ```r
 remotes::install_github("rstudio/blogdown")
 usethis::create_project()
-hugodown::create_site_academic()
-hugodown::hugo_start()
-usethis::use_github()
+blogdown::new_site("gcushen/hugo-academic")
+blogdown::serve_site()
 ```
 
 ## Pre-requisites
 
 Getting any website up and running with all the moving parts (RStudio, GitHub, Hugo, Netlify) can take a few tries. In this post, I'm passing along what works for me, and the workflow that I use when I teach Hugo website development. Everyone's mileage may vary, though, depending on your operating system and your approach. 
 
-For this blog post, I'm assuming you have basic familiarity with R, the RStudio IDE, & GitHub. If that is not you, you will need to work through [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al. first, then come back here when you are ready. 
+For this blog post, I'm assuming you have basic familiarity with:
+
++ R, 
++ the RStudio IDE, and 
++ GitHub. 
+
+If that is not you, you will need to work through [Happy Git with R](http://happygitwithr.com) by Jenny Bryan et al. first, then come back here when you are ready. 
 
 Since hugodown is currently only available on GitHub, you'll need to also setup a [GitHub Personal Access Token](https://happygitwithr.com/github-pat.html) to install it. 
 
@@ -90,15 +95,22 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 
 During workshops, I try to set aside some time at the start for folks to set their website intentions. This might feel a bit like navel-gazing, but trust me here. I know you just want to jump in and get started! 
 
-But, hear me out. The process of actually building the site can be complicated, and it is easy to get lost in the weeds. Too often, folks run out of steam when it is time to do the most fun and important piece: dreaming about the kind of site you want to make!
+Hear me out though, and don't skim or skip this step. The process of actually building and deploying a personal site can be complicated, and it is easy to get lost in the weeds. 
+
+![](https://media.giphy.com/media/l3vRbcJ60KOxd9bVu/giphy.gif)
+
+It is very easy to run out of steam when it is time to do the most fun and important piece: dreaming about the kind of site you want to make!
 
 {{% alert todo %}}
-Do this right now! Take 10 minutes to set your intentions---grab a pen and notepad.
+Do this right now! Take 10 minutes to set your website intentions---grab a pen and notepad and a cup of 🍵 and read on...
 {{% /alert %}}
 
 ### 1. Content {#todo-content}
 
-Hugo is made for blogs. But, in addition to a blog, the academic theme provides a unique system of widgets. You can have one or many widgets on pages in your site. I like to think of widgets like [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head). Each page is your potato head, and the widgets are all the pieces you could use. 
+Hugo is made for blogs. But, in addition to a blog, the academic-starter theme provides a unique system of widgets. You can have one or many widgets on pages in your site. I like to think of widgets like [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head) where:
+
++ Each page is a potato head, and 
++ Each widget is a piece you could place on the potato head. 
 
 ![](https://media.giphy.com/media/tjGVkrPMjngt2/giphy.gif)
 
@@ -116,6 +128,16 @@ Look at the [Academic demo site](https://academic-demo.netlify.app/) and write d
 ### 2. Menu {#todo-menu}
 
 Now that you have a sense of the content you want, how do you want a visitor to be able to explore your content? I typically recommend limiting the top navbar to 5 links max (excluding the search icon). 
+
+Use some of my favorite personal sites (that do not use our theme) as inspiration too:
+
++ https://www.jason.af/
++ https://third-bit.com/
++ https://maggieappleton.com/
++ https://www.drcathicks.com/
++ https://amber.rbind.io/
+
+Think about how the menu "prewires" you to know what to expect as you dig deeper into their site. How do you want people to get to know you online?
 
 {{% alert todo %}}
 Write down up to 5 items to appear in your upper navbar.
@@ -140,110 +162,70 @@ Here are some examples of personal websites built with the Hugo Academic theme t
 Write down the widgets you want to see on your homepage. It can be one, or many.
 {{% /alert %}}
 
-Keep these notes handy! 
+OK, keep these notes handy! We are ready to *make something.*
 
+![](https://media.giphy.com/media/mXqtfNsJlKtAoyLHd4/giphy.gif)
 
-## Step 1: Create project
+## Step 1: Create repo
 
 ![](01-hugodown.png)
 
-Open up RStudio to create a new project where your website's files will live.
-    
-1. Click `File > New Project > New Directory > New Project` (yes, choose *New Project* twice, this is not a typo!).
 
-1. Be intentional about *where* you tell RStudio to create this new project, and *what* you name your project.
+1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
 
-1. Check the *Create a git repository* box.
+      ![Screenshot above: Creating a new repository in GitHub](github-new-repo.png)
 
-1. Click **Create Project**.
-
-    ![Screenshot above: Creating a new project in RStudio](new-rproj.png)
-
-    For naming your project, consider your future deployment plan:
-
-    + [**Netlify**](https://www.netlify.com). I recommend using Netlify to host the site. In this case, you can name the repository anything you want! 
+      + [**Netlify**](https://www.netlify.com). I recommend using Netlify to *both* build and host your site. In this case, you can name the repository anything you want! 
       
-    + [**GitHub Pages**](https://pages.github.com). If you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). This post won't be able to help you with publishing.
+      + [**GitHub Pages**](https://pages.github.com). I recommend Netlify over GitHub Pages for blogdown/Hugo sites. But, if you want to host your site with GitHub Pages, you should name your repository `yourgithubusername.github.io` (so mine would have been `apreshill.github.io`). This post won't be able to help you with publishing.
 
 {{% alert note %}}
 You can see some of the repo names used by members of the `rbind` organization [here](https://github.com/rbind/repositories). 
 {{% /alert %}}
 
+
+2. Go to the main page of your new repository, and under the repository name, click the green **Clone or download** button.
+
+3. Choose either SSH or HTTPS (if you don't know which, choose HTTPS). Choose by clicking on the clipboard icon to copy the remote URL for your new repository. You'll paste this text into RStudio in the next section.
     
-## Step 2: Create site
+## Step 2: Create project
 
 ![](02-hugodown.png)
 
-1. hugodown isn't available from CRAN yet (and might never be), but you can install the development version from GitHub with:
+We just created the remote repository on GitHub. To make a local copy on our computer that we can actually work in, we'll clone that repository into a new RStudio project. This will allow us to sync between the two locations: your remote (the one you see on github.com) and your local desktop.
+
+Open up RStudio to create a new project where your website's files will live.
+    
+1. Click `File > New Project > Version Control > Git`.
+
+1. Paste the copied URL from the previous step.
+
+1. Be intentional about where you tell RStudio to create this new Project on your workstation.
+
+1. Click **Create Project**.
+
+    
+## Step 3: Create site
+
+![](02-hugodown.png)
+
+1. The latest version of blogdown will not be available on CRAN until January 2021, but you can install the development version from GitHub with:
 
     ```
     > if (!requireNamespace("remotes")) install.packages("remotes")
-    > remotes::install_github("r-lib/hugodown")
+    > remotes::install_github("rstudio/blogdown")
     Using github PAT from envvar GITHUB_PAT
-    Downloading GitHub repo r-lib/hugodown@master
+    Downloading GitHub repo rstudio/blogdown@master
     ```
 
-1. Let's use our first hugodown function to create a website with the Hugo Academic theme:
+1. Let's use our first blogdown function to create a website with the Hugo Wowchemy "academic starter" theme:
 
     ```
-    > library(hugodown)
-    > create_site_academic()
-    Error: hugo 0.66.0 not installed
-    ℹ Do you need to call `hugo_install('0.66.0')`?
-    Run `rlang::last_error()` to see where the error occurred.
+    > library(blogdown)
+    > new_site("wowchemy/academic-starter")
     ```
 
-    If you get this message like I did, let's do as we're told:
-
-    ```
-    > hugo_install('0.66.0')
-    Finding release
-    Downloading hugo_extended_0.66.0_macOS-64bit.tar.gz...
-    Installing to /Users/alison/Library/Caches/hugodown...
-    ```
-
-1. Now let's try that again:
-
-    ```
-    > create_site_academic()
-    Overwrite pre-existing file 'test-hugo.Rproj'?
-    
-    1: Yup
-    2: Absolutely not
-    3: Nope
-    
-    Selection: 
-    ```
-    
-    Enter your selection in the affirmative here with the correct number (so I entered `1`). This printed to my console:
-
-    ```
-    ✓ Writing 'test-hugo.Rproj'
-    ✓ Adding '.Rproj.user' to '.gitignore'
-    ✓ Downloading academic theme
-    ✓ Copying site components
-    ✓ Installing academic theme
-    ✓ Patching configuration files
-    ✓ Adding 'resources', 'public' to '.gitignore'
-    ✓ Opening './' in new RStudio session
-    ```
-
-    My new project did in fact open up, so I closed the old one.
-
-1. Start with the `README`, which leads us to...
-
-    ```
-    This is a [hugo](http://gohugo.io/) [academic](https://sourcethemes.com/academic) created by [hugodown](http://hugodown.r-lib.org/).
-    
-    ## Basic operation
-    
-    * Preview the site with `hugodown::hugo_start()`; it will automatically
-      update (navigating to the latest change) as you modify `contents/`.
-    
-    * Create a new post with `hugodown::use_post('post/short-title')`.
-    ```
-
-1. Following the `README`, we start by previewing the example site using `hugodown::hugo_start()`.
+1. We start by previewing the example site using `blogdown::serve_site()`.
 
     ![](hugo_start.png)
 
@@ -254,11 +236,22 @@ You can see some of the repo names used by members of the `rbind` organization [
 
 This is where R Markdown enters the picture :tada: 
 
-Hugodown allows you to create new `.Rmd` posts that are knittable (to `.md` files), then previewable in your Hugo site. Use the console to author a new `.Rmd` post; I'll name my post "hi-hugo":
+Blogdown allows you to create new two kinds of R Markdown posts that are knittable:
+
++ `.Rmd` 🧶 to `.html` or 
+
++ `.Rmarkdown` 🧶 to `.markdown`
+
+Once knitted, both are then previewable in your Hugo site.
+
+{{% alert note %}}
+I used to agonize over which file extension to use. But now I am squarely in `.Rmarkdown` camp with [Maëlle](https://masalmon.eu/2020/02/29/hugo-maintenance/)- I like knitting to `.markdown` and wish this was easier in blogdown; see: https://github.com/rstudio/blogdown/issues/530 
+{{% /alert %}}
+
+Use the console to author a new `.Rmarkdown` post; I'll name my post "hi-hugo":
 
 ```
-> hugodown::use_post(path = "post/hi-hugo")
-● Modify '/Users/alison/rscratch/test-hugodown/content/post/hi-hugo/index.Rmd'
+> blogdown::new_post(title = "Hi Hugo", ext = '.Rmarkdown')
 ```
 
 This takes the path to where you want your post to live, relative to the `content/` folder (so that piece of the path is assumed, rightly so!). In the Academic theme, the example site organizes blog posts into the `content/post/` folder, but the name of this folder varies across Hugo themes. 
@@ -267,16 +260,18 @@ This takes the path to where you want your post to live, relative to the `conten
 A rule that is true 90% of the time: folders in `content/` are singular, not plural--- :heavy_check_mark: `post`; :x: `posts`
 {{% /alert %}}
 
-If you look in your **Files** pane, you can see that this creates a folder with the name of my post (`"hi-hugo"`). The actual R Markdown file is named `index.Rmd`. This is a Hugo [page bundle](/post/2019-02-21-hugo-page-bundles/). Each post gets its own bundle, or folder. Inside the post bundle is where all your static images, static data files like `.csv` files should go. 
+If you look in your **Files** pane, you can see that this creates a folder with the date and the ["slug"](https://en.wikipedia.org/wiki/Clean_URL#Slug) name of my post (`"hi-hugo"`). The actual R Markdown file is named `index.Rmarkdown`. 
+
+This is a Hugo [page bundle](/post/2019-02-21-hugo-page-bundles/). Each post gets its own bundle, or folder. Inside the post bundle is where all your static images, static data files like `.csv` files should go. 
 
 ```
 content/
 ├── posts
-│   ├── hi-hugo
+│   ├── 2021-01-01-hi-hugo
 │   │   ├── bakers.csv
 │   │   ├── image1.jpg
 │   │   ├── image2.png
-│   │   └── index.Rmd
+│   │   └── index.Rmarkdown
 ```
 
 In the post itself, use the relative file path like:
@@ -285,7 +280,7 @@ In the post itself, use the relative file path like:
 ![my-first-image](image1.jpg)
 ```
 
-Let's look at the `index.Rmd`---the output format here is `hugodown::md_document()`. We'll knit this `.Rmd` to a `.md` file. You can knit freely here in hugodown! To knit an `.Rmd` post, you can either:
+Let's look at the `index.Rmarkdown`. We'll knit this `.Rmarkdown` to a `.markdown` file. You can knit freely now in blogdown! To knit an `.Rmarkdown` post, you can either:
 
 1. Use the Knit button to knit to the correct output format, or
 
@@ -300,8 +295,8 @@ content/
 │   │   ├── bakers.csv
 │   │   ├── image1.jpg
 │   │   ├── image2.png
-│   │   ├── index.Rmd
-│   │   └── index.md
+│   │   ├── index.Rmarkdown
+│   │   └── index.markdown   <- 🆕
 ```
 
 Go ahead and add an R code chunk like:
@@ -312,10 +307,10 @@ summary(Orange)
 ```
 ````
 
-After you edit your `.Rmd` post, save then knit. 
+After you edit your `.Rmarkdown` post, knit. Note that knitting automatically saves the file for you. You also can just save the file without knitting- this is good for when your code still needs work and won't run as is.
 
 {{% alert note %}}
-The most important thing here is to realize that the act of knitting creates an `index.md` file in the same post bundle as `index.Rmd`. The `index.md` version is what then feeds into the Hugo static site generator.
+The most important thing here is to realize that the act of knitting creates an `index.markdown` file in the same post bundle as `index.Rmarkdown`. Because Hugo doesn't know R or R Markdown, The `index.markdown` version is what then feeds into the Hugo static site generator.
 {{% /alert %}}
 
 Try it again! Add another R code chunk like:
@@ -346,17 +341,17 @@ Many R Markdown output options for HTML documents are not going to be possible h
 
 My workflow in RStudio at this point (again, just viewing locally because we haven't deployed yet) works best like this:
 
-1. Open the RStudio project for the site
+1. Open the RStudio project for the site.
 
-1. Start the Hugo server using `hugodown::hugo_start()` (only once due to the magic of *LiveReload*)
+1. Start the Hugo server using `blogdown::serve_site()` (only once due to the magic of *LiveReload*).
 
-1. View site in the RStudio viewer pane, and open in a new browser window while I work
+1. View site in the RStudio viewer pane, and open in a new browser window while I work.
 
-1. Select existing files to edit using the file pane in RStudio
+1. Select existing files to edit using the file pane in RStudio.
 
-1. After making changes, click the save button and, if working with an `.Rmd` document, `knit`! To knit an `.Rmd` post, you can use the Knit button to knit to the correct output format. You can also use the keyboard shortcut `Cmd+Shift+K` (Mac) or `Ctrl+Shift+K` (Windows/Linux).
+1. After making changes, save if a plain `.md` file, or if working with an `.Rmd` or an `.Rmarkdown` document, `knit` to preview! You can now use the Knit button to knit to the correct output format. You can also use the keyboard shortcut `Cmd+Shift+K` (Mac) or `Ctrl+Shift+K` (Windows/Linux).
 
-1. The console will detect the change (it will print `Change detected, rebuilding site.`), the viewer pane will update, and if you hit refresh in the browser your local view will also be updated.
+1. The console will detect the change (it will print `Change detected, rebuilding site.`), the viewer pane will update, and (in a few seconds) your local view in your browser will also refresh. Try to avoid hitting the refresh button in your browser.
 
 1. When happy with changes, add/commit/push changes to GitHub.
 
@@ -374,7 +369,7 @@ So now you have the basic mechanics of the site working.
 
 ![](03-hugodown.png)
 
-Now, we'll leave hugodown and R Markdown behind. We'll just be using Hugo and the Academic theme to build your personal website.
+Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and the Academic theme to build your personal website.
 
 ### Configure your site
 
@@ -413,7 +408,7 @@ rstudioapi::navigateToFile("content/authors/admin/_index.md")
 
 Edit the YAML metadata to change:
 
-+ The [icons](https://sourcethemes.com/academic/docs/page-builder/#icons) and where they link to
++ The [icons](https://wowchemy.com/docs/page-builder/#icons) and where they link to
 
 + Your current role and organization
 
@@ -430,11 +425,13 @@ Remember how we started with thinking about your [content](#todo-content)? We ar
 
 Recall that on the [Academic demo site](https://academic-demo.netlify.app/), the entire home page is filled with widgets! The default example site is the exact same as the demo. It sets almost every available widget to **active** to show you the range of what you could do. 
 
-Deactivating the widgets you don't need and only activating the ones you want will help you avoid having your home page feel like the "scroll of death," as my friend [Jackie Wirz](https://twitter.com/jackiewirz) called it. I like to think of the home page as [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head). The home page is the potato, and the widgets are all the pieces you could use. 
+Deactivating the widgets you don't need and only activating the ones you want will help you avoid having your home page feel like the 💀 "scroll of death," as my friend [Jackie Wirz](https://twitter.com/jackiewirz) called it. 
 
-![](https://media.giphy.com/media/tjGVkrPMjngt2/giphy.gif)
+Remember my [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head) analogy? The home page is your most prominent potato, and the widgets are all the pieces you could use. 
 
-Each widget is a `*.md` file in the `content/home/` folder. The metadata at the top helps you configure each widget; namely whether it is `active` (true or false) and the widgets `weight` (ordering, actual numbers doesn't matter- only relative to the other weights).
+![](https://media.giphy.com/media/305jKnp2ErJK0/giphy.gif)
+
+Each widget you see is a `*.md` file in the `content/home/` folder. The metadata at the top helps you configure each widget; namely whether it is `active` (true or false) and the widgets `weight` (ordering, actual numbers doesn't matter- only relative to the other weights).
 
 For example, to turn off the hero widget, use this code in your console and set `active = false`:
 
@@ -491,7 +488,7 @@ The very critical line here is the `type: widget_page`---this sets you up to now
     ```
     
 {{% alert note %}}
-You can link to any specific widget by taking your baseurl and appending `/#{name-of-widget}`, so `/#slider` links to [*my slider*](/#slider). And `/resume/#accomplishments` links to [*my honors & awards*](/resume/#accomplishments)
+You can link to any specific widget by taking your baseurl and appending `/#{name-of-widget}`, so `/#slider` links to [*my homepage slider*](/#slider). And `/resume/#accomplishments` links to [*my honors & awards*](/resume/#accomplishments)
 {{% /alert %}}
 
 
@@ -550,6 +547,6 @@ At this point, you should be up and running with `hugodown`, GitHub, and Netlify
 
 ## We made it!
 
-So, we hit a few bumps in the road, but I'm interested to watch how this package matures, and hopefully I'll be able to help improve quality of life for users (and selfishly for me!). Happy hugodown-ing!
+So, we now have the scaffold up and ready for your ideas, your voice, and your style. If you made it this far, please share your site- I'd love to see it!
 
-![](https://media.giphy.com/media/l2Je4FGrsRuYskcda/giphy.gif)
+![](https://media.giphy.com/media/1xNDlJsL1ntZZqm7pn/giphy.gif)
