@@ -57,10 +57,14 @@ If you already know what you are doing, this entire post can be condensed into j
 
 ```r
 remotes::install_github("rstudio/blogdown")
+usethis::create_project()
 blogdown::new_site(theme = "wowchemy/starter-academic")
 blogdown::serve_site()
+usethis::use_git()
+usethis::use_github() # requires a GitHub PAT
 ```
 
+The above sequence is a slightly more advanced workflow than the steps I follow below, but is fairly magical- attempt at your own risk! For everyone else, read on...
 
 ## Pre-requisites
 
@@ -381,7 +385,7 @@ Knit, and you should see something like:
 Many R Markdown output options for HTML documents are not going to be possible here, like tabbed sections, floating table of contents, the `code_download` button, etc. Also, HTML widgets are a little dicey currently.
 {{% /alert %}}
 
-This is a single page. It is made with R Markdown, and happens to be a blog post, although you can us R Markdown to create content for any other content section too. 
+This is a single page. It is made with R Markdown, and happens to be a blog post, although you can use R Markdown to create content for any other content section too. 
 
 If you want a featured image to accompany your post and show up on your listing page (the clickable list of all your posts), you'll want to add an image with the word `featured` in the filename:
 
@@ -541,17 +545,30 @@ rstudioapi::navigateToFile("config.toml", line = 12)
 To get an `*.rbind.io` URL, follow [these instructions](/post/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
 {{% /alert %}}
 
+In the future, as you work on your site, you may also wish to `check_hugo()`:
+
+```
+> blogdown::check_hugo()
+― Checking Hugo
+| Checking Hugo version...
+○ Found 4 versions of Hugo. You are using Hugo 0.79.0.
+| Checking .Rprofile for Hugo version used by blogdown...
+○ blogdown is using Hugo 0.79.0 to build site locally.
+● [TODO] Also run blogdown::check_netlify() to check for possible problems with Hugo and Netlify.
+― Check complete: Hugo
+```
+
 ## Step 6: Sculpt site
 
 ![](06-blogdown-2021.png)
 
-Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and the Academic theme to build your personal website.
+Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and Wowchemy (I think it is said like alchemy? Why??) to build your personal website.
 
 ### Configure your site
 
 Let's start with the last thing you typically do to your home- decorate.
 
-Open up the file `config/_default/params.toml`. Play with any of these configurations, but especially fonts/themes. You can see the ones designed by Desirée De Leon in the data/ folder.
+Open up the file `config/_default/params.toml`. Play with any of these configurations, but especially fonts/themes. 
 
 
 
