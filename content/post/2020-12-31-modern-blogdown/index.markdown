@@ -501,7 +501,17 @@ To get started using Netlify for real (which has a free plan that should largely
 
 1. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `blogdown`. Leave all settings as they are and select **Deploy Site**.
 
-You actually already have most of the wiring laid out for you to do the rest. Our site has a `netlify.toml` file, which sets us the necessary settings for letting Netlify build our site for us and then publish it. You can read more about this file [here](/post/2019-02-19-hugo-netlify-toml/). 
+You should see something like this:
+
+![](new_netlify.png)
+
+When it is done, you can click on the link to your new site! And the most magical thing of all, every time you push any changes to your site to GitHub, Netlify will detect the push, re-build, then update your published site. It's a good thing. It's called continuous deployment, and it is the main reason to use Netlify for a blogdown site.
+
+With a new site, Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Do this by navigating to your site on Netlify, then click on **Settings**. Under **Site information**, click on the *Change site name* button.
+
+![](netlify-site-name.png)
+
+You actually have most of the necessary wiring laid out for you already in your repo, which is why this worked. Our site has a `netlify.toml` file, which sets us the necessary settings for letting Netlify build our site for us and then publish it. You can read more about this file [here](/post/2019-02-19-hugo-netlify-toml/). 
 
 Now, back in your local blogdown project, let's check this file with blogdown:
 
@@ -522,11 +532,7 @@ Now, back in your local blogdown project, let's check this file with blogdown:
 
 I recommend going with `Option 1` here, so follow that `[TODO]` and then run the function again to get a clean check.
 
-When you are ready to deploy, commit your changes and push to GitHub!
-
-Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Do this by navigating to your site on Netlify, then click on **Settings**. Under **Site information**, click on the *Change site name* button.
-
-![](netlify-site-name.png)
+When you are ready to deploy, commit your changes and push to GitHub! Watch as your site rebuilds :tada:
 
 
 {{% alert note %}}
@@ -687,6 +693,6 @@ You can link to any specific widget by taking your baseurl and appending `/#{nam
 
 ## We made it!
 
-At this point, you should be up and running with `hugodown`, GitHub, and Netlify. You now have the scaffold up and ready for your ideas, your voice, and your style. If you made it this far, please share your site- I'd love to see it!
+At this point, you should be up and running with `hugodown`, GitHub, and Netlify. You now have the scaffold up and ready for your ideas, your style, and your voice. If you made it this far, please share your site- I'd love to see it!
 
 ![](https://media.giphy.com/media/1xNDlJsL1ntZZqm7pn/giphy.gif)
