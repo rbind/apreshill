@@ -1,5 +1,5 @@
 ---
-title: Up & running with modern blogdown in 2021
+title: Up & running with blogdown in 2021
 author: Alison Hill
 date: '2020-12-31'
 categories:
@@ -9,11 +9,10 @@ categories:
 tags:
   - hugo
 aliases:
-  - modern-blogdown
+  - new-year-new-blogdown
 authors:
   - alison
-summary: A guide to getting up and running with blogdown, the Hugo Wowchemy academic-starter theme,
-  GitHub, and Netlify (phew!)
+summary: New year, new blogdown! A guide to getting up and running with blogdown, the Hugo Wowchemy academic-starter theme, GitHub, and Netlify. Not brief.
 image:
   caption: '[Photo by Ben Wilkins on Unsplash](https://unsplash.com/photos/8Yxkb0SvNEM)'
   focal_point: ''
@@ -62,10 +61,10 @@ If you already know what you are doing, this entire post can be condensed into j
 
 ```r
 remotes::install_github("rstudio/blogdown")
-usethis::create_project()
 blogdown::new_site(theme = "wowchemy/starter-academic")
 blogdown::serve_site()
 ```
+
 
 ## Pre-requisites
 
