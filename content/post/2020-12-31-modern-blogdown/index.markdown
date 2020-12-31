@@ -586,6 +586,10 @@ Open up the file `config/_default/params.toml`. Play with any of these configura
 rstudioapi::navigateToFile("config/_default/params.toml")
 ```
 
+{{% alert note %}}
+If you want deeper customization of the styling, you can create a new CSS file `assets/scss/custom.scss` and use it to override any existing styles. You can see mine [here](https://github.com/rbind/apreshill/blob/master/assets/scss/custom.scss); heavily borrowing from my former intern [Desirée De Leon](https://desiree.rbind.io/)!
+{{% /alert %}}
+
 While you are at it, edit the other configuration files:
 
 * You can also view [my `config.toml` file](https://github.com/rbind/apreshill/blob/master/config.toml)
@@ -597,9 +601,7 @@ Remember our [menu intentions](#todo-menu)? Go ahead and edit those too:
 rstudioapi::navigateToFile("config/_default/menus.toml")
 ```
 
-{{% alert note %}}
-If you want deeper customization of the styling, you can create a new CSS file `assets/scss/custom.scss` and use it to override any existing styles. You can see mine [here](https://github.com/rbind/apreshill/blob/master/assets/scss/custom.scss); heavily borrowing from my former intern [Desirée De Leon](https://desiree.rbind.io/)!
-{{% /alert %}}
+
 
 Let's run a blogdown check on the configuration file before we leave:
 
