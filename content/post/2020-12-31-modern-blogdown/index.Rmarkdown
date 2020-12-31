@@ -8,7 +8,7 @@ categories:
   - netlify
 tags:
   - hugo
-aliases:
+slug:
   - new-year-new-blogdown
 authors:
   - alison
