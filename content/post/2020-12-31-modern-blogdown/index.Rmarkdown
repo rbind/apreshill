@@ -469,9 +469,28 @@ Note that you could publish the `public/` folder using Netlify [drag & drop](htt
   <source src="https://rstudio-education.github.io/sharing-short-notice/images/drop-blog.mp4" type="video/mp4">
 </video>
 
-We are going one step more advanced by using GitHub with Netlify now.
+This workflow works, but I assume you want to ride this bike. Let's skip the training wheels &mdash; we are going one step more advanced by using GitHub with Netlify now.
 
-Deploying in Netlify through GitHub is smooth. You can make it smoother by adding a `netlify.toml` file in the project root directory. I have a post with more details  [here](/post/2019-02-19-hugo-netlify-toml/).
+You actually already have most of the wiring laid out for you. Our site has a `netlify.toml` file, which sets us the necessary settings for letting Netlify build our site for us and then publishing it. You can read mor about this file [here](/post/2019-02-19-hugo-netlify-toml/). 
+
+Let's check this file with blogdown:
+
+```
+> blogdown::check_netlify()
+― Checking netlify.toml...
+○ Found HUGO_VERSION = 0.79.1 in [build] context of netlify.toml.
+| Checking that Netlify & local Hugo versions match...
+| Mismatch found:
+  blogdown is using Hugo version (0.79.0) to build site locally.
+  Netlify is using Hugo version (0.79.1) to build site.
+● [TODO] Option 1: Change HUGO_VERSION = "0.79.0" in netlify.toml to match local version.
+● [TODO] Option 2: Use blogdown::install_hugo("0.79.1") to match Netlify version, and set options(blogdown.hugo.version = "0.79.1") in .Rprofile to pin this Hugo version.
+| Checking that Netlify & local Hugo publish directories match...
+○ Good to go - blogdown and Netlify are using the same publish directory: public
+― Check complete: netlify.toml
+```
+
+Deploying in Netlify through GitHub is smooth. You can make it smoother by adding a `netlify.toml` file in the project root directory. I have a post with more details 
 
 1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
 
@@ -507,6 +526,11 @@ Change the baseurl here:
 ```{r eval=FALSE}
 rstudioapi::navigateToFile("config.toml", line = 12)
 ```
+
+
+{{% alert note %}}
+To get an `*.rbind.io` URL, follow [these instructions](/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
+{{% /alert %}}
 
 ## Step 6: Sculpt site
 
@@ -632,19 +656,8 @@ You can link to any specific widget by taking your baseurl and appending `/#{nam
 {{% /alert %}}
 
 
-### `*.rbind.io` domain names
-
-You may want a different [domain name](https://bookdown.org/yihui/blogdown/domain-name.html) than the one provided by Netlify. I opted for a free subdomain `*.rbind.io` offered by RStudio. To do the same, head over to the [rbind/support GitHub page](https://github.com/rbind/support/issues) and open a new issue. All you need to do is let them know what your Netlify subdomain name is (`*.netlify.com`), and what you want your subdomain name to be (`*.rbind.io`). The [awesome `rbind` support team](https://support.rbind.io) will help you take it from there! 
-
-{{% alert note %}}
-Again, you will need to update the `baseurl` in your `config.toml` file to reflect your new rbind subdomain name (so mine is baseurl = "https://alison.rbind.io/").
-{{% /alert %}}
-
-At this point, you should be up and running with `hugodown`, GitHub, and Netlify.
-
-
 ## We made it!
 
-So, we now have the scaffold up and ready for your ideas, your voice, and your style. If you made it this far, please share your site- I'd love to see it!
+At this point, you should be up and running with `hugodown`, GitHub, and Netlify. You now have the scaffold up and ready for your ideas, your voice, and your style. If you made it this far, please share your site- I'd love to see it!
 
 ![](https://media.giphy.com/media/1xNDlJsL1ntZZqm7pn/giphy.gif)
