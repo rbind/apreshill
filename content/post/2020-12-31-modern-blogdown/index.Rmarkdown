@@ -275,13 +275,8 @@ A rule that is true 90% of the time: folders in `content/` are singular, not plu
 You can add an option to your `.Rprofile` to save these settings so you don't have to remember them:
 
 ```{r eval=FALSE}
-rstudioapi::navigateToFile(".Rprofile", line = 9)
-```
-
-If you don't have an `.Rprofile` yet, you can create a new one with:
-
-```{r eval=FALSE}
-blogdown::config_Rprofile()
+# if exists, opens; if not, creates new
+blogdown::config_Rprofile() 
 ```
 
 Then add the blogdown options to that file, save, and **RESTART YOUR R SESSION** for changes to take effect:

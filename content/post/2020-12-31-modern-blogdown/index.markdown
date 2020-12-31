@@ -275,14 +275,8 @@ You can add an option to your `.Rprofile` to save these settings so you don't ha
 
 
 ```r
-rstudioapi::navigateToFile(".Rprofile", line = 9)
-```
-
-If you don't have an `.Rprofile` yet, you can create a new one with:
-
-
-```r
-blogdown::config_Rprofile()
+# if exists, opens; if not, creates new
+blogdown::config_Rprofile() 
 ```
 
 Then add the blogdown options to that file, save, and **RESTART YOUR R SESSION** for changes to take effect:
