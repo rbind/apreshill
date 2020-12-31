@@ -6,8 +6,12 @@ categories:
   - hugo
   - blogdown
   - netlify
+  - rmarkdown
 tags:
   - hugo
+  - blogdown
+  - netlify
+  - rmarkdown
 slug: new-year-new-blogdown
 authors:
   - alison
