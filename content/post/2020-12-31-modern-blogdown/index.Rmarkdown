@@ -533,7 +533,7 @@ rstudioapi::navigateToFile("config.toml", line = 12)
 
 
 {{% alert note %}}
-To get an `*.rbind.io` URL, follow [these instructions](/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
+To get an `*.rbind.io` URL, follow [these instructions](/post/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
 {{% /alert %}}
 
 ## Step 6: Sculpt site
