@@ -25,7 +25,7 @@ image:
 
 Hi! Hello! Welcome. Bienvenidos.
 
-About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my first website. Since then, that single post has been viewed over 27,390 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
+About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-running-with-blogdown/) and published it on my first website. Since then, that single post has been viewed over 27,557 times. That may not seem like a lot to some folks, but it is to me! Even more meaningful to me, though, has been watching the launches of so many people's personal websites.
 
 ![](https://media.giphy.com/media/BU5j1oVls8rXG/giphy.gif)
 
