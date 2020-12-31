@@ -533,10 +533,10 @@ When you are ready to deploy, commit your changes and push to GitHub! Watch as y
 Anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to baseurl = "https://apreshill.netlify.com/").
 {{% /alert %}}
 
-Change the baseurl here:
+Change the baseurl here to match where Netlify is publishing your site:
 
 ```{r eval=FALSE}
-rstudioapi::navigateToFile("config.toml", line = 12)
+rstudioapi::navigateToFile("config.yaml", line = 3)
 ```
 
 
@@ -581,6 +581,27 @@ While you are at it, edit the other configuration files:
 {{% alert note %}}
 If you want deeper customization of the styling, you can create a new CSS file `assets/scss/custom.scss` and use it to override any existing styles. You can see mine [here](https://github.com/rbind/apreshill/blob/master/assets/scss/custom.scss); heavily borrowing from my former intern [Desirée De Leon](https://desiree.rbind.io/)!
 {{% /alert %}}
+
+Let's run a blogdown check on the configuration file before we leave:
+
+```
+> blogdown::check_config()
+― Checking config.yaml
+| Checking "baseURL" setting for Hugo...
+○ Found baseURL = "https://silly-dubinsky-de5482.netlify.app"; nothing to do here!
+| Checking "ignoreFiles" setting for Hugo...
+● [TODO] Add these items to the "ignoreFiles" setting: "\\.Rmd$", "\\.Rmarkdown$", "\\.knit\\.md$", "\\.utf8\\.md$"
+| Checking setting for Hugo's Markdown renderer...
+○ All set! Found the "unsafe" setting for goldmark.
+― Check complete: config.yaml
+```
+
+Looks like we have a few `[TODO]` items to add to our `config.yaml` file:
+
+```{r eval=FALSE}
+rstudioapi::navigateToFile("config.yaml", line = 15)
+```
+
 
 
 ### Goodbye Nelson B.
@@ -680,6 +701,13 @@ The very critical line here is the `type: widget_page`---this sets you up to now
 You can link to any specific widget by taking your baseurl and appending `/#{name-of-widget}`, so `/#slider` links to [*my homepage slider*](/#slider). And `/resume/#accomplishments` links to [*my honors & awards*](/resume/#accomplishments)
 {{% /alert %}}
 
+Let's run one final check, which wraps all 5 checking functions we've used so far into a single final checklist:
+
+```
+> blogdown::check_site()
+```
+
+This is immensely comforting to me; read more about these new checking functions [here](/post/2020-12-27-blogdown-checks/).
 
 ## We made it!
 
