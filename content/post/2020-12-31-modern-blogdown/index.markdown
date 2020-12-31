@@ -134,10 +134,13 @@ Now that you have a sense of the content you want, how do you want a visitor to 
 Use some of my favorite personal sites (that do not use our theme) as inspiration too:
 
 + https://www.jason.af/
++ https://www.nistara.net
 + https://third-bit.com/
 + https://maggieappleton.com/
 + https://www.drcathicks.com/
 + https://amber.rbind.io/
++ https://dscott.netlify.app/
++ https://drmowinckels.io/
 
 Think about how the menu "prewires" you to know what to expect as you dig deeper into their site. How do you want people to get to know you online?
 
