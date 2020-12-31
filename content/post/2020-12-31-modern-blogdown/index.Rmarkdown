@@ -679,7 +679,7 @@ For my own site, I use 4 main home page widgets:
 1. [*talks*](/#talks) (set to show only the most recent)
 
 
-### Re-plant widgets
+### Transplant widgets
 
 If you opted for a more streamlined home page with fewer widgets, you may experience *widget pruning regret*. Many are very useful, and you may wish to use widgets on *other* pages that are not the home page. In this theme, this is possible! Even if you turn off a widget on the home page, you can create what is called a widget page and add or even combine widgets there. I make heavy use of widget pages in my own site. Here are the steps (following the [docs](https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page)):
 
