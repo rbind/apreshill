@@ -33,11 +33,11 @@ About 3.5 years ago, I wrote my [first blog post](/post/2017-06-12-up-and-runnin
 ![](https://media.giphy.com/media/BU5j1oVls8rXG/giphy.gif)
 
 
-But, the process of creating and maintaining a Hugo website using blogdown was not always pain-free. Sometimes we have Hugo "improvements" to thank, other times your Hugo theme is to blame, and some pain was caused by blogdown itself. Regardless of where the pain originates from, it was clear that there was work to be done to support our community of users.
+But, the process of creating and maintaining a Hugo website using blogdown was not always pain-free. Sometimes we have Hugo "improvements" to thank, other times your Hugo theme is to blame, and some pain was caused by blogdown itself. Regardless of where the pain originates from, there was definitely room for improvement.
 
 ![](https://media.giphy.com/media/KTyJ3VPxkbDKU/giphy.gif)
 
-Here are some great posts that document pretty common user experiences and frustrations:
+Here are some great blog posts that document pretty common user experiences and frustrations:
 
 + [Maëlle Salmon's post: *What to know before you adopt Hugo/blogdown*](https://masalmon.eu/2020/02/29/hugo-maintenance/)
 
@@ -51,11 +51,11 @@ All of this, combined with my own experiences teaching and using blogdown for ov
 I'm very happy to report that our team has been working very hard to address these issues, and many others raised by users, to make using blogdown easier to learn and use. 
 :rotating_light: tread here with caution :rotating_light:. 
 
-In time for the holiday break when I know a lot of quarantined folks are holed up at home without friends or family nearby, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" for 2021 (and hopefully beyond!). I also wanted to add details about using the Hugo Academic theme (now named "Wowchemy"), based on questions I get during workshops and that I see on the RStudio Community forums.
+In time for the new year when I know a lot of folks are itching to introduce themselves into online communities and conversations, I thought it would be fun to take my original blogdown post, and trace the same process of building a Hugo website with "modern blogdown" in 2021. I also wanted to add details about using the Hugo Academic theme (now named "Wowchemy"), based on questions I get during workshops and that I see on the RStudio Community forums.
 
 So if you are feeling fearless and want to live on the bleeding edge, read on to give the development version of blogdown a spin along with me.
 
-![](https://media.giphy.com/media/l0G19cFS7nkpGaOLC/giphy.gif)
+![](https://media.giphy.com/media/42zi6wvKUbXHbzwBbD/giphy.gif)
 
 ## tl;dr
 
@@ -64,7 +64,7 @@ If you already know what you are doing, this entire post can be condensed into j
 ```{r eval=FALSE}
 remotes::install_github("rstudio/blogdown")
 usethis::create_project()
-blogdown::new_site("gcushen/hugo-academic")
+blogdown::new_site(theme = "wowchemy/starter-academic")
 blogdown::serve_site()
 ```
 
@@ -92,7 +92,7 @@ I've included code chunks below using the [rstudioapi](https://rstudio.github.io
 
 ## Step 0: Set your intentions
 
-![](00-hugodown.gif)
+![](00-blogdown-2021.gif)
 
 During workshops, I try to set aside some time at the start for folks to set their website intentions. This might feel a bit like navel-gazing, but trust me here. I know you just want to jump in and get started! 
 
@@ -169,7 +169,7 @@ OK, keep these notes handy! We are ready to *make something.*
 
 ## Step 1: Create repo
 
-![](01-hugodown.png)
+![](01-blogdown-2021.png)
 
 
 1. Go online to your [GitHub](https://github.com) account, and create a new repository (check to initialize with a `README` but don't add `.gitignore`- this will be taken care of later). For naming your repo, consider your future deployment plan:
@@ -191,7 +191,7 @@ You can see some of the repo names used by members of the `rbind` organization [
     
 ## Step 2: Create project
 
-![](02-hugodown.png)
+![](02-blogdown-2021.png)
 
 We just created the remote repository on GitHub. To make a local copy on our computer that we can actually work in, we'll clone that repository into a new RStudio project. This will allow us to sync between the two locations: your remote (the one you see on github.com) and your local desktop.
 
@@ -208,7 +208,7 @@ Open up RStudio to create a new project where your website's files will live.
     
 ## Step 3: Create site
 
-![](02-hugodown.png)
+![](03-blogdown-2021.png)
 
 1. The latest version of blogdown will not be available on CRAN until January 2021, but you can install the development version from GitHub with:
 
@@ -219,23 +219,30 @@ Open up RStudio to create a new project where your website's files will live.
     Downloading GitHub repo rstudio/blogdown@master
     ```
 
-1. Let's use our first blogdown function to create a website with the Hugo Wowchemy "academic starter" theme:
+1. Let's use our first blogdown function to create a website with the Hugo Wowchemy "starter-academic" project:
 
     ```
     > library(blogdown)
-    > new_site("wowchemy/academic-starter")
+    > new_site(theme = "wowchemy/starter-academic")
     ```
 
-1. We start by previewing the example site using `blogdown::serve_site()`.
+1. This currently happens automatically for you, but we start by previewing the example site using `blogdown::serve_site()`.
 
     ![](hugo_start.png)
 
-    Exciting, isn't it? Now, don't trap your site in the RStudio Viewer pane. Let it out! Click to "Show in new window" (to the right of the :broom: icon) to preview it in a normal browser window. 
+    Exciting, isn't it? Also a bit overwhelming with what looks like :rotating_light: a lot of error messages :rotating_light:. Frankly, you don't need to know much of this. It DID add a sample R Markdown post, and rendered it for you, which is what we are looking at.
+    
+    Now, don't trap your site in the RStudio Viewer pane. Let it out! Click to "Show in new window" (to the right of the :broom: icon) to preview it in a normal browser window. When you do that, you'll be re-directed to the site's main homepage. Let's find our way back to the R Markdown post. Click on `Posts > Hello R Markdown` to read it:
+    
+    ![](sample_post.png)
 
+    This is what blogdown gives you- everything else in the site is given to you by Hugo and your Wowchemy Hugo theme. But this post, and your ability to see output and plots rendered with <i class="fab fa-r-project"></i> is what blogdown adds!
 
-### Add a new post
+## Step 4: Create content
 
-This is where R Markdown enters the picture :tada: 
+![](04-blogdown-2021.png)
+
+Let's use more R Markdown :tada: 
 
 Blogdown allows you to create new two kinds of R Markdown posts that are knittable:
 
@@ -249,16 +256,38 @@ Once knitted, both are then previewable in your Hugo site.
 I used to agonize over which file extension to use. But now I am squarely in `.Rmarkdown` camp with [Maëlle](https://masalmon.eu/2020/02/29/hugo-maintenance/)- I like knitting to `.markdown` and wish this was easier in blogdown; see: https://github.com/rstudio/blogdown/issues/530 
 {{% /alert %}}
 
-Use the console to author a new `.Rmarkdown` post; I'll name my post "hi-hugo":
+Use the console to author a new `.Rmarkdown` post; I'll name my post "Hi Hugo":
 
 ```
-> blogdown::new_post(title = "Hi Hugo", ext = '.Rmarkdown')
+> blogdown::new_post(title = "Hi Hugo", 
+                     ext = '.Rmarkdown', 
+                     subdir = "post")
 ```
 
 This takes the path to where you want your post to live, relative to the `content/` folder (so that piece of the path is assumed, rightly so!). In the Academic theme, the example site organizes blog posts into the `content/post/` folder, but the name of this folder varies across Hugo themes. 
 
 {{% alert note %}}
 A rule that is true 90% of the time: folders in `content/` are singular, not plural--- :heavy_check_mark: `post`; :x: `posts`
+{{% /alert %}}
+
+You can add an option to your `.Rprofile` to save these settings so you don't have to remember them:
+
+```{r eval=FALSE}
+blogdown::config_Rprofile()
+```
+
+Then add the blogdown options to that file, save, and **RESTART YOUR R SESSION** for changes to take effect:
+
+```
+options(
+  blogdown.author = "Alison Hill",
+  blogdown.ext = ".Rmarkdown",
+  blogdown.subdir = "post"
+)
+```
+
+{{% alert warning %}}
+Always restart your R session after editing your `.Rprofile` for changes to take effect.
 {{% /alert %}}
 
 If you look in your **Files** pane, you can see that this creates a folder with the date and the ["slug"](https://en.wikipedia.org/wiki/Clean_URL#Slug) name of my post (`"hi-hugo"`). The actual R Markdown file is named `index.Rmarkdown`. 
@@ -281,7 +310,12 @@ In the post itself, use the relative file path like:
 ![my-first-image](image1.jpg)
 ```
 
-Let's look at the `index.Rmarkdown`. We'll knit this `.Rmarkdown` to a `.markdown` file. You can knit freely now in blogdown! To knit an `.Rmarkdown` post, you can either:
+Let's look at the `index.Rmarkdown`. We'll knit this `.Rmarkdown` to a `.markdown` file. You may `r emo::ji("yarn")` knit `r emo::ji("yarn")` freely now in blogdown! 
+
+![](https://media.giphy.com/media/iBjylURwS9N9FCl8Dl/giphy.gif)
+
+
+To knit an `.Rmarkdown` post, you can either:
 
 1. Use the Knit button to knit to the correct output format, or
 
@@ -364,11 +398,119 @@ ERROR 2017/06/08 16:22:34 failed to parse page metadata for home/about.md: (18, 
 Error: Error building site: Errors reading pages: Error: failed to parse page metadata for home/about.md: (18, 6): missing comma for about.md
 ```
 
-So now you have the basic mechanics of the site working.
+### Using GitHub
 
-## Step 3: Build your site
+Let's go ahead and push our changes to GitHub. First, let's make a `.gitignore` file. It should look like this:
 
-![](03-hugodown.png)
+```{r eval=FALSE}
+file.edit(".gitignore")
+```
+
+Add this content:
+
+```
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+Thumbs.db
+```
+
+### Check yourself before you wreck yourself
+
+Let's use blogdown to check this file before we do our first commit:
+```{r eval=FALSE}
+blogdown::check_gitignore()
+```
+
+You should see something like:
+```
+> check_gitignore()
+― Checking .gitignore
+| Checking for items to remove...
+○ Nothing to see here - found no items to remove.
+| Checking for items you can safely ignore...
+○ Found! You have safely ignored: .DS_Store, Thumbs.db
+| Checking for items to ignore if you build the site on Netlify...
+● [TODO] When Netlify builds your site, you can safely add to .gitignore: public, resources
+― Check complete: .gitignore
+```
+
+You have a `[TODO]` item- go ahead and add `public` and `resources` on their own lines in your `.gitignore` file. We'll be configuring Netlify to build our site shortly, so go right ahead while the file is open. 
+
+While we are at it, let's check out our content too:
+
+```{r eval=FALSE}
+blogdown::check_content()
+```
+
+You may notice a few pieces of content are flagged as `draft`. This is good to know! Read up on drafts in Hugo [here](https://bookdown.org/yihui/blogdown/content.html#yaml-metadata).
+
+Our checks are pretty clean, so you can freely add/commit your project files to GitHub. You now should have the basic mechanics of your site working.
+
+## Step 5: Publish site
+
+![](05-blogdown-2021.png)
+
+Thus far, we've only been previewing our site. Now, let's take a quick moment to *build* our site. 
+
+```{r eval=FALSE}
+blogdown::build_site()
+```
+
+This creates an actual new directory in your project called `public/`. This is why we just added that directory to our `.gitignore` file. We *can* build our site locally, but we'd rather let Netlify build it for us in the clouds as it improves your website quality of life. 
+
+{{% alert note %}}
+Note that you could publish the `public/` folder using Netlify [drag & drop](https://app.netlify.com/drop). Watch this [webinar](../talk/2020-sharing-short-notice/) called "Sharing on Short Notice" to learn more.
+{{% /alert %}}
+
+<video width="320" height="240" controls>
+  <source src="https://rstudio-education.github.io/sharing-short-notice/images/drop-blog.mp4" type="video/mp4">
+</video>
+
+We are going one step more advanced by using GitHub with Netlify now.
+
+Deploying in Netlify through GitHub is smooth. You can make it smoother by adding a `netlify.toml` file in the project root directory. I have a post with more details  [here](/post/2019-02-19-hugo-netlify-toml/).
+
+1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
+
+2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
+
+3. Log in, and select: `New site from Git > Continuous Deployment: GitHub`.
+
+4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `hugodown`, then you'll configure your build. This involves specifying two important things: 
+
+    + Build command: `hugo`
+    + Publish directory: `public`
+    
+You can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like:
+
+```bash
+$ hugo version
+Hugo Static Site Generator v0.66.0-A301F6B2/extended darwin/amd64 BuildDate: 2020-05-25T09:16:12Z
+```
+
+![Screenshot above: Basic build settings in Netlify](netlify-build-settings.png)
+
+Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Do this by navigating to your site on Netlify, then click on **Settings**. Under **Site information**, click on the *Change site name* button.
+
+![](netlify-site-name.png)
+
+
+{{% alert note %}}
+Anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to baseurl = "https://apreshill.netlify.com/").
+{{% /alert %}}
+
+Change the baseurl here:
+
+```{r eval=FALSE}
+rstudioapi::navigateToFile("config.toml", line = 12)
+```
+
+## Step 6: Sculpt site
+
+![](06-blogdown-2021.png)
 
 Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and the Academic theme to build your personal website.
 
@@ -489,47 +631,6 @@ The very critical line here is the `type: widget_page`---this sets you up to now
 You can link to any specific widget by taking your baseurl and appending `/#{name-of-widget}`, so `/#slider` links to [*my homepage slider*](/#slider). And `/resume/#accomplishments` links to [*my honors & awards*](/resume/#accomplishments)
 {{% /alert %}}
 
-
-## Step 4: Deploy in Netlify
-
-![](05-hugodown.png)
-
-Deploying in Netlify through GitHub is smooth. You can make it smoother by adding a `netlify.toml` file in the project root directory. I have a post with more details  [here](/post/2019-02-19-hugo-netlify-toml/).
-
-1. When you are ready to deploy, commit your changes and push to GitHub, then go online to [Netlify](https://www.netlify.com). 
-
-2. Click on the **Sign Up** button and sign up using your existing GitHub account (no need to create another account)
-
-3. Log in, and select: `New site from Git > Continuous Deployment: GitHub`.
-
-4. From there, Netlify will allow you to select from your existing GitHub repositories. You'll pick the repo you've been working from with `hugodown`, then you'll configure your build. This involves specifying two important things: 
-
-    + Build command: `hugo`
-    + Publish directory: `public`
-    
-You can check your `hugo` version in terminal using the command [`hugo version`](https://gohugo.io/overview/quickstart/). This is what my output looked like:
-
-```bash
-$ hugo version
-Hugo Static Site Generator v0.66.0-A301F6B2/extended darwin/amd64 BuildDate: 2020-05-25T09:16:12Z
-```
-
-![Screenshot above: Basic build settings in Netlify](netlify-build-settings.png)
-
-Netlify will deploy your site and assign you a random subdomain name of the form `random-word-12345.netlify.com`. Mine was particularly unfortunate, with the random word `garbage-collector-janice`. You should know that you can change this; I changed mine to `apreshill.netlify.com`. Do this by navigating to your site on Netlify, then click on **Settings**. Under **Site information**, click on the *Change site name* button.
-
-![](netlify-site-name.png)
-
-
-{{% alert note %}}
-Anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to baseurl = "https://apreshill.netlify.com/").
-{{% /alert %}}
-
-Change the baseurl here:
-
-```{r eval=FALSE}
-rstudioapi::navigateToFile("config.toml", line = 12)
-```
 
 ### `*.rbind.io` domain names
 
