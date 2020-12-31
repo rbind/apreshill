@@ -642,7 +642,7 @@ Edit the YAML metadata to change:
 
 + Your education
 
-The text under the YAML is your bio; you can use markdown here. Add an `avatar.jpg` file too (it *must* be named this).
+The text under the YAML is your bio; you can use markdown here. Add an `avatar.jpg` file too (it *must* be named this) to the same folder.
 
 
 ### Prune widgets
