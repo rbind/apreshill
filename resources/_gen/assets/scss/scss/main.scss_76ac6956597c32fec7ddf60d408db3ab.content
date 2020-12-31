@@ -7284,7 +7284,7 @@ figcaption.numbered {
 
 pre,
 code {
-  font-family: "Roboto Mono", monospace;
+  font-family: "DM Mono", monospace;
   color: #c7254e;
   background-color: #f9f2f4; }
 
