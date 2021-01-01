@@ -15,7 +15,7 @@ tags:
 slug: new-year-new-blogdown
 authors:
   - alison
-summary: New year, new blogdown! A guide to getting up and running with blogdown, the Hugo Wowchemy academic-starter theme, GitHub, and Netlify. Not brief.
+summary: New year, new blogdown! A guide to getting up and running with blogdown, the Hugo Wowchemy starter-academic theme, GitHub, and Netlify. Not brief.
 image:
   caption: '[Photo by Ben Wilkins on Unsplash](https://unsplash.com/photos/8Yxkb0SvNEM)'
   focal_point: ''
@@ -114,7 +114,7 @@ Do this right now! Take 10 minutes to set your website intentions---grab a pen a
 
 ### 1. Content {#todo-content}
 
-Hugo is made for blogs. But, in addition to a blog, the academic-starter theme provides a unique system of widgets. You can have one or many widgets on pages in your site. I like to think of widgets like [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head) where:
+Hugo is made for blogs. But, in addition to a blog, the starter-academic theme provides a unique system of widgets. You can have one or many widgets on pages in your site. I like to think of widgets like [Mr. Potato Head](https://en.wikipedia.org/wiki/Mr._Potato_Head) where:
 
 + Each page is a potato head, and 
 + Each widget is a piece you could place on the potato head. 
