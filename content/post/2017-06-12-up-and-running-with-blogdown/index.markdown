@@ -22,6 +22,13 @@ output:
 
 
 
+{{% alert note %}}
+Greetings from the future! 
+
+A lot has changed about blogdown, Hugo, and the Academic theme (now Wowchemy) since the time this post was written. 
+
+An updated tutorial can now be found [here](/post/new-year-new-blogdown) :tada:
+{{% /alert %}}
 
 ## Read up on blogdown
 
