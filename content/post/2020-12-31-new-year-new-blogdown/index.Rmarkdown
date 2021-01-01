@@ -512,7 +512,19 @@ With a new site, Netlify will deploy your site and assign you a random subdomain
 
 ![](netlify-site-name.png)
 
-You actually have most of the necessary wiring laid out for you already in your repo, which is why this worked. Our site has a `netlify.toml` file, which sets us the necessary settings for letting Netlify build our site for us and then publish it. You can read more about this file [here](/post/2019-02-19-hugo-netlify-toml/). 
+Whether you change your Netlify site name or use the random one, go back to your configuration file and cchange the baseurl there to match where Netlify is publishing your site:
+
+```{r eval=FALSE}
+rstudioapi::navigateToFile("config.yaml", line = 3)
+```
+
+You actually have most of the necessary wiring laid out for you already in your repo, which is why this worked. Our site has a `netlify.toml` file, which sets us the necessary settings for letting Netlify build our site for us and then publish it. You can read more about this file [here](/post/2019-02-19-hugo-netlify-toml/), and check it out using:
+
+```{r eval=FALSE}
+# if exists, opens; if not, creates new
+blogdown::config_netlify()
+```
+
 
 Now, back in your local blogdown project, let's check this file with blogdown:
 
@@ -535,23 +547,20 @@ I recommend going with `Option 1` here, so follow that `[TODO]` and then run the
 
 When you are ready to deploy, commit your changes and push to GitHub! Watch as your site rebuilds :tada:
 
-
 {{% alert note %}}
+To get an `*.rbind.io` URL, follow [these instructions](/post/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
+
 Anytime you change your subdomain name, you need to update the `baseurl` in your `config.toml` file (so I changed mine to baseurl = "https://apreshill.netlify.com/").
 {{% /alert %}}
 
-Change the baseurl here to match where Netlify is publishing your site:
 
-```{r eval=FALSE}
-rstudioapi::navigateToFile("config.yaml", line = 3)
-```
+## Step 6: Sculpt site
 
+![](06-blogdown-2021.png)
 
-{{% alert note %}}
-To get an `*.rbind.io` URL, follow [these instructions](/post/2017-06-12-up-and-running-with-blogdown/#rbindio-domain-names).
-{{% /alert %}}
+Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and Wowchemy (I think it is said like alchemy? Why??) to build your personal website.
 
-In the future, as you work on your site, you may also wish to `check_hugo()`:
+Let's start by running another blogdown check to `check_hugo()`:
 
 ```
 > blogdown::check_hugo()
@@ -564,11 +573,11 @@ In the future, as you work on your site, you may also wish to `check_hugo()`:
 ― Check complete: Hugo
 ```
 
-## Step 6: Sculpt site
+All set! We've already checked out our Netlify set-up :heavy_check_mark: If you wish to clean up your local Hugo installations, check out:
 
-![](06-blogdown-2021.png)
-
-Now, we'll leave blogdown and R Markdown behind. We'll just be using Hugo and Wowchemy (I think it is said like alchemy? Why??) to build your personal website.
+```{r eval=FALSE}
+blogdown::remove_hugo()
+```
 
 ### Configure your site
 
