@@ -63,7 +63,7 @@ You'll need the development versions of these three packages:
 
 -   distill (v \>= 1.2) (see: <https://pkgs.rstudio.com/distill/news/index.html#distill-v12-development>)
 -   rmarkdown
--   postcards (v \>= 0.1.0)
+-   postcards (v \>= 0.2.0)
 
 Use the [remotes](https://remotes.r-lib.org/) package to install all three:
 
