@@ -59,19 +59,24 @@ Consider this post like a little clue (I'm using it as a sandbox before updating
 
 ## Pre-requisites
 
-You'll need the development versions of these three packages:
+You'll need the development versions of two packages:
 
 -   distill (v \>= 1.2) (see: <https://pkgs.rstudio.com/distill/news/index.html#distill-v12-development>)
 -   rmarkdown
--   postcards (v \>= 0.1.0)
 
-Use the [remotes](https://remotes.r-lib.org/) package to install all three:
+Use the [remotes](https://remotes.r-lib.org/) package to install development versions:
 
 ``` {.r}
 remotes::install_github("rstudio/distill")
 remotes::install_github("rstudio/rmarkdown")
-remotes::install_github("seankross/postcards")
 ```
+
+Plus the CRAN version (v \>= 0.2.0) of the postcards package.
+
+``` {.r}
+install.packages("postcards")
+```
+
 
 ## Make a website
 
@@ -90,13 +95,22 @@ Now build your site! You should see the "boilerplate" website template at this p
 
 ## Add a postcard
 
-In your R console, use `distill::create_article()` to make a new page. To make a postcard, specify the `template` (one of: `jolla`, `jolla-blue`, `onofre`, `trestles`) and `package = 'postcards'`:
+In your R console, use the postcards package to create a new postcard:
+
+
+```{r}
+create_postcard(file = "tobi.Rmd") # future name of .Rmd file
+```
+
+Alternatively, you could use `distill::create_article()` to make a new page. To make a postcard, specify the `template` (one of: `jolla`, `jolla-blue`, `onofre`, `trestles`) and `package = 'postcards'`:
 
 ```{r}
 create_article(file = "tobi",         # future name of .Rmd file
                template = "jolla",    # name of template
                package = "postcards") # package that includes the template
 ```
+
+
 
 Let's add a link to our new file in the top navbar. Open up your `_site.yml` file and add:
 
