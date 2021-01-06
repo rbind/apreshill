@@ -234,7 +234,7 @@ Open up RStudio to create a new project where your website's files will live.
     > new_site(theme = "wowchemy/starter-academic")
     ```
 
-1. You should now see something like this. Take a moment to read through these messages - importantly, it tells you how to start and stop the server so you can preview your site. Importantly, when you come back to your project, note taht you can use `blogdown::serve_site()` or the "Serve Site" addin to preview it locally. 
+1. You should now see something like this. Take a moment to read through these messages - importantly, it tells you how to start and stop the server so you can preview your site. Importantly, when you come back to your project, note that you can use `blogdown::serve_site()` or the "Serve Site" addin to preview it locally. 
 
     ![](new_hugo_start.png)
 
