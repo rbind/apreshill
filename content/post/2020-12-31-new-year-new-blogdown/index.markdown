@@ -41,7 +41,7 @@ Here are some great blog posts that document pretty common user experiences and 
 
 + [Maëlle Salmon's post: *What to know before you adopt Hugo/blogdown*](https://masalmon.eu/2020/02/29/hugo-maintenance/)
 
-+ [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/changing-you-blogdown-workflow/)
++ [Athanasia Mowinckel's post: *Changing your blogdown workflow*](https://drmowinckels.io/blog/2020-05-25-changing-you-blogdown-workflow/)
 
 + [Claus Wilke's post: *Writing a blogdown post for the ages*](https://clauswilke.com/blog/2020/09/08/a-blogdown-post-for-the-ages/)
 
@@ -234,13 +234,13 @@ Open up RStudio to create a new project where your website's files will live.
     > new_site(theme = "wowchemy/starter-academic")
     ```
 
-1. This currently happens automatically for you, but we start by previewing the example site using `blogdown::serve_site()`. 
+1. You should now see something like this. Take a moment to read through these messages - importantly, it tells you how to start and stop the server so you can preview your site. Importantly, when you come back to your project, note taht you can use `blogdown::serve_site()` or the "Serve Site" addin to preview it locally. 
 
-    ![](hugo_start.png)
+    ![](new_hugo_start.png)
 
-    Exciting, isn't it? Also a bit overwhelming with what looks like :rotating_light: a lot of error messages :rotating_light:. Frankly, you don't need to know much of this. It DID add a sample R Markdown post, and rendered it for you, which is what we are looking at.
+     Let's select `y` to let blogdown start a server for us.
     
-    Now, don't trap your site in the RStudio Viewer pane. Let it out! Click to "Show in new window" (to the right of the :broom: icon) to preview it in a normal browser window. When you do that, you'll be re-directed to the site's main homepage. Let's find our way back to the R Markdown post. Click on `Posts > Hello R Markdown` to read it:
+    Exciting, isn't it? Now, don't trap your site in the RStudio Viewer pane. Let it out! Click to "Show in new window" (to the right of the :broom: icon) to preview it in a normal browser window. When you do that, you'll be re-directed to the site's main homepage. Let's find our way back to the R Markdown post. Click on `Posts > Hello R Markdown` to read it:
     
     ![](sample_post.png)
 
