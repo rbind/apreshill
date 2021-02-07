@@ -1,0 +1,212 @@
+---
+aliases: [read-multiple-header-rows]
+title: Read Data with Multiple Header Rows into R
+authors: [alison]
+summary: Using the readr package to sidestep a common problem
+date: '2018-07-08'
+categories:
+  - readr
+  - readxl
+  - data import
+image:
+  caption: 'Photo of my hex loot, courtesy RStudio, GitHub, and friends.'
+  focal_point: ''
+---
+
+
+
+
+```{r global_options, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = "#")
+library(fontawesome)
+```
+
+{{% alert note %}}
+A shorter version of this blog post now appears as an [article vignette](https://readxl.tidyverse.org/articles/articles/multiple-header-rows.html) for the `readxl` package, thank you to [Jenny Bryan](https://jennybryan.org/) for the [invitation](https://twitter.com/JennyBryan/status/1016442080636235776)!
+{{% /alert %}}
+
+
+A problem I run up against a lot when working with other people's data is having multiple header rows in the source data file. I like to use `readr` functions to read in rectangular data like `.csv` and `.tsv` files, but if you skip rows at import using the `skip` argument, you lose the header row as well, which usually has column names. The problem I often have is that the header row has column names that I want to keep, but I'd like to skip the second row (or more), which has some junk in it. Usually this row is some kind of data dictionary inserted between the row of column names and the actual data. 
+
+In this post, I'll walk through a solution to this problem, using the `readr` package. You can also watch along in the video. 
+
+```{r echo = FALSE}
+blogdown::shortcode("youtube", "Mayf_XhsQDE")
+```
+
+Warning!: I made a mistake when I said `readr` uses the first 100 rows of your data to predict column types- it uses the first 1000 rows.
+
+---
+
+`r fa("download", fill = "#ee5863")` 
+```{r echo = FALSE} 
+xfun::embed_files("PosidFazioCordes_StickerRich_Excel-Dataverse.tab.tsv", name = "stickers.csv")
+```
+
+---
+
+## Being sticker rich
+
+This dataset is from an article published in PLOS ONE called ["Being Sticker Rich: Numerical Context Influences Children’s Sharing Behavior"](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138928). In this study, children (ages 3–11) received a small (12, “sticker poor”) or large (30, “sticker rich”) number of stickers, and were then given the opportunity to share their windfall with either one or multiple anonymous recipients. This type of experimental design is a version of the [Dictator Game](https://en.wikipedia.org/wiki/Dictator_game).
+
+![](stickers-plos-one.png)
+
+The main research questions the authors explored were: do the number of available resources and/or the number of potential recipients alter the likelihood of a child donating and/or the amount they donate? But, in order to answer this question, we have to be able to read in the data! Luckily, these lovely developmental psychologists opted to share their data on the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LHAQ5W) as a tab-delimited file.
+
+If you download the file, you can open it up in a plain text editor.
+![](stickers-txt.png)
+
+You can also open it with Microsoft Excel.
+![](stickers-table.png)
+
+## Read in the file
+
+Let's start by creating a variable called `link` to store the link to the data file.
+
+```{r}
+# create variable to store url
+link <- "https://dataverse.harvard.edu/api/access/datafile/2712105"
+```
+
+The file has a `.tab` extension, so we know it is tab-delimited. This means that the right `readr` function for reading this file is `read_tsv`. Since we stored our link already as a character string, that is the only argument to the `read_tsv` function.
+
+```{r first_try}
+#install.packages("readr")
+library(readr) # load the readr package
+stickers <- read_tsv(link) 
+# spec()
+```
+
+Now, we know the second row of data is wonky, but how can we see that in R? There are a number of ways we can go spelunking around into our data file. The easiest to print it. Since we used `readr`, we have a tibble, which nicely prints to screen.
+
+```{r}
+stickers
+```
+
+Unfortunately, `dplyr::glimpse` can't help us much, because we have one variable name that is ridiculously long (`absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)`). We'll fix that with `dplyr::rename`.
+
+```{r}
+library(dplyr)
+glimpse(stickers)
+```
+
+More options:
+
+```{r}
+head(stickers)
+tail(stickers)
+names(stickers)
+# View()
+```
+
+
+Now we are ready to diagnose the problem!
+
+**Problem**: the first row is not really data. It is metadata about the variables, and it is screwing up **readr**'s ability to predict our column types.
+
+**Solution**: we'll use **readr** and the `read_tsv()` function to read in the data twice. In Step 1, we'll create a character vector of the column names only. In Step 2, we'll read in the actual data and skip the multiple header rows at the top. When we do this, we lose the column names, so we use the character vector of column names we created in Step 1 instead. 
+
+## Read in the file (again)
+
+### Step 1
+
+**Goal**: we want to read in the first row only and save it as a character vector called `sticker_names`. This row contains the correct column names that we'll need in Step 2.
+
+```{r}
+sticker_names <- link %>% 
+  read_tsv(n_max = 0) %>% # default: col_names = TRUE
+  rename(stickersgiven = 'absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)') %>% 
+  names()
+sticker_names
+glimpse(sticker_names)
+```
+
+
+### Step 2
+
+**Goal**: we want to read in all the rows *except* for the first two rows, which contained the variable names and variable descriptions. We want to save this as `stickers`, and set the column names to the `sticker_names` object we created in Step 1.
+
+```{r}
+stickers <- link %>% 
+  read_tsv(skip = 2, col_names = sticker_names)
+glimpse(stickers)
+```
+
+## Fin!
+
+All together now: the final solution!
+
+```{r}
+# load packages
+library(readr)
+library(dplyr)
+
+# create variable to store url
+link <- "https://dataverse.harvard.edu/api/access/datafile/2712105"
+
+# read in column names only
+sticker_names <- link %>% 
+  read_tsv(n_max = 0) %>% # default: col_names = TRUE
+  rename(stickersgiven = 'absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)') %>% 
+  names()
+
+# read in data, set column names
+stickers <- link %>% 
+  read_tsv(skip = 2, col_names = sticker_names)
+```
+
+
+
+## Addendum
+
+For good measure, I would add a final step to everything above and use `janitor::clean_names()` to put all the variable names into snake case. So my final final solution is here:
+
+```{r}
+# load packages
+library(readr)
+library(dplyr)
+library(janitor)
+
+# create variable to store url
+link <- "https://dataverse.harvard.edu/api/access/datafile/2712105"
+
+# read in column names only
+sticker_names <- link %>% 
+  read_tsv(n_max = 0) %>% # default: col_names = TRUE
+  rename(stickersgiven = 'absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)') %>% 
+  names()
+
+# read in data, set column names
+stickers <- link %>% 
+  read_tsv(skip = 2, col_names = sticker_names) %>% 
+  clean_names()
+```
+
+```{r}
+stickers
+glimpse(stickers)
+```
+
+## Bonus data dictionary
+
+As an extra bonus, when you do have extra header rows, you can create a data dictionary using the `gather()` function from the **tidyr** package.
+
+```{r}
+library(tidyr)
+stickers_dict <- read_tsv(link, n_max = 1) %>% 
+  rename(stickersgiven = 'absolutenumberofstickersgiven(Conditions1or3:Outof12;Conditions2or4:Outof30)') %>% 
+  clean_names() %>% 
+  gather(variable_name, variable_description)
+stickers_dict
+```
+
+## Useful resources
+
+- Great blog post from [Lisa DeBruine](https://twitter.com/lisadebruine) using `readxl` to read in data with multiple header rows (including those with merged cells!): https://debruine.github.io/multirow_headers.html
+- This GitHub issue with Hadley's response that solved all my problems:
+https://github.com/tidyverse/readr/issues/179
+- My original tweet when I discovered this trick!
+
+```{r echo = FALSE}
+blogdown::shortcode("tweet", "904772340902379520")
+```

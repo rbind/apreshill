@@ -1,5 +1,6 @@
 ---
 title: Up & running with blogdown in 2021
+layout: single-sidebar
 author: Alison Hill
 date: '2020-12-31'
 categories:
