@@ -57,7 +57,7 @@ Consider this post like a little clue (I'm using it as a sandbox before updating
 
 ## Pre-requisites
 
-You'll need the CRAN versions of two packages:
+You'll need the CRAN versions of three packages:
 
 -   distill (v \>= 1.2) (see: <https://pkgs.rstudio.com/distill/news/index.html#distill-v1-2-cran->)
 -   rmarkdown (v \>= 2.7)
