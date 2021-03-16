@@ -51,28 +51,28 @@ And here (this is where we are headed!):
 >
 > --- *Sleepless in Seattle*, script from <https://plantyourstory.com/mfeo-its-like-a-little-clue/>
 
-Consider this post like a little clue (I'm using it as a sandbox before updating our distill documentation for this new feature). Here is our existing signpost in the [distill docs](https://rstudio.github.io/distill/website.html#alternate-formats). With the development versions (currently) of three packages now, you can embed a postcards page within your distill site. This means the page will come with all your distill goodies like site navigation, theme, and google-analytics support.
+Consider this post like a little clue (I'm using it as a sandbox before updating our distill documentation for this new feature). Here is our existing signpost in the [distill docs](https://rstudio.github.io/distill/website.html#alternate-formats). With the CRAN versions of all three packages now, you can embed a postcards page within your distill site. This means the page will come with all your distill goodies like site navigation, theme, and google-analytics support.
 
 {{% alert note %}} You can see the demo site I made alongside this post here: <https://apreshill.github.io/mfeo/> (source: <https://github.com/apreshill/mfeo>). {{% /alert %}}
 
 ## Pre-requisites
 
-You'll need the development versions of two packages:
+You'll need the CRAN versions of two packages:
 
--   distill (v \>= 1.2) (see: <https://pkgs.rstudio.com/distill/news/index.html#distill-v12-development>)
--   rmarkdown
-
-Use the [remotes](https://remotes.r-lib.org/) package to install development versions:
+-   distill (v \>= 1.2) (see: <https://pkgs.rstudio.com/distill/news/index.html#distill-v1-2-cran->)
+-   rmarkdown (v \>= 2.7)
+-   postcards (v \>= 0.2.0)
 
 ``` {.r}
-remotes::install_github("rstudio/distill")
-remotes::install_github("rstudio/rmarkdown")
+install.packages(c("distill", "rmarkdown", "postcards"))
 ```
 
-Plus the CRAN version (v \>= 0.2.0) of the postcards package.
+You can check these package versions as follows:
 
 ``` {.r}
-install.packages("postcards")
+packageVersion("distill")
+packageVersion("rmarkdown")
+packageVersion("postcards")
 ```
 
 
