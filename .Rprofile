@@ -3,13 +3,9 @@ if (file.exists("~/.Rprofile")) {
 }
 
 options(
-  blogdown.author = "Alison Hill",
-  blogdown.ext = ".Rmarkdown",
   blogdown.subdir = "post",
-  blogdown.yaml.empty = TRUE,
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE,
-  blogdown.hugo.version = "0.79.0",
-  blogdown.knit.on_save = FALSE,
-  blogdown.files_filter = blogdown:::md5sum_filter
+  blogdown.hugo.version = "0.80.0",
+  blogdown.knit.on_save = FALSE
 )
