@@ -1,11 +1,11 @@
 ---
 title: "Alison Hill"
 subtitle: "Product Manager, Data Science Communication @RStudio"
-description: "Sit down, relax, and get to know Hugo Apéro. Built on top of Blogophonic, we wanted to create a polished Hugo theme with the right features for a true personal website. We set out to create a theme that is a pleasure to learn, and one that helps others get to know you better. It is more than a blog, with flexible custom layouts that help you introduce yourself online."
+description: "I am a data scientist, behavioral scientist, and award-winning educator. I work on products to make data science communication easier, prettier, and more delightful. I love teaching, and I've led advanced workshops on literate programming and machine learning at conferences like `rstudio::conf`, R / Medicine, and R in Pharma. I am a co-developer of the `palmerpenguins`, `distill`, and `blogdown` R packages, as well an author and international keynote speaker."
 images:
-  - img/remix.png
-image_left: true
-text_align_left: false
+  - img/home.jpeg
+image_left: false
+text_align_left: true
 show_social_links: true # specify social accounts in site config
 show_action_link: true
 action_link: /about
