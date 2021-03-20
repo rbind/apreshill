@@ -13,8 +13,8 @@ $font-path: '{{ "fonts" | absURL }}';
 @import 'base';
 
 // custom color themes
-// one of: forest / grayscale / peach / plum / poppy / sky / violet / water
-// precedence: Params.theme > .Params.custom_colors
+// one of: forest / grayscale / peach / plum / poppy / sky / violet / water 
+// precedence: Params.theme > .Params.custom_colors 
 // custom colors may either be named tachyons color or hex codes
 {{ $themes := (slice "forest" "grayscale" "peach" "plum" "poppy" "sky" "violet" "water") }}
 {{ if site.Params.theme }}
@@ -114,9 +114,7 @@ h1, h2, h3, h4, h5, h6 {
     cite { @extend .f6, .i ; }
   }
 
-  ul:not(.panel-tabs), ol, dl { @extend .measure-wide, .lh-copy ;
-  }
-
+  ul:not(.panel-tabs), ol, dl { @extend .measure-wide, .lh-copy ; }
   > dl dt { @extend .pl3, .b, .mb2 ; }
 
   hr { @extend .mv4, .ba, .b--#{$borderColor} ; }
@@ -140,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// apply tachyons classes to blog lists
+// apply tachyons classes to blog lists 
 .blog-content {
   article { @extend .b--#{$borderColor} ; }
  .group-content { @extend .b--#{$borderColor} ; }
@@ -372,7 +370,7 @@ a > svg.anchor-symbol:hover {
 }
 
 .site-links a.active:after {
-  width: 85%;
+  width: 85%;  
   color: transparent;
   @extend .bg-#{$navBgColor};
   height: .08em;
@@ -426,7 +424,7 @@ audio {
   width: 8rem;
   height: 2rem;
 }
-.controls button:hover,
+.controls button:hover, 
 .controls button:focus {
   @extend .o-10;
 }
@@ -435,7 +433,7 @@ audio {
 .featured-content h5,
 .featured-content article,
 .post-header h2 {
-  @extend .b--#{$borderColor} ;
+  @extend .b--#{$borderColor} ; 
 }
 
 // button links in single page headers + listing page footers
@@ -493,11 +491,11 @@ nav#SectionTableOfContents ul details {
   &.active {
     @extend .b--#{$borderColor}, .bl, .bw1, .pl3;
   }
-  summary {
-    @extend .#{$sidebarLinkColor}, .pb2;
+  summary { 
+    @extend .#{$sidebarLinkColor}, .pb2; 
   }
-  li {
-    @extend .pl0;
+  li { 
+    @extend .pl0; 
     &.active {
       @extend .pl3, .bg-#{$siteBgColor}, .bl, .b--transparent, .bw1;
     }
@@ -529,6 +527,7 @@ $fa-font-path: '{{ "webfonts" | absURL }}';
 @import "fontawesome-free-5.15.1-web/scss/solid.scss";
 @import "fontawesome-free-5.15.1-web/scss/regular.scss";
 @import "fontawesome-free-5.15.1-web/scss/brands.scss";
+@import "academicons/academicons.scss";
 
 // import a custom css file in assets
 @import "custom";
