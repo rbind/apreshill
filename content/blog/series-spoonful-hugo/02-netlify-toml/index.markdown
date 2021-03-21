@@ -1,5 +1,5 @@
 ---
-title: "A Spoonful of Hugo: The netlify.toml File"
+title: "The netlify.toml File"
 weight: 2
 subtitle: ""
 excerpt: "Why you should use a netlify.toml file in your blogdown site."

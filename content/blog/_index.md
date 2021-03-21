@@ -5,6 +5,7 @@ description: |
   teaching. I have more websites than blog posts.
 author: "Alison Hill"
 show_post_thumbnail: true
+thumbnail_left: false
 show_author_byline: true
 show_post_date: true
 # for listing page layout
@@ -16,6 +17,8 @@ sidebar:
   description: |
     This blog is my [digital garden](https://nesslabs.com/digital-garden-set-up), somewhere between
     a notepad and a blog.
+    
+    Quote above adapted from [e e cummings](https://poets.org/poem/somewhere-i-have-never-travelledgladly-beyond).
   author: "Alison Hill"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
