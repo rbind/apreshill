@@ -1,7 +1,7 @@
 ---
-title: Talks that Last
+title: Talks & workshops
 description: |
-  This is a list for your talks, workshops, or other events with a time, date, and place.
+  Events I have been invited to present at, shared along with slides, videos, and other linkable resources.
 author: "Alison Hill"
 show_post_thumbnail: true
 show_author_byline: false
@@ -12,14 +12,14 @@ layout: list # list, list-sidebar
 
 # set up common front matter for all pages inside blog/
 cascade:
-  author: "The R Markdown Team @RStudio"
-  show_author_byline: true
+  author: "Alison Hill"
+  show_author_byline: false
   show_post_date: true
   show_post_time: true
   show_comments: false # see site config to choose Disqus or Utterances
   # for single-sidebar layout
   sidebar:
-    text_link_label: View recent talks
+    text_link_label: View recent events
     text_link_url: /talk/
     show_sidebar_adunit: false # show ad container
 ---

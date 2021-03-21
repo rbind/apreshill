@@ -2,7 +2,7 @@
 {{ $page := . }}
 <main class="page-main pa4" role="main">
   <section class="page-content mw8 center">
-
+    
     <!--begin header-->
     {{ if .Params.show_header }}
     {{ $header := printf "/%s/%s" .Section "header/index.md" }}
@@ -20,7 +20,7 @@
     <section class="page-body">
       <!--make the flexbox a row only on not small screens-->
       <div class="flex items-start flex-row-l flex-column-ns flex-column {{ if not .Params.show_header }}mt4{{ end }}">
-
+        
         <!--begin main content column: 2/3-->
         {{ $main := printf "/%s/%s" .Section "main/index.md" }}
         {{ with site.GetPage $main }}
@@ -30,7 +30,7 @@
               <h2 class="about-main f2 fw7 tl">{{ . | markdownify }}</h2>
             {{ end }}
           {{ else }}
-            {{ with .Title }}
+            {{ with .Title }}  
             <h1 class="f2 f1-m f-headline-l fw5-ns mv4 lh-solid tracked-tight-ns">{{ . | markdownify }}</h1>
             {{ end }}
           {{ end }}
@@ -64,7 +64,7 @@
               </div>
             {{ end }}
             </div>
-
+            
             {{ if .Params.show_audio_link }}
             <div class="pa1 pa2-ns tc ph4">
               {{ range .Params.audio_link }}
@@ -73,25 +73,25 @@
                 <audio controls>
                   <source src="{{ .url }}" type="audio/mp4">
                   Your browser does not support the audio element.
-                </audio>
+                </audio> 
                 </p>
               {{ end }}
-            </div>
+            </div> 
             {{ end }}
-
+          
           <div class="pa1 pa2-ns tc ph4">
             <h5 class="f-subheadline f4 fw2 ttu tracked">{{ .Params.link_list_label }}</h5>
             <ul class="list measure center ph4 pb4">
             {{ range .Params.link_list }}
               <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-20">
-                <a href="{{ .url }}" target="_blank">{{ .name | markdownify | emojify }}</a>
+                <a href="{{ .url }}" target="_blank">{{ .name }}</a>
               </li>
             {{ end }}
             </ul>
           </div>
-        </sidebar>
+        </sidebar>  
         {{ end }}
-
+        
       </div>    <!--close flex-->
     </section>  <!--close body section-->
   </section>    <!--close page content section-->
