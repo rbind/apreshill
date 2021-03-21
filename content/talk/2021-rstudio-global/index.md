@@ -24,6 +24,15 @@ image:
   focal_point: 'center'
   preview_only: no
 projects: []
+links:
+- icon: door-open
+  icon_pack: fas
+  name: website
+  url: https://iyo-rstudio-global.netlify.app/
+- icon: github
+  icon_pack: fab
+  name: materials
+  url: https://github.com/rstudio-education/iyo-rstudio-global
 ---
 
 
