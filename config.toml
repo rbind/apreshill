@@ -28,8 +28,8 @@ enableEmoji = true
     style = "github"
 
 [params]
-  orgName = "RStudio"
-  orgLocal = "Anywhere"
+  orgName = "Alison Hill"
+  orgLocal = ""
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
