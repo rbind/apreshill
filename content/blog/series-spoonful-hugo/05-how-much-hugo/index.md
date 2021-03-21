@@ -1,5 +1,5 @@
 ---
-title: 'A Spoonful of Hugo: How much Hugo do I need to know?'
+title: 'How much Hugo do I need to know?'
 author: Alison Hill
 date: '2020-12-12'
 categories:
@@ -11,14 +11,6 @@ tags:
 summary: When and why you need to learn Hugo as an R blogdown user.
 authors:
   - alison
-image:
-  caption: '[Photo by Joanna Kosinska on Unsplash](https://unsplash.com/photos/Prfs32wh-o4)'
-  focal_point: center
-output:
-  blogdown::html_page:
-    toc: yes
-    number_sections: yes
-    toc_depth: 2
 ---
 
 Greetings and happy holidays! As many folks are looking forward to down time over the holidays, my inbox naturally starts filling in with questions like "What is the difference between blogdown and X?", "How hard is Hugo to learn?", and "Which Hugo theme do you recommend?" These are all great questions. But the best one in my mind that one needs to ask is:
@@ -71,7 +63,7 @@ To get familiar with `TOML`, I recommend:
 
 But, since the time we published the blogdown book, Hugo introduced configuration directories, which allowed us to no longer have one giant `config.toml` file, and instead have multiple configuration files, like this: 
 
-```
+```go-text-template
 ├── config.toml            <- Hugo-defined variables
 ├── config
 │   ├── _default
@@ -89,7 +81,7 @@ Here is how you can think of these:
 
 If your theme uses only a single `config.toml` file, you can infer these subsections as you scroll down:
 
-```
+```toml
 # before the first use of [[]]
 # are all the Hugo variables
 
@@ -125,7 +117,7 @@ Yuo *can* override this by adding a `layout` key to your file's YAML, as describ
 
 The subfolders also tell you where you can find your content on your site. 
 
-```
+```go-text-template
 .
 ├── content/
 │   ├── authors/            # => https://example.com/authors/
@@ -137,7 +129,7 @@ You should take a bit of time to get the "cook's tour" of your site. Try looking
 
 You'll no doubt run into one question: what is the difference between `index.md` and `_index.md` files? `index.md` are simple pages; the single file goes into the site and a single file comes back out when you view the site. This is called a [leaf bundle](https://gohugo.io/content-management/page-bundles/) in Hugo.
 
-```
+```go-text-template
 .
 ├── content/
 │   ├── privacy/index.md       # => a leaf bundle
@@ -165,7 +157,7 @@ If your theme doesn't provide this level of support, then you may need to learn 
 
 + **Plug-in CSS**: Hugo [Tranquil Peak](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/d306f0d7f67ca5880cb97530056c59216597cd51/exampleSite/config.toml#L175-L178) theme tells you to place the file inside your `static/` folder then provide the path and filename in the `config.toml` file:
 
-    ```
+    ```toml
     [params]
       # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
       # they have to be referred from static root. Example
@@ -175,7 +167,7 @@ If your theme doesn't provide this level of support, then you may need to learn 
 
 + **Go Fish**: Hugo [I Am Sam](https://github.com/victoriadrake/hugo-theme-sam/blob/39ea2d5e64fd0426d275060cfa6c549df66cdece/layouts/partials/head/css.html#L14-L18) theme doesn't give you this in the `config.toml` file, but looking at one of the layout partials you can see that the theme is actually built to plug-in your custom CSS:
 
-    ```
+    ```go-html-template
     <!-- Custom css -->
     {{ range .Site.Params.customCSS -}}    <- AHA!
     {{ $style := resources.Get . }}
@@ -198,7 +190,7 @@ Here is a great blog post to get you started:
 
 Now, the hardest part of doing is often figuring out which layout file is the one you need to edit. Often you'll need to do some digging to figure out which file is the one to touch.
 
-```
+```go-text-template
 .
 ├── layouts/
 │   ├── _default/           # edit me!

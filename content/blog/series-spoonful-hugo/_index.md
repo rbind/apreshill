@@ -1,7 +1,7 @@
 ---
 title: A Spoonful of Hugo
 description: |
-  A forking fun new feature for series.
+  Small spoonfuls of Hugo I collect that may help you get your site up and running even better: more efficient, more streamlined, more automated.
 author: Alison Hill
 show_post_thumbnail: false
 show_author_byline: true
@@ -14,11 +14,7 @@ sidebar:
   title: A Spoonful of Hugo
   author: Alison Hill
   description: |
-    A forking fun new feature for series.
-    Even this sidebar offers a ton of customizations!
-    
-    Check out the _index.md file in the /blog/spoonful-series
-    folder to edit this content.
+    Small spoonfuls of Hugo I collect that may help you get your site up and running even better: more efficient, more streamlined, more automated.
   text_link_label: ""
   text_link_url: ""
   show_sidebar_adunit: false # show ad container
@@ -37,7 +33,7 @@ cascade:
     text_series_label: "In this series" 
     text_contents_label: "On this page" 
   tags:
-  - hugo-site
+  - hugo
   categories:
   - Theme Features
   - R

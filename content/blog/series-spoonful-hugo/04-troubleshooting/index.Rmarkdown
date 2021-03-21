@@ -13,7 +13,8 @@ tags: [blogdown]
 ---
 
 > "Just a spoonful of Hugo helps the blog go down."
-- me, only somewhat kidding
+>
+> - me, only somewhat kidding
 
 In this series, I'm sharing small spoonfuls of Hugo that I have learned that hopefully can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated). You can read the previous posts about my "Spoonful of Hugo" series [about Hugo archetypes](/post/2019-02-19-hugo-archetypes/), [Hugo versions](/post/2019-02-19-hugo-netlify-toml/), and [Hugo page bundles](/post/2019-02-21-hugo-page-bundles/). 
 

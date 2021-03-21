@@ -8,7 +8,8 @@ draft: false
 
 
 > "Just a spoonful of Hugo helps the blog go down."
-- me, only somewhat kidding
+>
+> - me, only somewhat kidding
 
 As a happy blogdown user, a common story I hear from other #rstats users is that you try to change one little thing in Hugo, and the whole site breaks. [Here be dragons](https://en.wikipedia.org/wiki/Here_be_dragons) for folks who aren't web developers. 
 
