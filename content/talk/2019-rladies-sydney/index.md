@@ -1,6 +1,6 @@
 ---
 title: "Plot Twist: 10 Bake Offs, Visualized 11 Ways"
-abstract: Making it tidy isn't the end of your data's story...
+excerpt: Making it tidy isn't the end of your data's story...
 abstract_short: ""
 event: R-Ladies Sydney
 event_url: https://www.meetup.com/en-AU/rladies-sydney/events/264936677/

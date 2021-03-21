@@ -1,5 +1,6 @@
 ---
 title: The Art of Literate Projecting
+excerpt: "Keynote on how data scientists can be inspired by this programming approach and start what I refer to as 'literate projecting.'" 
 draft: false
 authors: [alison]
 event: 'Young Statisticians Conference 2019'
