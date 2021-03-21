@@ -90,6 +90,10 @@ enableEmoji = true
       icon_pack = "fab"
       url       = "https://github.com/apreshill"
   [[params.social]]
+      icon      = "youtube" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://www.youtube.com/channel/UCQYM-t2ut2zXr4d7TIFya1A"
+  [[params.social]]
       icon      = "impactstory" # icon name without the 'fa-'
       icon_pack = "ai"
       url       = "https://impactstory.org/u/0000-0002-8082-1890"
@@ -105,10 +109,6 @@ enableEmoji = true
       icon      = "google-scholar" # icon name without the 'fa-'
       icon_pack = "ai"
       url       = "https://scholar.google.com/citations?user=yGD9V6MAAAAJ&hl=en"
-  [[params.social]]
-      icon      = "rss" # icon name without the 'fa-'
-      icon_pack = "fas"
-      url       = "/blog/index.xml"
 
 [taxonomies]
   category = "categories"
@@ -149,6 +149,11 @@ enableEmoji = true
     title = "Contact form"
     url = "/contact/"
     weight = 2
+  [[menu.footer]]
+    name = "RSS"
+    title = "RSS"
+    url = "/blog/index.xml"
+    weight = 3
 
 # see https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
