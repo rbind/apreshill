@@ -2,13 +2,9 @@
 ## Configure sidebar content in narrow column
 author: "Hugo Apéro"
 role: "A Hugo theme"
-avatar: avatar.jpg
-avatar_shape: rounded # circle, square, rounded
+avatar_shape: rounded # circle, square, rounded, leave blank to exclude
 show_social_links: true # specify social accounts in site config
-show_audio_link: true
-audio_link: 
-- name: How to say my name
-  url: audio.m4a
+audio_link_label: "How to say my name" # leave blank to exclude
 link_list_label: "Interests" # bookmarks, elsewhere, etc.
 link_list:
 - name: Paris
