@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{ $caller := . }}
+
+<main class="page-main pa4" role="main">
+  <section class="blog-intro mw8 center tc mb5">
+    <h2 class="f2 f1-ns lh-solid center fw4">{{ .Title | markdownify }}</h2>
+    <p class="f6 f5-ns measure lh-copy center">{{ .Description | markdownify }}</p>
+  </section>
+{{ $honors := printf "/%s/%s" .Section "accomplishments.md" }}
+{{ with site.GetPage $honors }}
+<!--each page starts a new section-->
+    <section class="blog-content mw7 center">
+      <h5 class="f4 fw7 tracked ttu lh-title mv3"><i class="fas fa-trophy pr3"></i>{{ .Title }}</h5>
+      {{ range .Params.item }}
+      <!--each item is a row-->
+        <section class="group-content pb2 pb3-ns bt">
+          <article class="pt2 pt3-ns w-100">
+            <div class="flex flex-column flex-row-ns mb1 mb2-l">
+              <div class="mr3-ns ma0 mb2 mb0-l w-100 w-30-ns">
+                  <span class="f6 pt0 pb3 mv0">{{ .date_start }}&mdash;<br>{{ .date_end }}</span>
+              </div>
+              <div class="flex flex-column w-100 w-70-ns pl3-ns">
+                  <h6 class="f5 pt0 pb3 mv0">{{ .title }}</h6>
+                  <h6 class="f5 pv0 mv0 dark-gray">
+                    {{ with .organization_url }}
+                    <a href="{{ . }}">{{ end }}{{ .organization }}</a>
+                  </h6>
+                  {{ with .description }}<p class="measure">{{ . }}</p>{{ end }}
+              </div>
+            </div>
+          </article>
+        </section>
+      {{ end }}
+{{ end }}
+
+{{ $exp := printf "/%s/%s" .Section "experience.md" }}
+{{ with site.GetPage $exp }}
+<!--each page starts a new section-->
+    <section class="blog-content mw7 center pt5">
+      <h5 class="f4 fw7 tracked ttu lh-title mv3"><i class="fas fa-trophy pr3"></i>{{ .Title }}</h5>
+      {{ range .Params.experience }}
+      <!--each item is a row-->
+        <section class="pa0 mv0">
+          <article class="pa0 mv0 w-100">
+            <div class="flex flex-column flex-row-ns mv0 pv0">
+              <div class="mr5-ns mt0 mb6 w-100 w-10-ns">
+                <span class="f6 pt0 pb3 mv0">{{ .date_start }}&mdash;<br>{{ .date_end }}</span>
+              </div>
+              <div class="decorator mr5-ns"></div>
+              <div class="w-100 w-90-ns">
+                  <h6 class="f5 pt0 pb3 mv0">{{ .title }}</h6>
+                  <h6 class="f5 pv0 mv0 dark-gray">
+                    {{ with .company_url }}
+                    <a href="{{ . }}">{{ end }}{{ .company }}</a>
+                  </h6>
+                  {{ with .description }}<p class="measure">{{ . }}</p>{{ end }}
+              </div>
+            </div>
+          </article>
+        </section>
+      {{ end }}
+{{ end }}
+</main>
+{{ end }}
