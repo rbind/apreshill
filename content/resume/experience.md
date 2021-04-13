@@ -35,6 +35,10 @@ date_format = "January 2006"
   date_start = "2017-07-01"
   date_end = "2018-10-19"
   description = """ """
+  bullets = [
+"1974 – Modern American Music … Period! The Criteria Sessions",
+"1974 – Jaco",
+"1976 - Jaco Pastorius"]
   
 [[experience]]
   title = "Assistant Director, Center for Spoken Language Understanding"

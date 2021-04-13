@@ -37,23 +37,33 @@
 {{ with site.GetPage $exp }}
 <!--each page starts a new section-->
     <section class="blog-content mw7 center pt5">
-      <h5 class="f4 fw7 tracked ttu lh-title mv3"><i class="fas fa-trophy pr3"></i>{{ .Title }}</h5>
+      <h5 class="f4 fw7 tracked ttu lh-title mv3 bb group-content pb2 pb3-ns"><i class="fas fa-trophy pr3"></i>{{ .Title }}</h5>
       {{ range .Params.experience }}
       <!--each item is a row-->
         <section class="pa0 mv0">
           <article class="pa0 mv0 w-100">
             <div class="flex flex-column flex-row-ns mv0 pv0">
-              <div class="mr5-ns mt0 mb6 w-100 w-10-ns">
-                <span class="f6 pt0 pb3 mv0">{{ .date_start }}&mdash;<br>{{ .date_end }}</span>
+              <div class="mr2-ns mt0 mb5 w-100 w-10-ns tc">
+                <span class="f6 pt0 pb3 mv0 lh-copy">{{ .date_start }}<br>&vert;<br>{{ .date_end }}</span>
               </div>
-              <div class="decorator mr5-ns"></div>
-              <div class="w-100 w-90-ns">
-                  <h6 class="f5 pt0 pb3 mv0">{{ .title }}</h6>
+              <div class="decorator mh5-ns dn-s"></div>
+              <div class="w-100 w-90-ns ml2-ns">
+                  <h6 class="f5 pt0 pb2 mv0">{{ .title }}</h6>
+                  {{ with .location }}<span class="f6 pv0 mv0 fr"><i class="fas fa-map-marker-alt pr1"></i>{{ . }}</span>{{ end }}
                   <h6 class="f5 pv0 mv0 dark-gray">
                     {{ with .company_url }}
                     <a href="{{ . }}">{{ end }}{{ .company }}</a>
                   </h6>
                   {{ with .description }}<p class="measure">{{ . }}</p>{{ end }}
+                  {{ if .bullets }}
+                    <ul class="mb5 pl3 lh-copy">
+                    {{ range .bullets }}
+                      <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>
+                  {{ end }}
+
+
               </div>
             </div>
           </article>
