@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<main class="page-main pa4 {{ .Kind }}" role="main">
+  <section class="blog-intro mw7 center mb5">
+    <h2 class="f2 f1-ns lh-solid tc center fw4">{{ .Title | markdownify }}</h2>
+    {{ with .Description }}<p class="f6 f5-ns measure lh-copy tc center">{{ . | markdownify }}</p>{{ end }}
+  </section>
+
+{{ $exp := printf "/%s/%s" .Section "experience.md" }}
+{{ with site.GetPage $exp }}
+<!--each page starts a new section-->
+    <section class="blog-content mw7 center pt5">
+      <h5 class="f4 fw7 tracked ttu lh-title mv3 bb group-content pb2 pb3-ns"><i class="fas fa-suitcase pr3"></i>{{ .Title }}</h5>
+      {{ range .Params.experience }}
+          {{ partial "resume.html" . }}
+      {{ end }}
+    </section>
+{{ end }}
+
+{{ $edu := printf "/%s/%s" .Section "education.md" }}
+{{ with site.GetPage $edu }}
+<!--each page starts a new section-->
+    <section class="blog-content mw7 center pt5">
+      <h5 class="f4 fw7 tracked ttu lh-title mv3 bb group-content pb2 pb3-ns"><i class="fas fa-graduation-cap pr3"></i>{{ .Title }}</h5>
+      {{ range .Params.education }}
+      <!--each item is a row-->
+          {{ partial "resume.html" . }}
+      {{ end }}
+    </section>
+{{ end }}
+
+{{ $honors := printf "/%s/%s" .Section "accomplishments.md" }}
+{{ with site.GetPage $honors }}
+<!--each page starts a new section-->
+    <section class="blog-content mw7 center pt5">
+      <h5 class="f4 fw7 tracked ttu lh-title mv3 bb group-content pb2 pb3-ns"><i class="fas fa-trophy pr3"></i>{{ .Title }}</h5>
+      {{ range .Params.item }}
+      <!--each item is a row-->
+          {{ partial "resume.html" . }}
+      {{ end }}
+    </section>
+{{ end }}
+
+
+</main>
+<aside class="page-sidebar" role="complementary">
+  {{ partial "shared/sidebar-scaffold.html" . }}
+</aside>
+{{ end }}
