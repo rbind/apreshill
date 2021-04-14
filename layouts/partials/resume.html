@@ -1,0 +1,42 @@
+<!--each article is a row-->
+<article class="pa0 mv0 pv0 w-100 flex flex-column flex-row-ns">
+    <div class="pv0 mt0 mb5-ns mb3 w-100 w-20-ns f6 lh-copy tl">
+      <div class="flex tc">
+      {{ .date_start }}
+      {{ with .date_end }}<br>&vert;<br>{{ . }}{{ end }}
+      </div>
+    </div>
+    <div class="decorator dn-s mh5-ns"></div>
+    <div class="w-100 w-80-ns mb4-ns mb3">
+        <h6 class="f5 pt0 mv0 pb2">{{ .title }}</h6>
+
+        <div class="flex flex-column flex-row-ns">
+          <div class="f6 pv0 mv0 fl w-60-ns w-100 tl">
+            {{ if .company }}
+            <h6 class="f5 pv0 mv0 dark-gray">
+            {{ if .company_url }}<a href="{{ . }}">{{ end }}{{ .company }}{{ if .company_url }}</a>{{ end }}
+            </h6>
+            {{ end }}
+          </div>
+
+          {{ with .location }}
+          <div class="f6 pv0 mv0 fr w-40-ns w-100 tr-ns pt2">
+            <i class="fas fa-map-marker-alt pr1"></i>{{ . }}
+          </div>
+          {{ end }}
+        </div>
+
+
+        {{ with .description }}
+            <p class="measure mt2-ns mt1">{{ . }}</p>
+        {{ end }}
+        {{ if .bullets }}
+          <ul class="pl3 lh-copy measure">
+          {{ range .bullets }}
+            <li>{{ . }}</li>
+          {{ end }}
+          </ul>
+        {{ end }}
+    </div>
+</article>
+
