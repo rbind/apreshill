@@ -137,11 +137,6 @@ enableEmoji = true
     title = "Talks"
     url = "/talk/"
     weight = 4
-  [[menu.header]]
-    name = "Resume"
-    title = "Resume"
-    url = "/resume/"
-    weight = 5
 
   # Configure footer
   [[menu.footer]]
