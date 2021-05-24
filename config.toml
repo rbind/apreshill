@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://alison.rbind.io"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Hugo Apéro"
@@ -13,6 +13,10 @@ paginate = 5
 preserveTaxonomyNames = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 enableEmoji = true
+
+# Permalinks
+[permalinks]
+  blog = "/blog/:year-:month-:slug/"
 
 [markup]
   defaultMarkdownHandler = "goldmark"

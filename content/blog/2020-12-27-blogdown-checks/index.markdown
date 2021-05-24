@@ -1,5 +1,8 @@
 ---
+aliases:
+  - /post/2020-12-27-blogdown-checks/
 title: 'Unbreak your blogdown site'
+slug: blogdown-checks
 author: Alison Hill
 date: '2020-12-27'
 tags:
@@ -14,7 +17,7 @@ image:
   preview_only: no
 ---
 
-This holiday season, the R Markdown elves at RStudio have been busy at work wrapping up the next release of the blogdown package. Blogdown is a package close to my own heart, as it was the subject of [my very first blog post](post/2017-06-12-up-and-running-with-blogdown/), and that led to co-authoring the [book on blogdown](https://bookdown.org/yihui/blogdown/).
+This holiday season, the R Markdown elves at RStudio have been busy at work wrapping up the next release of the blogdown package. Blogdown is a package close to my own heart, as it was the subject of [my very first blog post](/post/2017-06-12-up-and-running-with-blogdown/), and that led to co-authoring the [book on blogdown](https://bookdown.org/yihui/blogdown/).
 
 Fast-forward more than three years later, and I have built, borked, and torched more blogdown/Hugo sites than I care to admit. 
 

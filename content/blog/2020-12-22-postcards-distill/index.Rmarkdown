@@ -2,7 +2,9 @@
 title: 'M-F-E-O: postcards + distill'
 author: Alison Hill
 date: '2020-12-22'
-aliases: "/post/2020-12-21-postcards-distill/"
+slug: postcards-distill
+aliases: 
+  - /post/2020-12-21-postcards-distill/
 tags:
   - rmarkdown
   - distill

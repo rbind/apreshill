@@ -1,5 +1,7 @@
 ---
-aliases: [up-and-running-with-blogdown]
+aliases: 
+  - /post/up-and-running-with-blogdown
+  - /post/2017-06-12-up-and-running-with-blogdown
 projects: [up-running-blogdown]
 title: Up & Running with blogdown
 authors: [alison]
