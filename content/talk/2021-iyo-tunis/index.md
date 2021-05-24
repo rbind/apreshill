@@ -36,6 +36,6 @@ links:
 ---
 
 
-“You should have a website!” You may have heard this one before, or even said it yourself. In this workshop, you’ll learn how to build and customize a website from the comfort of the RStudio IDE using the blogdown package. We’ll also cover basic website care and feeding like using R Markdown to create content, and how to use GitHub and Netlify to improve your workflow. Pre-work will be shared with participants ahead of time, but to get the most out of this workshop, you’ll want to have a GitHub account and be able to push and pull files from a GitHub repository using your local RStudio IDE.
+"You should have a website!" You may have heard this one before, or even said it yourself. In this workshop, you’ll learn how to build and customize a website from the comfort of the RStudio IDE with R Markdown. We'll use the blogdown package and the Hugo Apéro theme to build and deploy a personal website. We’ll cover basic website care and feeding like using R Markdown to create content, how to use GitHub for version control and Netlify for publishing, and how to use the latest upgrades to the blogdown R package to keep your site up and running.
 
 The goal of this workshop is to equip participants with tools that amplify their own contributions, build a more visible presence in the R/data community, and share their knowledge and insights with others.
