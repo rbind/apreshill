@@ -15,8 +15,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 sidebar: 
   title: Blog
   description: |
-    This blog is my [digital garden](https://nesslabs.com/digital-garden-set-up), somewhere between
-    a notepad and a blog.
+    This blog is my [digital garden](https://nesslabs.com/digital-garden-set-up), somewhere between a notepad and a blog. 
   author: "Alison Hill"
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
