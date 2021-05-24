@@ -4,7 +4,7 @@ draft: false
 event: 'RLadies Tunis'
 event_url: https://www.meetup.com/rladies-tunis/events/277518271/
 location: remote
-summary: "A special workshop for rstudio::global() diversity scholars"
+summary: "A workshop for building a personal website from the comfort of RStudio using the blogdown R package, using a Hugo theme I developed."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

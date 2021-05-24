@@ -1,7 +1,7 @@
 baseURL = "https://alison.rbind.io"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Hugo Apéro"
+title = "Alison Hill"
 author = "Alison Hill"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -17,6 +17,7 @@ enableEmoji = true
 # Permalinks
 [permalinks]
   blog = "/blog/:year-:month-:slug/"
+  talk = "/talk/:filename/"
 
 [markup]
   defaultMarkdownHandler = "goldmark"

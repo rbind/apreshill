@@ -4,7 +4,7 @@ external_link: https://hugo-apero.netlify.app
 image:
   caption: ''
   focal_point: Smart
-summary: A Hugo theme for personal websites. 
+summary: A Hugo theme for personal websites. A place where you and your site’s visitors enjoy spending time, and one that helps folks get to know you better.
 tags:
 - hugo
 - software
