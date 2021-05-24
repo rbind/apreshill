@@ -5,13 +5,13 @@ role: "Product Manager, Data Science Communication @RStudio"
 avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
 audio_link_label: "How to say my name"
-link_list_label: "I love..." # bookmarks, elsewhere, etc.
+link_list_label: "Into..." # bookmarks, elsewhere, etc.
 link_list:
-- name: "Pretty gift wrap"
+- name: "Gift wrap"
   url: https://riflepaperco.com/occasions/gift-wrap
-- name: "Calm podcasts"
+- name: "Podcasts"
   url: https://www.ahwayisland.com/
-- name: "A good hot toddy"
+- name: "Hot toddies"
   url: https://www.loveandlemons.com/hot-toddy/
 ---
 
