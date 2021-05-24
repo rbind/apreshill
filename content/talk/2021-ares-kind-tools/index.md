@@ -7,7 +7,7 @@ event: 'Data Science Applied Research and Education Seminar'
 event_url: https://canssiontario.utoronto.ca/event/ares_alison_hill/
 location: Online meetup
 abstract: ""
-summary: "Three case studies in crafting kind(er) tools for data science communiation."
+summary: "Whenever you use software, you are also using a tool that was crafted by someone else. Is it kind? Does it matter? What makes a tool kind?"
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
