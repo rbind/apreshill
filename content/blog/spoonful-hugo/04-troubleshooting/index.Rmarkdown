@@ -1,5 +1,8 @@
 ---
 title: 'Troubleshooting Your Build'
+aliases:
+  - /post/2019-03-04-hugo-troubleshooting/
+slug: spoonful-troubleshooting
 authors:
 - alison
 date: '2019-03-04'
@@ -42,7 +45,7 @@ knitr::include_graphics("hugo-min-version.png")
 You can go higher than the minimum version though, so it's good practice to update your Hugo, again from within R:
 
 ```{r eval = FALSE}
-blogdown:: update_hugo()
+blogdown::update_hugo()
 ```
 
 Check your version again post-update:

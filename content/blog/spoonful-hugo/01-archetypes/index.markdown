@@ -1,5 +1,8 @@
 ---
 title: "Hugo Archetypes"
+aliases:
+  - /post/2019-02-19-hugo-archetypes/
+slug: spoonful-archetypes
 subtitle: ""
 excerpt: "Why you should use Hugo archetypes in your blogdown site."
 date: '2019-02-19'
@@ -15,7 +18,7 @@ As a happy blogdown user, a common story I hear from other #rstats users is that
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/ea/Carta_Marina.jpeg)
 
-I'm here to tell you that there are small spoonfuls of Hugo that can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated), even if you are not in the least bit interested in transitioning into a career in web development `r emo::ji("smirk")`.
+I'm here to tell you that there are small spoonfuls of Hugo that can help you get your site _UP_ (and even better- more efficient, more streamlined, more automated), even if you are not in the least bit interested in transitioning into a career in web development 😏.
 
 
 
@@ -43,9 +46,21 @@ I'll be using this post and other later posts to share some of the things I've l
 
 For reference, I'm using Hugo via the [blogdown R package](https://bookdown.org/yihui/blogdown/), and within the [RStudio IDE](https://www.rstudio.com/products/rstudio/#Desktop). These are my [blogdown](https://github.com/rstudio/blogdown) and Hugo versions:
 
-```{r}
+
+```r
 packageVersion("blogdown")
+```
+
+```
+## [1] '1.3.1'
+```
+
+```r
 blogdown::hugo_version()
+```
+
+```
+## [1] '0.80.0'
 ```
 
 
@@ -55,7 +70,8 @@ blogdown::hugo_version()
     - If you don't have that as an empty folder in your project root, make one, then add your archetype files to it.
     - If you are making a new blogdown site, I recommend using [these options](https://arm.rbind.io/slides/blogdown.html#start-here) to __keep your empty directories__^[These setup options are newish to the blogdown package: https://github.com/rstudio-education/arm-workshop-rsc2019/issues/8]:
 
-    ```{r eval = FALSE}
+    
+    ```r
     library(blogdown)
     new_site(theme = "jpescador/hugo-future-imperfect", 
              sample = TRUE, 
@@ -64,17 +80,16 @@ blogdown::hugo_version()
              to_yaml = TRUE)
     ```
 
-    ```{r proj-wizard, echo = FALSE, fig.cap="Using the RStudio Project Wizard"}
-    knitr::include_graphics("https://arm.rbind.io/slides/img/blogdown-workflow-wizard.png")
-    ```
+    <div class="figure">
+    <img src="https://arm.rbind.io/slides/img/blogdown-workflow-wizard.png" alt="Using the RStudio Project Wizard"  />
+    <p class="caption">(\#fig:proj-wizard)Using the RStudio Project Wizard</p>
+    </div>
 
 
 
 1. Use the "New Post" Addin in RStudio to create __any and all__ new content for your site (not just *posts*!). Be sure to use the handy dropdown menu to select from all the possible archetypes. Also, careful about the subdirectory here- some themes use *blog*, others use *news*, *articles*, or *posts*.
 
-    ```{r echo = FALSE}
-    knitr::include_graphics("https://arm.rbind.io/slides/img/blogdown-newpost-bundle.png")
-    ```
+    ![](https://arm.rbind.io/slides/img/blogdown-newpost-bundle.png)<!-- -->
 
 1. Your archetypes, while only markdown files, *can* include R code. When you use the Addin, be sure to choose `R Markdown (.Rmd)` as the format so that you can run the code.
     - Don't miss this [great blog post](http://lcolladotor.github.io/2018/03/08/blogdown-archetype-template/) by my friend and the great educator [Leo Collado-Torres](https://twitter.com/fellgernon) on archetypes.
@@ -141,7 +156,7 @@ I also noticed that there was no project root folder called `archetypes`, which 
     +++
     ```
     
-A quick note: you may have noticed differences in both the content between these two files but also the structure. The first is a [YAML file](https://learnxinyminutes.com/docs/yaml/), the second is a [TOML file](https://learnxinyminutes.com/docs/toml/). For blogdown users, you may want to use YAML. This is also why I recommend when you set up your site to use the `to_yaml = TRUE` option (in the Project Wizard from figure \@ref(fig:proj-wizard), check the "Convert all metadata to YAML" box; otherwise, the exampleSite will contain TOML instead of YAML)^[If you end up with TOML in your content files, run this R code: `hugo_convert(to = "YAML", unsafe = TRUE)`].
+A quick note: you may have noticed differences in both the content between these two files but also the structure. The first is a [YAML file](https://learnxinyminutes.com/docs/yaml/), the second is a [TOML file](https://learnxinyminutes.com/docs/toml/). For blogdown users, you may want to use YAML. This is also why I recommend when you set up your site to use the `to_yaml = TRUE` option (in the Project Wizard from figure <a href="#fig:proj-wizard">1</a>, check the "Convert all metadata to YAML" box; otherwise, the exampleSite will contain TOML instead of YAML)^[If you end up with TOML in your content files, run this R code: `hugo_convert(to = "YAML", unsafe = TRUE)`].
 
 If you read the original tidyverse [`CONTRIBUTING.md`](https://github.com/tidyverse/tidyverse.org/blob/c0eb070017cab794029b8ed3ac518f6e1a245a2b/CONTRIBUTING.md) file, the instructions include a fair bit of R code that I would guess means a lot of copying and pasting into new posts. For example, the R Markdown setup chunk and the code for using `usethis::use_tidy_thanks()` for package releases. I studied the contributing guidelines, and parsed three different "kinds" of articles that are commonly contributed, each with a different archetype:
 

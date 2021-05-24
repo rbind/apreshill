@@ -1,4 +1,7 @@
 ---
+aliases:
+ - /post/2020-12-12-how-much-hugo/
+slug: how-much-hugo
 title: 'How much Hugo do I need to know?'
 author: Alison Hill
 date: '2020-12-12'

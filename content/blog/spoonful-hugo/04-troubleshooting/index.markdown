@@ -1,5 +1,8 @@
 ---
 title: 'Troubleshooting Your Build'
+aliases:
+  - /post/2019-03-04-hugo-troubleshooting/
+slug: spoonful-troubleshooting
 authors:
 - alison
 date: '2019-03-04'
@@ -46,7 +49,7 @@ You can go higher than the minimum version though, so it's good practice to upda
 
 
 ```r
-blogdown:: update_hugo()
+blogdown::update_hugo()
 ```
 
 Check your version again post-update:
@@ -57,7 +60,7 @@ blogdown::hugo_version()
 ```
 
 ```
-## [1] '0.79.0'
+## [1] '0.80.0'
 ```
 
 

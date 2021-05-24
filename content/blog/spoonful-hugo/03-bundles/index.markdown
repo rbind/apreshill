@@ -1,5 +1,8 @@
 ---
 title: "Hugo Page Bundles"
+slug: spoonful-bundles
+aliases:
+  - /post/2019-02-21-hugo-page-bundles/
 weight: 3
 subtitle: ""
 excerpt: "Why (and how) you should use Hugo's new page bundles feature."
@@ -190,7 +193,7 @@ Now, add images and data files to your ❤️'s content! But you may want to do 
 
 ## Update Metadata
 
-If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2021-03-20. The cool thing that was already built-in to blogdown is the "Update Metadata" Addin. With your blog post open (it should be called `index.Rmd`)^[If no post is open, you will get an error: `Warning message: The current document does not seem to contain YAML metadata`], click on Addins and select "Update Metadata". You should see a window like this:
+If you are anything like me, you may draft a blog post then come back to it later. For example, I started this post 2 days ago, but want to publish it today, 2021-05-24. The cool thing that was already built-in to blogdown is the "Update Metadata" Addin. With your blog post open (it should be called `index.Rmd`)^[If no post is open, you will get an error: `Warning message: The current document does not seem to contain YAML metadata`], click on Addins and select "Update Metadata". You should see a window like this:
 
 ![](update-metadata.png)
 

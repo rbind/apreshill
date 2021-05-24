@@ -1,4 +1,7 @@
 ---
+aliases:
+  - /post/2019-02-19-hugo-netlify-toml/
+slug: spoonful-netlify-toml
 title: "The netlify.toml File"
 weight: 2
 subtitle: ""
@@ -51,14 +54,19 @@ Yes that is right- package version mismatches are the leading cause of build fai
 
 You can check your local Hugo version by running this code in your R console:
 
-```{r}
+
+```r
 blogdown::hugo_version()
+```
+
+```
+## [1] '0.80.0'
 ```
 
 Now, we want Netlify to use this same version of Hugo when it builds your site. You can do this two ways:
 
-1. Do this in your browser (`r emo::ji("thumbsdown")`)
-1. Do this in your project root directory in a netlify.toml file (`r emo::ji("thumbsup")`)
+1. Do this in your browser (👎)
+1. Do this in your project root directory in a netlify.toml file (👍)
 
 ## Add the netlify.toml File
 
@@ -88,7 +96,7 @@ Here is an example from my own [netlify.toml](https://github.com/rbind/apreshill
   HUGO_VERSION = "0.54.0"
 ```
 
-You can leave off the last two chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/) or [preview deploys](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/), but I `r emo::ji("heart")` these two Netlify features and encourage you to try them out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch and pull request gets a link `r emo::ji("tada")`.
+You can leave off the last two chunk if you don't want to use [branch deploys](https://www.netlify.com/blog/2017/11/16/get-full-control-over-your-deployed-branches/) or [preview deploys](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/), but I ❤️ these two Netlify features and encourage you to try them out. I've starting drafting individual blog posts and tutorials in branches, and then I can see them rendered and share them for feedback without asking collaborators to clone and build the repository locally. It is __lovely__. Every branch and pull request gets a link 🎉.
 
 So add this file to your blogdown site repo and push to GitHub.
 

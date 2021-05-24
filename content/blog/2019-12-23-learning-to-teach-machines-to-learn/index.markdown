@@ -1,4 +1,7 @@
 ---
+aliases:
+  - /post/2020-06-02-tidymodels-virtually/
+slug: teaching-ml
 title: Learning to Teach Machines to Learn
 author: Alison Hill
 date: '2019-12-23'

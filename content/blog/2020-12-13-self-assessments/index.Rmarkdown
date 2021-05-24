@@ -1,4 +1,7 @@
 ---
+aliases:
+  - /post/2020-12-13-self-assessments/
+slug: self-assessments
 title: Teaching students to talk about data science
 author: Alison Hill
 date: '2020-12-13'

@@ -1,5 +1,8 @@
 ---
 title: "Hugo Page Bundles"
+slug: spoonful-bundles
+aliases:
+  - /post/2019-02-21-hugo-page-bundles/
 weight: 3
 subtitle: ""
 excerpt: "Why (and how) you should use Hugo's new page bundles feature."

@@ -66,14 +66,14 @@ You'll need the development versions of two packages:
 
 Use the [remotes](https://remotes.r-lib.org/) package to install development versions:
 
-``` {.r}
+```r
 remotes::install_github("rstudio/distill")
 remotes::install_github("rstudio/rmarkdown")
 ```
 
 Plus the CRAN version (v \>= 0.2.0) of the postcards package.
 
-``` {.r}
+```r
 install.packages("postcards")
 ```
 
@@ -117,7 +117,7 @@ create_article(file = "tobi",         # future name of .Rmd file
 
 Let's add a link to our new file in the top navbar. Open up your `_site.yml` file and add:
 
-``` {.yaml}
+```yaml
 name: "."
 title: "mfeo"
 description: |
@@ -167,7 +167,7 @@ Now you may be wishing that your postcards page was your homepage- the place whe
 
 If you open up `index.Rmd`, you should see this yaml:
 
-``` yaml
+```yaml
 ---
 title: "mfeo"
 description: |
@@ -189,7 +189,7 @@ Re-build your site and Tobi's shining face should greet you from the homepage!
 
 Of course, you can add your own image file to the project root at this point, and then personalize your `index.Rmd` using the postcards template:
 
-``` yaml
+```yaml
 ---
 title: "Alison Hill"
 image: "alison.jpg"
@@ -239,7 +239,7 @@ file.edit("blog.Rmd")
 
 Then open up your new `blog.Rmd` and add a YAML (no content below the YAML):
 
-``` {.yaml}
+```yaml
 ---
 title: "Blog"  # any name you want here
 listing: posts # do this exactly
@@ -248,7 +248,7 @@ listing: posts # do this exactly
 
 Finally, add a link to your blog in your upper navbar so people can actually find it! Do this by editing `_site.yml` one last time (remember, since my listing `.Rmd` is named `blog.Rmd`, then the href I want to link to is `blog.html`):
 
-``` {.yaml}
+```yaml
 navbar:
   right:
     - text: "Home"
@@ -261,7 +261,7 @@ navbar:
 
 Now, admire your final polished product!
 
-<video width="320" height="240" controls>
+<video width="800" height="400" controls>
 
 <source src="final-site.mov" type="video/mp4">
 
@@ -271,7 +271,7 @@ Now, admire your final polished product!
 
 Let's say you decide you want to switch it up and use the `trestles` theme, instead of `jolla`. Easy. Open up your `index.Rmd` and find these lines in the YAML:
 
-``` {.yaml}
+```yaml
 ---
 output:
   postcards::jolla
@@ -280,7 +280,7 @@ output:
 
 And change to:
 
-``` {.yaml}
+```yaml
 ---
 output:
   postcards::trestles
