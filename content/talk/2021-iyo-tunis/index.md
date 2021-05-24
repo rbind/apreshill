@@ -11,7 +11,7 @@ summary: "A workshop for building a personal website from the comfort of RStudio
 date: "2021-05-26T11:00:00Z"
 date_end: "2021-05-26T13:00:00Z"
 all_day: false
-publishdate: "2020-02-01"
+publishdate: "2021-05-24"
 
 categories:
   - workshop
@@ -33,6 +33,10 @@ links:
   icon_pack: fab
   name: materials
   url: https://github.com/rstudio-education/iyo-rstudio-global
+- icon: glass-cheers
+  icon_pack: fas
+  name: Hugo Apéro
+  url: /project/hugo-apero
 ---
 
 
