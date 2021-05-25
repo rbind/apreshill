@@ -3,9 +3,15 @@ if (file.exists("~/.Rprofile")) {
 }
 
 options(
-  blogdown.subdir = "post",
+  blogdown.hugo.version = "0.80.0",
+  blogdown.author = "Alison Hill",
+  blogdown.ext = ".Rmarkdown",
+  blogdown.method = "markdown",
+  blogdown.subdir = "blog",
+  blogdown.yaml.empty = TRUE,
   blogdown.new_bundle = TRUE,
   blogdown.title_case = TRUE,
-  blogdown.hugo.version = "0.80.0",
+  # stop knitting for me
+  blogdown.knit.serve_site = FALSE,
   blogdown.knit.on_save = FALSE
 )
