@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: "Give your projects a place to live online."
+description: "My portfolio includes books and software that I've contributed to, as well a collection of online educational resources I have created."
 author: ""
 show_post_thumbnail: true
 show_author_byline: true
