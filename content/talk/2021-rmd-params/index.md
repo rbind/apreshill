@@ -31,5 +31,9 @@ links:
   icon_pack: fab
   name: code
   url: https://github.com/apreshill/talks/tree/master/rmd-valentine
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: https://youtu.be/sxYE0BY1mdc
 ---
 
