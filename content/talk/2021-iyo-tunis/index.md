@@ -37,6 +37,10 @@ links:
   icon_pack: fas
   name: Hugo Apéro
   url: /project/hugo-apero
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: https://youtu.be/RksaNh5Ywbo
 ---
 
 
