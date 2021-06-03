@@ -77,7 +77,7 @@ enableEmoji = true
   [params.utterances]
     use_utterances = true
     repo_name = "rbind/apreshill"
-    issue_term = "pathname" # url, pathname, or title
+    issue_term = "title" # url, pathname, or title
     theme = "boxy-light"
     label = "comments :crystal_ball:"
 
