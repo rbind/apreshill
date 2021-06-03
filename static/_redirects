@@ -1,6 +1,6 @@
 https://apreshill.rbind.io/*  https://alison.rbind.io/:splat  301!
 http://apreshill.rbind.io/*   https://alison.rbind.io/:splat  301!
 http://alison.rbind.io/*      https://alison.rbind.io/:splat  301!
-https://alison.rbind.io/projects/*  https://alison.rbind.io/project/*  301!
-https://alison.rbind.io/talks/*     https://alison.rbind.io/talk/*  301!
-https://alison.rbind.io/post/*      https://alison.rbind.io/blog/*  301!
+https://alison.rbind.io/projects/*  https://alison.rbind.io/project/:splat  301!
+https://alison.rbind.io/talks/*     https://alison.rbind.io/talk/:splat  301!
+https://alison.rbind.io/post/*      https://alison.rbind.io/blog/:splat  301!
