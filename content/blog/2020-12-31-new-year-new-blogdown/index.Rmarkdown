@@ -1,6 +1,6 @@
 ---
 aliases: 
-  - /post/new-year-new-blogdown
+  - /blog/new-year-new-blogdown
 title: Up & running with blogdown in 2021
 layout: single-sidebar
 author: Alison Hill
