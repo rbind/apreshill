@@ -4,6 +4,7 @@ description: |
   Events I have been invited to present at, shared along with slides, videos, and other linkable resources.
 author: "Alison Hill"
 show_post_thumbnail: true
+thumbnail_left: false
 show_author_byline: false
 show_post_date: true
 show_post_time: true

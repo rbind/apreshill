@@ -1,6 +1,6 @@
 ---
 aliases:
-  - /post/2020-12-27-blogdown-checks/
+  - /blog/2020-12-27-blogdown-checks/
 title: 'Unbreak your blogdown site'
 slug: blogdown-checks
 author: Alison Hill

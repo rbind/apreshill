@@ -2,7 +2,7 @@
 slug: rladies-xaringan
 aliases: 
   - r-ladies-slides
-  - /post/2017-12-18-r-ladies-presentation-ninja/
+  - /blog/2017-12-18-r-ladies-presentation-ninja/
 title: R-Ladies Presentation Ninja
 authors: [alison]
 summary: A guide to using the R-Ladies xaringan slide theme

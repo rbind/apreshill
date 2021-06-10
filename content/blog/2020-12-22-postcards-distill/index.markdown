@@ -4,7 +4,7 @@ author: Alison Hill
 date: '2020-12-22'
 slug: postcards-distill
 aliases: 
-  - /post/2020-12-21-postcards-distill/
+  - /blog/2020-12-21-postcards-distill/
 tags:
   - rmarkdown
   - distill

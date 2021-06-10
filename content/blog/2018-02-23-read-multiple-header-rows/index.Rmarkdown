@@ -1,7 +1,7 @@
 ---
 aliases: 
   - read-multiple-header-rows
-  - /post/2018-02-23-read-multiple-header-rows/
+  - /blog/2018-02-23-read-multiple-header-rows/
 slug: multiple-headers
 title: Read Data with Multiple Header Rows into R
 authors: [alison]
