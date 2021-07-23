@@ -289,6 +289,8 @@ at some point. It could be an actual bug, or it could be that my mental model is
 
 1. The visual editor view is disorienting (hard to see where slides start/end):
 
+   ![visual editor mode with reveal.js slides](editor.png)
+
 1. Accessibility: slide tones on advance? 
     - See: <https://pkg.garrickadenbuie.com/xaringanExtra/#/slide-tone> 
     - <https://stackoverflow.com/questions/32956342/with-reveal-js-how-can-i-make-slides-change-upon-completion-of-embedded-media>
