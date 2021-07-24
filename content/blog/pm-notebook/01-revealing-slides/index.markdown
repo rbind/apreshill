@@ -30,6 +30,11 @@ I was asked:
 Markdown? What are the problems with reveal.js, and how can we fix
 them?"*. 
 
+What is reveal.js? Here is a demo deck:
+
+<iframe src="https://revealjs.com/demo/" width="672" height="400px"></iframe>
+
+
 Now, if you know my work, you know I'm a pretty big fan of the
 [xaringan package](https://github.com/yihui/xaringan) by [Yihui
 Xie](https://yihui.org/) for making HTML-based slides with R Markdown.
@@ -48,26 +53,15 @@ So here we are! Why aren't people using reveal.js? I set out to find
 out, and thought this was a great example of one of the things I love
 most about being a Product Manager. Since I am not a current user, but
 would conceivably be a target user, I get to play the part of the
-"wide-eyed doe in the woods" - eager to learn but also a little cautious -   too early to get too excited.
+"wide-eyed doe in the woods" - eager to learn but also a little cautious - will reveal.js cause me pain? It is likely
 
-Aaand since it has been almost 6 months since my last blog post, I thought I would turn this little research project into a blog post to give an example of some of the daily work I do as the Product Manager for Data Science Communication at RStudio.
+Plus, since it has been almost 6 months since my last blog post, I thought I would turn this early research project into a blog post to give a glimpse of some of the daily work I do as the Product Manager for Data Science Communication at RStudio.
 
 ## Goal
 
 Understand how users experience using reveal.js to make slides, and
 identify areas for improvement.
 
-## Research questions
-
--   `[Functionality]` How, if at all, do users expect to use reveal.js?
-    What problems does it solve for them, and what are unaddressed
-    problems?
--   `[Ease of use]` Where, if at all, do users express uncertainty,
-    frustration, or confusion? What API problems arise?
--   `[Task success]` What kinds of messages, warnings, or errors do
-    users encounter when using reveal.js? Where, if at all, do they get
-    stuck or confused? What, if any, strategies or resources do they
-    find for troubleshooting?
 
 ## The competition
 
@@ -121,18 +115,34 @@ using reveal.js?
 
 8.  It is also a supported slideshow framework for Jupyter/IPython via
     [RISE](https://rise.readthedocs.io/en/stable/)
+    
+9.  Custom themes are possible (but perhaps not easy) using SASS layers: <https://github.com/hakimel/reveal.js/blob/master/css/theme/README.md>
 
+## Research questions
+
+Given all these pluses, and the competition, what do we want to know/
+
+-   `[Functionality]` How, if at all, do users expect to use reveal.js?
+    What problems does it solve for them, and what are unaddressed
+    problems?
+-   `[Ease of use]` Where, if at all, do users express uncertainty,
+    frustration, or confusion? What API problems arise?
+-   `[Task success]` What kinds of messages, warnings, or errors do
+    users encounter when using reveal.js? Where, if at all, do they get
+    stuck or confused? What, if any, strategies or resources do they
+    find for troubleshooting?
+    
 ## Method
 
-I wanted to start with just a few days of work, because I couldn't tell
-how big of a project this was. So I didn't want to do user interviews.
+With these goals in mind, I wanted to start with just a few days of work, because I couldn't tell how big of a project this was. So I didn't want to do user interviews.
+
 Instead, I relied on combing through community forums, blog posts,
 existing documentation, and GitHub issues to trace the outline of the
 problem space first. I actually got a lot of mileage from this exercise,
 even without direct user input.
 
 Here were some of my primary research resources (GitHub issues I tracked
-in my actual document):
+inline with my notes below):
 
 -   Blog posts:
 
@@ -162,10 +172,15 @@ I'll note here that a red flag right off the bat for me is that we don't even ha
 ## What works?
 
 Before reading through many of the blog posts and community forum
-threads, I also actually just used the tool. I tried to follow the docs
-myself, and maintain a friction log of what worked well and what didn't.
-If I stumbled, I tried to make a mental note to actually figure out why
-at some point. It could be an actual bug, or it could be that my mental model is wrong, or it could be that I trusted a doc or a user's guide and that led me astray. Whatever it is, it's important that I track what went wrong. Here is my scratchpad of what I tried that **did** work.
+threads, I also actually just used the tool. 
+
+
+Here was my minimal demo deck:
+
+<iframe src="https://revealing-slides.netlify.app/#/title-slide" width="672" height="400px"></iframe>
+
+I tried to follow the docs myself, and maintain a friction log of what worked well and what didn't. If I stumbled, I tried to make a mental note to actually figure out why at some point. It could be an actual bug, or it could be that my mental model is wrong, or it could be that I trusted a doc or a user's guide and that led me astray. Whatever it is, it's important that I track what went wrong. Here is my scratchpad of what I tried that **did** work.
+
 
 1.  Multi-column layout (but, a bit clunky? Have to create container first. In xaringan, this is just `.pull-left[contents...]` and `.pull-right[contents...]`)
 
@@ -280,10 +295,10 @@ at some point. It could be an actual bug, or it could be that my mental model is
 
 1. Build in SASS/SCSS support
     -  I made my own:
-        <https://github.com/apreshill/revealing-slides/blob/main/style.scss>
+        <https://github.com/apreshill/revealing-slides/blob/main/assets/my-style.scss>
 
     - Then used the sass package to compile to css:
-        <https://github.com/apreshill/revealing-slides/blob/main/compile-sass.R>
+        <https://github.com/apreshill/revealing-slides/blob/main/assets/compile-sass.R>
 
     - Then used the css key in the YAML
 
@@ -385,7 +400,7 @@ So the question I started with was:
 Markdown? What are the problems with reveal.js, and how can we fix
 them?"*. 
 
-My answer? I think there are a few factors working against reveal.js. The most obvious is that there is a noticeable lack of community engagement around the format - so there is an enthusiasm gap there between reveal.js and R packages like xaringan. The sheer number of options for HTML-based slide output formats leads folks toward using the one they see and hear about in the wild. That often starts with vocal "influencers" on social media like Twitter, which then trickles down into user blog posts, folks who can answer questions on community, and ultimately contributors who improve the open-source software themselves. There have been amazing community contributions around the xaringan ecosystem. Have you heard of: https://xaringan.club/ (brought to you by [Garrick](https://www.garrickadenbuie.com/))?
+My answer? I think there are a few factors working against reveal.js. The most obvious is that there is a noticeable lack of community engagement around the format - so there is an enthusiasm gap there between reveal.js and R packages like xaringan. The sheer number of options for HTML-based slide output formats leads folks toward using the one they see and hear about in the wild. That often starts with brave sharers on social media like Twitter, which then trickles down into user blog posts, folks who can answer questions on community, and ultimately contributors who improve the open-source software themselves. There have been amazing community contributions around the xaringan ecosystem. Have you heard of: https://xaringan.club/ (brought to you by [Garrick](https://www.garrickadenbuie.com/))?
 
 > *"The first rule of xaringan club is…we talk about xaringan."*
 
@@ -393,4 +408,4 @@ Will there be a reveal.js club? I hope so! In my research, I found a lot of thin
 
 Honestly, with slide making tools, my own experience is that I'm less enthusiastic when I feel less empowered. I feel empowered as a user when a tool lets me customize the look and layout of my slides, with some guardrails to make sure I don't enter the deep-dark CSS labyrinth. What I want is to fall into the "pit of beauty" more quickly, instead of the "pit of ugly" after hours of trying. See this interview with Hadley Wickham about the ["pit of success"](https://www.auckland.ac.nz/en/news/2017/12/05/problem-solving-pits-of-success.html) if you don't get this reference! In my experience, this is what will drive some brave adopters to dip their toe into reveal.js, and ultimately what might help teams take the plunge together.
 
-So what happens next? This was just the beginning, but it is where I'm at after a few days of research and testing. Watch this space...
+So what happens next? This was just the beginning, but it is where I'm at after a few days of research and testing. I know I'll be using it for my next slide deck so stay tuned!
