@@ -36,15 +36,29 @@ What is reveal.js? Here is a demo deck:
 knitr::include_url("https://revealjs.com/demo/")
 ```
 
+It's possible you've heard or seen reveal.js before - and it didn't look this good! It may have looked more like this:
 
-Now, if you know my work, you know I'm a pretty big fan of the
+
+```{r revealjs-sample, echo=FALSE, fig.cap='Two sample slides created from the revealjs package.', out.width='49%', fig.show='hold'}
+knitr::include_graphics(c('revealjs-1.png', 'revealjs-2.png'), dpi = NA)
+```
+
+
+This...never quite worked for me. If you know my work, you know I'm a pretty big fan of the
 [xaringan package](https://github.com/yihui/xaringan) by [Yihui
 Xie](https://yihui.org/) for making HTML-based slides with R Markdown.
 That package wraps a third-party JavaScript library called
 [remark.js](https://github.com/gnab/remark) and lets you use that to
 knit R code and its output into your remark.js slides. I've used
 xaringan for [years](https://alison.rbind.io/talk/), and have taught it
-quite a lot too. I love it, but also recognize that [it is
+quite a lot too. It helps me make slides like this:
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::use_share_again()
+xaringanExtra::embed_xaringan(url = "https://alison.netlify.app/ares-kind-tools/#1")
+```
+
+I love it, but also recognize that [it is
 hard](https://community.rstudio.com/t/r-presentations-for-beginners/1222),
 and that it is not intended for beginners (hence the "ninja" references
 in the package name and supporting documentation). 
