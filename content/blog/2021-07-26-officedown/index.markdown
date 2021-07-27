@@ -19,19 +19,6 @@ summary: "The most 'in a nutshell' version of the officedown package"
 
 Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first. 
 
-## Where are the docs at?
-
-The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is primary about Word rather than PPT output:
-
-https://ardata-fr.github.io/officeverse/officedown-for-word.html
-
-For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn't until my colleague Christophe Dervieux gave me enough support to try it on my own.
-
-You don't need to know the other packages in this "verse" like officer to use officedown.
-
-I also found this video from a recent meetup by David helpful to watch:
-
-https://youtu.be/sWDhPI8gKGg
 
 ## Why use officedown?
 
@@ -79,6 +66,20 @@ Still want more? A brief history here:
 https://en.wikipedia.org/wiki/Office_Open_XML_file_formats
 
 Do you need to know much of these acronyms? No, not really, but you'll want `rvg::dml()` burned into your brain as you'll be typing it often. 
+
+## Where are the docs at?
+
+The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is primary about Word rather than PPT output:
+
+https://ardata-fr.github.io/officeverse/officedown-for-word.html
+
+For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn't until my colleague Christophe Dervieux gave me enough support to try it on my own.
+
+You don't need to know the other packages in this "verse" like officer to use officedown.
+
+I also found this video from a recent meetup by David helpful to watch:
+
+https://youtu.be/sWDhPI8gKGg
 
 ## So how do I use it?
 
