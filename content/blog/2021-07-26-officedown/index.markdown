@@ -17,7 +17,7 @@ summary: "The most 'in a nutshell' version of the officedown package"
 
 
 
-Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first.
+Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first. 
 
 ## Where are the docs at?
 
@@ -33,6 +33,17 @@ I also found this video from a recent meetup by David helpful to watch:
 
 https://youtu.be/sWDhPI8gKGg
 
+## Why use officedown?
+
+Why use it? To knit to PowerPoint. Naturally, you might ask, but Alison- there is an `rmarkdown::powerpoint_presentation` output format already. Yes there is: https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html
+
+Here is a great use case from [Shannon Pileggi](https://www.pipinghotdata.com/about.html):
+
+> "I don't knit directly to ppt b/c editable graphics are key for finishing touches in our deliverables. If we could knit to powerpoint with an editable graphics option like in officer that would be a great feature."
+> [Issue thread](https://github.com/rstudio/rmarkdown/issues/2158)
+
+So officedown is definitely the answer for many users who wish to go beyond what the rmarkdown package can offer. 
+
 ## What is officedown?
 
 It is a package whose goal is to allows users to write Word and Powerpoint documents using R Markdown. Install from CRAN:
@@ -44,13 +55,7 @@ install.packages("officedown")
 
 (It will also download the officer package for you).
 
-Naturally, you might ask, but Alison- there is an `rmarkdown::powerpoint_presentation` output format already. Yes there is: https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html
-
-So what are the differences? I'm by no means an expert here- I'm a beginner to both of these PowerPoint output formats and especially the officeverse, but here is my list:
-
-+ Officedown seems more flexible than the base `rmarkdown::powerpoint_presentation` format. If you tried that already and felt it was too rigid or restrictive you might like officedown.
-
-+ Officedown works with editable graphics *by default*. This is huge plus for some workflows, but also a huge gotcha because it depends on another package that I didn't know about and that officedown did not import for me: the [rvg package](https://davidgohel.github.io/rvg/). You must install it if you want any plots to show up when you knit!
+Officedown works with editable graphics *by default*. This is huge plus for some workflows (like Shannon's), but also a huge gotcha because it depends on another package that I didn't know about and that officedown did not import for me: the [rvg package](https://davidgohel.github.io/rvg/). You must install it separately:
 
 
 ```r
