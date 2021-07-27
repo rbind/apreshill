@@ -203,7 +203,7 @@ Here was my minimal demo deck:
 <iframe src="https://revealing-slides.netlify.app/#/title-slide" width="672" height="400px">
 </iframe>
 
-I tried to follow the docs myself, and maintain a friction log of what worked well and what didn’t. If I stumbled, I tried to make a mental note to actually figure out why at some point. It could be an actual bug, or it could be that my mental model is wrong, or it could be that I trusted a doc or a user’s guide and that led me astray. Whatever it is, it’s important that I track what went wrong. Here is my scratchpad of what I tried that **did** work.
+I tried to follow the docs myself, and maintain a [friction log](https://www.trychameleon.com/blog/friction-logs) of what worked well and what didn’t. If I stumbled, I tried to make a mental note to actually figure out why at some point. It could be an actual bug, or it could be that my mental model is wrong, or it could be that I trusted a doc or a user’s guide and that led me astray. Whatever it is, it’s important that I track what went wrong. Here is my scratchpad of what I tried that **did** work.
 
 1.  Multi-column layout (but, a bit clunky? Have to create container first. In xaringan, this is just `.pull-left[contents...]` and `.pull-right[contents...]`)
 
@@ -241,15 +241,16 @@ I tried to follow the docs myself, and maintain a friction log of what worked we
         vertical)
 
 4.  Speaker notes + `s` kbd shortcut for speaker view- nice, awesome
-    \`\`\`md
-    ::: notes
+
+    ``` md
+    ::: notes 
     This is my note.
 
     -   It can contain Markdown
 
-    -   like this list
-        :::
-        \`\`\`
+    -   like this list 
+    :::
+    ```
 
 5.  Hidden slides- nice, awesome
 
