@@ -19,7 +19,7 @@ summary: "The most 'in a nutshell' version of the officedown package for knittin
 knitr::opts_chunk$set(collapse = TRUE, comment = NA)
 ```
 
-Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first. 
+Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first. These notes are a rough account of my own personal [friction log](https://www.trychameleon.com/blog/friction-logs) for the next time I use officedown.
 
 
 ## Why use officedown?
