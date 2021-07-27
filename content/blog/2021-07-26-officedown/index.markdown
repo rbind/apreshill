@@ -30,7 +30,7 @@ Here is a great use case for not using that format though, from [Shannon Pileggi
 >
 > [Issue thread](https://github.com/rstudio/rmarkdown/issues/2158)
 
-So officedown is definitely the answer for many users who wish to go beyond what the rmarkdown package can offer. 
+So officedown is definitely the answer for many users who wish to go beyond what the rmarkdown package can offer. For more on editable graphic workflows with R, Shannon has a [great blog post](https://www.pipinghotdata.com/posts/2020-09-22-exporting-editable-ggplot-graphics-to-powerpoint-with-officer-and-purrr/).
 
 ## What is officedown?
 
@@ -43,7 +43,7 @@ install.packages("officedown")
 
 (It will also download the officer package for you).
 
-Note that the GitHub page for this package does not include an **Issues** tab: https://github.com/davidgohel/officedown This means there is no way for users to file bug reports, feature requests, etc. This is definitely a developer's choice, but I'm not sure how to find a community of users for officedown questions or to get help if you suspect a bug. RStudio Community has a tag but only two posts as of today, one of which was never answered: https://community.rstudio.com/tag/officedown
+Note that the GitHub page for this package does not include an **Issues** tab: https://github.com/davidgohel/officedown This means there is no way for users to file bug reports, feature requests, etc. This is definitely a developer's choice, but I'm not sure how to find a community of users for officedown questions or to get help if you suspect a bug. RStudio Community has a tag but only two posts as of today, one of which was asked by an RStudio employee and never answered :sob: : https://community.rstudio.com/tag/officedown
 
 Officedown works with editable graphics *by default*. This is huge plus for some workflows (like Shannon's), but also a huge gotcha because it depends on another package that I didn't know about and that officedown did not import for me: the [rvg package](https://davidgohel.github.io/rvg/). You must install it separately:
 
@@ -170,7 +170,7 @@ dml(ggobj = mygg)
 ``` 
 ````
 
-Which produces
+Which produces:
 
 <img src="two-col.png" width="1068" />
 
@@ -222,7 +222,7 @@ Here was my output:
 |Picture with Caption    |Office Theme |
 
 
-You can use any of these as valid `layout`s. This is another difference between `rmarkdown::powerpoint_preseentation` which only supports four layouts:
+You can use any of these as valid `layout`s. This is another difference between `rmarkdown::powerpoint_presentation` which only supports four layouts:
 
 1. Title Slide
 1. Title and Content
@@ -231,7 +231,7 @@ You can use any of these as valid `layout`s. This is another difference between 
 
 ### New slides
 
-You might be wondering at this point is "how do I make new slides?" and "how does it know where a new slide starts?" This format derives from `rmarkdown::powerpoint_presentation`, which derives from Pandoc. Pandoc documents slide separators as follows:
+You might be wondering at this point is "how do I make new slides?" and "how does it know where a new slide starts?" This format derives from `rmarkdown::powerpoint_presentation`, which derives from Pandoc. Pandoc documents [slide separators](https://pandoc.org/MANUAL.html#structuring-the-slide-show) as follows:
 
 > By default, the slide level is the highest heading level in the hierarchy that is followed immediately by content, and not another heading, somewhere in the document. In the example above, level-1 headings are always followed by level-2 headings, which are followed by content, so the slide level is 2. This default can be overridden using the --slide-level option.
 >
@@ -249,7 +249,7 @@ You might be wondering at this point is "how do I make new slides?" and "how doe
 
 Clear? Right, yea it confuses me too every time.
 
-The default is 2, which means that you should expect to start new slides with `## My slide title`. Starting a slide with `# A level 1 header` will create a section title slide, using your section header layout (see [layouts above](#layouts)), and none of your body text will be displayed. You could change this in your YAML,but I recommend keeping the default:
+The default `slide_level` is 2, which means that you should expect to start new slides with `## My slide title`. Starting a slide with `# A level 1 header` will create a section title slide, using your section header layout (see [layouts above](#layouts)), and none of your body text will be displayed. You could change this in your YAML, but I recommend keeping the default:
 
 ```.yaml
 ---
