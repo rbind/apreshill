@@ -1,0 +1,263 @@
+---
+title: Up and running with officedown
+layout: single
+author: Alison Hill
+draft: true
+date: '2021-07-27'
+categories:
+  - rmarkdown
+tags:
+  - powerpoint
+  - rmarkdown
+slug: officedown
+authors:
+  - alison
+summary: "The most 'in a nutshell' version of the officedown package"
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = NA)
+```
+
+Lately, I've been exploring the world of R Markdown through the lens of knitting to Microsoft output formats like Word and PowerPoint. I wanted to write down what I've learned so far about the officedown package for making PowerPoint (PPT) slides with R Markdown. It is extremely powerful, and I've now referred a lot of folks to it, but it was pretty hard for me to grasp at first.
+
+## Where are the docs at?
+
+The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is primary about Word rather than PPT output:
+
+https://ardata-fr.github.io/officeverse/officedown-for-word.html
+
+For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn't until my colleague Christophe Dervieux gave me enough support to try it on my own.
+
+You don't need to know the other packages in this "verse" like officer to use officedown.
+
+I also found this video from a recent meetup by David helpful to watch:
+
+https://youtu.be/sWDhPI8gKGg
+
+## What is officedown?
+
+It is a package whose goal is to allows users to write Word and Powerpoint documents using R Markdown. Install from CRAN:
+
+```{r eval=FALSE}
+install.packages("officedown")
+```
+
+(It will also download the officer package for you).
+
+Naturally, you might ask, but Alison- there is an `rmarkdown::powerpoint_presentation` output format already. Yes there is: https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html
+
+So what are the differences? I'm by no means an expert here- I'm a beginner to both of these PowerPoint output formats and especially the officeverse, but here is my list:
+
++ Officedown seems more flexible than the base `rmarkdown::powerpoint_presentation` format. If you tried that already and felt it was too rigid or restrictive you might like officedown.
+
++ Officedown works with editable graphics *by default*. This is huge plus for some workflows, but also a huge gotcha because it depends on another package that I didn't know about and that officedown did not import for me: the [rvg package](https://davidgohel.github.io/rvg/). You must install it if you want any plots to show up when you knit!
+
+```{r eval=FALSE}
+install.packages("rvg")
+```
+
+I suspect but cannot confirm that the name of the package is r + vg (vector graphics). Then there is a function in that package that you *must* use (literally, plots will not print if you don't wrap them in this function): the `rvg::dml()` function, which I can with certainty tell you stands for DrawingML. What is DrawingML? Oh I'm so glad you asked, here is a link about it: http://officeopenxml.com/drwOverview.php
+
+> "DrawingML is the language for defining graphical objects such as pictures, shapes, charts, and diagrams within ooxml documents."
+
+What is ooxml? This is office open xml, which is:
+
+> "Office Open XML, also known as OpenXML or OOXML, is an XML-based format for office documents, including word processing documents, spreadsheets, presentations, as well as charts, diagrams, shapes, and other graphical material."
+
+Want more weird acronyms?
+
+> "It is important to keep in mind that OOXML is not the same as Open Office XML or the Open Document Format (ODF) that underlies the OpenOffice.org and other open source office software. Office Open XML and Open Office XML or ODF are in some sense competing XML standards for office documents."
+
+Still want more? A brief history here:
+
+https://en.wikipedia.org/wiki/Office_Open_XML_file_formats
+
+Do you need to know much of these acronyms? No, not really, but you'll want `rvg::dml()` burned into your brain as you'll be typing it often. 
+
+## So how do I use it?
+
+The new output format officedown gives you is:
+
+```.yaml
+---
+output: officedown::rpptx_document
+---
+```
+
+Christophe shared this link with me, and it helped lot!
+
+https://github.com/davidgohel/officedown/blob/master/inst/examples/minimal_powerpoint.Rmd
+
+I didn't realize at first that the package contains built-in R Markdown templates, which is now where I wish I had started. Use RStudio to access: *File > New File > R Markdown > From Template* then find:
+
+```{r echo=FALSE}
+knitr::include_graphics("template.png")
+```
+
+Once you are inside, go ahead and knit freely. I also recommend loading up a reference template sooner rather than later so you aren't looking at that default deck for long. Here is how you add a reference template:
+
+```.yaml
+---
+output: 
+  officedown::rpptx_document: 
+    reference_doc: alison-template.pptx
+---
+```
+
+You can download my simple one here: https://github.com/apreshill/rmd2ppt/tree/main/templates
+
+## A brief walk through the template
+
+First, you have the packages loaded. Both `officedown` and `rvg` are critical here.
+
+````r
+```{r setup, include=FALSE}`r ''`
+knitr::opts_chunk$set(echo = FALSE, fig.cap = TRUE)
+library(officedown)
+library(ggplot2)
+library(rvg)
+```
+````
+
+If you try to knit the same deck without the `officedown` package loaded, you will see slides like this:
+
+```{r echo=FALSE, fig.cap='Two bad slides.', out.width='49%', fig.show='hold'}
+knitr::include_graphics(c('oops-plot1.png', 'oops-plot2.png'), dpi = NA)
+```
+
+With officedown loaded, you should instead see:
+
+```{r echo=FALSE}
+knitr::include_graphics('good-tabs.png')
+```
+
+Next up, you'll see slide number 1 (not to be confused with your title slide, which is populated from the YAML):
+
+````md
+## Table
+
+```{r layout='Two Content', ph=officer::ph_location_left()}`r ''`
+head(cars)
+```
+
+```{r layout='Two Content', ph=officer::ph_location_right()}`r ''`
+head(iris)
+```
+````
+
+
+
+
+## Placeholders
+
+These `ph` knitr code chunk options are part of the officedown package, so in order to use them you must load the package! `ph` stands for placeholder, and this is a specific way that Microsoft pours your content into a PowerPoint template. It is essentially a bunch of rectangles on a slide, each called a placeholder. Placeholders typically can hold either text or an image, but not both. 
+
+Placeholder values are themselves functions from the officer package with optional function arguments. Now I personally feel that `officer::ph_location_left` and `officer::ph_location_right` are a little long to type. I don't have an answer for simplifying because there is no code completion for knitr chunk options. Maybe [snippets](https://github.com/gadenbuie/snippets)?
+
+Technically you can do left vs right with `rmarkdown::powerpoint_presentation` too, but you have more options here:
+
++ `ph_location_type(type="body")`
++ `ph_location_fullsize()`
++ `ph_location(width = 2, height = 2, left = 2, top = 2)` (for example)
++ More documented here: https://davidgohel.github.io/officer/reference/index.html#section-slide-content
+
+## Layouts
+
+The `layout` chunk option is harder. I think this name comes from the template you are using. To see your *actual* options, I recommend now using the officer package directly to `read_pptx()` of your template file, and the using `layout_summary()`:
+
+````r
+## Seeing my layout options
+
+This is handy, `officer::layout_summary()`
+
+```{r echo=FALSE}`r ''`
+library(officer)
+my_template <- read_pptx("alison-template.pptx") 
+layout_summary(my_template) %>% knitr::kable()
+```
+````
+
+Here was my output:
+
+|layout                  |master       |
+|:-----------------------|:------------|
+|Title Slide             |Office Theme |
+|Title and Vertical Text |Office Theme |
+|Vertical Title and Text |Office Theme |
+|Title and Content       |Office Theme |
+|Section Header          |Office Theme |
+|Two Content             |Office Theme |
+|Comparison              |Office Theme |
+|Title Only              |Office Theme |
+|Blank                   |Office Theme |
+|Content with Caption    |Office Theme |
+|Picture with Caption    |Office Theme |
+
+
+You can use any of these as valid `layout`s. This is another difference between `rmarkdown::powerpoint_preseentation` which only supports four layouts:
+
+1. Title Slide
+1. Title and Content
+1. Section Header
+1. Two Content
+
+## New slides
+
+You might be wondering at this point is "how do I make new slides?" and "how does it know where a new slide starts?" This format derives from `rmarkdown::powerpoint_presentation`, which derives from Pandoc. Pandoc documents slide separators as follows:
+
+> By default, the slide level is the highest heading level in the hierarchy that is followed immediately by content, and not another heading, somewhere in the document. In the example above, level-1 headings are always followed by level-2 headings, which are followed by content, so the slide level is 2. This default can be overridden using the --slide-level option.
+
+> The document is carved up into slides according to the following rules:
+
+> 1. A horizontal rule always starts a new slide.
+
+> 2. A heading at the slide level always starts a new slide.
+
+> 3. Headings below the slide level in the hierarchy create headings within a slide. 
+
+> 4. Headings above the slide level in the hierarchy create “title slides,” which just contain the section title and help to break the slide show into sections. Non-slide content under these headings will be included on the title slide (for HTML slide shows) or in a subsequent slide with the same title (for beamer).
+
+> 5. A title page is constructed automatically from the document’s title block, if present. (In the case of beamer, this can be disabled by commenting out some lines in the default template.)
+
+Clear? Right, yea it confuses me too every time.
+
+The default is 2, which means that you should expect to start new slides with `## My slide title`. Starting a slide with `# A level 1 header` will create a section title slide, using your section header layout (see [layouts above](#layouts)), and none of your body text will be displayed.
+
+## Plots
+
+Including plots for me was sadly a long drawn-out affair. I didn't understand:
+
+1. I had to use the `rvg::dml()` wrapper for plots, even if I didn't care if they were editable or not. This is *required* if you don't want **TRUE** printed after each plot.
+
+    ```{r echo=FALSE, out.width='49%', fig.show='hold'}
+    knitr::include_graphics(c('true-plot1.png', 'true-plot2.png'), dpi = NA)
+    ```
+
+1. If you further want to use ggplot2, you *also* cannot just print your plot object, you must use `dml(ggobj = my_plot)`. This one *really* got me. Again, in the template, but less well-documented elsewhere.
+
+1. If you are used to knitr, don't think the chunk options you know and love work. This sort of broke my heart because I use `ref.label` all the time to [reuse code chunks](https://yihui.org/en/2021/05/knitr-reuse/), especially for plots.
+
+````
+## Testing officedown
+
+```{r flipper-hist, include=FALSE}`r ''`
+lib
+flipper_hist <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species),
+                 alpha = 0.5,
+                 position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  theme_minimal() +
+  labs(x = "Flipper length (mm)",
+       y = "Frequency")
+flipper_hist
+```
+
+```{r layout='Two Content', width=2, ph=officer::ph_location_left(), warning=FALSE, message=FALSE, echo=FALSE}`r ''`
+rvg::dml(ggobj = flipper_hist)
+```
+
+```{r ref.label='dodge-hist', width=2, layout='Two Content', ph=officer::ph_location_right(), echo=FALSE, warning=FALSE, message=FALSE}`r ''`
+```
+````
