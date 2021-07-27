@@ -175,7 +175,7 @@ dml(ggobj = mygg)
 
 Which produces:
 
-<img src="two-col.png" width="1068" />
+<img src="two-col.png" width="1068" style="display: block; margin: auto;" />
 
 If you only wanted to use Markdown in each column, you'll need to fall back on Pandoc's two column syntax:
 
@@ -196,7 +196,13 @@ Before you get any further, let's explain these `ph` things.
 
 ### Placeholders
 
-These `ph` knitr code chunk options are part of the officedown package, so in order to use them you must load the package! `ph` stands for placeholder, and this is a specific way that Microsoft pours your content into a PowerPoint template. It is essentially a bunch of rectangles on a slide, each called a placeholder. Placeholders typically can hold either text or an image, but not both. 
+These `ph` knitr code chunk options are part of the officedown package, so in order to use them you must load the package! `ph` stands for placeholder, and this is a specific way that Microsoft pours your [slide content into a PowerPoint template](https://support.microsoft.com/en-us/office/add-edit-or-remove-a-placeholder-on-a-slide-layout-a8d93d28-66cb-43fd-9f9d-e12d0a7a1f06). 
+
+
+<img src="ph.png" width="276" style="display: block; margin: auto;" />
+
+
+It is essentially a bunch of rectangles on a slide, each called a placeholder. Placeholders typically can hold either text or an image, but not both. For example, in a typical PowerPoint slide like the one above, you can insert either text (often with bullets) or an image -- but that is **it**! The title is text, and is a separate placeholder.
 
 Placeholder values are themselves functions from the officer package with optional function arguments. Now I personally feel that `officer::ph_location_left()` and `officer::ph_location_right()` are a little long to type over and over again, which you will. Obviously you could load the officer package at the top, but still that function name is lengthy. I don't have an answer for simplifying because there is no code completion for knitr chunk options. Maybe [snippets](https://github.com/gadenbuie/snippets)?
 
