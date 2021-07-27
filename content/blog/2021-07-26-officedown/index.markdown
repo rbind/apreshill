@@ -174,6 +174,21 @@ Which produces:
 
 <img src="two-col.png" width="1068" />
 
+If you only wanted to use Markdown in each column, you'll need to fall back on Pandoc's two column syntax:
+
+```md
+## Pandoc columns
+
+:::: {.columns}
+::: {.column}
+over here
+:::
+::: {.column}
+over there
+:::
+::::
+```
+
 Before you get any further, let's explain these `ph` things.
 
 ### Placeholders
