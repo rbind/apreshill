@@ -78,11 +78,14 @@ Do you need to know much of these acronyms? No, not really, but you'll want `rvg
 
 ## Where are the docs at?
 
-The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is primary about Word rather than PPT output:
+The creator of the officeverse collection of packages, which officedown is a part of, is named David Gohel. He has a bookdown book with a chapter on officedown, but it is only about Word rather than PPT output:
 
 https://ardata-fr.github.io/officeverse/officedown-for-word.html
 
 For this reason alone, you may not realize you can use officedown to knit to PPT! I certainly didn't until my colleague [Christophe Dervieux](https://cderv.rbind.io/about/) gave me enough support to try it on my own.
+
+Here is the documentation for the PPT output format, although I found it minimally helpful:
+https://davidgohel.github.io/officedown/reference/rpptx_document.html
 
 I also found this video from a recent meetup by the package author helpful to watch:
 
