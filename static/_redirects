@@ -1,6 +1,7 @@
 https://apreshill.rbind.io/*  https://www.apreshill.com/:splat  301!
 http://apreshill.rbind.io/*   https://www.apreshill.com/:splat  301!
 http://alison.rbind.io/*      https://www.apreshill.com/:splat  301!
+https://alison.rbind.io/*      https://www.apreshill.com/:splat  301!
 https://alison.rbind.io/projects/*  https://www.apreshill.com/project/:splat  301!
 https://alison.rbind.io/talks/*     https://www.apreshill.com/talk/:splat  301!
 https://alison.rbind.io/post/*      https://www.apreshill.com/blog/:splat  301!
