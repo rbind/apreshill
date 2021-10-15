@@ -1,7 +1,7 @@
 ---
 title: "Alison Hill"
-subtitle: "Product Manager, Data Science Communication @RStudio"
-description: "I am a data scientist, behavioral scientist, and award-winning educator. I work on products that make it easier and more delightful for data scientists to communicate. I am also a co-developer of the `palmerpenguins`, `distill`, and `blogdown` R packages, as well an author and international keynote speaker."
+subtitle: "Senior Data Scientist, AI Strategy & Innovation @IBM"
+description: "I am a data scientist, behavioral scientist, and award-winning educator. I work on creating online experiences to bring machine learning and artificial intelligence (AI) problems and solutions to life. My goal is to make AI more approachable, understandable, and empowering."
 images:
   - img/home.jpeg
 image_left: false

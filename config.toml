@@ -35,7 +35,7 @@ enableEmoji = true
 [params]
   orgName = "Alison Hill"
   orgLocal = ""
-  description = "A modern, beautiful, and easily configurable blog theme for Hugo."
+  description = "Personal website and portfolio of Dr. Alison Hill."
   favicon = "/img/favicon.ico"
   logo = "/img/penguin.png"
   mainSections = ["blog", "project", "talk"]
@@ -60,7 +60,7 @@ enableEmoji = true
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "octaevo-hex"
+  custom_theme = "fb-hex"
 
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
