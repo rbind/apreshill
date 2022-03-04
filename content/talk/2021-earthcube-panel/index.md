@@ -21,6 +21,10 @@ image:
   preview_only: no
 projects: []
 links:
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: https://youtu.be/IV-4e3kxVas
 - icon: images
   icon_pack: fas
   name: slides
