@@ -188,6 +188,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
     ```` markdown
     ```{r}
+    #| label: penguin-plot
     #| fig-alt: "Scatterplot of flipper length by bill length of 3 penguin species, where we show penguins with bigger flippers have bigger bills."
     #| warning: false
     library(palmerpenguins)
@@ -202,7 +203,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
     <div class="cell-output-display">
 
-    <img src="index_files/figure-gfm/unnamed-chunk-6-1.png" width="768" />
+    <img src="index_files/figure-gfm/penguin-plot-1.png" width="768" />
 
     </div>
 
@@ -287,6 +288,12 @@ output...
 
 -   Chunk options as YAML
 
+    ``` r
+    #| fig-alt: "Scatterplot of flipper length by bill length of 3 penguin species, where we show penguins with bigger flippers have bigger bills."
+    #| echo: false
+    #| warning: false
+    ```
+
     -   I always forgot the symbol, which is `#|` (read: the hashpipe).
         If you also cannot remember this, channel your 90s kid and enjoy
         this Weezer flashback:
@@ -311,16 +318,17 @@ output...
     ---
     ```
 
--   Use `kebab-case` for all YAML keys *and* to delimit
+-   Use `kebab-case` 🍡 for all YAML keys *and* to delimit
     figure/layout/code chunk options instead of ... what we had before.
+
     This will be confusing at first because your **knitr** chunk options
     won't match the package documentation. See
     [here](https://github.com/quarto-dev/quarto-cli/pull/83) for the
     change (Quarto will auto-convert `fig.alt` for example to `fig-alt`,
     but still, you or someone you teach might be confused by this).
 
--   You'll be rendering as your verb, not knitting, but you'll still be
-    using the **knitr** package as your
+-   You'll be rendering as your verb, not knitting 🧵, but you'll still
+    be using the **knitr** package as your
     [engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine) if
     you want to use R instead of Python code chunks.
 
@@ -334,9 +342,9 @@ output...
     advice at this point, but do read this bit:
 
     > Note that development server updates do not cause an update to the
-    > final site output. Consequently, you should always quarto render
+    > final site output. Consequently, you should always `quarto render`
     > your site before deploying it, even if you have already previewed
-    > the changes with the development server.
+    > the changes with the development server \[with `quarto preview`\].
 
 ## What you'll miss (for now)
 

@@ -138,19 +138,19 @@ Across *all* formats:
       echo: false
     ---
     ```
-    
+
     Say goodbye to memorizing this dear friend:
-    
+
 ```{r setup}
 #| echo: fenced
 knitr::opts_chunk$set(echo = FALSE)
 ```
-    
 
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
-    this chunk option here (invisibly) to show a chunk where I am suppressing the results printing:
+    this chunk option here (invisibly) to show a chunk where I am
+    suppressing the results printing:
 
 ```{r}
 #| results: hide
@@ -168,6 +168,7 @@ knitr::opts_chunk$set(echo = FALSE)
     Canelon](https://github.com/quarto-dev/quarto-web/issues/20))
 
     ```{r}
+    #| label: penguin-plot
     #| fig-alt: "Scatterplot of flipper length by bill length of 3 penguin species, where we show penguins with bigger flippers have bigger bills."
     #| echo: fenced
     #| warning: false
@@ -259,6 +260,12 @@ output...
 
 -   Chunk options as YAML
 
+    ``` r
+    #| fig-alt: "Scatterplot of flipper length by bill length of 3 penguin species, where we show penguins with bigger flippers have bigger bills."
+    #| echo: false
+    #| warning: false
+    ```
+
     -   I always forgot the symbol, which is `#|` (read: the hashpipe).
         If you also cannot remember this, channel your 90s kid and enjoy
         this Weezer flashback:
@@ -274,7 +281,7 @@ output...
 
 -   To render to a specific format, use the `format` YAML key (instead
     of `output`)[^1]
-    
+
     ``` yaml
     ---
     title: "We don't talk about Quarto"
@@ -283,16 +290,18 @@ output...
     ---
     ```
 
--   Use `kebab-case` for all YAML keys *and* to delimit
+-   Use `kebab-case` 🍡 for all YAML keys *and* to delimit
     figure/layout/code chunk options instead of ... what we had before.
+      
+      
     This will be confusing at first because your **knitr** chunk options
     won't match the package documentation. See
     [here](https://github.com/quarto-dev/quarto-cli/pull/83) for the
     change (Quarto will auto-convert `fig.alt` for example to `fig-alt`,
     but still, you or someone you teach might be confused by this).
 
--   You'll be rendering as your verb, not knitting, but you'll still be
-    using the **knitr** package as your
+-   You'll be rendering as your verb, not knitting 🧵, but you'll still
+    be using the **knitr** package as your
     [engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine) if
     you want to use R instead of Python code chunks.
 
@@ -302,9 +311,13 @@ output...
 
 -   For projects like books, websites, blogs, `quarto render` vs
     `quarto preview`. See docs
-    [here](https://quarto.org/docs/websites/#workflow). Not sure I have advice at this point, but do read this bit:
-    
-    > Note that development server updates do not cause an update to the final site output. Consequently, you should always quarto render your site before deploying it, even if you have already previewed the changes with the development server.
+    [here](https://quarto.org/docs/websites/#workflow). Not sure I have
+    advice at this point, but do read this bit:
+
+    > Note that development server updates do not cause an update to the
+    > final site output. Consequently, you should always `quarto render`
+    > your site before deploying it, even if you have already previewed
+    > the changes with the development server \[with `quarto preview`\].
 
 [^1]: This one screwed me up so bad, I actually tried to go back to
     **rmarkdown** at one point and couldn't figure out why I couldn't
@@ -328,8 +341,6 @@ output...
 
 ## What you (probably) won't miss
 
-
-
 All the packages, each one working *slightly* different than the ones
 you had already used. Essentially your experience trying to figure out
 to work the shower everytime you go to a new hotel, but for each package
@@ -339,4 +350,16 @@ in the R Markdown ecosystem:
 {{< tweet user="KeithNHumphreys" id="1459606451467390976" >}}
 ```
 
-If you are on my blog, you are probably an R Markdown lover. As well you should be. As am I. But who among us has not chased their own tail for hours trying to figure out why one YAML key works over *here* but not over *there*. Or perhaps you simply lacked the wherewithall to branch out into the various extension packages because you sensed a rabbit hole ahead. Or maybe you were a person who filed or upvoted GitHub issues begging RStudio folks to just give you tabsets for [every](https://github.com/rstudio/distill/issues/11) [single](https://github.com/rstudio/blogdown/issues/429) [html-based](https://github.com/rstudio/blogdown/issues/69) [output](https://github.com/rstudio/bookdown/issues/1219) [format](https://github.com/rstudio/blogdown/issues/175). You probably will not miss this.
+If you are on my blog, you are probably an R Markdown lover. As well you
+should be. As am I. But who among us has not chased their own tail for
+hours trying to figure out why one YAML key works over *here* but not
+over *there*. Or perhaps you simply lacked the wherewithall to branch
+out into the various extension packages because you sensed a rabbit hole
+ahead. Or maybe you were a person who filed or upvoted GitHub issues
+begging RStudio folks to just give you tabsets for
+[every](https://github.com/rstudio/distill/issues/11)
+[single](https://github.com/rstudio/blogdown/issues/429)
+[html-based](https://github.com/rstudio/blogdown/issues/69)
+[output](https://github.com/rstudio/bookdown/issues/1219)
+[format](https://github.com/rstudio/blogdown/issues/175). You probably
+will not miss this.
