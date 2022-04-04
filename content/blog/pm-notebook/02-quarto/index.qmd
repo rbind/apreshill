@@ -24,8 +24,8 @@ Quarto"* on the outside. That means not a single one of us were tweeting
 or blogging about it, or even at that point trying to teach it to anyone
 --- yet.
 
-But, slowly things started easing up. By the time summer internship
-positions at RStudio [were
+But, things started easing up. By the time summer internship positions
+at RStudio [were
 announced](https://www.rstudio.com/blog/summer-internship-2021/), I was
 excited to have reserved a slot for our first Quarto intern, who would
 be tasked with working with myself, [JJ
@@ -67,7 +67,7 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
         package](https://cran.r-project.org/web/packages/quarto/index.html),
         which will allow you to render at the command line if you aren't
         an RStudio IDE/button clicking person, but you could also use
-        the command line, which is what I do.
+        the terminal, which is what I do.
 
 -   Quarto works within the RStudio IDE.
 
@@ -86,7 +86,11 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
 
 -   The RStudio IDE's [Visual R Markdown
     Editor](https://rstudio.github.io/visual-markdown-editing/) was in
-    actuality the first "shots fired" from Quarto.
+    actuality the first "shots fired" from Quarto. The
+    [announcement](https://www.rstudio.com/blog/rstudio-v1-4-preview-visual-markdown-editing/)
+    about the Editor was published 2020/09/30, and the [first Quarto
+    commit](https://github.com/quarto-dev/quarto-cli/commit/3df555e2ce751ff98a5f0f2e7cd44b45e2dfd60c)
+    was only 5 days before on 2020/09/25.
 
     -   **Fun fact:** I forgot to tell our first Quarto intern, Paul,
         about the visual editor until about 4 weeks into his
