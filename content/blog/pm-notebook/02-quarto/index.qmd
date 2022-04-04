@@ -3,30 +3,33 @@ title: "We don't talk about Quarto"
 subtitle: "Until now!"
 excerpt: "Until now! Since RStudio has shared Quarto in a published Nature article and in their public conf schedule, I'll share my behind-the-scenes experience testing and teaching Quarto."
 format: hugo
-date: '2022-03-31'
+date: '2022-04-04'
 draft: false
 editor_options: 
   markdown: 
     wrap: 72
 ---
 
-> Thumbnail image from the Official Disney Fan Club website
-> (<https://d23.com/why-everyone-is-talking-about-bruno-from-encanto/>)
+> *Thumbnail image from the [Official Disney Fan Club
+> website](https://d23.com/why-everyone-is-talking-about-bruno-from-encanto/)*
 
 ## Background
 
-This time last year, I was busily checking Quarto, and totally terrified
-of checking Twitter. Seriously, I held my breath every time. It. Was.
-Not. Ready. It was changing fast and breaking fast. Everyday I was
-seeing the GitHub stars slowly creeping up, and I was nervous. And we
-had all agreed on our team that *"We don't talk about Quarto"* on the
-outside. That means we were not tweeting or blogging about it, or even
-at that point trying to teach it to anyone --- yet.
+Early last year, I was busily checking [Quarto](https://quarto.org/),
+and totally terrified of checking Twitter. Seriously, I held my breath
+every time. It. Was. Not. Ready. It was changing fast and breaking fast.
+Everyday I was seeing the GitHub stars slowly creeping up, and I was
+nervous. And we had all agreed on our team that *"We don't talk about
+Quarto"* on the outside. That means not a single one of us were tweeting
+or blogging about it, or even at that point trying to teach it to anyone
+--- yet.
 
 But, slowly things started easing up. By the time summer internship
-positions at RStudio were announced, I was excited to have reserved a
-slot for our first Quarto intern, who would be tasked with working with
-myself, [JJ Allaire](https://github.com/jjallaire), and [Charles
+positions at RStudio [were
+announced](https://www.rstudio.com/blog/summer-internship-2021/), I was
+excited to have reserved a slot for our first Quarto intern, who would
+be tasked with working with myself, [JJ
+Allaire](https://github.com/jjallaire), and [Charles
 Teague](https://github.com/dragonstyle) to help get the Quarto docs off
 the ground. We brought [Paul Villanueva](https://pommevilla.rbind.io/)
 on in one of the best hiring decisions I've made, and he ended up doing
@@ -38,14 +41,13 @@ of Quarto in August before the workshop, and we were able to spin up a
 custom RStudio Cloud environment to use a preview release of the RStudio
 IDE, and we were off!
 
-Now, fast forward to me 6 months from my time at RStudio and I am
+Fast forward to now. I am \>6 months from my time at RStudio and I am
 writing a book with the amazing [Rich
 Iannone](https://github.com/rich-iannone) about doing data science with
 R and Quarto, in a Quarto book, and I've built an internal knowledge
 repository for my IBM team with Quarto (these are not R or RStudio
 users!). So in this post, I thought I'd finally share my notes to myself
-after testing and teaching Quarto over the past year, and now as a user
-and enabler.
+after testing and teaching Quarto, and now as a user and enabler.
 
 ![Mirabel sliding down the stairs in
 Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
@@ -94,7 +96,9 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
         -   [Easy editing/formatting of Markdown
             tables](https://quarto.org/docs/visual-editor/content.html#editing-tables)
 
-        -   Copy/paste from Google docs
+        -   Copy/paste from Google docs (did you know this? Literally
+            just copy any formatted text from Google docs and paste it
+            into the visual editor)
 
         -   [Citations](https://quarto.org/docs/visual-editor/technical.html#citations)
 
@@ -106,38 +110,16 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
 
 ## What you'll like
 
-If you are anything like me...
+Across *all* formats:
 
--   SUBFOLDERS for projects (praise be). Yes you can have a website or
-    book or any other multi-file Quarto project and render content in
-    even deeply nested subdirectories. Rejoice!
-
--   Two column (and more) [flexible
+-   Two column (and more) [flexible content
     layouts](https://quarto.org/docs/authoring/figures.html#complex-layouts)
-    with images, code, text, tables, plots, anything. This to me was the
-    "one killer feature" when JJ first started showing me regular demos
-    --- I was floored.
-
--   "Batteries included" HTML features across single documents and
-    projects (like HTML books, websites, etc). This may be a RIP to the
-    wonderful ["Pimp my rmd"](https://holtzy.github.io/Pimp-my-rmd/).
-
-    -   Here are just a few features that were available in some but not
-        all R packages with `.Rmd` -> HTML output formats: [code
-        folding](https://quarto.org/docs/output-formats/html-code.html#folding-code),
-        [copy/paste
-        chunks](https://quarto.org/docs/output-formats/html-code.html#copy-button),
-        [callout
-        blocks](https://quarto.org/docs/authoring/callouts.html), [TOC
-        on the
-        side](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents),
-        [code
-        linking](https://quarto.org/docs/output-formats/html-code.html#code-linking)
-        via [downlit](https://downlit.r-lib.org/) (previously only
-        available in [pkgdown](https://pkgdown.r-lib.org/)),
-        [tabsets](https://quarto.org/docs/output-formats/html-basics.html#tabsets),
-        [anchored
-        headings](https://quarto.org/docs/output-formats/html-basics.html#anchor-sections)
+    for displaying images, code, text, tables, plots, anything. This to
+    me was the "one killer feature" when JJ first started showing me
+    regular demos --- I was floored. While
+    [**patchwork**](https://patchwork.data-imaginist.com/) can get you
+    pretty far, this allows for literally anything (including just blank
+    space) to be in any position, making it a layout swiss army knife.
 
 -   [Global chunk
     options](https://quarto.org/docs/computations/execution-options.html)
@@ -192,18 +174,55 @@ If you are anything like me...
     ([no more `bookdown::html_document2()`,
     etc.](https://pkgs.rstudio.com/bookdown/reference/index.html#single-document-output-formats))
 
--   [Show
-    source](https://quarto.org/docs/output-formats/html-code.html#code-tools)
-    to anyone viewing your HTML output (this was only possible with
-    `rmarkdown::html_document()` - [my
-    tweet](https://twitter.com/apreshill/status/1108925218850893832?lang=en)
-    from when I first discovered this output option!)
-
 -   [Parameters](https://quarto.org/docs/computations/parameters.html)
     (side note: here is the first **rmarkdown**
     [issue](https://github.com/rstudio/rmarkdown/issues/33) from 2014
     that [Tom Mock](https://themockup.blog/) and I found where the idea
     for parameters was "born" 👶)
+
+And, if you are anything like me and your heart belongs to HTML
+output...
+
+-   SUBFOLDERS for projects (praise be). Yes you can have a website or
+    book or any other multi-file Quarto project and render content in
+    even deeply nested subdirectories. Rejoice! To put in your final
+    product, let your heart decide- you can either list individually
+    (similar to **bookdown**) or use [listing
+    pages](https://quarto.org/docs/websites/website-listings.html) (like
+    with **distill**).
+
+-   Built-in site
+    [search](https://quarto.org/docs/websites/website-navigation.html#site-search)
+    (enabled by default for books and websites). Can also be
+    [tweaked](https://quarto.org/docs/websites/website-search.html#search-appearance).
+
+-   "Batteries included" HTML features across single documents and
+    projects (like HTML books, websites, etc). This may be a RIP to the
+    wonderful ["Pimp my Rmd"](https://holtzy.github.io/Pimp-my-rmd/).
+
+    -   Here are just a few features that were available in some but not
+        all R packages with `.Rmd` ▶️ HTML output formats: [code
+        folding](https://quarto.org/docs/output-formats/html-code.html#folding-code),
+        [copy/paste
+        chunks](https://quarto.org/docs/output-formats/html-code.html#copy-button),
+        [callout
+        blocks](https://quarto.org/docs/authoring/callouts.html), [TOC
+        on the
+        side](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents),
+        [code
+        linking](https://quarto.org/docs/output-formats/html-code.html#code-linking)
+        via [downlit](https://downlit.r-lib.org/) (previously only
+        available in [pkgdown](https://pkgdown.r-lib.org/)),
+        [tabsets](https://quarto.org/docs/output-formats/html-basics.html#tabsets),
+        [anchored
+        headings](https://quarto.org/docs/output-formats/html-basics.html#anchor-sections)
+
+-   [Show
+    source](https://quarto.org/docs/output-formats/html-code.html#code-tools)
+    to anyone viewing your HTML output (this was previously only
+    possible with `rmarkdown::html_document()` - [my
+    tweet](https://twitter.com/apreshill/status/1108925218850893832?lang=en)
+    from when I first discovered this output option!)
 
 -   Compatibility with
     [Hugo](https://gohugo.io/)/[blogdown](https://bookdown.org/yihui/blogdown/).
@@ -220,8 +239,9 @@ If you are anything like me...
 
     There is nothing stopping you from using Quarto to render individual
     posts, then blogdown to use Hugo, or just use Hugo from command
-    line. Hugo specific flavor of Markdown (goldmark) is also [supported
-    by the visual
+    line. The Hugo-specific flavor of Markdown
+    ([goldmark](https://gohugo.io/getting-started/configuration-markup))
+    is also [supported by the visual
     editor](https://rstudio.github.io/visual-markdown-editing/markdown.html#hugo-markdown).
 
 ## What you'll stumble on
@@ -232,27 +252,25 @@ If you are anything like me...
         If you also cannot remember this, channel your 90s kid and enjoy
         this Weezer flashback:
 
-{{< youtube _9BGLtqqkVI >}}
+    ```{shortcodes=false}
+    {{< youtube _9BGLtqqkVI >}}
+    ```
 
-    -   No equal sign, use a colon instead
+    -   No equal sign, use a colon instead (i.e., `comment: ''`)
 
     -   If the value is `true`/`false`, use lower case! (no more
-        screaming!) 😱
+        screaming!) 😱 So `echo: false`.
 
--   To render to a specific format, use the `format` YAML (instead of
-    `output`)
+-   To render to a specific format, use the `format` YAML key (instead
+    of `output`)[^1]
 
-    -   This one screwed me up so bad, I actually tried to go back to
-        **rmarkdown** at one point and couldn't figure out why I
-        couldn't knit to `output_format: html_document` 🤦🏻
-
--   Use `kebab-case` for all YAML keys *and* to delimit fig/layout/code
-    chunk options instead of ... what we had before. This will be
-    confusing at first because your **knitr** chunk options won't match
-    the package documentation. See
+-   Use `kebab-case` for all YAML keys *and* to delimit
+    figure/layout/code chunk options instead of ... what we had before.
+    This will be confusing at first because your **knitr** chunk options
+    won't match the package documentation. See
     [here](https://github.com/quarto-dev/quarto-cli/pull/83) for the
-    change (it will auto-convert `fig.alt` for example to `fig-alt`, but
-    still).
+    change (Quarto will auto-convert `fig.alt` for example to `fig-alt`,
+    but still, you or someone you teach might be confused by this).
 
 -   You'll be rendering as your verb, not knitting, but you'll still be
     using the **knitr** package as your
@@ -263,7 +281,13 @@ If you are anything like me...
         carefully](https://github.com/yihui/knitr/releases)--- they will
         still matter.
 
--   for projects (books, websites, blogs), render vs preview
+-   For projects like books, websites, blogs, `quarto render` vs
+    `quarto preview`. See docs
+    [here](https://quarto.org/docs/websites/#workflow).
+
+[^1]: This one screwed me up so bad, I actually tried to go back to
+    **rmarkdown** at one point and couldn't figure out why I couldn't
+    knit to `output_format: html_document` 🤦🏻
 
 ## What you'll miss (for now)
 
@@ -272,7 +296,23 @@ If you are anything like me...
 -   Making and bundling templates that are easily shareable.
 
 -   Xaringan and remark.js for slides. This particular package and
-    flavor of markdown was never supported in the visual editor because
-    it is not a Pandoc-defined output format. So for HTML slides in
-    Quarto, reveal.js is where it is at. I had a post about doing that
-    research too (actually all my testing at that time was in Quarto!).
+    flavor of markdown was [never supported in the visual
+    editor](https://github.com/yihui/xaringan/issues/300) because it is
+    not a Pandoc-defined output format (the visual editor is specific to
+    Pandoc-flavored markdown). So for HTML slides in Quarto,
+    [reveal.js](https://quarto.org/docs/reference/formats/presentations/revealjs.html)
+    is where it is at. I had a [post](/blog/2021-07-revealing-research/)
+    about doing that research too (actually all my testing at that time
+    was in Quarto!).
+
+## What you won't miss
+
+All the packages, each one working *slightly* different than the ones
+you had already used. Essentially your experience trying to figure out
+to work the shower everytime you go to a new hotel, but for each package
+in the R Markdown ecosystem:
+
+
+```{shortcodes=false}
+{{< tweet user="KeithNHumphreys" id="1459606451467390976" >}}
+```
