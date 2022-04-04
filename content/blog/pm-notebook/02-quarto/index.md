@@ -43,13 +43,15 @@ of Quarto in August before the workshop, and we were able to spin up a
 custom RStudio Cloud environment to use a preview release of the RStudio
 IDE, and we were off!
 
-Fast forward to now. I am \>6 months from my time at RStudio and I am
-writing a book with the amazing [Rich
-Iannone](https://github.com/rich-iannone) about doing data science with
-R and Quarto, in a Quarto book, and I've built an internal knowledge
-repository for my IBM team with Quarto (these are not R or RStudio
-users!). So in this post, I thought I'd finally share my notes to myself
-after testing and teaching Quarto, and now as a user and enabler.
+Fast forward to now, and [it looks like we are
+talking](https://www.nature.com/articles/d41586-022-00563-z) about
+Quarto. I am \>6 months from my time at RStudio and I am writing a book
+with the amazing [Rich Iannone](https://github.com/rich-iannone) about
+doing data science with R and Quarto, in a Quarto book, and I've built
+an internal knowledge repository for my IBM team with Quarto (these are
+not R or RStudio users!). So in this post, I thought I'd finally share
+my notes to myself after testing and teaching Quarto, and now as a user
+and enabler.
 
 ![Mirabel sliding down the stairs in
 Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
@@ -143,16 +145,22 @@ Across *all* formats:
 
     </div>
 
+    Say goodbye to memorizing this dear friend: ::: {.cell}
+
+    ```` markdown
+    ```{r}
+    knitr::opts_chunk$set(echo = FALSE)
+    ```
+    ````
+
+    :::
+
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
     this chunk option here (invisibly) to show a full chunk
 
     <div class="cell panel-tabset">
-
-    ``` r
-    1 + 1
-    ```
 
     <div class="cell-output-stdout">
 
@@ -190,7 +198,7 @@ Across *all* formats:
 
     <div class="cell-output-display">
 
-    <img src="index_files/figure-gfm/unnamed-chunk-6-1.png" width="768" />
+    <img src="index_files/figure-gfm/unnamed-chunk-8-1.png" width="768" />
 
     </div>
 
@@ -257,14 +265,6 @@ output...
     Quarto](https://quarto.org/docs/output-formats/hugo.html).
 
     <div class="cell">
-
-    ``` yaml
-    ---
-    title: "We don't talk about Quarto"
-    subtitle: "Until now!"
-    format: hugo
-    ---
-    ```
 
     </div>
 
