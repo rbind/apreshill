@@ -79,7 +79,9 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
         It was previously supported only in the
         [dailies](https://dailies.rstudio.com/) (which are honestly
         low-risk to download and use!). But nowadays it works with the
-        latest official released version of the RStudio IDE.
+        latest official released version of the RStudio IDE. I still
+        update my RStudio version to the latest daily whenever I
+        remember to update Quarto.
 
     -   It also works in [VSCode](https://code.visualstudio.com/); see
         **Step 2** [here](https://quarto.org/docs/get-started/).
