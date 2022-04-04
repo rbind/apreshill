@@ -275,6 +275,14 @@ output...
 
 -   To render to a specific format, use the `format` YAML key (instead
     of `output`)[^1]
+    
+    ``` yaml
+    ---
+    title: "We don't talk about Quarto"
+    subtitle: "Until now!"
+    format: html
+    ---
+    ```
 
 -   Use `kebab-case` for all YAML keys *and* to delimit
     figure/layout/code chunk options instead of ... what we had before.
@@ -295,7 +303,9 @@ output...
 
 -   For projects like books, websites, blogs, `quarto render` vs
     `quarto preview`. See docs
-    [here](https://quarto.org/docs/websites/#workflow).
+    [here](https://quarto.org/docs/websites/#workflow). Not sure I have advice at this point, but do read this bit:
+    
+    > Note that development server updates do not cause an update to the final site output. Consequently, you should always quarto render your site before deploying it, even if you have already previewed the changes with the development server.
 
 [^1]: This one screwed me up so bad, I actually tried to go back to
     **rmarkdown** at one point and couldn't figure out why I couldn't
