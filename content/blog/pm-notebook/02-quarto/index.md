@@ -147,16 +147,6 @@ Across *all* formats:
 
     Say goodbye to memorizing this dear friend:
 
-<div class="cell">
-
-```` markdown
-```{r}
-knitr::opts_chunk$set(echo = FALSE)
-```
-````
-
-</div>
-
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
@@ -202,7 +192,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
     <div class="cell-output-display">
 
-    <img src="index_files/figure-gfm/unnamed-chunk-8-1.png" width="768" />
+    <img src="index_files/figure-gfm/unnamed-chunk-6-1.png" width="768" />
 
     </div>
 

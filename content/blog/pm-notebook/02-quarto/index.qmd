@@ -141,8 +141,9 @@ Across *all* formats:
     
     Say goodbye to memorizing this dear friend:
     
-```{r}
+```{r setup}
 #| echo: fenced
+#| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
     
