@@ -160,7 +160,8 @@ knitr::opts_chunk$set(echo = FALSE)
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
-    this chunk option here (invisibly) to show a full chunk
+    this chunk option here (invisibly) to show a chunk where I am
+    suppressing the results printing:
 
 <div class="cell">
 
@@ -267,9 +268,13 @@ output...
     This post is a `.qmd` file with `format: hugo` [rendered with
     Quarto](https://quarto.org/docs/output-formats/hugo.html).
 
-    <div class="cell">
-
-    </div>
+    ``` yaml
+    ---
+    title: "We don't talk about Quarto"
+    subtitle: "Until now!"
+    format: hugo
+    ---
+    ```
 
     There is nothing stopping you from using Quarto to render individual
     posts, then blogdown to use Hugo, or just use Hugo from command

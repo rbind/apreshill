@@ -240,7 +240,7 @@ output...
     This post is a `.qmd` file with `format: hugo` [rendered with
     Quarto](https://quarto.org/docs/output-formats/hugo.html).
 
-    ```{yaml}
+    ``` yaml
     ---
     title: "We don't talk about Quarto"
     subtitle: "Until now!"
