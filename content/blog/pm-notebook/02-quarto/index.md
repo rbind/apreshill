@@ -145,31 +145,33 @@ Across *all* formats:
 
     </div>
 
-    Say goodbye to memorizing this dear friend: ::: {.cell}
+    Say goodbye to memorizing this dear friend:
 
-    ```` markdown
-    ```{r}
-    knitr::opts_chunk$set(echo = FALSE)
-    ```
-    ````
+<div class="cell">
 
-    :::
+```` markdown
+```{r}
+knitr::opts_chunk$set(echo = FALSE)
+```
+````
+
+</div>
 
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
     this chunk option here (invisibly) to show a full chunk
 
-    <div class="cell">
+<div class="cell">
 
-    ```` markdown
-    ```{r}
-    #| results: hide
-    1 + 1
-    ```
-    ````
+```` markdown
+```{r}
+#| results: hide
+1 + 1
+```
+````
 
-    </div>
+</div>
 
 -   [Chunk
     options](https://quarto.org/docs/computations/r.html#chunk-options)
