@@ -340,7 +340,7 @@ output...
     about doing that research too (actually all my testing at that time
     was in Quarto!).
 
-## What you won't miss
+## What you (probably) won't miss
 
 All the packages, each one working *slightly* different than the ones
 you had already used. Essentially your experience trying to figure out
@@ -350,6 +350,20 @@ in the R Markdown ecosystem:
 ```
 {{< tweet user="KeithNHumphreys" id="1459606451467390976" >}}
 ```
+
+If you are on my blog, you are probably an R Markdown lover. As well you
+should be. As am I. But who among us has not chased their own tail for
+hours trying to figure out why one YAML key works over *here* but not
+over *there*. Or perhaps you simply lacked the wherewithall to branch
+out into the various extension packages because you sensed a rabbit hole
+ahead. Or maybe you were a person who filed or upvoted GitHub issues
+begging RStudio folks to just give you tabsets for
+[every](https://github.com/rstudio/distill/issues/11)
+[single](https://github.com/rstudio/blogdown/issues/429)
+[html-based](https://github.com/rstudio/blogdown/issues/69)
+[output](https://github.com/rstudio/bookdown/issues/1219)
+[format](https://github.com/rstudio/blogdown/issues/175). You probably
+will not miss this.
 
 [^1]: This one screwed me up so bad, I actually tried to go back to
     **rmarkdown** at one point and couldn't figure out why I couldn't
