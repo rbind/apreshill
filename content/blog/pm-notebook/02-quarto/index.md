@@ -160,13 +160,14 @@ Across *all* formats:
     using `echo: fenced` as a code chunk option. For example, I am using
     this chunk option here (invisibly) to show a full chunk
 
-    <div class="cell panel-tabset">
+    <div class="cell">
 
-    <div class="cell-output-stdout">
-
-        [1] 2
-
-    </div>
+    ```` markdown
+    ```{r}
+    #| results: hide
+    1 + 1
+    ```
+    ````
 
     </div>
 

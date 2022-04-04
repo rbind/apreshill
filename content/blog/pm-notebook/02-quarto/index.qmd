@@ -152,7 +152,8 @@ Across *all* formats:
     this chunk option here (invisibly) to show a full chunk
 
     ```{r}
-    #| panel: tabset
+    #| results: hide
+    #| echo: fenced
     1 + 1
     ```
 
