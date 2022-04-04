@@ -143,7 +143,6 @@ Across *all* formats:
     
 ```{r setup}
 #| echo: fenced
-#| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
     

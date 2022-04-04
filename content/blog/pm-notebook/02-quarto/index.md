@@ -147,6 +147,16 @@ Across *all* formats:
 
     Say goodbye to memorizing this dear friend:
 
+<div class="cell">
+
+```` markdown
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE)
+```
+````
+
+</div>
+
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option. For example, I am using
