@@ -351,7 +351,7 @@ output...
     change (Quarto will auto-convert `fig.alt` for example to `fig-alt`,
     but still, you or someone you teach might be confused by this).
 
--   You'll be rendering as your verb, not knitting 🧵, but you'll still
+-   You'll be rendering as your verb, not knitting 🧶 but you'll still
     be using the **knitr** package as your
     [engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine) if
     you want to use R instead of Python code chunks.

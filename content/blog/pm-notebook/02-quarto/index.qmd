@@ -20,9 +20,10 @@ and totally terrified of checking Twitter. Seriously, I held my breath
 every time. It. Was. Not. Ready. It was changing fast and breaking fast.
 Everyday I was seeing the GitHub stars slowly creeping up, and I was
 nervous. And we had all agreed on our team that *"We don't talk about
-Quarto"* on the outside (this was pre-[Encanto](https://en.wikipedia.org/wiki/Encanto_(film))). That means not a single one of us were tweeting
-or blogging about it, or even at that point trying to teach it to anyone
---- yet.
+Quarto"* on the outside (this was
+pre-[Encanto](https://en.wikipedia.org/wiki/Encanto_(film))). That means
+not a single one of us were tweeting or blogging about it, or even at
+that point trying to teach it to anyone --- yet.
 
 But, things started easing up. By the time summer internship positions
 at RStudio [were
@@ -147,22 +148,22 @@ Across *all* formats:
 
     Instead of:
 
-```{{r}}
+``` {{r}}
 #| label: setup
 #| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
     using `echo: fenced` as a code chunk option when you want to *show
-    and execute* and double curly braces like `{{r}}` for *show and don't execute* (this was
-    also [improved](https://github.com/yihui/knitr/issues/2040) in
-    **knitr** too recently). 
-    
-    For example, in the first chunk, I am using this chunk option
-    here (invisibly) to show a chunk where I am suppressing the results
+    and execute* and double curly braces like `{{r}}` for *show and
+    don't execute* (this was also
+    [improved](https://github.com/yihui/knitr/issues/2040) in **knitr**
+    too recently).
+
+    For example, in the first chunk, I am using this chunk option here
+    (invisibly) to show a chunk where I am suppressing the results
     printing:
 
 ```{r}
@@ -171,13 +172,13 @@ knitr::opts_chunk$set(echo = FALSE)
 1 + 1
 ```
 
-    
-```{{r}}
+``` {{r}}
 #| results: show
 1 + 1
 ```
 
-In the chunk just above, I would allow the results to be shown, but because I used `{{r}}` as the chunk engine it isn't evaluated.
+In the chunk just above, I would allow the results to be shown, but
+because I used `{{r}}` as the chunk engine it isn't evaluated.
 
 -   [Chunk
     options](https://quarto.org/docs/computations/r.html#chunk-options)
@@ -218,10 +219,11 @@ output...
 
 -   SUBFOLDERS for projects (praise be). Yes you can have a website or
     book or any other multi-file Quarto project and render content in
-    even deeply nested subdirectories. Rejoice! 
-    
-    To put in your final
-    product, let your heart decide- you can either [list as chapters or as parts](https://quarto.org/docs/books/book-structure.html#parts-appendices)
+    even deeply nested subdirectories. Rejoice!
+
+    To put in your final product, let your heart decide- you can either
+    [list as chapters or as
+    parts](https://quarto.org/docs/books/book-structure.html#parts-appendices)
     (similar to **bookdown**) or use [listing
     pages](https://quarto.org/docs/websites/website-listings.html) (like
     with **distill**).
@@ -315,15 +317,14 @@ output...
 
 -   Use `kebab-case` 🍡 for all YAML keys *and* to delimit
     figure/layout/code chunk options instead of ... what we had before.
-      
-      
+
     This will be confusing at first because your **knitr** chunk options
     won't match the package documentation. See
     [here](https://github.com/quarto-dev/quarto-cli/pull/83) for the
     change (Quarto will auto-convert `fig.alt` for example to `fig-alt`,
     but still, you or someone you teach might be confused by this).
 
--   You'll be rendering as your verb, not knitting 🧵, but you'll still
+-   You'll be rendering as your verb, not knitting 🧶 but you'll still
     be using the **knitr** package as your
     [engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine) if
     you want to use R instead of Python code chunks.
