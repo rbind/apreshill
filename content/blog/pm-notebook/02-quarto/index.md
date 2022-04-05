@@ -329,7 +329,7 @@ output...
     -   No equal sign, use a colon instead (i.e., `comment: ''`)
 
     -   If the value is `true`/`false`, use lower case! (no more
-        screaming!) 😱 So `echo: false`.
+        screaming booleans!) 😱 So `echo: false`.
 
 -   To render to a specific format, use the `format` YAML key (instead
     of `output`)[^1]
