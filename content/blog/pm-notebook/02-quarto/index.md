@@ -22,9 +22,10 @@ and totally terrified of checking Twitter. Seriously, I held my breath
 every time. It. Was. Not. Ready. It was changing fast and breaking fast.
 Everyday I was seeing the GitHub stars slowly creeping up, and I was
 nervous. And we had all agreed on our team that *"We don't talk about
-Quarto"* on the outside. That means not a single one of us were tweeting
-or blogging about it, or even at that point trying to teach it to anyone
---- yet.
+Quarto"* on the outside (this was
+pre-[Encanto](https://en.wikipedia.org/wiki/Encanto_(film))). That means
+not a single one of us were tweeting or blogging about it, or even at
+that point trying to teach it to anyone --- yet.
 
 But, things started easing up. By the time summer internship positions
 at RStudio [were
