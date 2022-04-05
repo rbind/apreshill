@@ -219,8 +219,10 @@ output...
 
 -   SUBFOLDERS for projects (praise be). Yes you can have a website or
     book or any other multi-file Quarto project and render content in
-    even deeply nested subdirectories. Rejoice! To put in your final
-    product, let your heart decide- you can either list individually
+    even deeply nested subdirectories. Rejoice! 
+    
+    To put in your final
+    product, let your heart decide- you can either [list as chapters or as parts](https://quarto.org/docs/books/book-structure.html#parts-appendices)
     (similar to **bookdown**) or use [listing
     pages](https://quarto.org/docs/websites/website-listings.html) (like
     with **distill**).
