@@ -152,12 +152,11 @@ Across *all* formats:
 
     </div>
 
-    Say goodbye to memorizing this dear friend (or something like it!):
+    Instead of:
 
 ```` markdown
 ```{r}
 #| label: setup
-#| echo: fenced
 #| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
