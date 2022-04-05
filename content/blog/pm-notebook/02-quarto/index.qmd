@@ -55,6 +55,35 @@ and enabler.
 ![Mirabel sliding down the stairs in
 Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
 
+## What actually is Quarto?
+
+So thanks for the blog post Alison, but what actually is Quarto?
+
+![](https://media.giphy.com/media/HG6FHWzOJQiWvNTPjh/giphy.gif)
+
+That is a great question. Three things:
+
+1.  It is a way to render plain text source files that contain code
+    written in Python, R, or Observable.
+    -   If you want to use Python, you don't need to install R or
+        RStudio.
+
+    -   If you want to use R, you don't have to install Python.
+
+    -   If you want to use Observable, you just can in a Quarto document
+        or project.
+2.  In any language, when you render, you execute the code and include
+    plots, tables, and other results in your output woven together with
+    narrative text. So it is still "literate programming."
+3.  When you render, you can export to over 40 different output formats,
+    all enabled by [Pandoc](https://pandoc.org/).
+4.  Quarto adds functionality on top of Pandoc's markdown language, and
+    the rest of this post will give you some pointers to these features.
+
+Obviously, if you are already an R Markdown user, this will sound pretty
+familiar but maybe a *shade* different --- yet the software itself is a
+completely new incantation designed from the bottom up.
+
 ## What you'll need to know
 
 -   Quarto is actually a separate installation.
