@@ -81,7 +81,9 @@ Encanto](https://media.giphy.com/media/ievgCulkRxHoVBlkwH/giphy.gif)
         It was previously supported only in the
         [dailies](https://dailies.rstudio.com/) (which are honestly
         low-risk to download and use!). But nowadays it works with the
-        latest official released version of the RStudio IDE.
+        latest official released version of the RStudio IDE. I still
+        update my RStudio version to the latest daily whenever I
+        remember to update Quarto.
 
     -   It also works in [VSCode](https://code.visualstudio.com/); see
         **Step 2** [here](https://quarto.org/docs/get-started/).
@@ -149,23 +151,28 @@ Across *all* formats:
 
     </div>
 
-    Say goodbye to memorizing this dear friend:
-
-<div class="cell">
+    Say goodbye to memorizing this dear friend (or something like it!):
 
 ```` markdown
-```{r setup}
+```{r}
+#| label: setup
+#| echo: fenced
+#| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
 ````
 
-</div>
-
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
-    using `echo: fenced` as a code chunk option. For example, I am using
-    this chunk option here (invisibly) to show a chunk where I am
-    suppressing the results printing:
+    using `echo: fenced` as a code chunk option when you want to *show
+    and execute* and double curly braces like `{{r}}` for *show and
+    don't execute* (this was also
+    [improved](https://github.com/yihui/knitr/issues/2040) in **knitr**
+    too recently).
+
+    For example, in the first chunk, I am using this chunk option here
+    (invisibly) to show a chunk where I am suppressing the results
+    printing:
 
 <div class="cell">
 
@@ -177,6 +184,16 @@ knitr::opts_chunk$set(echo = FALSE)
 ````
 
 </div>
+
+```` markdown
+```{r}
+#| results: show
+1 + 1
+```
+````
+
+In the chunk just above, I would allow the results to be shown, but
+because I used `{{r}}` as the chunk engine it isn't evaluated.
 
 -   [Chunk
     options](https://quarto.org/docs/computations/r.html#chunk-options)

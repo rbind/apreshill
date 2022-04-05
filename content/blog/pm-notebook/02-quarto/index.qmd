@@ -145,24 +145,40 @@ Across *all* formats:
     ---
     ```
 
-    Say goodbye to memorizing this dear friend:
+    Say goodbye to memorizing this dear friend (or something like it!):
 
-```{r setup}
+```{{r}}
+#| label: setup
 #| echo: fenced
+#| include: false
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
 -   [Easier verbatim
     chunks](https://quarto.org/docs/computations/execution-options.html#fenced-echo)
-    using `echo: fenced` as a code chunk option. For example, I am using
-    this chunk option here (invisibly) to show a chunk where I am
-    suppressing the results printing:
+    using `echo: fenced` as a code chunk option when you want to *show
+    and execute* and double curly braces like `{{r}}` for *show and don't execute* (this was
+    also [improved](https://github.com/yihui/knitr/issues/2040) in
+    **knitr** too recently). 
+    
+    For example, in the first chunk, I am using this chunk option
+    here (invisibly) to show a chunk where I am suppressing the results
+    printing:
 
 ```{r}
 #| results: hide
 #| echo: fenced
 1 + 1
 ```
+
+    
+```{{r}}
+#| results: show
+1 + 1
+```
+
+In the chunk just above, I would allow the results to be shown, but because I used `{{r}}` as the chunk engine it isn't evaluated.
 
 -   [Chunk
     options](https://quarto.org/docs/computations/r.html#chunk-options)
