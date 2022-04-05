@@ -61,7 +61,7 @@ So thanks for the blog post Alison, but what actually is Quarto?
 
 ![](https://media.giphy.com/media/HG6FHWzOJQiWvNTPjh/giphy.gif)
 
-That is a great question. Three things:
+That is a great question. Four things:
 
 1.  It is a way to render plain text source files that contain code
     written in Python, R, or Observable.
