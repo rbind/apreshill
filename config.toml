@@ -1,7 +1,7 @@
 baseURL = "https://alison.rbind.io"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Alison Hill"
+title = "Alison Hill, PhD"
 author = "Alison Hill"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
