@@ -1,7 +1,7 @@
 baseURL = "https://alison.rbind.io"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Alison Hill"
+title = "Alison Hill, PhD"
 author = "Alison Hill"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -66,7 +66,7 @@ enableEmoji = true
   # serif options: Fraunces / EB Garamond / Bitter
   # sans-serif options: Commissioner / Alegreya Sans / Metropolis
   # if you import your own fonts, name them here too
-  customtextFontFamily = "Ilisarniq-Light"
+  customtextFontFamily = "Atkinson Hyperlegible"
   customheadingFontFamily = "Petrona"
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
