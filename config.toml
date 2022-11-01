@@ -98,6 +98,10 @@ enableEmoji = true
       icon      = "youtube" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://www.youtube.com/channel/UCQYM-t2ut2zXr4d7TIFya1A"
+    [[params.social]]
+      icon      = "mastodon" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://mastodon.online/@apreshill"
   [[params.social]]
       icon      = "impactstory" # icon name without the 'fa-'
       icon_pack = "ai"
