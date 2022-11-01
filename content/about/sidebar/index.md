@@ -1,7 +1,7 @@
 ---
 ## Configure sidebar content in narrow column
 author: "Alison Hill"
-role: "Senior Data Scientist, AI Strategy & Innovation @IBM"
+role: "Director of Knowledge @ Voltron Data"
 avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
 audio_link_label: "How to say my name"
