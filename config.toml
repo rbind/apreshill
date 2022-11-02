@@ -97,7 +97,7 @@ enableEmoji = true
   [[params.social]]
       icon      = "youtube" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://www.youtube.com/channel/UCQYM-t2ut2zXr4d7TIFya1A"
+      url       = "https://www.youtube.com/channel/@alisonhill"
     [[params.social]]
       icon      = "mastodon" # icon name without the 'fa-'
       icon_pack = "fab"
