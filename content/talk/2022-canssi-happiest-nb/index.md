@@ -1,7 +1,7 @@
 ---
 title: The happiest notebooks on Earth
 aliases: 
-  - happiest-nb
+  - 2022-happiest-nb
 draft: false
 event: 'CANSSI 2022'
 event_url: https://canssiontario.utoronto.ca/event/statistical-software-conference/
