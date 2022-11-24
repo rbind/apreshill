@@ -19,6 +19,12 @@
         {{ .Content }}
         {{ .Scratch.Set "details" "closed" }}
         {{ partial "shared/post-details.html" . }}
+
+
+        {{ partial "webmentions.html" . }}
+        <!-- show Webmentions -->
+        <div id="webmentions"></div>
+
       </section>
       <footer class="post-footer">
         {{ partial "shared/post-pagination.html" . }}
@@ -27,6 +33,7 @@
     {{ if .Params.show_comments }}
       {{ partial "shared/comments.html" . }}
     {{ end }}
+
   </section>
 </main>
 {{ end }}
