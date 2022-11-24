@@ -49,6 +49,8 @@ enableEmoji = true
   sharing_image = "/img/papillons.jpg"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
   twitter = "apreshill"
+  webmentionUrl = "https://webmention.io/www.apreshill.com/webmention"
+  pingbackUrl = "https://webmention.io/www.apreshill.com/xmlrpc"
 
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
