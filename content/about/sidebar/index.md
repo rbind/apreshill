@@ -1,18 +1,18 @@
 ---
 ## Configure sidebar content in narrow column
 author: "Alison Hill"
-role: "Director of Knowledge @ Voltron Data"
+role: "product + strategy + edu"
 avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
 audio_link_label: "How to say my name"
-link_list_label: "Interested in" # bookmarks, elsewhere, etc.
+link_list_label: "Currently following..." # bookmarks, elsewhere, etc.
 link_list:
-- name: "Product management"
-  url: https://www.mindtheproduct.com/
-- name: "User experience design"
-  url: https://www.interaction-design.org/literature/topics/ux-design
-- name: "Design thinking"
-  url: https://mitsloan.mit.edu/ideas-made-to-matter/design-thinking-explained
+- name: "Scaling People"
+  url: https://press.stripe.com/scaling-people
+- name: "Lenny's Newsletter"
+  url: https://www.lennysnewsletter.com/
+- name: "The best TV show's final season"
+  url: https://en.wikipedia.org/wiki/Succession_(TV_series)
 ---
 
 ** index doesn't contain a body, just front matter above.

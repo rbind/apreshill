@@ -1,9 +1,9 @@
 ---
 title: "Alison Hill, PhD"
-subtitle: "Director of Knowledge, Product Strategy @ VoltronData"
-description: "I am a data scientist, behavioral scientist, and award-winning educator. I like sitting at the corner of education + product + strategy. Preferably with a cappuccino."
+subtitle: "Product + Strategy + Education"
+description: "Hi there! Welcome. I'm a behavioral scientist + former professor turned data scientist + professional educator turned product manager, which makes perfect sense once you get to know me. <br><br>I am passionate about creating software that earns users’ love, and I have a real knack for designing product experiences that shine. Inside, you'll find my writing about products and projects I've worked on, along with reflections about learning, teaching, and crafting kind tech tools."
 images:
-  - img/avatar-circle.png
+  - img/disney.png
 image_left: false
 text_align_left: true
 show_social_links: true # specify social accounts in site config
