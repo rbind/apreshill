@@ -1,7 +1,7 @@
 ---
 title: "Alison Hill, PhD"
 subtitle: "Product + Strategy + Education"
-description: "Hi there! Welcome. I'm a behavioral scientist + former professor turned data scientist + professional educator turned product manager, which makes perfect sense once you get to know me. <br><br>I am passionate about creating software that earns users’ love, and I have a real knack for designing product experiences that shine. Inside, you'll find my writing about products and projects I've worked on, along with reflections about learning, teaching, and crafting kind tech tools."
+description: "Hi there! I'm a behavioral scientist + former professor turned data scientist + professional educator turned product manager, which makes perfect sense once you get to know me. <br><br>I am passionate about creating software that earns users’ love, and I have a real knack for designing product experiences that shine. Inside, you'll find my writing about products and projects I've worked on, along with reflections about learning, teaching, and crafting kind tech tools."
 images:
   - img/disney.png
 image_left: false
