@@ -1,0 +1,18 @@
+title: Stay tuned! Newsletter in progress...
+body: >
+  <div id="custom-substack-embed"></div>
+  <script>
+  window.CustomSubstackWidget = {
+    substackUrl: "theknowledgecache.substack.com",
+    placeholder: "hithere@gmail.com",
+    buttonText: "Subscribe",
+    theme: "custom",
+    colors: {
+      primary: "#cee0dc",
+      input: "#FFF7F4",
+      email: "#006B77",
+      text: "#121212",
+    }
+  };
+  </script>
+  <script src="https://substackapi.com/widget.js" async></script>

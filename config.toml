@@ -87,6 +87,10 @@ enableEmoji = true
   # Icon pack "fas" includes solid icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
   # Icon pack "far" includes regular icons, see: https://fontawesome.com/icons?d=gallery&s=regular&m=free
   [[params.social]]
+      icon      = "paper-plane" # icon name without the 'fa-'
+      icon_pack = "fa"
+      url       = "https://theknowledgecache.substack.com"
+  [[params.social]]
       icon      = "linkedin-in" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://www.linkedin.com/in/apreshill/"
