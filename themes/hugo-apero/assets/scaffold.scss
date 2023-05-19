@@ -13,10 +13,10 @@ $font-path: '{{ "fonts" | relURL }}';
 @import 'base';
 
 // custom color themes
-// one of: forest / grayscale / peach / plum / poppy / sky / violet / water
-// precedence: Params.theme > .Params.custom_colors
+// one of: forest / grayscale / peach / plum / poppy / sky / violet / water 
+// precedence: Params.theme > .Params.custom_colors 
 // custom colors may either be named tachyons color or hex codes
-{{ $themes := (slice "forest" "grayscale" "peach" "plum" "poppy" "sky" "violet" "water") }}
+{{ $themes := (slice "earth" "forest" "grayscale" "magma" "paper" "peach" "plum" "poppy" "primer" "sky" "violet" "water") }}
 {{ if site.Params.theme }}
   {{ if in $themes site.Params.theme }}
     @import '{{ printf "theme/%s" site.Params.theme }}';
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// apply tachyons classes to blog lists
+// apply tachyons classes to blog lists 
 .blog-content {
   article { @extend .b--#{$borderColor} ; }
  .group-content { @extend .b--#{$borderColor} ; }
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // make the ad unit sticky and pad details
 .page-sidebar {
-  .signup {
+  .ad-unit {
     @extend .bg-#{$sidebarBgColor}, .top-0;
     position: -webkit-sticky;
     position: sticky;
@@ -195,7 +195,7 @@ form {
   select,
   [type="text"],
   [type="email"] {
-    @extend .input-reset, .pa3, .mt2, .mb3, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .w-100 ;
+    @extend .input-reset, .pa3, .mt2, .mb3, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .custom-text-color, .w-100;
   }
   [type="button"],
   [type="reset"],
@@ -207,13 +207,13 @@ form {
     @extend .mv2, .mh1 ;
   }
   textarea {
-    @extend .input-reset, .pa3, .mt2, .mb3, .mh0, .lh-copy, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .w-100 ;
+    @extend .input-reset, .pa3, .mt2, .mb3, .mh0, .lh-copy, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .custom-text-color, .w-100;
   }
   select:focus,
   textarea:focus,
   [type="text"]:focus,
   [type="email"]:focus {
-    @extend .bg-white-50 ;
+    @extend .bg-custom-sidebar-bg-color
   }
 }
 
@@ -371,7 +371,7 @@ a > svg.anchor-symbol:hover {
 }
 
 .site-links a.active:after {
-  width: 85%;
+  width: 85%;  
   color: transparent;
   @extend .bg-#{$navBgColor};
   height: .08em;
@@ -409,7 +409,6 @@ details#PageTableOfContents {
 
 .about-sidebar {
   @extend .self-start, .sticky, .bg-#{$sidebarBgColor}, .#{$sidebarTextColor};
-  height: 100vh;
 }
 .about-sidebar a:not(.link) {
   @extend .#{$sidebarLinkColor};
@@ -426,7 +425,7 @@ audio {
   width: 8rem;
   height: 2rem;
 }
-.controls button:hover,
+.controls button:hover, 
 .controls button:focus {
   @extend .o-10;
 }
@@ -435,7 +434,7 @@ audio {
 .featured-content h5,
 .featured-content article,
 .post-header h2 {
-  @extend .b--#{$borderColor} ;
+  @extend .b--#{$borderColor} ; 
 }
 
 // button links in single page headers + listing page footers
@@ -493,11 +492,11 @@ nav#SectionTableOfContents ul details {
   &.active {
     @extend .b--#{$borderColor}, .bl, .bw1, .pl3;
   }
-  summary {
-    @extend .#{$sidebarLinkColor}, .pb2;
+  summary { 
+    @extend .#{$sidebarLinkColor}, .pb2; 
   }
-  li {
-    @extend .pl0;
+  li { 
+    @extend .pl0; 
     &.active {
       @extend .pl3, .bg-#{$siteBgColor}, .bl, .b--transparent, .bw1;
     }
