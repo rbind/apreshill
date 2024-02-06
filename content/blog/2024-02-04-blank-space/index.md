@@ -36,11 +36,12 @@ Since then, I've been keeping myself busy (in no particular order):
     ground me
 
 3.  :it: Living in [Bologna,
-    Italy](https://en.wikipedia.org/wiki/Bologna) for half of 2022.
-    ![](latte.jpg) [I drank this art every morning thanks to Francesco
-    at Bar Nuovo](https://www.instagram.com/barnuovobologna/)
+    Italy](https://en.wikipedia.org/wiki/Bologna) for half of
+    2022![](latte.jpg) [I drank this art every morning thanks to
+    Francesco at Bar Nuovo](https://www.instagram.com/barnuovobologna/)
 
-    You can see me in my coworking space in [this
+    You can see me in my totally generic looking but still Italian
+    coworking space in [this
     interview](https://www.youtube.com/watch?v=HZf5s_QWEpA) that I did
     with my
     [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/)
@@ -78,19 +79,27 @@ Since then, I've been keeping myself busy (in no particular order):
     have stopped caring.
 
 9.  :raised_hands: Reveling in taking online courses from other people
-    instead of teaching them myself! Highlights include a course on
-    ["Cracking the Product
-    Strategy"](https://maven.com/jackie-bavaro/cracking-the-product-strategy)
-    by [Jackie Bavaro](https://www.linkedin.com/in/jackiebavaro/), one
-    on [website content and
-    conversion](https://maven.com/mkt1/website-conversion) (but really
-    so much more about website organization, flow, and user experience)
-    by [Emily Kramer](https://www.linkedin.com/in/emilykramer/) of
-    [MKT1](https://www.mkt1.co/), an impromptu free workshop by [Brie
-    Wolfson](https://www.briewolfson.com/) on writing a [personal press
-    release](https://review.firstround.com/ditch-your-to-do-list-and-use-these-docs-to-make-more-impact#8-personal-press-release),
-    and a hand-on [SQL](https://t.co/kOXWhm6E3F) workshop by
-    Observable's [Paul Buffa](https://www.linkedin.com/in/paul-buffa/).
+    instead of teaching them myself! Highlights include:
+
+    -   A course on ["Cracking the Product
+        Strategy"](https://maven.com/jackie-bavaro/cracking-the-product-strategy)
+        by [Jackie Bavaro](https://www.linkedin.com/in/jackiebavaro/)
+
+    -   One on [website content and
+        conversion](https://maven.com/mkt1/website-conversion) (but
+        really so much more about website organization, flow, and user
+        experience) by [Emily
+        Kramer](https://www.linkedin.com/in/emilykramer/) of
+        [MKT1](https://www.mkt1.co/)
+
+    -   An impromptu free workshop by [Brie
+        Wolfson](https://www.briewolfson.com/) on writing a [personal
+        press
+        release](https://review.firstround.com/ditch-your-to-do-list-and-use-these-docs-to-make-more-impact#8-personal-press-release)
+
+    -   A hand-on [SQL](https://t.co/kOXWhm6E3F) workshop by
+        Observable's [Paul
+        Buffa](https://www.linkedin.com/in/paul-buffa/)
 
 10. :climbing_woman: Climbing my way back into creator mode, crafting a
     long-form series about designing and building [composable data
@@ -104,7 +113,7 @@ blogdown package and the book on the same package), be present on social
 media, and just generally have a very public profile. That level of
 community engagement was both energizing and exhausting for me. I could
 make things, I could launch things, I could share things, I could make
-things work better for other people.
+real software work better for real people.
 
 But when I decided that it was definitely [time to leave my job at
 RStudio,](https://cate.blog/2021/11/29/5-signs-its-time-to-quit-your-job/)
@@ -144,14 +153,14 @@ R01-funded grant, and develop
 [tidymodels.org](https://www.tidymodels.org/) ([RIP to that Hugo
 site](https://github.com/tidymodels/tidymodels.org-legacy)).
 
-| **Chapter**                                                                          | **Word count** |
+| **Chapter**                                                                                      | **Word count** |
 |---------------------------------------------|---------------------------|
-| [A new frontier](https://voltrondata.com/codex/a-new-frontier)                       | 3989           |
-| [Standards over silos](https://voltrondata.com/codex/standards-over-silos)           | 4929           |
-| [Bridging language divides](https://voltrondata.com/codex/bridging-language-divides) | 5856           |
-| [Data sprawl](https://voltrondata.com/codex/data-sprawl)                             | 6468           |
-| [The Wall & The Machine](https://voltrondata.com/codex/wall-and-machine)             | 8744           |
-| Total                                                                                | 29,986         |
+| [Chapter 00: A new frontier](https://voltrondata.com/codex/a-new-frontier)                       | 3989           |
+| [Chapter 01: Standards over silos](https://voltrondata.com/codex/standards-over-silos)           | 4929           |
+| [Chapter 02: Bridging language divides](https://voltrondata.com/codex/bridging-language-divides) | 5856           |
+| [Chapter 03: Data sprawl](https://voltrondata.com/codex/data-sprawl)                             | 6468           |
+| [Chapter 04: The Wall & The Machine](https://voltrondata.com/codex/wall-and-machine)             | 8744           |
+| Total                                                                                            | 29,986         |
 
 It was so big that I'm still working on processing all the emotions: joy
 at people reading it and sharing it (thank you for every private DM +
