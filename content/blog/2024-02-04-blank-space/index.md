@@ -141,7 +141,7 @@ for years, but not everyone has this luxury. Even the experts don't have
 time to educate holistically on this - so the experts talk to the other
 experts and it all flies over everyone else's heads\...In one of my
 favorite talks by Kathy Sierra, she said to do a thought experiment: add
-\"world\" to whatever users do with your product. So that is The Codex!
+"world" to whatever users do with your product. So that is The Codex!
 The world of composable data systems, distilled to the key themes,
 written by and for real humans to read and return to.
 
@@ -168,4 +168,12 @@ public `<X?>`:heart:), relief that I'm back to "normal life" and a
 9-to-5(\*ish) job, anxiety that people will not like it, but most of
 all, excitement about what is next both for The Codex itself (plug to
 [sign up for emails from me and my team](https://voltrondata.com/codex)
-at the bottom of this page) and for my career. Stay tuned.
+at the bottom of this page) and for my career.
+
+If you have read The Codex, you might have noticed that we didn\'t name
+names as authors. This was an intentional design choice --- because we
+were curating ideas from a collective of experts. But I did write The
+Codex and I\'m really proud of that. So in that blank space, I\'ll write
+my name.
+
+{{< youtube e-ORhEE9VVg >}}
