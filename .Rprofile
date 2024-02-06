@@ -3,7 +3,7 @@ if (file.exists("~/.Rprofile")) {
 }
 
 options(
-  blogdown.hugo.version = "0.96.0",
+  blogdown.hugo.version = "0.122.0",
   blogdown.author = "Alison Hill",
   blogdown.ext = ".Rmarkdown",
   blogdown.method = "markdown",
