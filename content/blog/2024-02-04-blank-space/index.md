@@ -154,7 +154,7 @@ R01-funded grant, and develop
 site](https://github.com/tidymodels/tidymodels.org-legacy)).
 
 | **Chapter**                                                                                      | **Word count** |
-|---------------------------------------------|---------------------------|
+|---------------------------------------------------------|---------------|
 | [Chapter 00: A new frontier](https://voltrondata.com/codex/a-new-frontier)                       | 3989           |
 | [Chapter 01: Standards over silos](https://voltrondata.com/codex/standards-over-silos)           | 4929           |
 | [Chapter 02: Bridging language divides](https://voltrondata.com/codex/bridging-language-divides) | 5856           |
@@ -170,10 +170,10 @@ all, excitement about what is next both for The Codex itself (plug to
 [sign up for emails from me and my team](https://voltrondata.com/codex)
 at the bottom of this page) and for my career.
 
-If you have read The Codex, you might have noticed that we didn\'t name
+If you have read The Codex, you might have noticed that we didn't name
 names as authors. This was an intentional design choice --- because we
 were curating ideas from a collective of experts. But I did write The
-Codex and I\'m really proud of that. So in that blank space, I\'ll write
-my name.
+Codex and I'm really proud of that. There is a blank space, and I'll
+write my name :microphone:.
 
 {{< youtube e-ORhEE9VVg >}}
