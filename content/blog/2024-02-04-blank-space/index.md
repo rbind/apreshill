@@ -154,7 +154,7 @@ R01-funded grant, and develop
 site](https://github.com/tidymodels/tidymodels.org-legacy)).
 
 | **Chapter**                                                                                      | **Word count** |
-|---------------------------------------------------------|---------------|
+|--------------------------------------------------------------------------------------------------|----------------|
 | [Chapter 00: A new frontier](https://voltrondata.com/codex/a-new-frontier)                       | 3989           |
 | [Chapter 01: Standards over silos](https://voltrondata.com/codex/standards-over-silos)           | 4929           |
 | [Chapter 02: Bridging language divides](https://voltrondata.com/codex/bridging-language-divides) | 5856           |
